@@ -1,5 +1,19 @@
 extends: default
+font:
+  catalog:
+    merge: true
+    Source Sans Pro:
+      normal: sourcesanspro-normal.ttf
+      italic: sourcesanspro-italic.ttf
+      bold: sourcesanspro-bold.ttf
+      bold_italic: sourcesanspro-bold_italic.ttf
+    Noto Serif:
+      normal: GEM_FONTS_DIR/notoserif-regular-subset.ttf
+      italic: GEM_FONTS_DIR/notoserif-italic-subset.ttf
+      bold: GEM_FONTS_DIR/notoserif-bold-subset.ttf
+      bold_italic: GEM_FONTS_DIR/notoserif-bold_italic-subset.ttf  
 base:
+  font-family: Noto Serif  
   font-color: #333333
   border-color: #7f8f94
 footer:
@@ -35,4 +49,6 @@ title-page:
     font-size: 16
     font-style: bold  
 heading:
+  font-family: Source Sans Pro
   font-color: #2d2d2c
+  margin-top: 16

@@ -32,6 +32,7 @@ footer:
     right:
       content: 'Guide de l’Utilisateur - {revnumber}'      
 title-page:
+  font-family: Source Sans Pro  
   logo:
     image: image:../images/_pdf_logo.png[]
     align: center  

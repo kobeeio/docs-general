@@ -32,6 +32,7 @@ footer:
     right:
       content: 'IKAN ALM Technical Sheet - {revnumber}'      
 title-page:
+  font-family: Source Sans Pro  
   logo:
     image: image:../images/_pdf_logo.png[]
     align: center  

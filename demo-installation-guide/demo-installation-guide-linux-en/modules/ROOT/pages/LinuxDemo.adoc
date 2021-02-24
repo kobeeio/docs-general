@@ -436,7 +436,7 @@ In order to start working with the Customers project, you need to make sure that
 
 Make sure that the IKAN ALM Server is running and log in as User _global_ (Password: __global__). 
 
-Select image:images/icon_GlobalAdmin_13x13.png[,26,28] _Global
+Select image:icons/icon_GlobalAdmin_13x13.png[,26,28] _Global
 Administration > Version Control Repositories > Overview_ and specify _Subversion_ in the _Type_ field of the _Search Version Control Repositories_ panel.
 
 
@@ -506,7 +506,7 @@ In the next step, we will unlock the project.
 In order to build the Customers Project, it must be unlocked together with the corresponding Levels in the Project Administration section.
 This action can only be performed by a User having Project Administration rights, like the "`global`" or "`project`" User ID (See <<_chbdajaa>>).
 
-Select image:images/icon_ProjectAdmin_13x13.png[,26,28] _Project
+Select image:icons/icon_ProjectAdmin_13x13.png[,26,28] _Project
 Administration_ on the main menu to start the unlock procedure.
 
 
@@ -541,7 +541,7 @@ image::fig6.2_3.png[,766,510]
 
 As a result, the _Locked_ icons for the Levels will disappear.
 The Project is not locked anymore.
-Select the Project Administration image:images/icon_ProjectAdmin_13x13.png[,26,28]  icon on the main menu to verify that the _Lock_ button for the Project also disappeared.
+Select the Project Administration image:icons/icon_ProjectAdmin_13x13.png[,26,28]  icon on the main menu to verify that the _Lock_ button for the Project also disappeared.
 
 As soon as the Project and its Levels are unlocked, there will automatically be some action in the Project.
 Check the next section to understand what is happening.
@@ -760,7 +760,7 @@ More specifically, the deploy to the Test level does three things:
 
 The first task was not general enough to be reused, but for the other two tasks Custom Phases were made: the "`Update DB`" and the "`Tomcat Deploy`" phases.
 
-To view the definitions of these phases, go to image:images/icon_GlobalAdmin_13x13.png[,26,28] __Global
+To view the definitions of these phases, go to image:icons/icon_GlobalAdmin_13x13.png[,26,28] __Global
 Administration > Phases > Overview__.
 
 
@@ -791,7 +791,7 @@ How does this work?
 
 The answer lies in a Deploy Parameter (named "`applicationName`") which is defined on both Deploy Environments.
 
-Go to image:images/icon_ProjectAdmin_13x13.png[,26,28] __Project
+Go to image:icons/icon_ProjectAdmin_13x13.png[,26,28] __Project
 Administration__, and edit the Customers Project.
 Next, in the menu, select __Deploy Environments > Deploy Parameters__:
 

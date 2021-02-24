@@ -12,7 +12,7 @@ Cependant, seuls les utilisateurs ayant des droits d'affichage (appartenant au G
 Se référer aux procédures suivantes pour plus d`'information:
 
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_accessing,Écran de l`'aperçu des projets>>
-* <<ProjAdm_ProjMgt_ProjectName.adoc#_projadmin_projectsoverview_viewing,Afficher les paramètres d’un projet>>
+* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_viewing,Afficher les paramètres d’un projet>>
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_deleting,Supprimer un projet>>
 * <<ProjAdm_Projects.adoc#_porjadm_projectsoverview_locking,Verrouiller/Déverrouiller un projet>>

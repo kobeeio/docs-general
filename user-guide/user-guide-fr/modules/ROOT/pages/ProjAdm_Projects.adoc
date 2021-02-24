@@ -4,7 +4,7 @@
 [[_projadm_projectsoverview_hidingshowing]]
 [[_projadm_projects]]
 = Projets 
-(((Administration des projets ,Projets)))  (((Projets))) 
+(((Administration des projets ,Projets)))  (((Projets)))  (((Options relatives à l’administration des projets ,Projets)))
 
 L`'écran _Aperçu des Projets_ fournit les informations concernant les Projets gérés par IKAN ALM.
 Tous les Utilisateurs IKAN ALM peuvent afficher l'Aperçu des Projets.

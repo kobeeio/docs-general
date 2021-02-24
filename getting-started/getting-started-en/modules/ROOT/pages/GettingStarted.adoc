@@ -20,7 +20,7 @@ During the Build process, the sample _Docgen_ Project will convert a standardize
 We will use the http://ant.apache.org/[Apache ANT,window=_blank] scripting tool and the http://tomcat.apache.org/[Apache Tomcat,window=_blank] web server, but no prior knowledge of either tool is necessary since the samples are kept very basic.
 
 The source XML file is very simple and follows the http://docbook.org/[docbook,window=_blank] format.
-You will find it in the _GettingStarted.zip_ file under ``/init_svn/sources/docbook.xml``.
+You will find it in the __GettingStarted.zip__ file under ``/init_svn/sources/docbook.xml``.
 
 
 image::docbookxml.png[,682,630] 

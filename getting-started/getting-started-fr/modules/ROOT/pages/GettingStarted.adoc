@@ -19,7 +19,7 @@ Pendant le processus de Construction, le projet __Docgen__, en exemple, converti
 Nous utiliserons l'outil de script http://ant.apache.org/[Apache Ant,window=_blank] et le Serveur Web http://tomcat.apache.org/[Apache Tomcat,window=_blank], mais une connaissance préalable de ces produits n'est pas nécessaire puisque les exemples sont très simples.
 
 Le fichier Source XML est très court et suit le format de http://docbook.org/[docbook,window=_blank].
-Vous le trouverez dans le fichier _GettingStarted.zip_ sous ``/init_svn/sources/docbook.xml``.
+Vous le trouverez dans le fichier __GettingStarted.zip__ sous ``/init_svn/sources/docbook.xml``.
 
 
 image::docbookxml.png[,682,630] 

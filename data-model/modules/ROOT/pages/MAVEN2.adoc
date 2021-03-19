@@ -1,0 +1,919 @@
+[[_t_maven2]]
+== MAVEN2 
+(((MAVEN2))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<MAVEN2.adoc#_cd_maven2_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_build,BUILD>>
+|NUMBER(1)
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_deploy,DEPLOY>>
+|NUMBER(1)
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_test,TEST>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_debug,DEBUG>>
+|NUMBER(1)
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_mvnscript,MVNSCRIPT>>
+|VARCHAR2(255)
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_goals,GOALS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_settingsfile,SETTINGSFILE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_activeprofiles,ACTIVEPROFILES>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_commandlineoptions,COMMANDLINEOPTIONS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_logformattype,LOGFORMATTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<MAVEN2.adoc#_cd_maven2_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_maven2_oid]]
+==== OID 
+(((MAVEN2 ,OID)))  (((OID (MAVEN2)))) 
+Unique table identifier.
+
+See also: <<MAVEN2.adoc#_i_maven2_maven2_pk,MAVEN2_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_maven2_name]]
+==== NAME 
+(((MAVEN2 ,NAME)))  (((NAME (MAVEN2)))) 
+Name of the Maven2 Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_maven2_description]]
+==== DESCRIPTION 
+(((MAVEN2 ,DESCRIPTION)))  (((DESCRIPTION (MAVEN2)))) 
+Description for the Maven2 Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_maven2_type]]
+==== TYPE 
+(((MAVEN2 ,TYPE)))  (((TYPE (MAVEN2)))) 
+Fixed value identifying the type of Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+3 = Maven2
+
+
+[[_cd_maven2_build]]
+==== BUILD 
+(((MAVEN2 ,BUILD)))  (((BUILD (MAVEN2)))) 
+Indication whether or not the Scripting Tool can be linked to a Build Environment and thus be used to build code.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_maven2_deploy]]
+==== DEPLOY 
+(((MAVEN2 ,DEPLOY)))  (((DEPLOY (MAVEN2)))) 
+Indication whether or not the Scripting Tool can be linked to a Deploy Environment and thus be used to deploy Builds.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEPLOY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_maven2_test]]
+==== TEST 
+(((MAVEN2 ,TEST)))  (((TEST (MAVEN2)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TEST
+|NUMBER(1)
+|===
+
+[[_cd_maven2_debug]]
+==== DEBUG 
+(((MAVEN2 ,DEBUG)))  (((DEBUG (MAVEN2)))) 
+Indication whether or not the Debug Option is activated for the Maven2 Scripting Tool. This corresponds with the -X or --debug Maven2 commandline option.
+
+If this option is activated, Maven2 will print additional debug information during the Build and Deploy actions.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DEBUG
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_maven2_mvnscript]]
+==== MVNSCRIPT 
+(((MAVEN2 ,MVNSCRIPT)))  (((MVNSCRIPT (MAVEN2)))) 
+The path to the Maven2 start-up script on the target Machine linked to the Build/Deploy Environment (mvn shell script or mvn.bat file).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|MVNSCRIPT
+|VARCHAR2(255)
+|===
+
+[[_cd_maven2_goals]]
+==== GOALS 
+(((MAVEN2 ,GOALS)))  (((GOALS (MAVEN2)))) 
+The Maven2 goals and/or phases to be executed by default.
+
+The goals and/or phases defined here will be used by default. If necessary, they can be overridden for the different build or deploy environments.
+
+For example, clean dependency:copydependencies test
+
+The goals and/or phases defined here will be used by default. If necessary, they can be overridden for the different build or deploy environments. In order to do so, add a build or deploy parameter "`scm4all.mvn2.goals`" with the desired value. 
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|GOALS
+|VARCHAR2(255)
+|===
+
+[[_cd_maven2_settingsfile]]
+==== SETTINGSFILE 
+(((MAVEN2 ,SETTINGSFILE)))  (((SETTINGSFILE (MAVEN2)))) 
+The alternate path for the Maven2 User Settings File. This corresponds with the -s or --settings commandline option.
+
+If not provided, the default Settings File under home-directory/.m2/settings.xml will be taken into account.
+
+If necessary, this file can be overridden for the different build or deploy environments. In order to do so, add a build or deploy parameter "`scm4all.mvn2.setting`" with the desired value. 
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SETTINGSFILE
+|VARCHAR2(255)
+|===
+
+[[_cd_maven2_activeprofiles]]
+==== ACTIVEPROFILES 
+(((MAVEN2 ,ACTIVEPROFILES)))  (((ACTIVEPROFILES (MAVEN2)))) 
+The Activate Profiles. This is a comma-delimited list of profiles to activate. It corresponds with the -P or --activate-profiles Maven2 commandline option.
+
+The Activate Profiles defined here will be used by default. If necessary, they can be overridden for the different build or deploy environments. In order to do so, add a build or deploy parameter "`scm4all.mvn2.activate-profiles`" with the desired value.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ACTIVEPROFILES
+|VARCHAR2(255)
+|===
+
+[[_cd_maven2_commandlineoptions]]
+==== COMMANDLINEOPTIONS 
+(((MAVEN2 ,COMMANDLINEOPTIONS)))  (((COMMANDLINEOPTIONS (MAVEN2)))) 
+The Commandline Options used, separated by a space.  For example: the option "`-e`" will give you more information about error messages. 
+
+Please note that the following options can NOT be used as they are already used by IKAN ALM: "`-X`" or "`--debug`" (Debug), "`-s`" or "`--settings`" (Settings File), "`-P`" or "`--activate-profiles`" (Activate Profiles) and "`-B`" or "`--batch-mode`".
+
+The Commandline Options defined here will be used by default. If necessary, they can be overridden for the different build or deploy environments. In order to do so, add a build or deploy parameter "`scm4all.mvn2.options`" with the desired value.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|COMMANDLINEOPTIONS
+|VARCHAR2(255)
+|===
+
+[[_cd_maven2_timeout]]
+==== TIMEOUT 
+(((MAVEN2 ,TIMEOUT)))  (((TIMEOUT (MAVEN2)))) 
+The time-out value in seconds.
+
+If a value is provided, a running Maven2 Build or Deploy process will be interrupted after the defined number of seconds. In this way, "hanging" Build or Deploy processes are interrupted.
+
+If no value is provided, a running Maven2 Build or Deploy process will never be interrupted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_maven2_logformattype]]
+==== LOGFORMATTYPE 
+(((MAVEN2 ,LOGFORMATTYPE)))  (((LOGFORMATTYPE (MAVEN2)))) 
+The log format type of the Maven2 log can be TXT or XML.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGFORMATTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = TXT
+
+1 = XML
+
+
+[[_cd_maven2_archived]]
+==== ARCHIVED 
+(((MAVEN2 ,ARCHIVED)))  (((ARCHIVED (MAVEN2)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_maven2_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((MAVEN2 ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (MAVEN2)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_maven2_version]]
+==== VERSION 
+(((MAVEN2 ,VERSION)))  (((VERSION (MAVEN2)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,MAVEN2_PK))) [[_i_maven2_maven2_pk]]
+MAVEN2_PK
+|Yes
+|Yes
+|<<MAVEN2.adoc#_cd_maven2_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,MAVEN2))) 
+*MAVEN2_ACTIVEPROFILES_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Active Profiles
+
+|
+
+French:
+|Profils activés
+
+|
+
+German:
+|Aktive Profile
+|===
+*MAVEN2_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*MAVEN2_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*MAVEN2_BUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build
+
+|
+
+French:
+|Construction
+
+|
+
+German:
+|Bereitstellung
+|===
+*MAVEN2_COMMANDLINEOPTIONS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Commandline Options
+
+|
+
+French:
+|Options de Commande
+
+|
+
+German:
+|Optionen der Kommandozeile
+|===
+*MAVEN2_DEBUG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Debug Option
+
+|
+
+French:
+|Option débogage
+
+|
+
+German:
+|Debug
+|===
+*MAVEN2_DEPLOY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy
+
+|
+
+French:
+|Déploiement
+
+|
+
+German:
+|Auslieferung
+|===
+*MAVEN2_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*MAVEN2_GOALS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Goals (phases)
+
+|
+
+French:
+|Goals (phases)
+
+|
+
+German:
+|Ziele (Phasen)
+|===
+*MAVEN2_LOGFORMATTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Format Type
+
+|
+
+French:
+|Type de format du Journal
+
+|
+
+German:
+|Formattyp des Protokolls
+|===
+*MAVEN2_MVNSCRIPT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Maven Script Location
+
+|
+
+French:
+|Chemin de script Maven
+
+|
+
+German:
+|Standort des MAVEN-Skriptes
+|===
+*MAVEN2_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*MAVEN2_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*MAVEN2_SETTINGSFILE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Alternative Settings File
+
+|
+
+French:
+|Fichier Paramètres
+
+|
+
+German:
+|Alternative Voreinstellungsdatei
+|===
+*MAVEN2_TEST_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Test
+
+|
+
+French:
+|Test
+
+|
+
+German:
+|Test
+|===
+*MAVEN2_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*MAVEN2_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*MAVEN2_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

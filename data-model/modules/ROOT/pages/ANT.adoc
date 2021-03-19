@@ -1,0 +1,1102 @@
+[[_t_ant]]
+== ANT 
+(((ANT))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<ANT.adoc#_cd_ant_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<ANT.adoc#_cd_ant_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<ANT.adoc#_cd_ant_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<ANT.adoc#_cd_ant_build,BUILD>>
+|NUMBER(1)
+
+|
+|No
+|<<ANT.adoc#_cd_ant_deploy,DEPLOY>>
+|NUMBER(1)
+
+|
+|No
+|<<ANT.adoc#_cd_ant_test,TEST>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_javahome,JAVAHOME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_javavmoptions,JAVAVMOPTIONS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_antclasspath,ANTCLASSPATH>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_debug,DEBUG>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_quiet,QUIET>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_verbose,VERBOSE>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_isuselauncher,ISUSELAUNCHER>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_libpath,LIBPATH>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_commandlineoptions,COMMANDLINEOPTIONS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<ANT.adoc#_cd_ant_logformattype,LOGFORMATTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ANT.adoc#_cd_ant_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<ANT.adoc#_cd_ant_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_ant_oid]]
+==== OID 
+(((ANT ,OID)))  (((OID (ANT)))) 
+Unique table identifier.
+
+See also: <<ANT.adoc#_i_ant_ant_pk,ANT_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_ant_name]]
+==== NAME 
+(((ANT ,NAME)))  (((NAME (ANT)))) 
+Name of the ANT Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_ant_description]]
+==== DESCRIPTION 
+(((ANT ,DESCRIPTION)))  (((DESCRIPTION (ANT)))) 
+Description for the ANT Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_ant_type]]
+==== TYPE 
+(((ANT ,TYPE)))  (((TYPE (ANT)))) 
+Fixed value identifying the type of Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+0 = ant
+
+
+[[_cd_ant_build]]
+==== BUILD 
+(((ANT ,BUILD)))  (((BUILD (ANT)))) 
+Indication whether or not the Scripting Tool can be linked to a Build Environment and thus be used to build code.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_ant_deploy]]
+==== DEPLOY 
+(((ANT ,DEPLOY)))  (((DEPLOY (ANT)))) 
+Indication whether or not the Scripting Tool can be linked to a Test Environment and thus be used to test Builds.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEPLOY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_ant_test]]
+==== TEST 
+(((ANT ,TEST)))  (((TEST (ANT)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TEST
+|NUMBER(1)
+|===
+
+[[_cd_ant_javahome]]
+==== JAVAHOME 
+(((ANT ,JAVAHOME)))  (((JAVAHOME (ANT)))) 
+The JAVA_HOME path used to launch ANT.
+
+If no value is present, the system default JAVA_HOME path will be used to start ANT. In this case, the JAVA_HOME path must be defined as an environment variable on the Machine.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|JAVAHOME
+|VARCHAR2(255)
+|===
+
+[[_cd_ant_javavmoptions]]
+==== JAVAVMOPTIONS 
+(((ANT ,JAVAVMOPTIONS)))  (((JAVAVMOPTIONS (ANT)))) 
+The Java Virtual Machine Options required for starting up ANT.
+
+Example: -Xmx128M: specifies the maximum size of the memory allocation pool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|JAVAVMOPTIONS
+|VARCHAR2(255)
+|===
+
+[[_cd_ant_antclasspath]]
+==== ANTCLASSPATH 
+(((ANT ,ANTCLASSPATH)))  (((ANTCLASSPATH (ANT)))) 
+The JAVA ANT Classpath.
+
+If you launch ANT via Java, you must ensure that all required jar files are available.
+
+Depending on the ANT version you use, the CLASSPATH should at least include:
+
+For ANT 1.5.x:
+
+* ant.jar
+
+* jars/classes for your XML parser
+
+* jars/zip files for the JDK
+
+For ANT 1.6.x or higher:
+
+* ant.jar
+
+* ant-launcher.jar
+
+* jars/classes for your XML parser
+
+* jars/zip files for the JDK
+
+If you launch ANT via the Ant Launcher, ensure that the CLASSPATH includes:
+
+* ant-launcher.jar
+
+* required external dependencies (such as tools.jar)
+
+Note: If you use Ant Launcher, ant.jar may not be included in the Java Classpath, because the dependencies will not be found and the script will end in error.
+
+For more information, refer to the section "Running ANT via Java" in the Apache Ant Manual.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ANTCLASSPATH
+|VARCHAR2(512)
+|===
+
+[[_cd_ant_debug]]
+==== DEBUG 
+(((ANT ,DEBUG)))  (((DEBUG (ANT)))) 
+Indication whether or not the Debug Option is activated for the ANT Scripting Tool.
+
+ANT will print additional debug information during the Build and Deploy actions, if this option is activated.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DEBUG
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_ant_quiet]]
+==== QUIET 
+(((ANT ,QUIET)))  (((QUIET (ANT)))) 
+Indication whether or not the Quiet Option is activated for the ANT Scripting Tool.
+
+ANT will print less information than normal during the Build and Deploy actions, if this option is activated.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|QUIET
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_ant_verbose]]
+==== VERBOSE 
+(((ANT ,VERBOSE)))  (((VERBOSE (ANT)))) 
+Indication whether or not the Verbose Option is activated for the ANT Scripting Tool.
+
+ANT will print verbose debug information during the Build and Deploy actions, if this option is activated.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|VERBOSE
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_ant_isuselauncher]]
+==== ISUSELAUNCHER 
+(((ANT ,ISUSELAUNCHER)))  (((ISUSELAUNCHER (ANT)))) 
+Indication whether or not ANT will be launched via the ANT Launcher or via Java.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ISUSELAUNCHER
+|NUMBER(1)
+|===
+
+===== Value List
+0 = Java
+
+1 = ANT Launcher
+
+
+[[_cd_ant_libpath]]
+==== LIBPATH 
+(((ANT ,LIBPATH)))  (((LIBPATH (ANT)))) 
+In case the ANT Launcher is being used, this value indicates the path to one or more directories containing additional required jar files (-lib option).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LIBPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_ant_commandlineoptions]]
+==== COMMANDLINEOPTIONS 
+(((ANT ,COMMANDLINEOPTIONS)))  (((COMMANDLINEOPTIONS (ANT)))) 
+The commandline options used, separated by a space.
+
+The commandline options provided by default by IKAN ALM, like -buildfile, -logfiles, -verbose, -debug, ... are not accepted. Sample options are -keep-going, or -noinput.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|COMMANDLINEOPTIONS
+|VARCHAR2(255)
+|===
+
+[[_cd_ant_timeout]]
+==== TIMEOUT 
+(((ANT ,TIMEOUT)))  (((TIMEOUT (ANT)))) 
+The time-out value in seconds.
+
+If a value is provided, a running ANT Build or Deploy process will be interrupted after this number of seconds. In this way, "hanging" Build or Deploy processes are interrupted.
+
+If no value is provided, a running ANT Build or Deploy process will never be interrupted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_ant_logformattype]]
+==== LOGFORMATTYPE 
+(((ANT ,LOGFORMATTYPE)))  (((LOGFORMATTYPE (ANT)))) 
+The log format type of the ANT log can be TXT or XML.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGFORMATTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = TXT
+
+1 = XML
+
+
+[[_cd_ant_archived]]
+==== ARCHIVED 
+(((ANT ,ARCHIVED)))  (((ARCHIVED (ANT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_ant_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((ANT ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (ANT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_ant_version]]
+==== VERSION 
+(((ANT ,VERSION)))  (((VERSION (ANT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,ANT_PK))) [[_i_ant_ant_pk]]
+ANT_PK
+|Yes
+|Yes
+|<<ANT.adoc#_cd_ant_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,ANT))) 
+*ANT_ANTCLASSPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Java ANT Classpath
+
+|
+
+French:
+|Chemin de classe ANT
+
+|
+
+German:
+|Java ANT Classpath
+|===
+*ANT_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*ANT_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*ANT_BUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build
+
+|
+
+French:
+|Construction
+
+|
+
+German:
+|Bereitstellung
+|===
+*ANT_COMMANDLINEOPTIONS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Commandline Options
+
+|
+
+French:
+|Options de Commande
+
+|
+
+German:
+|Optionen der Kommandozeile
+|===
+*ANT_DEBUG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Debug Option
+
+|
+
+French:
+|Option débogage
+
+|
+
+German:
+|Debug
+|===
+*ANT_DEPLOY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy
+
+|
+
+French:
+|Déploiement
+
+|
+
+German:
+|Auslieferung
+|===
+*ANT_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*ANT_ISUSELAUNCHER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Use Ant Launcher
+
+|
+
+French:
+|Utiliser Ant Launcher
+
+|
+
+German:
+|Benutzen Sie den ANT Launcher
+|===
+*ANT_JAVAHOME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Java Home
+
+|
+
+French:
+|Chemin Java
+
+|
+
+German:
+|Java Home
+|===
+*ANT_JAVAVMOPTIONS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Java Virtual Machine Options
+
+|
+
+French:
+|Options de Java VM
+
+|
+
+German:
+|Optionen der Java VM
+|===
+*ANT_LIBPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Library Path
+
+|
+
+French:
+|Chemin de classe
+
+|
+
+German:
+|Bibliotheksverzeichnis
+|===
+*ANT_LOGFORMATTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Format Type
+
+|
+
+French:
+|Type de format du Journal
+
+|
+
+German:
+|Formattyp des Protokolls
+|===
+*ANT_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*ANT_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*ANT_QUIET_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Quiet Option
+
+|
+
+French:
+|Arrière-plan
+
+|
+
+German:
+|Hintergrund
+|===
+*ANT_TEST_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Test
+
+|
+
+French:
+|Test
+
+|
+
+German:
+|Test
+|===
+*ANT_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*ANT_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*ANT_VERBOSE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Verbose Option
+
+|
+
+French:
+|Messages détaillés
+
+|
+
+German:
+|Ausführliche Meldungen
+|===
+*ANT_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

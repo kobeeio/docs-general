@@ -6,7 +6,8 @@ Always consult the "antora.yml" file in the document to verify, it should contai
 
 **Documents in this repository**
 
-* alm-reports	 
+* alm-reports	
+* data-model 
 * demo-installation-guide  
 * getting-started     	      
 * installation-guide  

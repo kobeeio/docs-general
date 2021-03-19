@@ -1,0 +1,748 @@
+[[_t_subversion]]
+== SUBVERSION 
+(((SUBVERSION))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SUBVERSION.adoc#_cd_subversion_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_userid,USERID>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_commandpath,COMMANDPATH>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_repositoryurl,REPOSITORYURL>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_tagsdirectory,TAGSDIRECTORY>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_trunkdirectory,TRUNKDIRECTORY>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_repositorylayout,REPOSITORYLAYOUT>>
+|NUMBER
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_fetchmetaproperties,FETCHMETAPROPERTIES>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SUBVERSION.adoc#_cd_subversion_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_subversion_oid]]
+==== OID 
+(((SUBVERSION ,OID)))  (((OID (SUBVERSION)))) 
+Unique table identifier.
+
+See also: <<SUBVERSION.adoc#_i_subversion_subversion_pk,SUBVERSION_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_subversion_name]]
+==== NAME 
+(((SUBVERSION ,NAME)))  (((NAME (SUBVERSION)))) 
+Name of the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_subversion_description]]
+==== DESCRIPTION 
+(((SUBVERSION ,DESCRIPTION)))  (((DESCRIPTION (SUBVERSION)))) 
+Description for the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_subversion_userid]]
+==== USERID 
+(((SUBVERSION ,USERID)))  (((USERID (SUBVERSION)))) 
+The User ID that IKAN ALM will use to access the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|USERID
+|VARCHAR2(50)
+|===
+
+[[_cd_subversion_password]]
+==== PASSWORD 
+(((SUBVERSION ,PASSWORD)))  (((PASSWORD (SUBVERSION)))) 
+The Password that IKAN ALM will use to access the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_subversion_commandpath]]
+==== COMMANDPATH 
+(((SUBVERSION ,COMMANDPATH)))  (((COMMANDPATH (SUBVERSION)))) 
+The path to the Location where the Subversion Client command (svn.exe or svn) resides.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|COMMANDPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_subversion_timeout]]
+==== TIMEOUT 
+(((SUBVERSION ,TIMEOUT)))  (((TIMEOUT (SUBVERSION)))) 
+The time-out value in seconds.
+
+If IKAN ALM is not able to establish a connection with the Subversion Repository within the defined period, it will consider the Repository to be inaccessible.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_subversion_repositoryurl]]
+==== REPOSITORYURL 
+(((SUBVERSION ,REPOSITORYURL)))  (((REPOSITORYURL (SUBVERSION)))) 
+The URL of the machine hosting the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|REPOSITORYURL
+|VARCHAR2(255)
+|===
+
+[[_cd_subversion_tagsdirectory]]
+==== TAGSDIRECTORY 
+(((SUBVERSION ,TAGSDIRECTORY)))  (((TAGSDIRECTORY (SUBVERSION)))) 
+The Tags Directory for the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TAGSDIRECTORY
+|VARCHAR2(255)
+|===
+
+[[_cd_subversion_trunkdirectory]]
+==== TRUNKDIRECTORY 
+(((SUBVERSION ,TRUNKDIRECTORY)))  (((TRUNKDIRECTORY (SUBVERSION)))) 
+The Trunk Directory for the Subversion Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TRUNKDIRECTORY
+|VARCHAR2(255)
+|===
+
+[[_cd_subversion_repositorylayout]]
+==== REPOSITORYLAYOUT 
+(((SUBVERSION ,REPOSITORYLAYOUT)))  (((REPOSITORYLAYOUT (SUBVERSION)))) 
+The required Repository Layout.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|REPOSITORYLAYOUT
+|NUMBER
+|===
+
+===== Value List
+0 = Project-oriented
+
+1 = Repository-oriented
+
+2 = Single Project-oriented
+
+
+[[_cd_subversion_archived]]
+==== ARCHIVED 
+(((SUBVERSION ,ARCHIVED)))  (((ARCHIVED (SUBVERSION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_subversion_fetchmetaproperties]]
+==== FETCHMETAPROPERTIES 
+(((SUBVERSION ,FETCHMETAPROPERTIES)))  (((FETCHMETAPROPERTIES (SUBVERSION)))) 
+Indication whether or not the Meta Properties set on source files in the Subversion VCR must be retrieved automatically during the Retrieve code phase. These Meta Properties can be used by the Build and Deploy Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|FETCHMETAPROPERTIES
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_subversion_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SUBVERSION ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SUBVERSION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_subversion_version]]
+==== VERSION 
+(((SUBVERSION ,VERSION)))  (((VERSION (SUBVERSION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SUBVERSION_PK))) [[_i_subversion_subversion_pk]]
+SUBVERSION_PK
+|Yes
+|Yes
+|<<SUBVERSION.adoc#_cd_subversion_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SUBVERSION))) 
+*SUBVERSION_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SUBVERSION_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SUBVERSION_COMMANDPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Command Path
+
+|
+
+French:
+|Chemin de commande
+
+|
+
+German:
+|Befehlsverzeichnis
+|===
+*SUBVERSION_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*SUBVERSION_FETCHMETAPROPERTIES_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Fetch Meta Properties
+
+|
+
+French:
+|Collecte des métapropriétés
+
+|
+
+German:
+|Meta-Eigenschaften abrufen
+|===
+*SUBVERSION_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SUBVERSION_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SUBVERSION_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*SUBVERSION_REPOSITORYLAYOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Repository Layout
+
+|
+
+French:
+|Structure du Référentiel
+
+|
+
+German:
+|Struktur des Repository
+|===
+*SUBVERSION_REPOSITORYURL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Repository URL
+
+|
+
+French:
+|URL du Référentiel Subversion
+
+|
+
+German:
+|URL des Repository
+|===
+*SUBVERSION_TAGSDIRECTORY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Tags Directory
+
+|
+
+French:
+|Répertoire des versions (tags)
+
+|
+
+German:
+|Tagverzeichnis
+|===
+*SUBVERSION_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*SUBVERSION_TRUNKDIRECTORY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Trunk Directory
+
+|
+
+French:
+|Répertoire de projets (trunk)
+
+|
+
+German:
+|Trunkverzeichnis
+|===
+*SUBVERSION_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*SUBVERSION_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

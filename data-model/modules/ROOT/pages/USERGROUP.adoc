@@ -1,0 +1,469 @@
+[[_t_usergroup]]
+== USERGROUP 
+(((USERGROUP))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<USERGROUP.adoc#_cd_usergroup_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<USERGROUP.adoc#_cd_usergroup_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<USERGROUP.adoc#_cd_usergroup_type,TYPE>>
+|NUMBER
+
+|
+|Yes
+|<<USERGROUP.adoc#_cd_usergroup_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<USERGROUP.adoc#_cd_usergroup_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<USERGROUP.adoc#_cd_usergroup_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_usergroup_oid]]
+==== OID 
+(((USERGROUP ,OID)))  (((OID (USERGROUP)))) 
+Unique table identifier.
+
+See also: <<USERGROUP.adoc#_i_usergroup_usergroup_pk,USERGROUP_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_usergroup_name]]
+==== NAME 
+(((USERGROUP ,NAME)))  (((NAME (USERGROUP)))) 
+Name associated with the User Group.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_usergroup_description]]
+==== DESCRIPTION 
+(((USERGROUP ,DESCRIPTION)))  (((DESCRIPTION (USERGROUP)))) 
+Description associated with the User Group.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_usergroup_type]]
+==== TYPE 
+(((USERGROUP ,TYPE)))  (((TYPE (USERGROUP)))) 
+Fixed value identifying the type of User Group.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+0 = External
+
+1 = Internal
+
+
+[[_cd_usergroup_archived]]
+==== ARCHIVED 
+(((USERGROUP ,ARCHIVED)))  (((ARCHIVED (USERGROUP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_usergroup_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((USERGROUP ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (USERGROUP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_usergroup_version]]
+==== VERSION 
+(((USERGROUP ,VERSION)))  (((VERSION (USERGROUP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,USERGROUP_PK))) [[_i_usergroup_usergroup_pk]]
+USERGROUP_PK
+|Yes
+|Yes
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== LEVELAPPROVAL
+
+Refer to the chapter <<LEVELAPPROVAL.adoc#_t_levelapproval,LEVELAPPROVAL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELAPPROVAL_FK_3
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_controlledbyusergroupoid,CONTROLLEDBYUSERGROUPOID>>
+|===
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_FK_3
+|<<SCMLEVEL.adoc#_cd_scmlevel_requesterusergroupoid,REQUESTERUSERGROUPOID>>
+
+|SCMLEVEL_FK_4
+|<<SCMLEVEL.adoc#_cd_scmlevel_prenotificationusergroupoid,PRENOTIFICATIONUSERGROUPOID>>
+
+|SCMLEVEL_FK_5
+|<<SCMLEVEL.adoc#_cd_scmlevel_postnotificationusergroupoid,POSTNOTIFICATIONUSERGROUPOID>>
+|===
+
+===== SCMLEVEL_POSTAPPRUSERGROUP
+
+Refer to the chapter <<SCMLEVEL_POSTAPPRUSERGROUP.adoc#_t_scmlevel_postapprusergroup,SCMLEVEL_POSTAPPRUSERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_POSTAPPRUSERGROU_FK_2
+|<<SCMLEVEL_POSTAPPRUSERGROUP.adoc#_cd_scmlevel_postapprusergroup_usergroupoid,USERGROUPOID>>
+|===
+
+===== SCMLEVEL_PREAPPRUSERGROUP
+
+Refer to the chapter <<SCMLEVEL_PREAPPRUSERGROUP.adoc#_t_scmlevel_preapprusergroup,SCMLEVEL_PREAPPRUSERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_PREAPPRUSERGROUP_FK_2
+|<<SCMLEVEL_PREAPPRUSERGROUP.adoc#_cd_scmlevel_preapprusergroup_usergroupoid,USERGROUPOID>>
+|===
+
+===== SCMUSER_USERGROUP
+
+Refer to the chapter <<SCMUSER_USERGROUP.adoc#_t_scmuser_usergroup,SCMUSER_USERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMUSER_USERGROUP_FK_1
+|<<SCMUSER_USERGROUP.adoc#_cd_scmuser_usergroup_usergroupoid,USERGROUPOID>>
+|===
+
+===== SYSTEMSETTINGS
+
+Refer to the chapter <<SYSTEMSETTINGS.adoc#_t_systemsettings,SYSTEMSETTINGS>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SYSTEMSETTINGS_FK_2
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_usergroupoid,USERGROUPOID>>
+
+|SYSTEMSETTINGS_FK_1
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_admingroupoid,ADMINGROUPOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,USERGROUP))) 
+*USERGROUP_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*USERGROUP_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*USERGROUP_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*USERGROUP_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*USERGROUP_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*USERGROUP_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*USERGROUP_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

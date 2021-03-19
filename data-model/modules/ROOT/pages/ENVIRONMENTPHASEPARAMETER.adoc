@@ -1,0 +1,410 @@
+[[_t_environmentphaseparameter]]
+== ENVIRONMENTPHASEPARAMETER 
+(((ENVIRONMENTPHASEPARAMETER))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_environmentphaseoid,ENVIRONMENTPHASEOID>>
+|NUMBER
+
+|F
+|No
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_phaseparameteroid,PHASEPARAMETEROID>>
+|NUMBER
+
+|
+|Yes
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_parametervalue,PARAMETERVALUE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_environmentphaseparameter_oid]]
+==== OID 
+(((ENVIRONMENTPHASEPARAMETER ,OID)))  (((OID (ENVIRONMENTPHASEPARAMETER)))) 
+Unique table identifier.
+
+See also: <<ENVIRONMENTPHASEPARAMETER.adoc#_i_environmentphaseparameter_environmentphaseparameter_pk,ENVIRONMENTPHASEPARAMETER_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_environmentphaseparameter_environmentphaseoid]]
+==== ENVIRONMENTPHASEOID 
+(((ENVIRONMENTPHASEPARAMETER ,ENVIRONMENTPHASEOID)))  (((ENVIRONMENTPHASEOID (ENVIRONMENTPHASEPARAMETER)))) 
+Internal identifier of the Environment Phase.
+
+See also: <<ENVIRONMENTPHASEPARAMETER.adoc#_i_environmentphaseparameter_environmentphaseparameter_fk_1,ENVIRONMENTPHASEPARAMETER_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|ENVIRONMENTPHASEOID
+|NUMBER
+|===
+
+[[_cd_environmentphaseparameter_phaseparameteroid]]
+==== PHASEPARAMETEROID 
+(((ENVIRONMENTPHASEPARAMETER ,PHASEPARAMETEROID)))  (((PHASEPARAMETEROID (ENVIRONMENTPHASEPARAMETER)))) 
+Internal identifier of the Phase Parameter.
+
+See also: <<ENVIRONMENTPHASEPARAMETER.adoc#_i_environmentphaseparameter_environmentphaseparameter_fk_2,ENVIRONMENTPHASEPARAMETER_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PHASEPARAMETEROID
+|NUMBER
+|===
+
+[[_cd_environmentphaseparameter_parametervalue]]
+==== PARAMETERVALUE 
+(((ENVIRONMENTPHASEPARAMETER ,PARAMETERVALUE)))  (((PARAMETERVALUE (ENVIRONMENTPHASEPARAMETER)))) 
+The value of the Environment Phase Parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PARAMETERVALUE
+|VARCHAR2(255)
+|===
+
+[[_cd_environmentphaseparameter_archived]]
+==== ARCHIVED 
+(((ENVIRONMENTPHASEPARAMETER ,ARCHIVED)))  (((ARCHIVED (ENVIRONMENTPHASEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_environmentphaseparameter_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((ENVIRONMENTPHASEPARAMETER ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (ENVIRONMENTPHASEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_environmentphaseparameter_version]]
+==== VERSION 
+(((ENVIRONMENTPHASEPARAMETER ,VERSION)))  (((VERSION (ENVIRONMENTPHASEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,ENVIRONMENTPHASEPARAMETER_PK))) [[_i_environmentphaseparameter_environmentphaseparameter_pk]]
+ENVIRONMENTPHASEPARAMETER_PK
+|Yes
+|Yes
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,ENVIRONMENTPHASEPARAMETER_FK_1))) [[_i_environmentphaseparameter_environmentphaseparameter_fk_1]]
+ENVIRONMENTPHASEPARAMETER_FK_1
+|No
+|No
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_environmentphaseoid,ENVIRONMENTPHASEOID>>
+|<<ENVIRONMENTPHASE.adoc#_t_environmentphase,ENVIRONMENTPHASE>>
+
+| 
+(((Foreign Keys ,ENVIRONMENTPHASEPARAMETER_FK_2))) [[_i_environmentphaseparameter_environmentphaseparameter_fk_2]]
+ENVIRONMENTPHASEPARAMETER_FK_2
+|No
+|No
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_phaseparameteroid,PHASEPARAMETEROID>>
+|<<PHASEPARAMETER.adoc#_t_phaseparameter,PHASEPARAMETER>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== ENVIRONMENTPHASE
+
+Refer to the chapter <<ENVIRONMENTPHASE.adoc#_t_environmentphase,ENVIRONMENTPHASE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|ENVIRONMENTPHASEPARAMETER_FK_1
+|<<ENVIRONMENTPHASE.adoc#_cd_environmentphase_oid,OID>>
+|===
+
+===== PHASEPARAMETER
+
+Refer to the chapter <<PHASEPARAMETER.adoc#_t_phaseparameter,PHASEPARAMETER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|ENVIRONMENTPHASEPARAMETER_FK_2
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,ENVIRONMENTPHASEPARAMETER))) 
+*ENVIRONMENTPHASEPARAMETER_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*ENVIRONMENTPHASEPARAMETER_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*ENVIRONMENTPHASEPARAMETER_ENVIRONMENTPHASEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Environment Phase OID
+
+|
+
+French:
+|OID Phase d'environnement
+
+|
+
+German:
+|Umgebungsphasen-ID
+|===
+*ENVIRONMENTPHASEPARAMETER_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*ENVIRONMENTPHASEPARAMETER_PARAMETERVALUE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Parameter Value
+
+|
+
+French:
+|Valeur du paramètre
+
+|
+
+German:
+|Parameterwert
+|===
+*ENVIRONMENTPHASEPARAMETER_PHASEPARAMETEROID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase Parameter OID
+
+|
+
+French:
+|OID Paramètre de phase
+
+|
+
+German:
+|Phasenparameter-ID
+|===
+*ENVIRONMENTPHASEPARAMETER_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

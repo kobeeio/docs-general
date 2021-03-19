@@ -1,0 +1,399 @@
+[[_t_desktop]]
+== DESKTOP 
+(((DESKTOP))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<DESKTOP.adoc#_cd_desktop_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<DESKTOP.adoc#_cd_desktop_scmuseroid,SCMUSEROID>>
+|NUMBER
+
+|
+|No
+|<<DESKTOP.adoc#_cd_desktop_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<DESKTOP.adoc#_cd_desktop_description,DESCRIPTION>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<DESKTOP.adoc#_cd_desktop_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<DESKTOP.adoc#_cd_desktop_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<DESKTOP.adoc#_cd_desktop_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_desktop_oid]]
+==== OID 
+(((DESKTOP ,OID)))  (((OID (DESKTOP)))) 
+Unique table identifier.
+
+See also: <<DESKTOP.adoc#_i_desktop_desktop_pk,DESKTOP_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_desktop_scmuseroid]]
+==== SCMUSEROID 
+(((DESKTOP ,SCMUSEROID)))  (((SCMUSEROID (DESKTOP)))) 
+Internal identifier of the IKAN ALM User.
+
+See also: <<DESKTOP.adoc#_i_desktop_desktop_fk_1,DESKTOP_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMUSEROID
+|NUMBER
+|===
+
+[[_cd_desktop_name]]
+==== NAME 
+(((DESKTOP ,NAME)))  (((NAME (DESKTOP)))) 
+Name of a Desktop Tab Page.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_desktop_description]]
+==== DESCRIPTION 
+(((DESKTOP ,DESCRIPTION)))  (((DESCRIPTION (DESKTOP)))) 
+Description of a Desktop Tap Page.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(50)
+|===
+
+[[_cd_desktop_archived]]
+==== ARCHIVED 
+(((DESKTOP ,ARCHIVED)))  (((ARCHIVED (DESKTOP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_desktop_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((DESKTOP ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (DESKTOP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_desktop_version]]
+==== VERSION 
+(((DESKTOP ,VERSION)))  (((VERSION (DESKTOP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,DESKTOP_PK))) [[_i_desktop_desktop_pk]]
+DESKTOP_PK
+|Yes
+|Yes
+|<<DESKTOP.adoc#_cd_desktop_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,DESKTOP_FK_1))) [[_i_desktop_desktop_fk_1]]
+DESKTOP_FK_1
+|No
+|No
+|<<DESKTOP.adoc#_cd_desktop_scmuseroid,SCMUSEROID>>
+|<<SCMUSER.adoc#_t_scmuser,SCMUSER>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== SCMUSER
+
+Refer to the chapter <<SCMUSER.adoc#_t_scmuser,SCMUSER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DESKTOP_FK_1
+|<<SCMUSER.adoc#_cd_scmuser_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== DESKTOPASSOCIATION
+
+Refer to the chapter <<DESKTOPASSOCIATION.adoc#_t_desktopassociation,DESKTOPASSOCIATION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DESKTOPASSOCIATION_FK_3
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_desktopoid,DESKTOPOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,DESKTOP))) 
+*DESKTOP_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*DESKTOP_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*DESKTOP_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*DESKTOP_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*DESKTOP_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DESKTOP_SCMUSEROID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM User OID
+
+|
+
+French:
+|OID Utilisateur ALM
+
+|
+
+German:
+|ALM Benutzer OID
+|===
+*DESKTOP_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

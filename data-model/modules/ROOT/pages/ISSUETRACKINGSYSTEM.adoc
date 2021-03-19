@@ -1,0 +1,656 @@
+[[_t_issuetrackingsystem]]
+== ISSUETRACKINGSYSTEM 
+(((ISSUETRACKINGSYSTEM))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_oid,OID>>
+|NUMBER
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_url,URL>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_issuepattern,ISSUEPATTERN>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_issueidpattern,ISSUEIDPATTERN>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_userid,USERID>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_pluginfactoryclass,PLUGINFACTORYCLASS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_addcomments,ADDCOMMENTS>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_issuetrackingsystem_oid]]
+==== OID 
+(((ISSUETRACKINGSYSTEM ,OID)))  (((OID (ISSUETRACKINGSYSTEM)))) 
+Unique table identifier.
+
+See also: <<ISSUETRACKINGSYSTEM.adoc#_i_issuetrackingsystem_issuetrackingsystem_pk,ISSUETRACKINGSYSTEM_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_issuetrackingsystem_name]]
+==== NAME 
+(((ISSUETRACKINGSYSTEM ,NAME)))  (((NAME (ISSUETRACKINGSYSTEM)))) 
+Name of the Issue Tracking System.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_issuetrackingsystem_description]]
+==== DESCRIPTION 
+(((ISSUETRACKINGSYSTEM ,DESCRIPTION)))  (((DESCRIPTION (ISSUETRACKINGSYSTEM)))) 
+Description of the Issue Tracking System.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_issuetrackingsystem_url]]
+==== URL 
+(((ISSUETRACKINGSYSTEM ,URL)))  (((URL (ISSUETRACKINGSYSTEM)))) 
+The template URL used to click through from an issue in IKAN ALM to the issue in the external Issue Tracking System.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|URL
+|VARCHAR2(255)
+|===
+
+[[_cd_issuetrackingsystem_issuepattern]]
+==== ISSUEPATTERN 
+(((ISSUETRACKINGSYSTEM ,ISSUEPATTERN)))  (((ISSUEPATTERN (ISSUETRACKINGSYSTEM)))) 
+The Issue Pattern used to detect issue numbers in the commit comments in the VCR.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ISSUEPATTERN
+|VARCHAR2(255)
+|===
+
+[[_cd_issuetrackingsystem_issueidpattern]]
+==== ISSUEIDPATTERN 
+(((ISSUETRACKINGSYSTEM ,ISSUEIDPATTERN)))  (((ISSUEIDPATTERN (ISSUETRACKINGSYSTEM)))) 
+The Issue ID Pattern used to retrieve the exact Issue Number out of a matched Issue in the commit comment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ISSUEIDPATTERN
+|VARCHAR2(255)
+|===
+
+[[_cd_issuetrackingsystem_userid]]
+==== USERID 
+(((ISSUETRACKINGSYSTEM ,USERID)))  (((USERID (ISSUETRACKINGSYSTEM)))) 
+The User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|USERID
+|VARCHAR2(50)
+|===
+
+[[_cd_issuetrackingsystem_password]]
+==== PASSWORD 
+(((ISSUETRACKINGSYSTEM ,PASSWORD)))  (((PASSWORD (ISSUETRACKINGSYSTEM)))) 
+The password.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_issuetrackingsystem_pluginfactoryclass]]
+==== PLUGINFACTORYCLASS 
+(((ISSUETRACKINGSYSTEM ,PLUGINFACTORYCLASS)))  (((PLUGINFACTORYCLASS (ISSUETRACKINGSYSTEM)))) 
+The name of the class to be used for the Issue Tracking System.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PLUGINFACTORYCLASS
+|VARCHAR2(255)
+|===
+
+[[_cd_issuetrackingsystem_addcomments]]
+==== ADDCOMMENTS 
+(((ISSUETRACKINGSYSTEM ,ADDCOMMENTS)))  (((ADDCOMMENTS (ISSUETRACKINGSYSTEM)))) 
+Fixed value specifying whether a comment should be added automatically to the Issue in the Issue Tracking System.
+
+This comment will contain a link to the IKAN ALM Level Request.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ADDCOMMENTS
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_issuetrackingsystem_archived]]
+==== ARCHIVED 
+(((ISSUETRACKINGSYSTEM ,ARCHIVED)))  (((ARCHIVED (ISSUETRACKINGSYSTEM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_issuetrackingsystem_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((ISSUETRACKINGSYSTEM ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (ISSUETRACKINGSYSTEM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_issuetrackingsystem_version]]
+==== VERSION 
+(((ISSUETRACKINGSYSTEM ,VERSION)))  (((VERSION (ISSUETRACKINGSYSTEM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,ISSUETRACKINGSYSTEM_PK))) [[_i_issuetrackingsystem_issuetrackingsystem_pk]]
+ISSUETRACKINGSYSTEM_PK
+|Yes
+|Yes
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== ISSUETRACKINGSYSTEMPROPERTY
+
+Refer to the chapter <<ISSUETRACKINGSYSTEMPROPERTY.adoc#_t_issuetrackingsystemproperty,ISSUETRACKINGSYSTEMPROPERTY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|ISSUETRACKINGSYSTEMPROPER_FK_1
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_issuetrackingsystemoid,ISSUETRACKINGSYSTEMOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,ISSUETRACKINGSYSTEM))) 
+*ISSUETRACKINGSYSTEM_ADDCOMMENTS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Add Comments
+
+|
+
+French:
+|Ajouter des Commentaires
+
+|
+
+German:
+|Bemerkung hinzufügen
+|===
+*ISSUETRACKINGSYSTEM_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*ISSUETRACKINGSYSTEM_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*ISSUETRACKINGSYSTEM_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*ISSUETRACKINGSYSTEM_ISSUEIDPATTERN_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Issue ID Pattern
+
+|
+
+French:
+|Modèle d’Identifiant de Suivi d’Incident
+
+|
+
+German:
+|Ticket-ID Muster
+|===
+*ISSUETRACKINGSYSTEM_ISSUEPATTERN_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Issue Pattern
+
+|
+
+French:
+|Modèle de recherche de Suivi d’Incident
+
+|
+
+German:
+|Ticketmuster
+|===
+*ISSUETRACKINGSYSTEM_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*ISSUETRACKINGSYSTEM_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*ISSUETRACKINGSYSTEM_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*ISSUETRACKINGSYSTEM_PLUGINFACTORYCLASS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Plugin Factory Class
+
+|
+
+French:
+|"Classe ""Plugin Factory"""
+
+|
+
+German:
+|Plugin Factory Klasse
+|===
+*ISSUETRACKINGSYSTEM_URL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|URL
+
+|
+
+French:
+|URL
+
+|
+
+German:
+|URL
+|===
+*ISSUETRACKINGSYSTEM_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*ISSUETRACKINGSYSTEM_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

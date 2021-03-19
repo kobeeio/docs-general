@@ -1,0 +1,880 @@
+[[_t_nant]]
+== NANT 
+(((NANT))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<NANT.adoc#_cd_nant_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<NANT.adoc#_cd_nant_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<NANT.adoc#_cd_nant_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<NANT.adoc#_cd_nant_build,BUILD>>
+|NUMBER(1)
+
+|
+|No
+|<<NANT.adoc#_cd_nant_deploy,DEPLOY>>
+|NUMBER(1)
+
+|
+|No
+|<<NANT.adoc#_cd_nant_test,TEST>>
+|NUMBER(1)
+
+|
+|No
+|<<NANT.adoc#_cd_nant_nantpath,NANTPATH>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_debug,DEBUG>>
+|NUMBER(1)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_quiet,QUIET>>
+|NUMBER(1)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_verbose,VERBOSE>>
+|NUMBER(1)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_commandlineoptions,COMMANDLINEOPTIONS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<NANT.adoc#_cd_nant_logformattype,LOGFORMATTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<NANT.adoc#_cd_nant_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<NANT.adoc#_cd_nant_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_nant_oid]]
+==== OID 
+(((NANT ,OID)))  (((OID (NANT)))) 
+Unique table identifier.
+
+See also: <<NANT.adoc#_i_nant_nant_pk,NANT_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_nant_name]]
+==== NAME 
+(((NANT ,NAME)))  (((NAME (NANT)))) 
+Name of the NANT Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_nant_description]]
+==== DESCRIPTION 
+(((NANT ,DESCRIPTION)))  (((DESCRIPTION (NANT)))) 
+Description for the NANT Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_nant_type]]
+==== TYPE 
+(((NANT ,TYPE)))  (((TYPE (NANT)))) 
+Fixed value identifying the type of Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+2 = nant
+
+
+[[_cd_nant_build]]
+==== BUILD 
+(((NANT ,BUILD)))  (((BUILD (NANT)))) 
+Indication whether or not the Scripting Tool can be linked to a Build Environment and thus be used to build code.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_nant_deploy]]
+==== DEPLOY 
+(((NANT ,DEPLOY)))  (((DEPLOY (NANT)))) 
+Indication whether or not the Scripting Tool can be linked to a Deploy Environment and thus be used to deploy Builds.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEPLOY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_nant_test]]
+==== TEST 
+(((NANT ,TEST)))  (((TEST (NANT)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TEST
+|NUMBER(1)
+|===
+
+[[_cd_nant_nantpath]]
+==== NANTPATH 
+(((NANT ,NANTPATH)))  (((NANTPATH (NANT)))) 
+The path to the NANT executable (NAnt.exe).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NANTPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_nant_debug]]
+==== DEBUG 
+(((NANT ,DEBUG)))  (((DEBUG (NANT)))) 
+Indication whether or not the Debug Option must be activated for the new NANT Scripting Tool.
+
+NANT will print additional debug information during the Build and Deploy actions, if this option is activated.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DEBUG
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_nant_quiet]]
+==== QUIET 
+(((NANT ,QUIET)))  (((QUIET (NANT)))) 
+Indication whether or not the Quiet Option must be activated for the new NANT Scripting Tool.
+
+NANT will print less information than normal during the Build and Deploy actions, if this option is activated.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|QUIET
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_nant_verbose]]
+==== VERBOSE 
+(((NANT ,VERBOSE)))  (((VERBOSE (NANT)))) 
+Indication whether or not the Verbose Option is activated for the new NANT Scripting Tool.
+
+NANT will print verbose debug information during the Build and Deploy actions, if this option is activated.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|VERBOSE
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_nant_commandlineoptions]]
+==== COMMANDLINEOPTIONS 
+(((NANT ,COMMANDLINEOPTIONS)))  (((COMMANDLINEOPTIONS (NANT)))) 
+The commandline options used, separated by a space.
+
+The commandline options provided by default by IKAN ALM, like -buildfile, -logfiles, -verbose, -debug ,... will not be accepted. Sample options are -keep-going, or -noinput.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|COMMANDLINEOPTIONS
+|VARCHAR2(255)
+|===
+
+[[_cd_nant_timeout]]
+==== TIMEOUT 
+(((NANT ,TIMEOUT)))  (((TIMEOUT (NANT)))) 
+The time-out value in seconds.
+
+If a value is provided, a running NANT Build or Deploy process will be interrupted after this number of seconds. In this way, "hanging" Build or Deploy processes are interrupted.
+
+If no value is provided, a running NANT Build or Deploy process will never be interrupted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_nant_logformattype]]
+==== LOGFORMATTYPE 
+(((NANT ,LOGFORMATTYPE)))  (((LOGFORMATTYPE (NANT)))) 
+The log format type of the NAnt log can be TXT or XML.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGFORMATTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = TXT
+
+1 = XML
+
+
+[[_cd_nant_archived]]
+==== ARCHIVED 
+(((NANT ,ARCHIVED)))  (((ARCHIVED (NANT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_nant_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((NANT ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (NANT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_nant_version]]
+==== VERSION 
+(((NANT ,VERSION)))  (((VERSION (NANT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,NANT_PK))) [[_i_nant_nant_pk]]
+NANT_PK
+|Yes
+|Yes
+|<<NANT.adoc#_cd_nant_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,NANT))) 
+*NANT_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*NANT_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*NANT_BUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build
+
+|
+
+French:
+|Construction
+
+|
+
+German:
+|Bereitstellung
+|===
+*NANT_COMMANDLINEOPTIONS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Commandline Options
+
+|
+
+French:
+|Options de Commande
+
+|
+
+German:
+|Optionen der Kommandozeile
+|===
+*NANT_DEBUG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Debug Option
+
+|
+
+French:
+|Option débogage
+
+|
+
+German:
+|Debug
+|===
+*NANT_DEPLOY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy
+
+|
+
+French:
+|Déploiement
+
+|
+
+German:
+|Auslieferung
+|===
+*NANT_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*NANT_LOGFORMATTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Format Type
+
+|
+
+French:
+|Type de format du Journal
+
+|
+
+German:
+|Formattyp des Protokolls
+|===
+*NANT_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*NANT_NANTPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Path to NANT Executable
+
+|
+
+French:
+|Chemin de NANT
+
+|
+
+German:
+|Verzeichnis zur ausführbaren Datei von NANT
+|===
+*NANT_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*NANT_QUIET_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Quiet Option
+
+|
+
+French:
+|Arrière-plan
+
+|
+
+German:
+|Hintergrund
+|===
+*NANT_TEST_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Test
+
+|
+
+French:
+|Test
+
+|
+
+German:
+|Test
+|===
+*NANT_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*NANT_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*NANT_VERBOSE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Verbose Option
+
+|
+
+French:
+|Messages détaillés
+
+|
+
+German:
+|Ausführliche Meldungen
+|===
+*NANT_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

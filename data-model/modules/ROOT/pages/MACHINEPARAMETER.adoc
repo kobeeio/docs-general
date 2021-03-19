@@ -1,0 +1,656 @@
+[[_t_machineparameter]]
+== MACHINEPARAMETER 
+(((MACHINEPARAMETER))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_machinekey,MACHINEKEY>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_machinevalue,MACHINEVALUE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_mandatory,MANDATORY>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_editable,EDITABLE>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_dynamic,DYNAMIC>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_secured,SECURED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|F
+|No
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_machineoid,MACHINEOID>>
+|NUMBER
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_machineparameter_oid]]
+==== OID 
+(((MACHINEPARAMETER ,OID)))  (((OID (MACHINEPARAMETER)))) 
+Unique table identifier.
+
+See also: <<MACHINEPARAMETER.adoc#_i_machineparameter_machineparameter_pk,MACHINEPARAMETER_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_machineparameter_machinekey]]
+==== MACHINEKEY 
+(((MACHINEPARAMETER ,MACHINEKEY)))  (((MACHINEKEY (MACHINEPARAMETER)))) 
+Key (Name) for the Machine Parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|MACHINEKEY
+|VARCHAR2(255)
+|===
+
+[[_cd_machineparameter_machinevalue]]
+==== MACHINEVALUE 
+(((MACHINEPARAMETER ,MACHINEVALUE)))  (((MACHINEVALUE (MACHINEPARAMETER)))) 
+The value(s) for the Machine Parameter.
+
+The following types of values are possible:
+
+* Fixed value: for non-editable Machine Parameters.
+
+* Default value: for editable Machine Parameters.
+
+* List of preset values, separated by a semicolon (;): for dynamic Machine Parameters.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|MACHINEVALUE
+|VARCHAR2(512)
+|===
+
+[[_cd_machineparameter_mandatory]]
+==== MANDATORY 
+(((MACHINEPARAMETER ,MANDATORY)))  (((MANDATORY (MACHINEPARAMETER)))) 
+Indication whether or not the Machine parameter is mandatory.
+
+Mandatory Machine Parameters are always provided to the Build/Deploy Script when creating a Level Request.
+
+For non-mandatory Machine Parameters, the User can decide to add the non-mandatory Machine Parameter to the Build/Deploy Script when creating a Level Request.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|MANDATORY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_machineparameter_editable]]
+==== EDITABLE 
+(((MACHINEPARAMETER ,EDITABLE)))  (((EDITABLE (MACHINEPARAMETER)))) 
+Indication whether or not the Machine parameter is editable.
+
+For editable Machine Parameters, the User can, when creating a Level Request, accept the preset default value or define a value of his choice.
+
+For non-editable Machine Parameters, only the preset value can be offered to the Build/Deploy Script.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|EDITABLE
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_machineparameter_dynamic]]
+==== DYNAMIC 
+(((MACHINEPARAMETER ,DYNAMIC)))  (((DYNAMIC (MACHINEPARAMETER)))) 
+Indication whether or not the Machine Parameter is dynamic.
+
+For dynamic Machine Parameters, the User can select one of the predefined values when creating a Level Request. The selected value will be offered to the Build/Deploy Script.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DYNAMIC
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_machineparameter_secured]]
+==== SECURED 
+(((MACHINEPARAMETER ,SECURED)))  (((SECURED (MACHINEPARAMETER)))) 
+Indication whether or not the Machine Parameter is secured by a Password.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SECURED
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_machineparameter_description]]
+==== DESCRIPTION 
+(((MACHINEPARAMETER ,DESCRIPTION)))  (((DESCRIPTION (MACHINEPARAMETER)))) 
+The description of the Machine parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_machineparameter_machineoid]]
+==== MACHINEOID 
+(((MACHINEPARAMETER ,MACHINEOID)))  (((MACHINEOID (MACHINEPARAMETER)))) 
+Identifier for the MACHINE table.
+
+See also: <<MACHINEPARAMETER.adoc#_i_machineparameter_machineparameter_fk_1,MACHINEPARAMETER_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|MACHINEOID
+|NUMBER
+|===
+
+[[_cd_machineparameter_archived]]
+==== ARCHIVED 
+(((MACHINEPARAMETER ,ARCHIVED)))  (((ARCHIVED (MACHINEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_machineparameter_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((MACHINEPARAMETER ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (MACHINEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_machineparameter_version]]
+==== VERSION 
+(((MACHINEPARAMETER ,VERSION)))  (((VERSION (MACHINEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,MACHINEPARAMETER_PK))) [[_i_machineparameter_machineparameter_pk]]
+MACHINEPARAMETER_PK
+|Yes
+|Yes
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,MACHINEPARAMETER_FK_1))) [[_i_machineparameter_machineparameter_fk_1]]
+MACHINEPARAMETER_FK_1
+|No
+|No
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_machineoid,MACHINEOID>>
+|<<MACHINE.adoc#_t_machine,MACHINE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== MACHINE
+
+Refer to the chapter <<MACHINE.adoc#_t_machine,MACHINE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|MACHINEPARAMETER_FK_1
+|<<MACHINE.adoc#_cd_machine_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,MACHINEPARAMETER))) 
+*MACHINEPARAMETER_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*MACHINEPARAMETER_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*MACHINEPARAMETER_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*MACHINEPARAMETER_DYNAMIC_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Dynamic
+
+|
+
+French:
+|Dynamique
+
+|
+
+German:
+|Dynamisch
+|===
+*MACHINEPARAMETER_EDITABLE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Editable
+
+|
+
+French:
+|Editable
+
+|
+
+German:
+|Bearbeitbar
+|===
+*MACHINEPARAMETER_MACHINEKEY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Machine Key
+
+|
+
+French:
+|Code de la Machine
+
+|
+
+German:
+|Maschineschlüssel
+|===
+*MACHINEPARAMETER_MACHINEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Machine OID
+
+|
+
+French:
+|OID Machine
+
+|
+
+German:
+|MaschinenID
+|===
+*MACHINEPARAMETER_MACHINEVALUE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Machine Value
+
+|
+
+French:
+|Valeur de la Machine
+
+|
+
+German:
+|Maschinewert
+|===
+*MACHINEPARAMETER_MANDATORY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Mandatory
+
+|
+
+French:
+|Obligatoire
+
+|
+
+German:
+|Erforderlich
+|===
+*MACHINEPARAMETER_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*MACHINEPARAMETER_SECURED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Secured
+
+|
+
+French:
+|Sécurisé
+
+|
+
+German:
+|Sicher
+|===
+*MACHINEPARAMETER_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

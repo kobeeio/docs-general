@@ -1,0 +1,958 @@
+[[_t_gradle]]
+== GRADLE 
+(((GRADLE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<GRADLE.adoc#_cd_gradle_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_build,BUILD>>
+|NUMBER(1)
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_deploy,DEPLOY>>
+|NUMBER(1)
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_test,TEST>>
+|NUMBER(1)
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_gradlepath,GRADLEPATH>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_javahome,JAVAHOME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_javavmoptions,JAVAVMOPTIONS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_gradleuserhome,GRADLEUSERHOME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_commandlineoptions,COMMANDLINEOPTIONS>>
+|VARCHAR2(255)
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_loglevel,LOGLEVEL>>
+|NUMBER
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_stacktraceoption,STACKTRACEOPTION>>
+|NUMBER
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_logformattype,LOGFORMATTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<GRADLE.adoc#_cd_gradle_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<GRADLE.adoc#_cd_gradle_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_gradle_oid]]
+==== OID 
+(((GRADLE ,OID)))  (((OID (GRADLE)))) 
+Unique table identifier.
+
+See also: <<GRADLE.adoc#_i_gradle_gradle_pk,GRADLE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_gradle_name]]
+==== NAME 
+(((GRADLE ,NAME)))  (((NAME (GRADLE)))) 
+Name of the Gradle Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_gradle_description]]
+==== DESCRIPTION 
+(((GRADLE ,DESCRIPTION)))  (((DESCRIPTION (GRADLE)))) 
+Description for the Gradle Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_gradle_type]]
+==== TYPE 
+(((GRADLE ,TYPE)))  (((TYPE (GRADLE)))) 
+Fixed value identifying the type of Scripting Tool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+4 = Gradle
+
+
+[[_cd_gradle_build]]
+==== BUILD 
+(((GRADLE ,BUILD)))  (((BUILD (GRADLE)))) 
+Indication whether or not the Scripting Tool can be linked to a Build Environment and thus be used to build code.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_gradle_deploy]]
+==== DEPLOY 
+(((GRADLE ,DEPLOY)))  (((DEPLOY (GRADLE)))) 
+Indication whether or not the Scripting Tool can be linked to a Deploy Environment and thus be used to deploy Builds.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEPLOY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_gradle_test]]
+==== TEST 
+(((GRADLE ,TEST)))  (((TEST (GRADLE)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TEST
+|NUMBER(1)
+|===
+
+[[_cd_gradle_gradlepath]]
+==== GRADLEPATH 
+(((GRADLE ,GRADLEPATH)))  (((GRADLEPATH (GRADLE)))) 
+The path to the Gradle bat or shell file.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|GRADLEPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_gradle_javahome]]
+==== JAVAHOME 
+(((GRADLE ,JAVAHOME)))  (((JAVAHOME (GRADLE)))) 
+The JAVA_HOME path used to launch Gradle.
+
+If no value is present, the system default JAVA_HOME path will be used to start Gradle. In this case, the JAVA_HOME path must be defined as an environment variable on the Machine.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|JAVAHOME
+|VARCHAR2(255)
+|===
+
+[[_cd_gradle_javavmoptions]]
+==== JAVAVMOPTIONS 
+(((GRADLE ,JAVAVMOPTIONS)))  (((JAVAVMOPTIONS (GRADLE)))) 
+The Java Virtual Machine Options required for starting up Gradle.
+
+Example: -Xmx128M: specifies the maximum size of the memory allocation pool.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|JAVAVMOPTIONS
+|VARCHAR2(255)
+|===
+
+[[_cd_gradle_gradleuserhome]]
+==== GRADLEUSERHOME 
+(((GRADLE ,GRADLEUSERHOME)))  (((GRADLEUSERHOME (GRADLE)))) 
+The path to the location of the Gradle User Home. This is the location where (among other things) the Gradle dependency cache will be stored. If not specified, the default User Home will be used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|GRADLEUSERHOME
+|VARCHAR2(255)
+|===
+
+[[_cd_gradle_commandlineoptions]]
+==== COMMANDLINEOPTIONS 
+(((GRADLE ,COMMANDLINEOPTIONS)))  (((COMMANDLINEOPTIONS (GRADLE)))) 
+The Commandline Options used, separated by a space. For example: the option "`-e`" will give you more information about error messages. 
+
+Please note that the following options can NOT be used as they are already used by IKAN ALM: "`-X`" or "`--debug`" (Debug), "`-s`" or "`--settings`" (Settings File), "`-P`" or "`--activate-profiles`" (Activate Profiles) and "`-B`" or "`--batch-mode`".
+
+The Commandline Options defined here will be used by default. If necessary, they can be overridden for the different build or deploy environments. In order to do so, add a build or deploy parameter "`scm4all.mvn2.options`" with the desired value.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|COMMANDLINEOPTIONS
+|VARCHAR2(255)
+|===
+
+[[_cd_gradle_loglevel]]
+==== LOGLEVEL 
+(((GRADLE ,LOGLEVEL)))  (((LOGLEVEL (GRADLE)))) 
+The log level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGLEVEL
+|NUMBER
+|===
+
+===== Value List
+0 = None
+
+1 = Quiet
+
+2 = Info
+
+3 = Debug
+
+
+[[_cd_gradle_stacktraceoption]]
+==== STACKTRACEOPTION 
+(((GRADLE ,STACKTRACEOPTION)))  (((STACKTRACEOPTION (GRADLE)))) 
+The Stack Trace option.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|STACKTRACEOPTION
+|NUMBER
+|===
+
+===== Value List
+0 = None
+
+1 = Truncated
+
+2 = Full
+
+
+[[_cd_gradle_timeout]]
+==== TIMEOUT 
+(((GRADLE ,TIMEOUT)))  (((TIMEOUT (GRADLE)))) 
+The time-out value in seconds.
+
+If a value is provided, a running Gradle Build or Deploy process will be interrupted after the defined number of seconds. In this way, "hanging" Build or Deploy processes are interrupted.
+
+If no value is provided, a running Gradle Build or Deploy process will never be interrupted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_gradle_logformattype]]
+==== LOGFORMATTYPE 
+(((GRADLE ,LOGFORMATTYPE)))  (((LOGFORMATTYPE (GRADLE)))) 
+The log format type of the Gradle log can be TXT or XML.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGFORMATTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = TXT
+
+1 = XML
+
+
+[[_cd_gradle_archived]]
+==== ARCHIVED 
+(((GRADLE ,ARCHIVED)))  (((ARCHIVED (GRADLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_gradle_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((GRADLE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (GRADLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_gradle_version]]
+==== VERSION 
+(((GRADLE ,VERSION)))  (((VERSION (GRADLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,GRADLE_PK))) [[_i_gradle_gradle_pk]]
+GRADLE_PK
+|Yes
+|Yes
+|<<GRADLE.adoc#_cd_gradle_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,GRADLE))) 
+*GRADLE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*GRADLE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*GRADLE_BUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build
+
+|
+
+French:
+|Construction
+
+|
+
+German:
+|Bereitstellung
+|===
+*GRADLE_COMMANDLINEOPTIONS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Commandline Options
+
+|
+
+French:
+|Options de Commande
+
+|
+
+German:
+|Optionen der Kommandozeile
+|===
+*GRADLE_DEPLOY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy
+
+|
+
+French:
+|Déploiement
+
+|
+
+German:
+|Auslieferung
+|===
+*GRADLE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*GRADLE_GRADLEPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Gradle Path
+
+|
+
+French:
+|Chemin de Gradle
+
+|
+
+German:
+|Gradle Path
+|===
+*GRADLE_GRADLEUSERHOME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Gradle User Home
+
+|
+
+French:
+|Emplacement de l'Utilisateur Gradle
+
+|
+
+German:
+|Gradle User Home
+|===
+*GRADLE_JAVAHOME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Java Home
+
+|
+
+French:
+|Chemin Java
+
+|
+
+German:
+|Java Home
+|===
+*GRADLE_JAVAVMOPTIONS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Java Virtual Machine Options
+
+|
+
+French:
+|Options de Java VM
+
+|
+
+German:
+|Optionen der Java VM
+|===
+*GRADLE_LOGFORMATTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Format Type
+
+|
+
+French:
+|Type de format du Journal
+
+|
+
+German:
+|Formattyp des Protokolls
+|===
+*GRADLE_LOGLEVEL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Level
+
+|
+
+French:
+|Niveau de suivi
+
+|
+
+German:
+|Protokollebene
+|===
+*GRADLE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*GRADLE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*GRADLE_STACKTRACEOPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Strack Trace Option
+
+|
+
+French:
+|Option Trace de pile
+
+|
+
+German:
+|Stack-Trace Option
+|===
+*GRADLE_TEST_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Test
+
+|
+
+French:
+|Test
+
+|
+
+German:
+|Test
+|===
+*GRADLE_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*GRADLE_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*GRADLE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

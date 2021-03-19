@@ -1,0 +1,1089 @@
+[[_t_scmlevel]]
+== SCMLEVEL 
+(((SCMLEVEL))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_locked,LOCKED>>
+|NUMBER(1)
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_debug,DEBUG>>
+|NUMBER(1)
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_notificationtype,NOTIFICATIONTYPE>>
+|NUMBER
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_notificationcriteria,NOTIFICATIONCRITERIA>>
+|NUMBER
+
+|F
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_projectoid,PROJECTOID>>
+|NUMBER
+
+|F
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_scheduleoid,SCHEDULEOID>>
+|NUMBER
+
+|F
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_requesterusergroupoid,REQUESTERUSERGROUPOID>>
+|NUMBER
+
+|F
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_prenotificationusergroupoid,PRENOTIFICATIONUSERGROUPOID>>
+|NUMBER
+
+|F
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_postnotificationusergroupoid,POSTNOTIFICATIONUSERGROUPOID>>
+|NUMBER
+
+|
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_postnotificationcriteria,POSTNOTIFICATIONCRITERIA>>
+|NUMBER
+
+|
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_scmlevel_oid]]
+==== OID 
+(((SCMLEVEL ,OID)))  (((OID (SCMLEVEL)))) 
+Unique table identifier.
+
+See also: <<SCMLEVEL.adoc#_i_scmlevel_scmlevel_pk,SCMLEVEL_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_scmlevel_name]]
+==== NAME 
+(((SCMLEVEL ,NAME)))  (((NAME (SCMLEVEL)))) 
+Name of the Level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_scmlevel_description]]
+==== DESCRIPTION 
+(((SCMLEVEL ,DESCRIPTION)))  (((DESCRIPTION (SCMLEVEL)))) 
+Description for the Level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_scmlevel_type]]
+==== TYPE 
+(((SCMLEVEL ,TYPE)))  (((TYPE (SCMLEVEL)))) 
+The Level Type.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Build
+
+1 = Test
+
+2 = Production
+
+
+[[_cd_scmlevel_locked]]
+==== LOCKED 
+(((SCMLEVEL ,LOCKED)))  (((LOCKED (SCMLEVEL)))) 
+Indication whether the Level is currently still Locked.
+
+You need to audit the Project to unlock a Build Level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOCKED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = not locked
+
+1 = locked
+
+
+[[_cd_scmlevel_debug]]
+==== DEBUG 
+(((SCMLEVEL ,DEBUG)))  (((DEBUG (SCMLEVEL)))) 
+Indication whether or not the Debug option is activated for the Level.
+
+If Debug is activated for a Level the Clean-up Work Copy Phase will not be performed, so that the contents of this directory can be verified.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEBUG
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmlevel_notificationtype]]
+==== NOTIFICATIONTYPE 
+(((SCMLEVEL ,NOTIFICATIONTYPE)))  (((NOTIFICATIONTYPE (SCMLEVEL)))) 
+The Notification Type for the Level.
+
+If Mail or Netsend is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria. The notification is sent to the members of the Project User, Project Admin and Level Requester User Groups.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NOTIFICATIONTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Netsend
+
+1 = Mail
+
+2 = No notification
+
+
+[[_cd_scmlevel_notificationcriteria]]
+==== NOTIFICATIONCRITERIA 
+(((SCMLEVEL ,NOTIFICATIONCRITERIA)))  (((NOTIFICATIONCRITERIA (SCMLEVEL)))) 
+The Notification Criteria for the Level.
+
+The following options are available:
+
+* Always : A Notification will be sent when a Level Request for this Level has ended with status Fail, Warning or Success.
+
+* Fail : A notification will be sent when a Level Request for this Level has ended with status Fail.
+
+* Successful : A notification will be sent when a Level Request for this Level has ended with status Warning or Success.
+
+* Never : No notification will be sent when a Level Request for this Level has ended.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NOTIFICATIONCRITERIA
+|NUMBER
+|===
+
+===== Value List
+0 = Always
+
+1 = Fail
+
+2 = Successful
+
+3 = Never
+
+
+[[_cd_scmlevel_projectoid]]
+==== PROJECTOID 
+(((SCMLEVEL ,PROJECTOID)))  (((PROJECTOID (SCMLEVEL)))) 
+Identifier for the PROJECT table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_FK_2.
+
+See also: <<SCMLEVEL.adoc#_i_scmlevel_scmlevel_fk_2,SCMLEVEL_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROJECTOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_scheduleoid]]
+==== SCHEDULEOID 
+(((SCMLEVEL ,SCHEDULEOID)))  (((SCHEDULEOID (SCMLEVEL)))) 
+Identifier for the SCHEDULE table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_FK_1.
+
+See also: <<SCMLEVEL.adoc#_i_scmlevel_scmlevel_fk_1,SCMLEVEL_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|SCHEDULEOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_requesterusergroupoid]]
+==== REQUESTERUSERGROUPOID 
+(((SCMLEVEL ,REQUESTERUSERGROUPOID)))  (((REQUESTERUSERGROUPOID (SCMLEVEL)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_FK_3.
+
+See also: <<SCMLEVEL.adoc#_i_scmlevel_scmlevel_fk_3,SCMLEVEL_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|REQUESTERUSERGROUPOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_prenotificationusergroupoid]]
+==== PRENOTIFICATIONUSERGROUPOID 
+(((SCMLEVEL ,PRENOTIFICATIONUSERGROUPOID)))  (((PRENOTIFICATIONUSERGROUPOID (SCMLEVEL)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_FK_4.
+
+See also: <<SCMLEVEL.adoc#_i_scmlevel_scmlevel_fk_4,SCMLEVEL_FK_4>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|PRENOTIFICATIONUSERGROUPOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_postnotificationusergroupoid]]
+==== POSTNOTIFICATIONUSERGROUPOID 
+(((SCMLEVEL ,POSTNOTIFICATIONUSERGROUPOID)))  (((POSTNOTIFICATIONUSERGROUPOID (SCMLEVEL)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_FK_5.
+
+See also: <<SCMLEVEL.adoc#_i_scmlevel_scmlevel_fk_5,SCMLEVEL_FK_5>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|POSTNOTIFICATIONUSERGROUPOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_postnotificationcriteria]]
+==== POSTNOTIFICATIONCRITERIA 
+(((SCMLEVEL ,POSTNOTIFICATIONCRITERIA)))  (((POSTNOTIFICATIONCRITERIA (SCMLEVEL)))) 
+The Post-Notification Criteria (for Test or Production Levels).
+
+The following options are available:
+
+* Always : A Post-notification will be sent if the Level Request ends with status Success, Warning, Fail or in case of a rejected Post-Approval.
+
+* Fail/Reject : A Post-notification will be sent if the Level Request fails or in case of a rejected Post-Approval.
+
+* Success : A Post-notification will be sent
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|POSTNOTIFICATIONCRITERIA
+|NUMBER
+|===
+
+===== Value List
+0 = Always
+
+1 = Fail/Reject
+
+2 = Success
+
+
+[[_cd_scmlevel_archived]]
+==== ARCHIVED 
+(((SCMLEVEL ,ARCHIVED)))  (((ARCHIVED (SCMLEVEL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmlevel_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCMLEVEL ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCMLEVEL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_scmlevel_version]]
+==== VERSION 
+(((SCMLEVEL ,VERSION)))  (((VERSION (SCMLEVEL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCMLEVEL_PK))) [[_i_scmlevel_scmlevel_pk]]
+SCMLEVEL_PK
+|Yes
+|Yes
+|<<SCMLEVEL.adoc#_cd_scmlevel_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,SCMLEVEL_FK_1))) [[_i_scmlevel_scmlevel_fk_1]]
+SCMLEVEL_FK_1
+|No
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_scheduleoid,SCHEDULEOID>>
+|<<SCHEDULE.adoc#_t_schedule,SCHEDULE>>
+
+| 
+(((Foreign Keys ,SCMLEVEL_FK_2))) [[_i_scmlevel_scmlevel_fk_2]]
+SCMLEVEL_FK_2
+|No
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_projectoid,PROJECTOID>>
+|<<PROJECT.adoc#_t_project,PROJECT>>
+
+| 
+(((Foreign Keys ,SCMLEVEL_FK_3))) [[_i_scmlevel_scmlevel_fk_3]]
+SCMLEVEL_FK_3
+|No
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_requesterusergroupoid,REQUESTERUSERGROUPOID>>
+|<<USERGROUP.adoc#_t_usergroup,USERGROUP>>
+
+| 
+(((Foreign Keys ,SCMLEVEL_FK_4))) [[_i_scmlevel_scmlevel_fk_4]]
+SCMLEVEL_FK_4
+|No
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_prenotificationusergroupoid,PRENOTIFICATIONUSERGROUPOID>>
+|<<USERGROUP.adoc#_t_usergroup,USERGROUP>>
+
+| 
+(((Foreign Keys ,SCMLEVEL_FK_5))) [[_i_scmlevel_scmlevel_fk_5]]
+SCMLEVEL_FK_5
+|No
+|No
+|<<SCMLEVEL.adoc#_cd_scmlevel_postnotificationusergroupoid,POSTNOTIFICATIONUSERGROUPOID>>
+|<<USERGROUP.adoc#_t_usergroup,USERGROUP>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== PROJECT
+
+Refer to the chapter <<PROJECT.adoc#_t_project,PROJECT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMLEVEL_FK_2
+|<<PROJECT.adoc#_cd_project_oid,OID>>
+|===
+
+===== SCHEDULE
+
+Refer to the chapter <<SCHEDULE.adoc#_t_schedule,SCHEDULE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMLEVEL_FK_1
+|<<SCHEDULE.adoc#_cd_schedule_oid,OID>>
+|===
+
+===== USERGROUP
+
+Refer to the chapter <<USERGROUP.adoc#_t_usergroup,USERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMLEVEL_FK_3
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+
+|SCMLEVEL_FK_4
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+
+|SCMLEVEL_FK_5
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== BUILDENVIRONMENT
+
+Refer to the chapter <<BUILDENVIRONMENT.adoc#_t_buildenvironment,BUILDENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDENVIRONMENT_FK_1
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_scmleveloid,SCMLEVELOID>>
+|===
+
+===== DEPLOYENVIRONMENT
+
+Refer to the chapter <<DEPLOYENVIRONMENT.adoc#_t_deployenvironment,DEPLOYENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOYENVIRONMENT_FK_1
+|<<DEPLOYENVIRONMENT.adoc#_cd_deployenvironment_scmleveloid,SCMLEVELOID>>
+|===
+
+===== DESKTOPASSOCIATION
+
+Refer to the chapter <<DESKTOPASSOCIATION.adoc#_t_desktopassociation,DESKTOPASSOCIATION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DESKTOPASSOCIATION_FK_1
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_scmleveloid,SCMLEVELOID>>
+|===
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUEST_FK_2
+|<<LEVELREQUEST.adoc#_cd_levelrequest_scmleveloid,SCMLEVELOID>>
+|===
+
+===== SCMLEVEL_LIFECYCLE
+
+Refer to the chapter <<SCMLEVEL_LIFECYCLE.adoc#_t_scmlevel_lifecycle,SCMLEVEL_LIFECYCLE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_LIFECYCLE_FK_2
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_scmleveloid,SCMLEVELOID>>
+|===
+
+===== SCMLEVEL_POSTAPPRUSERGROUP
+
+Refer to the chapter <<SCMLEVEL_POSTAPPRUSERGROUP.adoc#_t_scmlevel_postapprusergroup,SCMLEVEL_POSTAPPRUSERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_POSTAPPRUSERGROU_FK_1
+|<<SCMLEVEL_POSTAPPRUSERGROUP.adoc#_cd_scmlevel_postapprusergroup_scmleveloid,SCMLEVELOID>>
+|===
+
+===== SCMLEVEL_PREAPPRUSERGROUP
+
+Refer to the chapter <<SCMLEVEL_PREAPPRUSERGROUP.adoc#_t_scmlevel_preapprusergroup,SCMLEVEL_PREAPPRUSERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_PREAPPRUSERGROUP_FK_1
+|<<SCMLEVEL_PREAPPRUSERGROUP.adoc#_cd_scmlevel_preapprusergroup_scmleveloid,SCMLEVELOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,SCMLEVEL))) 
+*SCMLEVEL_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCMLEVEL_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCMLEVEL_DEBUG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Debug Option
+
+|
+
+French:
+|Option débogage
+
+|
+
+German:
+|Debug
+|===
+*SCMLEVEL_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*SCMLEVEL_LOCKED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Locked
+
+|
+
+French:
+|Verrouillé
+
+|
+
+German:
+|Gesperrt
+|===
+*SCMLEVEL_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SCMLEVEL_NOTIFICATIONCRITERIA_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Notification Criteria
+
+|
+
+French:
+|Critères de notification
+
+|
+
+German:
+|Benachrichtigungskriterien
+|===
+*SCMLEVEL_NOTIFICATIONTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Notification Type
+
+|
+
+French:
+|Type de notification
+
+|
+
+German:
+|Benachrichtigungstyp
+|===
+*SCMLEVEL_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_POSTNOTIFICATIONCRITERIA_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Post-Notification Criteria
+
+|
+
+French:
+|Critère de post-notification
+
+|
+
+German:
+|Nachbenachrichtigungskriterien
+|===
+*SCMLEVEL_POSTNOTIFICATIONUSERGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_PRENOTIFICATIONUSERGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_PROJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_REQUESTERUSERGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_SCHEDULEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*SCMLEVEL_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

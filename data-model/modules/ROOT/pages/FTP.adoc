@@ -1,0 +1,809 @@
+[[_t_ftp]]
+== FTP 
+(((FTP))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<FTP.adoc#_cd_ftp_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<FTP.adoc#_cd_ftp_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<FTP.adoc#_cd_ftp_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<FTP.adoc#_cd_ftp_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_version,VERSION>>
+|NUMBER
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_username,USERNAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<FTP.adoc#_cd_ftp_serverhostname,SERVERHOSTNAME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<FTP.adoc#_cd_ftp_serverftpport,SERVERFTPPORT>>
+|NUMBER
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_connectionmode,CONNECTIONMODE>>
+|NUMBER
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_directorylistingstyle,DIRECTORYLISTINGSTYLE>>
+|NUMBER
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_workcopypathprefix,WORKCOPYPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_buildarchivepathprefix,BUILDARCHIVEPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_phasecatalogpathprefix,PHASECATALOGPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|No
+|<<FTP.adoc#_cd_ftp_scriptpathprefix,SCRIPTPATHPREFIX>>
+|VARCHAR2(512)
+|===
+
+=== Column Descriptions
+
+[[_cd_ftp_oid]]
+==== OID 
+(((FTP ,OID)))  (((OID (FTP)))) 
+Unique table identifier.
+
+See also: <<FTP.adoc#_i_ftp_ftp_pk,FTP_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_ftp_name]]
+==== NAME 
+(((FTP ,NAME)))  (((NAME (FTP)))) 
+Name of the FTP Transporter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_ftp_description]]
+==== DESCRIPTION 
+(((FTP ,DESCRIPTION)))  (((DESCRIPTION (FTP)))) 
+Description for the FTP Transporter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_ftp_archived]]
+==== ARCHIVED 
+(((FTP ,ARCHIVED)))  (((ARCHIVED (FTP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_ftp_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((FTP ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (FTP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_ftp_version]]
+==== VERSION 
+(((FTP ,VERSION)))  (((VERSION (FTP)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+[[_cd_ftp_password]]
+==== PASSWORD 
+(((FTP ,PASSWORD)))  (((PASSWORD (FTP)))) 
+The Password that IKAN ALM will use to access the FTP Server.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_ftp_username]]
+==== USERNAME 
+(((FTP ,USERNAME)))  (((USERNAME (FTP)))) 
+The User Name.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERNAME
+|VARCHAR2(50)
+|===
+
+[[_cd_ftp_serverhostname]]
+==== SERVERHOSTNAME 
+(((FTP ,SERVERHOSTNAME)))  (((SERVERHOSTNAME (FTP)))) 
+The connection name in case it is different from the IKAN ALM Server Machine DHCP name or IP address. 
+
+Example: FTP Server mapped to a hostname: ftp.ikan.be.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SERVERHOSTNAME
+|VARCHAR2(255)
+|===
+
+[[_cd_ftp_serverftpport]]
+==== SERVERFTPPORT 
+(((FTP ,SERVERFTPPORT)))  (((SERVERFTPPORT (FTP)))) 
+The Port Number of the FTP Server running on the IKAN ALM Server.
+
+Note: This value will overwrite the value specified in the System Settings. If not specified in the System Settings nor in the FTP Transporter Settings, the default FTP Port Number 21 is used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SERVERFTPPORT
+|NUMBER
+|===
+
+[[_cd_ftp_connectionmode]]
+==== CONNECTIONMODE 
+(((FTP ,CONNECTIONMODE)))  (((CONNECTIONMODE (FTP)))) 
+The connection mode.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CONNECTIONMODE
+|NUMBER
+|===
+
+===== Value List
+0 = Passive
+
+1 = Active
+
+
+[[_cd_ftp_directorylistingstyle]]
+==== DIRECTORYLISTINGSTYLE 
+(((FTP ,DIRECTORYLISTINGSTYLE)))  (((DIRECTORYLISTINGSTYLE (FTP)))) 
+The Directory Listing Style.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DIRECTORYLISTINGSTYLE
+|NUMBER
+|===
+
+===== Value List
+0 = Unix
+
+1 = Windows
+
+
+[[_cd_ftp_workcopypathprefix]]
+==== WORKCOPYPATHPREFIX 
+(((FTP ,WORKCOPYPATHPREFIX)))  (((WORKCOPYPATHPREFIX (FTP)))) 
+The prefix for the Work Copy Location (the location where the VCR interface places the checked out sources on the IKAN ALM Server so that it is accessible from a remote IKAN ALM Agent handling a build process). The Server Location will be formed by concatenating this prefix together with the Relative Location defined in the System Settings.
+
+Example:
+
+If the FTP Server is configured to control the E:/Ikan/scm4all/system (Windows) or /ikan/scm4all/system (Linux/Unix) directory, a / will suffice as prefix. 
+
+In that case, the sources will be copied to the Agent by a GET command from a subdirectory under /workCopy from the FTP Server.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|WORKCOPYPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_ftp_buildarchivepathprefix]]
+==== BUILDARCHIVEPATHPREFIX 
+(((FTP ,BUILDARCHIVEPATHPREFIX)))  (((BUILDARCHIVEPATHPREFIX (FTP)))) 
+The prefix for the Build Archive Location (the location where the Builds are stored or retrieved from). The Server Location is formed by concatenating this prefix together with the Relative Location defined in the System Settings.
+
+Example:
+
+If the FTP Server is configured to control the E:/Ikan/scm4all/system (Windows) or /ikan/scm4all/system (Linux/Unix) directory, a / will suffice as prefix. 
+
+In that case, the build result will be copied from the Agent to the Build Archive by a PUT command into the subdirectory /buildArchive on the FTP Server.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDARCHIVEPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_ftp_phasecatalogpathprefix]]
+==== PHASECATALOGPATHPREFIX 
+(((FTP ,PHASECATALOGPATHPREFIX)))  (((PHASECATALOGPATHPREFIX (FTP)))) 
+The prefix for the Phase Catalog location (the location where newly created Phases and Phases that have been imported will be stored). A remote IKAN ALM Agent that needs to install a Phase will use this location to retrieve it.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PHASECATALOGPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_ftp_scriptpathprefix]]
+==== SCRIPTPATHPREFIX 
+(((FTP ,SCRIPTPATHPREFIX)))  (((SCRIPTPATHPREFIX (FTP)))) 
+The prefix for the Script Location (the location where the IKAN ALM Agent will retrieve the build or deploy script from if it can not be found in the sources). The Server Location will be formed by concatenating this prefix together with the Relative Location defined in the System Settings.
+
+Example:
+
+If the FTP Server is configured to control the E:/Ikan/scm4all/system (Windows) or /ikan/scm4all/system (Linux/Unix) directory, a / will suffice as prefix. 
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SCRIPTPATHPREFIX
+|VARCHAR2(512)
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,FTP_PK))) [[_i_ftp_ftp_pk]]
+FTP_PK
+|Yes
+|Yes
+|<<FTP.adoc#_cd_ftp_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,FTP))) 
+*FTP_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*FTP_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*FTP_BUILDARCHIVEPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Archive Path Prefix 
+
+|
+
+French:
+|Préf. Empl. Archives Constr.
+
+|
+
+German:
+|Präfix des Bereitstellungsarchivverzeichnisses
+|===
+*FTP_CONNECTIONMODE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Connection Mode
+
+|
+
+French:
+|Mode de Connexion
+
+|
+
+German:
+|Verbindungsmodus
+|===
+*FTP_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*FTP_DIRECTORYLISTINGSTYLE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Directory Listing Style
+
+|
+
+French:
+|Style de répertoire
+
+|
+
+German:
+|Stil der Verzeichnisanzeige
+|===
+*FTP_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*FTP_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*FTP_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*FTP_PHASECATALOGPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase Catalog Path Prefix
+
+|
+
+French:
+|Préfixe Chemin du Catalogue des Phases
+
+|
+
+German:
+|Präfix für den Phasekatalog
+|===
+*FTP_SCRIPTPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Script Path Prefix 
+
+|
+
+French:
+|Préf. Empl. Scripts
+
+|
+
+German:
+|Präfix des Skriptverzeichnisses
+|===
+*FTP_SERVERFTPPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server FTP Port
+
+|
+
+French:
+|Port du Serveur FTP
+
+|
+
+German:
+|Server FTP Port
+|===
+*FTP_SERVERHOSTNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server Hostname
+
+|
+
+French:
+|Nom du Serveur
+
+|
+
+German:
+|Server Hostname
+|===
+*FTP_USERNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User Name
+
+|
+
+French:
+|Nom d'utilisateur
+
+|
+
+German:
+|Benutzername
+|===
+*FTP_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===
+*FTP_WORKCOPYPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Work Copy Path Prefix 
+
+|
+
+French:
+|Préf. Empl. Copies de travail
+
+|
+
+German:
+|Präfix des Arbeitskopieverzeichnisses
+|===

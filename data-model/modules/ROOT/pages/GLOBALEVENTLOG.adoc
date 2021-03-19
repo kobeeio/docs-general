@@ -1,0 +1,841 @@
+[[_t_globaleventlog]]
+== GLOBALEVENTLOG 
+(((GLOBALEVENTLOG))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_objecttype,OBJECTTYPE>>
+|NUMBER
+
+|
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_objectoid,OBJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_objectversion,OBJECTVERSION>>
+|NUMBER
+
+|
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_changedatetime,CHANGEDATETIME>>
+|DATE
+
+|
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_changetype,CHANGETYPE>>
+|NUMBER
+
+|
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_userid,USERID>>
+|VARCHAR2(20)
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_note,NOTE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_changedstate,CHANGEDSTATE>>
+|VARCHAR2(4000)
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_leftobjecttype,LEFTOBJECTTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_leftobjectoid,LEFTOBJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_rightobjecttype,RIGHTOBJECTTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_rightobjectoid,RIGHTOBJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_globaleventlog_oid]]
+==== OID 
+(((GLOBALEVENTLOG ,OID)))  (((OID (GLOBALEVENTLOG)))) 
+Unique table identifier.
+
+See also: <<GLOBALEVENTLOG.adoc#_i_globaleventlog_globaleventlog_pk,GLOBALEVENTLOG_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_globaleventlog_objecttype]]
+==== OBJECTTYPE 
+(((GLOBALEVENTLOG ,OBJECTTYPE)))  (((OBJECTTYPE (GLOBALEVENTLOG)))) 
+The type of the Global Administration object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OBJECTTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = System Settings
+
+1 = User
+
+2 = User Group
+
+3 = User Group - User Association
+
+4 = Machine
+
+5 = FileCopy
+
+6 = FTP
+
+7 = Secure Shell
+
+8 = CVS
+
+9 = SVN
+
+10 = VSS
+
+11 = ClearCase
+
+12 = PVCS
+
+13 = Issue Tracking System
+
+14 = ANT
+
+15 = ANT WSAD
+
+16 = NANT
+
+17 = MAVEN2
+
+18 = Schedule
+
+19 = Issue Tracking System Property
+
+20 = Machine Parameter
+
+21 = Phase
+
+22 = Phase Parameter
+
+23 = Git
+
+24 = TFVC
+
+25 = Gradle
+
+
+[[_cd_globaleventlog_objectoid]]
+==== OBJECTOID 
+(((GLOBALEVENTLOG ,OBJECTOID)))  (((OBJECTOID (GLOBALEVENTLOG)))) 
+OID of the Global Administration object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OBJECTOID
+|NUMBER
+|===
+
+[[_cd_globaleventlog_objectversion]]
+==== OBJECTVERSION 
+(((GLOBALEVENTLOG ,OBJECTVERSION)))  (((OBJECTVERSION (GLOBALEVENTLOG)))) 
+The version number of the Global Administration object after the current update has been persisted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|OBJECTVERSION
+|NUMBER
+|===
+
+[[_cd_globaleventlog_changedatetime]]
+==== CHANGEDATETIME 
+(((GLOBALEVENTLOG ,CHANGEDATETIME)))  (((CHANGEDATETIME (GLOBALEVENTLOG)))) 
+The date and time at which the Global Administration object was created, updated or deleted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGEDATETIME
+|DATE
+|===
+
+[[_cd_globaleventlog_changetype]]
+==== CHANGETYPE 
+(((GLOBALEVENTLOG ,CHANGETYPE)))  (((CHANGETYPE (GLOBALEVENTLOG)))) 
+The type of change made to the Global Administration object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGETYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Create
+
+1 = Update
+
+2 = Delete
+
+
+[[_cd_globaleventlog_userid]]
+==== USERID 
+(((GLOBALEVENTLOG ,USERID)))  (((USERID (GLOBALEVENTLOG)))) 
+The User ID of the User who performed the modification (create/update/delete) of the Global Administration object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERID
+|VARCHAR2(20)
+|===
+
+[[_cd_globaleventlog_note]]
+==== NOTE 
+(((GLOBALEVENTLOG ,NOTE)))  (((NOTE (GLOBALEVENTLOG)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTE
+|VARCHAR2(512)
+|===
+
+[[_cd_globaleventlog_changedstate]]
+==== CHANGEDSTATE 
+(((GLOBALEVENTLOG ,CHANGEDSTATE)))  (((CHANGEDSTATE (GLOBALEVENTLOG)))) 
+Serialized xml of the object after the change.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CHANGEDSTATE
+|VARCHAR2(4000)
+|===
+
+[[_cd_globaleventlog_leftobjecttype]]
+==== LEFTOBJECTTYPE 
+(((GLOBALEVENTLOG ,LEFTOBJECTTYPE)))  (((LEFTOBJECTTYPE (GLOBALEVENTLOG)))) 
+The type of the "`parent`" object in case the object type is a OneToN or MtoN Association.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LEFTOBJECTTYPE
+|NUMBER
+|===
+
+[[_cd_globaleventlog_leftobjectoid]]
+==== LEFTOBJECTOID 
+(((GLOBALEVENTLOG ,LEFTOBJECTOID)))  (((LEFTOBJECTOID (GLOBALEVENTLOG)))) 
+OID of the parent object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LEFTOBJECTOID
+|NUMBER
+|===
+
+[[_cd_globaleventlog_rightobjecttype]]
+==== RIGHTOBJECTTYPE 
+(((GLOBALEVENTLOG ,RIGHTOBJECTTYPE)))  (((RIGHTOBJECTTYPE (GLOBALEVENTLOG)))) 
+The type of the "child" object in case the object type is a MToN Association.
+
+This will only be used for the UserGroupAssociation (MtoN Association between UserGroup and User).  The RIGHTOBJECTTYPE will then be "`User`". 
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|RIGHTOBJECTTYPE
+|NUMBER
+|===
+
+[[_cd_globaleventlog_rightobjectoid]]
+==== RIGHTOBJECTOID 
+(((GLOBALEVENTLOG ,RIGHTOBJECTOID)))  (((RIGHTOBJECTOID (GLOBALEVENTLOG)))) 
+OID of the child object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|RIGHTOBJECTOID
+|NUMBER
+|===
+
+[[_cd_globaleventlog_archived]]
+==== ARCHIVED 
+(((GLOBALEVENTLOG ,ARCHIVED)))  (((ARCHIVED (GLOBALEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_globaleventlog_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((GLOBALEVENTLOG ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (GLOBALEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_globaleventlog_version]]
+==== VERSION 
+(((GLOBALEVENTLOG ,VERSION)))  (((VERSION (GLOBALEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,GLOBALEVENTLOG_PK))) [[_i_globaleventlog_globaleventlog_pk]]
+GLOBALEVENTLOG_PK
+|Yes
+|Yes
+|<<GLOBALEVENTLOG.adoc#_cd_globaleventlog_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,GLOBALEVENTLOG))) 
+*GLOBALEVENTLOG_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*GLOBALEVENTLOG_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*GLOBALEVENTLOG_CHANGEDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Date/Time
+
+|
+
+French:
+|Date / Heure de la modification
+
+|
+
+German:
+|Änderungsdatum
+|===
+*GLOBALEVENTLOG_CHANGEDSTATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Changed State
+
+|
+
+French:
+|Etat modifié
+
+|
+
+German:
+|Modifizierte Status
+|===
+*GLOBALEVENTLOG_CHANGETYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Type
+
+|
+
+French:
+|Type de modification
+
+|
+
+German:
+|Änderungsart
+|===
+*GLOBALEVENTLOG_LEFTOBJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*GLOBALEVENTLOG_LEFTOBJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Left Object Type
+
+|
+
+French:
+|Left Object Type
+
+|
+
+German:
+|Left Object Type
+|===
+*GLOBALEVENTLOG_NOTE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Note
+
+|
+
+French:
+|Remarque
+
+|
+
+German:
+|Anmerkung
+|===
+*GLOBALEVENTLOG_OBJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*GLOBALEVENTLOG_OBJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Object Type
+
+|
+
+French:
+|Type d'objet
+
+|
+
+German:
+|Objekttyp
+|===
+*GLOBALEVENTLOG_OBJECTVERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Object Version
+
+|
+
+French:
+|Version d'objet
+
+|
+
+German:
+|Version des Objekts
+|===
+*GLOBALEVENTLOG_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*GLOBALEVENTLOG_RIGHTOBJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*GLOBALEVENTLOG_RIGHTOBJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Right Object Type
+
+|
+
+French:
+|Right Object Type
+
+|
+
+German:
+|Right Object Type
+|===
+*GLOBALEVENTLOG_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*GLOBALEVENTLOG_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

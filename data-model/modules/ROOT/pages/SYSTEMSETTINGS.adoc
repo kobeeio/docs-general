@@ -1,0 +1,2147 @@
+[[_t_systemsettings]]
+== SYSTEMSETTINGS 
+(((SYSTEMSETTINGS))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_scm4allurl,SCM4ALLURL>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_mailhtml,MAILHTML>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_mailtemplatelocation,MAILTEMPLATELOCATION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_mailtype,MAILTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_smtpserver,SMTPSERVER>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_smtpport,SMTPPORT>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_smtpfrom,SMTPFROM>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_smtpanonymous,SMTPANONYMOUS>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_smtpuser,SMTPUSER>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_smtppassword,SMTPPASSWORD>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesclientserver,NOTESCLIENTSERVER>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesclientuseridfile,NOTESCLIENTUSERIDFILE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesclientpassword,NOTESCLIENTPASSWORD>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesclientmaildatabase,NOTESCLIENTMAILDATABASE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesdiiopserver,NOTESDIIOPSERVER>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesdiiopport,NOTESDIIOPPORT>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesdiiopuser,NOTESDIIOPUSER>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesdiioppassword,NOTESDIIOPPASSWORD>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_notesdiiopssl,NOTESDIIOPSSL>>
+|NUMBER(1)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_workingcopylocation,WORKINGCOPYLOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_workingcopyfilecopylocation,WORKINGCOPYFILECOPYLOCATION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_buildarchivelocation,BUILDARCHIVELOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_buildarchivefilecopylocation,BUILDARCHIVEFILECOPYLOCATION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_scriptlocation,SCRIPTLOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_scriptfilecopylocation,SCRIPTFILECOPYLOCATION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_phasecataloglocation,PHASECATALOGLOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_phasecatalogremotelocation,PHASECATALOGREMOTELOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_sshport,SSHPORT>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_ftpport,FTPPORT>>
+|NUMBER
+
+|F
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_usergroupoid,USERGROUPOID>>
+|NUMBER
+
+|F
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_admingroupoid,ADMINGROUPOID>>
+|NUMBER
+
+|F
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_machineoid,MACHINEOID>>
+|NUMBER
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_securedxmlrpc,SECUREDXMLRPC>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_version,VERSION>>
+|NUMBER
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_autorefreshrate,AUTOREFRESHRATE>>
+|NUMBER
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_rssfeedenabled,RSSFEEDENABLED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_scmuuid,SCMUUID>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_paramprefix,PARAMPREFIX>>
+|NUMBER
+
+|
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_restenabled,RESTENABLED>>
+|NUMBER(1)
+|===
+
+=== Column Descriptions
+
+[[_cd_systemsettings_oid]]
+==== OID 
+(((SYSTEMSETTINGS ,OID)))  (((OID (SYSTEMSETTINGS)))) 
+Unique table identifier.
+
+See also: <<SYSTEMSETTINGS.adoc#_i_systemsettings_systemsettings_pk,SYSTEMSETTINGS_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_systemsettings_scm4allurl]]
+==== SCM4ALLURL 
+(((SYSTEMSETTINGS ,SCM4ALLURL)))  (((SCM4ALLURL (SYSTEMSETTINGS)))) 
+The base IKAN ALM URL. This URL is used for creating hyperlinks in mails sent by IKAN ALM (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications) and for constructing the RSS feed link.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SCM4ALLURL
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_mailhtml]]
+==== MAILHTML 
+(((SYSTEMSETTINGS ,MAILHTML)))  (((MAILHTML (SYSTEMSETTINGS)))) 
+Indication of which templates will be used to compose notification and approval mail messages. There are two options:
+
+HTML: the templates containing HTML tags will be used.
+
+Plain Text: the templates without HTML tags will be used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|MAILHTML
+|NUMBER
+|===
+
+===== Value List
+0 = Plain text
+
+1 = HTML
+
+
+[[_cd_systemsettings_mailtemplatelocation]]
+==== MAILTEMPLATELOCATION 
+(((SYSTEMSETTINGS ,MAILTEMPLATELOCATION)))  (((MAILTEMPLATELOCATION (SYSTEMSETTINGS)))) 
+Location of the mail templates. By default, the mail templates are located in the following directory: TOMCAT_HOME/webapps/scm4all/WEB-INF/classes/templates
+
+If you want to customize these templates, we advise you to change this location to a local directory on the IKAN ALM Server.
+
+The locale directories match the language settings of the user:
+
+en for English
+
+fr for French
+
+de for German
+
+If no match is found, the templates in the default directory will be used.
+
+For the HMTL formatted templates, a _html suffix is added before the .vm extension.
+
+For plain text templates, there is no such suffix.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|MAILTEMPLATELOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_mailtype]]
+==== MAILTYPE 
+(((SYSTEMSETTINGS ,MAILTYPE)))  (((MAILTYPE (SYSTEMSETTINGS)))) 
+The mail protocol to be used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|MAILTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = SMTP
+
+1 = Lotus Notes Client
+
+2 = Lotus Notes DIIOP
+
+
+[[_cd_systemsettings_smtpserver]]
+==== SMTPSERVER 
+(((SYSTEMSETTINGS ,SMTPSERVER)))  (((SMTPSERVER (SYSTEMSETTINGS)))) 
+The Machine name of the SMTP Mail Server.
+
+This field is mandatory if SMTP was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SMTPSERVER
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_smtpport]]
+==== SMTPPORT 
+(((SYSTEMSETTINGS ,SMTPPORT)))  (((SMTPPORT (SYSTEMSETTINGS)))) 
+The SMTP Port number used by IKAN ALM to connect to the Mail Server.
+
+By default port 25 is used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SMTPPORT
+|NUMBER
+|===
+
+[[_cd_systemsettings_smtpfrom]]
+==== SMTPFROM 
+(((SYSTEMSETTINGS ,SMTPFROM)))  (((SMTPFROM (SYSTEMSETTINGS)))) 
+The From: E-Mail Address used in IKAN ALM notification e-mails.
+
+This field is mandatory if SMTP was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SMTPFROM
+|VARCHAR2(50)
+|===
+
+[[_cd_systemsettings_smtpanonymous]]
+==== SMTPANONYMOUS 
+(((SYSTEMSETTINGS ,SMTPANONYMOUS)))  (((SMTPANONYMOUS (SYSTEMSETTINGS)))) 
+The Authentication Type.
+
+Anonymous: if the SMTP Server can be used without authentication.
+
+Authentication: if the SMTP Server requires authentication.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SMTPANONYMOUS
+|NUMBER
+|===
+
+===== Value List
+0 = Authentication
+
+1 = Anonymous
+
+
+[[_cd_systemsettings_smtpuser]]
+==== SMTPUSER 
+(((SYSTEMSETTINGS ,SMTPUSER)))  (((SMTPUSER (SYSTEMSETTINGS)))) 
+The User name used to authenticate on the SMTP Server.
+
+This field is mandatory if Authentication was chosen as Authentication Type.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SMTPUSER
+|VARCHAR2(50)
+|===
+
+[[_cd_systemsettings_smtppassword]]
+==== SMTPPASSWORD 
+(((SYSTEMSETTINGS ,SMTPPASSWORD)))  (((SMTPPASSWORD (SYSTEMSETTINGS)))) 
+The masked Password used to authenticate on the SMTP Server.
+
+This field is mandatory if Authentication was chosen as Authentication Type.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SMTPPASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesclientserver]]
+==== NOTESCLIENTSERVER 
+(((SYSTEMSETTINGS ,NOTESCLIENTSERVER)))  (((NOTESCLIENTSERVER (SYSTEMSETTINGS)))) 
+The Lotus Notes name of the Server containing the Mail Database, e.g.: CN=MachineName/0=SCM/C=BE
+
+This field is mandatory if Lotus Notes Client was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESCLIENTSERVER
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesclientuseridfile]]
+==== NOTESCLIENTUSERIDFILE 
+(((SYSTEMSETTINGS ,NOTESCLIENTUSERIDFILE)))  (((NOTESCLIENTUSERIDFILE (SYSTEMSETTINGS)))) 
+The complete path of the User's ID file, e.g.: c:\notes\data\certoid
+
+This field is mandatory if Lotus Notes Client was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESCLIENTUSERIDFILE
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesclientpassword]]
+==== NOTESCLIENTPASSWORD 
+(((SYSTEMSETTINGS ,NOTESCLIENTPASSWORD)))  (((NOTESCLIENTPASSWORD (SYSTEMSETTINGS)))) 
+The masked User's Password.
+
+This field is mandatory if Lotus Notes Client was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESCLIENTPASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesclientmaildatabase]]
+==== NOTESCLIENTMAILDATABASE 
+(((SYSTEMSETTINGS ,NOTESCLIENTMAILDATABASE)))  (((NOTESCLIENTMAILDATABASE (SYSTEMSETTINGS)))) 
+The name of the User's Mail Database.
+
+This field is mandatory if Lotus Notes Client was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESCLIENTMAILDATABASE
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesdiiopserver]]
+==== NOTESDIIOPSERVER 
+(((SYSTEMSETTINGS ,NOTESDIIOPSERVER)))  (((NOTESDIIOPSERVER (SYSTEMSETTINGS)))) 
+The Internet name or the IP Address of the Server.
+
+This field is mandatory if Lotus Notes DIIOP was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESDIIOPSERVER
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesdiiopport]]
+==== NOTESDIIOPPORT 
+(((SYSTEMSETTINGS ,NOTESDIIOPPORT)))  (((NOTESDIIOPPORT (SYSTEMSETTINGS)))) 
+The Port number of the Server.
+
+If you leave this field empty, the default port number (63148) is used, but you may also specify another Port.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESDIIOPPORT
+|NUMBER
+|===
+
+[[_cd_systemsettings_notesdiiopuser]]
+==== NOTESDIIOPUSER 
+(((SYSTEMSETTINGS ,NOTESDIIOPUSER)))  (((NOTESDIIOPUSER (SYSTEMSETTINGS)))) 
+The Domino User Name used by IKAN ALM to send e-mail notifications.
+
+This field is mandatory if Lotus Notes DIIOP was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESDIIOPUSER
+|VARCHAR2(50)
+|===
+
+[[_cd_systemsettings_notesdiioppassword]]
+==== NOTESDIIOPPASSWORD 
+(((SYSTEMSETTINGS ,NOTESDIIOPPASSWORD)))  (((NOTESDIIOPPASSWORD (SYSTEMSETTINGS)))) 
+The masked User's Internet Password.
+
+This field is mandatory if Lotus Notes DIIOP was chosen as mail Protocol.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESDIIOPPASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_notesdiiopssl]]
+==== NOTESDIIOPSSL 
+(((SYSTEMSETTINGS ,NOTESDIIOPSSL)))  (((NOTESDIIOPSSL (SYSTEMSETTINGS)))) 
+Indication whether or not SSL is required
+
+If required, the actual service requests take place over the DIIOP SSL Port, which is 63149 by default. In this case, it is required to set up the Server and Client with a commonly trusted root certificate from a Certificate Authority.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTESDIIOPSSL
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_systemsettings_workingcopylocation]]
+==== WORKINGCOPYLOCATION 
+(((SYSTEMSETTINGS ,WORKINGCOPYLOCATION)))  (((WORKINGCOPYLOCATION (SYSTEMSETTINGS)))) 
+The location of the Work Copy displayed as a remote location.
+
+This is the location where the VCR interface places the checked out sources or dependent build results on the IKAN ALM Server, so that they are accessible for a remote IKAN ALM Agent handling a build process.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|WORKINGCOPYLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_workingcopyfilecopylocation]]
+==== WORKINGCOPYFILECOPYLOCATION 
+(((SYSTEMSETTINGS ,WORKINGCOPYFILECOPYLOCATION)))  (((WORKINGCOPYFILECOPYLOCATION (SYSTEMSETTINGS)))) 
+The path to the Work Copy Location.
+
+In preparation of the Build process, the IKAN ALM Monitor places the sources (checked out sources from a VCR and sometimes also dependent build results) in a subdirectory of this location. The tagging of the VCR after a successful Build is done from this location as well.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|WORKINGCOPYFILECOPYLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_buildarchivelocation]]
+==== BUILDARCHIVELOCATION 
+(((SYSTEMSETTINGS ,BUILDARCHIVELOCATION)))  (((BUILDARCHIVELOCATION (SYSTEMSETTINGS)))) 
+The location of the Build Archive displayed as remote location.
+
+This is the location where the Builds are stored in or retrieved from by a remote IKAN ALM Agent handling a build or deploy process.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDARCHIVELOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_buildarchivefilecopylocation]]
+==== BUILDARCHIVEFILECOPYLOCATION 
+(((SYSTEMSETTINGS ,BUILDARCHIVEFILECOPYLOCATION)))  (((BUILDARCHIVEFILECOPYLOCATION (SYSTEMSETTINGS)))) 
+The path to the location of the Build Archive on the IKAN ALM Server.
+
+Build Results will be stored in or retrieved from this location. They will be placed in a subdirectory per Project Stream and per Project. If required, you can edit the location.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|BUILDARCHIVEFILECOPYLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_scriptlocation]]
+==== SCRIPTLOCATION 
+(((SYSTEMSETTINGS ,SCRIPTLOCATION)))  (((SCRIPTLOCATION (SYSTEMSETTINGS)))) 
+This location used to store build and deploy scripts.
+
+When the build or deploy script is not available in the sources or build result, it will be retrieved from this location.
+
+This option allows Scripts to be stored outside the Version Control Repository and managed on a (secured) central location.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SCRIPTLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_scriptfilecopylocation]]
+==== SCRIPTFILECOPYLOCATION 
+(((SYSTEMSETTINGS ,SCRIPTFILECOPYLOCATION)))  (((SCRIPTFILECOPYLOCATION (SYSTEMSETTINGS)))) 
+The location used to store build and deploy scripts.
+
+When the build or deploy script is not available in the sources or build result, it will be retrieved from this location. You can edit the location if required.
+
+This field allows that the Scripts are stored outside the Version Control Repository and managed on a (secured) central location.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SCRIPTFILECOPYLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_phasecataloglocation]]
+==== PHASECATALOGLOCATION 
+(((SYSTEMSETTINGS ,PHASECATALOGLOCATION)))  (((PHASECATALOGLOCATION (SYSTEMSETTINGS)))) 
+The path to the location of the Phase Catalog on the IKAN ALM Server.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PHASECATALOGLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_phasecatalogremotelocation]]
+==== PHASECATALOGREMOTELOCATION 
+(((SYSTEMSETTINGS ,PHASECATALOGREMOTELOCATION)))  (((PHASECATALOGREMOTELOCATION (SYSTEMSETTINGS)))) 
+The location of the Phase Catalog displayed as remote location.
+
+Newly created Phases and Phases that have been imported will be stored in this location. A remote IKAN ALM Agent that needs to install a Phase will use this location to retrieve it.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PHASECATALOGREMOTELOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_sshport]]
+==== SSHPORT 
+(((SYSTEMSETTINGS ,SSHPORT)))  (((SSHPORT (SYSTEMSETTINGS)))) 
+The SSH Port Number. This is only necessary if the SSH Server on the IKAN ALM Server uses an SSH Port other than the default port number 22. An SSH Server daemon must be installed on the IKAN ALM server in order to use SSH as a Transporter Protocol.
+
+Note: This port number may be overwritten by the port number defined in the Transporter definition.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SSHPORT
+|NUMBER
+|===
+
+[[_cd_systemsettings_ftpport]]
+==== FTPPORT 
+(((SYSTEMSETTINGS ,FTPPORT)))  (((FTPPORT (SYSTEMSETTINGS)))) 
+The FTP Port Number. This is only necessary if the FTP Server on the IKAN ALM Server uses a TCP Port other than the default port number 21. An FTP server must be installed on the IKAN ALM Server in order to use FTP as a Transporter protocol.
+
+Note: This port number may be overwritten by the port number defined in the Transporter definition.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|FTPPORT
+|NUMBER
+|===
+
+[[_cd_systemsettings_usergroupoid]]
+==== USERGROUPOID 
+(((SYSTEMSETTINGS ,USERGROUPOID)))  (((USERGROUPOID (SYSTEMSETTINGS)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key SYSTEMSETTINGS_FK_2.
+
+See also: <<SYSTEMSETTINGS.adoc#_i_systemsettings_systemsettings_fk_2,SYSTEMSETTINGS_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|USERGROUPOID
+|NUMBER
+|===
+
+[[_cd_systemsettings_admingroupoid]]
+==== ADMINGROUPOID 
+(((SYSTEMSETTINGS ,ADMINGROUPOID)))  (((ADMINGROUPOID (SYSTEMSETTINGS)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key SYSTEMSETTINGS_FK_1.
+
+See also: <<SYSTEMSETTINGS.adoc#_i_systemsettings_systemsettings_fk_1,SYSTEMSETTINGS_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|ADMINGROUPOID
+|NUMBER
+|===
+
+[[_cd_systemsettings_machineoid]]
+==== MACHINEOID 
+(((SYSTEMSETTINGS ,MACHINEOID)))  (((MACHINEOID (SYSTEMSETTINGS)))) 
+Identifier for the MACHINE table.
+
+For more information, refer to the description of the foreign key SYSTEMSETTINGS_FK_3.
+
+See also: <<SYSTEMSETTINGS.adoc#_i_systemsettings_systemsettings_fk_3,SYSTEMSETTINGS_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|MACHINEOID
+|NUMBER
+|===
+
+[[_cd_systemsettings_securedxmlrpc]]
+==== SECUREDXMLRPC 
+(((SYSTEMSETTINGS ,SECUREDXMLRPC)))  (((SECUREDXMLRPC (SYSTEMSETTINGS)))) 
+Indication whether or not all communication (webserver-server, server-agent) is done over SSL.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SECUREDXMLRPC
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_systemsettings_archived]]
+==== ARCHIVED 
+(((SYSTEMSETTINGS ,ARCHIVED)))  (((ARCHIVED (SYSTEMSETTINGS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_systemsettings_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SYSTEMSETTINGS ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SYSTEMSETTINGS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_systemsettings_version]]
+==== VERSION 
+(((SYSTEMSETTINGS ,VERSION)))  (((VERSION (SYSTEMSETTINGS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+[[_cd_systemsettings_autorefreshrate]]
+==== AUTOREFRESHRATE 
+(((SYSTEMSETTINGS ,AUTOREFRESHRATE)))  (((AUTOREFRESHRATE (SYSTEMSETTINGS)))) 
+The number of seconds for the automatic refresh function on the Desktop Overview, Level Request Overview and Build History Overview.
+
+As a result, these overview screens will be refreshed each time the interval expires (if the user has activated the Auto Refresh function on his Desktop submenu).
+
+If the use of the Auto Refresh option is not allowed, the value is 0 (zero).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|AUTOREFRESHRATE
+|NUMBER
+|===
+
+[[_cd_systemsettings_rssfeedenabled]]
+==== RSSFEEDENABLED 
+(((SYSTEMSETTINGS ,RSSFEEDENABLED)))  (((RSSFEEDENABLED (SYSTEMSETTINGS)))) 
+Indication whether the RSS functionality is enabled.
+
+If enabled, an RSS button will become available on the user`'s Level Requests Overview panel. 
+
+By default the RSS Feeds are enabled.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|RSSFEEDENABLED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_systemsettings_scmuuid]]
+==== SCMUUID 
+(((SYSTEMSETTINGS ,SCMUUID)))  (((SCMUUID (SYSTEMSETTINGS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SCMUUID
+|VARCHAR2(255)
+|===
+
+[[_cd_systemsettings_paramprefix]]
+==== PARAMPREFIX 
+(((SYSTEMSETTINGS ,PARAMPREFIX)))  (((PARAMPREFIX (SYSTEMSETTINGS)))) 
+This option determines the value of the IKAN ALM Build/Deploy parameter`'s prefix (by default alm) and the name of the ANT property file that is generated for Execute Build and Execute Deploy Phases (by default alm_ant.properties).
+
+In case you are upgrading from a version prior to IKAN ALM 5.0, this feature allows you to keep on working with the old scm4all parameter prefix and the old scm4all_ant.properties file, and to not have to modify your Build and/or Deploy scripts.
+
+Note: This is a compatibility solution. At a certain point in time, you will have to modify your scripts and use the new alm prefix.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PARAMPREFIX
+|NUMBER
+|===
+
+===== Value List
+0 = scm4all
+
+1 = alm
+
+
+[[_cd_systemsettings_restenabled]]
+==== RESTENABLED 
+(((SYSTEMSETTINGS ,RESTENABLED)))  (((RESTENABLED (SYSTEMSETTINGS)))) 
+Indicates whether RESTful Web Services are enabled. This feature is only functional for the integration with an SAP Lifecycle.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|RESTENABLED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SYSTEMSETTINGS_PK))) [[_i_systemsettings_systemsettings_pk]]
+SYSTEMSETTINGS_PK
+|Yes
+|Yes
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,SYSTEMSETTINGS_FK_1))) [[_i_systemsettings_systemsettings_fk_1]]
+SYSTEMSETTINGS_FK_1
+|No
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_admingroupoid,ADMINGROUPOID>>
+|<<USERGROUP.adoc#_t_usergroup,USERGROUP>>
+
+| 
+(((Foreign Keys ,SYSTEMSETTINGS_FK_2))) [[_i_systemsettings_systemsettings_fk_2]]
+SYSTEMSETTINGS_FK_2
+|No
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_usergroupoid,USERGROUPOID>>
+|<<USERGROUP.adoc#_t_usergroup,USERGROUP>>
+
+| 
+(((Foreign Keys ,SYSTEMSETTINGS_FK_3))) [[_i_systemsettings_systemsettings_fk_3]]
+SYSTEMSETTINGS_FK_3
+|No
+|No
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_machineoid,MACHINEOID>>
+|<<MACHINE.adoc#_t_machine,MACHINE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== MACHINE
+
+Refer to the chapter <<MACHINE.adoc#_t_machine,MACHINE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SYSTEMSETTINGS_FK_3
+|<<MACHINE.adoc#_cd_machine_oid,OID>>
+|===
+
+===== USERGROUP
+
+Refer to the chapter <<USERGROUP.adoc#_t_usergroup,USERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SYSTEMSETTINGS_FK_2
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+
+|SYSTEMSETTINGS_FK_1
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SYSTEMSETTINGS))) 
+*SYSTEMSETTINGS_ADMINGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SYSTEMSETTINGS_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SYSTEMSETTINGS_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SYSTEMSETTINGS_AUTOREFRESHRATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Auto Refresh Rate
+
+|
+
+French:
+|Intervalle d'actualisation automatique
+
+|
+
+German:
+|Automatische Aktualisierungsrate
+|===
+*SYSTEMSETTINGS_BUILDARCHIVEFILECOPYLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Archive Location
+
+|
+
+French:
+|Emplacement Archives de construction
+
+|
+
+German:
+|Standort des Bereitstellungsarchivs
+|===
+*SYSTEMSETTINGS_BUILDARCHIVELOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Archive Location
+
+|
+
+French:
+|Emplacement Archives de construction
+
+|
+
+German:
+|Standort des Bereitstellungsarchivs
+|===
+*SYSTEMSETTINGS_FTPPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|FTP Port
+
+|
+
+French:
+|Port FTP
+
+|
+
+German:
+|FTP Port
+|===
+*SYSTEMSETTINGS_MACHINEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SYSTEMSETTINGS_MAILHTML_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Content Type
+
+|
+
+French:
+|Type de contenu
+
+|
+
+German:
+|Inhaltstyp
+|===
+*SYSTEMSETTINGS_MAILTEMPLATELOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Template Location
+
+|
+
+French:
+|Emplacement des modèles
+
+|
+
+German:
+|Standort der Vorlagen
+|===
+*SYSTEMSETTINGS_MAILTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Protocol
+
+|
+
+French:
+|Protocole
+
+|
+
+German:
+|Protokoll
+|===
+*SYSTEMSETTINGS_NOTESCLIENTMAILDATABASE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Mail Database
+
+|
+
+French:
+|Base de courrier
+
+|
+
+German:
+|Mail-Datenbank
+|===
+*SYSTEMSETTINGS_NOTESCLIENTPASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*SYSTEMSETTINGS_NOTESCLIENTSERVER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server
+
+|
+
+French:
+|Serveur
+
+|
+
+German:
+|Server
+|===
+*SYSTEMSETTINGS_NOTESCLIENTUSERIDFILE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ID File
+
+|
+
+French:
+|Fichier des utilisateurs
+
+|
+
+German:
+|ID-Datei
+|===
+*SYSTEMSETTINGS_NOTESDIIOPPASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*SYSTEMSETTINGS_NOTESDIIOPPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Notes DIIOP Port
+
+|
+
+French:
+|Port Notes DIIOP
+
+|
+
+German:
+|Notes DIIOP Port
+|===
+*SYSTEMSETTINGS_NOTESDIIOPSERVER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server
+
+|
+
+French:
+|Serveur
+
+|
+
+German:
+|Server
+|===
+*SYSTEMSETTINGS_NOTESDIIOPSSL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|SSL required
+
+|
+
+French:
+|SSL
+
+|
+
+German:
+|SSL
+|===
+*SYSTEMSETTINGS_NOTESDIIOPUSER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User
+
+|
+
+French:
+|Utilisateur
+
+|
+
+German:
+|Benutzer
+|===
+*SYSTEMSETTINGS_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SYSTEMSETTINGS_PARAMPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Parameter Prefix
+
+|
+
+French:
+|Préfixe du paramètre
+
+|
+
+German:
+|Präfix des Parameters
+|===
+*SYSTEMSETTINGS_PHASECATALOGLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase Catalog Location
+
+|
+
+French:
+|Emplacement du Catalogue des Phases
+
+|
+
+German:
+|Standort für den Phasekatalog
+|===
+*SYSTEMSETTINGS_PHASECATALOGREMOTELOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase Catalog Remote Location
+
+|
+
+French:
+|Emplacement distant du Catalogue des Phases
+
+|
+
+German:
+|Entfernter Standort der Phasekatalog
+|===
+*SYSTEMSETTINGS_RESTENABLED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Rest Enabled
+
+|
+
+French:
+|Rest activé
+
+|
+
+German:
+|REST aktiviert
+|===
+*SYSTEMSETTINGS_RSSFEEDENABLED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Rss Feed Enabled
+
+|
+
+French:
+|Flux RSS activé
+
+|
+
+German:
+|RSS Feed aktiviert
+|===
+*SYSTEMSETTINGS_SCM4ALLURL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|IKAN ALM4ALL URL
+
+|
+
+French:
+|URL SCM4ALL
+
+|
+
+German:
+|URL SCM4ALL
+|===
+*SYSTEMSETTINGS_SCMUUID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM UUID
+
+|
+
+French:
+|UUID ALM
+
+|
+
+German:
+|ALM UUID
+|===
+*SYSTEMSETTINGS_SCRIPTFILECOPYLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Script Location
+
+|
+
+French:
+|Emplacement des Scripts
+
+|
+
+German:
+|Standort der Skripte
+|===
+*SYSTEMSETTINGS_SCRIPTLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Script Location
+
+|
+
+French:
+|Emplacement des Scripts
+
+|
+
+German:
+|Standort der Skripte
+|===
+*SYSTEMSETTINGS_SECUREDXMLRPC_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Secured XML-RPC
+
+|
+
+French:
+|XML-RPC sécurisé
+
+|
+
+German:
+|Sicheres XML-RPC
+|===
+*SYSTEMSETTINGS_SMTPANONYMOUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Authentication Type
+
+|
+
+French:
+|Type d'authentification
+
+|
+
+German:
+|Authentifizierungstyp
+|===
+*SYSTEMSETTINGS_SMTPFROM_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|From User
+
+|
+
+French:
+|Expéditeur
+
+|
+
+German:
+|Notes DIIOP Port
+|===
+*SYSTEMSETTINGS_SMTPPASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*SYSTEMSETTINGS_SMTPPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|SMTP Port
+
+|
+
+French:
+|Port SMTP
+
+|
+
+German:
+|SMTP Port
+|===
+*SYSTEMSETTINGS_SMTPSERVER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server
+
+|
+
+French:
+|Serveur
+
+|
+
+German:
+|Server
+|===
+*SYSTEMSETTINGS_SMTPUSER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User
+
+|
+
+French:
+|Utilisateur
+
+|
+
+German:
+|Benutzer
+|===
+*SYSTEMSETTINGS_SSHPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|SSH Port
+
+|
+
+French:
+|Port SSH
+
+|
+
+German:
+|SSH Port
+|===
+*SYSTEMSETTINGS_USERGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SYSTEMSETTINGS_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===
+*SYSTEMSETTINGS_WORKINGCOPYFILECOPYLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Work Copy Location
+
+|
+
+French:
+|Emplacement des Copies de travail
+
+|
+
+German:
+|Standort der Arbeitskopie
+|===
+*SYSTEMSETTINGS_WORKINGCOPYLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Work Copy Location
+
+|
+
+French:
+|Emplacement des Copies de travail
+
+|
+
+German:
+|Standort der Arbeitskopie
+|===

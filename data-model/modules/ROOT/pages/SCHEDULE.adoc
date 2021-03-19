@@ -1,0 +1,586 @@
+[[_t_schedule]]
+== SCHEDULE 
+(((SCHEDULE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCHEDULE.adoc#_cd_schedule_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SCHEDULE.adoc#_cd_schedule_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SCHEDULE.adoc#_cd_schedule_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SCHEDULE.adoc#_cd_schedule_quietperiod,QUIETPERIOD>>
+|NUMBER
+
+|
+|Yes
+|<<SCHEDULE.adoc#_cd_schedule_starttime,STARTTIME>>
+|DATE
+
+|
+|No
+|<<SCHEDULE.adoc#_cd_schedule_intervaltype,INTERVALTYPE>>
+|NUMBER
+
+|
+|No
+|<<SCHEDULE.adoc#_cd_schedule_intervalnumber,INTERVALNUMBER>>
+|NUMBER
+
+|
+|No
+|<<SCHEDULE.adoc#_cd_schedule_active,ACTIVE>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCHEDULE.adoc#_cd_schedule_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCHEDULE.adoc#_cd_schedule_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCHEDULE.adoc#_cd_schedule_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_schedule_oid]]
+==== OID 
+(((SCHEDULE ,OID)))  (((OID (SCHEDULE)))) 
+Unique table identifier.
+
+See also: <<SCHEDULE.adoc#_i_schedule_schedule_pk,SCHEDULE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_schedule_name]]
+==== NAME 
+(((SCHEDULE ,NAME)))  (((NAME (SCHEDULE)))) 
+Name of the Schedule.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_schedule_description]]
+==== DESCRIPTION 
+(((SCHEDULE ,DESCRIPTION)))  (((DESCRIPTION (SCHEDULE)))) 
+Description for the Schedule.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_schedule_quietperiod]]
+==== QUIETPERIOD 
+(((SCHEDULE ,QUIETPERIOD)))  (((QUIETPERIOD (SCHEDULE)))) 
+The Quiet Period value (between 0 and 3600 seconds) for the Schedule.
+
+The Quiet Period avoids that a Build is performed while people are checking in files. When a Level Request is due to be started by the Scheduler, the system will check first if any source code activity took place during the defined number of seconds.
+
+Only if there was no source code activity, it will be assumed safe to update from the source control system and execute the Level Request.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|QUIETPERIOD
+|NUMBER
+|===
+
+[[_cd_schedule_starttime]]
+==== STARTTIME 
+(((SCHEDULE ,STARTTIME)))  (((STARTTIME (SCHEDULE)))) 
+The time at which the Schedule must start.
+
+This value is used once each time the Scheduler is restarted and when the Schedule is set to Active.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|STARTTIME
+|DATE
+|===
+
+[[_cd_schedule_intervaltype]]
+==== INTERVALTYPE 
+(((SCHEDULE ,INTERVALTYPE)))  (((INTERVALTYPE (SCHEDULE)))) 
+The Interval Unit.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|INTERVALTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Minutes
+
+1 = Hours
+
+2 = Days
+
+
+[[_cd_schedule_intervalnumber]]
+==== INTERVALNUMBER 
+(((SCHEDULE ,INTERVALNUMBER)))  (((INTERVALNUMBER (SCHEDULE)))) 
+The number of interval units by which the Schedule must verify outstanding tasks.
+
+For instance, if the Interval Unit is set to MINUTES and the Interval Number to 10, the Schedule will check for changes in the Version Control Repository every 10 minutes.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|INTERVALNUMBER
+|NUMBER
+|===
+
+[[_cd_schedule_active]]
+==== ACTIVE 
+(((SCHEDULE ,ACTIVE)))  (((ACTIVE (SCHEDULE)))) 
+Indication whether the Schedule is active or not.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ACTIVE
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_schedule_archived]]
+==== ARCHIVED 
+(((SCHEDULE ,ARCHIVED)))  (((ARCHIVED (SCHEDULE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_schedule_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCHEDULE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCHEDULE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_schedule_version]]
+==== VERSION 
+(((SCHEDULE ,VERSION)))  (((VERSION (SCHEDULE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCHEDULE_PK))) [[_i_schedule_schedule_pk]]
+SCHEDULE_PK
+|Yes
+|Yes
+|<<SCHEDULE.adoc#_cd_schedule_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_FK_1
+|<<SCMLEVEL.adoc#_cd_scmlevel_scheduleoid,SCHEDULEOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,SCHEDULE))) 
+*SCHEDULE_ACTIVE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Active
+
+|
+
+French:
+|Actif
+
+|
+
+German:
+|Aktiv
+|===
+*SCHEDULE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCHEDULE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCHEDULE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*SCHEDULE_INTERVALNUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Interval Number
+
+|
+
+French:
+|Nombre d'intervalles
+
+|
+
+German:
+|Zahl der Intervalle
+|===
+*SCHEDULE_INTERVALTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Interval Unit
+
+|
+
+French:
+|Unité d'intervalle
+
+|
+
+German:
+|Einheit des Intervalls
+|===
+*SCHEDULE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SCHEDULE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCHEDULE_QUIETPERIOD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Quiet Period (Sec.)
+
+|
+
+French:
+|Période d'inactivité (sec.)
+
+|
+
+German:
+|Inaktivitätsperiode (Sek.)
+|===
+*SCHEDULE_STARTTIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Start Time
+
+|
+
+French:
+|Heure de début
+
+|
+
+German:
+|Anfangszeit
+|===
+*SCHEDULE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

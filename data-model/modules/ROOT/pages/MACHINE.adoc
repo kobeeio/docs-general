@@ -1,0 +1,826 @@
+[[_t_machine]]
+== MACHINE 
+(((MACHINE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<MACHINE.adoc#_cd_machine_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_name,NAME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_dhcpenabled,DHCPENABLED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_dhcpname,DHCPNAME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_ipaddress,IPADDRESS>>
+|VARCHAR2(15)
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_agentport,AGENTPORT>>
+|NUMBER
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_serverport,SERVERPORT>>
+|NUMBER
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_operatingsystem,OPERATINGSYSTEM>>
+|NUMBER
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_locked,LOCKED>>
+|NUMBER(1)
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_joblimit,JOBLIMIT>>
+|NUMBER
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_transporterprotocoloid,TRANSPORTERPROTOCOLOID>>
+|NUMBER
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<MACHINE.adoc#_cd_machine_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<MACHINE.adoc#_cd_machine_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_machine_oid]]
+==== OID 
+(((MACHINE ,OID)))  (((OID (MACHINE)))) 
+Unique table identifier.
+
+See also: <<MACHINE.adoc#_i_machine_machine_pk,MACHINE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_machine_name]]
+==== NAME 
+(((MACHINE ,NAME)))  (((NAME (MACHINE)))) 
+Name of the Machine.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(255)
+|===
+
+[[_cd_machine_description]]
+==== DESCRIPTION 
+(((MACHINE ,DESCRIPTION)))  (((DESCRIPTION (MACHINE)))) 
+Description for the Machine.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_machine_dhcpenabled]]
+==== DHCPENABLED 
+(((MACHINE ,DHCPENABLED)))  (((DHCPENABLED (MACHINE)))) 
+Indication whether or not the Machine is DHCP-enabled.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DHCPENABLED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_machine_dhcpname]]
+==== DHCPNAME 
+(((MACHINE ,DHCPNAME)))  (((DHCPNAME (MACHINE)))) 
+The Machine's DHCP Name.
+
+In case the DHCP Enabled option is selected, the IKAN ALM Server will try to set up a connection with this DHCP Name (using XML-RPC).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DHCPNAME
+|VARCHAR2(255)
+|===
+
+[[_cd_machine_ipaddress]]
+==== IPADDRESS 
+(((MACHINE ,IPADDRESS)))  (((IPADDRESS (MACHINE)))) 
+The Machine's IP Address.
+
+In case the DHCP Enabled option is not selected, the IKAN ALM Server will try to set up a connection with this IP Address (using XML-RPC).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|IPADDRESS
+|VARCHAR2(15)
+|===
+
+[[_cd_machine_agentport]]
+==== AGENTPORT 
+(((MACHINE ,AGENTPORT)))  (((AGENTPORT (MACHINE)))) 
+The Port number (between 0 and 65536) on which the IKAN ALM Agent on this Machine will listen for communication with the IKAN ALM Server (using XML-RPC).
+
+If you leave this field empty, the default value of 20020 will be used.
+
+If you define a value different from the default value, be sure to define the same value when running the Agent install wizard on this Machine.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|AGENTPORT
+|NUMBER
+|===
+
+[[_cd_machine_serverport]]
+==== SERVERPORT 
+(((MACHINE ,SERVERPORT)))  (((SERVERPORT (MACHINE)))) 
+The Port number (between 0 and 65536) on which the IKAN ALM Server will listen for communication with the IKAN ALM Agents (using XML-RPC). This port number was defined during the initial installation of the IKAN ALM Server.
+
+If the IKAN ALM Server uses the default value of 20021, you can also leave this field empty.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SERVERPORT
+|NUMBER
+|===
+
+[[_cd_machine_operatingsystem]]
+==== OPERATINGSYSTEM 
+(((MACHINE ,OPERATINGSYSTEM)))  (((OPERATINGSYSTEM (MACHINE)))) 
+The selected Operating System.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OPERATINGSYSTEM
+|NUMBER
+|===
+
+===== Value List
+0 = Windows
+
+1 = Unix
+
+2 = Linux
+
+3 = OS/390 MVS
+
+
+[[_cd_machine_locked]]
+==== LOCKED 
+(((MACHINE ,LOCKED)))  (((LOCKED (MACHINE)))) 
+Indication whether or not the Machine is locked for future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOCKED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_machine_joblimit]]
+==== JOBLIMIT 
+(((MACHINE ,JOBLIMIT)))  (((JOBLIMIT (MACHINE)))) 
+The number of maximum Deploys that may be run at the same time.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|JOBLIMIT
+|NUMBER
+|===
+
+===== Value List
+ANY = Only this specified number of Deploys will run concurrently. Starting at number 2.
+
+0 = All deploys will run concurrently 
+
+1 = All deploys will run sequentially
+
+
+[[_cd_machine_transporterprotocoloid]]
+==== TRANSPORTERPROTOCOLOID 
+(((MACHINE ,TRANSPORTERPROTOCOLOID)))  (((TRANSPORTERPROTOCOLOID (MACHINE)))) 
+OID identifying the Transporter used by the Machine. Refers to the primary key of the appropriate Transporter table: FILECOPY, FTP or SECURESHELL.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TRANSPORTERPROTOCOLOID
+|NUMBER
+|===
+
+[[_cd_machine_archived]]
+==== ARCHIVED 
+(((MACHINE ,ARCHIVED)))  (((ARCHIVED (MACHINE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_machine_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((MACHINE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (MACHINE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_machine_version]]
+==== VERSION 
+(((MACHINE ,VERSION)))  (((VERSION (MACHINE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,MACHINE_PK))) [[_i_machine_machine_pk]]
+MACHINE_PK
+|Yes
+|Yes
+|<<MACHINE.adoc#_cd_machine_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== BUILDENVIRONMENT
+
+Refer to the chapter <<BUILDENVIRONMENT.adoc#_t_buildenvironment,BUILDENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDENVIRONMENT_FK_2
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_machineoid,MACHINEOID>>
+|===
+
+===== DEPLOYENVIRONMENT
+
+Refer to the chapter <<DEPLOYENVIRONMENT.adoc#_t_deployenvironment,DEPLOYENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOYENVIRONMENT_FK_2
+|<<DEPLOYENVIRONMENT.adoc#_cd_deployenvironment_machineoid,MACHINEOID>>
+|===
+
+===== MACHINEPARAMETER
+
+Refer to the chapter <<MACHINEPARAMETER.adoc#_t_machineparameter,MACHINEPARAMETER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|MACHINEPARAMETER_FK_1
+|<<MACHINEPARAMETER.adoc#_cd_machineparameter_machineoid,MACHINEOID>>
+|===
+
+===== SYSTEMSETTINGS
+
+Refer to the chapter <<SYSTEMSETTINGS.adoc#_t_systemsettings,SYSTEMSETTINGS>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SYSTEMSETTINGS_FK_3
+|<<SYSTEMSETTINGS.adoc#_cd_systemsettings_machineoid,MACHINEOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,MACHINE))) 
+*MACHINE_AGENTPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Agent Port
+
+|
+
+French:
+|Port de l'Agent
+
+|
+
+German:
+|Agent Port
+|===
+*MACHINE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*MACHINE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*MACHINE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*MACHINE_DHCPENABLED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|DHCP Enabled
+
+|
+
+French:
+|DHCP activé
+
+|
+
+German:
+|DHCP-aktiviert
+|===
+*MACHINE_DHCPNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|DHCP Name
+
+|
+
+French:
+|Nom DHCP
+
+|
+
+German:
+|DHCP-Name
+|===
+*MACHINE_IPADDRESS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|IP Address
+
+|
+
+French:
+|Adresse IP
+
+|
+
+German:
+|IP-Adresse
+|===
+*MACHINE_JOBLIMIT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Concurrent Deploy Limit
+
+|
+
+French:
+|Limite Déploiements concurrents
+
+|
+
+German:
+|Limit der parallelen Auslieferungen
+|===
+*MACHINE_LOCKED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Locked
+
+|
+
+French:
+|Verrouillée
+
+|
+
+German:
+|Gesperrt
+|===
+*MACHINE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*MACHINE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*MACHINE_OPERATINGSYSTEM_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Operating System
+
+|
+
+French:
+|Système d'exploitation
+
+|
+
+German:
+|Betriebssystem
+|===
+*MACHINE_SERVERPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server Port
+
+|
+
+French:
+|Port du Serveur
+
+|
+
+German:
+|Server Port
+|===
+*MACHINE_TRANSPORTERPROTOCOLOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*MACHINE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

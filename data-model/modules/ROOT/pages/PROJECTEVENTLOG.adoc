@@ -1,0 +1,862 @@
+[[_t_projecteventlog]]
+== PROJECTEVENTLOG 
+(((PROJECTEVENTLOG))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_projectoid,PROJECTOID>>
+|NUMBER
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_objecttype,OBJECTTYPE>>
+|NUMBER
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_objectoid,OBJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_objectversion,OBJECTVERSION>>
+|NUMBER
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_changedatetime,CHANGEDATETIME>>
+|DATE
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_changetype,CHANGETYPE>>
+|NUMBER
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_userid,USERID>>
+|VARCHAR2(20)
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_note,NOTE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_changedstate,CHANGEDSTATE>>
+|VARCHAR2(4000)
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_leftobjecttype,LEFTOBJECTTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_leftobjectoid,LEFTOBJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_rightobjecttype,RIGHTOBJECTTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_rightobjectoid,RIGHTOBJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_projecteventlog_oid]]
+==== OID 
+(((PROJECTEVENTLOG ,OID)))  (((OID (PROJECTEVENTLOG)))) 
+Unique table identifier.
+
+See also: <<PROJECTEVENTLOG.adoc#_i_projecteventlog_projecteventlog_pk,PROJECTEVENTLOG_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_projecteventlog_projectoid]]
+==== PROJECTOID 
+(((PROJECTEVENTLOG ,PROJECTOID)))  (((PROJECTOID (PROJECTEVENTLOG)))) 
+OID of the Project for which the object has been changed.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PROJECTOID
+|NUMBER
+|===
+
+[[_cd_projecteventlog_objecttype]]
+==== OBJECTTYPE 
+(((PROJECTEVENTLOG ,OBJECTTYPE)))  (((OBJECTTYPE (PROJECTEVENTLOG)))) 
+The type of the Project Administration object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OBJECTTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Project
+
+1 = Project Stream
+
+2 = Project Stream Dependency
+
+3 = Life-Cycle
+
+4 = Level
+
+5 = Life-Cycle Association
+
+7 = Pre-Approval User Group Association
+
+8 = Post-Approval User Group Association
+
+9 = Build Environment
+
+11 = Build Parameter
+
+12 = Deploy Environment
+
+14 = Deploy Parameter
+
+15 = Environment Phase
+
+16 = Environment Phase Parameter
+
+
+[[_cd_projecteventlog_objectoid]]
+==== OBJECTOID 
+(((PROJECTEVENTLOG ,OBJECTOID)))  (((OBJECTOID (PROJECTEVENTLOG)))) 
+OID of the Project Administration object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OBJECTOID
+|NUMBER
+|===
+
+[[_cd_projecteventlog_objectversion]]
+==== OBJECTVERSION 
+(((PROJECTEVENTLOG ,OBJECTVERSION)))  (((OBJECTVERSION (PROJECTEVENTLOG)))) 
+The version number of the Project Administration object after the current update has been persisted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|OBJECTVERSION
+|NUMBER
+|===
+
+[[_cd_projecteventlog_changedatetime]]
+==== CHANGEDATETIME 
+(((PROJECTEVENTLOG ,CHANGEDATETIME)))  (((CHANGEDATETIME (PROJECTEVENTLOG)))) 
+The date and time at which the Project Administration object was created, updated or deleted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGEDATETIME
+|DATE
+|===
+
+[[_cd_projecteventlog_changetype]]
+==== CHANGETYPE 
+(((PROJECTEVENTLOG ,CHANGETYPE)))  (((CHANGETYPE (PROJECTEVENTLOG)))) 
+The type of change made to the Global Administration object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGETYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Create
+
+1 = Update
+
+2 = Delete
+
+
+[[_cd_projecteventlog_userid]]
+==== USERID 
+(((PROJECTEVENTLOG ,USERID)))  (((USERID (PROJECTEVENTLOG)))) 
+The User ID of the User that created/updated/deleted the Global Administration object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERID
+|VARCHAR2(20)
+|===
+
+[[_cd_projecteventlog_note]]
+==== NOTE 
+(((PROJECTEVENTLOG ,NOTE)))  (((NOTE (PROJECTEVENTLOG)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTE
+|VARCHAR2(512)
+|===
+
+[[_cd_projecteventlog_changedstate]]
+==== CHANGEDSTATE 
+(((PROJECTEVENTLOG ,CHANGEDSTATE)))  (((CHANGEDSTATE (PROJECTEVENTLOG)))) 
+Serialized xml of the object after the change. 
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CHANGEDSTATE
+|VARCHAR2(4000)
+|===
+
+[[_cd_projecteventlog_leftobjecttype]]
+==== LEFTOBJECTTYPE 
+(((PROJECTEVENTLOG ,LEFTOBJECTTYPE)))  (((LEFTOBJECTTYPE (PROJECTEVENTLOG)))) 
+The type of the "`parent`" object in case the object type is a OneToN or MtoN Association.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LEFTOBJECTTYPE
+|NUMBER
+|===
+
+[[_cd_projecteventlog_leftobjectoid]]
+==== LEFTOBJECTOID 
+(((PROJECTEVENTLOG ,LEFTOBJECTOID)))  (((LEFTOBJECTOID (PROJECTEVENTLOG)))) 
+OID of the parent object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LEFTOBJECTOID
+|NUMBER
+|===
+
+[[_cd_projecteventlog_rightobjecttype]]
+==== RIGHTOBJECTTYPE 
+(((PROJECTEVENTLOG ,RIGHTOBJECTTYPE)))  (((RIGHTOBJECTTYPE (PROJECTEVENTLOG)))) 
+The type of the "child" object in case the object type is a MToN Association.
+
+Example: the LifeCycleAssociation (MtoN Association between Life-Cycle and Level), where the rightObjectType will be "`Level`".
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|RIGHTOBJECTTYPE
+|NUMBER
+|===
+
+[[_cd_projecteventlog_rightobjectoid]]
+==== RIGHTOBJECTOID 
+(((PROJECTEVENTLOG ,RIGHTOBJECTOID)))  (((RIGHTOBJECTOID (PROJECTEVENTLOG)))) 
+OID of the child object for which the log is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|RIGHTOBJECTOID
+|NUMBER
+|===
+
+[[_cd_projecteventlog_archived]]
+==== ARCHIVED 
+(((PROJECTEVENTLOG ,ARCHIVED)))  (((ARCHIVED (PROJECTEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projecteventlog_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PROJECTEVENTLOG ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PROJECTEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_projecteventlog_version]]
+==== VERSION 
+(((PROJECTEVENTLOG ,VERSION)))  (((VERSION (PROJECTEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PROJECTEVENTLOG_PK))) [[_i_projecteventlog_projecteventlog_pk]]
+PROJECTEVENTLOG_PK
+|Yes
+|Yes
+|<<PROJECTEVENTLOG.adoc#_cd_projecteventlog_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,PROJECTEVENTLOG))) 
+*PROJECTEVENTLOG_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PROJECTEVENTLOG_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PROJECTEVENTLOG_CHANGEDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Date/Time
+
+|
+
+French:
+|Date / Heure de la modification
+
+|
+
+German:
+|Änderungsdatum
+|===
+*PROJECTEVENTLOG_CHANGEDSTATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Changed State
+
+|
+
+French:
+|Etat modifié
+
+|
+
+German:
+|Modifizierte Status
+|===
+*PROJECTEVENTLOG_CHANGETYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Type
+
+|
+
+French:
+|Type de modification
+
+|
+
+German:
+|Änderungsart
+|===
+*PROJECTEVENTLOG_LEFTOBJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|Right Object Type
+
+|
+
+German:
+|Right Object Type
+|===
+*PROJECTEVENTLOG_LEFTOBJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Left Object Type
+
+|
+
+French:
+|Left Object Type
+
+|
+
+German:
+|Left Object Type
+|===
+*PROJECTEVENTLOG_NOTE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Note
+
+|
+
+French:
+|Remarque
+
+|
+
+German:
+|Anmerkung
+|===
+*PROJECTEVENTLOG_OBJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTEVENTLOG_OBJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Object Type
+
+|
+
+French:
+|Type d'objet
+
+|
+
+German:
+|Objekttyp
+|===
+*PROJECTEVENTLOG_OBJECTVERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Object Version
+
+|
+
+French:
+|Version d'objet
+
+|
+
+German:
+|Version des Objekts
+|===
+*PROJECTEVENTLOG_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTEVENTLOG_PROJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTEVENTLOG_RIGHTOBJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTEVENTLOG_RIGHTOBJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Right Object Type
+
+|
+
+French:
+|Right Object Type
+
+|
+
+German:
+|Right Object Type
+|===
+*PROJECTEVENTLOG_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*PROJECTEVENTLOG_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

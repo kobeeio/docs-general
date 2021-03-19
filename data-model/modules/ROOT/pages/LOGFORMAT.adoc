@@ -1,0 +1,424 @@
+[[_t_logformat]]
+== LOGFORMAT 
+(((LOGFORMAT))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<LOGFORMAT.adoc#_cd_logformat_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<LOGFORMAT.adoc#_cd_logformat_formattype,FORMATTYPE>>
+|NUMBER
+
+|
+|No
+|<<LOGFORMAT.adoc#_cd_logformat_tooltype,TOOLTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<LOGFORMAT.adoc#_cd_logformat_formattingdata,FORMATTINGDATA>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<LOGFORMAT.adoc#_cd_logformat_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<LOGFORMAT.adoc#_cd_logformat_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<LOGFORMAT.adoc#_cd_logformat_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_logformat_oid]]
+==== OID 
+(((LOGFORMAT ,OID)))  (((OID (LOGFORMAT)))) 
+Unique table identifier.
+
+See also: <<LOGFORMAT.adoc#_i_logformat_logformat_pk,LOGFORMAT_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_logformat_formattype]]
+==== FORMATTYPE 
+(((LOGFORMAT ,FORMATTYPE)))  (((FORMATTYPE (LOGFORMAT)))) 
+The format of the log file: TXT or XML.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|FORMATTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = TXT
+
+1 = XML
+
+
+[[_cd_logformat_tooltype]]
+==== TOOLTYPE 
+(((LOGFORMAT ,TOOLTYPE)))  (((TOOLTYPE (LOGFORMAT)))) 
+The type of Scripting Tool being used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TOOLTYPE
+|NUMBER
+|===
+
+===== Value List
+-1 = None (Used for the Core Phases)
+
+0 = Ant
+
+1 = NAnt
+
+2 = Maven2
+
+3 = Gradle
+
+
+[[_cd_logformat_formattingdata]]
+==== FORMATTINGDATA 
+(((LOGFORMAT ,FORMATTINGDATA)))  (((FORMATTINGDATA (LOGFORMAT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|FORMATTINGDATA
+|VARCHAR2(512)
+|===
+
+[[_cd_logformat_archived]]
+==== ARCHIVED 
+(((LOGFORMAT ,ARCHIVED)))  (((ARCHIVED (LOGFORMAT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_logformat_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((LOGFORMAT ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (LOGFORMAT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_logformat_version]]
+==== VERSION 
+(((LOGFORMAT ,VERSION)))  (((VERSION (LOGFORMAT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,LOGFORMAT_PK))) [[_i_logformat_logformat_pk]]
+LOGFORMAT_PK
+|Yes
+|Yes
+|<<LOGFORMAT.adoc#_cd_logformat_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== BUILDLOG
+
+Refer to the chapter <<BUILDLOG.adoc#_t_buildlog,BUILDLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDLOG_FK_2
+|<<BUILDLOG.adoc#_cd_buildlog_logformatoid,LOGFORMATOID>>
+|===
+
+===== DEPLOYLOG
+
+Refer to the chapter <<DEPLOYLOG.adoc#_t_deploylog,DEPLOYLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOYLOG_FK_2
+|<<DEPLOYLOG.adoc#_cd_deploylog_logformatoid,LOGFORMATOID>>
+|===
+
+===== LEVELREQUESTLOG
+
+Refer to the chapter <<LEVELREQUESTLOG.adoc#_t_levelrequestlog,LEVELREQUESTLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUESTLOG_FK_2
+|<<LEVELREQUESTLOG.adoc#_cd_levelrequestlog_logformatoid,LOGFORMATOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,LOGFORMAT))) 
+*LOGFORMAT_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*LOGFORMAT_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*LOGFORMAT_FORMATTINGDATA_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Formating Data
+
+|
+
+French:
+|Présentation des données
+
+|
+
+German:
+|Daten über den Format
+|===
+*LOGFORMAT_FORMATTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Format Type
+
+|
+
+French:
+|Type de format
+
+|
+
+German:
+|Formattyp
+|===
+*LOGFORMAT_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LOGFORMAT_TOOLTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Tool Type
+
+|
+
+French:
+|Type d'outil
+
+|
+
+German:
+|Typ des Werkzeug
+|===
+*LOGFORMAT_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

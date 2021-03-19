@@ -1,0 +1,846 @@
+[[_t_secureshell]]
+== SECURESHELL 
+(((SECURESHELL))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_version,VERSION>>
+|NUMBER
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_authentication,AUTHENTICATION>>
+|NUMBER
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_keyfilepath,KEYFILEPATH>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_passphrase,PASSPHRASE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_username,USERNAME>>
+|VARCHAR2(50)
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_workcopypathprefix,WORKCOPYPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_buildarchivepathprefix,BUILDARCHIVEPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_scriptpathprefix,SCRIPTPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|No
+|<<SECURESHELL.adoc#_cd_secureshell_phasecatalogpathprefix,PHASECATALOGPATHPREFIX>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_serverhostname,SERVERHOSTNAME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_serversshport,SERVERSSHPORT>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_secureshell_oid]]
+==== OID 
+(((SECURESHELL ,OID)))  (((OID (SECURESHELL)))) 
+Unique table identifier.
+
+See also: <<SECURESHELL.adoc#_i_secureshell_secureshell_pk,SECURESHELL_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_secureshell_name]]
+==== NAME 
+(((SECURESHELL ,NAME)))  (((NAME (SECURESHELL)))) 
+Name of the Secure Shell Transporter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_secureshell_description]]
+==== DESCRIPTION 
+(((SECURESHELL ,DESCRIPTION)))  (((DESCRIPTION (SECURESHELL)))) 
+Description for the Secure Shell Transporter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_secureshell_archived]]
+==== ARCHIVED 
+(((SECURESHELL ,ARCHIVED)))  (((ARCHIVED (SECURESHELL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_secureshell_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SECURESHELL ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SECURESHELL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_secureshell_version]]
+==== VERSION 
+(((SECURESHELL ,VERSION)))  (((VERSION (SECURESHELL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+[[_cd_secureshell_authentication]]
+==== AUTHENTICATION 
+(((SECURESHELL ,AUTHENTICATION)))  (((AUTHENTICATION (SECURESHELL)))) 
+The Authentication type.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|AUTHENTICATION
+|NUMBER
+|===
+
+===== Value List
+0 = User and Password Authentication
+
+1 = Key Authentication
+
+
+[[_cd_secureshell_keyfilepath]]
+==== KEYFILEPATH 
+(((SECURESHELL ,KEYFILEPATH)))  (((KEYFILEPATH (SECURESHELL)))) 
+The Key File, if Key Authentication is selected.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|KEYFILEPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_secureshell_passphrase]]
+==== PASSPHRASE 
+(((SECURESHELL ,PASSPHRASE)))  (((PASSPHRASE (SECURESHELL)))) 
+The Passphrase, if a Passphrase is used to protect your Key Authentication.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSPHRASE
+|VARCHAR2(255)
+|===
+
+[[_cd_secureshell_password]]
+==== PASSWORD 
+(((SECURESHELL ,PASSWORD)))  (((PASSWORD (SECURESHELL)))) 
+The Password, if User and Password Authentication is selected.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_secureshell_username]]
+==== USERNAME 
+(((SECURESHELL ,USERNAME)))  (((USERNAME (SECURESHELL)))) 
+The User Name, if User and Password Authentication is selected.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERNAME
+|VARCHAR2(50)
+|===
+
+[[_cd_secureshell_workcopypathprefix]]
+==== WORKCOPYPATHPREFIX 
+(((SECURESHELL ,WORKCOPYPATHPREFIX)))  (((WORKCOPYPATHPREFIX (SECURESHELL)))) 
+The prefix for the Work Copy Location (the location where the VCR interface places the checked out sources on the IKAN ALM Server so that it is accessible from a remote IKAN ALM Agent handling a build process). The Server Location will be formed by concatenating this prefix together with the Relative Location defined in the System Settings.
+
+Example 1:
+
+An IKAN ALM Server on a Windows machine with an SSH Server supporting the "cygdrive" notation.
+
+System Settings: the Relative Work Copy Location being defined as "workCopy" and the Local FileCopy Work Copy Location as e:/ikan/scm4all/workCopy results in /cygdrive/e/ikan/scm4all as the Work Copy Path Prefix.
+
+The IKAN ALM Agent will try to Secure Copy the sources from a location under /cygdrive/e/ikan/scm4all/workCopy.
+
+Example 2:
+
+An IKAN ALM Server on a Linux machine. 
+
+System Settings: the Local FileCopy Work Copy location being defined as /opt/ikan/scm4all/workCopy and the Relative Work Copy Location as "workCopy" results in/opt/ikan/scm4all as Work Copy Path Prefix.
+
+The IKAN ALM Agent will try to Secure Copy the sources from a location under /opt/ikan/scm4all/workCopy.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|WORKCOPYPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_secureshell_buildarchivepathprefix]]
+==== BUILDARCHIVEPATHPREFIX 
+(((SECURESHELL ,BUILDARCHIVEPATHPREFIX)))  (((BUILDARCHIVEPATHPREFIX (SECURESHELL)))) 
+The prefix for the Build Archive Location (the location where the Builds are stored or retrieved from). The Server Location will be formed by concatenating this prefix together with the Relative Location defined in the System Settings.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDARCHIVEPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_secureshell_scriptpathprefix]]
+==== SCRIPTPATHPREFIX 
+(((SECURESHELL ,SCRIPTPATHPREFIX)))  (((SCRIPTPATHPREFIX (SECURESHELL)))) 
+The prefix for the Script Location. The Server Location will be formed by concatenating this prefix together with the Relative Location defined in the System Settings.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SCRIPTPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_secureshell_phasecatalogpathprefix]]
+==== PHASECATALOGPATHPREFIX 
+(((SECURESHELL ,PHASECATALOGPATHPREFIX)))  (((PHASECATALOGPATHPREFIX (SECURESHELL)))) 
+The prefix for the Phase Catalog Location (the location on the IKAN ALM Server where imported and newly created Phases are stored). When an IKAN ALM Agent/Server needs to install a missing Phase, it will use this prefix and the Relative Phase Catalog Location from SYSTEMSETTINGS to construct a path to copy the missing Phase from.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PHASECATALOGPATHPREFIX
+|VARCHAR2(512)
+|===
+
+[[_cd_secureshell_serverhostname]]
+==== SERVERHOSTNAME 
+(((SECURESHELL ,SERVERHOSTNAME)))  (((SERVERHOSTNAME (SECURESHELL)))) 
+The hostname of the IKAN ALM Server Machine in case it is different from the IKAN ALM Server Machine DHCP name or IP address. 
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SERVERHOSTNAME
+|VARCHAR2(255)
+|===
+
+[[_cd_secureshell_serversshport]]
+==== SERVERSSHPORT 
+(((SECURESHELL ,SERVERSSHPORT)))  (((SERVERSSHPORT (SECURESHELL)))) 
+The Port Number of the SSH Server running on the IKAN ALM Server.
+
+Note: This value will overrule the value specified in the System Settings. If not specified in the System Settings nor on in the SSH Transporter Settings screen, the default SSH Port Number 22 is used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SERVERSSHPORT
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SECURESHELL_PK))) [[_i_secureshell_secureshell_pk]]
+SECURESHELL_PK
+|Yes
+|Yes
+|<<SECURESHELL.adoc#_cd_secureshell_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SECURESHELL))) 
+*SECURESHELL_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SECURESHELL_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SECURESHELL_AUTHENTICATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Authentication Type
+
+|
+
+French:
+|Type d'authentification
+
+|
+
+German:
+|Authentifizierungstyp
+|===
+*SECURESHELL_BUILDARCHIVEPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Archive Path Prefix 
+
+|
+
+French:
+|Préf. Empl. Archives Constr.
+
+|
+
+German:
+|Präfix des Bereitstellungsarchivverzeichnisses
+|===
+*SECURESHELL_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*SECURESHELL_KEYFILEPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Key File Path
+
+|
+
+French:
+|Chemin du fichier des clés
+
+|
+
+German:
+|Schlüsseldateiverzeichnis
+|===
+*SECURESHELL_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SECURESHELL_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SECURESHELL_PASSPHRASE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Passphrase
+
+|
+
+French:
+|Phrase de passe
+
+|
+
+German:
+|Passphrase
+|===
+*SECURESHELL_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*SECURESHELL_PHASECATALOGPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase Catalog Path Prefix
+
+|
+
+French:
+|Préfixe Chemin du Catalogue des Phases
+
+|
+
+German:
+|Präfix für den Phasekatalog
+|===
+*SECURESHELL_SCRIPTPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Script Path Prefix 
+
+|
+
+French:
+|Préf. Empl. Scripts
+
+|
+
+German:
+|Präfix des Skriptverzeichnisses
+|===
+*SECURESHELL_SERVERHOSTNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server Hostname
+
+|
+
+French:
+|Nom du Serveur
+
+|
+
+German:
+|Server Hostname
+|===
+*SECURESHELL_SERVERSSHPORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Server SSH Port 
+
+|
+
+French:
+|Port du Serveur SSH
+
+|
+
+German:
+|Server SSH Port
+|===
+*SECURESHELL_USERNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User Name
+
+|
+
+French:
+|Nom d'utilisateur
+
+|
+
+German:
+|Benutzername
+|===
+*SECURESHELL_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===
+*SECURESHELL_WORKCOPYPATHPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Work Copy Path Prefix 
+
+|
+
+French:
+|Préf. Empl. Copies de travail
+
+|
+
+German:
+|Präfix des Arbeitskopieverzeichnisses
+|===

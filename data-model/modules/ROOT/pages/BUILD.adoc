@@ -1,0 +1,908 @@
+[[_t_build]]
+== BUILD 
+(((BUILD))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<BUILD.adoc#_cd_build_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<BUILD.adoc#_cd_build_taggedbuild,TAGGEDBUILD>>
+|NUMBER(1)
+
+|
+|No
+|<<BUILD.adoc#_cd_build_buildnumber,BUILDNUMBER>>
+|NUMBER
+
+|
+|No
+|<<BUILD.adoc#_cd_build_status,STATUS>>
+|NUMBER
+
+|
+|Yes
+|<<BUILD.adoc#_cd_build_startdate,STARTDATE>>
+|DATE
+
+|
+|Yes
+|<<BUILD.adoc#_cd_build_enddate,ENDDATE>>
+|DATE
+
+|
+|No
+|<<BUILD.adoc#_cd_build_filename,FILENAME>>
+|VARCHAR2(255)
+
+|F
+|No
+|<<BUILD.adoc#_cd_build_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|NUMBER
+
+|F
+|No
+|<<BUILD.adoc#_cd_build_levelrequestoid,LEVELREQUESTOID>>
+|NUMBER
+
+|F
+|No
+|<<BUILD.adoc#_cd_build_propertylogoid,PROPERTYLOGOID>>
+|NUMBER
+
+|
+|Yes
+|<<BUILD.adoc#_cd_build_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILD.adoc#_cd_build_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<BUILD.adoc#_cd_build_archivestatus,ARCHIVESTATUS>>
+|NUMBER
+
+|
+|Yes
+|<<BUILD.adoc#_cd_build_filesize,FILESIZE>>
+|NUMBER(20)
+
+|
+|No
+|<<BUILD.adoc#_cd_build_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_build_oid]]
+==== OID 
+(((BUILD ,OID)))  (((OID (BUILD)))) 
+Unique table identifier.
+
+See also: <<BUILD.adoc#_i_build_build_pk,BUILD_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_build_taggedbuild]]
+==== TAGGEDBUILD 
+(((BUILD ,TAGGEDBUILD)))  (((TAGGEDBUILD (BUILD)))) 
+Indication whether the Build is based on tagged code (Rebuild) or untagged code (original build).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TAGGEDBUILD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_build_buildnumber]]
+==== BUILDNUMBER 
+(((BUILD ,BUILDNUMBER)))  (((BUILDNUMBER (BUILD)))) 
+The Build Number for this Build associated with this Level Request.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDNUMBER
+|NUMBER
+|===
+
+[[_cd_build_status]]
+==== STATUS 
+(((BUILD ,STATUS)))  (((STATUS (BUILD)))) 
+The Build Status indication. This Status indication is derived from the status of the different Build Phases.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|STATUS
+|NUMBER
+|===
+
+===== Value List
+0 = Unknown
+
+1 = Canceled
+
+2 = Rejected
+
+3 = Wait
+
+4 = In progress
+
+5 = Run
+
+6 = Fail
+
+7 = Success
+
+8 = Warning
+
+9 = Aborted
+
+
+[[_cd_build_startdate]]
+==== STARTDATE 
+(((BUILD ,STARTDATE)))  (((STARTDATE (BUILD)))) 
+The date and time at which the Build execution started.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|STARTDATE
+|DATE
+|===
+
+[[_cd_build_enddate]]
+==== ENDDATE 
+(((BUILD ,ENDDATE)))  (((ENDDATE (BUILD)))) 
+The date and time at which the Build execution ended.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ENDDATE
+|DATE
+|===
+
+[[_cd_build_filename]]
+==== FILENAME 
+(((BUILD ,FILENAME)))  (((FILENAME (BUILD)))) 
+Name of the Build File that holds the compressed Build results. This file is stored in the IKAN ALM Build Archive Location.
+
+This name has the following format:
+
+DEMOCVS_H_1-0_b9_CONTBUILD_Win.zip
+
+where:
+
+* DEMOCVS = Project Name
+
+* H = Stream type indication: H = Head, B = Branch
+
+* 1-0 = Build Prefix
+
+* b9 = Build Number
+
+* CONTBUILD = Build Environment name
+
+* win = Build Environment suffix: win, linux
+
+* zip = filename extension. For Builds on a Windows Machine, this is .zip, for Linux/Unix Builds, the extension is .tar.gz.
+
+If the Build failed, this field is empty.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|FILENAME
+|VARCHAR2(255)
+|===
+
+[[_cd_build_buildenvironmentoid]]
+==== BUILDENVIRONMENTOID 
+(((BUILD ,BUILDENVIRONMENTOID)))  (((BUILDENVIRONMENTOID (BUILD)))) 
+Identifier for the BUILDENVIRONMENT table.
+
+For more information, refer to the description of the foreign key BUILD_FK_1.
+
+See also: <<BUILD.adoc#_i_build_build_fk_1,BUILD_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|BUILDENVIRONMENTOID
+|NUMBER
+|===
+
+[[_cd_build_levelrequestoid]]
+==== LEVELREQUESTOID 
+(((BUILD ,LEVELREQUESTOID)))  (((LEVELREQUESTOID (BUILD)))) 
+Identifier for the LEVELREQUEST table.
+
+For more information, refer to the description of the foreign key BUILD_FK_2.
+
+See also: <<BUILD.adoc#_i_build_build_fk_2,BUILD_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|LEVELREQUESTOID
+|NUMBER
+|===
+
+[[_cd_build_propertylogoid]]
+==== PROPERTYLOGOID 
+(((BUILD ,PROPERTYLOGOID)))  (((PROPERTYLOGOID (BUILD)))) 
+Identifier for the PROPERTYLOG table.
+
+For more information, refer to the description of the foreign key BUILD_FK_3.
+
+See also: <<BUILD.adoc#_i_build_build_fk_3,BUILD_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROPERTYLOGOID
+|NUMBER
+|===
+
+[[_cd_build_archived]]
+==== ARCHIVED 
+(((BUILD ,ARCHIVED)))  (((ARCHIVED (BUILD)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_build_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((BUILD ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (BUILD)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_build_archivestatus]]
+==== ARCHIVESTATUS 
+(((BUILD ,ARCHIVESTATUS)))  (((ARCHIVESTATUS (BUILD)))) 
+Archive status of the Build.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ARCHIVESTATUS
+|NUMBER
+|===
+
+===== Value List
+0 = non-existing
+
+1 = present
+
+2 = trash bin
+
+3 = deleted
+
+
+[[_cd_build_filesize]]
+==== FILESIZE 
+(((BUILD ,FILESIZE)))  (((FILESIZE (BUILD)))) 
+The file size  in kilobytes (kB).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|FILESIZE
+|NUMBER(20)
+|===
+
+[[_cd_build_version]]
+==== VERSION 
+(((BUILD ,VERSION)))  (((VERSION (BUILD)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,BUILD_PK))) [[_i_build_build_pk]]
+BUILD_PK
+|Yes
+|Yes
+|<<BUILD.adoc#_cd_build_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,BUILD_FK_1))) [[_i_build_build_fk_1]]
+BUILD_FK_1
+|No
+|No
+|<<BUILD.adoc#_cd_build_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|<<BUILDENVIRONMENT.adoc#_t_buildenvironment,BUILDENVIRONMENT>>
+
+| 
+(((Foreign Keys ,BUILD_FK_2))) [[_i_build_build_fk_2]]
+BUILD_FK_2
+|No
+|No
+|<<BUILD.adoc#_cd_build_levelrequestoid,LEVELREQUESTOID>>
+|<<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>>
+
+| 
+(((Foreign Keys ,BUILD_FK_3))) [[_i_build_build_fk_3]]
+BUILD_FK_3
+|No
+|No
+|<<BUILD.adoc#_cd_build_propertylogoid,PROPERTYLOGOID>>
+|<<PROPERTYLOG.adoc#_t_propertylog,PROPERTYLOG>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== BUILDENVIRONMENT
+
+Refer to the chapter <<BUILDENVIRONMENT.adoc#_t_buildenvironment,BUILDENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|BUILD_FK_1
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_oid,OID>>
+|===
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|BUILD_FK_2
+|<<LEVELREQUEST.adoc#_cd_levelrequest_oid,OID>>
+|===
+
+===== PROPERTYLOG
+
+Refer to the chapter <<PROPERTYLOG.adoc#_t_propertylog,PROPERTYLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|BUILD_FK_3
+|<<PROPERTYLOG.adoc#_cd_propertylog_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== BUILDDEPENDENCY
+
+Refer to the chapter <<BUILDDEPENDENCY.adoc#_t_builddependency,BUILDDEPENDENCY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDDEPENDENCY_FK_1
+|<<BUILDDEPENDENCY.adoc#_cd_builddependency_masterbuildoid,MASTERBUILDOID>>
+
+|BUILDDEPENDENCY_FK_2
+|<<BUILDDEPENDENCY.adoc#_cd_builddependency_childbuildoid,CHILDBUILDOID>>
+|===
+
+===== BUILDLOG
+
+Refer to the chapter <<BUILDLOG.adoc#_t_buildlog,BUILDLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDLOG_FK_1
+|<<BUILDLOG.adoc#_cd_buildlog_buildoid,BUILDOID>>
+|===
+
+===== DEPLOY
+
+Refer to the chapter <<DEPLOY.adoc#_t_deploy,DEPLOY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOY_FK_1
+|<<DEPLOY.adoc#_cd_deploy_buildoid,BUILDOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,BUILD))) 
+*BUILD_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*BUILD_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*BUILD_ARCHIVESTATUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Status
+
+|
+
+French:
+|Statut Archive
+
+|
+
+German:
+|Archivstatus
+|===
+*BUILD_BUILDENVIRONMENTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILD_BUILDNUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Number
+
+|
+
+French:
+|Numéro de la Construction
+
+|
+
+German:
+|Bereitstellungsnummer
+|===
+*BUILD_ENDDATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|End Date/Time
+
+|
+
+French:
+|Fin d'exécution
+
+|
+
+German:
+|Ausführungsende
+|===
+*BUILD_FILENAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build File Name
+
+|
+
+French:
+|Fichier de construction
+
+|
+
+German:
+|Bereitstellungsdatei
+|===
+*BUILD_FILESIZE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|File Size
+
+|
+
+French:
+|Taille Fichier
+
+|
+
+German:
+|Dateigröße
+|===
+*BUILD_LEVELREQUESTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILD_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILD_PROPERTYLOGOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILD_STARTDATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Start Date/Time
+
+|
+
+French:
+|Début d'exécution
+
+|
+
+German:
+|Ausführungsbeginn
+|===
+*BUILD_STATUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Status
+
+|
+
+French:
+|Statut
+
+|
+
+German:
+|Status
+|===
+*BUILD_TAGGEDBUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Based on Tagged Code
+
+|
+
+French:
+|Construction balisée
+
+|
+
+German:
+|Bereitstellungsversion
+|===
+*BUILD_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

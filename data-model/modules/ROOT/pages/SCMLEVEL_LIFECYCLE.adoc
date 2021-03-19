@@ -1,0 +1,569 @@
+[[_t_scmlevel_lifecycle]]
+== SCMLEVEL_LIFECYCLE 
+(((SCMLEVEL_LIFECYCLE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_scmleveloid,SCMLEVELOID>>
+|NUMBER
+
+|F
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_lifecycleoid,LIFECYCLEOID>>
+|NUMBER
+
+|
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_lifecyclelevelsequencenumber,LIFECYCLELEVELSEQUENCENUMBER>>
+|NUMBER
+
+|
+|Yes
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_nextscheduledrequest,NEXTSCHEDULEDREQUEST>>
+|DATE
+
+|
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_optional,OPTIONAL>>
+|NUMBER(1)
+
+|
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_optionaldeploy,OPTIONALDEPLOY>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_scmlevel_lifecycle_oid]]
+==== OID 
+(((SCMLEVEL_LIFECYCLE ,OID)))  (((OID (SCMLEVEL_LIFECYCLE)))) 
+Unique table identifier.
+
+See also: <<SCMLEVEL_LIFECYCLE.adoc#_i_scmlevel_lifecycle_scmlevel_lifecycle_pk,SCMLEVEL_LIFECYCLE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_scmlevel_lifecycle_scmleveloid]]
+==== SCMLEVELOID 
+(((SCMLEVEL_LIFECYCLE ,SCMLEVELOID)))  (((SCMLEVELOID (SCMLEVEL_LIFECYCLE)))) 
+Identifier for the SCMLEVEL table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_LIFECYCLE_FK_2.
+
+See also: <<SCMLEVEL_LIFECYCLE.adoc#_i_scmlevel_lifecycle_scmlevel_lifecycle_fk_2,SCMLEVEL_LIFECYCLE_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMLEVELOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_lifecycle_lifecycleoid]]
+==== LIFECYCLEOID 
+(((SCMLEVEL_LIFECYCLE ,LIFECYCLEOID)))  (((LIFECYCLEOID (SCMLEVEL_LIFECYCLE)))) 
+Identifier for the LIFECYCLE table.
+
+For more information, refer to the description of the foreign key SCMLEVEL_LIFECYCLE_FK_1.
+
+See also: <<SCMLEVEL_LIFECYCLE.adoc#_i_scmlevel_lifecycle_scmlevel_lifecycle_fk_1,SCMLEVEL_LIFECYCLE_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|LIFECYCLEOID
+|NUMBER
+|===
+
+[[_cd_scmlevel_lifecycle_lifecyclelevelsequencenumber]]
+==== LIFECYCLELEVELSEQUENCENUMBER 
+(((SCMLEVEL_LIFECYCLE ,LIFECYCLELEVELSEQUENCENUMBER)))  (((LIFECYCLELEVELSEQUENCENUMBER (SCMLEVEL_LIFECYCLE)))) 
+Number indicating the position of the Level within the sequence of Levels in the Life-Cycle
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LIFECYCLELEVELSEQUENCENUMBER
+|NUMBER
+|===
+
+[[_cd_scmlevel_lifecycle_nextscheduledrequest]]
+==== NEXTSCHEDULEDREQUEST 
+(((SCMLEVEL_LIFECYCLE ,NEXTSCHEDULEDREQUEST)))  (((NEXTSCHEDULEDREQUEST (SCMLEVEL_LIFECYCLE)))) 
+Date and Time at which the next verification for modifications in the VCR will be done and a Level Request may be created. Only appropriate if the Build Level for the Project Stream is associated with a Schedule.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NEXTSCHEDULEDREQUEST
+|DATE
+|===
+
+[[_cd_scmlevel_lifecycle_optional]]
+==== OPTIONAL 
+(((SCMLEVEL_LIFECYCLE ,OPTIONAL)))  (((OPTIONAL (SCMLEVEL_LIFECYCLE)))) 
+Indication whether or not the Level is optional. Optional Levels may be skipped in the Life-Cycle.
+
+The default value is 0.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OPTIONAL
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmlevel_lifecycle_optionaldeploy]]
+==== OPTIONALDEPLOY 
+(((SCMLEVEL_LIFECYCLE ,OPTIONALDEPLOY)))  (((OPTIONALDEPLOY (SCMLEVEL_LIFECYCLE)))) 
+Indication whether or not  to skip Deploys to specific Deploy Environments at the moment a Level Request is created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|OPTIONALDEPLOY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmlevel_lifecycle_archived]]
+==== ARCHIVED 
+(((SCMLEVEL_LIFECYCLE ,ARCHIVED)))  (((ARCHIVED (SCMLEVEL_LIFECYCLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmlevel_lifecycle_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCMLEVEL_LIFECYCLE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCMLEVEL_LIFECYCLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_scmlevel_lifecycle_version]]
+==== VERSION 
+(((SCMLEVEL_LIFECYCLE ,VERSION)))  (((VERSION (SCMLEVEL_LIFECYCLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCMLEVEL_LIFECYCLE_PK))) [[_i_scmlevel_lifecycle_scmlevel_lifecycle_pk]]
+SCMLEVEL_LIFECYCLE_PK
+|Yes
+|Yes
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,SCMLEVEL_LIFECYCLE_FK_1))) [[_i_scmlevel_lifecycle_scmlevel_lifecycle_fk_1]]
+SCMLEVEL_LIFECYCLE_FK_1
+|No
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_lifecycleoid,LIFECYCLEOID>>
+|<<LIFECYCLE.adoc#_t_lifecycle,LIFECYCLE>>
+
+| 
+(((Foreign Keys ,SCMLEVEL_LIFECYCLE_FK_2))) [[_i_scmlevel_lifecycle_scmlevel_lifecycle_fk_2]]
+SCMLEVEL_LIFECYCLE_FK_2
+|No
+|No
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_scmleveloid,SCMLEVELOID>>
+|<<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== LIFECYCLE
+
+Refer to the chapter <<LIFECYCLE.adoc#_t_lifecycle,LIFECYCLE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMLEVEL_LIFECYCLE_FK_1
+|<<LIFECYCLE.adoc#_cd_lifecycle_oid,OID>>
+|===
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMLEVEL_LIFECYCLE_FK_2
+|<<SCMLEVEL.adoc#_cd_scmlevel_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SCMLEVEL_LIFECYCLE))) 
+*SCMLEVEL_LIFECYCLE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCMLEVEL_LIFECYCLE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCMLEVEL_LIFECYCLE_LIFECYCLELEVELSEQUENCENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Sequence Number
+
+|
+
+French:
+|Numéro de séquence
+
+|
+
+German:
+|Sequenznummer
+|===
+*SCMLEVEL_LIFECYCLE_LIFECYCLEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_LIFECYCLE_NEXTSCHEDULEDREQUEST_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Next Scheduled Request
+
+|
+
+French:
+|Prochaine Requête prévue
+
+|
+
+German:
+|Nächste geplante Anfrage
+|===
+*SCMLEVEL_LIFECYCLE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_LIFECYCLE_OPTIONAL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Optional
+
+|
+
+French:
+|Optionnel
+
+|
+
+German:
+|Optional
+|===
+*SCMLEVEL_LIFECYCLE_OPTIONALDEPLOY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Optional Deploys
+
+|
+
+French:
+|Déploiements optionnels
+
+|
+
+German:
+|Optionale Auslieferungen
+|===
+*SCMLEVEL_LIFECYCLE_SCMLEVELOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMLEVEL_LIFECYCLE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

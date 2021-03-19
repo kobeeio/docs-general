@@ -1,0 +1,652 @@
+[[_t_visualsourcesafe]]
+== VISUALSOURCESAFE 
+(((VISUALSOURCESAFE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_userid,USERID>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_commandpath,COMMANDPATH>>
+|VARCHAR2(255)
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_inipath,INIPATH>>
+|VARCHAR2(255)
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_dateformat,DATEFORMAT>>
+|VARCHAR2(20)
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_timeformat,TIMEFORMAT>>
+|VARCHAR2(20)
+
+|
+|Yes
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_visualsourcesafe_oid]]
+==== OID 
+(((VISUALSOURCESAFE ,OID)))  (((OID (VISUALSOURCESAFE)))) 
+Unique table identifier.
+
+See also: <<VISUALSOURCESAFE.adoc#_i_visualsourcesafe_visualsourcesafe_pk,VISUALSOURCESAFE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_visualsourcesafe_name]]
+==== NAME 
+(((VISUALSOURCESAFE ,NAME)))  (((NAME (VISUALSOURCESAFE)))) 
+Name of the VSS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_visualsourcesafe_description]]
+==== DESCRIPTION 
+(((VISUALSOURCESAFE ,DESCRIPTION)))  (((DESCRIPTION (VISUALSOURCESAFE)))) 
+Description for the VSS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_visualsourcesafe_userid]]
+==== USERID 
+(((VISUALSOURCESAFE ,USERID)))  (((USERID (VISUALSOURCESAFE)))) 
+The User ID that IKAN ALM will use to access the VSS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERID
+|VARCHAR2(50)
+|===
+
+[[_cd_visualsourcesafe_password]]
+==== PASSWORD 
+(((VISUALSOURCESAFE ,PASSWORD)))  (((PASSWORD (VISUALSOURCESAFE)))) 
+The Password that IKAN ALM will use to access the VSS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_visualsourcesafe_commandpath]]
+==== COMMANDPATH 
+(((VISUALSOURCESAFE ,COMMANDPATH)))  (((COMMANDPATH (VISUALSOURCESAFE)))) 
+The required Command Path of the VSS Client (absolute path to the ss.exe file).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|COMMANDPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_visualsourcesafe_timeout]]
+==== TIMEOUT 
+(((VISUALSOURCESAFE ,TIMEOUT)))  (((TIMEOUT (VISUALSOURCESAFE)))) 
+The time-out value in seconds.
+
+If IKAN ALM is not able to establish a connection with the VSS Repository within the defined period, it will consider the Repository to be inaccessible.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_visualsourcesafe_inipath]]
+==== INIPATH 
+(((VISUALSOURCESAFE ,INIPATH)))  (((INIPATH (VISUALSOURCESAFE)))) 
+The VSS ROOT used to log in to VSS, or the ssdir environment variable (absolute path to the srcsafe.ini file).
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|INIPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_visualsourcesafe_dateformat]]
+==== DATEFORMAT 
+(((VISUALSOURCESAFE ,DATEFORMAT)))  (((DATEFORMAT (VISUALSOURCESAFE)))) 
+The Date Format that is in use on the system where the VSS Client is running.
+
+Examples:
+
+MM/dd/yyyy
+
+dd/MM/yy
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DATEFORMAT
+|VARCHAR2(20)
+|===
+
+[[_cd_visualsourcesafe_timeformat]]
+==== TIMEFORMAT 
+(((VISUALSOURCESAFE ,TIMEFORMAT)))  (((TIMEFORMAT (VISUALSOURCESAFE)))) 
+The Time Format that is used on the system where the VSS Client is running.
+
+Example: HH:mm
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TIMEFORMAT
+|VARCHAR2(20)
+|===
+
+[[_cd_visualsourcesafe_archived]]
+==== ARCHIVED 
+(((VISUALSOURCESAFE ,ARCHIVED)))  (((ARCHIVED (VISUALSOURCESAFE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_visualsourcesafe_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((VISUALSOURCESAFE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (VISUALSOURCESAFE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_visualsourcesafe_version]]
+==== VERSION 
+(((VISUALSOURCESAFE ,VERSION)))  (((VERSION (VISUALSOURCESAFE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,VISUALSOURCESAFE_PK))) [[_i_visualsourcesafe_visualsourcesafe_pk]]
+VISUALSOURCESAFE_PK
+|Yes
+|Yes
+|<<VISUALSOURCESAFE.adoc#_cd_visualsourcesafe_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,VISUALSOURCESAFE))) 
+*VISUALSOURCESAFE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*VISUALSOURCESAFE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*VISUALSOURCESAFE_COMMANDPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Command Path
+
+|
+
+French:
+|Chemin de commande
+
+|
+
+German:
+|Befehlsverzeichnis
+|===
+*VISUALSOURCESAFE_DATEFORMAT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Date Format
+
+|
+
+French:
+|Format date
+
+|
+
+German:
+|Datumsformat
+|===
+*VISUALSOURCESAFE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*VISUALSOURCESAFE_INIPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|INI Path
+
+|
+
+French:
+|Chemin INI
+
+|
+
+German:
+|INI-Verzeichnis
+|===
+*VISUALSOURCESAFE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*VISUALSOURCESAFE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*VISUALSOURCESAFE_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*VISUALSOURCESAFE_TIMEFORMAT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time Format
+
+|
+
+French:
+|Format heure
+
+|
+
+German:
+|Zeitformat
+|===
+*VISUALSOURCESAFE_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*VISUALSOURCESAFE_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*VISUALSOURCESAFE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

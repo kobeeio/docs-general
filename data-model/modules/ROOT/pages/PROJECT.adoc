@@ -1,0 +1,1008 @@
+[[_t_project]]
+== PROJECT 
+(((PROJECT))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PROJECT.adoc#_cd_project_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_name,NAME>>
+|VARCHAR2(50)
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_description,DESCRIPTION>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_vcrprojectname,VCRPROJECTNAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_buildscript,BUILDSCRIPT>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_deployscript,DEPLOYSCRIPT>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_testscript,TESTSCRIPT>>
+|VARCHAR2(255)
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_buildtooltype,BUILDTOOLTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_deploytooltype,DEPLOYTOOLTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_testtooltype,TESTTOOLTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_vcroid,VCROID>>
+|NUMBER
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_issuetrackingsystemoid,ISSUETRACKINGSYSTEMOID>>
+|NUMBER
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_locked,LOCKED>>
+|NUMBER(1)
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_projecttype,PROJECTTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_usergroupoid,USERGROUPOID>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_admingroupoid,ADMINGROUPOID>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PROJECT.adoc#_cd_project_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PROJECT.adoc#_cd_project_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_project_oid]]
+==== OID 
+(((PROJECT ,OID)))  (((OID (PROJECT)))) 
+Unique table identifier.
+
+See also: <<PROJECT.adoc#_i_project_project_pk,PROJECT_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_project_name]]
+==== NAME 
+(((PROJECT ,NAME)))  (((NAME (PROJECT)))) 
+Name of the Project.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_project_description]]
+==== DESCRIPTION 
+(((PROJECT ,DESCRIPTION)))  (((DESCRIPTION (PROJECT)))) 
+Description for the Project.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DESCRIPTION
+|VARCHAR2(512)
+|===
+
+[[_cd_project_vcrprojectname]]
+==== VCRPROJECTNAME 
+(((PROJECT ,VCRPROJECTNAME)))  (((VCRPROJECTNAME (PROJECT)))) 
+The VCR Project Name.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|VCRPROJECTNAME
+|VARCHAR2(50)
+|===
+
+[[_cd_project_buildscript]]
+==== BUILDSCRIPT 
+(((PROJECT ,BUILDSCRIPT)))  (((BUILDSCRIPT (PROJECT)))) 
+The Build Script used for the Project.
+
+If the Build Script file is located in the root folder of the Project, it refers to a file name directly, e.g. build.xml
+
+If the Build Script file is located in another folder belonging to the Project, it refers to the relative path to that folder, e.g. /dir1/build/build.xml.
+
+If this field is left blank, all Build Environments in this Project must explicitly specify a Build Script.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|BUILDSCRIPT
+|VARCHAR2(255)
+|===
+
+[[_cd_project_deployscript]]
+==== DEPLOYSCRIPT 
+(((PROJECT ,DEPLOYSCRIPT)))  (((DEPLOYSCRIPT (PROJECT)))) 
+The Deploy Script used for the Project.
+
+If the Deploy Script file is located in the root folder of the Project, it refers to filename directly, e.g. deploy.xml
+
+If the Deploy Script file is located in another folder belonging to the Project, it refers to the relative path to that folder, e.g. /dir1/deploy/deploy.xml.
+
+If this field is left blank, all Deploy Environments in this Project must explicitly specify a Deploy Script.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DEPLOYSCRIPT
+|VARCHAR2(255)
+|===
+
+[[_cd_project_testscript]]
+==== TESTSCRIPT 
+(((PROJECT ,TESTSCRIPT)))  (((TESTSCRIPT (PROJECT)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TESTSCRIPT
+|VARCHAR2(255)
+|===
+
+[[_cd_project_buildtooltype]]
+==== BUILDTOOLTYPE 
+(((PROJECT ,BUILDTOOLTYPE)))  (((BUILDTOOLTYPE (PROJECT)))) 
+The Build Tool Type used for the Project. Only Scripting Tools of the selected Build Tool Type may be linked to Build Environments that will be created in the Project.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDTOOLTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = ANT
+
+2 = NANT
+
+3 = MAVEN2
+
+4 = Gradle
+
+
+[[_cd_project_deploytooltype]]
+==== DEPLOYTOOLTYPE 
+(((PROJECT ,DEPLOYTOOLTYPE)))  (((DEPLOYTOOLTYPE (PROJECT)))) 
+The Deploy Tool Type used for the Project. Only Scripting Tools of the selected Deploy Tool Type may be linked to Deploy Environments that will be created in the Project.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DEPLOYTOOLTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = ANT
+
+2 = NANT
+
+3 = MAVEN2
+
+4 = Gradle
+
+
+[[_cd_project_testtooltype]]
+==== TESTTOOLTYPE 
+(((PROJECT ,TESTTOOLTYPE)))  (((TESTTOOLTYPE (PROJECT)))) 
+The Test Tool Type used for the Project.
+
+Only Scripting Tools of the selected Test Tool Type may be linked to Test Environments that will be created in the Project.
+
+Currently unused.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TESTTOOLTYPE
+|NUMBER
+|===
+
+[[_cd_project_vcroid]]
+==== VCROID 
+(((PROJECT ,VCROID)))  (((VCROID (PROJECT)))) 
+OID identifying the Version Control Repository used by the Project. Refers to the primary key of the appropriate Version Control Repository table: CLEARCASEBASE, CONCURRENTVERSIONSSYSTEM, SUBVERSION or VISUALSOURCESAFE.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|VCROID
+|NUMBER
+|===
+
+[[_cd_project_issuetrackingsystemoid]]
+==== ISSUETRACKINGSYSTEMOID 
+(((PROJECT ,ISSUETRACKINGSYSTEMOID)))  (((ISSUETRACKINGSYSTEMOID (PROJECT)))) 
+Identifier for the GENERICITS table.
+
+For more information, refer to the description of the foreign key PROJECT_GENERICITS_FK.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ISSUETRACKINGSYSTEMOID
+|NUMBER
+|===
+
+[[_cd_project_locked]]
+==== LOCKED 
+(((PROJECT ,LOCKED)))  (((LOCKED (PROJECT)))) 
+Indication whether or not the Project is locked:
+
+Level Requests can not be created for a locked Project.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOCKED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_project_projecttype]]
+==== PROJECTTYPE 
+(((PROJECT ,PROJECTTYPE)))  (((PROJECTTYPE (PROJECT)))) 
+The project type.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PROJECTTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Release-based
+
+1 = Package-based
+
+
+[[_cd_project_usergroupoid]]
+==== USERGROUPOID 
+(((PROJECT ,USERGROUPOID)))  (((USERGROUPOID (PROJECT)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key PROJECT_USERGROUP_FK.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|USERGROUPOID
+|NUMBER
+|===
+
+[[_cd_project_admingroupoid]]
+==== ADMINGROUPOID 
+(((PROJECT ,ADMINGROUPOID)))  (((ADMINGROUPOID (PROJECT)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key PROJECT_USERGROUP_FKv1.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ADMINGROUPOID
+|NUMBER
+|===
+
+[[_cd_project_archived]]
+==== ARCHIVED 
+(((PROJECT ,ARCHIVED)))  (((ARCHIVED (PROJECT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_project_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PROJECT ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PROJECT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_project_version]]
+==== VERSION 
+(((PROJECT ,VERSION)))  (((VERSION (PROJECT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PROJECT_PK))) [[_i_project_project_pk]]
+PROJECT_PK
+|Yes
+|Yes
+|<<PROJECT.adoc#_cd_project_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== LIFECYCLE
+
+Refer to the chapter <<LIFECYCLE.adoc#_t_lifecycle,LIFECYCLE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LIFECYCLE_FK_1
+|<<LIFECYCLE.adoc#_cd_lifecycle_projectoid,PROJECTOID>>
+|===
+
+===== PROJECTSTREAM
+
+Refer to the chapter <<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PROJECTSTREAM_FK_2
+|<<PROJECTSTREAM.adoc#_cd_projectstream_projectoid,PROJECTOID>>
+|===
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_FK_2
+|<<SCMLEVEL.adoc#_cd_scmlevel_projectoid,PROJECTOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,PROJECT))) 
+*PROJECT_ADMINGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECT_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PROJECT_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PROJECT_BUILDSCRIPT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Script
+
+|
+
+French:
+|Script de construction
+
+|
+
+German:
+|Bereitstellungsskript
+|===
+*PROJECT_BUILDTOOLTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Tool Type
+
+|
+
+French:
+|Type outil de construction
+
+|
+
+German:
+|Typ des Bereitstellungstool
+|===
+*PROJECT_DEPLOYSCRIPT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy Script
+
+|
+
+French:
+|Script de déploiement
+
+|
+
+German:
+|Auslieferungsskript
+|===
+*PROJECT_DEPLOYTOOLTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy Tool Type
+
+|
+
+French:
+|Type outil de déploiement
+
+|
+
+German:
+|Typ des Auslieferungstool
+|===
+*PROJECT_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*PROJECT_ISSUETRACKINGSYSTEMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECT_LOCKED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Locked
+
+|
+
+French:
+|Verrouillé
+
+|
+
+German:
+|Gesperrt
+|===
+*PROJECT_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*PROJECT_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECT_PROJECTTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Project Type
+
+|
+
+French:
+|Type de Projet
+
+|
+
+German:
+|Projekttyp
+|===
+*PROJECT_TESTSCRIPT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Test Script
+
+|
+
+French:
+|Script de test
+
+|
+
+German:
+|Testskript
+|===
+*PROJECT_TESTTOOLTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Test Tool Type
+
+|
+
+French:
+|Type outil de test
+
+|
+
+German:
+|Typ des Teststool
+|===
+*PROJECT_USERGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECT_VCROID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECT_VCRPROJECTNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|VCR Project Name
+
+|
+
+French:
+|Nom de Projet dans le RCV
+
+|
+
+German:
+|Projektname im VCR
+|===
+*PROJECT_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

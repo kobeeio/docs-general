@@ -1,0 +1,611 @@
+[[_t_scmpackagebuildgroupeventlog]]
+== SCMPACKAGEBUILDGROUPEVENTLOG 
+(((SCMPACKAGEBUILDGROUPEVENTLOG))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_scmpackagebuildgroupoid,SCMPACKAGEBUILDGROUPOID>>
+|NUMBER
+
+|
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_packagebuildgrouppackageoid,PACKAGEBUILDGROUPPACKAGEOID>>
+|NUMBER
+
+|
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_objectversion,OBJECTVERSION>>
+|NUMBER
+
+|
+|No
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_changedatetime,CHANGEDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_changetype,CHANGETYPE>>
+|NUMBER
+
+|
+|No
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_userid,USERID>>
+|VARCHAR2(20)
+
+|
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_note,NOTE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_changedstate,CHANGEDSTATE>>
+|CLOB
+
+|
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_scmpackagebuildgroupeventlog_oid]]
+==== OID 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,OID)))  (((OID (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+Unique table identifier.
+
+See also: <<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_i_scmpackagebuildgroupeventlog_scmpackagebuildgroupeventlo_pk,SCMPACKAGEBUILDGROUPEVENTLO_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_scmpackagebuildgroupoid]]
+==== SCMPACKAGEBUILDGROUPOID 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,SCMPACKAGEBUILDGROUPOID)))  (((SCMPACKAGEBUILDGROUPOID (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+Internal identifier of the Package Build Group.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SCMPACKAGEBUILDGROUPOID
+|NUMBER
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_packagebuildgrouppackageoid]]
+==== PACKAGEBUILDGROUPPACKAGEOID 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,PACKAGEBUILDGROUPPACKAGEOID)))  (((PACKAGEBUILDGROUPPACKAGEOID (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+Internal identifier of the object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PACKAGEBUILDGROUPPACKAGEOID
+|NUMBER
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_objectversion]]
+==== OBJECTVERSION 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,OBJECTVERSION)))  (((OBJECTVERSION (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+The version number of the Global Administration object after the current update has been persisted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|OBJECTVERSION
+|NUMBER
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_changedatetime]]
+==== CHANGEDATETIME 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,CHANGEDATETIME)))  (((CHANGEDATETIME (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+The date and time at which the Global Administration object was created, updated or deleted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGEDATETIME
+|DATE
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_changetype]]
+==== CHANGETYPE 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,CHANGETYPE)))  (((CHANGETYPE (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+The type of change made to the Global Administration object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGETYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Create
+
+1 = Update
+
+2 = Delete
+
+
+[[_cd_scmpackagebuildgroupeventlog_userid]]
+==== USERID 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,USERID)))  (((USERID (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+The User ID of the User who performed the modification (create/update/delete) of the Global Administration object.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERID
+|VARCHAR2(20)
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_note]]
+==== NOTE 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,NOTE)))  (((NOTE (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTE
+|VARCHAR2(512)
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_changedstate]]
+==== CHANGEDSTATE 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,CHANGEDSTATE)))  (((CHANGEDSTATE (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+Serialized xml of the object after the change.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CHANGEDSTATE
+|CLOB
+|===
+
+[[_cd_scmpackagebuildgroupeventlog_archived]]
+==== ARCHIVED 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,ARCHIVED)))  (((ARCHIVED (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmpackagebuildgroupeventlog_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmpackagebuildgroupeventlog_version]]
+==== VERSION 
+(((SCMPACKAGEBUILDGROUPEVENTLOG ,VERSION)))  (((VERSION (SCMPACKAGEBUILDGROUPEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCMPACKAGEBUILDGROUPEVENTLO_PK))) [[_i_scmpackagebuildgroupeventlog_scmpackagebuildgroupeventlo_pk]]
+SCMPACKAGEBUILDGROUPEVENTLO_PK
+|Yes
+|Yes
+|<<SCMPACKAGEBUILDGROUPEVENTLOG.adoc#_cd_scmpackagebuildgroupeventlog_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SCMPACKAGEBUILDGROUPEVENTLOG))) 
+*SCMPACKAGEBUILDGROUPEVENTLOG_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_CHANGEDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Date/Time
+
+|
+
+French:
+|Date / Heure de la modification
+
+|
+
+German:
+|Änderungsdatum
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_CHANGEDSTATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Changed State
+
+|
+
+French:
+|Etat modifié
+
+|
+
+German:
+|Modifizierte Status
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_CHANGETYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Type
+
+|
+
+French:
+|Type de modification
+
+|
+
+German:
+|Änderungsart
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_NOTE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Note
+
+|
+
+French:
+|Remarque
+
+|
+
+German:
+|Anmerkung
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_OBJECTVERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Object Version
+
+|
+
+French:
+|Version d'objet
+
+|
+
+German:
+|Version des Objekts
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_PACKAGEBUILDGROUPPACKAGEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Package Build Group Package OID
+
+|
+
+French:
+|OID Paquet du Groupe de Paquets de Construction
+
+|
+
+German:
+|Paket OID der Bereitstellungspaketgruppe
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_SCMPACKAGEBUILDGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM Package Build Group OID
+
+|
+
+French:
+|OID Groupe de Paquets de Construction ALM
+
+|
+
+German:
+|ALM Bereitstellungspaketgruppe OID
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*SCMPACKAGEBUILDGROUPEVENTLOG_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

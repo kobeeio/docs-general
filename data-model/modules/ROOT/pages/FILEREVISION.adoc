@@ -1,0 +1,363 @@
+[[_t_filerevision]]
+== FILEREVISION 
+(((FILEREVISION))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<FILEREVISION.adoc#_cd_filerevision_oid,OID>>
+|NUMBER
+
+|UF
+|No
+|<<FILEREVISION.adoc#_cd_filerevision_fileinfooid,FILEINFOOID>>
+|NUMBER
+
+|U
+|No
+|<<FILEREVISION.adoc#_cd_filerevision_revision,REVISION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<FILEREVISION.adoc#_cd_filerevision_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<FILEREVISION.adoc#_cd_filerevision_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<FILEREVISION.adoc#_cd_filerevision_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_filerevision_oid]]
+==== OID 
+(((FILEREVISION ,OID)))  (((OID (FILEREVISION)))) 
+Unique table identifier.
+
+See also: <<FILEREVISION.adoc#_i_filerevision_filerevision_pk,FILEREVISION_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_filerevision_fileinfooid]]
+==== FILEINFOOID 
+(((FILEREVISION ,FILEINFOOID)))  (((FILEINFOOID (FILEREVISION)))) 
+Internal identifier of the object.
+
+See also: <<FILEREVISION.adoc#_i_filerevision_filerevision_u_1,FILEREVISION_U_1>>, <<FILEREVISION.adoc#_i_filerevision_filerevision_fk_1,FILEREVISION_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|UF
+|No
+|FILEINFOOID
+|NUMBER
+|===
+
+[[_cd_filerevision_revision]]
+==== REVISION 
+(((FILEREVISION ,REVISION)))  (((REVISION (FILEREVISION)))) 
+The file revision.
+
+See also: <<FILEREVISION.adoc#_i_filerevision_filerevision_u_1,FILEREVISION_U_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|U
+|No
+|REVISION
+|VARCHAR2(255)
+|===
+
+[[_cd_filerevision_archived]]
+==== ARCHIVED 
+(((FILEREVISION ,ARCHIVED)))  (((ARCHIVED (FILEREVISION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_filerevision_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((FILEREVISION ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (FILEREVISION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_filerevision_version]]
+==== VERSION 
+(((FILEREVISION ,VERSION)))  (((VERSION (FILEREVISION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Unique Constraints ,FILEREVISION_U_1))) [[_i_filerevision_filerevision_u_1]]
+FILEREVISION_U_1
+|No
+|Yes
+|<<FILEREVISION.adoc#_cd_filerevision_revision,REVISION>><<FILEREVISION.adoc#_cd_filerevision_fileinfooid,FILEINFOOID>>
+|
+
+| 
+(((Primary Keys ,FILEREVISION_PK))) [[_i_filerevision_filerevision_pk]]
+FILEREVISION_PK
+|Yes
+|Yes
+|<<FILEREVISION.adoc#_cd_filerevision_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,FILEREVISION_FK_1))) [[_i_filerevision_filerevision_fk_1]]
+FILEREVISION_FK_1
+|No
+|No
+|<<FILEREVISION.adoc#_cd_filerevision_fileinfooid,FILEINFOOID>>
+|<<FILEINFO.adoc#_t_fileinfo,FILEINFO>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== FILEINFO
+
+Refer to the chapter <<FILEINFO.adoc#_t_fileinfo,FILEINFO>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|FILEREVISION_FK_1
+|<<FILEINFO.adoc#_cd_fileinfo_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== LEVELREQUEST_FILEREVISION
+
+Refer to the chapter <<LEVELREQUEST_FILEREVISION.adoc#_t_levelrequest_filerevision,LEVELREQUEST_FILEREVISION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUEST_FILEREVISION_FK_1
+|<<LEVELREQUEST_FILEREVISION.adoc#_cd_levelrequest_filerevision_filerevisionoid,FILEREVISIONOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,FILEREVISION))) 
+*FILEREVISION_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*FILEREVISION_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*FILEREVISION_FILEINFOOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|File Info OID
+
+|
+
+French:
+|OID Infos Fichier
+
+|
+
+German:
+|OID der Info über die Datei
+|===
+*FILEREVISION_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*FILEREVISION_REVISION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Revision
+
+|
+
+French:
+|Révision
+
+|
+
+German:
+|Revision
+|===
+*FILEREVISION_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

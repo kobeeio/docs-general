@@ -1,0 +1,214 @@
+[[_t_ojb_hl_seq]]
+== OJB_HL_SEQ 
+(((OJB_HL_SEQ))) 
+This is an internal table containing the maximum identifier value per ALM object type.
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|<<OJB_HL_SEQ.adoc#_cd_ojb_hl_seq_tablename,TABLENAME>>
+|VARCHAR2(40)
+
+|
+|Yes
+|<<OJB_HL_SEQ.adoc#_cd_ojb_hl_seq_max_key,MAX_KEY>>
+|NUMBER
+
+|
+|Yes
+|<<OJB_HL_SEQ.adoc#_cd_ojb_hl_seq_grab_size,GRAB_SIZE>>
+|NUMBER
+
+|
+|No
+|<<OJB_HL_SEQ.adoc#_cd_ojb_hl_seq_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_ojb_hl_seq_tablename]]
+==== TABLENAME 
+(((OJB_HL_SEQ ,TABLENAME)))  (((TABLENAME (OJB_HL_SEQ)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TABLENAME
+|VARCHAR2(40)
+|===
+
+[[_cd_ojb_hl_seq_max_key]]
+==== MAX_KEY 
+(((OJB_HL_SEQ ,MAX_KEY)))  (((MAX_KEY (OJB_HL_SEQ)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|MAX_KEY
+|NUMBER
+|===
+
+[[_cd_ojb_hl_seq_grab_size]]
+==== GRAB_SIZE 
+(((OJB_HL_SEQ ,GRAB_SIZE)))  (((GRAB_SIZE (OJB_HL_SEQ)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|GRAB_SIZE
+|NUMBER
+|===
+
+[[_cd_ojb_hl_seq_version]]
+==== VERSION 
+(((OJB_HL_SEQ ,VERSION)))  (((VERSION (OJB_HL_SEQ)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+No indexes available.
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,OJB_HL_SEQ))) 
+*OJB_HL_SEQ_GRAB_SIZE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Grab Size
+
+|
+
+French:
+|Grab Size
+
+|
+
+German:
+|Grab Size
+|===
+*OJB_HL_SEQ_MAX_KEY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Max Key
+
+|
+
+French:
+|Max Key
+
+|
+
+German:
+|Max Key
+|===
+*OJB_HL_SEQ_TABLENAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Table Name
+
+|
+
+French:
+|Nom de la Table
+
+|
+
+German:
+|Tabellenname
+|===
+*OJB_HL_SEQ_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

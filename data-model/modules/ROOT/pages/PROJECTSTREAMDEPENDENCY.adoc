@@ -1,0 +1,666 @@
+[[_t_projectstreamdependency]]
+== PROJECTSTREAMDEPENDENCY 
+(((PROJECTSTREAMDEPENDENCY))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_masterprojectstreamoid,MASTERPROJECTSTREAMOID>>
+|NUMBER
+
+|F
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_childprojectstreamoid,CHILDPROJECTSTREAMOID>>
+|NUMBER
+
+|F
+|Yes
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_childlevelrequestoid,CHILDLEVELREQUESTOID>>
+|NUMBER
+
+|
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_sequencenumber,SEQUENCENUMBER>>
+|NUMBER
+
+|
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_retrievecodetype,RETRIEVECODETYPE>>
+|NUMBER
+
+|
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_triggerbuildmaster,TRIGGERBUILDMASTER>>
+|NUMBER(1)
+
+|
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_triggerdeploymaster,TRIGGERDEPLOYMASTER>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_projectstreamdependency_oid]]
+==== OID 
+(((PROJECTSTREAMDEPENDENCY ,OID)))  (((OID (PROJECTSTREAMDEPENDENCY)))) 
+Unique table identifier.
+
+See also: <<PROJECTSTREAMDEPENDENCY.adoc#_i_projectstreamdependency_projectstreamdependency_pk,PROJECTSTREAMDEPENDENCY_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_projectstreamdependency_masterprojectstreamoid]]
+==== MASTERPROJECTSTREAMOID 
+(((PROJECTSTREAMDEPENDENCY ,MASTERPROJECTSTREAMOID)))  (((MASTERPROJECTSTREAMOID (PROJECTSTREAMDEPENDENCY)))) 
+Identifier for the PROJECTSTREAM table.
+
+For more information, refer to the description of the foreign key PROJECTSTREAMDEPENDENCY_FK_1.
+
+See also: <<PROJECTSTREAMDEPENDENCY.adoc#_i_projectstreamdependency_projectstreamdependency_fk_1,PROJECTSTREAMDEPENDENCY_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|MASTERPROJECTSTREAMOID
+|NUMBER
+|===
+
+[[_cd_projectstreamdependency_childprojectstreamoid]]
+==== CHILDPROJECTSTREAMOID 
+(((PROJECTSTREAMDEPENDENCY ,CHILDPROJECTSTREAMOID)))  (((CHILDPROJECTSTREAMOID (PROJECTSTREAMDEPENDENCY)))) 
+Identifier for the PROJECTSTREAM table.
+
+For more information, refer to the description of the foreign key PROJECTSTREAMDEPENDENCY_FK_2.
+
+See also: <<PROJECTSTREAMDEPENDENCY.adoc#_i_projectstreamdependency_projectstreamdependency_fk_2,PROJECTSTREAMDEPENDENCY_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|CHILDPROJECTSTREAMOID
+|NUMBER
+|===
+
+[[_cd_projectstreamdependency_childlevelrequestoid]]
+==== CHILDLEVELREQUESTOID 
+(((PROJECTSTREAMDEPENDENCY ,CHILDLEVELREQUESTOID)))  (((CHILDLEVELREQUESTOID (PROJECTSTREAMDEPENDENCY)))) 
+Identifier for the LEVELREQUEST table.
+
+For more information, refer to the description of the foreign key PROJECTSTREAMDEPENDENCY_FK_3.
+
+See also: <<PROJECTSTREAMDEPENDENCY.adoc#_i_projectstreamdependency_projectstreamdependency_fk_3,PROJECTSTREAMDEPENDENCY_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|CHILDLEVELREQUESTOID
+|NUMBER
+|===
+
+[[_cd_projectstreamdependency_sequencenumber]]
+==== SEQUENCENUMBER 
+(((PROJECTSTREAMDEPENDENCY ,SEQUENCENUMBER)))  (((SEQUENCENUMBER (PROJECTSTREAMDEPENDENCY)))) 
+Number indicating the position of the Project Stream dependency within the sequence of Dependencies associated with the Project Stream.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SEQUENCENUMBER
+|NUMBER
+|===
+
+[[_cd_projectstreamdependency_retrievecodetype]]
+==== RETRIEVECODETYPE 
+(((PROJECTSTREAMDEPENDENCY ,RETRIEVECODETYPE)))  (((RETRIEVECODETYPE (PROJECTSTREAMDEPENDENCY)))) 
+The code retrieval type.
+
+The following options are available:
+
+* Latest tagged code from the VCR
+
+The source code of the last successful Build of the Child Branch will be used to build the code of the Master Project.
+
+* Specific tagged code from the VCR
+
+The source code of the Child Branch tagged with a specific VCR tag will be used to build the code of the Master Project.
+
+* Latest tagged build from the Build Archive
+
+The Build result of the last successful Build of the Child Branch will be used to build the code of the Master Project.
+
+* Specific build from the build archive
+
+The Build result of the Build of the Child Branch with the selected VCR Tag will be used to build the code of the Master Project.
+
+* Latest Production code from the VCR
+
+The source code that was tagged with the VCR tag of the Build that is currently Active on the last Level (usually a Production Level) of the Life-cycle of the Child Project Stream will be used to build the code of the Master Project.
+
+* Latest Production Build from the Build Archive
+
+The Build result of the Build that is currently Active on the LAST Level of the Life-cycle of the Child Project Stream will be used to build the code of the Master Project.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|RETRIEVECODETYPE
+|NUMBER
+|===
+
+===== Value List
+1 = Latest tagged code from the VCR
+
+2 = Specific tagged code from the VCR
+
+3 = Latest tagged code from the Build Archive
+
+4 = Specific Build from the Build Archive
+
+5 = Latest Production Code from the VCR
+
+6 = Latest Production Build from the Build Archive
+
+
+[[_cd_projectstreamdependency_triggerbuildmaster]]
+==== TRIGGERBUILDMASTER 
+(((PROJECTSTREAMDEPENDENCY ,TRIGGERBUILDMASTER)))  (((TRIGGERBUILDMASTER (PROJECTSTREAMDEPENDENCY)))) 
+Indication whether or not a new Build of the Child should trigger a rebuild of the Master.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TRIGGERBUILDMASTER
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstreamdependency_triggerdeploymaster]]
+==== TRIGGERDEPLOYMASTER 
+(((PROJECTSTREAMDEPENDENCY ,TRIGGERDEPLOYMASTER)))  (((TRIGGERDEPLOYMASTER (PROJECTSTREAMDEPENDENCY)))) 
+Indication whether or not the related Master should be triggered to the same level if the Child gets delivered or rolled back to certain level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TRIGGERDEPLOYMASTER
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstreamdependency_archived]]
+==== ARCHIVED 
+(((PROJECTSTREAMDEPENDENCY ,ARCHIVED)))  (((ARCHIVED (PROJECTSTREAMDEPENDENCY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstreamdependency_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PROJECTSTREAMDEPENDENCY ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PROJECTSTREAMDEPENDENCY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_projectstreamdependency_version]]
+==== VERSION 
+(((PROJECTSTREAMDEPENDENCY ,VERSION)))  (((VERSION (PROJECTSTREAMDEPENDENCY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PROJECTSTREAMDEPENDENCY_PK))) [[_i_projectstreamdependency_projectstreamdependency_pk]]
+PROJECTSTREAMDEPENDENCY_PK
+|Yes
+|Yes
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,PROJECTSTREAMDEPENDENCY_FK_1))) [[_i_projectstreamdependency_projectstreamdependency_fk_1]]
+PROJECTSTREAMDEPENDENCY_FK_1
+|No
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_masterprojectstreamoid,MASTERPROJECTSTREAMOID>>
+|<<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>>
+
+| 
+(((Foreign Keys ,PROJECTSTREAMDEPENDENCY_FK_2))) [[_i_projectstreamdependency_projectstreamdependency_fk_2]]
+PROJECTSTREAMDEPENDENCY_FK_2
+|No
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_childprojectstreamoid,CHILDPROJECTSTREAMOID>>
+|<<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>>
+
+| 
+(((Foreign Keys ,PROJECTSTREAMDEPENDENCY_FK_3))) [[_i_projectstreamdependency_projectstreamdependency_fk_3]]
+PROJECTSTREAMDEPENDENCY_FK_3
+|No
+|No
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_childlevelrequestoid,CHILDLEVELREQUESTOID>>
+|<<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PROJECTSTREAMDEPENDENCY_FK_3
+|<<LEVELREQUEST.adoc#_cd_levelrequest_oid,OID>>
+|===
+
+===== PROJECTSTREAM
+
+Refer to the chapter <<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PROJECTSTREAMDEPENDENCY_FK_1
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+
+|PROJECTSTREAMDEPENDENCY_FK_2
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,PROJECTSTREAMDEPENDENCY))) 
+*PROJECTSTREAMDEPENDENCY_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PROJECTSTREAMDEPENDENCY_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PROJECTSTREAMDEPENDENCY_CHILDLEVELREQUESTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAMDEPENDENCY_CHILDPROJECTSTREAMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAMDEPENDENCY_MASTERPROJECTSTREAMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAMDEPENDENCY_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAMDEPENDENCY_RETRIEVECODETYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Code Retrieval
+
+|
+
+French:
+|Récup. des données issues de
+
+|
+
+German:
+|Code abrufen
+|===
+*PROJECTSTREAMDEPENDENCY_SEQUENCENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Sequence Number
+
+|
+
+French:
+|Numéro de séquence
+
+|
+
+German:
+|Sequenznummer
+|===
+*PROJECTSTREAMDEPENDENCY_TRIGGERBUILDMASTER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Trigger Build Master
+
+|
+
+French:
+|Déclench. constr. Br. Maître
+
+|
+
+German:
+|Kompilierung des Masters starten
+|===
+*PROJECTSTREAMDEPENDENCY_TRIGGERDEPLOYMASTER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Trigger Deploy Master
+
+|
+
+French:
+|Déclench. déploiemt Br. Maître
+
+|
+
+German:
+|Auslieferung Master starten
+|===
+*PROJECTSTREAMDEPENDENCY_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

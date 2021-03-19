@@ -1,0 +1,710 @@
+[[_t_scmuser]]
+== SCMUSER 
+(((SCMUSER))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCMUSER.adoc#_cd_scmuser_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SCMUSER.adoc#_cd_scmuser_userid,USERID>>
+|VARCHAR2(20)
+
+|
+|No
+|<<SCMUSER.adoc#_cd_scmuser_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SCMUSER.adoc#_cd_scmuser_emailaddress,EMAILADDRESS>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_location,LOCATION>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_telnumber,TELNUMBER>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_mobilenumber,MOBILENUMBER>>
+|VARCHAR2(50)
+
+|
+|No
+|<<SCMUSER.adoc#_cd_scmuser_locale,LOCALE>>
+|VARCHAR2(20)
+
+|
+|No
+|<<SCMUSER.adoc#_cd_scmuser_reserved,RESERVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMUSER.adoc#_cd_scmuser_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_scmuser_oid]]
+==== OID 
+(((SCMUSER ,OID)))  (((OID (SCMUSER)))) 
+Unique table identifier.
+
+See also: <<SCMUSER.adoc#_i_scmuser_scmuser_pk,SCMUSER_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_scmuser_userid]]
+==== USERID 
+(((SCMUSER ,USERID)))  (((USERID (SCMUSER)))) 
+The User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERID
+|VARCHAR2(20)
+|===
+
+[[_cd_scmuser_name]]
+==== NAME 
+(((SCMUSER ,NAME)))  (((NAME (SCMUSER)))) 
+Name associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_scmuser_description]]
+==== DESCRIPTION 
+(((SCMUSER ,DESCRIPTION)))  (((DESCRIPTION (SCMUSER)))) 
+Description associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_scmuser_emailaddress]]
+==== EMAILADDRESS 
+(((SCMUSER ,EMAILADDRESS)))  (((EMAILADDRESS (SCMUSER)))) 
+The E-mail Address associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|EMAILADDRESS
+|VARCHAR2(255)
+|===
+
+[[_cd_scmuser_location]]
+==== LOCATION 
+(((SCMUSER ,LOCATION)))  (((LOCATION (SCMUSER)))) 
+The Location associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LOCATION
+|VARCHAR2(50)
+|===
+
+[[_cd_scmuser_telnumber]]
+==== TELNUMBER 
+(((SCMUSER ,TELNUMBER)))  (((TELNUMBER (SCMUSER)))) 
+The Phone Number associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|TELNUMBER
+|VARCHAR2(50)
+|===
+
+[[_cd_scmuser_mobilenumber]]
+==== MOBILENUMBER 
+(((SCMUSER ,MOBILENUMBER)))  (((MOBILENUMBER (SCMUSER)))) 
+The Mobile Number associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|MOBILENUMBER
+|VARCHAR2(50)
+|===
+
+[[_cd_scmuser_locale]]
+==== LOCALE 
+(((SCMUSER ,LOCALE)))  (((LOCALE (SCMUSER)))) 
+The Language setting associated with the User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOCALE
+|VARCHAR2(20)
+|===
+
+===== Value List
+fr = French
+
+en = English
+
+de = German
+
+
+[[_cd_scmuser_reserved]]
+==== RESERVED 
+(((SCMUSER ,RESERVED)))  (((RESERVED (SCMUSER)))) 
+Indication whether or not the User ID is a Reserved User ID. A Reserved non archived User ID may always log on to IKAN ALM, without occupying a Floating license. It is typically assigned to IKAN ALM Users with Global Administration Access Rights.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|RESERVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmuser_archived]]
+==== ARCHIVED 
+(((SCMUSER ,ARCHIVED)))  (((ARCHIVED (SCMUSER)))) 
+Indication whether or not the User ID has been archived.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmuser_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCMUSER ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCMUSER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_scmuser_version]]
+==== VERSION 
+(((SCMUSER ,VERSION)))  (((VERSION (SCMUSER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCMUSER_PK))) [[_i_scmuser_scmuser_pk]]
+SCMUSER_PK
+|Yes
+|Yes
+|<<SCMUSER.adoc#_cd_scmuser_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== DESKTOP
+
+Refer to the chapter <<DESKTOP.adoc#_t_desktop,DESKTOP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DESKTOP_FK_1
+|<<DESKTOP.adoc#_cd_desktop_scmuseroid,SCMUSEROID>>
+|===
+
+===== LEVELAPPROVAL
+
+Refer to the chapter <<LEVELAPPROVAL.adoc#_t_levelapproval,LEVELAPPROVAL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELAPPROVAL_FK_2
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_approvedbyuseroid,APPROVEDBYUSEROID>>
+|===
+
+===== SCMUSER_USERGROUP
+
+Refer to the chapter <<SCMUSER_USERGROUP.adoc#_t_scmuser_usergroup,SCMUSER_USERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMUSER_USERGROUP_FK_2
+|<<SCMUSER_USERGROUP.adoc#_cd_scmuser_usergroup_scmuseroid,SCMUSEROID>>
+|===
+
+===== SEARCHFILTER
+
+Refer to the chapter <<SEARCHFILTER.adoc#_t_searchfilter,SEARCHFILTER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SEARCHFILTER_FK_1
+|<<SEARCHFILTER.adoc#_cd_searchfilter_scmuseroid,SCMUSEROID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,SCMUSER))) 
+*SCMUSER_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCMUSER_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCMUSER_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*SCMUSER_EMAILADDRESS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|E-mail Address
+
+|
+
+French:
+|Adresse de Courrier
+
+|
+
+German:
+|E-Mail-Adresse
+|===
+*SCMUSER_LOCALE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Language
+
+|
+
+French:
+|Langue
+
+|
+
+German:
+|Sprache
+|===
+*SCMUSER_LOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Location
+
+|
+
+French:
+|Emplacement
+
+|
+
+German:
+|Standort
+|===
+*SCMUSER_MOBILENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Mobile Number
+
+|
+
+French:
+|Mobile
+
+|
+
+German:
+|Handy
+|===
+*SCMUSER_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SCMUSER_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMUSER_RESERVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Reserved
+
+|
+
+French:
+|Réservé
+
+|
+
+German:
+|Reserviert
+|===
+*SCMUSER_TELNUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phone Number
+
+|
+
+French:
+|Téléphone
+
+|
+
+German:
+|Telefon
+|===
+*SCMUSER_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*SCMUSER_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

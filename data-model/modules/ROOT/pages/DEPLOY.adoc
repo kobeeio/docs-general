@@ -1,0 +1,818 @@
+[[_t_deploy]]
+== DEPLOY 
+(((DEPLOY))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<DEPLOY.adoc#_cd_deploy_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<DEPLOY.adoc#_cd_deploy_status,STATUS>>
+|NUMBER
+
+|
+|Yes
+|<<DEPLOY.adoc#_cd_deploy_startdate,STARTDATE>>
+|DATE
+
+|
+|Yes
+|<<DEPLOY.adoc#_cd_deploy_enddate,ENDDATE>>
+|DATE
+
+|
+|No
+|<<DEPLOY.adoc#_cd_deploy_partialdeploy,PARTIALDEPLOY>>
+|NUMBER(1)
+
+|
+|No
+|<<DEPLOY.adoc#_cd_deploy_sequencenumber,SEQUENCENUMBER>>
+|NUMBER
+
+|F
+|No
+|<<DEPLOY.adoc#_cd_deploy_buildoid,BUILDOID>>
+|NUMBER
+
+|F
+|No
+|<<DEPLOY.adoc#_cd_deploy_deployenvironmentoid,DEPLOYENVIRONMENTOID>>
+|NUMBER
+
+|F
+|No
+|<<DEPLOY.adoc#_cd_deploy_levelrequestoid,LEVELREQUESTOID>>
+|NUMBER
+
+|F
+|No
+|<<DEPLOY.adoc#_cd_deploy_propertylogoid,PROPERTYLOGOID>>
+|NUMBER
+
+|
+|Yes
+|<<DEPLOY.adoc#_cd_deploy_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<DEPLOY.adoc#_cd_deploy_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<DEPLOY.adoc#_cd_deploy_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_deploy_oid]]
+==== OID 
+(((DEPLOY ,OID)))  (((OID (DEPLOY)))) 
+Unique table identifier.
+
+See also: <<DEPLOY.adoc#_i_deploy_deploy_pk,DEPLOY_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_deploy_status]]
+==== STATUS 
+(((DEPLOY ,STATUS)))  (((STATUS (DEPLOY)))) 
+The Deploy Status indication. This Status indication is derived from the status of the different Deploy Phases.
+
+Possible status indications are:
+
+Wait : The Deploy is waiting to be started.
+
+In progress : The Deploy is ready to be started.
+
+Run : The Deploy is currently being executed.
+
+Success : The Deploy has finished successfully.
+
+Warning : The Deploy has finished successfully, but there were some non-critical errors.
+
+Fail : The Deploy has failed.
+
+Canceled : The Deploy was canceled before it was executed.
+
+Aborted : The Deploy was aborted while it was being executed.
+
+Rejected : The Deploy was rejected.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|STATUS
+|NUMBER
+|===
+
+===== Value List
+0 = Unknown
+
+1 = Canceled
+
+2 = Rejected
+
+3 = Wait
+
+4 = In progress
+
+5 = Run
+
+6 = Fail
+
+7 = Success
+
+8 = Warning
+
+9 = Aborted
+
+
+[[_cd_deploy_startdate]]
+==== STARTDATE 
+(((DEPLOY ,STARTDATE)))  (((STARTDATE (DEPLOY)))) 
+This field indicates the date and time at which the Deploy execution started.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|STARTDATE
+|DATE
+|===
+
+[[_cd_deploy_enddate]]
+==== ENDDATE 
+(((DEPLOY ,ENDDATE)))  (((ENDDATE (DEPLOY)))) 
+This field indicates the date and time at which the Deploy execution ended.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ENDDATE
+|DATE
+|===
+
+[[_cd_deploy_partialdeploy]]
+==== PARTIALDEPLOY 
+(((DEPLOY ,PARTIALDEPLOY)))  (((PARTIALDEPLOY (DEPLOY)))) 
+Indication whether the Partial Deploy option is activated or not for this Deploy Environment.
+
+If the option is activated, IKAN ALM will analyze the differences between the two build results on the IKAN ALM Server and only new and modified files will be transported to the Agent.
+
+This is achieved as follows:
+
+Both the newly compiled Build result and the base-line Build (the one the new Build results are compared with) are decompressed (unzipped).
+
+The decompressed files are compared and the following actions are taken:
+
+* Identical files are deleted and not deployed.
+
+* Modified and new files (available in the new but not in the base-line
+
+Build results) are transported.
+
+* For deleted files (available in the base-line Build result, but not in the new one), dummy files with names in the format FileName. to_be_deleted are created. The Deploy Script must be written in such a way, that it deletes the matching files from the Deploy Environment`'s Source Location.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PARTIALDEPLOY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_deploy_sequencenumber]]
+==== SEQUENCENUMBER 
+(((DEPLOY ,SEQUENCENUMBER)))  (((SEQUENCENUMBER (DEPLOY)))) 
+The Sequence Number of the Deploy.
+
+Deploys are executed sequentially in the order of their Sequence Number. Deploys that have the same Sequence Number are executed in parallel.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SEQUENCENUMBER
+|NUMBER
+|===
+
+[[_cd_deploy_buildoid]]
+==== BUILDOID 
+(((DEPLOY ,BUILDOID)))  (((BUILDOID (DEPLOY)))) 
+Identifier for the BUILD table.
+
+For more information, refer to the description of the foreign key DEPLOY_FK_1.
+
+See also: <<DEPLOY.adoc#_i_deploy_deploy_fk_1,DEPLOY_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|BUILDOID
+|NUMBER
+|===
+
+[[_cd_deploy_deployenvironmentoid]]
+==== DEPLOYENVIRONMENTOID 
+(((DEPLOY ,DEPLOYENVIRONMENTOID)))  (((DEPLOYENVIRONMENTOID (DEPLOY)))) 
+Identifier for the DEPLOYENVIRONMENT table.
+
+For more information, refer to the description of the foreign key DEPLOY_FK_2.
+
+See also: <<DEPLOY.adoc#_i_deploy_deploy_fk_2,DEPLOY_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|DEPLOYENVIRONMENTOID
+|NUMBER
+|===
+
+[[_cd_deploy_levelrequestoid]]
+==== LEVELREQUESTOID 
+(((DEPLOY ,LEVELREQUESTOID)))  (((LEVELREQUESTOID (DEPLOY)))) 
+Identifier for the LEVELREQUEST table.
+
+For more information, refer to the description of the foreign key DEPLOY_FK_3.
+
+See also: <<DEPLOY.adoc#_i_deploy_deploy_fk_3,DEPLOY_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|LEVELREQUESTOID
+|NUMBER
+|===
+
+[[_cd_deploy_propertylogoid]]
+==== PROPERTYLOGOID 
+(((DEPLOY ,PROPERTYLOGOID)))  (((PROPERTYLOGOID (DEPLOY)))) 
+Identifier for the PROPERTYLOG table.
+
+For more information, refer to the description of the foreign key DEPLOY_FK_4.
+
+See also: <<DEPLOY.adoc#_i_deploy_deploy_fk_4,DEPLOY_FK_4>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROPERTYLOGOID
+|NUMBER
+|===
+
+[[_cd_deploy_archived]]
+==== ARCHIVED 
+(((DEPLOY ,ARCHIVED)))  (((ARCHIVED (DEPLOY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_deploy_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((DEPLOY ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (DEPLOY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_deploy_version]]
+==== VERSION 
+(((DEPLOY ,VERSION)))  (((VERSION (DEPLOY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,DEPLOY_PK))) [[_i_deploy_deploy_pk]]
+DEPLOY_PK
+|Yes
+|Yes
+|<<DEPLOY.adoc#_cd_deploy_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,DEPLOY_FK_1))) [[_i_deploy_deploy_fk_1]]
+DEPLOY_FK_1
+|No
+|No
+|<<DEPLOY.adoc#_cd_deploy_buildoid,BUILDOID>>
+|<<BUILD.adoc#_t_build,BUILD>>
+
+| 
+(((Foreign Keys ,DEPLOY_FK_2))) [[_i_deploy_deploy_fk_2]]
+DEPLOY_FK_2
+|No
+|No
+|<<DEPLOY.adoc#_cd_deploy_deployenvironmentoid,DEPLOYENVIRONMENTOID>>
+|<<DEPLOYENVIRONMENT.adoc#_t_deployenvironment,DEPLOYENVIRONMENT>>
+
+| 
+(((Foreign Keys ,DEPLOY_FK_3))) [[_i_deploy_deploy_fk_3]]
+DEPLOY_FK_3
+|No
+|No
+|<<DEPLOY.adoc#_cd_deploy_levelrequestoid,LEVELREQUESTOID>>
+|<<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>>
+
+| 
+(((Foreign Keys ,DEPLOY_FK_4))) [[_i_deploy_deploy_fk_4]]
+DEPLOY_FK_4
+|No
+|No
+|<<DEPLOY.adoc#_cd_deploy_propertylogoid,PROPERTYLOGOID>>
+|<<PROPERTYLOG.adoc#_t_propertylog,PROPERTYLOG>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== BUILD
+
+Refer to the chapter <<BUILD.adoc#_t_build,BUILD>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DEPLOY_FK_1
+|<<BUILD.adoc#_cd_build_oid,OID>>
+|===
+
+===== DEPLOYENVIRONMENT
+
+Refer to the chapter <<DEPLOYENVIRONMENT.adoc#_t_deployenvironment,DEPLOYENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DEPLOY_FK_2
+|<<DEPLOYENVIRONMENT.adoc#_cd_deployenvironment_oid,OID>>
+|===
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DEPLOY_FK_3
+|<<LEVELREQUEST.adoc#_cd_levelrequest_oid,OID>>
+|===
+
+===== PROPERTYLOG
+
+Refer to the chapter <<PROPERTYLOG.adoc#_t_propertylog,PROPERTYLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DEPLOY_FK_4
+|<<PROPERTYLOG.adoc#_cd_propertylog_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== DEPLOYLOG
+
+Refer to the chapter <<DEPLOYLOG.adoc#_t_deploylog,DEPLOYLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOYLOG_FK_1
+|<<DEPLOYLOG.adoc#_cd_deploylog_deployoid,DEPLOYOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,DEPLOY))) 
+*DEPLOY_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*DEPLOY_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*DEPLOY_BUILDOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DEPLOY_DEPLOYENVIRONMENTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DEPLOY_ENDDATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|End Date/Time
+
+|
+
+French:
+|Fin d'exécution
+
+|
+
+German:
+|Ausführungsende
+|===
+*DEPLOY_LEVELREQUESTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DEPLOY_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DEPLOY_PARTIALDEPLOY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Partial Deploy
+
+|
+
+French:
+|Déploiement partiel
+
+|
+
+German:
+|Partielle Auslieferung
+|===
+*DEPLOY_PROPERTYLOGOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DEPLOY_SEQUENCENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Sequence Number
+
+|
+
+French:
+|Numéro de séquence
+
+|
+
+German:
+|Sequenznummer
+|===
+*DEPLOY_STARTDATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Start Date/Time
+
+|
+
+French:
+|Début d'exécution
+
+|
+
+German:
+|Ausführungsbeginn
+|===
+*DEPLOY_STATUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Status
+
+|
+
+French:
+|Statut
+
+|
+
+German:
+|Status
+|===
+*DEPLOY_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

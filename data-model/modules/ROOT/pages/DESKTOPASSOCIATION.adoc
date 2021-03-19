@@ -1,0 +1,648 @@
+[[_t_desktopassociation]]
+== DESKTOPASSOCIATION 
+(((DESKTOPASSOCIATION))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_desktopoid,DESKTOPOID>>
+|NUMBER
+
+|F
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_scmleveloid,SCMLEVELOID>>
+|NUMBER
+
+|F
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_projectstreamoid,PROJECTSTREAMOID>>
+|NUMBER
+
+|F
+|Yes
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_scmpackageoid,SCMPACKAGEOID>>
+|NUMBER
+
+|
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_sequencenumber,SEQUENCENUMBER>>
+|NUMBER
+
+|
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_type,TYPE>>
+|NUMBER
+
+|
+|Yes
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_expanded,EXPANDED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_desktopassociation_oid]]
+==== OID 
+(((DESKTOPASSOCIATION ,OID)))  (((OID (DESKTOPASSOCIATION)))) 
+Unique table identifier.
+
+See also: <<DESKTOPASSOCIATION.adoc#_i_desktopassociation_desktopassociation_pk,DESKTOPASSOCIATION_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_desktopassociation_desktopoid]]
+==== DESKTOPOID 
+(((DESKTOPASSOCIATION ,DESKTOPOID)))  (((DESKTOPOID (DESKTOPASSOCIATION)))) 
+Internal identifier of the object.
+
+See also: <<DESKTOPASSOCIATION.adoc#_i_desktopassociation_desktopassociation_fk_3,DESKTOPASSOCIATION_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|DESKTOPOID
+|NUMBER
+|===
+
+[[_cd_desktopassociation_scmleveloid]]
+==== SCMLEVELOID 
+(((DESKTOPASSOCIATION ,SCMLEVELOID)))  (((SCMLEVELOID (DESKTOPASSOCIATION)))) 
+Identifier for the SCMLEVEL table.
+
+For more information, refer to the description of the foreign key DESKTOPASSOCIATION_FK_1.
+
+See also: <<DESKTOPASSOCIATION.adoc#_i_desktopassociation_desktopassociation_fk_1,DESKTOPASSOCIATION_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMLEVELOID
+|NUMBER
+|===
+
+[[_cd_desktopassociation_projectstreamoid]]
+==== PROJECTSTREAMOID 
+(((DESKTOPASSOCIATION ,PROJECTSTREAMOID)))  (((PROJECTSTREAMOID (DESKTOPASSOCIATION)))) 
+Identifier for the PROJECTSTREAM table.
+
+For more information, refer to the description of the foreign key DESKTOPASSOCIATION_FK_2.
+
+See also: <<DESKTOPASSOCIATION.adoc#_i_desktopassociation_desktopassociation_fk_2,DESKTOPASSOCIATION_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROJECTSTREAMOID
+|NUMBER
+|===
+
+[[_cd_desktopassociation_scmpackageoid]]
+==== SCMPACKAGEOID 
+(((DESKTOPASSOCIATION ,SCMPACKAGEOID)))  (((SCMPACKAGEOID (DESKTOPASSOCIATION)))) 
+Internal identifier of the object.
+
+See also: <<DESKTOPASSOCIATION.adoc#_i_desktopassociation_desktopassociation_fk_4,DESKTOPASSOCIATION_FK_4>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|SCMPACKAGEOID
+|NUMBER
+|===
+
+[[_cd_desktopassociation_sequencenumber]]
+==== SEQUENCENUMBER 
+(((DESKTOPASSOCIATION ,SEQUENCENUMBER)))  (((SEQUENCENUMBER (DESKTOPASSOCIATION)))) 
+Number indicating the position of the element (Project Stream, Level or Package) within the list of elements assigned to the Desktop.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SEQUENCENUMBER
+|NUMBER
+|===
+
+[[_cd_desktopassociation_type]]
+==== TYPE 
+(((DESKTOPASSOCIATION ,TYPE)))  (((TYPE (DESKTOPASSOCIATION)))) 
+The type of element assigned to the Desktop: Project Stream or Level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Project Stream
+
+1 = Level
+
+2 = Package
+
+
+[[_cd_desktopassociation_expanded]]
+==== EXPANDED 
+(((DESKTOPASSOCIATION ,EXPANDED)))  (((EXPANDED (DESKTOPASSOCIATION)))) 
+Indication whether or not the element assigned to the Desktop is expanded on the User`'s Desktop.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|EXPANDED
+|NUMBER(1)
+|===
+
+[[_cd_desktopassociation_archived]]
+==== ARCHIVED 
+(((DESKTOPASSOCIATION ,ARCHIVED)))  (((ARCHIVED (DESKTOPASSOCIATION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_desktopassociation_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((DESKTOPASSOCIATION ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (DESKTOPASSOCIATION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_desktopassociation_version]]
+==== VERSION 
+(((DESKTOPASSOCIATION ,VERSION)))  (((VERSION (DESKTOPASSOCIATION)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,DESKTOPASSOCIATION_PK))) [[_i_desktopassociation_desktopassociation_pk]]
+DESKTOPASSOCIATION_PK
+|Yes
+|Yes
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,DESKTOPASSOCIATION_FK_1))) [[_i_desktopassociation_desktopassociation_fk_1]]
+DESKTOPASSOCIATION_FK_1
+|No
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_scmleveloid,SCMLEVELOID>>
+|<<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>>
+
+| 
+(((Foreign Keys ,DESKTOPASSOCIATION_FK_2))) [[_i_desktopassociation_desktopassociation_fk_2]]
+DESKTOPASSOCIATION_FK_2
+|No
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_projectstreamoid,PROJECTSTREAMOID>>
+|<<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>>
+
+| 
+(((Foreign Keys ,DESKTOPASSOCIATION_FK_3))) [[_i_desktopassociation_desktopassociation_fk_3]]
+DESKTOPASSOCIATION_FK_3
+|No
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_desktopoid,DESKTOPOID>>
+|<<DESKTOP.adoc#_t_desktop,DESKTOP>>
+
+| 
+(((Foreign Keys ,DESKTOPASSOCIATION_FK_4))) [[_i_desktopassociation_desktopassociation_fk_4]]
+DESKTOPASSOCIATION_FK_4
+|No
+|No
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_scmpackageoid,SCMPACKAGEOID>>
+|<<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== DESKTOP
+
+Refer to the chapter <<DESKTOP.adoc#_t_desktop,DESKTOP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DESKTOPASSOCIATION_FK_3
+|<<DESKTOP.adoc#_cd_desktop_oid,OID>>
+|===
+
+===== PROJECTSTREAM
+
+Refer to the chapter <<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DESKTOPASSOCIATION_FK_2
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+|===
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DESKTOPASSOCIATION_FK_1
+|<<SCMLEVEL.adoc#_cd_scmlevel_oid,OID>>
+|===
+
+===== SCMPACKAGE
+
+Refer to the chapter <<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|DESKTOPASSOCIATION_FK_4
+|<<SCMPACKAGE.adoc#_cd_scmpackage_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,DESKTOPASSOCIATION))) 
+*DESKTOPASSOCIATION_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*DESKTOPASSOCIATION_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*DESKTOPASSOCIATION_DESKTOPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DESKTOPASSOCIATION_EXPANDED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Expanded
+
+|
+
+French:
+|Développé
+
+|
+
+German:
+|Expandiert
+|===
+*DESKTOPASSOCIATION_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DESKTOPASSOCIATION_PROJECTSTREAMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DESKTOPASSOCIATION_SCMLEVELOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*DESKTOPASSOCIATION_SCMPACKAGEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM Package OID
+
+|
+
+French:
+|OID Paquet ALM
+
+|
+
+German:
+|ALM Paket OID 
+|===
+*DESKTOPASSOCIATION_SEQUENCENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Sequence Number
+
+|
+
+French:
+|Numéro de séquence
+
+|
+
+German:
+|Sequenznummer
+|===
+*DESKTOPASSOCIATION_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*DESKTOPASSOCIATION_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

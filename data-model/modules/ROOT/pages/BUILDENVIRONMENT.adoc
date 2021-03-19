@@ -1,0 +1,817 @@
+[[_t_buildenvironment]]
+== BUILDENVIRONMENT 
+(((BUILDENVIRONMENT))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_buildsuffix,BUILDSUFFIX>>
+|VARCHAR2(50)
+
+|
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_sourcelocation,SOURCELOCATION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_resultlocation,RESULTLOCATION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_debug,DEBUG>>
+|NUMBER(1)
+
+|F
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_machineoid,MACHINEOID>>
+|NUMBER
+
+|F
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_scmleveloid,SCMLEVELOID>>
+|NUMBER
+
+|
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_tooloid,TOOLOID>>
+|NUMBER
+
+|
+|Yes
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_buildscript,BUILDSCRIPT>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_downloadablebuild,DOWNLOADABLEBUILD>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_buildenvironment_oid]]
+==== OID 
+(((BUILDENVIRONMENT ,OID)))  (((OID (BUILDENVIRONMENT)))) 
+Unique table identifier.
+
+See also: <<BUILDENVIRONMENT.adoc#_i_buildenvironment_buildenvironment_pk,BUILDENVIRONMENT_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_buildenvironment_name]]
+==== NAME 
+(((BUILDENVIRONMENT ,NAME)))  (((NAME (BUILDENVIRONMENT)))) 
+Name of the Build Environment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_buildenvironment_buildsuffix]]
+==== BUILDSUFFIX 
+(((BUILDENVIRONMENT ,BUILDSUFFIX)))  (((BUILDSUFFIX (BUILDENVIRONMENT)))) 
+The Build Suffix for the Build Environment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|BUILDSUFFIX
+|VARCHAR2(50)
+|===
+
+[[_cd_buildenvironment_sourcelocation]]
+==== SOURCELOCATION 
+(((BUILDENVIRONMENT ,SOURCELOCATION)))  (((SOURCELOCATION (BUILDENVIRONMENT)))) 
+The path to the physical location where the source code, the dependent source code or the dependent build result will be placed. IKAN ALM adds the Build OID and the Project Name: SourceLocation/BuildOID/ProjectName
+
+This location is passed to the Build Script as a parameter named source.
+
+(For ANT, this is a property.)
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SOURCELOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_buildenvironment_resultlocation]]
+==== RESULTLOCATION 
+(((BUILDENVIRONMENT ,RESULTLOCATION)))  (((RESULTLOCATION (BUILDENVIRONMENT)))) 
+The path to the physical location where IKAN ALM expects to find the result of the executed Build Script. IKAN ALM adds the Build OID: TargetLocation/BuildOID. This location is passed to the Build Script as a parameter named target. (For ANT, this is a property.)
+
+The Deploy Script is added to this result, delivering version control of the Deploy Script and its related Build.
+
+The result is compressed and stored into the Build Archive. This file has a name in the following format: scm4all_H_1-0_b12_CONTBUILD_win.zip
+
+where:
+
+* scm4all: Project name
+
+* H: Stream Type indication: H for Head, B for Branch
+
+* 1-0: Build Prefix
+
+* b12: Build Number
+
+* CONTBUILD: Build Environment name
+
+* win: Build suffix
+
+* .zip: extension referring to the compression method, zip for Windows platforms, tar.gz for Unix and Linux platforms.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|RESULTLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_buildenvironment_debug]]
+==== DEBUG 
+(((BUILDENVIRONMENT ,DEBUG)))  (((DEBUG (BUILDENVIRONMENT)))) 
+Indication whether or not the Debug Option is activated for the Build Environment.
+
+If Debug is activated, the Source Clean-up action will not be performed, so that the User may use the available source to run the build script manually for testing purposes.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEBUG
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_buildenvironment_machineoid]]
+==== MACHINEOID 
+(((BUILDENVIRONMENT ,MACHINEOID)))  (((MACHINEOID (BUILDENVIRONMENT)))) 
+Identifier for the MACHINE table.
+
+For more information, refer to the description of the foreign key BUILDENVIRONMENT_FK_2.
+
+See also: <<BUILDENVIRONMENT.adoc#_i_buildenvironment_buildenvironment_fk_2,BUILDENVIRONMENT_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|MACHINEOID
+|NUMBER
+|===
+
+[[_cd_buildenvironment_scmleveloid]]
+==== SCMLEVELOID 
+(((BUILDENVIRONMENT ,SCMLEVELOID)))  (((SCMLEVELOID (BUILDENVIRONMENT)))) 
+Identifier for the SCMLEVEL table.
+
+For more information, refer to the description of the foreign key BUILDENVIRONMENT_FK_1.
+
+See also: <<BUILDENVIRONMENT.adoc#_i_buildenvironment_buildenvironment_fk_1,BUILDENVIRONMENT_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMLEVELOID
+|NUMBER
+|===
+
+[[_cd_buildenvironment_tooloid]]
+==== TOOLOID 
+(((BUILDENVIRONMENT ,TOOLOID)))  (((TOOLOID (BUILDENVIRONMENT)))) 
+OID identifying the tool used by the Build Environment. Refers to the primary key of the appropriate tool table: ANT, NANT, MAVEN2 or Gradle.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TOOLOID
+|NUMBER
+|===
+
+[[_cd_buildenvironment_buildscript]]
+==== BUILDSCRIPT 
+(((BUILDENVIRONMENT ,BUILDSCRIPT)))  (((BUILDSCRIPT (BUILDENVIRONMENT)))) 
+Relative path to the Build Script selected specifically for the Build Environment.
+
+In case no Build Script is specified in the Build Environment settings, the default  Build Script, as defined in the Project Settings is used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|BUILDSCRIPT
+|VARCHAR2(255)
+|===
+
+[[_cd_buildenvironment_downloadablebuild]]
+==== DOWNLOADABLEBUILD 
+(((BUILDENVIRONMENT ,DOWNLOADABLEBUILD)))  (((DOWNLOADABLEBUILD (BUILDENVIRONMENT)))) 
+Indication whether or not the compressed Build Result created on this Build Level is downloadable.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DOWNLOADABLEBUILD
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_buildenvironment_archived]]
+==== ARCHIVED 
+(((BUILDENVIRONMENT ,ARCHIVED)))  (((ARCHIVED (BUILDENVIRONMENT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_buildenvironment_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((BUILDENVIRONMENT ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (BUILDENVIRONMENT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_buildenvironment_version]]
+==== VERSION 
+(((BUILDENVIRONMENT ,VERSION)))  (((VERSION (BUILDENVIRONMENT)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,BUILDENVIRONMENT_PK))) [[_i_buildenvironment_buildenvironment_pk]]
+BUILDENVIRONMENT_PK
+|Yes
+|Yes
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,BUILDENVIRONMENT_FK_1))) [[_i_buildenvironment_buildenvironment_fk_1]]
+BUILDENVIRONMENT_FK_1
+|No
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_scmleveloid,SCMLEVELOID>>
+|<<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>>
+
+| 
+(((Foreign Keys ,BUILDENVIRONMENT_FK_2))) [[_i_buildenvironment_buildenvironment_fk_2]]
+BUILDENVIRONMENT_FK_2
+|No
+|No
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_machineoid,MACHINEOID>>
+|<<MACHINE.adoc#_t_machine,MACHINE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== MACHINE
+
+Refer to the chapter <<MACHINE.adoc#_t_machine,MACHINE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|BUILDENVIRONMENT_FK_2
+|<<MACHINE.adoc#_cd_machine_oid,OID>>
+|===
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|BUILDENVIRONMENT_FK_1
+|<<SCMLEVEL.adoc#_cd_scmlevel_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== BUILD
+
+Refer to the chapter <<BUILD.adoc#_t_build,BUILD>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILD_FK_1
+|<<BUILD.adoc#_cd_build_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|===
+
+===== BUILDPARAMETER
+
+Refer to the chapter <<BUILDPARAMETER.adoc#_t_buildparameter,BUILDPARAMETER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDPARAMETER_FK_1
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|===
+
+===== DEPLOYENVIRONMENT
+
+Refer to the chapter <<DEPLOYENVIRONMENT.adoc#_t_deployenvironment,DEPLOYENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOYENVIRONMENT_FK_3
+|<<DEPLOYENVIRONMENT.adoc#_cd_deployenvironment_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,BUILDENVIRONMENT))) 
+*BUILDENVIRONMENT_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*BUILDENVIRONMENT_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*BUILDENVIRONMENT_BUILDSCRIPT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Script
+
+|
+
+French:
+|Script de construction
+
+|
+
+German:
+|Bereitstellungsskript
+|===
+*BUILDENVIRONMENT_BUILDSUFFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Suffix
+
+|
+
+French:
+|Suffixe de construction
+
+|
+
+German:
+|Bereitstellungskennzeichen
+|===
+*BUILDENVIRONMENT_DEBUG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Debug Option
+
+|
+
+French:
+|Option débogage
+
+|
+
+German:
+|Debug
+|===
+*BUILDENVIRONMENT_DOWNLOADABLEBUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Downloadable Build
+
+|
+
+French:
+|Construction téléchargeable
+
+|
+
+German:
+|Verteilung
+|===
+*BUILDENVIRONMENT_MACHINEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILDENVIRONMENT_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*BUILDENVIRONMENT_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILDENVIRONMENT_RESULTLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Target Location
+
+|
+
+French:
+|Emplacement Cible
+
+|
+
+German:
+|Zielstandort
+|===
+*BUILDENVIRONMENT_SCMLEVELOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILDENVIRONMENT_SOURCELOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Source Location
+
+|
+
+French:
+|Emplacement Source
+
+|
+
+German:
+|Quellstandort
+|===
+*BUILDENVIRONMENT_TOOLOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILDENVIRONMENT_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

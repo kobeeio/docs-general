@@ -1,0 +1,440 @@
+[[_t_issuetrackingsystemproperty]]
+== ISSUETRACKINGSYSTEMPROPERTY 
+(((ISSUETRACKINGSYSTEMPROPERTY))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_propertyvalue,PROPERTYVALUE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_secured,SECURED>>
+|NUMBER(1)
+
+|F
+|No
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_issuetrackingsystemoid,ISSUETRACKINGSYSTEMOID>>
+|NUMBER
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_issuetrackingsystemproperty_oid]]
+==== OID 
+(((ISSUETRACKINGSYSTEMPROPERTY ,OID)))  (((OID (ISSUETRACKINGSYSTEMPROPERTY)))) 
+Unique table identifier.
+
+See also: <<ISSUETRACKINGSYSTEMPROPERTY.adoc#_i_issuetrackingsystemproperty_issuetrackingsystemproperty_pk,ISSUETRACKINGSYSTEMPROPERTY_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_issuetrackingsystemproperty_name]]
+==== NAME 
+(((ISSUETRACKINGSYSTEMPROPERTY ,NAME)))  (((NAME (ISSUETRACKINGSYSTEMPROPERTY)))) 
+The name of the Issue Tracking System Property. This name is predefined by IKAN ALM in function of the type of Issue Tracking System.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_issuetrackingsystemproperty_propertyvalue]]
+==== PROPERTYVALUE 
+(((ISSUETRACKINGSYSTEMPROPERTY ,PROPERTYVALUE)))  (((PROPERTYVALUE (ISSUETRACKINGSYSTEMPROPERTY)))) 
+The value of the Issue Tracking System Property.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PROPERTYVALUE
+|VARCHAR2(512)
+|===
+
+[[_cd_issuetrackingsystemproperty_secured]]
+==== SECURED 
+(((ISSUETRACKINGSYSTEMPROPERTY ,SECURED)))  (((SECURED (ISSUETRACKINGSYSTEMPROPERTY)))) 
+This option is managed by IKAN ALM.
+
+Indication whether or not the Issue Tracking System Property is secured and thus its value encrypted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SECURED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_issuetrackingsystemproperty_issuetrackingsystemoid]]
+==== ISSUETRACKINGSYSTEMOID 
+(((ISSUETRACKINGSYSTEMPROPERTY ,ISSUETRACKINGSYSTEMOID)))  (((ISSUETRACKINGSYSTEMOID (ISSUETRACKINGSYSTEMPROPERTY)))) 
+Internal identifier of the Issue Tracking System.
+
+See also: <<ISSUETRACKINGSYSTEMPROPERTY.adoc#_i_issuetrackingsystemproperty_issuetrackingsystemproper_fk_1,ISSUETRACKINGSYSTEMPROPER_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|ISSUETRACKINGSYSTEMOID
+|NUMBER
+|===
+
+[[_cd_issuetrackingsystemproperty_archived]]
+==== ARCHIVED 
+(((ISSUETRACKINGSYSTEMPROPERTY ,ARCHIVED)))  (((ARCHIVED (ISSUETRACKINGSYSTEMPROPERTY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_issuetrackingsystemproperty_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((ISSUETRACKINGSYSTEMPROPERTY ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (ISSUETRACKINGSYSTEMPROPERTY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_issuetrackingsystemproperty_version]]
+==== VERSION 
+(((ISSUETRACKINGSYSTEMPROPERTY ,VERSION)))  (((VERSION (ISSUETRACKINGSYSTEMPROPERTY)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,ISSUETRACKINGSYSTEMPROPERTY_PK))) [[_i_issuetrackingsystemproperty_issuetrackingsystemproperty_pk]]
+ISSUETRACKINGSYSTEMPROPERTY_PK
+|Yes
+|Yes
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,ISSUETRACKINGSYSTEMPROPER_FK_1))) [[_i_issuetrackingsystemproperty_issuetrackingsystemproper_fk_1]]
+ISSUETRACKINGSYSTEMPROPER_FK_1
+|No
+|No
+|<<ISSUETRACKINGSYSTEMPROPERTY.adoc#_cd_issuetrackingsystemproperty_issuetrackingsystemoid,ISSUETRACKINGSYSTEMOID>>
+|<<ISSUETRACKINGSYSTEM.adoc#_t_issuetrackingsystem,ISSUETRACKINGSYSTEM>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== ISSUETRACKINGSYSTEM
+
+Refer to the chapter <<ISSUETRACKINGSYSTEM.adoc#_t_issuetrackingsystem,ISSUETRACKINGSYSTEM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|ISSUETRACKINGSYSTEMPROPER_FK_1
+|<<ISSUETRACKINGSYSTEM.adoc#_cd_issuetrackingsystem_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,ISSUETRACKINGSYSTEMPROPERTY))) 
+*ISSUETRACKINGSYSTEMPROPERTY_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_ISSUETRACKINGSYSTEMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Issue Tracking System OID
+
+|
+
+French:
+|Numéro du Système de Suivi des Incidents
+
+|
+
+German:
+|Ticketsystem OID
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_PROPERTYVALUE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Property Value
+
+|
+
+French:
+|Valeur de la propriété
+
+|
+
+German:
+|Property Value
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_SECURED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Secured
+
+|
+
+French:
+|Sécurisé
+
+|
+
+German:
+|Sicher
+|===
+*ISSUETRACKINGSYSTEMPROPERTY_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

@@ -1,0 +1,664 @@
+[[_t_buildparameter]]
+== BUILDPARAMETER 
+(((BUILDPARAMETER))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_buildkey,BUILDKEY>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_buildvalue,BUILDVALUE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_mandatory,MANDATORY>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_editable,EDITABLE>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_dynamic,DYNAMIC>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_secured,SECURED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|F
+|No
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|NUMBER
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_buildparameter_oid]]
+==== OID 
+(((BUILDPARAMETER ,OID)))  (((OID (BUILDPARAMETER)))) 
+Unique table identifier.
+
+See also: <<BUILDPARAMETER.adoc#_i_buildparameter_buildparameter_pk,BUILDPARAMETER_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_buildparameter_buildkey]]
+==== BUILDKEY 
+(((BUILDPARAMETER ,BUILDKEY)))  (((BUILDKEY (BUILDPARAMETER)))) 
+Key (Name) for the Build Parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDKEY
+|VARCHAR2(255)
+|===
+
+[[_cd_buildparameter_buildvalue]]
+==== BUILDVALUE 
+(((BUILDPARAMETER ,BUILDVALUE)))  (((BUILDVALUE (BUILDPARAMETER)))) 
+The value(s) for the Build Parameter.
+
+The following types of values are possible:
+
+* Fixed value: for non-editable Build Parameters.
+
+* Default value: for editable Build Parameters.
+
+* List of preset values, separated by a semicolon (;): for dynamic Build Parameters.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|BUILDVALUE
+|VARCHAR2(512)
+|===
+
+[[_cd_buildparameter_mandatory]]
+==== MANDATORY 
+(((BUILDPARAMETER ,MANDATORY)))  (((MANDATORY (BUILDPARAMETER)))) 
+Indication whether or not the Build parameter is mandatory.
+
+Mandatory Build Parameters are always provided to the Build Script when creating a Build Level Request for the Build Environment.
+
+For non-mandatory Build Parameters, the User can decide to add the non-mandatory Build Parameter to the Build Script when creating a Build Level Request for the Build Environment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|MANDATORY
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_buildparameter_editable]]
+==== EDITABLE 
+(((BUILDPARAMETER ,EDITABLE)))  (((EDITABLE (BUILDPARAMETER)))) 
+Indication whether or not the Build parameter is editable.
+
+For editable Build Parameters, the User can, when creating a Build Level Request for the Build Environment, accept the preset default value or define a value of his choice.
+
+For non-editable Build Parameters, only the preset value can be offered to the Build Script.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|EDITABLE
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_buildparameter_dynamic]]
+==== DYNAMIC 
+(((BUILDPARAMETER ,DYNAMIC)))  (((DYNAMIC (BUILDPARAMETER)))) 
+Indication whether or not the Build Parameter is dynamic.
+
+For dynamic Build Parameters, the User can select one of the predefined values when creating a Build Level Request for the Build Environment. The selected value will be offered to the Build Script.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DYNAMIC
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_buildparameter_secured]]
+==== SECURED 
+(((BUILDPARAMETER ,SECURED)))  (((SECURED (BUILDPARAMETER)))) 
+Indication whether or not the Build Parameter is secured by a Password.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SECURED
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_buildparameter_description]]
+==== DESCRIPTION 
+(((BUILDPARAMETER ,DESCRIPTION)))  (((DESCRIPTION (BUILDPARAMETER)))) 
+The description of the Build parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_buildparameter_buildenvironmentoid]]
+==== BUILDENVIRONMENTOID 
+(((BUILDPARAMETER ,BUILDENVIRONMENTOID)))  (((BUILDENVIRONMENTOID (BUILDPARAMETER)))) 
+Identifier for the BUILDENVIRONMENT table.
+
+For more information, refer to the description of the foreign key BUILDPARAMETER_FK_1.
+
+See also: <<BUILDPARAMETER.adoc#_i_buildparameter_buildparameter_fk_1,BUILDPARAMETER_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|BUILDENVIRONMENTOID
+|NUMBER
+|===
+
+[[_cd_buildparameter_archived]]
+==== ARCHIVED 
+(((BUILDPARAMETER ,ARCHIVED)))  (((ARCHIVED (BUILDPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_buildparameter_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((BUILDPARAMETER ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (BUILDPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_buildparameter_version]]
+==== VERSION 
+(((BUILDPARAMETER ,VERSION)))  (((VERSION (BUILDPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,BUILDPARAMETER_PK))) [[_i_buildparameter_buildparameter_pk]]
+BUILDPARAMETER_PK
+|Yes
+|Yes
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,BUILDPARAMETER_FK_1))) [[_i_buildparameter_buildparameter_fk_1]]
+BUILDPARAMETER_FK_1
+|No
+|No
+|<<BUILDPARAMETER.adoc#_cd_buildparameter_buildenvironmentoid,BUILDENVIRONMENTOID>>
+|<<BUILDENVIRONMENT.adoc#_t_buildenvironment,BUILDENVIRONMENT>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== BUILDENVIRONMENT
+
+Refer to the chapter <<BUILDENVIRONMENT.adoc#_t_buildenvironment,BUILDENVIRONMENT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|BUILDPARAMETER_FK_1
+|<<BUILDENVIRONMENT.adoc#_cd_buildenvironment_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,BUILDPARAMETER))) 
+*BUILDPARAMETER_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*BUILDPARAMETER_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*BUILDPARAMETER_BUILDENVIRONMENTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILDPARAMETER_BUILDKEY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Key
+
+|
+
+French:
+|Code de la Construction
+
+|
+
+German:
+|Bereitstellungsname
+|===
+*BUILDPARAMETER_BUILDVALUE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Value
+
+|
+
+French:
+|Valeur de la Construction
+
+|
+
+German:
+|Bereitstellungswert
+|===
+*BUILDPARAMETER_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*BUILDPARAMETER_DYNAMIC_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Dynamic
+
+|
+
+French:
+|Dynamique
+
+|
+
+German:
+|Dynamisch
+|===
+*BUILDPARAMETER_EDITABLE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Editable
+
+|
+
+French:
+|Editable
+
+|
+
+German:
+|Bearbeitbar
+|===
+*BUILDPARAMETER_MANDATORY_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Mandatory
+
+|
+
+French:
+|Obligatoire
+
+|
+
+German:
+|Erforderlich
+|===
+*BUILDPARAMETER_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*BUILDPARAMETER_SECURED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Secured
+
+|
+
+French:
+|Sécurisé
+
+|
+
+German:
+|Sicher
+|===
+*BUILDPARAMETER_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

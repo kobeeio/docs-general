@@ -1,0 +1,455 @@
+[[_t_packagebuildgroup_package]]
+== PACKAGEBUILDGROUP_PACKAGE 
+(((PACKAGEBUILDGROUP_PACKAGE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_scmpackagebuildgroupoid,SCMPACKAGEBUILDGROUPOID>>
+|NUMBER
+
+|F
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_scmpackageoid,SCMPACKAGEOID>>
+|NUMBER
+
+|
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_sequencenumber,SEQUENCENUMBER>>
+|NUMBER
+
+|
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_dependencylevel,DEPENDENCYLEVEL>>
+|NUMBER
+
+|
+|Yes
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_packagebuildgroup_package_oid]]
+==== OID 
+(((PACKAGEBUILDGROUP_PACKAGE ,OID)))  (((OID (PACKAGEBUILDGROUP_PACKAGE)))) 
+Unique table identifier.
+
+See also: <<PACKAGEBUILDGROUP_PACKAGE.adoc#_i_packagebuildgroup_package_packagebuildgroup_package_pk,PACKAGEBUILDGROUP_PACKAGE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_packagebuildgroup_package_scmpackagebuildgroupoid]]
+==== SCMPACKAGEBUILDGROUPOID 
+(((PACKAGEBUILDGROUP_PACKAGE ,SCMPACKAGEBUILDGROUPOID)))  (((SCMPACKAGEBUILDGROUPOID (PACKAGEBUILDGROUP_PACKAGE)))) 
+Internal identifier of the Package Build Group.
+
+See also: <<PACKAGEBUILDGROUP_PACKAGE.adoc#_i_packagebuildgroup_package_packagebuildgroup_package_fk_1,PACKAGEBUILDGROUP_PACKAGE_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMPACKAGEBUILDGROUPOID
+|NUMBER
+|===
+
+[[_cd_packagebuildgroup_package_scmpackageoid]]
+==== SCMPACKAGEOID 
+(((PACKAGEBUILDGROUP_PACKAGE ,SCMPACKAGEOID)))  (((SCMPACKAGEOID (PACKAGEBUILDGROUP_PACKAGE)))) 
+Internal identifier of the Package.
+
+See also: <<PACKAGEBUILDGROUP_PACKAGE.adoc#_i_packagebuildgroup_package_packagebuildgroup_package_fk_2,PACKAGEBUILDGROUP_PACKAGE_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMPACKAGEOID
+|NUMBER
+|===
+
+[[_cd_packagebuildgroup_package_sequencenumber]]
+==== SEQUENCENUMBER 
+(((PACKAGEBUILDGROUP_PACKAGE ,SEQUENCENUMBER)))  (((SEQUENCENUMBER (PACKAGEBUILDGROUP_PACKAGE)))) 
+The sequence number of the Package within the Package Build Group.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SEQUENCENUMBER
+|NUMBER
+|===
+
+[[_cd_packagebuildgroup_package_dependencylevel]]
+==== DEPENDENCYLEVEL 
+(((PACKAGEBUILDGROUP_PACKAGE ,DEPENDENCYLEVEL)))  (((DEPENDENCYLEVEL (PACKAGEBUILDGROUP_PACKAGE)))) 
+The Dependency Level of the Package in the Package Build Group.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEPENDENCYLEVEL
+|NUMBER
+|===
+
+[[_cd_packagebuildgroup_package_archived]]
+==== ARCHIVED 
+(((PACKAGEBUILDGROUP_PACKAGE ,ARCHIVED)))  (((ARCHIVED (PACKAGEBUILDGROUP_PACKAGE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_packagebuildgroup_package_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PACKAGEBUILDGROUP_PACKAGE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PACKAGEBUILDGROUP_PACKAGE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_packagebuildgroup_package_version]]
+==== VERSION 
+(((PACKAGEBUILDGROUP_PACKAGE ,VERSION)))  (((VERSION (PACKAGEBUILDGROUP_PACKAGE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PACKAGEBUILDGROUP_PACKAGE_PK))) [[_i_packagebuildgroup_package_packagebuildgroup_package_pk]]
+PACKAGEBUILDGROUP_PACKAGE_PK
+|Yes
+|Yes
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,PACKAGEBUILDGROUP_PACKAGE_FK_1))) [[_i_packagebuildgroup_package_packagebuildgroup_package_fk_1]]
+PACKAGEBUILDGROUP_PACKAGE_FK_1
+|No
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_scmpackagebuildgroupoid,SCMPACKAGEBUILDGROUPOID>>
+|<<SCMPACKAGEBUILDGROUP.adoc#_t_scmpackagebuildgroup,SCMPACKAGEBUILDGROUP>>
+
+| 
+(((Foreign Keys ,PACKAGEBUILDGROUP_PACKAGE_FK_2))) [[_i_packagebuildgroup_package_packagebuildgroup_package_fk_2]]
+PACKAGEBUILDGROUP_PACKAGE_FK_2
+|No
+|No
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_scmpackageoid,SCMPACKAGEOID>>
+|<<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== SCMPACKAGE
+
+Refer to the chapter <<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PACKAGEBUILDGROUP_PACKAGE_FK_2
+|<<SCMPACKAGE.adoc#_cd_scmpackage_oid,OID>>
+|===
+
+===== SCMPACKAGEBUILDGROUP
+
+Refer to the chapter <<SCMPACKAGEBUILDGROUP.adoc#_t_scmpackagebuildgroup,SCMPACKAGEBUILDGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PACKAGEBUILDGROUP_PACKAGE_FK_1
+|<<SCMPACKAGEBUILDGROUP.adoc#_cd_scmpackagebuildgroup_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,PACKAGEBUILDGROUP_PACKAGE))) 
+*PACKAGEBUILDGROUP_PACKAGE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PACKAGEBUILDGROUP_PACKAGE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PACKAGEBUILDGROUP_PACKAGE_DEPENDENCYLEVEL_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Dependency Level
+
+|
+
+French:
+|Niveau de dépendance
+
+|
+
+German:
+|Abhängige Ebene
+|===
+*PACKAGEBUILDGROUP_PACKAGE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PACKAGEBUILDGROUP_PACKAGE_SCMPACKAGEBUILDGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PACKAGEBUILDGROUP_PACKAGE_SCMPACKAGEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PACKAGEBUILDGROUP_PACKAGE_SEQUENCENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Sequence Number
+
+|
+
+French:
+|Numéro de séquence
+
+|
+
+German:
+|Sequenznummer
+|===
+*PACKAGEBUILDGROUP_PACKAGE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

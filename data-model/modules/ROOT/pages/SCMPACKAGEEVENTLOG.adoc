@@ -1,0 +1,587 @@
+[[_t_scmpackageeventlog]]
+== SCMPACKAGEEVENTLOG 
+(((SCMPACKAGEEVENTLOG))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_scmpackageoid,SCMPACKAGEOID>>
+|NUMBER
+
+|
+|Yes
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_scmpackageversion,SCMPACKAGEVERSION>>
+|NUMBER
+
+|
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_changedatetime,CHANGEDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_changetype,CHANGETYPE>>
+|NUMBER
+
+|
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_userid,USERID>>
+|VARCHAR2(20)
+
+|
+|Yes
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_note,NOTE>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_changedstate,CHANGEDSTATE>>
+|CLOB
+
+|
+|Yes
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_scmpackageeventlog_oid]]
+==== OID 
+(((SCMPACKAGEEVENTLOG ,OID)))  (((OID (SCMPACKAGEEVENTLOG)))) 
+Unique table identifier.
+
+See also: <<SCMPACKAGEEVENTLOG.adoc#_i_scmpackageeventlog_scmpackageeventlog_pk,SCMPACKAGEEVENTLOG_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_scmpackageeventlog_scmpackageoid]]
+==== SCMPACKAGEOID 
+(((SCMPACKAGEEVENTLOG ,SCMPACKAGEOID)))  (((SCMPACKAGEOID (SCMPACKAGEEVENTLOG)))) 
+Internal identifier of the Package.
+
+See also: <<SCMPACKAGEEVENTLOG.adoc#_i_scmpackageeventlog_scmpackageeventlog_fk_1,SCMPACKAGEEVENTLOG_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMPACKAGEOID
+|NUMBER
+|===
+
+[[_cd_scmpackageeventlog_scmpackageversion]]
+==== SCMPACKAGEVERSION 
+(((SCMPACKAGEEVENTLOG ,SCMPACKAGEVERSION)))  (((SCMPACKAGEVERSION (SCMPACKAGEEVENTLOG)))) 
+The version number of the Package.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|SCMPACKAGEVERSION
+|NUMBER
+|===
+
+[[_cd_scmpackageeventlog_changedatetime]]
+==== CHANGEDATETIME 
+(((SCMPACKAGEEVENTLOG ,CHANGEDATETIME)))  (((CHANGEDATETIME (SCMPACKAGEEVENTLOG)))) 
+The date and time at which the Package was created, updated or deleted.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGEDATETIME
+|DATE
+|===
+
+[[_cd_scmpackageeventlog_changetype]]
+==== CHANGETYPE 
+(((SCMPACKAGEEVENTLOG ,CHANGETYPE)))  (((CHANGETYPE (SCMPACKAGEEVENTLOG)))) 
+The type of change made to the Package.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CHANGETYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Create
+
+1 = Update
+
+2 = Delete
+
+
+[[_cd_scmpackageeventlog_userid]]
+==== USERID 
+(((SCMPACKAGEEVENTLOG ,USERID)))  (((USERID (SCMPACKAGEEVENTLOG)))) 
+The User ID of the User who performed the modification (create/update/delete) of the Package.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|USERID
+|VARCHAR2(20)
+|===
+
+[[_cd_scmpackageeventlog_note]]
+==== NOTE 
+(((SCMPACKAGEEVENTLOG ,NOTE)))  (((NOTE (SCMPACKAGEEVENTLOG)))) 
+For future use.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|NOTE
+|VARCHAR2(512)
+|===
+
+[[_cd_scmpackageeventlog_changedstate]]
+==== CHANGEDSTATE 
+(((SCMPACKAGEEVENTLOG ,CHANGEDSTATE)))  (((CHANGEDSTATE (SCMPACKAGEEVENTLOG)))) 
+Serialized xml of the Package after the change.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CHANGEDSTATE
+|CLOB
+|===
+
+[[_cd_scmpackageeventlog_archived]]
+==== ARCHIVED 
+(((SCMPACKAGEEVENTLOG ,ARCHIVED)))  (((ARCHIVED (SCMPACKAGEEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmpackageeventlog_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCMPACKAGEEVENTLOG ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCMPACKAGEEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_scmpackageeventlog_version]]
+==== VERSION 
+(((SCMPACKAGEEVENTLOG ,VERSION)))  (((VERSION (SCMPACKAGEEVENTLOG)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCMPACKAGEEVENTLOG_PK))) [[_i_scmpackageeventlog_scmpackageeventlog_pk]]
+SCMPACKAGEEVENTLOG_PK
+|Yes
+|Yes
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,SCMPACKAGEEVENTLOG_FK_1))) [[_i_scmpackageeventlog_scmpackageeventlog_fk_1]]
+SCMPACKAGEEVENTLOG_FK_1
+|No
+|No
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_scmpackageoid,SCMPACKAGEOID>>
+|<<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== SCMPACKAGE
+
+Refer to the chapter <<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMPACKAGEEVENTLOG_FK_1
+|<<SCMPACKAGE.adoc#_cd_scmpackage_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SCMPACKAGEEVENTLOG))) 
+*SCMPACKAGEEVENTLOG_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCMPACKAGEEVENTLOG_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCMPACKAGEEVENTLOG_CHANGEDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Date/Time
+
+|
+
+French:
+|Date / Heure de la modification
+
+|
+
+German:
+|Änderungsdatum
+|===
+*SCMPACKAGEEVENTLOG_CHANGEDSTATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Changed State
+
+|
+
+French:
+|Etat modifié
+
+|
+
+German:
+|Modifizierte Status
+|===
+*SCMPACKAGEEVENTLOG_CHANGETYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Modification Type
+
+|
+
+French:
+|Type de modification
+
+|
+
+German:
+|Änderungsart
+|===
+*SCMPACKAGEEVENTLOG_NOTE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Note
+
+|
+
+French:
+|Remarque
+
+|
+
+German:
+|Anmerkung
+|===
+*SCMPACKAGEEVENTLOG_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMPACKAGEEVENTLOG_SCMPACKAGEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM Package OID
+
+|
+
+French:
+|OID Paquet ALM
+
+|
+
+German:
+|ALM Paket OID
+|===
+*SCMPACKAGEEVENTLOG_SCMPACKAGEVERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM Package Version
+
+|
+
+French:
+|Version du Paquet ALM
+
+|
+
+German:
+|ALM Paketversion
+|===
+*SCMPACKAGEEVENTLOG_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*SCMPACKAGEEVENTLOG_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

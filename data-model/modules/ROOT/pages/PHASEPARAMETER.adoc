@@ -1,0 +1,611 @@
+[[_t_phaseparameter]]
+== PHASEPARAMETER 
+(((PHASEPARAMETER))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_phaseoid,PHASEOID>>
+|NUMBER
+
+|
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_name,NAME>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_description,DESCRIPTION>>
+|VARCHAR2(512)
+
+|
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_required,REQUIRED>>
+|NUMBER(1)
+
+|
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_secured,SECURED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_defaultvalue,DEFAULTVALUE>>
+|VARCHAR2(255)
+
+|
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_integrationtype,INTEGRATIONTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_phaseparameter_oid]]
+==== OID 
+(((PHASEPARAMETER ,OID)))  (((OID (PHASEPARAMETER)))) 
+Unique table identifier.
+
+See also: <<PHASEPARAMETER.adoc#_i_phaseparameter_phaseparameter_pk,PHASEPARAMETER_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_phaseparameter_phaseoid]]
+==== PHASEOID 
+(((PHASEPARAMETER ,PHASEOID)))  (((PHASEOID (PHASEPARAMETER)))) 
+Internal identifier of the Phase Parameter.
+
+See also: <<PHASEPARAMETER.adoc#_i_phaseparameter_phaseparameter_fk_1,PHASEPARAMETER_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PHASEOID
+|NUMBER
+|===
+
+[[_cd_phaseparameter_name]]
+==== NAME 
+(((PHASEPARAMETER ,NAME)))  (((NAME (PHASEPARAMETER)))) 
+Name of the Phase Parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(255)
+|===
+
+[[_cd_phaseparameter_description]]
+==== DESCRIPTION 
+(((PHASEPARAMETER ,DESCRIPTION)))  (((DESCRIPTION (PHASEPARAMETER)))) 
+Description of the Phase Parameter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(512)
+|===
+
+[[_cd_phaseparameter_required]]
+==== REQUIRED 
+(((PHASEPARAMETER ,REQUIRED)))  (((REQUIRED (PHASEPARAMETER)))) 
+Indicates whether the Parameter will always be created when adding the Phase to an Environment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|REQUIRED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phaseparameter_secured]]
+==== SECURED 
+(((PHASEPARAMETER ,SECURED)))  (((SECURED (PHASEPARAMETER)))) 
+Indicates whether the Parameter is secured or not.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SECURED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phaseparameter_defaultvalue]]
+==== DEFAULTVALUE 
+(((PHASEPARAMETER ,DEFAULTVALUE)))  (((DEFAULTVALUE (PHASEPARAMETER)))) 
+The default value the Parameter will get when the Phase is added to an Environment in case no value has been explicitly set.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DEFAULTVALUE
+|VARCHAR2(255)
+|===
+
+[[_cd_phaseparameter_integrationtype]]
+==== INTEGRATIONTYPE 
+(((PHASEPARAMETER ,INTEGRATIONTYPE)))  (((INTEGRATIONTYPE (PHASEPARAMETER)))) 
+This field indicates whether the value of the Parameter is a simple text value or whether it represents a link (an integration) to an IKAN ALM object type.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|INTEGRATIONTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = None (Value is simple text)
+
+1 = Transporter
+
+2 = Version Control Repository
+
+3 = Issue Tracking System
+
+4 = Scripting Tool
+
+5 = Ant Scripting Tool
+
+6 = NAnt Scripting Tool
+
+7 = Maven2 Scripting Tool
+
+8 = Gradle Scripting Tool
+
+
+[[_cd_phaseparameter_archived]]
+==== ARCHIVED 
+(((PHASEPARAMETER ,ARCHIVED)))  (((ARCHIVED (PHASEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_phaseparameter_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PHASEPARAMETER ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PHASEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_phaseparameter_version]]
+==== VERSION 
+(((PHASEPARAMETER ,VERSION)))  (((VERSION (PHASEPARAMETER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PHASEPARAMETER_PK))) [[_i_phaseparameter_phaseparameter_pk]]
+PHASEPARAMETER_PK
+|Yes
+|Yes
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,PHASEPARAMETER_FK_1))) [[_i_phaseparameter_phaseparameter_fk_1]]
+PHASEPARAMETER_FK_1
+|No
+|No
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_phaseoid,PHASEOID>>
+|<<PHASE.adoc#_t_phase,PHASE>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== PHASE
+
+Refer to the chapter <<PHASE.adoc#_t_phase,PHASE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PHASEPARAMETER_FK_1
+|<<PHASE.adoc#_cd_phase_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== ENVIRONMENTPHASEPARAMETER
+
+Refer to the chapter <<ENVIRONMENTPHASEPARAMETER.adoc#_t_environmentphaseparameter,ENVIRONMENTPHASEPARAMETER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|ENVIRONMENTPHASEPARAMETER_FK_2
+|<<ENVIRONMENTPHASEPARAMETER.adoc#_cd_environmentphaseparameter_phaseparameteroid,PHASEPARAMETEROID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,PHASEPARAMETER))) 
+*PHASEPARAMETER_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PHASEPARAMETER_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PHASEPARAMETER_DEFAULTVALUE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Default Value
+
+|
+
+French:
+|Valeur par défaut
+
+|
+
+German:
+|Standard Wert
+|===
+*PHASEPARAMETER_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*PHASEPARAMETER_INTEGRATIONTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Integration Type
+
+|
+
+French:
+|Type d'intégration
+
+|
+
+German:
+|Integrationstyp
+|===
+*PHASEPARAMETER_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*PHASEPARAMETER_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PHASEPARAMETER_PHASEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase OID
+
+|
+
+French:
+|OID Phase
+
+|
+
+German:
+|Phasen-OID
+|===
+*PHASEPARAMETER_REQUIRED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Required
+
+|
+
+French:
+|Requis
+
+|
+
+German:
+|Notwendig
+|===
+*PHASEPARAMETER_SECURED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Secured
+
+|
+
+French:
+|Sécurisé
+
+|
+
+German:
+|Sicher
+|===
+*PHASEPARAMETER_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

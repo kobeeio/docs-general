@@ -1,0 +1,723 @@
+[[_t_clearcasebase]]
+== CLEARCASEBASE 
+(((CLEARCASEBASE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_userid,USERID>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_commandpath,COMMANDPATH>>
+|VARCHAR2(255)
+
+|
+|No
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_cachelocation,CACHELOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_configspeclocation,CONFIGSPECLOCATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_projectvob,PROJECTVOB>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_recommended,RECOMMENDED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_clearcasebase_oid]]
+==== OID 
+(((CLEARCASEBASE ,OID)))  (((OID (CLEARCASEBASE)))) 
+Unique table identifier.
+
+See also: <<CLEARCASEBASE.adoc#_i_clearcasebase_clearcasebase_pk,CLEARCASEBASE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_clearcasebase_name]]
+==== NAME 
+(((CLEARCASEBASE ,NAME)))  (((NAME (CLEARCASEBASE)))) 
+Name of the ClearCase Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_clearcasebase_description]]
+==== DESCRIPTION 
+(((CLEARCASEBASE ,DESCRIPTION)))  (((DESCRIPTION (CLEARCASEBASE)))) 
+Description for the ClearCase Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_clearcasebase_userid]]
+==== USERID 
+(((CLEARCASEBASE ,USERID)))  (((USERID (CLEARCASEBASE)))) 
+The User ID.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|USERID
+|VARCHAR2(50)
+|===
+
+[[_cd_clearcasebase_password]]
+==== PASSWORD 
+(((CLEARCASEBASE ,PASSWORD)))  (((PASSWORD (CLEARCASEBASE)))) 
+The Password.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_clearcasebase_commandpath]]
+==== COMMANDPATH 
+(((CLEARCASEBASE ,COMMANDPATH)))  (((COMMANDPATH (CLEARCASEBASE)))) 
+The required Command Path for the ClearCase Repository. This is the directory containing the ClearCase client command (cleartool) to connect with the ClearCase Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|COMMANDPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_clearcasebase_timeout]]
+==== TIMEOUT 
+(((CLEARCASEBASE ,TIMEOUT)))  (((TIMEOUT (CLEARCASEBASE)))) 
+The time-out value in seconds.
+
+If IKAN ALM is not able to establish a connection with the ClearCase Repository within the defined period, it will consider the Repository to be inaccessible.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_clearcasebase_cachelocation]]
+==== CACHELOCATION 
+(((CLEARCASEBASE ,CACHELOCATION)))  (((CACHELOCATION (CLEARCASEBASE)))) 
+The path to the Cache location for this ClearCase Repository. This directory is used by the Scheduler to check whether there are modifications in a ClearCase VOB (Versioned Objects Base). A ClearCase View, containing the VOB, is created in this directory.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CACHELOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_clearcasebase_configspeclocation]]
+==== CONFIGSPECLOCATION 
+(((CLEARCASEBASE ,CONFIGSPECLOCATION)))  (((CONFIGSPECLOCATION (CLEARCASEBASE)))) 
+The absolute path to your customized ClearCase Configuration specification files.
+
+IKAN ALM will search this location for ConfigSpec files with names in the following format:
+
+ConfigSpec_ProjectName_BranchID.vm
+
+ConfigSpec_ProjectName.vm
+
+ConfigSpec.vm
+
+IKAN ALM looks first for the most specific match (including the Branch ID in the name).
+
+If no match is found, IKAN ALM will look for the second best match (including the ProjectName).
+
+If again no match is found, IKAN ALM will look for the general ConfigSpec.vm file.
+
+If there is no ConfigSpec.vm available in the indicated location, the default ConfigSpec.vm available in the IKAN ALM classpath will be used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CONFIGSPECLOCATION
+|VARCHAR2(255)
+|===
+
+[[_cd_clearcasebase_projectvob]]
+==== PROJECTVOB 
+(((CLEARCASEBASE ,PROJECTVOB)))  (((PROJECTVOB (CLEARCASEBASE)))) 
+Name of the Project VOB in which the UCM has been created.
+
+This only applies, if the repository you want to connect to is a ClearCase UCM Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PROJECTVOB
+|VARCHAR2(50)
+|===
+
+[[_cd_clearcasebase_recommended]]
+==== RECOMMENDED 
+(((CLEARCASEBASE ,RECOMMENDED)))  (((RECOMMENDED (CLEARCASEBASE)))) 
+Indication whether or not each tagged Build (Baseline) created by IKAN ALM must be promoted to the default recomended Baseline.
+
+Note: If the stream policy is set to POLICY_CHSTREAM_UNRESTRICTED, the permission checking is skipped.
+
+This option can only be used, if the account running the webserver, under which IKAN ALM is running, has the status of Project VOB Owner, Stream Owner, Root (Unix), Member of the ClearCase Administrators Group (ClearCase on Windows only), Local Administrator of the ClearCase LT Server Host (ClearCase LT on Windows only). For more information, see the mkstream reference page in the ClearCase documentation.
+
+In case this option is not selected, this will be a manual process performed outside IKAN ALM.
+
+This field only applies, if the repository you want to connect to is a ClearCase UCM Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|RECOMMENDED
+|NUMBER(1)
+|===
+
+===== Value List
+NULL = -
+
+0 = no
+
+1 = yes
+
+
+[[_cd_clearcasebase_archived]]
+==== ARCHIVED 
+(((CLEARCASEBASE ,ARCHIVED)))  (((ARCHIVED (CLEARCASEBASE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_clearcasebase_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((CLEARCASEBASE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (CLEARCASEBASE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_clearcasebase_version]]
+==== VERSION 
+(((CLEARCASEBASE ,VERSION)))  (((VERSION (CLEARCASEBASE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,CLEARCASEBASE_PK))) [[_i_clearcasebase_clearcasebase_pk]]
+CLEARCASEBASE_PK
+|Yes
+|Yes
+|<<CLEARCASEBASE.adoc#_cd_clearcasebase_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,CLEARCASEBASE))) 
+*CLEARCASEBASE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*CLEARCASEBASE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*CLEARCASEBASE_CACHELOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Cache Location
+
+|
+
+French:
+|Emplacement cache
+
+|
+
+German:
+|Cache Standort
+|===
+*CLEARCASEBASE_COMMANDPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Command Path
+
+|
+
+French:
+|Chemin de commande
+
+|
+
+German:
+|Befehlsverzeichnis
+|===
+*CLEARCASEBASE_CONFIGSPECLOCATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ConfigSpec Location
+
+|
+
+French:
+|Emplacement ConfigSpec
+
+|
+
+German:
+|ConfigSpec Standort
+|===
+*CLEARCASEBASE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*CLEARCASEBASE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*CLEARCASEBASE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*CLEARCASEBASE_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*CLEARCASEBASE_PROJECTVOB_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Project VOB
+
+|
+
+French:
+|VOB du Projet
+
+|
+
+German:
+|Projekt VOB
+|===
+*CLEARCASEBASE_RECOMMENDED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Promote baseline to default recommended
+
+|
+
+French:
+|"Baliser Baseline ""Défaut rec."""
+
+|
+
+German:
+|"Baselines markieren als ""Standard empfohlen"""
+|===
+*CLEARCASEBASE_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*CLEARCASEBASE_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*CLEARCASEBASE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

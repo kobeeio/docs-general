@@ -1,0 +1,500 @@
+[[_t_scmpackage]]
+== SCMPACKAGE 
+(((SCMPACKAGE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SCMPACKAGE.adoc#_cd_scmpackage_oid,OID>>
+|NUMBER
+
+|F
+|No
+|<<SCMPACKAGE.adoc#_cd_scmpackage_projectstreamoid,PROJECTSTREAMOID>>
+|NUMBER
+
+|
+|No
+|<<SCMPACKAGE.adoc#_cd_scmpackage_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SCMPACKAGE.adoc#_cd_scmpackage_description,DESCRIPTION>>
+|VARCHAR2(512)
+
+|
+|No
+|<<SCMPACKAGE.adoc#_cd_scmpackage_highestbuildnumber,HIGHESTBUILDNUMBER>>
+|NUMBER
+
+|
+|Yes
+|<<SCMPACKAGE.adoc#_cd_scmpackage_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SCMPACKAGE.adoc#_cd_scmpackage_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SCMPACKAGE.adoc#_cd_scmpackage_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_scmpackage_oid]]
+==== OID 
+(((SCMPACKAGE ,OID)))  (((OID (SCMPACKAGE)))) 
+Unique table identifier.
+
+See also: <<SCMPACKAGE.adoc#_i_scmpackage_scmpackage_pk,SCMPACKAGE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_scmpackage_projectstreamoid]]
+==== PROJECTSTREAMOID 
+(((SCMPACKAGE ,PROJECTSTREAMOID)))  (((PROJECTSTREAMOID (SCMPACKAGE)))) 
+Internal identifier of the Project Stream.
+
+See also: <<SCMPACKAGE.adoc#_i_scmpackage_scmpackage_fk_1,SCMPACKAGE_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROJECTSTREAMOID
+|NUMBER
+|===
+
+[[_cd_scmpackage_name]]
+==== NAME 
+(((SCMPACKAGE ,NAME)))  (((NAME (SCMPACKAGE)))) 
+Name of the Package.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_scmpackage_description]]
+==== DESCRIPTION 
+(((SCMPACKAGE ,DESCRIPTION)))  (((DESCRIPTION (SCMPACKAGE)))) 
+Description of the Package.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(512)
+|===
+
+[[_cd_scmpackage_highestbuildnumber]]
+==== HIGHESTBUILDNUMBER 
+(((SCMPACKAGE ,HIGHESTBUILDNUMBER)))  (((HIGHESTBUILDNUMBER (SCMPACKAGE)))) 
+The highest Build Number of the Package. Each Build Level Request for this Package will increment this field by one.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|HIGHESTBUILDNUMBER
+|NUMBER
+|===
+
+[[_cd_scmpackage_archived]]
+==== ARCHIVED 
+(((SCMPACKAGE ,ARCHIVED)))  (((ARCHIVED (SCMPACKAGE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_scmpackage_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SCMPACKAGE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SCMPACKAGE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_scmpackage_version]]
+==== VERSION 
+(((SCMPACKAGE ,VERSION)))  (((VERSION (SCMPACKAGE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SCMPACKAGE_PK))) [[_i_scmpackage_scmpackage_pk]]
+SCMPACKAGE_PK
+|Yes
+|Yes
+|<<SCMPACKAGE.adoc#_cd_scmpackage_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,SCMPACKAGE_FK_1))) [[_i_scmpackage_scmpackage_fk_1]]
+SCMPACKAGE_FK_1
+|No
+|No
+|<<SCMPACKAGE.adoc#_cd_scmpackage_projectstreamoid,PROJECTSTREAMOID>>
+|<<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== PROJECTSTREAM
+
+Refer to the chapter <<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SCMPACKAGE_FK_1
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== DESKTOPASSOCIATION
+
+Refer to the chapter <<DESKTOPASSOCIATION.adoc#_t_desktopassociation,DESKTOPASSOCIATION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DESKTOPASSOCIATION_FK_4
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_scmpackageoid,SCMPACKAGEOID>>
+|===
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUEST_FK_3
+|<<LEVELREQUEST.adoc#_cd_levelrequest_scmpackageoid,SCMPACKAGEOID>>
+|===
+
+===== PACKAGEBUILDGROUP_PACKAGE
+
+Refer to the chapter <<PACKAGEBUILDGROUP_PACKAGE.adoc#_t_packagebuildgroup_package,PACKAGEBUILDGROUP_PACKAGE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PACKAGEBUILDGROUP_PACKAGE_FK_2
+|<<PACKAGEBUILDGROUP_PACKAGE.adoc#_cd_packagebuildgroup_package_scmpackageoid,SCMPACKAGEOID>>
+|===
+
+===== SCMPACKAGEEVENTLOG
+
+Refer to the chapter <<SCMPACKAGEEVENTLOG.adoc#_t_scmpackageeventlog,SCMPACKAGEEVENTLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMPACKAGEEVENTLOG_FK_1
+|<<SCMPACKAGEEVENTLOG.adoc#_cd_scmpackageeventlog_scmpackageoid,SCMPACKAGEOID>>
+|===
+
+===== SCMPACKAGE_FILEINFO
+
+Refer to the chapter <<SCMPACKAGE_FILEINFO.adoc#_t_scmpackage_fileinfo,SCMPACKAGE_FILEINFO>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMPACKAGE_FILEINFO_FK_1
+|<<SCMPACKAGE_FILEINFO.adoc#_cd_scmpackage_fileinfo_scmpackageoid,SCMPACKAGEOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,SCMPACKAGE))) 
+*SCMPACKAGE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SCMPACKAGE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*SCMPACKAGE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*SCMPACKAGE_HIGHESTBUILDNUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Highest Build Number
+
+|
+
+French:
+|Numéro dernière construction
+
+|
+
+German:
+|Letzte Bereitstellungsnummer
+|===
+*SCMPACKAGE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SCMPACKAGE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SCMPACKAGE_PROJECTSTREAMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Project Stream OID
+
+|
+
+French:
+|
+
+|
+
+German:
+|
+|===
+*SCMPACKAGE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

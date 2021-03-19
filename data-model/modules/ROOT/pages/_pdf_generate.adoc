@@ -1,0 +1,85 @@
+:doctype: book
+:TOC:
+:sectnums:
+:title: IKAN ALM Data Model
+:title-page-background-image: image:../images/_pdf_title_page_background.png[]
+
+:author: IKAN Development N.V., Kardinaal Mercierplein 2, 2800 Mechelen, BELGIUM + \
+(C) 2006 - 2021 IKAN Development N.V. + \
+No part of this document may be reproduced or transmitted in any form or by any \
+means, electronically or mechanically, for any purpose, without the express written \
+permission of IKAN Development N.V. \
+The IKAN Development and IKAN ALM logos and names and all other IKAN product \
+or service names are trademarks of IKAN Development N.V. \
+All other trademarks are property of their respective owners.
+
+include::ANT.adoc[ANT]
+include::BUILD.adoc[BUILD]
+include::BUILDDEPENDENCY.adoc[BUILDDEPENDENCY]
+include::BUILDENVIRONMENT.adoc[BUILDENVIRONMENT]
+include::BUILDLOG.adoc[BUILDLOG]
+include::BUILDPARAMETER.adoc[BUILDPARAMETER]
+include::CLEARCASEBASE.adoc[CLEARCASEBASE]
+include::CONCURRENTVERSIONSSYSTEM.adoc[CONCURRENTVERSIONSSYSTEM]
+include::DEPLOY.adoc[DEPLOY]
+include::DEPLOYENVIRONMENT.adoc[DEPLOYENVIRONMENT]
+include::DEPLOYLOG.adoc[DEPLOYLOG]
+include::DEPLOYPARAMETER.adoc[DEPLOYPARAMETER]
+include::DESKTOP.adoc[DESKTOP]
+include::DESKTOPASSOCIATION.adoc[DESKTOPASSOCIATION]
+include::ENVIRONMENTPHASE.adoc[ENVIRONMENTPHASE]
+include::ENVIRONMENTPHASEPARAMETER.adoc[ENVIRONMENTPHASEPARAMETER]
+include::FILECOPY.adoc[FILECOPY]
+include::FILEINFO.adoc[FILEINFO]
+include::FILEREVISION.adoc[FILEREVISION]
+include::FTP.adoc[FTP]
+include::GIT.adoc[GIT]
+include::GLOBALEVENTLOG.adoc[GLOBALEVENTLOG]
+include::GRADLE.adoc[GRADLE]
+include::HOUSEKEEPING.adoc[HOUSEKEEPING]
+include::ISSUE.adoc[ISSUE]
+include::ISSUETRACKINGSYSTEM.adoc[ISSUETRACKINGSYSTEM]
+include::ISSUETRACKINGSYSTEMPROPERTY.adoc[ISSUETRACKINGSYSTEMPROPERTY]
+include::LEVELAPPROVAL.adoc[LEVELAPPROVAL]
+include::LEVELREQUEST.adoc[LEVELREQUEST]
+include::LEVELREQUEST_FILEREVISION.adoc[LEVELREQUEST_FILEREVISION]
+include::LEVELREQUESTLOG.adoc[LEVELREQUESTLOG]
+include::LIFECYCLE.adoc[LIFECYCLE]
+include::LOGFORMAT.adoc[LOGFORMAT]
+include::MACHINE.adoc[MACHINE]
+include::MACHINEPARAMETER.adoc[MACHINEPARAMETER]
+include::MAVEN2.adoc[MAVEN2]
+include::NANT.adoc[NANT]
+include::OJB_HL_SEQ.adoc[OJB_HL_SEQ]
+include::PACKAGEBUILDGROUP_PACKAGE.adoc[PACKAGEBUILDGROUP_PACKAGE]
+include::PHASE.adoc[PHASE]
+include::PHASE_LOCALIZATION_INFO.adoc[PHASE_LOCALIZATION_INFO]
+include::PHASEPARAMETER.adoc[PHASEPARAMETER]
+include::PROJECT.adoc[PROJECT]
+include::PROJECTEVENTLOG.adoc[PROJECTEVENTLOG]
+include::PROJECTSTREAM.adoc[PROJECTSTREAM]
+include::PROJECTSTREAMDEPENDENCY.adoc[PROJECTSTREAMDEPENDENCY]
+include::PROPERTYLOG.adoc[PROPERTYLOG]
+include::PVCS.adoc[PVCS]
+include::SCHEDULE.adoc[SCHEDULE]
+include::SCMLEVEL.adoc[SCMLEVEL]
+include::SCMLEVEL_LIFECYCLE.adoc[SCMLEVEL_LIFECYCLE]
+include::SCMLEVEL_POSTAPPRUSERGROUP.adoc[SCMLEVEL_POSTAPPRUSERGROUP]
+include::SCMLEVEL_PREAPPRUSERGROUP.adoc[SCMLEVEL_PREAPPRUSERGROUP]
+include::SCMPACKAGE.adoc[SCMPACKAGE]
+include::SCMPACKAGEBUILDGROUP.adoc[SCMPACKAGEBUILDGROUP]
+include::SCMPACKAGEBUILDGROUPEVENTLOG.adoc[SCMPACKAGEBUILDGROUPEVENTLOG]
+include::SCMPACKAGEEVENTLOG.adoc[SCMPACKAGEEVENTLOG]
+include::SCMPACKAGE_FILEINFO.adoc[SCMPACKAGE_FILEINFO]
+include::SCMUSER.adoc[SCMUSER]
+include::SCMUSER_USERGROUP.adoc[SCMUSER_USERGROUP]
+include::SEARCHFILTER.adoc[SEARCHFILTER]
+include::SECURESHELL.adoc[SECURESHELL]
+include::SUBVERSION.adoc[SUBVERSION]
+include::SYSTEMSETTINGS.adoc[SYSTEMSETTINGS]
+include::TFVC.adoc[TFVC]
+include::USERGROUP.adoc[USERGROUP]
+include::VISUALSOURCESAFE.adoc[VISUALSOURCESAFE]
+
+[index]
+= Index

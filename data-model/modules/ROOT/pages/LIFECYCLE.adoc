@@ -1,0 +1,472 @@
+[[_t_lifecycle]]
+== LIFECYCLE 
+(((LIFECYCLE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_name,NAME>>
+|VARCHAR2(50)
+
+|
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_isbase,ISBASE>>
+|NUMBER(1)
+
+|F
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_projectoid,PROJECTOID>>
+|NUMBER
+
+|
+|Yes
+|<<LIFECYCLE.adoc#_cd_lifecycle_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<LIFECYCLE.adoc#_cd_lifecycle_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_lifecycle_oid]]
+==== OID 
+(((LIFECYCLE ,OID)))  (((OID (LIFECYCLE)))) 
+Unique table identifier.
+
+See also: <<LIFECYCLE.adoc#_i_lifecycle_lifecycle_pk,LIFECYCLE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_lifecycle_name]]
+==== NAME 
+(((LIFECYCLE ,NAME)))  (((NAME (LIFECYCLE)))) 
+Name of the Life-Cycle.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_lifecycle_description]]
+==== DESCRIPTION 
+(((LIFECYCLE ,DESCRIPTION)))  (((DESCRIPTION (LIFECYCLE)))) 
+Description for the Life-Cycle.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_lifecycle_isbase]]
+==== ISBASE 
+(((LIFECYCLE ,ISBASE)))  (((ISBASE (LIFECYCLE)))) 
+Indication whether or not the Life-Cycles is a Base Life-Cycle or a Branch.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ISBASE
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_lifecycle_projectoid]]
+==== PROJECTOID 
+(((LIFECYCLE ,PROJECTOID)))  (((PROJECTOID (LIFECYCLE)))) 
+Identifier for the PROJECT table.
+
+For more information, refer to the description of the foreign key LIFECYCLE_FK_.
+
+See also: <<LIFECYCLE.adoc#_i_lifecycle_lifecycle_fk_1,LIFECYCLE_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROJECTOID
+|NUMBER
+|===
+
+[[_cd_lifecycle_archived]]
+==== ARCHIVED 
+(((LIFECYCLE ,ARCHIVED)))  (((ARCHIVED (LIFECYCLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_lifecycle_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((LIFECYCLE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (LIFECYCLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_lifecycle_version]]
+==== VERSION 
+(((LIFECYCLE ,VERSION)))  (((VERSION (LIFECYCLE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,LIFECYCLE_PK))) [[_i_lifecycle_lifecycle_pk]]
+LIFECYCLE_PK
+|Yes
+|Yes
+|<<LIFECYCLE.adoc#_cd_lifecycle_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,LIFECYCLE_FK_1))) [[_i_lifecycle_lifecycle_fk_1]]
+LIFECYCLE_FK_1
+|No
+|No
+|<<LIFECYCLE.adoc#_cd_lifecycle_projectoid,PROJECTOID>>
+|<<PROJECT.adoc#_t_project,PROJECT>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== PROJECT
+
+Refer to the chapter <<PROJECT.adoc#_t_project,PROJECT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LIFECYCLE_FK_1
+|<<PROJECT.adoc#_cd_project_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== PROJECTSTREAM
+
+Refer to the chapter <<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PROJECTSTREAM_FK_1
+|<<PROJECTSTREAM.adoc#_cd_projectstream_lifecycleoid,LIFECYCLEOID>>
+|===
+
+===== SCMLEVEL_LIFECYCLE
+
+Refer to the chapter <<SCMLEVEL_LIFECYCLE.adoc#_t_scmlevel_lifecycle,SCMLEVEL_LIFECYCLE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMLEVEL_LIFECYCLE_FK_1
+|<<SCMLEVEL_LIFECYCLE.adoc#_cd_scmlevel_lifecycle_lifecycleoid,LIFECYCLEOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,LIFECYCLE))) 
+*LIFECYCLE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*LIFECYCLE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*LIFECYCLE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*LIFECYCLE_ISBASE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Base
+
+|
+
+French:
+|Base
+
+|
+
+German:
+|Base
+|===
+*LIFECYCLE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*LIFECYCLE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LIFECYCLE_PROJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LIFECYCLE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

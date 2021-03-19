@@ -1,0 +1,483 @@
+[[_t_searchfilter]]
+== SEARCHFILTER 
+(((SEARCHFILTER))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<SEARCHFILTER.adoc#_cd_searchfilter_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<SEARCHFILTER.adoc#_cd_searchfilter_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<SEARCHFILTER.adoc#_cd_searchfilter_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|No
+|<<SEARCHFILTER.adoc#_cd_searchfilter_searchpage,SEARCHPAGE>>
+|NUMBER
+
+|F
+|Yes
+|<<SEARCHFILTER.adoc#_cd_searchfilter_scmuseroid,SCMUSEROID>>
+|NUMBER
+
+|
+|Yes
+|<<SEARCHFILTER.adoc#_cd_searchfilter_criteria,CRITERIA>>
+|VARCHAR2(4000)
+
+|
+|Yes
+|<<SEARCHFILTER.adoc#_cd_searchfilter_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<SEARCHFILTER.adoc#_cd_searchfilter_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<SEARCHFILTER.adoc#_cd_searchfilter_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_searchfilter_oid]]
+==== OID 
+(((SEARCHFILTER ,OID)))  (((OID (SEARCHFILTER)))) 
+Unique table identifier.
+
+See also: <<SEARCHFILTER.adoc#_i_searchfilter_searchfilter_pk,SEARCHFILTER_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_searchfilter_name]]
+==== NAME 
+(((SEARCHFILTER ,NAME)))  (((NAME (SEARCHFILTER)))) 
+Name of the Search Filter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_searchfilter_description]]
+==== DESCRIPTION 
+(((SEARCHFILTER ,DESCRIPTION)))  (((DESCRIPTION (SEARCHFILTER)))) 
+Description for the Search Filter.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_searchfilter_searchpage]]
+==== SEARCHPAGE 
+(((SEARCHFILTER ,SEARCHPAGE)))  (((SEARCHPAGE (SEARCHFILTER)))) 
+The name of the page where the Search Filter is used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SEARCHPAGE
+|NUMBER
+|===
+
+[[_cd_searchfilter_scmuseroid]]
+==== SCMUSEROID 
+(((SEARCHFILTER ,SCMUSEROID)))  (((SCMUSEROID (SEARCHFILTER)))) 
+Internal identifier of the IKAN ALM User.
+
+See also: <<SEARCHFILTER.adoc#_i_searchfilter_searchfilter_fk_1,SEARCHFILTER_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|SCMUSEROID
+|NUMBER
+|===
+
+[[_cd_searchfilter_criteria]]
+==== CRITERIA 
+(((SEARCHFILTER ,CRITERIA)))  (((CRITERIA (SEARCHFILTER)))) 
+List of search criterea in XML format.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CRITERIA
+|VARCHAR2(4000)
+|===
+
+[[_cd_searchfilter_archived]]
+==== ARCHIVED 
+(((SEARCHFILTER ,ARCHIVED)))  (((ARCHIVED (SEARCHFILTER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_searchfilter_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((SEARCHFILTER ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (SEARCHFILTER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_searchfilter_version]]
+==== VERSION 
+(((SEARCHFILTER ,VERSION)))  (((VERSION (SEARCHFILTER)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,SEARCHFILTER_PK))) [[_i_searchfilter_searchfilter_pk]]
+SEARCHFILTER_PK
+|Yes
+|Yes
+|<<SEARCHFILTER.adoc#_cd_searchfilter_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,SEARCHFILTER_FK_1))) [[_i_searchfilter_searchfilter_fk_1]]
+SEARCHFILTER_FK_1
+|No
+|No
+|<<SEARCHFILTER.adoc#_cd_searchfilter_scmuseroid,SCMUSEROID>>
+|<<SCMUSER.adoc#_t_scmuser,SCMUSER>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== SCMUSER
+
+Refer to the chapter <<SCMUSER.adoc#_t_scmuser,SCMUSER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|SEARCHFILTER_FK_1
+|<<SCMUSER.adoc#_cd_scmuser_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,SEARCHFILTER))) 
+*SEARCHFILTER_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*SEARCHFILTER_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage  
+
+|
+
+German:
+|Datum/Zeit 
+|===
+*SEARCHFILTER_CRITERIA_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Search Criteria
+
+|
+
+French:
+|Critères de recherche
+
+|
+
+German:
+|Suchkriterien
+|===
+*SEARCHFILTER_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Description
+|===
+*SEARCHFILTER_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*SEARCHFILTER_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SEARCHFILTER_SCMUSEROID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*SEARCHFILTER_SEARCHPAGE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Search Page Name
+
+|
+
+French:
+|Nom de la Page
+
+|
+
+German:
+|Name der Suchseite
+|===
+*SEARCHFILTER_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

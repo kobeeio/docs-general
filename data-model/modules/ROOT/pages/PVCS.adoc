@@ -1,0 +1,742 @@
+[[_t_pvcs]]
+== PVCS 
+(((PVCS))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PVCS.adoc#_cd_pvcs_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<PVCS.adoc#_cd_pvcs_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PVCS.adoc#_cd_pvcs_userid,USERID>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<PVCS.adoc#_cd_pvcs_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_commandpath,COMMANDPATH>>
+|VARCHAR2(255)
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_archivesuffix,ARCHIVESUFFIX>>
+|VARCHAR2(20)
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_logdateformat,LOGDATEFORMAT>>
+|VARCHAR2(50)
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_logdatelocale,LOGDATELOCALE>>
+|VARCHAR2(20)
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_projectdatabase,PROJECTDATABASE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PVCS.adoc#_cd_pvcs_workspace,WORKSPACE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PVCS.adoc#_cd_pvcs_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PVCS.adoc#_cd_pvcs_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PVCS.adoc#_cd_pvcs_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_pvcs_oid]]
+==== OID 
+(((PVCS ,OID)))  (((OID (PVCS)))) 
+Unique table identifier.
+
+See also: <<PVCS.adoc#_i_pvcs_pvcs_pk,PVCS_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_pvcs_name]]
+==== NAME 
+(((PVCS ,NAME)))  (((NAME (PVCS)))) 
+Name of the PVCS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_pvcs_description]]
+==== DESCRIPTION 
+(((PVCS ,DESCRIPTION)))  (((DESCRIPTION (PVCS)))) 
+Description for the PVCS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_pvcs_userid]]
+==== USERID 
+(((PVCS ,USERID)))  (((USERID (PVCS)))) 
+The User ID that IKAN ALM will use to access the PVCS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|USERID
+|VARCHAR2(50)
+|===
+
+[[_cd_pvcs_password]]
+==== PASSWORD 
+(((PVCS ,PASSWORD)))  (((PASSWORD (PVCS)))) 
+The Password that IKAN ALM will use to access the PVCS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_pvcs_commandpath]]
+==== COMMANDPATH 
+(((PVCS ,COMMANDPATH)))  (((COMMANDPATH (PVCS)))) 
+The path to the PCLI executable.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|COMMANDPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_pvcs_timeout]]
+==== TIMEOUT 
+(((PVCS ,TIMEOUT)))  (((TIMEOUT (PVCS)))) 
+The time-out value in seconds.
+
+If IKAN ALM is not able to establish a connection with the PVCS Repository within the defined period, it will consider the Repository to be inaccessible.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_pvcs_archivesuffix]]
+==== ARCHIVESUFFIX 
+(((PVCS ,ARCHIVESUFFIX)))  (((ARCHIVESUFFIX (PVCS)))) 
+The suffix for PVCS archive files.
+
+The default value is "-arc"
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ARCHIVESUFFIX
+|VARCHAR2(20)
+|===
+
+[[_cd_pvcs_logdateformat]]
+==== LOGDATEFORMAT 
+(((PVCS ,LOGDATEFORMAT)))  (((LOGDATEFORMAT (PVCS)))) 
+The Date format of modification dates output by the "pcli vlog" command, e.g. for the default format (MMM dd yyyy HH:mm:ss): Oct 11 2006 11:53:04
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGDATEFORMAT
+|VARCHAR2(50)
+|===
+
+[[_cd_pvcs_logdatelocale]]
+==== LOGDATELOCALE 
+(((PVCS ,LOGDATELOCALE)))  (((LOGDATELOCALE (PVCS)))) 
+The locale of the date format of modification dates output by the "pcli vlog" command, e.g. for the default format (MMM dd yyyy HH:mm:ss) :
+
+Locale = "en" : Oct 11 2006 11:53:04
+
+Locale = "nl" : Okt 11 2006 11:53:04
+
+The default value is "`en`".
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOGDATELOCALE
+|VARCHAR2(20)
+|===
+
+[[_cd_pvcs_projectdatabase]]
+==== PROJECTDATABASE 
+(((PVCS ,PROJECTDATABASE)))  (((PROJECTDATABASE (PVCS)))) 
+The location of the Project Database.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|PROJECTDATABASE
+|VARCHAR2(255)
+|===
+
+[[_cd_pvcs_workspace]]
+==== WORKSPACE 
+(((PVCS ,WORKSPACE)))  (((WORKSPACE (PVCS)))) 
+The Workspace path to use. If none is specified, IKAN ALM will use the Root Workspace ("/RootWorkspace").
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|WORKSPACE
+|VARCHAR2(255)
+|===
+
+[[_cd_pvcs_archived]]
+==== ARCHIVED 
+(((PVCS ,ARCHIVED)))  (((ARCHIVED (PVCS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_pvcs_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PVCS ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PVCS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_pvcs_version]]
+==== VERSION 
+(((PVCS ,VERSION)))  (((VERSION (PVCS)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PVCS_PK))) [[_i_pvcs_pvcs_pk]]
+PVCS_PK
+|Yes
+|Yes
+|<<PVCS.adoc#_cd_pvcs_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,PVCS))) 
+*PVCS_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PVCS_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PVCS_ARCHIVESUFFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Suffix
+
+|
+
+French:
+|Suffixe des Archives
+
+|
+
+German:
+|Archivierungssuffix
+|===
+*PVCS_COMMANDPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Command Path
+
+|
+
+French:
+|Chemin de commande
+
+|
+
+German:
+|Befehlsverzeichnis
+|===
+*PVCS_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*PVCS_LOGDATEFORMAT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Date Format
+
+|
+
+French:
+|Format de date du Journal
+
+|
+
+German:
+|Datumssyntax für die Protokolldatei
+|===
+*PVCS_LOGDATELOCALE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Log Date Locale
+
+|
+
+French:
+|Code langage Date du Journal
+
+|
+
+German:
+|Datumslokalisierung für die Protokolldatei
+|===
+*PVCS_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*PVCS_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PVCS_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*PVCS_PROJECTDATABASE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Project Database
+
+|
+
+French:
+|Base de données du Projet
+
+|
+
+German:
+|Projektdatenbank
+|===
+*PVCS_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*PVCS_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*PVCS_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===
+*PVCS_WORKSPACE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Workspace
+
+|
+
+French:
+|Espace de travail
+
+|
+
+German:
+|Arbeitsbereich
+|===

@@ -1,0 +1,711 @@
+[[_t_concurrentversionssystem]]
+== CONCURRENTVERSIONSSYSTEM 
+(((CONCURRENTVERSIONSSYSTEM))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_name,NAME>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_description,DESCRIPTION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_userid,USERID>>
+|VARCHAR2(50)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_password,PASSWORD>>
+|VARCHAR2(255)
+
+|
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_commandpath,COMMANDPATH>>
+|VARCHAR2(255)
+
+|
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_timeout,TIMEOUT>>
+|NUMBER
+
+|
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_authentication,AUTHENTICATION>>
+|VARCHAR2(20)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_host,HOST>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_port,PORT>>
+|NUMBER
+
+|
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_rootpath,ROOTPATH>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_concurrentversionssystem_oid]]
+==== OID 
+(((CONCURRENTVERSIONSSYSTEM ,OID)))  (((OID (CONCURRENTVERSIONSSYSTEM)))) 
+Unique table identifier.
+
+See also: <<CONCURRENTVERSIONSSYSTEM.adoc#_i_concurrentversionssystem_concurrentversionssystem_pk,CONCURRENTVERSIONSSYSTEM_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_concurrentversionssystem_name]]
+==== NAME 
+(((CONCURRENTVERSIONSSYSTEM ,NAME)))  (((NAME (CONCURRENTVERSIONSSYSTEM)))) 
+Name of the CVS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|NAME
+|VARCHAR2(50)
+|===
+
+[[_cd_concurrentversionssystem_description]]
+==== DESCRIPTION 
+(((CONCURRENTVERSIONSSYSTEM ,DESCRIPTION)))  (((DESCRIPTION (CONCURRENTVERSIONSSYSTEM)))) 
+Description for the CVS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(255)
+|===
+
+[[_cd_concurrentversionssystem_userid]]
+==== USERID 
+(((CONCURRENTVERSIONSSYSTEM ,USERID)))  (((USERID (CONCURRENTVERSIONSSYSTEM)))) 
+The User ID that IKAN ALM will use to access the CVS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|USERID
+|VARCHAR2(50)
+|===
+
+[[_cd_concurrentversionssystem_password]]
+==== PASSWORD 
+(((CONCURRENTVERSIONSSYSTEM ,PASSWORD)))  (((PASSWORD (CONCURRENTVERSIONSSYSTEM)))) 
+The Password that IKAN ALM will use to access the CVS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PASSWORD
+|VARCHAR2(255)
+|===
+
+[[_cd_concurrentversionssystem_commandpath]]
+==== COMMANDPATH 
+(((CONCURRENTVERSIONSSYSTEM ,COMMANDPATH)))  (((COMMANDPATH (CONCURRENTVERSIONSSYSTEM)))) 
+The path to the Location where the CVS Client command (cvs.exe or cvs) resides on the IKAN ALM Server.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|COMMANDPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_concurrentversionssystem_timeout]]
+==== TIMEOUT 
+(((CONCURRENTVERSIONSSYSTEM ,TIMEOUT)))  (((TIMEOUT (CONCURRENTVERSIONSSYSTEM)))) 
+The time-out value in seconds.
+
+If IKAN ALM is not able to establish a connection with the CVS Repository within the defined period, it will consider the Repository to be inaccessible.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TIMEOUT
+|NUMBER
+|===
+
+[[_cd_concurrentversionssystem_authentication]]
+==== AUTHENTICATION 
+(((CONCURRENTVERSIONSSYSTEM ,AUTHENTICATION)))  (((AUTHENTICATION (CONCURRENTVERSIONSSYSTEM)))) 
+The Protocol that will be used to connect to the CVS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|AUTHENTICATION
+|VARCHAR2(20)
+|===
+
+===== Value List
+local = CVS local protocol
+
+ntserver = CVS ntserver protocol
+
+pserver = CVS pserver protocol
+
+rhosts = CVS rhosts protocol
+
+server = CVS server protocol
+
+ssh = CVS ssh protocol
+
+sspi = CVS sspi protocol
+
+gserver = CVS gserver protocol
+
+ext = CVS ext protocol
+
+
+[[_cd_concurrentversionssystem_host]]
+==== HOST 
+(((CONCURRENTVERSIONSSYSTEM ,HOST)))  (((HOST (CONCURRENTVERSIONSSYSTEM)))) 
+Name of the Machine hosting the CVS Repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|HOST
+|VARCHAR2(255)
+|===
+
+[[_cd_concurrentversionssystem_port]]
+==== PORT 
+(((CONCURRENTVERSIONSSYSTEM ,PORT)))  (((PORT (CONCURRENTVERSIONSSYSTEM)))) 
+The Port number used to access the CVS Repository. This field may remain empty if the local Protocol is used, or if the default port number 2401 is used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PORT
+|NUMBER
+|===
+
+[[_cd_concurrentversionssystem_rootpath]]
+==== ROOTPATH 
+(((CONCURRENTVERSIONSSYSTEM ,ROOTPATH)))  (((ROOTPATH (CONCURRENTVERSIONSSYSTEM)))) 
+The repository CVS ROOT used to log on to CVS. This is the location containing the CVSROOT directory.
+
+For instance, if CVSROOT is located under E:/cvs/repository/CVSROOT, the Root Path is E:/cvs/ repository.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ROOTPATH
+|VARCHAR2(255)
+|===
+
+[[_cd_concurrentversionssystem_archived]]
+==== ARCHIVED 
+(((CONCURRENTVERSIONSSYSTEM ,ARCHIVED)))  (((ARCHIVED (CONCURRENTVERSIONSSYSTEM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_concurrentversionssystem_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((CONCURRENTVERSIONSSYSTEM ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (CONCURRENTVERSIONSSYSTEM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_concurrentversionssystem_version]]
+==== VERSION 
+(((CONCURRENTVERSIONSSYSTEM ,VERSION)))  (((VERSION (CONCURRENTVERSIONSSYSTEM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,CONCURRENTVERSIONSSYSTEM_PK))) [[_i_concurrentversionssystem_concurrentversionssystem_pk]]
+CONCURRENTVERSIONSSYSTEM_PK
+|Yes
+|Yes
+|<<CONCURRENTVERSIONSSYSTEM.adoc#_cd_concurrentversionssystem_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,CONCURRENTVERSIONSSYSTEM))) 
+*CONCURRENTVERSIONSSYSTEM_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*CONCURRENTVERSIONSSYSTEM_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*CONCURRENTVERSIONSSYSTEM_AUTHENTICATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Protocol
+
+|
+
+French:
+|Protocole
+
+|
+
+German:
+|Protokoll
+|===
+*CONCURRENTVERSIONSSYSTEM_COMMANDPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Command Path
+
+|
+
+French:
+|Chemin de commande
+
+|
+
+German:
+|Befehlsverzeichnis
+|===
+*CONCURRENTVERSIONSSYSTEM_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*CONCURRENTVERSIONSSYSTEM_HOST_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Host
+
+|
+
+French:
+|Machine hôte
+
+|
+
+German:
+|Host
+|===
+*CONCURRENTVERSIONSSYSTEM_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*CONCURRENTVERSIONSSYSTEM_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*CONCURRENTVERSIONSSYSTEM_PASSWORD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Password
+
+|
+
+French:
+|Mot de passe
+
+|
+
+German:
+|Passwort
+|===
+*CONCURRENTVERSIONSSYSTEM_PORT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Port
+
+|
+
+French:
+|Port
+
+|
+
+German:
+|Port
+|===
+*CONCURRENTVERSIONSSYSTEM_ROOTPATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Root Path
+
+|
+
+French:
+|Chemin de racine
+
+|
+
+German:
+|Wurzelverzeichnis
+|===
+*CONCURRENTVERSIONSSYSTEM_TIMEOUT_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Time-Out (s)
+
+|
+
+French:
+|Délai d'expiration (s)
+
+|
+
+German:
+|Zeitlimit (s)
+|===
+*CONCURRENTVERSIONSSYSTEM_USERID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|User ID
+
+|
+
+French:
+|ID Utilisateur
+
+|
+
+German:
+|Benutzer-ID
+|===
+*CONCURRENTVERSIONSSYSTEM_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

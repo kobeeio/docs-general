@@ -1,0 +1,357 @@
+[[_t_fileinfo]]
+== FILEINFO 
+(((FILEINFO))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<FILEINFO.adoc#_cd_fileinfo_oid,OID>>
+|NUMBER
+
+|U
+|No
+|<<FILEINFO.adoc#_cd_fileinfo_name,NAME>>
+|VARCHAR2(255)
+
+|U
+|No
+|<<FILEINFO.adoc#_cd_fileinfo_path,PATH>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<FILEINFO.adoc#_cd_fileinfo_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<FILEINFO.adoc#_cd_fileinfo_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<FILEINFO.adoc#_cd_fileinfo_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_fileinfo_oid]]
+==== OID 
+(((FILEINFO ,OID)))  (((OID (FILEINFO)))) 
+Unique table identifier.
+
+See also: <<FILEINFO.adoc#_i_fileinfo_fileinfo_pk,FILEINFO_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_fileinfo_name]]
+==== NAME 
+(((FILEINFO ,NAME)))  (((NAME (FILEINFO)))) 
+The name of the file referenced by this FILEINFO.
+
+See also: <<FILEINFO.adoc#_i_fileinfo_fileinfo_u_1,FILEINFO_U_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|U
+|No
+|NAME
+|VARCHAR2(255)
+|===
+
+[[_cd_fileinfo_path]]
+==== PATH 
+(((FILEINFO ,PATH)))  (((PATH (FILEINFO)))) 
+The path of the file referenced by this FILEINFO.
+
+See also: <<FILEINFO.adoc#_i_fileinfo_fileinfo_u_1,FILEINFO_U_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|U
+|No
+|PATH
+|VARCHAR2(255)
+|===
+
+[[_cd_fileinfo_archived]]
+==== ARCHIVED 
+(((FILEINFO ,ARCHIVED)))  (((ARCHIVED (FILEINFO)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_fileinfo_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((FILEINFO ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (FILEINFO)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_fileinfo_version]]
+==== VERSION 
+(((FILEINFO ,VERSION)))  (((VERSION (FILEINFO)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Unique Constraints ,FILEINFO_U_1))) [[_i_fileinfo_fileinfo_u_1]]
+FILEINFO_U_1
+|No
+|Yes
+|<<FILEINFO.adoc#_cd_fileinfo_name,NAME>><<FILEINFO.adoc#_cd_fileinfo_path,PATH>>
+|
+
+| 
+(((Primary Keys ,FILEINFO_PK))) [[_i_fileinfo_fileinfo_pk]]
+FILEINFO_PK
+|Yes
+|Yes
+|<<FILEINFO.adoc#_cd_fileinfo_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== FILEREVISION
+
+Refer to the chapter <<FILEREVISION.adoc#_t_filerevision,FILEREVISION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|FILEREVISION_FK_1
+|<<FILEREVISION.adoc#_cd_filerevision_fileinfooid,FILEINFOOID>>
+|===
+
+===== SCMPACKAGE_FILEINFO
+
+Refer to the chapter <<SCMPACKAGE_FILEINFO.adoc#_t_scmpackage_fileinfo,SCMPACKAGE_FILEINFO>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMPACKAGE_FILEINFO_FK_2
+|<<SCMPACKAGE_FILEINFO.adoc#_cd_scmpackage_fileinfo_fileinfooid,FILEINFOOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,FILEINFO))) 
+*FILEINFO_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*FILEINFO_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*FILEINFO_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*FILEINFO_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*FILEINFO_PATH_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Path
+
+|
+
+French:
+|Chemin
+
+|
+
+German:
+|Pfad
+|===
+*FILEINFO_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

@@ -1,0 +1,1320 @@
+[[_t_levelrequest]]
+== LEVELREQUEST 
+(((LEVELREQUEST))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_description,DESCRIPTION>>
+|VARCHAR2(512)
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_actiontype,ACTIONTYPE>>
+|NUMBER
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_status,STATUS>>
+|NUMBER
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_vcrtag,VCRTAG>>
+|VARCHAR2(255)
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_requesteddatetime,REQUESTEDDATETIME>>
+|DATE
+
+|
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_startdatetime,STARTDATETIME>>
+|DATE
+
+|
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_enddatetime,ENDDATETIME>>
+|DATE
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_creationdatetime,CREATIONDATETIME>>
+|DATE
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_buildtype,BUILDTYPE>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_partialbuildtag,PARTIALBUILDTAG>>
+|VARCHAR2(255)
+
+|F
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_scmleveloid,SCMLEVELOID>>
+|NUMBER
+
+|F
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_projectstreamoid,PROJECTSTREAMOID>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_createdbyuseroid,CREATEDBYUSEROID>>
+|NUMBER
+
+|F
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_scmpackageoid,SCMPACKAGEOID>>
+|NUMBER
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_buildnumber,BUILDNUMBER>>
+|NUMBER
+
+|F
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_propertylogoid,PROPERTYLOGOID>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_levelrequest_oid]]
+==== OID 
+(((LEVELREQUEST ,OID)))  (((OID (LEVELREQUEST)))) 
+This field contains the sequential number of the Level Request.
+
+All Level Requests defined for a Project are numbered sequentially.
+
+See also: <<LEVELREQUEST.adoc#_i_levelrequest_levelrequest_pk,LEVELREQUEST_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_levelrequest_type]]
+==== TYPE 
+(((LEVELREQUEST ,TYPE)))  (((TYPE (LEVELREQUEST)))) 
+The type of the Level Request.
+
+The following types are available:
+
+Builds based on latest code: this Level Request type can be defined for Build Levels. It will trigger the Build of a source code version that has not been built or tagged before. A new Tag will be created.
+
+Builds based on tagged code: this Level Request type can be defined for Test and Production Levels. It will trigger the Re-Build of a source code version that has already been built and tagged before.
+
+Builds and Deploys on latest code: this Level Request type can be defined for Build Levels. It will trigger the Build of a source code version that has not been built or tagged before. A new Tag will be created. The same Level Request will then deploy this Build.
+
+Builds and Deploys on tagged code: this Level Request type can be defined for Test and Production Levels. It will trigger the Re-Build of a source code version that has already been built and tagged before. The same Level Request will then deploy this Build.
+
+Deploys of archived Build: this Level Request type can be defined for Test and Production Levels. It will retrieve an existing Build from the Build Archive. This Build will then be deployed.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Build based on latest code
+
+1 = Builds based on tagged code
+
+2 = Builds and Deploys on latest code
+
+3 = Builds and deploys on tagged code
+
+4 = Deploys of archived Build
+
+5 = No Builds or Deploys
+
+
+[[_cd_levelrequest_description]]
+==== DESCRIPTION 
+(((LEVELREQUEST ,DESCRIPTION)))  (((DESCRIPTION (LEVELREQUEST)))) 
+The description for the Level Request.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DESCRIPTION
+|VARCHAR2(512)
+|===
+
+[[_cd_levelrequest_actiontype]]
+==== ACTIONTYPE 
+(((LEVELREQUEST ,ACTIONTYPE)))  (((ACTIONTYPE (LEVELREQUEST)))) 
+The type of the Level Request Action.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ACTIONTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Build initiated by Scheduler
+
+1 = Force Build
+
+2 = Request Build
+
+3 = Deliver Build
+
+4 = Rollback Build
+
+5 = Dependency Build
+
+6 = Redeliver Build
+
+
+[[_cd_levelrequest_status]]
+==== STATUS 
+(((LEVELREQUEST ,STATUS)))  (((STATUS (LEVELREQUEST)))) 
+The Level Request Status.
+
+The following status indication icons are possible:
+
+ (Success) : the Level Request is executed ccessfully.
+
+ (Warning) : the Level Request has been successfully executed, but at least one non-critical Level, Build or Deploy Phase failed.
+
+ (Fail): the execution of the Level Request as a whole failed. This is due to the failure of one or more critical Level, Build or Deploy Phases.
+
+ (Run): the Level Request is being executed at this moment.
+
+ (Awaiting requested Date/Time): the requested execution is in the future.
+
+ (Awaiting Pre-Approval or Awaiting Post-Approval): the Level Request is awaiting a Pre- or Post-Approval.
+
+ (Rejected): An Approval associated with the Level Request was rejected. The Level Request will never be executed.
+
+ (Canceled): the Level Request has been canceled before it was run. It will never be executed.
+
+ (Aborted): the Level Request has been aborted during execution. The results (such as Build Results) that were already available at the time of the abort have been cleaned up and cannot be used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|STATUS
+|NUMBER
+|===
+
+===== Value List
+0 = Unknown
+
+1 = Awaiting Requested Date/Time
+
+2 = Awaiting Pre-Approval
+
+3 = Rejected
+
+4 = Run
+
+5 = Fail
+
+6 = Success
+
+7 = Warning
+
+8 = Canceled
+
+9 = Aborting
+
+10 = Aborted
+
+11 = Awaiting Post-Approval
+
+
+[[_cd_levelrequest_vcrtag]]
+==== VCRTAG 
+(((LEVELREQUEST ,VCRTAG)))  (((VCRTAG (LEVELREQUEST)))) 
+The VCR Tag of the Level Request. This Tag matches a Build with its source code in the VCR.
+
+The format of the VCR Tag normally matches the Tag Template defined for the Stream.
+
+However, the user can overwrite the default VCR Tag while creating a Level Request (and is obliged to do so for a Build Level Request in a Tag Based Project Stream), so that the Tag Format can be completely different.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VCRTAG
+|VARCHAR2(255)
+|===
+
+[[_cd_levelrequest_requesteddatetime]]
+==== REQUESTEDDATETIME 
+(((LEVELREQUEST ,REQUESTEDDATETIME)))  (((REQUESTEDDATETIME (LEVELREQUEST)))) 
+The Date and Time at which the execution of the Level Request was requested.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|REQUESTEDDATETIME
+|DATE
+|===
+
+[[_cd_levelrequest_startdatetime]]
+==== STARTDATETIME 
+(((LEVELREQUEST ,STARTDATETIME)))  (((STARTDATETIME (LEVELREQUEST)))) 
+The date and time at which the Level Request execution started.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|STARTDATETIME
+|DATE
+|===
+
+[[_cd_levelrequest_enddatetime]]
+==== ENDDATETIME 
+(((LEVELREQUEST ,ENDDATETIME)))  (((ENDDATETIME (LEVELREQUEST)))) 
+The date and time at which the Level Request execution ended.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ENDDATETIME
+|DATE
+|===
+
+[[_cd_levelrequest_creationdatetime]]
+==== CREATIONDATETIME 
+(((LEVELREQUEST ,CREATIONDATETIME)))  (((CREATIONDATETIME (LEVELREQUEST)))) 
+The Date and Time at which the Level Request was created.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CREATIONDATETIME
+|DATE
+|===
+
+[[_cd_levelrequest_buildtype]]
+==== BUILDTYPE 
+(((LEVELREQUEST ,BUILDTYPE)))  (((BUILDTYPE (LEVELREQUEST)))) 
+The Build type.
+
+The following types are possible:
+
+Full Build
+
+Partial Build: only the sources that were modified since the last Build will be rebuilt.
+
+Production-based Partial Build: only the sources that are different from the version on the Production Level will be rebuilt
+
+Tag-based Partial Build: only the sources that were modified compared to a specific Build
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Full Build
+
+1 = Partial Build based on Previous Build
+
+2 = Partial Build based on Production Build
+
+3 = Partial Build based on specific Tagged Build
+
+
+[[_cd_levelrequest_partialbuildtag]]
+==== PARTIALBUILDTAG 
+(((LEVELREQUEST ,PARTIALBUILDTAG)))  (((PARTIALBUILDTAG (LEVELREQUEST)))) 
+The Partial Build VCR Tag. This tag is used as a reference to determine which sources were modified.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PARTIALBUILDTAG
+|VARCHAR2(255)
+|===
+
+[[_cd_levelrequest_scmleveloid]]
+==== SCMLEVELOID 
+(((LEVELREQUEST ,SCMLEVELOID)))  (((SCMLEVELOID (LEVELREQUEST)))) 
+Identifier for the SCMLEVEL table.
+
+For more information, refer to the description of the foreign key LEVELREQUEST_FK_2.
+
+See also: <<LEVELREQUEST.adoc#_i_levelrequest_levelrequest_fk_2,LEVELREQUEST_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|SCMLEVELOID
+|NUMBER
+|===
+
+[[_cd_levelrequest_projectstreamoid]]
+==== PROJECTSTREAMOID 
+(((LEVELREQUEST ,PROJECTSTREAMOID)))  (((PROJECTSTREAMOID (LEVELREQUEST)))) 
+Identifier for the PROJECTSTREAM table.
+
+For more information, refer to the description of the foreign key LEVELREQUEST_FK_1.
+
+See also: <<LEVELREQUEST.adoc#_i_levelrequest_levelrequest_fk_1,LEVELREQUEST_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROJECTSTREAMOID
+|NUMBER
+|===
+
+[[_cd_levelrequest_createdbyuseroid]]
+==== CREATEDBYUSEROID 
+(((LEVELREQUEST ,CREATEDBYUSEROID)))  (((CREATEDBYUSEROID (LEVELREQUEST)))) 
+OID identifying the User who created the Level Request. Refers to the primary key of the appropriate User table.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|CREATEDBYUSEROID
+|NUMBER
+|===
+
+[[_cd_levelrequest_scmpackageoid]]
+==== SCMPACKAGEOID 
+(((LEVELREQUEST ,SCMPACKAGEOID)))  (((SCMPACKAGEOID (LEVELREQUEST)))) 
+Internal identifier of the Package.
+
+See also: <<LEVELREQUEST.adoc#_i_levelrequest_levelrequest_fk_3,LEVELREQUEST_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|SCMPACKAGEOID
+|NUMBER
+|===
+
+[[_cd_levelrequest_buildnumber]]
+==== BUILDNUMBER 
+(((LEVELREQUEST ,BUILDNUMBER)))  (((BUILDNUMBER (LEVELREQUEST)))) 
+The Build number of the Level Request.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDNUMBER
+|NUMBER
+|===
+
+[[_cd_levelrequest_propertylogoid]]
+==== PROPERTYLOGOID 
+(((LEVELREQUEST ,PROPERTYLOGOID)))  (((PROPERTYLOGOID (LEVELREQUEST)))) 
+Internal identifier of the Issue.
+
+See also: <<LEVELREQUEST.adoc#_i_levelrequest_levelrequest_fk_4,LEVELREQUEST_FK_4>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|PROPERTYLOGOID
+|NUMBER
+|===
+
+[[_cd_levelrequest_archived]]
+==== ARCHIVED 
+(((LEVELREQUEST ,ARCHIVED)))  (((ARCHIVED (LEVELREQUEST)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_levelrequest_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((LEVELREQUEST ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (LEVELREQUEST)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_levelrequest_version]]
+==== VERSION 
+(((LEVELREQUEST ,VERSION)))  (((VERSION (LEVELREQUEST)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,LEVELREQUEST_PK))) [[_i_levelrequest_levelrequest_pk]]
+LEVELREQUEST_PK
+|Yes
+|Yes
+|<<LEVELREQUEST.adoc#_cd_levelrequest_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,LEVELREQUEST_FK_1))) [[_i_levelrequest_levelrequest_fk_1]]
+LEVELREQUEST_FK_1
+|No
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_projectstreamoid,PROJECTSTREAMOID>>
+|<<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>>
+
+| 
+(((Foreign Keys ,LEVELREQUEST_FK_2))) [[_i_levelrequest_levelrequest_fk_2]]
+LEVELREQUEST_FK_2
+|No
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_scmleveloid,SCMLEVELOID>>
+|<<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>>
+
+| 
+(((Foreign Keys ,LEVELREQUEST_FK_3))) [[_i_levelrequest_levelrequest_fk_3]]
+LEVELREQUEST_FK_3
+|No
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_scmpackageoid,SCMPACKAGEOID>>
+|<<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>>
+
+| 
+(((Foreign Keys ,LEVELREQUEST_FK_4))) [[_i_levelrequest_levelrequest_fk_4]]
+LEVELREQUEST_FK_4
+|No
+|No
+|<<LEVELREQUEST.adoc#_cd_levelrequest_propertylogoid,PROPERTYLOGOID>>
+|<<PROPERTYLOG.adoc#_t_propertylog,PROPERTYLOG>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== PROJECTSTREAM
+
+Refer to the chapter <<PROJECTSTREAM.adoc#_t_projectstream,PROJECTSTREAM>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELREQUEST_FK_1
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+|===
+
+===== PROPERTYLOG
+
+Refer to the chapter <<PROPERTYLOG.adoc#_t_propertylog,PROPERTYLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELREQUEST_FK_4
+|<<PROPERTYLOG.adoc#_cd_propertylog_oid,OID>>
+|===
+
+===== SCMLEVEL
+
+Refer to the chapter <<SCMLEVEL.adoc#_t_scmlevel,SCMLEVEL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELREQUEST_FK_2
+|<<SCMLEVEL.adoc#_cd_scmlevel_oid,OID>>
+|===
+
+===== SCMPACKAGE
+
+Refer to the chapter <<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELREQUEST_FK_3
+|<<SCMPACKAGE.adoc#_cd_scmpackage_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== BUILD
+
+Refer to the chapter <<BUILD.adoc#_t_build,BUILD>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILD_FK_2
+|<<BUILD.adoc#_cd_build_levelrequestoid,LEVELREQUESTOID>>
+|===
+
+===== BUILDDEPENDENCY
+
+Refer to the chapter <<BUILDDEPENDENCY.adoc#_t_builddependency,BUILDDEPENDENCY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|BUILDDEPENDENCY_FK_3
+|<<BUILDDEPENDENCY.adoc#_cd_builddependency_childlevelrequestoid,CHILDLEVELREQUESTOID>>
+|===
+
+===== DEPLOY
+
+Refer to the chapter <<DEPLOY.adoc#_t_deploy,DEPLOY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DEPLOY_FK_3
+|<<DEPLOY.adoc#_cd_deploy_levelrequestoid,LEVELREQUESTOID>>
+|===
+
+===== ISSUE
+
+Refer to the chapter <<ISSUE.adoc#_t_issue,ISSUE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|ISSUE_FK_1
+|<<ISSUE.adoc#_cd_issue_levelrequestoid,LEVELREQUESTOID>>
+|===
+
+===== LEVELAPPROVAL
+
+Refer to the chapter <<LEVELAPPROVAL.adoc#_t_levelapproval,LEVELAPPROVAL>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELAPPROVAL_FK_1
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_levelrequestoid,LEVELREQUESTOID>>
+|===
+
+===== LEVELREQUESTLOG
+
+Refer to the chapter <<LEVELREQUESTLOG.adoc#_t_levelrequestlog,LEVELREQUESTLOG>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUESTLOG_FK_1
+|<<LEVELREQUESTLOG.adoc#_cd_levelrequestlog_levelrequestoid,LEVELREQUESTOID>>
+|===
+
+===== LEVELREQUEST_FILEREVISION
+
+Refer to the chapter <<LEVELREQUEST_FILEREVISION.adoc#_t_levelrequest_filerevision,LEVELREQUEST_FILEREVISION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUEST_FILEREVISION_FK_2
+|<<LEVELREQUEST_FILEREVISION.adoc#_cd_levelrequest_filerevision_levelrequestoid,LEVELREQUESTOID>>
+|===
+
+===== PROJECTSTREAMDEPENDENCY
+
+Refer to the chapter <<PROJECTSTREAMDEPENDENCY.adoc#_t_projectstreamdependency,PROJECTSTREAMDEPENDENCY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PROJECTSTREAMDEPENDENCY_FK_3
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_childlevelrequestoid,CHILDLEVELREQUESTOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,LEVELREQUEST))) 
+*LEVELREQUEST_ACTIONTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Action Type
+
+|
+
+French:
+|Type d'action
+
+|
+
+German:
+|Aktionstyp
+|===
+*LEVELREQUEST_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*LEVELREQUEST_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*LEVELREQUEST_BUILDNUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Number
+
+|
+
+French:
+|Numéro de la Construction
+
+|
+
+German:
+|Bereitstellungsnummer
+|===
+*LEVELREQUEST_BUILDTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Type
+
+|
+
+French:
+|Type de construction
+
+|
+
+German:
+|Bereitstellungstyp
+|===
+*LEVELREQUEST_CREATEDBYUSEROID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELREQUEST_CREATIONDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Creation Date
+
+|
+
+French:
+|Date de création
+
+|
+
+German:
+|Erstellungsdatum
+|===
+*LEVELREQUEST_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*LEVELREQUEST_ENDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|End Date/Time
+
+|
+
+French:
+|Fin d'exécution
+
+|
+
+German:
+|Ausführungsende
+|===
+*LEVELREQUEST_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELREQUEST_PARTIALBUILDTAG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Partial Build VCR Tag
+
+|
+
+French:
+|Balise RCV constr. partielle
+
+|
+
+German:
+|Version für partielle Bereitstellung
+|===
+*LEVELREQUEST_PROJECTSTREAMOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELREQUEST_PROPERTYLOGOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Property Log OID
+
+|
+
+French:
+|OID du Journal des propriétés
+
+|
+
+German:
+|Eigenschaftenprotokoll OID
+|===
+*LEVELREQUEST_REQUESTEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Requested Date/Time
+
+|
+
+French:
+|Exécution demandée
+
+|
+
+German:
+|Angefordert am
+|===
+*LEVELREQUEST_SCMLEVELOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELREQUEST_SCMPACKAGEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|ALM Package OID
+
+|
+
+French:
+|OID Paquet ALM
+
+|
+
+German:
+|ALM Paket OID
+|===
+*LEVELREQUEST_STARTDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Start Date/Time
+
+|
+
+French:
+|Début d'exécution
+
+|
+
+German:
+|Ausführungsbeginn
+|===
+*LEVELREQUEST_STATUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Status
+
+|
+
+French:
+|Statut
+
+|
+
+German:
+|Status
+|===
+*LEVELREQUEST_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*LEVELREQUEST_VCRTAG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|VCR Tag
+
+|
+
+French:
+|Balise RCV
+
+|
+
+German:
+|Version
+|===
+*LEVELREQUEST_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

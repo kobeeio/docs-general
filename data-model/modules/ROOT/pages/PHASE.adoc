@@ -1,0 +1,871 @@
+[[_t_phase]]
+== PHASE 
+(((PHASE))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PHASE.adoc#_cd_phase_oid,OID>>
+|NUMBER
+
+|U
+|No
+|<<PHASE.adoc#_cd_phase_name,NAME>>
+|VARCHAR2(255)
+
+|U
+|No
+|<<PHASE.adoc#_cd_phase_phaseversion,PHASEVERSION>>
+|VARCHAR2(50)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_defaultdisplayname,DEFAULTDISPLAYNAME>>
+|VARCHAR2(512)
+
+|
+|Yes
+|<<PHASE.adoc#_cd_phase_description,DESCRIPTION>>
+|VARCHAR2(512)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_executiontype,EXECUTIONTYPE>>
+|NUMBER
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_corephase,COREPHASE>>
+|NUMBER(1)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_levelenabled,LEVELENABLED>>
+|NUMBER(1)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_buildenabled,BUILDENABLED>>
+|NUMBER(1)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_deployenabled,DEPLOYENABLED>>
+|NUMBER(1)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_certified,CERTIFIED>>
+|NUMBER(1)
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_released,RELEASED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PHASE.adoc#_cd_phase_author,AUTHOR>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PHASE.adoc#_cd_phase_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PHASE.adoc#_cd_phase_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PHASE.adoc#_cd_phase_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_phase_oid]]
+==== OID 
+(((PHASE ,OID)))  (((OID (PHASE)))) 
+Unique table identifier.
+
+See also: <<PHASE.adoc#_i_phase_phase_pk,PHASE_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_phase_name]]
+==== NAME 
+(((PHASE ,NAME)))  (((NAME (PHASE)))) 
+The name of the Phase.
+
+See also: <<PHASE.adoc#_i_phase_phase_u_1,PHASE_U_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|U
+|No
+|NAME
+|VARCHAR2(255)
+|===
+
+[[_cd_phase_phaseversion]]
+==== PHASEVERSION 
+(((PHASE ,PHASEVERSION)))  (((PHASEVERSION (PHASE)))) 
+The version of the Phase.
+
+See also: <<PHASE.adoc#_i_phase_phase_u_1,PHASE_U_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|U
+|No
+|PHASEVERSION
+|VARCHAR2(50)
+|===
+
+[[_cd_phase_defaultdisplayname]]
+==== DEFAULTDISPLAYNAME 
+(((PHASE ,DEFAULTDISPLAYNAME)))  (((DEFAULTDISPLAYNAME (PHASE)))) 
+The name of the Phase as it will be displayed in the IKAN ALM user interface. This default name will be used if no language-specific display name is provided.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEFAULTDISPLAYNAME
+|VARCHAR2(512)
+|===
+
+[[_cd_phase_description]]
+==== DESCRIPTION 
+(((PHASE ,DESCRIPTION)))  (((DESCRIPTION (PHASE)))) 
+The description of the Phase.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(512)
+|===
+
+[[_cd_phase_executiontype]]
+==== EXECUTIONTYPE 
+(((PHASE ,EXECUTIONTYPE)))  (((EXECUTIONTYPE (PHASE)))) 
+The type of Scripting Tool that will be used to execute the scripts of the Phase.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|EXECUTIONTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Core (used for Core Phases)
+
+1 = Ant
+
+2 = NAnt
+
+3 = Maven2
+
+4 = Gradle
+
+
+[[_cd_phase_corephase]]
+==== COREPHASE 
+(((PHASE ,COREPHASE)))  (((COREPHASE (PHASE)))) 
+Indicates whether the Phase is a Core Phase. A Core Phase is an internal IKAN ALM Phase that performs some core functionality.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|COREPHASE
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phase_levelenabled]]
+==== LEVELENABLED 
+(((PHASE ,LEVELENABLED)))  (((LEVELENABLED (PHASE)))) 
+Indicates whether the Phase can be used on a Level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LEVELENABLED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phase_buildenabled]]
+==== BUILDENABLED 
+(((PHASE ,BUILDENABLED)))  (((BUILDENABLED (PHASE)))) 
+Indicates whether the Phase can be used on a Build Environment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDENABLED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phase_deployenabled]]
+==== DEPLOYENABLED 
+(((PHASE ,DEPLOYENABLED)))  (((DEPLOYENABLED (PHASE)))) 
+Indicates whether the Phase can be used on a Deploy Environment.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|DEPLOYENABLED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phase_certified]]
+==== CERTIFIED 
+(((PHASE ,CERTIFIED)))  (((CERTIFIED (PHASE)))) 
+Indicates whether the Phase is certified.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|CERTIFIED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phase_released]]
+==== RELEASED 
+(((PHASE ,RELEASED)))  (((RELEASED (PHASE)))) 
+Indicates whether the Phase has been released.
+
+A Phase that has not been released is regarded as being under development, i.e., its script(s) and other containing files may still be changed.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|RELEASED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_phase_author]]
+==== AUTHOR 
+(((PHASE ,AUTHOR)))  (((AUTHOR (PHASE)))) 
+The author of the Phase.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|AUTHOR
+|VARCHAR2(255)
+|===
+
+[[_cd_phase_archived]]
+==== ARCHIVED 
+(((PHASE ,ARCHIVED)))  (((ARCHIVED (PHASE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+[[_cd_phase_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PHASE ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PHASE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_phase_version]]
+==== VERSION 
+(((PHASE ,VERSION)))  (((VERSION (PHASE)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Unique Constraints ,PHASE_U_1))) [[_i_phase_phase_u_1]]
+PHASE_U_1
+|No
+|Yes
+|<<PHASE.adoc#_cd_phase_name,NAME>><<PHASE.adoc#_cd_phase_phaseversion,PHASEVERSION>>
+|
+
+| 
+(((Primary Keys ,PHASE_PK))) [[_i_phase_phase_pk]]
+PHASE_PK
+|Yes
+|Yes
+|<<PHASE.adoc#_cd_phase_oid,OID>>
+|
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+No referenced tables available.
+
+==== Referencing Tables
+
+===== ENVIRONMENTPHASE
+
+Refer to the chapter <<ENVIRONMENTPHASE.adoc#_t_environmentphase,ENVIRONMENTPHASE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|ENVIRONMENTPHASE_FK_1
+|<<ENVIRONMENTPHASE.adoc#_cd_environmentphase_phaseoid,PHASEOID>>
+|===
+
+===== PHASEPARAMETER
+
+Refer to the chapter <<PHASEPARAMETER.adoc#_t_phaseparameter,PHASEPARAMETER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PHASEPARAMETER_FK_1
+|<<PHASEPARAMETER.adoc#_cd_phaseparameter_phaseoid,PHASEOID>>
+|===
+
+===== PHASE_LOCALIZATION_INFO
+
+Refer to the chapter <<PHASE_LOCALIZATION_INFO.adoc#_t_phase_localization_info,PHASE_LOCALIZATION_INFO>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PHASE_LOCALIZATION_INFO_FK_1
+|<<PHASE_LOCALIZATION_INFO.adoc#_cd_phase_localization_info_phaseoid,PHASEOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,PHASE))) 
+*PHASE_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PHASE_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PHASE_AUTHOR_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Author
+
+|
+
+French:
+|Auteur
+
+|
+
+German:
+|Ersteller
+|===
+*PHASE_BUILDENABLED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Enabled
+
+|
+
+French:
+|Construction activée
+
+|
+
+German:
+|Bereitstellung aktiviert
+|===
+*PHASE_CERTIFIED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Certified
+
+|
+
+French:
+|Certifiée
+
+|
+
+German:
+|Zertifiziert
+|===
+*PHASE_COREPHASE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Core Phase
+
+|
+
+French:
+|Phase de noyau
+
+|
+
+German:
+|Kernphase
+|===
+*PHASE_DEFAULTDISPLAYNAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Default Display Name
+
+|
+
+French:
+|Nom d'affichage par défaut
+
+|
+
+German:
+|Standard Anzeigename
+|===
+*PHASE_DEPLOYENABLED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Deploy Enabled
+
+|
+
+French:
+|Déploiement activé
+
+|
+
+German:
+|Auslieferung aktiviert
+|===
+*PHASE_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*PHASE_EXECUTIONTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Execution Type
+
+|
+
+French:
+|Type d'exécution
+
+|
+
+German:
+|Ausführungstyp
+|===
+*PHASE_LEVELENABLED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Level Enabled
+
+|
+
+French:
+|Niveau activé
+
+|
+
+German:
+|Ebene aktiviert
+|===
+*PHASE_NAME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Name
+
+|
+
+French:
+|Nom
+
+|
+
+German:
+|Name
+|===
+*PHASE_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PHASE_PHASEVERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Phase Version
+
+|
+
+French:
+|Version de la Phase
+
+|
+
+German:
+|Phasenversion
+|===
+*PHASE_RELEASED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Released
+
+|
+
+French:
+|Publiée
+
+|
+
+German:
+|Freigegeben
+|===
+*PHASE_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

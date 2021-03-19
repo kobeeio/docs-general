@@ -1,0 +1,799 @@
+[[_t_levelapproval]]
+== LEVELAPPROVAL 
+(((LEVELAPPROVAL))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_type,TYPE>>
+|NUMBER
+
+|
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_status,STATUS>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_approvedatetime,APPROVEDATETIME>>
+|DATE
+
+|
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_sequencenumber,SEQUENCENUMBER>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_reason,REASON>>
+|VARCHAR2(255)
+
+|F
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_levelrequestoid,LEVELREQUESTOID>>
+|NUMBER
+
+|F
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_approvedbyuseroid,APPROVEDBYUSEROID>>
+|NUMBER
+
+|F
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_controlledbyusergroupoid,CONTROLLEDBYUSERGROUPOID>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_levelrequeststatusonapprove,LEVELREQUESTSTATUSONAPPROVE>>
+|NUMBER
+
+|
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_levelapproval_oid]]
+==== OID 
+(((LEVELAPPROVAL ,OID)))  (((OID (LEVELAPPROVAL)))) 
+This field contains the sequential number of the Level Request.
+
+All Level Requests defined for a Project are numbered sequentially.
+
+See also: <<LEVELAPPROVAL.adoc#_i_levelapproval_levelapproval_pk,LEVELAPPROVAL_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_levelapproval_type]]
+==== TYPE 
+(((LEVELAPPROVAL ,TYPE)))  (((TYPE (LEVELAPPROVAL)))) 
+The type of Approval.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TYPE
+|NUMBER
+|===
+
+===== Value List
+1 = Post-Approval
+
+2 = Pre-Approval
+
+
+[[_cd_levelapproval_status]]
+==== STATUS 
+(((LEVELAPPROVAL ,STATUS)))  (((STATUS (LEVELAPPROVAL)))) 
+The Approval Status.
+
+Possible status indications are:
+
+* Awaiting Approval
+
+* Awaiting Level Request Finish: This status is assigned to a Post- Approval when a Level Request starts, and is changed to "`Awaiting Approval`" when the Level Request ends with status Success or Warning.
+
+* Awaiting Predecessor Approval: this status is assigned to the Approval when a preceding Approval on the Level Request must be granted first.
+
+* Approved
+
+* Rejected
+
+* Canceled: when a previous Level Approval was rejected.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|STATUS
+|NUMBER
+|===
+
+===== Value List
+0 = unknown
+
+1 = awaiting for approval
+
+2 = waiting for predecessor approval
+
+3 = approved
+
+4 = rejected
+
+5 = canceled
+
+6 = waiting for level request finish
+
+
+[[_cd_levelapproval_approvedatetime]]
+==== APPROVEDATETIME 
+(((LEVELAPPROVAL ,APPROVEDATETIME)))  (((APPROVEDATETIME (LEVELAPPROVAL)))) 
+The date and time at which the approval was granted or rejected. This field is empty for outstanding approvals.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|APPROVEDATETIME
+|DATE
+|===
+
+[[_cd_levelapproval_sequencenumber]]
+==== SEQUENCENUMBER 
+(((LEVELAPPROVAL ,SEQUENCENUMBER)))  (((SEQUENCENUMBER (LEVELAPPROVAL)))) 
+Number indicating the position of the Approval within the sequence of Approvals associated with the Level.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|SEQUENCENUMBER
+|NUMBER
+|===
+
+[[_cd_levelapproval_reason]]
+==== REASON 
+(((LEVELAPPROVAL ,REASON)))  (((REASON (LEVELAPPROVAL)))) 
+The reason of approval or rejection, as defined by the user. This field is empty for outstanding approvals.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|REASON
+|VARCHAR2(255)
+|===
+
+[[_cd_levelapproval_levelrequestoid]]
+==== LEVELREQUESTOID 
+(((LEVELAPPROVAL ,LEVELREQUESTOID)))  (((LEVELREQUESTOID (LEVELAPPROVAL)))) 
+Identifier for the LEVELREQUEST table.
+
+For more information, refer to the description of the foreign key LEVELAPPROVAL_FK_.
+
+See also: <<LEVELAPPROVAL.adoc#_i_levelapproval_levelapproval_fk_1,LEVELAPPROVAL_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|LEVELREQUESTOID
+|NUMBER
+|===
+
+[[_cd_levelapproval_approvedbyuseroid]]
+==== APPROVEDBYUSEROID 
+(((LEVELAPPROVAL ,APPROVEDBYUSEROID)))  (((APPROVEDBYUSEROID (LEVELAPPROVAL)))) 
+Identifier for the SCMUSER table.
+
+For more information, refer to the description of the foreign key LEVELAPPROVAL_FK_2.
+
+See also: <<LEVELAPPROVAL.adoc#_i_levelapproval_levelapproval_fk_2,LEVELAPPROVAL_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|APPROVEDBYUSEROID
+|NUMBER
+|===
+
+[[_cd_levelapproval_controlledbyusergroupoid]]
+==== CONTROLLEDBYUSERGROUPOID 
+(((LEVELAPPROVAL ,CONTROLLEDBYUSERGROUPOID)))  (((CONTROLLEDBYUSERGROUPOID (LEVELAPPROVAL)))) 
+Identifier for the USERGROUP table.
+
+For more information, refer to the description of the foreign key LEVELAPPROVAL_FK_3.
+
+See also: <<LEVELAPPROVAL.adoc#_i_levelapproval_levelapproval_fk_3,LEVELAPPROVAL_FK_3>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|Yes
+|CONTROLLEDBYUSERGROUPOID
+|NUMBER
+|===
+
+[[_cd_levelapproval_levelrequeststatusonapprove]]
+==== LEVELREQUESTSTATUSONAPPROVE 
+(((LEVELAPPROVAL ,LEVELREQUESTSTATUSONAPPROVE)))  (((LEVELREQUESTSTATUSONAPPROVE (LEVELAPPROVAL)))) 
+The Level Request Status after Approval.
+
+The following status indication icons are possible:
+
+ (Success) : the Level Request is executed successfully.
+
+ (Warning) : the Level Request has been successfully executed, but at least one non-critical Level, Build or Deploy Phase failed.
+
+ (Fail): the execution of the Level Request as a whole failed. This is due to the failure of one or more critical Level, Build or Deploy Phases.
+
+ (Run): the Level Request is being executed at this moment.
+
+ (Awaiting requested Date/Time): the requested execution is in the future.
+
+ (Awaiting Pre-Approval or Awaiting Post-Approval): the Level Request is awaiting a Pre- or Post-Approval.
+
+ (Rejected): An Approval associated with the Level Request was rejected. The Level Request will never be executed.
+
+ (Canceled): the Level Request has been canceled before it was run. It will never be executed.
+
+ (Aborted): the Level Request has been aborted during execution. The results (such as Build Results) that were already available at the time of the abort have been cleaned up and cannot be used.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|LEVELREQUESTSTATUSONAPPROVE
+|NUMBER
+|===
+
+===== Value List
+0 = Unknown
+
+1 = Awaiting Requested Date/Time
+
+2 = Awaiting Pre-Approval
+
+3 = Rejected
+
+4 = Run
+
+5 = Fail
+
+6 = Success
+
+7 = Warning
+
+8 = Canceled
+
+9 = Aborting
+
+10 = Aborted
+
+11 = Awaiting Post-Approval
+
+
+[[_cd_levelapproval_archived]]
+==== ARCHIVED 
+(((LEVELAPPROVAL ,ARCHIVED)))  (((ARCHIVED (LEVELAPPROVAL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_levelapproval_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((LEVELAPPROVAL ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (LEVELAPPROVAL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_levelapproval_version]]
+==== VERSION 
+(((LEVELAPPROVAL ,VERSION)))  (((VERSION (LEVELAPPROVAL)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,LEVELAPPROVAL_PK))) [[_i_levelapproval_levelapproval_pk]]
+LEVELAPPROVAL_PK
+|Yes
+|Yes
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,LEVELAPPROVAL_FK_1))) [[_i_levelapproval_levelapproval_fk_1]]
+LEVELAPPROVAL_FK_1
+|No
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_levelrequestoid,LEVELREQUESTOID>>
+|<<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>>
+
+| 
+(((Foreign Keys ,LEVELAPPROVAL_FK_2))) [[_i_levelapproval_levelapproval_fk_2]]
+LEVELAPPROVAL_FK_2
+|No
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_approvedbyuseroid,APPROVEDBYUSEROID>>
+|<<SCMUSER.adoc#_t_scmuser,SCMUSER>>
+
+| 
+(((Foreign Keys ,LEVELAPPROVAL_FK_3))) [[_i_levelapproval_levelapproval_fk_3]]
+LEVELAPPROVAL_FK_3
+|No
+|No
+|<<LEVELAPPROVAL.adoc#_cd_levelapproval_controlledbyusergroupoid,CONTROLLEDBYUSERGROUPOID>>
+|<<USERGROUP.adoc#_t_usergroup,USERGROUP>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELAPPROVAL_FK_1
+|<<LEVELREQUEST.adoc#_cd_levelrequest_oid,OID>>
+|===
+
+===== SCMUSER
+
+Refer to the chapter <<SCMUSER.adoc#_t_scmuser,SCMUSER>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELAPPROVAL_FK_2
+|<<SCMUSER.adoc#_cd_scmuser_oid,OID>>
+|===
+
+===== USERGROUP
+
+Refer to the chapter <<USERGROUP.adoc#_t_usergroup,USERGROUP>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|LEVELAPPROVAL_FK_3
+|<<USERGROUP.adoc#_cd_usergroup_oid,OID>>
+|===
+
+==== Referencing Tables
+
+No referencing tables available.
+
+=== Report Labels 
+(((Report Labels ,LEVELAPPROVAL))) 
+*LEVELAPPROVAL_APPROVEDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Approval Date/Time
+
+|
+
+French:
+|Approuvée/rejetée le
+
+|
+
+German:
+|Genehmigt/Abgelehnt am
+|===
+*LEVELAPPROVAL_APPROVEDBYUSEROID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELAPPROVAL_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*LEVELAPPROVAL_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*LEVELAPPROVAL_CONTROLLEDBYUSERGROUPOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELAPPROVAL_LEVELREQUESTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELAPPROVAL_LEVELREQUESTSTATUSONAPPROVE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Status after Approval
+
+|
+
+French:
+|Situation après approbation
+
+|
+
+German:
+|Status nach Genehmigung
+|===
+*LEVELAPPROVAL_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*LEVELAPPROVAL_REASON_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Reason
+
+|
+
+French:
+|Commentaire
+
+|
+
+German:
+|Grund
+|===
+*LEVELAPPROVAL_SEQUENCENUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Sequence Number
+
+|
+
+French:
+|Numéro de séquence
+
+|
+
+German:
+|Sequenznummer
+|===
+*LEVELAPPROVAL_STATUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Status
+
+|
+
+French:
+|Statut
+
+|
+
+German:
+|Status
+|===
+*LEVELAPPROVAL_TYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Type
+
+|
+
+French:
+|Type
+
+|
+
+German:
+|Typ
+|===
+*LEVELAPPROVAL_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

@@ -1,0 +1,1131 @@
+[[_t_projectstream]]
+== PROJECTSTREAM 
+(((PROJECTSTREAM))) 
+
+
+=== Table Description
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+|NUMBER
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_status,STATUS>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_description,DESCRIPTION>>
+|VARCHAR2(512)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_ishead,ISHEAD>>
+|NUMBER(1)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_istagbased,ISTAGBASED>>
+|NUMBER(1)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_buildprefix,BUILDPREFIX>>
+|VARCHAR2(50)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_locked,LOCKED>>
+|NUMBER(1)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_buildtype,BUILDTYPE>>
+|NUMBER
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_tagtemplate,TAGTEMPLATE>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_partialbuildtag,PARTIALBUILDTAG>>
+|VARCHAR2(255)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_highestbuildnumber,HIGHESTBUILDNUMBER>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_vcrbranchidentification,VCRBRANCHIDENTIFICATION>>
+|VARCHAR2(255)
+
+|
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_buildsuffix,BUILDSUFFIX>>
+|VARCHAR2(50)
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_acceptforcedbuild,ACCEPTFORCEDBUILD>>
+|NUMBER(1)
+
+|F
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_projectoid,PROJECTOID>>
+|NUMBER
+
+|F
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_lifecycleoid,LIFECYCLEOID>>
+|NUMBER
+
+|
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_archived,ARCHIVED>>
+|NUMBER(1)
+
+|
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_archiveddatetime,ARCHIVEDDATETIME>>
+|DATE
+
+|
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_version,VERSION>>
+|NUMBER
+|===
+
+=== Column Descriptions
+
+[[_cd_projectstream_oid]]
+==== OID 
+(((PROJECTSTREAM ,OID)))  (((OID (PROJECTSTREAM)))) 
+Unique table identifier.
+
+See also: <<PROJECTSTREAM.adoc#_i_projectstream_projectstream_pk,PROJECTSTREAM_PK>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|P
+|No
+|OID
+|NUMBER
+|===
+
+[[_cd_projectstream_status]]
+==== STATUS 
+(((PROJECTSTREAM ,STATUS)))  (((STATUS (PROJECTSTREAM)))) 
+The status of the Branch Project Stream.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|STATUS
+|NUMBER
+|===
+
+===== Value List
+0 = under construction
+
+1 = planning
+
+2 = development
+
+3 = testing
+
+4 = stable
+
+5 = general available
+
+6 = frozen
+
+7 = closed
+
+
+[[_cd_projectstream_description]]
+==== DESCRIPTION 
+(((PROJECTSTREAM ,DESCRIPTION)))  (((DESCRIPTION (PROJECTSTREAM)))) 
+Description for the Branch Project Stream.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|DESCRIPTION
+|VARCHAR2(512)
+|===
+
+[[_cd_projectstream_ishead]]
+==== ISHEAD 
+(((PROJECTSTREAM ,ISHEAD)))  (((ISHEAD (PROJECTSTREAM)))) 
+The type of the Project Stream.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ISHEAD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = Head
+
+1 = Branch
+
+
+[[_cd_projectstream_istagbased]]
+==== ISTAGBASED 
+(((PROJECTSTREAM ,ISTAGBASED)))  (((ISTAGBASED (PROJECTSTREAM)))) 
+Indication whether or not the Project Stream is tag-based. 
+
+If the Project Stream is tag-based, it is possible to retrieve sources labeled with a user-defined tag in the head or branch stream for a build action on the Build Level.
+
+Warning: This functionality requires strict adherence to the internal tagging conventions, as by manual tagging artifacts are no longer under the exclusive control of IKAN ALM. Tags may be defined before a build, but should remain consistent for the affected artifacts for their full Life-Cycle.
+
+If tag-based builds are activated for the Project Stream, the Tag Template has no effect any more as the VCR Tag will be defined by the User during the Level Request creation process. 
+
+Furthermore, when the IKAN ALM Scheduler notices that a Build Level is connected to a tag-based Project Stream, it will take no action since it has no reference to check for changes in the versioning system. Triggered builds (for example, after the creation of a tag in the VCR) can be activated via a hook script in the versioning system (possible for CVS and Subversion only) which will call the IKAN ALM command line to create a Level Request on the Build Level. Therefore, it is recommended to disconnect any Schedule from the Build Level of a tag-based Project Stream. If that is not possible (for example, because the Level is also used in another Project Stream), make sure that Accept Forced Build is set to Yes.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ISTAGBASED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstream_buildprefix]]
+==== BUILDPREFIX 
+(((PROJECTSTREAM ,BUILDPREFIX)))  (((BUILDPREFIX (PROJECTSTREAM)))) 
+The Build Prefix for the Project Stream. The Build Prefix is used, among other things, for generating unique Build archive file names, and is therefore required.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDPREFIX
+|VARCHAR2(50)
+|===
+
+[[_cd_projectstream_locked]]
+==== LOCKED 
+(((PROJECTSTREAM ,LOCKED)))  (((LOCKED (PROJECTSTREAM)))) 
+Indication whether or not the Project Stream is locked. Locking a Project Stream means blocking all activity on that Project Stream.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|LOCKED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstream_buildtype]]
+==== BUILDTYPE 
+(((PROJECTSTREAM ,BUILDTYPE)))  (((BUILDTYPE (PROJECTSTREAM)))) 
+The Build type.
+
+The following types are possible:
+
+Full Build
+
+Partial Build: only the sources that were modified since the last Build will be rebuilt.
+
+Production-based Partial Build: only the sources that are different from the version on the Production Level will be rebuilt
+
+Tag-based Partial Build: only the sources that were modified compared to a specific Build
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|BUILDTYPE
+|NUMBER
+|===
+
+===== Value List
+0 = Full Build
+
+1 = Partial Build based on Previous Build
+
+2 = Partial Build based on Production Build
+
+3 = Partial Build based on specific Tagged Build
+
+
+[[_cd_projectstream_tagtemplate]]
+==== TAGTEMPLATE 
+(((PROJECTSTREAM ,TAGTEMPLATE)))  (((TAGTEMPLATE (PROJECTSTREAM)))) 
+The Template that should be used for tagging Builds generated in this Project Stream. The Tags will be used to display these Builds in the VCR.
+
+A template can be a combination of constants and variables.
+
+The following constants are allowed:
+
+* letters
+
+* numbers
+
+* underscores
+
+* hyphens
+
+* Some other characters (such as , ; $ @) may be illegal, depending on the VCR type.
+
+The following variables are available. They all have the format ${name}:
+
+* ${prefix}: This variable returns the Build Prefix defined for the Project Stream.
+
+* ${suffix}: This variable returns the Build Suffix defined for the Branch Stream. (If this variable is included in a Template for a Head Stream, it is ignored.)
+
+* ${streamType}: This variable returns the Type indication for a Stream: H for Head Stream or B for Branch Stream.
+
+* ${buildNumber}: This variable returns the number of the Build, so that the Build can be matched with its Tag.
+
+* ${projectName}: This variable returns the name of the IKAN ALM Project.
+
+* ${vcrProjectName}: This variable returns the VCR name of the Project.
+
+* ${dateTime(dateformat)}: This variable returns the timestamp of the Building action in the indicated format. yyyy-MM-dd is a valid format. For
+
+other valid formats, refer to http://java.sun.com/j2se/1.4.2/docs/api/java/
+
+text/SimpleDateFormat.html
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|TAGTEMPLATE
+|VARCHAR2(255)
+|===
+
+[[_cd_projectstream_partialbuildtag]]
+==== PARTIALBUILDTAG 
+(((PROJECTSTREAM ,PARTIALBUILDTAG)))  (((PARTIALBUILDTAG (PROJECTSTREAM)))) 
+The Partial Build VCR Tag. This tag is used as a reference to determine which sources were modified.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|PARTIALBUILDTAG
+|VARCHAR2(255)
+|===
+
+[[_cd_projectstream_highestbuildnumber]]
+==== HIGHESTBUILDNUMBER 
+(((PROJECTSTREAM ,HIGHESTBUILDNUMBER)))  (((HIGHESTBUILDNUMBER (PROJECTSTREAM)))) 
+The highest Build number for this Project Stream.
+
+This number is incremented automatically each time a Level Request is created.
+
+This number does not necessarily match the number of successful Builds.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|HIGHESTBUILDNUMBER
+|NUMBER
+|===
+
+[[_cd_projectstream_vcrbranchidentification]]
+==== VCRBRANCHIDENTIFICATION 
+(((PROJECTSTREAM ,VCRBRANCHIDENTIFICATION)))  (((VCRBRANCHIDENTIFICATION (PROJECTSTREAM)))) 
+For Branch Streams: the VCR Branch ID. The same ID must be available in the VCR linked to the Project.
+
+For Head Streams belonging to a ClearCase UCM Project: the UCM Integration Stream.
+
+For Head Streams belonging to other Project types: no value.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|VCRBRANCHIDENTIFICATION
+|VARCHAR2(255)
+|===
+
+[[_cd_projectstream_buildsuffix]]
+==== BUILDSUFFIX 
+(((PROJECTSTREAM ,BUILDSUFFIX)))  (((BUILDSUFFIX (PROJECTSTREAM)))) 
+For Branch Streams: the Build Suffix.
+
+For Head Streams: no value.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|BUILDSUFFIX
+|VARCHAR2(50)
+|===
+
+[[_cd_projectstream_acceptforcedbuild]]
+==== ACCEPTFORCEDBUILD 
+(((PROJECTSTREAM ,ACCEPTFORCEDBUILD)))  (((ACCEPTFORCEDBUILD (PROJECTSTREAM)))) 
+Indication whether or not the Project Stream accepts Forced Builds.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|ACCEPTFORCEDBUILD
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstream_projectoid]]
+==== PROJECTOID 
+(((PROJECTSTREAM ,PROJECTOID)))  (((PROJECTOID (PROJECTSTREAM)))) 
+Identifier for the PROJECT table.
+
+For more information, refer to the description of the foreign key PROJECTSTREAM_FK_2.
+
+See also: <<PROJECTSTREAM.adoc#_i_projectstream_projectstream_fk_2,PROJECTSTREAM_FK_2>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|PROJECTOID
+|NUMBER
+|===
+
+[[_cd_projectstream_lifecycleoid]]
+==== LIFECYCLEOID 
+(((PROJECTSTREAM ,LIFECYCLEOID)))  (((LIFECYCLEOID (PROJECTSTREAM)))) 
+Identifier for the LIFECYCLE table.
+
+For more information, refer to the description of the foreign key PROJECTSTREAM_FK_1.
+
+See also: <<PROJECTSTREAM.adoc#_i_projectstream_projectstream_fk_1,PROJECTSTREAM_FK_1>>.
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|F
+|No
+|LIFECYCLEOID
+|NUMBER
+|===
+
+[[_cd_projectstream_archived]]
+==== ARCHIVED 
+(((PROJECTSTREAM ,ARCHIVED)))  (((ARCHIVED (PROJECTSTREAM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVED
+|NUMBER(1)
+|===
+
+===== Value List
+0 = no
+
+1 = yes
+
+
+[[_cd_projectstream_archiveddatetime]]
+==== ARCHIVEDDATETIME 
+(((PROJECTSTREAM ,ARCHIVEDDATETIME)))  (((ARCHIVEDDATETIME (PROJECTSTREAM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|Yes
+|ARCHIVEDDATETIME
+|DATE
+|===
+
+[[_cd_projectstream_version]]
+==== VERSION 
+(((PROJECTSTREAM ,VERSION)))  (((VERSION (PROJECTSTREAM)))) 
+For internal use only.
+
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Key
+| NULL
+| Column
+| Type (Size)
+
+
+|
+|No
+|VERSION
+|NUMBER
+|===
+
+=== Indexes
+
+[cols="1,1,1,1,1", frame="topbot", options="header"]
+|===
+| Index
+| Primary
+| Unique
+| Column(s)
+| Source Table
+
+
+| 
+(((Primary Keys ,PROJECTSTREAM_PK))) [[_i_projectstream_projectstream_pk]]
+PROJECTSTREAM_PK
+|Yes
+|Yes
+|<<PROJECTSTREAM.adoc#_cd_projectstream_oid,OID>>
+|
+
+| 
+(((Foreign Keys ,PROJECTSTREAM_FK_1))) [[_i_projectstream_projectstream_fk_1]]
+PROJECTSTREAM_FK_1
+|No
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_lifecycleoid,LIFECYCLEOID>>
+|<<LIFECYCLE.adoc#_t_lifecycle,LIFECYCLE>>
+
+| 
+(((Foreign Keys ,PROJECTSTREAM_FK_2))) [[_i_projectstream_projectstream_fk_2]]
+PROJECTSTREAM_FK_2
+|No
+|No
+|<<PROJECTSTREAM.adoc#_cd_projectstream_projectoid,PROJECTOID>>
+|<<PROJECT.adoc#_t_project,PROJECT>>
+|===
+
+=== Relationships
+
+==== Referenced Tables
+
+===== LIFECYCLE
+
+Refer to the chapter <<LIFECYCLE.adoc#_t_lifecycle,LIFECYCLE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PROJECTSTREAM_FK_1
+|<<LIFECYCLE.adoc#_cd_lifecycle_oid,OID>>
+|===
+
+===== PROJECT
+
+Refer to the chapter <<PROJECT.adoc#_t_project,PROJECT>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referenced Column(s)
+
+
+|PROJECTSTREAM_FK_2
+|<<PROJECT.adoc#_cd_project_oid,OID>>
+|===
+
+==== Referencing Tables
+
+===== DESKTOPASSOCIATION
+
+Refer to the chapter <<DESKTOPASSOCIATION.adoc#_t_desktopassociation,DESKTOPASSOCIATION>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|DESKTOPASSOCIATION_FK_2
+|<<DESKTOPASSOCIATION.adoc#_cd_desktopassociation_projectstreamoid,PROJECTSTREAMOID>>
+|===
+
+===== LEVELREQUEST
+
+Refer to the chapter <<LEVELREQUEST.adoc#_t_levelrequest,LEVELREQUEST>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|LEVELREQUEST_FK_1
+|<<LEVELREQUEST.adoc#_cd_levelrequest_projectstreamoid,PROJECTSTREAMOID>>
+|===
+
+===== PROJECTSTREAMDEPENDENCY
+
+Refer to the chapter <<PROJECTSTREAMDEPENDENCY.adoc#_t_projectstreamdependency,PROJECTSTREAMDEPENDENCY>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|PROJECTSTREAMDEPENDENCY_FK_1
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_masterprojectstreamoid,MASTERPROJECTSTREAMOID>>
+
+|PROJECTSTREAMDEPENDENCY_FK_2
+|<<PROJECTSTREAMDEPENDENCY.adoc#_cd_projectstreamdependency_childprojectstreamoid,CHILDPROJECTSTREAMOID>>
+|===
+
+===== SCMPACKAGE
+
+Refer to the chapter <<SCMPACKAGE.adoc#_t_scmpackage,SCMPACKAGE>> for a detailed description of the table.
+
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Foreign Key
+| Referencing Column
+
+
+|SCMPACKAGE_FK_1
+|<<SCMPACKAGE.adoc#_cd_scmpackage_projectstreamoid,PROJECTSTREAMOID>>
+|===
+
+=== Report Labels 
+(((Report Labels ,PROJECTSTREAM))) 
+*PROJECTSTREAM_ACCEPTFORCEDBUILD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Accept Forced Build
+
+|
+
+French:
+|Construction forcée autorisée
+
+|
+
+German:
+|Erzwungene Bereitstellung erlaubt
+|===
+*PROJECTSTREAM_ARCHIVED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archived
+
+|
+
+French:
+|Archivé(e)
+
+|
+
+German:
+|Archiviert
+|===
+*PROJECTSTREAM_ARCHIVEDDATETIME_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Archive Date/Time
+
+|
+
+French:
+|Date/heure archivage
+
+|
+
+German:
+|Datum/Zeit Archivierung
+|===
+*PROJECTSTREAM_BUILDPREFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Prefix
+
+|
+
+French:
+|Préfixe de construction
+
+|
+
+German:
+|Bereitstellungspräfix
+|===
+*PROJECTSTREAM_BUILDSUFFIX_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Suffix
+
+|
+
+French:
+|Suffixe de construction
+
+|
+
+German:
+|Bereitstellungskennzeichen
+|===
+*PROJECTSTREAM_BUILDTYPE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Build Type
+
+|
+
+French:
+|Type de construction
+
+|
+
+German:
+|Bereitstellungstyp
+|===
+*PROJECTSTREAM_DESCRIPTION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Description
+
+|
+
+French:
+|Description
+
+|
+
+German:
+|Beschreibung
+|===
+*PROJECTSTREAM_HIGHESTBUILDNUMBER_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Highest Build Number
+
+|
+
+French:
+|Numéro dernière construction
+
+|
+
+German:
+|Letzte Bereitstellungsnummer
+|===
+*PROJECTSTREAM_ISHEAD_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Project Stream Type
+
+|
+
+French:
+|Type de Branche
+
+|
+
+German:
+|Hauptverlauf
+|===
+*PROJECTSTREAM_ISTAGBASED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Tag-based
+
+|
+
+French:
+|Balise existante
+
+|
+
+German:
+|Versionsbasiert
+|===
+*PROJECTSTREAM_LIFECYCLEOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAM_LOCKED_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Locked
+
+|
+
+French:
+|Verrouillée
+
+|
+
+German:
+|Gesperrt
+|===
+*PROJECTSTREAM_OID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAM_PARTIALBUILDTAG_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Partial Build VCR Tag
+
+|
+
+French:
+|Balise RCV constr. partielle
+
+|
+
+German:
+|Version für partielle Bereitstellung
+|===
+*PROJECTSTREAM_PROJECTOID_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|OID
+
+|
+
+French:
+|OID
+
+|
+
+German:
+|OID
+|===
+*PROJECTSTREAM_STATUS_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Status
+
+|
+
+French:
+|Statut
+
+|
+
+German:
+|Status
+|===
+*PROJECTSTREAM_TAGTEMPLATE_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Tag Template
+
+|
+
+French:
+|Modèle de Balise
+
+|
+
+German:
+|Versionskennzeichnung
+|===
+*PROJECTSTREAM_VCRBRANCHIDENTIFICATION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|VCR Branch ID
+
+|
+
+French:
+|Nom de Branche dans le RCV
+
+|
+
+German:
+|Zweig-ID im VCR
+|===
+*PROJECTSTREAM_VERSION_LABEL*
+
+[cols="1,1", frame="none"]
+|===
+
+|
+
+English:
+|Version
+
+|
+
+French:
+|Version
+
+|
+
+German:
+|Version
+|===

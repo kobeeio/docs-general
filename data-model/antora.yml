@@ -1,6 +1,6 @@
 name: data-model
 title: Data Model
-version: '5.8'
+version: '5.9'
 start_page: ROOT:ANT.adoc
 nav:
 - modules/ROOT/nav.adoc

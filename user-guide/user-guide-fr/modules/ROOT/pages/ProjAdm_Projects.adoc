@@ -101,7 +101,6 @@ Elle permet d`'afficher l`'Historique de toutes les opérations de création, de
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_historyview,Afficher l`'historique d`'un projet>>
 |===
 
-
 [[_projadmin_projectsoverview_viewing]]
 == Afficher les paramètres d`'un projet 
 (((Projets ,Afficher))) 

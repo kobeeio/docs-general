@@ -3310,7 +3310,6 @@ a|_Sujets apparentés:_
 |===
 
 [[_desktop_lr_buildhistory]]
-[[_sdesktop_buildhistory_detail]]
 == Écran de l'Historique de Construction 
 (((Bureau ,Historique des constructions)))  (((Historique des constructions))) 
 

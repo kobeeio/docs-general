@@ -1,0 +1,68 @@
+// The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
+:imagesdir: ../images
+:description: What's new in IKAN ALM 5.9
+:revnumber: v5.9
+:revdate: 13.09.2021
+
+= What's new in IKAN ALM - Release 5.8
+
+IKAN ALM is a cross-platform web-based solution for Application Lifecycle Management. It combines DevOps initiatives (continuous build and continuous integration) and lifecycle management to support the complexity of service-oriented architectures and highly distributed systems.
+
+IKAN ALM encompasses all aspects of the Application Lifecycle Management process offering build management, continuous integration, rebuild, manual build, release management, approval processes and deployment management. Within IKAN ALM, you define, implement and enforce software lifecycle processes, appropriate for your organization, including development, test, quality assurance and final production.
+
+IKAN ALM is a *methodology-independent* and *repository-neutral* tool (enabling cross-platform development). IKAN ALM complies with industry standards, such as CMMI, ITIL and PRINCE. It helps your organization to enforce, control, audit, report and facilitate best practices and guidelines for Application Lifecycle Management, and provides benefits which guarantee conformity with audit requirements and improve communications with the different parties across the IT system.
+
+IKAN ALM 5.8 includes the following major enhancements.
+
+== New functionalities
+
+=== Possibility to clone Levels
+IKAN ALM now adds the ability to clone Levels. This makes it easy to fit in a Training Level (which is similar to an existing Test Level) into the Lifecyle or to create the Production Level after the QA Level has been set up and configured. Cloning Levels is convenient for creating new Levels since all artifacts linked to the existing Level will be cloned, i.e., Environments, Core and Custom Phases, as well as Parameters and Approvals.
+
+image::image1.png[,891,467]
+
+=== Optional Deploys
+If the functionality “Optional Deploys” is activated on a Level in the Lifecycle, it will be possible to “Skip” deploys on that Level while delivering a Build through the Lifecycle. The related Level Request will get the “Warning” status, and the non-executed Deploys will get the “Skipped” or “Cancelled” status. When delivering to the next Level in the Lifecycle, a warning will be given if not all deploys for the previous Level have been executed successfully.
+
+image::image2.png[,1072,749]
+
+=== Limit the number of concurrent deploys
+When defining an Agent, a new attribute allows to enter the maximum number of Deploys that may run at the same time. If the value is set to 0 (the default), there is no limit for running Deploys concurrently. If the number is set to 1, all Deploys will run sequentially. If a specific number is specified, only that number of Deploys can be run concurrently on the Agent. If an additional one is requested, it will go into the waiting queue and it will only be started if one of the running Deploys has finished.
+
+image::image3.png[,570,490]
+
+=== Search Filters
+The search criteria of the most frequently used Overview pages, like Level Request, Build and Deploy, Package and Project Overview can now be saved as a Filter. This is extremely useful and will improve the working flow for end users and project administrators.
+
+image::image4.png[,1119,334]
+
+=== New Package Detail interface to manage the contents and actions in a Package
+The Package edit and view pages have been completely redesigned and are now integrated in a new Package Detail interface using multiple tab pages. This new interface acts as a Dashboard for the Package: core information is now immediately visible, while other data are just one click away. Some enhancements have been added to the new design, such as the Lifecycle Actions view which allows end users to create Level Requests directly from within the Package interface.
+
+image::image5.png[,956,477]
+
+=== Redesign of the Menus and the Overview pages
+The main menu and its submenus have been completely redesigned: the structure has been optimized and the most important desktop menu items for handling Level Requests or Packages are now always on top and swiftly reachable.
+
+image::image6.jpg[,1210,395]
+
+All Overview and Search interfaces have been redesigned for a better user experience: most search criteria use auto-suggestion and are instantly applied; only the most important search criteria are initially visible to maximize the space needed for listing the results; other criteria are only one click away via the “Show advanced options” link.
+
+image::image7.png[,983,161]
+
+
+== Enhanced functionalities and End of Support announcements
+
+* Multiple renewed interfaces in Global Administration: System Settings, Housekeeping, User Group Members, Issue Tracking, …
+* Multiple renewed interfaces in Project Administration: Lifecycle, Project Stream dependencies, Level Edit, Audit Project, ….
+* Possibility to search a Level Request based on its OID
+* Performance optimizations in the Desktop and Level Request interfaces
+* Optimized database pooling in the IKAN ALM web application
+* Updated IKAN ALM Agent and Server OSGi container to Karaf 4.0
+* Optimized security against vulnerabilities, like cross-site scripting and SQL injection
+* End of support for the IBM WebSphere application server
+* End of support for the integration with Lotus Notes Mail systems
+
+
+== Bug fixes
+Several small bug fixes and optimizations have also been implemented. Refer to the readme of the installed product for more details.

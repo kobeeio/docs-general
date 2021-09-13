@@ -1,0 +1,6 @@
+name: whats-new
+title: What's new
+version: '5.9'
+start_page: ROOT:WhatsNew.adoc
+nav:
+- modules/ROOT/nav.adoc  

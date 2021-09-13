@@ -430,7 +430,7 @@ Columns marked with the image:icons/icon_sort.png[,15,15]  icon can be sorted al
 === Editing a User Group 
 (((User Groups ,Editing))) 
 
-. In the Global Administration context, select__ Users & Groups > Overview User Groups__.
+. In the Global Administration context, select __Users & Groups > Overview User Groups__.
 +
 The following screen is displayed:
 +
@@ -438,64 +438,65 @@ image::GlobAdm-UserGroup-Edit.png[,977,428]
 +
 . Click the image:icons/edit.gif[,15,15] _Edit_ link in front of the User Group for which you want to modify the members.
 +
-image::GlobAdm-UserGroup-EditUserGroup.png[,581,535] 
+image::GlobAdm-UserGroup-EditUserGroup.png[,611,751] 
 +
 . In the _Edit User Group_ panel, edit the fields as required.
-. Underneath the _Edit User Group_ panel, click the image:icons/edit.gif[,15,15] _Edit User Group Members_ link to change the selected User Group definition.
 +
-The following screen is displayed:
+. The _Nested User Group Members_ panel displays the User Groups that are a member of another User Group. This means they, as a child User Group, get the same access rights, receive the same notifications and have the same permissions as the users in the parent User Group.
 +
-image::GlobAdm-UserGroup-EditUserGroupMembers.png[,575,292] 
-+
-.. Edit the fields in the __Edit User Group Members__ panel as required.
-+
-Determine the allocation of User IDs to this User Group:
-
-* To add a User ID to this User Group, select the User ID in the _Non Group Members_ list and click the _<<_ button.
-* To remove a User ID from this User Group, select the User ID in the _Group Members_ list and click the __>> __button.
-+
-By default, archived Users are filtered out of the _Non Group Members_ list.
-To display all the Users, including the archived ones, select the _Show
-Archived Users_ check box. 
-.. Click __Save__ to save your changes.
-+
-
-[NOTE]
+.Nested User Group
 ====
-For external User Groups, changing the Group Members has only a temporary effect.
-As soon as a User`'s IKAN ALM session is terminated and a new session is opened, IKAN ALM reads the settings from the external Security System and synchronizes the external IKAN ALM User Groups with the definitions available in this external security system.
-As a result a User added here will be deleted from the list, or vice versa.
-
-However, the membership of internal User Groups may only be managed through this interface.
+User "Alice" is a member of the "Contoso_Users" User Group. "Contoso_Users" is nested in the "Prod_Requesters" User Group. "Prod_Requesters" has requester rights on the PROD level of a project stream. This means that "Alice" also has requester rights to that PROD level.
 ====
 +
-You can also click:
-
-* _Refresh_ to retrieve the settings from the database.
-* _Cancel_ to return to the previous screen without saving the changes.
-
-.. The _User Group Usage_ panel displays the System Settings Access Rights and Levels and Projects the User Groups are connected to.
+See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusernestedgroups,Editing the Nested User Groups>>.
++
+. The _User Group Members_ panel displays the current members that are part of this User Group (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroupmembers,Editing the User Group Members>>).
++
+. The _User Group Usage_ panel displays the System Settings Access Rights and Levels and Projects the User Groups are connected to.
 +
 image::GlobAdm-UserGroup-UserGroupsUsage.png[,622,396] 
-
 . Click _Save_ to confirm your changes.
 +
-This will bring you back to the _User
-Groups Overview_ screen.
+This will bring you back to the _User Groups Overview_ screen.
 +
 You can also click:
 
 * _Refresh_ to retrieve the settings from the database.
 * _Back_ to return to the previous screen without saving the changes
 
-[[_globadm_usersgroups_editusergroupmembers]]
-=== Editing the User Group Members
+[[_globadm_usersgroups_editusernestedgroups]]
+=== Editing the Nested User Group Members
 
-. On the __User Group Members__ panel underneath the _Edit User Group_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit User Group Members__ link to change the selected User Group definition. 
+. On the __Nested User Group Members__ panel underneath the _Edit User Group_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit Nested User Groups__ link to change the selected Nested User Groups.
 +
 The following screen is displayed:
 +
-image::GlobAdm-UserGroup-EditUserGroupMembers.png[,575,292] 
+image::GlobAdm-UserGroup-EditNestedUserGroups.png[,870,258] 
++
+Edit the fields in the __Edit Nested User Groups__ panel as required.
++
+Determine the allocation of Names to this Nested User Group:
+
+* To add a Name to this Nested User Group, select the Name in the _Non Nested User Groups_ list and click the _<<_ button.
+* To remove a Name from this Nested User Group, select the Name in the _Nested User Groups_ list and click the __>> __button.
++
+. Click __Save__ to save your changes.
++
+You can also click:
+
+* _Refresh_ to retrieve the settings from the database.
+* _Cancel_ to return to the previous screen without saving the changes.
+
+
+[[_globadm_usersgroups_editusergroupmembers]]
+=== Editing the User Group Members
+
+. On the __User Group Members__ panel underneath the _Nested User Group Members_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit User Group Members__ link to change the selected User Group definition. 
++
+The following screen is displayed:
++
+image::GlobAdm-UserGroup-EditUserGroupMembers.png[,870,236] 
 +
 Edit the fields in the __Edit User Group Members__ panel as required.
 +
@@ -505,8 +506,7 @@ Determine the allocation of User IDs to this User Group:
 * To remove a User ID from this User Group, select the User ID in the _Group Members_ list and click the __>> __button.
 +
 By default, archived Users are filtered out of the _Non Group Members_ list.
-To display all the Users, including the archived ones, select the _Show
-Archived Users_ check box. 
+To display all the Users, including the archived ones, select the _Show Archived Users_ check box. 
 . Click __Save__ to save your changes.
 +
 

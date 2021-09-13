@@ -78,7 +78,7 @@ For more information on adding Packages and rearranging the order of Packages, r
 +
 The _Edit Package Build Group_ is displayed.
 +
-image::Desktop-PackageGoups-Create2.png[,763,370] 
+image::Desktop-PackageGoups-Create2.png[,1217,336] 
 +
 . Next, you can add Packages using the _Add Package_ link.
 +
@@ -93,7 +93,7 @@ For more information, refer to the section <<Desktop_PackageGroups.adoc#_desktop
 +
 The _Package Build Groups Overview_ window is displayed.
 +
-image::Desktop-PackageGoups-Overview.png[,670,385] 
+image::Desktop-PackageGoups-Overview.png[,955,360] 
 +
 . Use the search criteria on the _Search Package Build Groups_ panel to only display the Package Build Groups you are looking for.
 +
@@ -152,7 +152,7 @@ Columns marked with the image:icons/icon_sort.png[,15,15]  icon can be sorted al
 +
 The following screen is displayed.
 +
-image::Desktop-PackageGoups-Edit.png[,843,653] 
+image::Desktop-PackageGoups-Edit.png[,1139,608] 
 +
 . Click the _Edit_ button if you need to modify the definition of the Package Build Group.
 +
@@ -176,7 +176,7 @@ For more information, refer to the section <<Desktop_PackageGroups.adoc#_desktop
 +
 The following window is displayed.
 +
-image::Desktop-PackageGoups-AddPackage.png[,630,431] 
+image::Desktop-PackageGoups-AddPackage.png[,767,453] 
 +
 . Search for the Package you want to add.
 +

@@ -6,7 +6,7 @@
 :chapter-label:
 
 :author: IKAN Development N.V., Kardinaal Mercierplein 2, 2800 Mechelen, BELGIUM + \
-(C) 2006 - 2020 IKAN Development N.V. + \
+(C) 2006 - 2021 IKAN Development N.V. + \
 No part of this document may be reproduced or transmitted in any form or by any \
 means, electronically or mechanically, for any purpose, without the express written \
 permission of IKAN Development N.V. \
@@ -22,10 +22,10 @@ include::UserInterface.adoc[User Interface Overview]
 //Desktop
 include::Desktop_Introduction.adoc[Introduction]
 include::Desktop_PersonalSettings.adoc[Personal Settings]
-include::Desktop_Approvals.adoc[Approvals]
 include::Desktop_LevelRequests.adoc[Level Requests]
 include::Desktop_Packages.adoc[Packages]
 include::Desktop_PackageGroups.adoc[Package Groups]
+include::Desktop_Approvals.adoc[Approvals]
 include::Desktop_ManageDesktop.adoc[Managing the Desktop]
 
 //Project Administration

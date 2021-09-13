@@ -11,7 +11,7 @@ Possible uses:
 
 * Manual creation of Level Requests (CLR Command): <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
 * Manual generation of Reports (Report Command): <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
-* Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#_pintegrateikanalminjdeveloper,JDeveloper>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>. Refer to the indicated sections.
+* Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>. Refer to the indicated sections.
 * Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>. Refer to the indicated section.
 
 
@@ -189,31 +189,31 @@ Result:
 
 * If the Level Request is created successfully, the following screen is displayed:
 +
-image::CommandLine-LRCreatedSuccessfully.jpg[,539,274] 
+image::CommandLine-LRCreatedSuccessfully.png[,1148,155] 
 +
 
 [WARNING]
 --
 These messages only indicate that the Level Request was __created__ successfully.
-Refer to the <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>>in the web application to verify if the Level Request was __executed__ successfully as well.
+Refer to the <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>> in the web application to verify if the Level Request was __executed__ successfully as well.
 --
 
 * If the Level Request cannot be created, because there is no connection with the IKAN ALM Server, the following screen is displayed:
 +
-image::CommandLine-ServerConnectionProblem.jpg[,539,282] 
+image::CommandLine-ServerConnectionProblem.png[,1148,535] 
 +
 * If the user entered an unknown command, the following screen is displayed:
 +
-image::CommandLine-UnknownCommand.jpg[,540,190] 
+image::CommandLine-UnknownCommand.png[,1148,151] 
 +
 * If the user entered unknown or incorrect command options, the screen similar to the following is displayed: 
 +
-image::CommandLine-UnknownCommandOption.jpg[,541,275] 
+image::CommandLine-UnknownCommandOption.png[,1148,473] 
 +
 Similar error messages are provided for unknown Project or Package names and incorrect User ID/Password combinations.
 * If the Level Request cannot be created because of pending Level Requests for the Level, the following screen is displayed:
 +
-image::CommandLine-PendingRequests.jpg[,539,274] 
+image::CommandLine-PendingRequests.png[,1148,144] 
 +
 Similar error messages are shown if there is no suitable Build result to be delivered, the Level is locked, the Project Stream is locked or if there is an authorization error.
 
@@ -284,38 +284,8 @@ The following elements are available:
 |===
 . Once you have entered the complete command, press _Return_.
 +
-Result:
+The results and console outputs are similar to those of the section above: <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>. Refer to step 4 of that section for more information.
 
-* If the Level Request is created successfully, the following screen is displayed:
-+
-image::CommandLine-LRCreatedSuccessfully.jpg[,541,274] 
-+
-
-[WARNING]
---
-These messages only indicate that the Level Request was __created__ successfully.
-Refer to the <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>>in the web application to verify if the Level Request was __executed__ successfully as well.
---
-
-
-* If the Level Request cannot be created, because there is no connection with the IKAN ALM Server, the following screen is displayed:
-+
-image::CommandLine-ServerConnectionProblem.jpg[,540,285] 
-+
-* If the user entered an unknown command, the following screen is displayed:
-+
-image::CommandLine-UnknownCommand.jpg[,540,190] 
-+
-* If the user entered unknown or incorrect command options, the screen similar to the following is displayed: 
-+
-image::CommandLine-UnknownCommandOption.jpg[,540,274] 
-+
-Similar error messages are provided for unknown Project names and incorrect User ID/Password combinations.
-* If the Level Request cannot be created because of pending Level Requests for the Level, the following screen is displayed:
-+
-image::CommandLine-PendingRequests.jpg[,540,274] 
-+
-Similar error messages are shown if there is no suitable Build result to be delivered, the Level is locked, the Project Stream is locked or if there is an authorization error.
 
 [[_pcommandline_report_optionsparameters]]
 === Generating Reports by Specifying Options and Parameters
@@ -490,11 +460,11 @@ The following values are allowed:
 |No
 |===
 
-. If required, edit the search criteria properties file in a text editor.
+. If required, edit the search criteria properties file (_search.properties_) in a text editor.
 +
 The file has the following structure:
 +
-image::CommandLine-SearchCriteriaPropertiesFile.jpg[,636,367] 
+image::CommandLine-SearchCriteriaPropertiesFile.png[,1053,683] 
 +
 
 The following selection criteria are available:
@@ -743,61 +713,49 @@ The Report will be generated.
 
 Refer to the following procedures for detailed information:
 
-* <<CommandLine.adoc#_pintegrateikanalminjdeveloper,Integrating IKAN ALM in JDeveloper>>
+* <<CommandLine.adoc#pintegrateikanalminvscode,Integrating IKAN ALM in Visual Studio Code>>
 * <<CommandLine.adoc#_pintegrateikanalmineclipse,Integrating IKAN ALM in Eclipse>>
 
-[[_pintegrateikanalminjdeveloper]]
-=== Integrating IKAN ALM in JDeveloper
+[[pintegrateikanalminvscode]]
+=== Integrating IKAN ALM in Visual Studio Code
 
-This procedure describes how to set up IKAN ALM as an external tool in JDeveloper, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE
+This procedure describes how to set up IKAN ALM as an external tool in Visual Studio Code, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE
 
-. On the JDeveloper main menu, select _Tools | External Tools..._
+. In Visual Sudio Code, click on the _Extensions_ button in the left button menu and search for the _VsCode Action Buttons_ extension. Next, install the extension.
 +
-The following dialog is displayed:
+image::CommandLine-VSCode-ExternalTools-Step1.png[,1201,972] 
 +
-image::CommandLine-JDeveloperExternalToolsDialog.jpg[,418,294] 
+. Once the installation has finished, click the _Refresh the action buttons_ icon on the bottom status bar. A popup will display with the following message "_VsCode Action Buttons: You have no run commands_". Click the cogwheel icon, next click _Manage Extension_, this will take you to the page of the _VsCode Action Buttons_ extensions. On this page click the cogwheel and select _Extension Settings_.
 +
-. Click _Add..._
+image::CommandLine-VSCode-ExternalTools-Step2.png[,1288,651] 
 +
-The following dialog is displayed:
+. Alternatively you can click the _Extensions_ button in the left button menu, select the _VsCode Action Buttons_ extension, click the cogwheel icon and select _Extension Settings_.
 +
-image::CommandLine-JDeveloperCreateExternalToolsStep1DialogBlank.jpg[,511,340] 
+image::CommandLine-VSCode-ExternalTools-Step2-alt.png[,1288,651] 
 +
-. Provide the correct parameters to create a Level Request on the wanted level:
+. On the _Settings_ window click _Edit in settings.json_.
 +
-image::CommandLine-JDeveloperCreateExternalToolsStep1Dialog.jpg[,511,340] 
+[source]
+----
+"commands": [
+    {
+    "cwd": "D:\\IKANALM\\commandline",
+    "name": "Create Build Level Request for Webpad",
+    "color": "white",
+    "singleInstance": true,
+    "command": ".\\alm clr -serverhost:docalm -serverport:20021 -user:global -password:global clr -project:Webpad -level:CONTBUILD",
+    }]
+----
 +
-In the example above, the options are given to create a Level Request on the _CONTBUILD_ Level in the _DEMOCVS_ Project.
-. Click __Next__.
+image::CommandLine-VSCode-ExternalTools-Step3.png[,1288,651] 
 +
-The following dialog is displayed:
+. Add as many "commands" entries as you like in the _settings.json_ file. Each command will represents a seperate Level Request button. Finally, save the file and click the _Refresh the action buttons_ icon on the bottom status bar to apply your changes.
 +
-image::CommandLine-JDeveloperCreateExternalToolsStep2Dialog.jpg[,511,341] 
+image::CommandLine-VSCode-ExternalTools-Step4.png[,1478,651] 
 +
-. Provide the display properties and click __Next__.
+. To iniate the Level Request simply click the Level Request button in bottom the status bar.
 +
-The following dialog is displayed:
-+
-image::CommandLine-JDeveloperCreateExternalToolsStep3Dialog.jpg[,508,339] 
-+
-. Specify where you want to integrate this new tool and click __Next__.
-+
-The following dialog is displayed:
-+
-image::CommandLine-JDeveloperCreateExternalToolsStep4Dialog.jpg[,511,341] 
-+
-. Specify the availability of the external tool.
-+
-In the example above, it was specified that the external tool will be integrated in the shortcut menu, if a java project is selected.
-
-. Select __Finish__.
-+
-Result:
-+
-You can now create Level Requests when selecting a java project in JDeveloper.
-The output of the IKAN ALM Command Line will be visible in a message box:
-+
-image::CommandLine-JDeveloperResult.jpg[,540,347] 
+image::CommandLine-VSCode-ExternalTools-Step5.png[,1478,651] 
 
 [[_pintegrateikanalmineclipse]]
 === Integrating IKAN ALM in Eclipse
@@ -808,13 +766,13 @@ This procedure describes how to set up IKAN ALM as an external tool in Eclipse, 
 +
 The following dialog is displayed:
 +
-image::CommandLine-EclipseExternalToolsDialogBlank.jpg[,511,461] 
+image::CommandLine-EclipseExternalToolsDialogBlank.png[,812,702] 
 +
 . Select the _New launch configuration_ icon.
 +
 The following dialog is displayed:
 +
-image::CommandLine-EclipseExternalToolsDialog.jpg[,511,461] 
+image::CommandLine-EclipseExternalToolsDialog.png[,812,702] 
 +
 . Provide the correct parameters to create a Level Request on the wanted level:
 +
@@ -826,7 +784,7 @@ The external tools will be tested and saved.
 +
 The output from the command is visible in an Eclipse console:
 +
-image::CommandLine-EclipseResult.jpg[,770,366] 
+image::CommandLine-EclipseResult.png[,1256,664] 
 
 
 [[_sautomatecreatinglevelrequestswithant]]
@@ -850,8 +808,8 @@ image::CommandLine-SampleANTScript.jpg[,540,487]
 
 *Output on success:*
 
-image::CommandLine-ANTScriptExecSuccess.jpg[,540,284] 
+image::CommandLine-ANTScriptExecSuccess.png[,1148,348] 
 
 *Output on failure:*
 
-image::CommandLine-ANTScriptExecFailure.jpg[,540,320] 
+image::CommandLine-ANTScriptExecFailure.png[,1148,775] 

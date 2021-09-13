@@ -23,7 +23,7 @@ Menu__, the blue toolbar on top of the screen.
 At the right, it contains the User Settings of the current user as well as the context-sensitive help pages.
 
 
-image::UserInterface_MainMenu_Sections.png[,1041,332] 
+image::GettingStarted-UserInterface-main-menu.png[,1200,217] 
 
 === Submenus
 When you select the Global or Project Administration option from the Main Menu, the dependent Submenu is displayed in the gray banner below the Main Menu.
@@ -71,7 +71,7 @@ For more info on using filters, refer to the section <<Desktop_PersonalSettings.
 
 
 === Create Panels
-image::UserInterface-CreatePanel.png[,490,266] 
+image::GettingStarted-UserInterface-create-panels.png[,457,302] 
 _Create_ panels allow defining new IKAN ALM Objects.
 Mandatory fields are marked with a red asterisk.
 
@@ -184,4 +184,4 @@ If the __Auto Refresh__ option is activated, the screen will be refreshed follow
 Select the option to toggle its status.
 
 
-image::Desktop-AutoRefresh-SubmenuOption.png[,1015,400] 
+image::GettingStarted-UserInterface-auto-refresh.png[,1200,78] 

@@ -39,7 +39,7 @@ For more information, refer to the chapter <<ProjAdm_EnvParams.adoc#_projadm_env
 +
 The following screen is displayed:
 +
-image::ProjAdmin-DeployEnv-Create.png[,1039,251] 
+image::ProjAdmin-DeployEnv-Create.png[,929,271] 
 +
 . Fill out the fields for the new Deploy Environment.
 +
@@ -110,6 +110,9 @@ The decompressed files are compared and the following actions are taken:
 |Select whether or not the Debug option must be activated for this Deploy Environment.
 
 If Debug is activated for a Deploy Environment, the Build Clean-up action (<<Desktop_LevelRequests.adoc#_srebuildanddeploylr,action 28 of the Build and Deploy Level Requests Overview>>) will not be performed, so that the user may use the available build results to run the deploy script manually for testing purposes.
+
+|User Controlled Parameters
+|Allow users with a Project User role to create, read, update and delete environment parameters. Once enabled, the parameters retain this state even if a project administrator disables this option afterwards.
 |===
 
 . Verify the information on the _Deploy Environments Overview_ panel.
@@ -214,13 +217,13 @@ This option allows viewing the Deploy Environment History.
 +
 The following screen is displayed:
 +
-image::ProjAdmin-DeployEnv-Edit.png[,724,490] 
+image::ProjAdmin-DeployEnv-Edit.png[,1217,499] 
 +
 . Click the _Edit_ button on the _Build Environment Info_ panel.
 +
 The __Edit Build Environment __window is displayed:
 +
-image::ProjAdmin-DeployEnv-Edit_popup.png[,540,337] 
+image::ProjAdmin-DeployEnv-Edit_popup.png[,480,360] 
 +
 . Edit the fields as required.
 +
@@ -265,7 +268,7 @@ When cloning an Environment, all settings, including the Phases and Parameters, 
 +
 The following screen is displayed:
 +
-image::ProjAdmin-DeployEnv-Clone.png[,1044,373] 
+image::ProjAdmin-DeployEnv-Clone.png[,1217,469] 
 +
 . On the _clone Deploy Environment_ panel, specify the _Name_ and __Target Location__, and specify a Level for the new Environment.
 +
@@ -497,13 +500,13 @@ This field may not be changed since it is defined in Global Administration.
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-EditValue.png[,383,134] 
+image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-EditValue.png[,412,166] 
 +
 Set the value of the Deploy Environment Phase Parameter and click _Save_ to save the value.
 +
 You can also click:
 
-* _Reset_ to retrieve the settings from the database.
+* _Refresh_ to retrieve the settings from the database.
 * _Cancel_ to return to the _Phase Parameter Overview_ screen without saving a value.
 
 +
@@ -511,7 +514,7 @@ You can also click:
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-CreateParam.png[,383,145] 
+image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-CreateParam.png[,412,165] 
 +
 If a default Parameter value has been set in Global Administration, that value will be suggested.
 +
@@ -572,7 +575,7 @@ You can also click _No_ to return to the previous screen without deleting the De
 +
 The following screen is displayed:
 +
-image::ProjAdmin-DeployEnv-ViewParameters.png[,839,542] 
+image::ProjAdmin-DeployEnv-ViewParameters.png[,1217,625] 
 +
 For a more detailed description of this screen, refer to the section <<ProjAdm_EnvParams.adoc#_environmentparams_create,Creating Environment Parameters>>.
 

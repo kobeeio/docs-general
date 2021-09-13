@@ -17,6 +17,7 @@ Refer to the following sections for detailed information:
 * <<GlobAdm_Machines.adoc#_globadm_machinecreate,Creating a Machine Definition>>. This menu option is only visible for Users with Global Admin Access rights.
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview,Machines The Machines Overview Screen>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview_edit,Editing a Machine Definition>>
+* <<GlobAdm_Machines.adoc#_globadm_machinesoverview_remoteinstall,Remote installing an IKAN ALM Agent>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview_delete,Deleting a Machine Definition>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview_status,Viewing the Machine Status>>
 * <<GlobAdm_Machines.adoc#_globadm_machines_installedphases,The Installed Phases Overview Screen>>
@@ -137,7 +138,7 @@ a|_RELATED TOPICS_
 +
 The following screen is displayed:
 +
-image::GlobAdmin-Machines-Overview.png[,937,324] 
+image::GlobAdmin-Machines-Overview.png[,1217,403] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -165,6 +166,14 @@ This option is available to IKAN ALM Users with Global Administrator Access Righ
 It allows editing a Machine definition.
 
 <<GlobAdm_Machines.adoc#_globadm_machinesoverview_edit,Editing a Machine Definition>>
+
+|image:icons/remoteInstall.png[,16,16] 
+|Remote Install
+
+This option is available to IKAN ALM Users with Global Administrator Access Rights.
+It allows to configure and run a remote install of an IKAN ALM agent on a machine.
+
+<<GlobAdm_Machines.adoc#_globadm_machinesoverview_remoteinstall,Remote installing an IKAN ALM Agent>>
 
 |image:icons/icon_viewparameters.png[,15,15] 
 |View Parameters
@@ -241,10 +250,61 @@ You can also click:
 * _Refresh_ to retrieve the settings from the database.
 * _Back_ to return to the previous screen without saving the changes
 
+[[_globadm_machinesoverview_remoteinstall]]
+== Remote installing an IKAN ALM Agent 
+
+. In the Global Administration context, select __Machines > Overview__.
+. Click the image:icons/remoteInstall.png[,16,16] __Install__ link on the _Machines Overview_ panel.
++
+The following screen is displayed: 
++
+image::GlobAdmin-Machines-RemoteInstall.png[,911,1158] 
++
+. The Agent Install Configuration screen displays the status of the Agent Installation process. It also displays the Installation Configuration pane which contains the necessary values in order to run an Agent Installation.
++
+At the top of the screen, the Machine Info panel is displayed. For a detailed description of the fields, refer to <<GlobAdm_Machines.adoc#_globadm_machinecreate,Creating a Machine Definition>>. 
++
+This panel contains two buttons:
++
+** Back: to return to the Machines Overview page.
+** Install: to start the Agent Installation process. 
++
+[NOTE]
+====
+Make sure that all necessary values in the Installation Configuration pane are filled in correctly before starting the installation process, or it will fail.
+====
++
+. Verify the status of the installation process.  Open the Agent Installation Status panel, by clicking it. The Installation Log shows the information about the latest installation attempt, when the log reads: “Agent Installation Log Not Found” it means that no installation has occurred yet, or that the log is unavailable.
++
+The possible statuses are:
++
+** No installation running; The process is not running. This status is also set when the installation process has just finished running, either with success or failure.
+** Installation in progress: The installation process is currently running.
+** Cannot connect to server: The IKAN ALM Server (which runs the installation process) is not available.
++
+image::GlobAdmin-Machines-RemoteInstall-StatusNoLogs.png[,900,154] 
++
+image::GlobAdmin-Machines-RemoteInstall-StatusSuccess.png[,900,509] 
++
+image::GlobAdmin-Machines-RemoteInstall-StatusFail.png[,889,466] 
++
+image::GlobAdmin-Machines-RemoteInstall-StatusProgress.png[,900,188]
++
+image::GlobAdmin-Machines-RemoteInstall-StatusNoServer.png[,900,154] 
++
+During installation press the Refresh Install Button to update the status manually, or use the Auto Refresh function at the top of the page.
++
+. Verify the information on the Installation Configuration panel. Fields marked with a red asterisk are mandatory. For more information about the form fields, press the Display Form Help toggle switch.
++
+image::GlobAdmin-Machines-RemoteInstall-FormHelp.png[,847,296]
++
+. Click Save to save your changes, or Refresh to retrieve the settings from the database.
+
+
 [[_globadm_machinesoverview_viewparameters]]
 == Viewing the Machine Parameters
 
-. In the Global Administration context, select__ Machines > Overview__.
+. In the Global Administration context, select __Machines > Overview__.
 . Click the image:icons/icon_viewparameters.png[,15,15] __View Parameters__ link on the _Machines Overview_ panel.
 +
 The following screen is displayed: 
@@ -297,7 +357,7 @@ You must link the Environments to a different Machine, or delete them from IKAN 
 +
 The following screen is displayed:
 +
-image::GlobAdmin-Machines-Status.png[,869,457] 
+image::GlobAdmin-Machines-Status.png[,869,436] 
 +
 The _Machine Detailed Status_ screen displays the status of the Agent Daemon running on the Machine.
 +
@@ -367,7 +427,7 @@ The _Machine Log_ panel displays the last 150 lines of output of the Agent Daemo
 +
 The following screen is displayed.
 +
-image::GlobAdmin-Machines-InstalledPhasesOverview.png[,1058,659] 
+image::GlobAdmin-Machines-InstalledPhasesOverview.png[,1202,817] 
 +
 The _Installed Phases Overview_ screen displays the status of the Server and/or Agent daemons running on the Machine.
 It also shows the phases that are installed on the Server and Agent, and provides controls to search, sort and uninstall those phases.
@@ -554,7 +614,7 @@ It allows copying the selected Machine Parameter definition.
 === Creating Machine Parameters 
 (((Machine Parameters ,Creating))) 
 
-. In the Global Administration context, select__ Machines > Parameters Overview__.
+. In the Global Administration context, select__ Machines > Machine Parameters Overview__.
 . Click the image:icons/icon_createparameter.png[,15,15] _Create Parameter_ link next to the Machine to display the _Create Machine Parameter_ window.
 +
 image::GlobAdmin-Machines-MachineParameters-Create.png[,388,350] 

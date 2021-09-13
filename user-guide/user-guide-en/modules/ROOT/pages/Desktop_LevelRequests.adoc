@@ -934,7 +934,7 @@ If you add the selected package to a Desktop Tab Page, this step is avoided when
 ====
 . The _Create Level Request_ screen is displayed. 
 +
-image::Desktop-LevelRequests-Create-Build.png[,967,563] 
+image::Desktop-LevelRequests-Create-Build.png[,1209,659] 
 +
 On this screen you will find the following sections:
 
@@ -1040,7 +1040,7 @@ For a detailed description of this screen refer to <<Desktop_LevelRequests.adoc#
 . Click the _Deliver_ icon (image:icons/icon_deliverBuild.png[,15,15] ) to deliver a Build to the selected Test or Production Level.
 . If the Level belongs to a Package-based Project, you first need to select the required Package.
 +
-image::Desktop-LevelRequests-SelectPackage.png[,787,227] 
+image::Desktop-LevelRequests-Deliver-SelectPackage.png[,825,187] 
 +
 [NOTE]
 ====
@@ -1140,7 +1140,7 @@ For a detailed description of this screen refer to <<Desktop_LevelRequests.adoc#
 . Click the _Rollback_ icon (image:icons/rollback.gif[,15,15] ) to restore the previous Build onto the selected Test or Production Level.
 . If the Level belongs to a Package-based Project, you first need to select the required Package.
 +
-image::Desktop-LevelRequests-SelectPackage.png[,844,214] 
+image::Desktop-LevelRequests-Rollback-SelectPackage.png[,839,187] 
 +
 
 [NOTE]
@@ -2612,7 +2612,7 @@ Note that this is only possible if the option _Downloadable
 Build_ has been activated on the Build Environment.
 For more information, refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Editing a Build Environment>>.
 
-If not, you can always visualize the tree by clicking the plus sign in front of the zip file.
+If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the _Expand All_ / _Collapse All_ links to show or hide the entire tree structure at once.
 
 image:Desktop-LevelRequests-Detailed-Results-expanded.png[,325,248] 
 |===

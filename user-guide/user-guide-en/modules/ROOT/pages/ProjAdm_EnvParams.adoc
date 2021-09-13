@@ -62,7 +62,7 @@ This option is only available if you have Project Administrator Access Rights.
 +
 The following screen is displayed:
 +
-image::ProjAdmin-EnvParams-Overview.png[,979,553] 
+image::ProjAdmin-EnvParams-Overview.png[,1268,547] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -144,7 +144,7 @@ It allows copying the selected Environment Parameter definition to one or more E
 <<ProjAdm_EnvParams.adoc#_environmentparams_overview,The Parameters Overview Screen>>
 . Click the image:icons/icon_createparameter.png[,15,15] __Create Parameter__ link to display the Parameter Action window.
 +
-image::ProjAdmin-EnvParams-Create.png[,382,404] 
+image::ProjAdmin-EnvParams-Create.png[,812,414] 
 +
 . Fill out the fields for the new Environment Parameter.
 +
@@ -210,6 +210,9 @@ These are the values you enter in the Value field during creation and which you 
 Select the _No_ option button, if the new Environment Parameter should not be defined as dynamic.
 
 This field is not provided for secured Environment Parameters.
+
+|User Controlled    
+|Allow users with a Project User role to create, read, update and delete environment parameters. Once enabled, the parameters retain this state even if a project administrator disables this option afterwards.
 |===
 
 . Click __Create __to confirm the creation of the Environment Parameter.
@@ -243,7 +246,7 @@ Click __Back__ to return to the previous screen.
 +
 The following window is displayed:
 +
-image::ProjAdmin-EnvParams-Edit.png[,399,376] 
+image::ProjAdmin-EnvParams-Edit.png[,812,390] 
 +
 For a description of the fields, refer to <<ProjAdm_EnvParams.adoc#_environmentparams_create,Creating Environment Parameters>>.
 

@@ -117,7 +117,7 @@ This link is available if you have User Access Rights to the Project.
 +
 The _Project Info_ screen is displayed:
 +
-image::ProjAdmin-Projects-View.png[,1044,641] 
+image::ProjAdmin-Projects-View.png[,1226,655] 
 +
 . Verify the settings.
 +
@@ -126,9 +126,11 @@ For a description of the fields, refer to <<GlobAdm_Project.adoc#_globadm_projec
 Underneath the _Project Info_ panel, the following links and buttons are available:
 
 * __History__. This link will display the __Project History View __screen.
+* __Clone Project__. Creates a new project by copying the current project in __Global Administration__.
+* __Unlock / Unlock__. Block or unblock all activity on this Project.
+* __Edit__ this project info.
 * __Refresh __to retrieve the settings from the database.
 * _Back_ to return to the __Projects Overview __screen.
-
 +
 
 [NOTE]
@@ -141,7 +143,7 @@ To make it easier to view all project`'s settings, the most important Project Us
 == Editing Project Settings 
 (((Projects ,Editing))) 
 
-. Click the _Project Administration _image:icons/icon_ProjectAdmin_13x13.png[,13,13]  icon on the Main Menu.
+. Click the _Project Administration_ image:icons/icon_ProjectAdmin_13x13.png[,13,13]  icon on the Main Menu.
 . Click the image:icons/edit.gif[,15,15] _Edit_ link on the Projects Overview panel.
 +
 
@@ -158,7 +160,7 @@ image::ProjAdmin-Projects-AdminRights-Edit.png[,555,779]
 +
 The __Edit Project__ window pops up.
 +
-image::ProjAdmin-Projects-Edit_Edit.png[,458,534] 
+image::ProjAdmin-Projects-Edit_Edit.png[,475,510] 
 +
 . Edit the fields as required and click __Save__.
 +
@@ -217,12 +219,6 @@ If an Issue Tracking System is selected, IKAN ALM will from then on automaticall
 
 This field is only visible when there are external Issue Tracking Systems defined in IKAN ALM.
 See also <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>.
-
-|Build Tool Type
-|This field contains the Build Tool Type used for the Project.
-
-|Deploy Tool Type
-|This field contains the Deploy Tool Type used for the Project.
 
 |Build Script
 |This field _may_ contain the Build Script used for the Project.
@@ -285,7 +281,7 @@ For an overview of the submenu options, refer to section <<ProjAdm_ProjMgtOption
 +
 The _Delete Project_ screen is displayed:
 +
-image::ProjAdmin-Projects-Delete.png[,673,553] 
+image::ProjAdmin-Projects-Delete.png[,659,473] 
 +
 . Verify if you really want to irrevocably delete the Project.
 +

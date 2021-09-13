@@ -18,9 +18,8 @@ It gives access to common actions as:
 
 This section describes the following Desktop Administration tasks: 
 
+* <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Editing Your Personal Settings>>
 * <<Desktop_LevelRequests.adoc#_desktop_levelrequests,Level Requests>>
 * <<Desktop_Packages.adoc#_desktop_packages,Packages>> and <<Desktop_PackageGroups.adoc#_desktop_packagegroups,Package Build Groups>>
 * <<Desktop_Approvals.adoc#_desktop_outstandingapprovals,Approvals>>
 * <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Managing the Desktop>>
-* <<UserInterface.adoc#_desktop_autorefresh,Auto Refresh>>
-* <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Editing Your Personal Settings>>

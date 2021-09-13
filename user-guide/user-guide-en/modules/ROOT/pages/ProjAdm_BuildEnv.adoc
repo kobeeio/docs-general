@@ -43,7 +43,7 @@ For more information, refer to the chapter <<ProjAdm_EnvParams.adoc#_projadm_env
 +
 The following screen is displayed:
 +
-image::ProjAdmin-BuildEnv-Create.png[,1027,250] 
+image::ProjAdmin-BuildEnv-Create.png[,926,265] 
 +
 . Fill out the fields for the new Build Environment.
 +
@@ -126,6 +126,9 @@ If the option is activated, the compressed Build Results appear as a hyperlink o
 |Indicate whether or not the Debug option must be activated for this Build Environment.
 
 If Debug is activated for a Build Environment, the Source and Result Clean-up actions (<<Desktop_LevelRequests.adoc#_srebuildanddeploylr,(Re)Build and Deploy Level Requests>>) will not be performed, so that the user may use the available source to run the build script manually for testing purposes.
+
+|User Controlled Parameters
+|Allow users with a Project User role to create, read, update and delete environment parameters. Once enabled, the parameters retain this state even if a project administrator disables this option afterwards.
 |===
 
 . Verify the information on the _Build Environments Overview_ panel.
@@ -151,7 +154,7 @@ You can also click the _Reset_ button to clear the fields and restore the initia
 +
 The following screen is displayed:
 +
-image::ProjAdmin-BuildEnv-Overview.png[,1024,377] 
+image::ProjAdmin-BuildEnv-Overview.png[,994,342] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -231,13 +234,13 @@ This option allows viewing the Build Environment History.
 +
 The following screen is displayed:
 +
-image::ProjAdmin-BuildEnv-Edit.png[,614,476] 
+image::ProjAdmin-BuildEnv-Edit.png[,725,517] 
 +
 . Click the _Edit_ button on the _Build Environment Info_ panel.
 +
 The __Edit Build Environment __window is displayed:
 +
-image::ProjAdmin-BuildEnv-Edit_popup.png[,540,337] 
+image::ProjAdmin-BuildEnv-Edit_popup.png[,480,359] 
 +
 . Edit the fields as required.
 +
@@ -282,7 +285,7 @@ When cloning an Environment, all settings, including the Phases and Parameters, 
 +
 The following screen is displayed:
 +
-image::ProjAdmin-BuildEnv-Clone.png[,1014,438] 
+image::ProjAdmin-BuildEnv-Clone.png[,1217,448] 
 +
 . On the _Clone Build Environment_ panel, specify the _Name_ and __Target Location__, and specify a Level for the new Environment.
 +
@@ -527,14 +530,14 @@ This field may not be changed since it is defined in Global Administration.
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,297,148] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,507,220] 
 +
 Set the value of the Build Environment Phase Parameter and click _Save_ to save the value.
 +
 You can also click:
 
-*********** _Reset_ to retrieve the settings from the database.
-*********** _Cancel_ to return to the _Phase Parameter Overview_ screen without saving a value.
+* _Refresh_ to retrieve the settings from the database.
+* _Cancel_ to return to the _Phase Parameter Overview_ screen without saving a value.
 
 . If you want to create a non-mandatory Phase Parameter, click the image:icons/icon_createparameter.png[,15,15] _Create Parameter_ link next to a Phase Parameter.
 +
@@ -603,7 +606,7 @@ You can also click _No_ to return to the previous screen without deleting the Bu
 +
 The following screen is displayed:
 +
-image::ProjAdmin-BuildEnv-ViewParameters.png[,1031,637] 
+image::ProjAdmin-BuildEnv-ViewParameters.png[,1217,544] 
 +
 For a more detailed description of this screen, refer to the section <<ProjAdm_EnvParams.adoc#_environmentparams_create,Creating Environment Parameters>>.
 

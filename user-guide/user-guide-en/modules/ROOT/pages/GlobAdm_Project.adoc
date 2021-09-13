@@ -8,13 +8,15 @@
 
 [NOTE]
 ====
-The __Project __menu is only available to users with Global Administrator Access Rights.
+The __Project__ menu is only available to users with Global Administrator Access Rights.
 ====
 
 The Project menu options are explained in the following procedures:
 
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projects Creating a Project>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Creating a Project>>
 * <<GlobAdm_Project.adoc#_globadm_projectclone,Cloning an Existing Project>>
+* <<GlobAdm_Project.adoc#_globadm_projectexport,Exporting an Existing Project>>
+* <<GlobAdm_Project.adoc#_globadm_projectimport,Importing a Project>>
 
 
 [[_globadm_projectcreate]]
@@ -39,7 +41,7 @@ Other VCR types do not support working with isolated files and thus not with Pac
 +
 The following screen is displayed:
 +
-image::GlobAdmin-Project-Create.png[,1027,707] 
+image::GlobAdmin-Project-Create.png[,1250,607] 
 +
 . Fill out the fields in the different sections.
 +
@@ -86,16 +88,6 @@ If an Issue Tracking System is specified in this field, IKAN ALM will always aut
 This field is only visible if external Issue Tracking Systems have been defined in IKAN ALM.
 
 For more information on Issue Tracking systems, refer to the chapter <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>
-
-|Build Tool Type
-|From the drop-down list, select the Build Tool Type (Ant, Gradle, Nant or Maven2) to be used for this IKAN ALM Project.
-
-Only Scripting Tools of the selected Build Tool Type may be linked to Build Environments that will be created in the Project.
-
-|Deploy Tool Type
-|From the drop-down list, select the Deploy Tool Type (Ant, Gradle, NAnt or Maven2) to be used for this IKAN ALM Project.
-
-Only Scripting Tools of the selected Deploy Tool Type may be linked to Deploy Environments that will be created in the Project.
 
 |Build Script
 |In this field, enter the name of the Build Script to be used for this IKAN ALM Project.
@@ -280,7 +272,7 @@ Info_ screen in the Project Administration context.
 You can now administer the newly created Project by creating Levels etc.
 For more information, refer to the section <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>.
 +
-image::GlobAdmin-Project-Create-EditProject.png[,602,850] 
+image::GlobAdmin-Project-Create-EditProject.png[,553,654] 
 +
 Underneath the _Project Info_ panel, the following links and buttons are available:
 
@@ -330,7 +322,7 @@ You can also:
 +
 The following screen is displayed:
 +
-image::GlobAdmin-Project-Clone-Clone.png[,812,538] 
+image::GlobAdmin-Project-Clone-Clone.png[,950,601] 
 +
 . Fill out or edit the available fields.
 +
@@ -361,14 +353,6 @@ You may select another VCR from the drop-down list, if required.
 |Issue Tracking System
 |By default, the Issue Tracking System used for the cloned Project will be selected.
 You can select another Issue Tracking System from the drop-down list, if required.
-
-|Build Tool Type
-|By default, the Build Tool Type used for the cloned Project is displayed.
-You may select another Build Tool Type from the drop-down list, if required.
-
-|Deploy Tool Type
-|By default, the Deploy Tool Type used for the cloned Project is displayed.
-You may select another Deploy Tool Type from the drop-down list, if required.
 
 |Build Script
 |By default, the Build Script used for the cloned Project is displayed.
@@ -434,3 +418,70 @@ For instance, the Target Location of Deploy Environments in the new Project most
 . Audit the Project to unlock it.
 +
 <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditing Projects>>
+
+
+[[_globadm_projectexport]]
+== Exporting an Existing Project 
+
+. In the Global Administration context, select _Project > Export Project_.
++
+The following screen is displayed:
++
+image::GlobAdmin-Project-Export.png[,1109,522]
++
+. Define the required search criteria on the search panel.
++
+The list of items on the overview will be automatically updated based on the selected criteria.
++
+You can also:
++
+* click the _Show/hide advanced options_ link to display or hide all available search criteria,
+* click the _Search_ link to refresh the list based on the current search criteria,
+* click the _Reset search_ link to clear the search fields.
+
+. Next, click the image:icons/Phase_Export.png[,15,15] _Export_ link in front of the required Project.
++
+The following dialog is displayed:
++
+image::GlobAdmin-Project-Export-Dialog.png[,412,142]
++
+. Select the preferred format: _XML format (xml)_ or _JSON format (json)_ and click _Save_. The web browser will download the file and then either save the file automatically or ask where it should be saved.
++
+. The XML or JSON file can be easily edited using any text editor to make the necessary changes.
+
+[NOTE]
+====
+When editing the project export file, always change the project name, since IKAN ALM will refuse to import a project which name is already in use by another project.
+====
+
+
+[[_globadm_projectimport]]
+== Importing a Project 
+
+. In the Global Administration context, select _Project > Import Project_.
++
+The following screen is displayed:
++
+image::GlobAdmin-Project-Import-Browse.png[,417,143]
++
+. Click _Browse…_ in the Import Project panel. Next the web browser will ask to select a file from the local computer. The format of the file should be either XML or JSON. On successful upload the following screen is displayed:
++
+image::GlobAdmin-Project-Import-Upload.png[,417,165]
++
+. Next, press the _Import_ button to import the uploaded project file into IKAN ALM.
++
+. When the import process is finished, IKAN ALM will display either an info message (when successful) or an error message. The Validation Report in the Import Project panel provides more details about the result.
++
+** Example: Info
++
+image::GlobAdmin-Project-Import-Successful.png[,935,420]
++
+** Example: Error
++
+image::GlobAdmin-Project-Import-Error.png[,935,519]
++
+. When successful, press the link _Edit <chosen-project-name> Project_ in the Import Project panel to go to the Project Administration screen for the newly imported project.
+
+
+
+

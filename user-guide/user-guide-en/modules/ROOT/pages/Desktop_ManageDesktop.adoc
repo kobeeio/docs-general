@@ -28,9 +28,11 @@ The following actions are possible:
 
 . Select _Desktop_ on the Main Menu.
 +
-Your personal _Desktop Overview_ will be displayed.
+Your personal _Desktop Overview_ will be displayed, in either Tiles view or Classic view depending on your preference.
 +
-image::Desktop-DesktopOverview.png[,1010,498] 
+image::Desktop-DesktopOverview-tiles.png[,1571,681] 
++
+image::Desktop-DesktopOverview.png[,1571,588] 
 +
 
 [NOTE]
@@ -39,7 +41,7 @@ If your Desktop Overview is empty, you can add content to it using the _Add to D
 ====
 . Verify the elements on your Desktop.
 +
-Per Tab Page, the following fields are available for each desktop element type.
+Per Tab Page, the following fields are available in the Classic view for each desktop element type.
 +
 
 [cols="1,1", frame="topbot", options="header"]
@@ -48,9 +50,9 @@ Per Tab Page, the following fields are available for each desktop element type.
 | Description
 
 |Desktop Type
-a|This field contains an indication of the Element type assigned to the Desktop.
+a|This field contains an indication of the Element type, followed by the Project Stream [Package] assigned to the Desktop.
 
-There are three possibilities:
+There are three possibilities for the Element type:
 
 * Project Stream
 * Level
@@ -58,8 +60,7 @@ There are three possibilities:
 
 _Note:_ Click the image:icons/ExpandProjectStream.gif[,10,10] icon to expand assigned Project Streams or Packages and to display the Levels that belong to it.
 
-|Project Stream [Package] 
-a|There are three possibilities:
+For the Project Stream [Package], there are three possibilities:
 
 * For assigned Project Streams, this field contains the identification of that Project Stream. Example: `Webpad H_3-0`
 * For assigned individual Levels, this field contains the identification of the Project Stream this Level belongs to. Example: `Webpad B_3-1`
@@ -70,6 +71,7 @@ The Project Stream identification is composed of:
 * Project Name
 * Project Stream Type: H (Head) or B (Branch)
 * Project Stream Prefix, optionally followed by the Suffix in case of a Branch Project Stream
+* The Build number
 
 |Level
 |For individual Levels, this field contains the name of that Level.
@@ -79,17 +81,10 @@ This is logically the Production Level.
 
 In case a Level is optional, the image:icons/optional.gif[,15,15] _Optional_ icon will be displayed in front of the Level Name.
 
-|Next Scheduled Request
-a|For Build Levels with active Schedule, this field displays the timestamp that the next Level Request is expected to run.
+|Active Build
+|Contains the number of the Active Build on this Level.
 
-The Level Request will not run, if:
-
-* the code was not changed,
-* the Scheduler is deactivated.
-
-For other Levels, this field remains empty.
-
-|Latest Level Request
+|Latest
 a|This field contains the following information for the latest Request on the displayed Level:
 
 * Request status icon indicating the status of the latest Request on this Level:
@@ -107,14 +102,23 @@ a|This field contains the following information for the latest Request on the di
 +
 These indications are displayed as a link.
 Click the link to access the <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Detailed Overview>> for the selected Level Request.
-* Link (image:icons/desktop_link.gif[,22,11] ) to the <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>> with Project name and Level name already filled in as Search Criteria.
+* Link (image:icons/desktop-icon-lro-related.png[,16,16] ) to the <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>> with Project name and Level name already filled in as Search Criteria.
 
-
-|Latest Successful Level Request
+|Latest Success
 |This field contains the VCR Tag (matching the defined template) and timestamp for the latest successful Request on the displayed Level.
 
 These indications are displayed as a link.
 Click the link to access the <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>> selected Level Request.
+
+|Next
+a|For Build Levels with active Schedule, this field displays the timestamp that the next Level Request is expected to run.
+
+The Level Request will not run, if:
+
+* the code was not changed,
+* the Scheduler is deactivated.
+
+For other Levels, this field remains empty.
 
 |Action
 a|This field contains the action icons which are available for the Level:
@@ -172,6 +176,18 @@ If the __Auto Refresh__ option is activated, the Desktop will be refreshed each 
 . Click the _Add to Desktop_ button to open the _Add to Desktop_ pop-up window allowing you to add other elements to your desktop.
 +
 <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Managing the Desktop>>
+
+
+All of the above also applies to the Tiles desktop, albeit in a different form, and with a few exceptions.
+
+image::Desktop-DesktopOverview-tiles-explanation.png[,1182,391] 
+
+Differences in the Tiles desktop are:
+
+* The Level Type is shown
+* Message text is hidden behind a hoverable icon, next to the Level Type icon
+* The Level Request OID is used for Latest and Latest Successful Level Request
+
 
 [[_managedesktop_addingtabs]]
 == Adding a Desktop Tab Page 
@@ -393,7 +409,7 @@ Valid positions are indicated with a green bar above the selected elements, inva
 Example:
 
 
-image::Desktop-ManageDesktop-Rearranging.png[,947,362] 
+image::Desktop-ManageDesktop-Rearranging.png[,1571,797] 
 
 
 [[_managedesktop_removingelements]]

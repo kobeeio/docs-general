@@ -35,7 +35,7 @@ As there is no _Overview_ screen for system settings, the _History_ link for the
 +
 A screen similar to the one below will be displayed:
 +
-image::History_Versions.png[,595,623] 
+image::History_Versions.png[,549,697] 
 +
 It contains the following sections:
 
@@ -223,11 +223,11 @@ See the example screens below.
 The panel is replaced with the _User Group -
 User Association_ panel.
 
-image::History_Differences-UserGroupUserAssociation.png[,959,641] 
+image::History_Differences-UserGroupUserAssociation.png[,1112,652] 
 
 == Example 2 - Modified Files (Packages)
 
 The panel is replaced with the _Modified Files_ panel, displaying which files have been added (green), modified (black) or deleted (red).
 
-image::History_Differences-PackagesModifiedFiles.png[,1026,541] 
+image::History_Differences-PackagesModifiedFiles.png[,956,644] 
 

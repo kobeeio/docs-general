@@ -38,7 +38,7 @@ Changing some of these settings requires preparatory actions on the IKAN ALM ser
 +
 The following screen is displayed.
 +
-image::GlobAdmin-SystemSettings.png[,614,915] 
+image::GlobAdmin-SystemSettings.png[,879,1087] 
 +
 
 [NOTE]
@@ -64,9 +64,9 @@ For more detailed information concerning this __History View__, refer to the sec
 === Local Environment
 
 
-image::GlobAdmin-SystemSettings_LocalEnvironment.png[,704,408] 
+image::GlobAdmin-SystemSettings_LocalEnvironment.png[,830,399] 
 
-The following fields are available on the __Local Environment __subpanel:
+The following fields are available on the __Local Environment__ subpanel:
 
 [cols="1,1", frame="topbot", options="header"]
 |===
@@ -80,8 +80,11 @@ Select another Machine Name from the drop-down list, if required.
 
 Changing this field requires preliminary actions, like installing the IKAN ALM Server on the new target Machine, migrating Local File Copy Locations and setting up the necessary VCR clients.
 
-|_Local
-File Copy Locations_
+|IKAN ALM URL
+|In this field, enter the base IKAN ALM URL.
+This URL is used for creating hyperlinks in mails sent by IKAN ALM (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications) and for constructing the RSS feed link.
+
+|_Local File Copy Locations_
 |These fields are used for Build and Deploy actions.
 
 These locations are automatically synchronized with the built-in Local FileCopy transporter. <<GlobAdm_Transporters.adoc#_globadm_transporter_filecopy,FileCopy Transporters>>
@@ -181,7 +184,7 @@ __Note: __This port number may be overwritten by the port number defined in the 
 === Security
 
 
-image::GlobAdmin-SystemSettings_Security.png[,701,106] 
+image::GlobAdmin-SystemSettings_Security.png[,830,87] 
 
 The following fields are available on the _Security_ subpanel.
 
@@ -224,7 +227,7 @@ IKAN ALM Users_ submenu option. <<GlobAdm_Misc.adoc#_globadm_notifyusers,Notifyi
 ====
 
 
-image::GlobAdmin-SystemSettings_Mail.png[,702,310] 
+image::GlobAdmin-SystemSettings_Mail.png[,830,254] 
 
 The following fields are available on the _Mail_ subpanel.
 
@@ -232,10 +235,6 @@ The following fields are available on the _Mail_ subpanel.
 |===
 | Option
 | Meaning
-
-|IKAN ALM URL
-|In this field, enter the base IKAN ALM URL.
-This URL is used for creating hyperlinks in mails sent by IKAN ALM (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications) and for constructing the RSS feed link.
 
 |Content Type
 |Indicates which templates will be used to compose notification and approval mail messages.
@@ -302,7 +301,7 @@ The characters you enter are displayed as asterisks.
 === Miscellaneous
 
 
-image::GlobAdmin-SystemSettings_Misc.png[,697,151] 
+image::GlobAdmin-SystemSettings_Misc.png[,830,158] 
 
 The following fields are available on the _Miscellanous_ subpanel:
 
@@ -328,11 +327,29 @@ By default the RSS Feeds are enabled.
 For more information, refer to the section <<Desktop_LevelRequests.adoc#_desktop_lr_rssfeeds,The IKAN ALM RSS Functionality>>.
 
 |RESTful Web Services Enabled
-|This feature is currently only functional for the integration with the SAP lifecycle. 
+a|The IKAN ALM REST API enables you to interact with IKAN ALM programmatically and integrate its functionality in scripts, other applications or stand-alone apps. Interaction is possible with:
 
-These services allow for querying (HEAD and GET requests) Users, User Groups, Subversion repositories and Issue Tracking Systems in Global Administration, and Projects, Project Streams and Lifecycles in Project Administration.
+* Authentication
+* Approvals
+* Builds & Deploys
+* Constants
+* Level Requests and Creating Level Requests
+* Git and Subversion Repositories
+* Issue Tracking Systems
+* Lifecycles
+* Machines
+* Packages
+* Projects
+* Project Import and Export
+* Project Streams
+* User Groups and Users
 
 By default, this feature is disabled for security reasons.
+
+The IKAN ALM API is fully documented and accessible through the web interface: _Help > REST API Documentation_.
+
+|Secure Server-Agent Communication
+|This indicates whether or not the XMLRPC communication between the IKAN ALM Server and Agent is done through a secure channel. 
 
 |Build/Deploy Parameter Prefix
 |This option determines the value of the IKAN ALM Build/Deploy parameters prefix (by default alm) and the name of the ANT property file that is generated for Execute Build and Execute Deploy phases (by default alm_ant.properties).

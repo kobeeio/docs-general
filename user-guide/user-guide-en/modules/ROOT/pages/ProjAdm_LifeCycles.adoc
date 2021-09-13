@@ -332,7 +332,8 @@ image::ProjAdmin-LifeCycles-InsertLevel-Popup.png[,566,250]
 
 [NOTE]
 ====
-If no Level has been assigned to the Lifecycle yet, you can only insert a BUILD Level
+This link is visible as long as there are levels available which are not yet inserted in this lifecycle. 
+If no Level has been assigned to the Lifecycle yet, you can only insert a BUILD Level.
 ====
 . Determine the position in the Level Sequence by selecting the preceding Level from the _Sequence Level after_ drop-down list.
 +

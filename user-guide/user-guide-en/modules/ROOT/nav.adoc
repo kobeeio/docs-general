@@ -6,10 +6,10 @@
 .Desktop
 * xref:Desktop_Introduction.adoc[Introduction]
 * xref:Desktop_PersonalSettings.adoc[Personal Settings]
-* xref:Desktop_Approvals.adoc[Approvals]
 * xref:Desktop_LevelRequests.adoc[Level Requests]
 * xref:Desktop_Packages.adoc[Packages]
 * xref:Desktop_PackageGroups.adoc[Package Groups]
+* xref:Desktop_Approvals.adoc[Approvals]
 * xref:Desktop_ManageDesktop.adoc[Managing the Desktop]
 
 .Project Administration

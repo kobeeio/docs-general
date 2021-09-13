@@ -44,7 +44,7 @@ Refer to the following procedures for more information:
 +
 The _Select Project Stream_ window is displayed.
 +
-image::Desktop-Packages-SelectProjectStream.png[,1038,636] 
+image::Desktop-Packages-SelectProjectStream.png[,1007,659] 
 +
 . Define search criteria on the _Search Project Stream_ panel.
 +
@@ -91,6 +91,11 @@ By default, both locked and unlocked Project Streams are displayed.
 |Indicate whether or not you want to display hidden Project Streams.
 
 By default, hidden Project Streams are not shown.
+
+|Show Accessible Projects
+|Indicate whether or not you want to display the Project Streams on which you have user access rights. 
+
+By default, the Project Streams which are accessible are shown.
 |===
 +
 The list of elements displayed in the tree at the right, will be limited to the Project Streams matching these search criteria.
@@ -106,11 +111,11 @@ Project Stream__.
 The _Create Package_ screen is displayed.
 The selected Project Stream name is automatically filled in.
 In case you want to select a different Project Stream, select the image:icons/icon_SelectProjectStream.png[,25,15]  at the right to return to the _Select Project Stream_ window.
-. Enter the name and, optionally, a description for the new Package, and click _Create_ to confirm the creation of the Package.
+. Enter the name and, optionally, a description, owner and target release date for the new Package, and click _Create_ to confirm the creation of the Package.
 +
 The _Create Package_ window is displayed.
 +
-image::Desktop-Packages-CreatePackage-Create.png[,494,300] 
+image::Desktop-Packages-CreatePackage-Create.png[,463,348] 
 +
 The __Edit Contents __tab page of the _Package Details_ screen will be displayed.
 +
@@ -231,7 +236,7 @@ For more detailed information on the different tab pages, refer to the section <
 +
 The __Edit Contents __tab page of the _Package Details_ screen is displayed.
 +
-image::Desktop-Packages-EditPackage.png[,956,504] 
+image::Desktop-Packages-EditPackage.png[,932,525] 
 +
 On this tab page, you can modify the File Revisions contained in the Package. 
 +
@@ -351,19 +356,17 @@ image::Desktop-PackageDetails-Tab-Summary.png[,892,483]
 
 image::Desktop-PackageDetails-Panel-Acttions.png[,330,254] 
 
-The _Actions_ panel contains the _Edit
-Package_ link.
-This link will open a pop-up window allowing you to modify the Name and the Description of the Package.
+The _Actions_ panel contains the _Edit Package_ link.
+This link will open a pop-up window allowing you to modify the Name, the Description, the Status, the Owner and the Target Release Date of the Package.
 
-
-image::Desktop-PackageDetails-Panel-Acttions_EditPackage.png[,478,236] 
+image::Desktop-PackageDetails-Panel-Acttions_EditPackage.png[,589,297] 
 
 
 [[_desktop_packagedetails_info]]
 ==== Info Panel
 
 
-image::Desktop-PackageDetails-Panel-Info.png[,826,239] 
+image::Desktop-PackageDetails-Panel-Info.png[,600,244] 
 
 This panel displays the information found in the Header as well as some additional information.
 
@@ -392,6 +395,9 @@ Example: `Webpad H_1-0`
 |Description
 |This field contains the description of the Package.
 
+|Status
+|This field contains the status of the Package.
+
 |Hidden
 |This field indicates whether or not the Package is hidden. 
 
@@ -401,6 +407,12 @@ For more information on hiding Packages, refer to <<Desktop_Packages.adoc#_deskt
 |Package Build Group
 |If applicable, this field contains the Package Build Group the Package is linked to.
 For more information, refer to the section <<Desktop_PackageGroups.adoc#_desktop_packagegroups,Package Build Groups>>.
+
+|Owner
+|This field contains the owner of the Package.
+
+|Target Release Date
+|This field contains the target release date of the Package.
 |===
 
 [[_desktop_packagedetails_latestlevelrequests]]
@@ -442,7 +454,7 @@ This field may be empty, indicating that the latest File Revision is retrieved a
 === Edit Contents
 
 
-image::Desktop-PackageDetails-Tab-EditContents.png[,476,428] 
+image::Desktop-PackageDetails-Tab-EditContents.png[,648,534] 
 
 On this panel, you can modify the contents of the selected Package.
 
@@ -462,7 +474,7 @@ You can use the Search field for selecting specific File Revisions.
 Wildcards like '\*' and '?' may be used in any position.
 Sample search values: `foo.*`, or `?oo.txt` or combined `f??.*`
 +
-image::Desktop-Packages-EditPackage_Search.png[,575,722] 
+image::Desktop-Packages-EditPackage_Search.png[,609,212] 
 +
 To exit the search mode and redisplay all files and folders in the tree, click the image:icons/delete.gif[,15,15] _Exit
 Search_ icon. 
@@ -490,7 +502,7 @@ The following actions are possible:
 To select a File or Folder, expand the tree by clicking the image:icons/ExpandProjectStream.gif[,10,10]  icon to display all contained folders and files.
 Select the folder(s) or file(s) you want to add to the Package.
 +
-image::Desktop-Packages-SelectProjectStream-AddFile.png[,467,141] 
+image::Desktop-Packages-SelectProjectStream-AddFile.png[,486,136] 
 +
 ********* Adding a specific Revision of a selected File to the Package
 +
@@ -499,7 +511,7 @@ The _Select Revision_ pop-up window is displayed.
 Select the required revision from the drop-down list and click __Select__.
 The revision number will be displayed next to the selected File.
 +
-image::Desktop-Packages-SelectProjectStream-AddRevision.png[,469,201] 
+image::Desktop-Packages-SelectProjectStream-AddRevision.png[,486,197] 
 +
 __Note: __If you do not select a specific revision of a file, the latest revision will be used at the moment the Package is built.
 ********* Deleting a File of Folder from the Package
@@ -509,13 +521,13 @@ The name will be displayed in red.
 +
 To deselect all Files in the Package, you can use the _Clear_ button.
 +
-image::Desktop-Packages-SelectProjectStream-DeleteFile.png[,467,138] 
+image::Desktop-Packages-SelectProjectStream-DeleteFile.png[,486,158] 
 +
 __Note: __If a File or Folder has been removed from the VCR, this is indicated by an exclamation mark after the File or Folder name.
 The removed file is shown by strike-through.
 It is advised to delete the file or folder from the package as to synchronize it with the VCR.
 +
-image::Desktop-Packages-SelectProjectStream-DeletedVCRFile.png[,469,108] 
+image::Desktop-Packages-SelectProjectStream-DeletedVCRFile.png[,486,158] 
 +
 ********* Changing from a specific Revision to the latest Revision of a File in the Package
 +
@@ -524,7 +536,7 @@ The _Select Revision_ pop-up window is displayed.
 Deselect the revision by selecting the empty value on top of the drop-down list and click __Select__.
 The revision number will disappear and the file will be marked with a red image:icons/icon_deselectRevision.png[,13,12] .
 +
-image::Desktop-Packages-SelectProjectStream-DeleteRevision.png[,467,110] 
+image::Desktop-Packages-SelectProjectStream-DeleteRevision.png[,486,107] 
 +
 ********* Modifying a Revision of a File from the Package
 +
@@ -533,14 +545,14 @@ The _Select Revision_ pop-up window is displayed.
 Select the required revision from the drop-down list and click __Select__.
 The new revision number will be displayed next to the selected File.
 +
-image::Desktop-Packages-SelectProjectStream-ModifyRevision.png[,471,108] 
+image::Desktop-Packages-SelectProjectStream-ModifyRevision.png[,486,107] 
 
 
 [[_desktop_packagedetails_lifecycleactions]]
 === Lifecycle Actions
 
 
-image::Desktop-PackageDetails-Tab-LifecycleActions.png[,731,372] 
+image::Desktop-PackageDetails-Tab-LifecycleActions.png[,956,477] 
 
 This panel displays the latest Level Request for each of the Levels defined in the Lifecycle.
 

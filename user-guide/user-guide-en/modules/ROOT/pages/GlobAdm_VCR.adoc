@@ -414,7 +414,7 @@ Before you can create the Git Version Control Repository in IKAN ALM, you must i
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Create-Git.png[,585,596] 
+image::GlobAdm-VCR-Create-Git.png[,611,586] 
 +
 . Fill out the fields in the _Create Git Repository_ screen. Fields marked with a red asterisk are mandatory:
 +
@@ -482,6 +482,9 @@ _Warning:_ If you provide a user and, optionally, also a password in the dedicat
 Refer to the description of the _Repository URL_ for valid URL formats.
 
 This field is optional.
+
+|Default Branch Name
+|The default branch name of the Git repository. The field is prefilled with value _main_.
 
 |User ID
 |Enter the User ID that IKAN ALM will use to access the Git Repository.
@@ -602,7 +605,7 @@ Version Control Repository_ panel to only display the Git Repositories you are l
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Git-Edit.png[,624,635] 
+image::GlobAdm-VCR-Git-Edit.png[,597,628] 
 +
 . Edit the fields as required.
 +
@@ -636,7 +639,7 @@ Control Repository_ panel to only display the Git Repositories you are looking f
 +
 If the Git Repository is not connected to any Project, the following screen is displayed: 
 +
-image::GlobAdm-VCR-Git-Delete.png[,501,330] 
+image::GlobAdm-VCR-Git-Delete.png[,489,343] 
 +
 . Click _Delete_ to confirm the deletion.
 +
@@ -644,7 +647,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note:__ If the Git Repository is connected to one or more Projects, the following screen is displayed: 
 +
-image::GlobAdm-VCR-Git-Delete-Error.png[,624,480] 
+image::GlobAdm-VCR-Git-Delete-Error.png[,597,490] 
 +
 Before deleting the VCR, you must connect the reported Projects to another VCR.
 

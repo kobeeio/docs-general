@@ -156,7 +156,7 @@ The _Approve_ and _Reject_ links are also available on the _Approvals Overview_ 
 +
 The _Approve Level Request_ pop-up window is displayed:
 +
-image::Desktop-OutstandingApprovals-Approve.png[,604,456] 
+image::Desktop-OutstandingApprovals-Approve.png[,591,396] 
 +
 . Verify the information on the _Level Approval List_ panel.
 +
@@ -223,7 +223,7 @@ The _Approve_ and _Reject_ links are also available on the _Approvals Overview_ 
 +
 The _Reject Level Request_ pop-up window is displayed.
 +
-image::Desktop-OutstandingApprovals-Reject.png[,600,457] 
+image::Desktop-OutstandingApprovals-Reject.png[,591,396] 
 +
 . Verify the information on the _Level Approval List_ panel.
 +
@@ -242,7 +242,7 @@ You can also click _Cancel_ to close the pop-up window without rejecting the Lev
 +
 The following screen is displayed:
 +
-image::Desktop-Approvals-Overview.png[,950,498] 
+image::Desktop-Approvals-Overview.png[,1217,747] 
 +
 . Use the search criteria on the _Search Level Approvals_ panel to only display the Approvals you are looking for.
 +

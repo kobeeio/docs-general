@@ -40,7 +40,7 @@ This URL is specified on the _Mail_ subpanel on the _System Settings_ screen. Se
 +
 The _IKAN ALM Log in_ screen is displayed:
 +
-image::Logon.png[,446,262] 
+image::GettingStarted-Logging-login.png[,528,270] 
 +
 [NOTE]
 ====
@@ -50,7 +50,7 @@ Once you know the correct URL, it is useful to save the link in your _Favorites_
 +
 Your personal Desktop will be displayed:
 +
-image::Desktop-DesktopOverview.png[,1014,517] 
+image::GettingStarted-Logging-desktop.png[,1200,916] 
 +
 For more information on managing the items displayed on the Desktop, refer to the section <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Managing the Desktop>>.
 +
@@ -72,11 +72,11 @@ For more information, refer to the section <<Desktop_PersonalSettings.adoc#_desk
 [[_ploggingoff]]
 . On the Main Menu, at the right, select _Log out_ from the User Settings drop-down menu.
 +
-image::Logout.png[,1006,128] 
+image::GettingStarted-Logging-logout-menu.png[,1170,154]  
 +
 The following screen is displayed:
 +
-image::Logon-Logout.png[,431,240] 
+image::GettingStarted-Logging-logout.png[,528,270] 
 . You can now reconnect to IKAN ALM or close your browser window.
 +
 
@@ -105,7 +105,7 @@ To access this option, select _About_ from the _Help_ drop-down menu, on the Mai
 +
 The following screen is displayed:
 +
-image::Desktop-InstallLicense.png[,432,183] 
+image::GettingStarted-Logging-license-install.png[,629,205] 
 . Select the license file (alm_license.lic) using the _Browse_ button.
 +
 Your IKAN ALM Administrator will provide the exact file name and location.
@@ -113,11 +113,11 @@ Your IKAN ALM Administrator will provide the exact file name and location.
 +
 When the License file is accepted, the following screen is displayed:
 +
-image::Desktop-LicenseSubmitted-Success.png[,441,261] 
+image::GettingStarted-Logging-license-success.png[,1200,567] 
 +
 If the License file is not accepted, the following error message is displayed:
 +
-image::Desktop-LicenseNotAccepted.png[,445,237] 
+image::GettingStarted-Logging-license-invalid.png[,629,205] 
 +
 Most likely the problem is either a corrupted License file (or a file that doesn`'t contain an IKAN ALM License), or an expired License in the file.
 Contact your IKAN ALM Administrator or your IKAN ALM vendor to obtain a new License file.

@@ -57,7 +57,7 @@ The following actions are possible:
 +
 The _Create BUILD Level_ screen is displayed:
 +
-image::ProjAdmin-Levels-BuildLevel-Create.png[,461,415] 
+image::ProjAdmin-Levels-BuildLevel-Create.png[,516,497] 
 +
 
 [NOTE]
@@ -718,7 +718,7 @@ Refer to the following procedures for more information:
 +
 The following screen is displayed:
 +
-image::ProjAdmin-Levels-BuildEnv-Create.png[,1019,444] 
+image::ProjAdmin-Levels-BuildEnv-Create.png[,928,445] 
 +
 For a complete description of the _Create Build
 Environment_ procedure, refer to <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Creating a Build Environment>>.
@@ -734,7 +734,7 @@ Environment_ procedure, refer to <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironmen
 +
 The following screen is displayed:
 +
-image::ProjAdmin-Levels-DeployEnv-Create.png[,1035,490] 
+image::ProjAdmin-Levels-DeployEnv-Create.png[,1068,470] 
 +
 For a complete description of the _Create Deploy
 Environment_ procedure, refer to <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Creating a Deploy Environment>>.

@@ -28,7 +28,7 @@ These are the settings you (or the Global Administrator using your User ID) defi
 +
 The __Personal Settings__ screen is displayed:
 +
-image::Desktop-PersonalSettings-Edit.png[,359,329] 
+image::Desktop-PersonalSettings-Edit.png[,573,346] 
 +
 . Update the fields as required.
 +

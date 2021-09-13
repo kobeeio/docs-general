@@ -684,7 +684,7 @@ When the Environment field is empty, this means that the Phase has been added to
 The user will be redirected to the _Phase Parameter
 Overview_ screen (in the Project Administration context) and the _Edit Parameter Value_ pop-up window is opened.
 +
-image::GlobAdm-PhaseParameter-Edit-ParameterValue.png[,833,636] 
+image::GlobAdm-PhaseParameter-Edit-ParameterValue.png[,833,670] 
 +
 . Set the value of the Environment Parameter and click _Save_ to save the value.
 +

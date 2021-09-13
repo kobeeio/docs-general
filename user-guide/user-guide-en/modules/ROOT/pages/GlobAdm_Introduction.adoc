@@ -13,11 +13,11 @@ On the Global Administration landing page, you will find an overview of all task
 In the remainder of this document, we will refer to this section of the interface as the "`Global Administration context`". 
 . Users with Global Admin Access Rights can perform the following tasks:
 +
-image::GlobAdmin-LandingPage.png[,941,424] 
+image::GlobAdmin-LandingPage.png[,1268,583] 
 +
 . For Users without Global Admin Access Rights, the number of available tasks on the landing pages will be limited.
 +
-image::GlobAdmin-LandingPage-User.png[,943,416] 
+image::GlobAdmin-LandingPage-User.png[,1268,558] 
 +
 
 [NOTE]

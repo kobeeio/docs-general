@@ -25,7 +25,7 @@ footer:
     right:
       content: '{section-or-chapter-title} | *{page-number}*'
     left:
-      content: 'What's new in IKAN ALM - {revnumber}'      
+      content: "What's new in IKAN ALM - {revnumber}"
   verso:
     left:
       content: '*{page-number}* | {section-or-chapter-title}'

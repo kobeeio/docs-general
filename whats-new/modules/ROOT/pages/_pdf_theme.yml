@@ -30,7 +30,7 @@ footer:
     left:
       content: '*{page-number}* | {section-or-chapter-title}'
     right:
-      content: 'What's new in IKAN ALM - {revnumber}'      
+      content: "What's new in IKAN ALM - {revnumber}"
 title-page:
   font-family: Source Sans Pro  
   logo:

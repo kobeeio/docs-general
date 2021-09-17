@@ -2608,11 +2608,10 @@ Possible values are:
 |image:Desktop-LevelRequests-Detailed-PhaseLogs-DownloadBuildResult.png[,183,32] 
 |This link allows you to download the Build Result or to open it using a File Explorer.
 
-Note that this is only possible if the option _Downloadable
-Build_ has been activated on the Build Environment.
+Note that this is only possible if the option _Downloadable Build_ has been activated on the Build Environment.
 For more information, refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Editing a Build Environment>>.
 
-If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the _Expand All_ / _Collapse All_ links to show or hide the entire tree structure at once.
+If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the __Expand All__ or __Collapse All__ links to show or hide the entire tree structure at once.
 
 image:Desktop-LevelRequests-Detailed-Results-expanded.png[,325,248] 
 |===

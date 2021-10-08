@@ -13,7 +13,7 @@ There are 2 types of Approvals which may be set on Test or Production Levels (<<
 
 
 A Pre-Approval enables a verification moment before executing a Level Request on a Test or Production Level.
-It adds an extra condition to the execution of the Level Request: not only the Requested Date/Time must be expired, but the Pre-Approval must also be granted by an IKAN ALM User.
+It adds an extra condition to the execution of the Level Request: not only must the Requested Date/Time be expired, but the Pre-Approval must also be granted by an IKAN ALM User.
 As long as both conditions are not fulfilled, the Level Request will not be handled.
 When a Pre-Approval is rejected, the Level Request will never be handled. 
 
@@ -30,7 +30,7 @@ Additionally, a Pre-Approval is set on the Production Level.
 This generates a verification moment before the Level Request is executed on the Production Level, enabling people from Production or management to judge whether everything is OK before "`going into Production`".
 
 It is also possible to have a hierarchy of Approvals on a Level, e.g., with one or more Pre- and one or more Post-Approvals.
-Every Approval will result in a notification (mail or net send) to the Users belonging to the protecting User Group, asking them to grant or reject the Approval via the Outstanding Approvals interface.
+Every Approval will result in a notification mail to the Users belonging to the protecting User Group, asking them to grant or reject the Approval via the Outstanding Approvals interface.
 
 Refer to the following sections for more information about:
 

@@ -177,6 +177,8 @@ If the __Auto Refresh__ option is activated, the Desktop will be refreshed each 
 +
 <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Managing the Desktop>>
 
+. If desired, click the "View as Tiles" button to freely switch between the initial Tiles desktop and the more compact Tiles desktop.
+
 
 All of the above also applies to the Tiles desktop, albeit in a different form, and with a few exceptions.
 
@@ -186,7 +188,7 @@ Differences in the Tiles desktop are:
 
 * The Level Type is shown
 * Message text is hidden behind a hoverable icon, next to the Level Type icon
-* The Level Request OID is used for Latest and Latest Successful Level Request
+* The Level Request OID is used for Latest and Latest Successful Level Request in place of the VCR tag
 
 
 [[_managedesktop_addingtabs]]

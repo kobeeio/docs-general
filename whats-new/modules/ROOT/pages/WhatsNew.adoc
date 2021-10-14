@@ -2,9 +2,9 @@
 :imagesdir: ../images
 :description: What's new in IKAN ALM 5.9
 :revnumber: v5.9
-:revdate: 13.09.2021
+:revdate: 07.10.2021
 
-= What's new in IKAN ALM - Release 5.8
+= What's new in IKAN ALM - Release 5.9
 
 IKAN ALM is a cross-platform web-based solution for Application Lifecycle Management. It combines DevOps initiatives (continuous build and continuous integration) and lifecycle management to support the complexity of service-oriented architectures and highly distributed systems.
 
@@ -12,56 +12,131 @@ IKAN ALM encompasses all aspects of the Application Lifecycle Management process
 
 IKAN ALM is a *methodology-independent* and *repository-neutral* tool (enabling cross-platform development). IKAN ALM complies with industry standards, such as CMMI, ITIL and PRINCE. It helps your organization to enforce, control, audit, report and facilitate best practices and guidelines for Application Lifecycle Management, and provides benefits which guarantee conformity with audit requirements and improve communications with the different parties across the IT system.
 
-IKAN ALM 5.8 includes the following major enhancements.
+IKAN ALM 5.9 includes the following major enhancements.
 
 == New functionalities
 
-=== Possibility to clone Levels
-IKAN ALM now adds the ability to clone Levels. This makes it easy to fit in a Training Level (which is similar to an existing Test Level) into the Lifecyle or to create the Production Level after the QA Level has been set up and configured. Cloning Levels is convenient for creating new Levels since all artifacts linked to the existing Level will be cloned, i.e., Environments, Core and Custom Phases, as well as Parameters and Approvals.
+=== New Extensive REST API
+The existing REST API has been re-factored and new endpoints have been added:
 
-image::image1.png[,891,467]
-
-=== Optional Deploys
-If the functionality “Optional Deploys” is activated on a Level in the Lifecycle, it will be possible to “Skip” deploys on that Level while delivering a Build through the Lifecycle. The related Level Request will get the “Warning” status, and the non-executed Deploys will get the “Skipped” or “Cancelled” status. When delivering to the next Level in the Lifecycle, a warning will be given if not all deploys for the previous Level have been executed successfully.
-
-image::image2.png[,1072,749]
-
-=== Limit the number of concurrent deploys
-When defining an Agent, a new attribute allows to enter the maximum number of Deploys that may run at the same time. If the value is set to 0 (the default), there is no limit for running Deploys concurrently. If the number is set to 1, all Deploys will run sequentially. If a specific number is specified, only that number of Deploys can be run concurrently on the Agent. If an additional one is requested, it will go into the waiting queue and it will only be started if one of the running Deploys has finished.
-
-image::image3.png[,570,490]
-
-=== Search Filters
-The search criteria of the most frequently used Overview pages, like Level Request, Build and Deploy, Package and Project Overview can now be saved as a Filter. This is extremely useful and will improve the working flow for end users and project administrators.
-
-image::image4.png[,1119,334]
-
-=== New Package Detail interface to manage the contents and actions in a Package
-The Package edit and view pages have been completely redesigned and are now integrated in a new Package Detail interface using multiple tab pages. This new interface acts as a Dashboard for the Package: core information is now immediately visible, while other data are just one click away. Some enhancements have been added to the new design, such as the Lifecycle Actions view which allows end users to create Level Requests directly from within the Package interface.
-
-image::image5.png[,956,477]
-
-=== Redesign of the Menus and the Overview pages
-The main menu and its submenus have been completely redesigned: the structure has been optimized and the most important desktop menu items for handling Level Requests or Packages are now always on top and swiftly reachable.
-
-image::image6.jpg[,1210,395]
-
-All Overview and Search interfaces have been redesigned for a better user experience: most search criteria use auto-suggestion and are instantly applied; only the most important search criteria are initially visible to maximize the space needed for listing the results; other criteria are only one click away via the “Show advanced options” link.
-
-image::image7.png[,983,161]
+* The existing *GET* endpoints have now pagination and search functionality.
+* Desktop functionality is also available through new or extensive REST endpoints: _createlevelrequests_ (Create a Level Request), _levelrequests_ (Update, Cancel or Abort a Level Request), _approvals_ (Outstanding/Overview Approvals, Approve or Reject an Approval) and _packages_ (Create, Update and Overview Packages).
+* The new Import and Export Project feature is also available via the REST API.
+* New _projectstreams_ *POST* endpoint which allows for Creating a Project Stream
+* The IKAN ALM REST API documentation is now available as an interactive Swagger UI.
 
 
-== Enhanced functionalities and End of Support announcements
+image::image1.png[,933,439]
 
-* Multiple renewed interfaces in Global Administration: System Settings, Housekeeping, User Group Members, Issue Tracking, …
-* Multiple renewed interfaces in Project Administration: Lifecycle, Project Stream dependencies, Level Edit, Audit Project, ….
-* Possibility to search a Level Request based on its OID
-* Performance optimizations in the Desktop and Level Request interfaces
-* Optimized database pooling in the IKAN ALM web application
-* Updated IKAN ALM Agent and Server OSGi container to Karaf 4.0
-* Optimized security against vulnerabilities, like cross-site scripting and SQL injection
-* End of support for the IBM WebSphere application server
-* End of support for the integration with Lotus Notes Mail systems
+=== Core upgrades (Java 11, frameworks, CSS refactor)
+In order to support Java 11 all depending libraries have been checked, updated and extensively tested. This includes the upgrade of following internally used frameworks:
+
+* Hibernate 5 (ORM)
+* Apache Struts 2.5 (UI)
+* Apache Karaf 4.2.8 (OSGi Container)
+* vt-ldap has been replaced by ldaptive (Java API for LDAP Server connection), including added support for the ldaps protocol
+* xml-rpc: upgrade library and re-factor the secure xml-rpc support
+In the UI, all the CSS has been converted using ITCSS/BEM paradigms for better maintainability.
+
+=== Project export/import
+This new feature allows exporting a Project from one (e.g. Test) IKAN ALM instance and subsequently importing it in another (e.g. Production) instance. It also enables a swift setup of new Projects by adapting template/exported Projects and importing them. Supports xml and json format.
+
+image::image2.png[,881,231]
+
+=== Nested User Groups
+Nested User Groups allows a more flexible streamlining of existing principals in an LDAP system (active directory or other) with the User Groups defined in IKAN ALM. Such (external) User Groups can be nested (even recursively) into IKAN ALM User Groups and inherit the roles (Project Administrator, Project User, Approver, Requester, …) from the parent User Groups. This avoids the hassle of creating specific principals and assigning users in the LDAP system in order to give endusers the correct IKAN ALM roles.
+
+image::image3.png[,609,448]
+
+=== Remote Agent install
+An IKAN ALM Agent Installation can now be configured, started and managed from within the IKAN ALM Web Application. IKAN ALM will automate the complete file transfer, installation, service or daemon registration and start-up through a Secure Shell, or execute PowerShell scripts that act on the remote Agent Machine.
+
+image::image4.png[,862,495]
+
+The Agent Installation process will be steered by the IKAN ALM Server and the different installation steps will logged and can be followed in the UI.
+
+image::image5.png[,911,231]
+
+=== Platform independent build archives
+Next to the existing zip and tar.gz formats it is now possible to storage the build archive in 7z format to support portability between Windows and Linux systems.
+
+image::image6.png[,758,346]
+
+=== New Desktop layout
+Desktop items can now be presented as Tiles, resulting in a new Graphical representation of the status of different Levels in a Project Stream or Package. This new Tiles Desktop is an alternative option for the classic Desktop, which also has been restyled.
+
+image::image7.png[,1090,502]
+
+=== Support PostgreSQL database
+IKAN ALM supports now PostgreSQL (next to MySQL, Oracle Database, Microsoft SQL Server, IBM DB2) as production database. Versions 11, 12 and 13 have been tested on Windows and Linux platforms.
+
+=== Support for GitHub
+
+The application lifecycle in IKAN ALM can now start from sources stored in a GitHub repository. Just as with Git, a Package Based (mainframe style) build and deployment process is possible, by selecting and moving individual files or components through a lifecycle. Furthermore, GitHub Issues provided in commit comments of GitHub sources (and other supported VCRs) will be identified by IKAN ALM and automatically linked to Builds.
+
+=== Integrate MF ALM as Issue and Testing system
+
+IKAN ALM integrates with the Micro Focus ALM Defects System by linking MF ALM defects to an IKAN ALM Level Request Build and/or Deploy action. The artifacts are linked automatically based on the comments provided by the developers when committing code to the Versioning System (Git(Hub), Subversion or ...). IKAN ALM retrieves additional information from the related  MF ALM Defect such as a short description, the owner, the priority, ... This information is updated each time the build result evolves in the IKAN ALM life-cycle. Also new phases have been created to run MF ALM (UFT) Tests.
+//Add screenshot here, I don't have an MF ALM definition, maybe Frank?
+
+== Enhanced functionalities
+
+=== Several UI Usability Enhancements
+
+* Menu Enhancements
+** Recent Projects, Packages, and Level Requests are now added to their Menu entry
+** Project, Package, Level Request and Build and Deploy Filters of the user are added to the Menu
+** Search filters : reload filters that were stored in the Session
+
+image::image8.png[,938,434]
+
+* Improvements on the Level Request Details Panel
+** possibility to Approve/Reject Requests in status Waiting for Approval
+** possibility to Deliver builds to next Level(s) (if available) in the lifecycle
+** Results tab: add Expand/Collapse all links to the compressed result Builds
+* Edit Build/Deploy Environment page: add link to View Parameters
+
+=== New Package fields
+
+Tree new fields have been added to the Package definition in order to enhance its usability: Status (possible values Active, Frozen and Archived), Owner and Target Release Date. All fields are optional and have no impact on existing Packages. The Status fields have following impact on a Package semantics:
+
+* Active packages can be built and delivered, and their contents (files) can be modified.
+* Frozen packages can't be built and their contents can't be modified. They can still be delivered.
+* Archived packages can't be built nor delivered, and their contents can't be modified.
+
+image::image9.png[,598,304]
+
+Both the Owner and Target Release Date fields enhance the Package search possibilities.
+
+=== Enhanced Git Integration
+The default branch name in Git may now be defined. When creating  new Git definitions, its defaulted to _main_. In earlier IKAN ALM versions it was not configurable and defaulted to _master_. 
+The Git integration now also supports a Package Based (mainframe style) build and deployment process, by selecting and moving individual files or components through a lifecycle.
+
+=== Documentation migration to Asciidoc
+The IKAN ALM 5.9 documentation, including the User Guide documentation integrated into the IKAN ALM UI has been migrated to Asciidoc and is online available on the https://docs.ikanalm.com site. This allows for a continuously up to date documentation without on-premises upgrade actions. PDF files and the 5.8 release of the documentation are also published online.
+
+=== Enhance flexibility of Scripting Tool
+The Build and Deploy Type setting of a Project have been removed. They restricted the Scripting Tool Type (ANT, NAnt or Gradle) of the Build or Deploy Environment. This results in a more flexible configuration of Scripting Tools for Build or Deploy actions.
+
+=== Extension of integrations:Azure DevOps (VCR and ITS) and Jira Cloud (ITS) 
+The existing integration with Microsoft Team Foundation Server (Version Control and Issue Tracking System) now also supports the Azure DevOps Services, Microsofts online version control and requirements management.
+The Jira Issue Tracking Integration has been enhanced to works with Atlassians Jira Cloud online system.
+
+=== Several small Enhancements
+
+* Support for MySQL 8
+* Support for Oracle Database 19c
+* Filter accessible Projects in _Create Package_ and _Add to Desktop_ interfaces
+* New created Build/Deploy/Machine Parameters are now mandatory by default
+* Add _User Controlled_ Build and Deploy Parameters to ease the work of Global and Project Administrators
+
+== Obsolete functionality, end of support
+
+* remove support for Microsoft Visual SourceSafe source control
+* remove support for PVCS Version Manager
+* remove support for HP Quality Center test management
+* remove support for TeamForge issue tracking
+//left out netsend notification since nobody uses this since more than a decade
 
 
 == Bug fixes

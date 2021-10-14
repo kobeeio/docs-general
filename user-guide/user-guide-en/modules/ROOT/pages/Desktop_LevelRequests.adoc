@@ -256,7 +256,7 @@ The final Level Request Status is set to __Warning__, if at least one non-blocki
 
 All Users belonging to the User Group with User Access Rights or the User Group with Admin Access Rights (both defined on the <<GlobAdm_Project.adoc#_globadm_projectcreate,Project>> screen) receive the required notifications, as well as the Users having Request Rights on the Level.
 
-The Notification type (mail, netsend) and the Notification criteria (if Level Request Status is SUCCESS, FAIL, WARNING or ALWAYS) are defined in the sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createbuildlevel,Creating a Build Level>>, <<ProjAdm_Levels.adoc#_plevelenvmgt_createtestorproductionlevel,Creating a Test or Production Level>> or <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Editing a Level>>.
+The Notification type (mail or none) and the Notification criteria (if Level Request Status is SUCCESS, FAIL, WARNING or ALWAYS) are defined in the sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createbuildlevel,Creating a Build Level>>, <<ProjAdm_Levels.adoc#_plevelenvmgt_createtestorproductionlevel,Creating a Test or Production Level>> or <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Editing a Level>>.
 |===
 
 [[_srebuildanddeploylr]]
@@ -540,7 +540,7 @@ The final Level Request Status is set to __Warning__, if at least one non-blocki
 
 All Users belonging to the User Group with User Access Rights or the User Group with Admin Access Rights (both defined on the <<GlobAdm_Project.adoc#_globadm_projectcreate,Project>> screen) receive the required notifications, together with the users that have Request Rights on the Level.
 
-The Notification type (mail, netsend) and the Notification criteria (if Level Request Status is SUCCESS, FAIL, WARNING or ALWAYS) are defined in the sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createbuildlevel,Creating a Build Level>>, <<ProjAdm_Levels.adoc#_plevelenvmgt_createtestorproductionlevel,Creating a Test or Production Level>> or <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Editing a Level>>.
+The Notification type (mail or none) and the Notification criteria (if Level Request Status is SUCCESS, FAIL, WARNING or ALWAYS) are defined in the sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createbuildlevel,Creating a Build Level>>, <<ProjAdm_Levels.adoc#_plevelenvmgt_createtestorproductionlevel,Creating a Test or Production Level>> or <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Editing a Level>>.
 |===
 
 [[_sdeploylr]]
@@ -675,7 +675,7 @@ The final Level Request Status is set to __Warning__, if the Deploy Status has b
 
 All Users belonging to the User Group with User Access Rights or the User Group with Admin Access Rights (both defined on the <<GlobAdm_Project.adoc#_globadm_projectcreate,Project>> screen) receive the required notifications, together with the users that have Request Rights on the Level.
 
-The Notification type (mail, netsend) and the Notification criteria (if Level Request Status is SUCCESS, FAIL, WARNING or ALWAYS) are defined in the sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createbuildlevel,Creating a Build Level>>, <<ProjAdm_Levels.adoc#_plevelenvmgt_createtestorproductionlevel,Creating a Test or Production Level>> or <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Editing a Level>>.
+The Notification type (mail or none) and the Notification criteria (if Level Request Status is SUCCESS, FAIL, WARNING or ALWAYS) are defined in the sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createbuildlevel,Creating a Build Level>>, <<ProjAdm_Levels.adoc#_plevelenvmgt_createtestorproductionlevel,Creating a Test or Production Level>> or <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Editing a Level>>.
 |===
 
 [[_desktop_lr_creatinglevelrequest]]
@@ -1633,9 +1633,9 @@ The actions available in this panel depend on the status of the Level Request.
 
 image::Desktop-LevelRequests-Detailed-Summary-Actions.png[,360,308] 
 
-Actions are available when the Level Request execution time is set to a moment in the future, if an Approval is pending for the Level Request or if the Level Request is still being executed.
+Actions are available when the Level Request execution time is set to a moment in the future, if an Approval is pending for the Level Request, if the Level Request is still being executed, or if the Level Request is successful and can be delivered to the next level.
 
-. The Level Request execution time is set to a moment in the future or the Level Request is waiting for an Approval:
+. The Level Request execution time is set to a moment in the future:
 +
 The following action links will be available:
 +
@@ -1707,6 +1707,40 @@ image::Desktop-LevelRequests-Detailed-AbortLevelRequest.png[,452,123]
 Click _Abort Level Request_ to confirm the action and return to the _Level Request Detail_ screen.
 +
 You can also click _Close_ to cancel the abort process and return to the _Level Request Detail_ screen.
+
+. the Level Request is waiting for an Approval:
++
+If the Level Request is waiting for an approval, in addition to the available options above, there are two additional options:
++
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Button
+| Meaning
+
+|image:icons/approve.gif[,16,16] Approve
+|Click this button to open the Approve Level Request pop-up.
+
+|image:icons/reject.gif[,16,16]  Reject
+|Click this button to open the Approve Level Request pop-up.
+|===
++
+For more info on the dialogs opened by these actions, refer to the section <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove, Approving Outstanding Approvals>>.
+
+. The Level Request is successful and can be delivered to a next level:
++
+If the Level Request is in status Success or Warning, the following buttons are available:
++
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Button
+| Meaning
+
+|image:icons/icon_deliverBuild.png[,16,16] image:icons/optional.gif[,16,16]  Deliver to Optional Level
+|Click this button to deliver to the indicated Optional level. 
+
+|image:icons/icon_deliverBuild.png[,16,16]  Deliver to Level
+|Click this button to deliver to the indicated non-Optional Level.
+|===
 
 [[_desktop_lr_summary_info]]
 ==== Info Panel
@@ -2608,11 +2642,10 @@ Possible values are:
 |image:Desktop-LevelRequests-Detailed-PhaseLogs-DownloadBuildResult.png[,183,32] 
 |This link allows you to download the Build Result or to open it using a File Explorer.
 
-Note that this is only possible if the option _Downloadable
-Build_ has been activated on the Build Environment.
+Note that this is only possible if the option _Downloadable Build_ has been activated on the Build Environment.
 For more information, refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Editing a Build Environment>>.
 
-If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the _Expand All_ / _Collapse All_ links to show or hide the entire tree structure at once.
+If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the __Expand All__ or __Collapse All__ links to show or hide the entire tree structure at once.
 
 image:Desktop-LevelRequests-Detailed-Results-expanded.png[,325,248] 
 |===

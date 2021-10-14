@@ -396,7 +396,11 @@ Example: `Webpad H_1-0`
 |This field contains the description of the Package.
 
 |Status
-|This field contains the status of the Package.
+a|This field contains the status of the Package. Possible statuses are Active, Frozen and Archived.
+
+* Active is the default status for package. Active packages may be edited without restrictions, and may be used to start level requests.
+* Frozen packages may have their properties edited and may be used to start level requests, but cannot have their file contents edited.
+* Archived packages may not be edited and may not be used in Level Requests.
 
 |Hidden
 |This field indicates whether or not the Package is hidden. 

@@ -1,10 +1,9 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
 :description: IKAN ALM User Guide (English)   
-:revnumber: v5.8
-:revdate: 01.01.2018
+:revnumber: v5.9
+:revdate: 13.09.2021
 
-[[_desktop_introduction]]
 = IKAN ALM User Guide: Introduction  
 (((IKAN ALM ,Introduction))) 
 
@@ -54,7 +53,7 @@ a|A Regular User can perform the following tasks (depending on his or her ID`'s 
 |Project Administrator
 a|A User with Project Administrator access rights will typically perform the following tasks:
 
-* Updating <<ProjAdm_Projects.adoc#_projadm_projects,Projects [Project Name]>>
+* Updating <<ProjAdm_Projects.adoc#_projadm_projects,Projects>>
 * Creating or updating <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadm_projectstreams,Project Streams>>
 * Creating or updating <<ProjAdm_LifeCycles.adoc#_projadm_lifecycles,Lifecycles>>
 * Creating or updating <<ProjAdm_Levels.adoc#_projadm_levels,Levels>>

@@ -9,6 +9,7 @@
 == Overview
 
 //Should we replace the intro by the one from the What's new, which is more recent and talks about devops? Or keep this one?
+// frs : yes, the other intro is better
 IKAN ALM is the most technologically advanced solution on the market today for managing software change, offering a uniquely integrated web-based Application Lifecycle Management (ALM) platform.
 IKAN ALM combines both continuous integration and lifecycle management, offering a single point of control and delivering support for your build, deploy, release and software lifecycle management processes.
 By using existing technologies to extend the development environment, IKAN ALM continues where these best of breed products stop. 
@@ -110,15 +111,15 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * Subversion meta properties are automatically retrieved during the "Retrieve code" phase and can be used by the build or deploy scripting tool
 
 //Should we change Maven 2 to Maven2/3, since we can also work with 3?
-=== Ant/Gradle/NAnt/Maven 2 Builder/Deployer
+=== Ant, Gradle, NAnt, Maven 2/3 Builder and Deployer
 
-* Ability to execute any Ant/Gradle/NAnt/Maven 2 script to build/deploy the project
+* Ability to execute any Ant, Gradle, NAnt, or Maven script to build and deploy the project
 * No intrusion into the build/deploy script
-* Ability to pass extra Ant/Gradle/NAnt/Maven 2 properties and change them right before build/deploy
-* Wrap an Ant/Gradle/NAnt/Maven 2 script in a Custom Phase with specific properties and easily distribute and reuse it in different Projects or IKAN ALM installations
+* Ability to pass extra Ant/Gradle/NAnt/Maven properties and change them right before build/deploy
+* Wrap an Ant/Gradle/NAnt/Maven script in a Custom Phase with specific properties and easily distribute and reuse it in different Projects or IKAN ALM installations
 * Ability to specify JVM options like -Xms and -Xmx
-* Support for Multiple Versions of Ant/Gradle/NAnt/Maven 2
-* Configurable Ant/Maven 2 Classpath
+* Support for Multiple Versions of Ant/Gradle/NAnt/Maven
+* Configurable Ant/Maven Classpath
 * Ability to run Ant via the "`Ant Launcher`"
 * Support for Multiple JDKs or .NET frameworks
 
@@ -177,7 +178,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * Agent/Server Architecture enabling distributed builds and/or deploys
 * Possibility to define multiple build servers
 * Possibility to define multiple deployment agents
-* Command Line and REST Interface enabling creation of builds and/or deploys on external triggers
+* Command Line and REST Interface enabling the launching of builds and/or deploys on external triggers
 
 === Installation
 
@@ -203,12 +204,12 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 === Commandline \(C) and REST \(R) Interface
 
-* Execute a build or deploy from a command prompt/REST endpoint (C+R)
-* Allows scheduling builds and deploys with an external scheduling tool (Task Scheduler, Cron, ...) (C+R)
-* Generate a report from a command prompt/REST endpoint \(C)
-* Create/edit a package from a command prompt/REST endpoint (C+R)
-* Approve or Reject delivering a build to the next level \(R)
-* Getting data about global setup, projects, builds and deploys,... in json or xml format \(R)
+* Execute a build or deploy from a command prompt or REST endpoint (C+R)
+* Allow scheduling builds and deploys with an external scheduling tool (Task Scheduler, Cron, ...) (C+R)
+* Generate a report from a command prompt or REST endpoint \(C)
+* Create or edit a package from a command prompt or REST endpoint (C+R)
+* Approve or Reject the delivery of a build to the next level \(R)
+* Retrieve the details of global setup, projects, builds, deploys,... in json or xml format \(R)
 
 
 === Customizable Reporting
@@ -244,9 +245,9 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 ==== Supported Operating Systems
 
-* Windows 8/2012 R2 Server
+* Windows 8.1/2012 R2 Server
 * Windows 10/2016/2019 Server
-* Linux: tested on Redhat Fedora, CentOS, Suse Linux Enterprise, OpenSUSE, Debian, Ubuntu, Mandriva,  zLinux. Other recent Linux distributions should also work.
+* Linux: tested on Redhat Fedora, CentOS, Oracle Linux, Suse Linux Enterprise, OpenSUSE, Debian, Ubuntu, Mandriva, zLinux. Other recent Linux distributions should also work.
 * Unix flavors: HP Unix, Solaris, IBM AIX etc. 
 
 
@@ -260,6 +261,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 ==== Supported Version Control Systems
 
 * Subversion 1.4.x, recommended 1.6 and higher
+// frs : ik ben niet zeker vanaf welke versie de optie --filter=blob:none ondersteund is. Het werkt zeker in 2.33. Maken we dan niet beter versie 2.33 recommended ?
 * Git 1.8, recommended 2.18 and higher
 * GitHub
 * Microsoft Team Foundation Version Control (TFVC) 2013
@@ -295,6 +297,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 ==== IKAN ALM Server
 
 //Or should we even set minimum to 2 GB, with 4 GB recommended? This is how Nate adapted the HowTo_Tomcat_Install.//
+// frs : values are already quite high. ALM Server on ikan550v only has 768M max memory. The default in karaf-wrapper.conf is 512M. I'd say minimum 512M, recommended 1GB
 * RAM: minimum 1 GB (gigabytes), recommended 2 GB (gigabytes) or more
 * Disk Storage Space: minimum 10 GB (gigabytes), recommended 40 GB (gigabytes) or more
 
@@ -305,11 +308,17 @@ The more projects and build results, and the larger they are, the more disk stor
 
 ==== IKAN ALM Agent
 
+The amount of RAM and disk space needed by a machine that runs an ALM Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
+
+These are the recommendations for the ALM Agent process itself :
+
+// frs : The default in karaf-wrapper.conf is 512M. Maybe we should increase this to 1GB ? I'd say minimum 1GB, recommended 2GB. Actually the Agent only uses a lot of RAM when creating a zip, tgz, or 7z archive.
 * RAM: minimum 512 MB (megabytes), recommended 2 GB (gigabytes) or more
 * Disk Storage Space: minimum 1 GB (gigabytes)
 
-
+// frs : delete this line ? We only recommend anyway.
 As for the IKAN ALM server, these are just indicative values.
+// frs : yes, ditch this !
 ////
 Commented out the paragrapth below, since it's outdated (2005). It's  still online at a different location, but outdated, and indicated as archived.
 

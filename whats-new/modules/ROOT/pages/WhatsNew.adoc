@@ -2,7 +2,7 @@
 :imagesdir: ../images
 :description: What's new in IKAN ALM 5.9
 :revnumber: v5.9
-:revdate: 07.10.2021
+:revdate: 19.10.2021
 
 = What's new in IKAN ALM - Release 5.9
 
@@ -82,7 +82,6 @@ The application lifecycle in IKAN ALM can now start from sources stored in a Git
 === Integrate MF ALM as Issue and Testing system
 
 IKAN ALM integrates with the Micro Focus ALM Defects System by linking MF ALM defects to an IKAN ALM Level Request Build and/or Deploy action. The artifacts are linked automatically based on the comments provided by the developers when committing code to the Versioning System. IKAN ALM retrieves additional information from the related MF ALM Defect such as a short description, the owner and the priority. This information is updated each time the build result evolves in the IKAN ALM life-cycle. Also new phases have been created to run MF ALM (UFT) Tests.
-//Add screenshot here, I don't have an MF ALM definition, maybe Frank?
 
 image::image10.png[,850,521]
 
@@ -151,8 +150,6 @@ The Jira Issue Tracking Integration has been enhanced to work with Atlassian's J
 * remove support for PVCS Version Manager
 * remove support for HP Quality Center test management
 * remove support for TeamForge issue tracking
-//left out netsend notification since nobody uses this since more than a decade
-
 
 == Bug fixes
 Several small bug fixes and optimizations have also been implemented. Refer to the readme of the installed product for more details.

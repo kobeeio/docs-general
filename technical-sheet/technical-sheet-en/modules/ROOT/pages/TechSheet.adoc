@@ -2,27 +2,17 @@
 :imagesdir: ../images
 :description: IKAN ALM Technical Sheet (English)
 :revnumber: v5.9
-:revdate: 01.10.2021
+:revdate: 18.10.2021
 
 = IKAN ALM Technical Sheet
 
 == Overview
 
-//Should we replace the intro by the one from the What's new, which is more recent and talks about devops? Or keep this one?
-// frs : yes, the other intro is better
-IKAN ALM is the most technologically advanced solution on the market today for managing software change, offering a uniquely integrated web-based Application Lifecycle Management (ALM) platform.
-IKAN ALM combines both continuous integration and lifecycle management, offering a single point of control and delivering support for your build, deploy, release and software lifecycle management processes.
-By using existing technologies to extend the development environment, IKAN ALM continues where these best of breed products stop. 
+IKAN ALM is a cross-platform web-based solution for Application Lifecycle Management. It combines DevOps initiatives (continuous build and continuous integration) and lifecycle management to support the complexity of service-oriented architectures and highly distributed systems.
 
-With IKAN ALM:
+IKAN ALM encompasses all aspects of the Application Lifecycle Management process offering build management, continuous integration, rebuild, manual build, release management, approval processes and deployment management. Within IKAN ALM, you define, implement and enforce software lifecycle processes, appropriate for your organization, including development, test, quality assurance and final production.
 
-* developers can be kept up-to-date of (un)successful builds,
-* team managers are kept up-to-date of the delivered builds into the live environments,
-* configuration managers can oversee the status of the environment and know what will change or was changed at a point of time,
-* project members can approve/reject scheduled changes or be notified when changes are going to take place.
-
-
-IKAN ALM offers an open framework for realizing your IT Best Practices implementation for Application Lifecycle Management in conjunction with existing versioning, build and deployment tools without heavy and costly migration efforts.
+IKAN ALM is a *methodology-independent* and *repository-neutral* tool (enabling cross-platform development). IKAN ALM complies with industry standards, such as CMMI, ITIL and PRINCE. It helps your organization to enforce, control, audit, report and facilitate best practices and guidelines for Application Lifecycle Management, and provides benefits which guarantee conformity with audit requirements and improve communications with the different parties across the IT system.
 
 Do not hesitate to contact us to learn more about IKAN`'s solution for Application Lifecycle Management.
 
@@ -110,7 +100,6 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * Ability to select and move individual files or components through a lifecycle (Git, GitHub, Subversion, TFVC and Azure DevOps)
 * Subversion meta properties are automatically retrieved during the "Retrieve code" phase and can be used by the build or deploy scripting tool
 
-//Should we change Maven 2 to Maven2/3, since we can also work with 3?
 === Ant, Gradle, NAnt, Maven 2/3 Builder and Deployer
 
 * Ability to execute any Ant, Gradle, NAnt, or Maven script to build and deploy the project
@@ -206,9 +195,10 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 * Execute a build or deploy from a command prompt or REST endpoint (C+R)
 * Allow scheduling builds and deploys with an external scheduling tool (Task Scheduler, Cron, ...) (C+R)
-* Generate a report from a command prompt or REST endpoint \(C)
+* Generate a report from a command prompt \(C)
 * Create or edit a package from a command prompt or REST endpoint (C+R)
 * Approve or Reject the delivery of a build to the next level \(R)
+* Export a Project from one (e.g. Test) IKAN ALM instance and subsequently import it into another (e.g. Production) instance \(R) 
 * Retrieve the details of global setup, projects, builds, deploys,... in json or xml format \(R)
 
 
@@ -227,7 +217,6 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * A Java 11 JDK. 
 * The Oracle Java SE JDK11, OpenJDK11, Adoptium OpenJDK 11 and Azul OpenJdk 11 are supported .
 //Corretto is not tested (yet)?
-
 
 ==== Supported Web Server
 
@@ -261,8 +250,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 ==== Supported Version Control Systems
 
 * Subversion 1.4.x, recommended 1.6 and higher
-// frs : ik ben niet zeker vanaf welke versie de optie --filter=blob:none ondersteund is. Het werkt zeker in 2.33. Maken we dan niet beter versie 2.33 recommended ?
-* Git 1.8, recommended 2.18 and higher
+* Git 1.8, recommended 2.27 and higher
 * GitHub
 * Microsoft Team Foundation Version Control (TFVC) 2013
 * Azure DevOps Services Version Control
@@ -296,8 +284,6 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 ==== IKAN ALM Server
 
-//Or should we even set minimum to 2 GB, with 4 GB recommended? This is how Nate adapted the HowTo_Tomcat_Install.//
-// frs : values are already quite high. ALM Server on ikan550v only has 768M max memory. The default in karaf-wrapper.conf is 512M. I'd say minimum 512M, recommended 1GB
 * RAM: minimum 1 GB (gigabytes), recommended 2 GB (gigabytes) or more
 * Disk Storage Space: minimum 10 GB (gigabytes), recommended 40 GB (gigabytes) or more
 
@@ -315,12 +301,3 @@ These are the recommendations for the ALM Agent process itself :
 // frs : The default in karaf-wrapper.conf is 512M. Maybe we should increase this to 1GB ? I'd say minimum 1GB, recommended 2GB. Actually the Agent only uses a lot of RAM when creating a zip, tgz, or 7z archive.
 * RAM: minimum 512 MB (megabytes), recommended 2 GB (gigabytes) or more
 * Disk Storage Space: minimum 1 GB (gigabytes)
-
-// frs : delete this line ? We only recommend anyway.
-As for the IKAN ALM server, these are just indicative values.
-// frs : yes, ditch this !
-////
-Commented out the paragrapth below, since it's outdated (2005). It's  still online at a different location, but outdated, and indicated as archived.
-
-For a more mathematical approach, we refer to the article "`Capacity Planning For Software Build Management Servers`" on the "`CM Crossroads`" site: https://www.cmcrossroads.com/article/capacity-planning-software-build-management-servers[https://www.cmcrossroads.com/article/capacity-planning-software-build-management-servers,window=_blank].
-////

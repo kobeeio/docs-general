@@ -282,11 +282,24 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 === Minimum Hardware Requirements
 
+IKAN ALM consists of 4 major components:
+
+* IKAN ALM Web Application
+* IKAN ALM Server
+* IKAN ALM Agent
+* IKAN ALM Commandline
+
+The IKAN ALM Server and Web Application need to be installed on the same host. The IKAN ALM Agent and Commandline can be installed on remote hosts.
+
+==== IKAN ALM Web Application
+
+* RAM: minimum 512 MB, recommended 1 GB or more
+* Disk Storage Space: minimum 1 GB, recommended 5 GB or more
+
 ==== IKAN ALM Server
 
-* RAM: minimum 1 GB (gigabytes), recommended 2 GB (gigabytes) or more
+* RAM: minimum 512 MB, recommended 1 GB or more
 * Disk Storage Space: minimum 10 GB (gigabytes), recommended 40 GB (gigabytes) or more
-
 
 There is no hard and fast rule for disk storage space.
 The actual amount you will require depends on the number and size of projects managed with IKAN ALM, and the size of the build results stored in the build archive.
@@ -294,10 +307,12 @@ The more projects and build results, and the larger they are, the more disk stor
 
 ==== IKAN ALM Agent
 
+* RAM: minimum 512 MB, recommended 1 GB or more
+* Disk Storage Space: minimum 1 GB (gigabytes)
+
 The amount of RAM and disk space needed by a machine that runs an ALM Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
 
-These are the recommendations for the ALM Agent process itself :
+==== IKAN ALM Commandline
 
-// frs : The default in karaf-wrapper.conf is 512M. Maybe we should increase this to 1GB ? I'd say minimum 1GB, recommended 2GB. Actually the Agent only uses a lot of RAM when creating a zip, tgz, or 7z archive.
-* RAM: minimum 512 MB (megabytes), recommended 2 GB (gigabytes) or more
-* Disk Storage Space: minimum 1 GB (gigabytes)
+* RAM: minimum 256 MB, recommended 256 MB
+* Disk Storage Space: minimum 100 MB

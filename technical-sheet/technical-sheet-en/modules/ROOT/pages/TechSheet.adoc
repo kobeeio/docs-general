@@ -299,7 +299,7 @@ The IKAN ALM Server and Web Application need to be installed on the same host. T
 ==== IKAN ALM Server
 
 * RAM: minimum 512 MB, recommended 1 GB or more
-* Disk Storage Space: minimum 10 GB (gigabytes), recommended 40 GB (gigabytes) or more
+* Disk Storage Space: minimum 10 GB, recommended 40 GB or more
 
 There is no hard and fast rule for disk storage space.
 The actual amount you will require depends on the number and size of projects managed with IKAN ALM, and the size of the build results stored in the build archive.
@@ -308,7 +308,7 @@ The more projects and build results, and the larger they are, the more disk stor
 ==== IKAN ALM Agent
 
 * RAM: minimum 512 MB, recommended 1 GB or more
-* Disk Storage Space: minimum 1 GB (gigabytes)
+* Disk Storage Space: minimum 1 GB
 
 The amount of RAM and disk space needed by a machine that runs an ALM Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
 

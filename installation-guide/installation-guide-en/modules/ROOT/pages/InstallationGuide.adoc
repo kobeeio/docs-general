@@ -20,7 +20,7 @@ IKAN ALM consists of 3 major components:
 
 
 
-image::fig1.png[,854,610] 
+image::ikanalm-architecture.png[,895,635] 
 
 An IKAN ALM installation needs exactly 1 _Server_ and at least 1 _Agent_ to function correctly. 
 

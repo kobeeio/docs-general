@@ -20,7 +20,7 @@ IKAN ALM comprend 3 composants principaux:
 
 
 
-image::fig1.png[,996,654] 
+image::ikanalm-architecture-fr.png[,972,635] 
 
 Pour pouvoir fonctionner correctement, l'installation IKAN ALM requiert exactement 1 _Serveur_ et au moins 1 __Agent__. 
 

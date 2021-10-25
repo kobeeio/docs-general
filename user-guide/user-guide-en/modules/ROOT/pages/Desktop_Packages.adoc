@@ -93,9 +93,9 @@ By default, both locked and unlocked Project Streams are displayed.
 By default, hidden Project Streams are not shown.
 
 |Show Accessible Projects
-|Indicate whether or not you want to display the Project Streams on which you have user access rights. 
+|Indicate whether or not you want to display the Projects on which you have user access rights. 
 
-By default, the Project Streams which are accessible are shown.
+By default, the Projects which are accessible are shown.
 |===
 +
 The list of elements displayed in the tree at the right, will be limited to the Project Streams matching these search criteria.
@@ -398,9 +398,9 @@ Example: `Webpad H_1-0`
 |Status
 a|This field contains the status of the Package. Possible statuses are Active, Frozen and Archived.
 
-* Active is the default status for package. Active packages may be edited without restrictions, and may be used to start level requests.
-* Frozen packages may have their properties edited and may be used to start level requests, but cannot have their file contents edited.
-* Archived packages may not be edited and may not be used in Level Requests.
+* Active: the Package can be built and delivered, and its contents (files) can be modified.
+* Frozen: the Package can't be built and its contents can't be modified. It can still be delivered.
+* Archived: the Package can't be built nor delivered, and its contents can't be modified.
 
 |Hidden
 |This field indicates whether or not the Package is hidden. 

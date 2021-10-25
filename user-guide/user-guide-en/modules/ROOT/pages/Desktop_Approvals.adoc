@@ -32,11 +32,16 @@ This generates a verification moment before the Level Request is executed on the
 It is also possible to have a hierarchy of Approvals on a Level, e.g., with one or more Pre- and one or more Post-Approvals.
 Every Approval will result in a notification mail to the Users belonging to the protecting User Group, asking them to grant or reject the Approval via the Outstanding Approvals interface.
 
+Approvals can be approved and rejected through 4 methods: Action links on the Level Request Details Summary tab, the Outstanding Approvals page, the Approvals Overview page and the approvals Rest API endpoint.
+
 Refer to the following sections for more information about:
 
 * <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsscreen,The Outstanding Approvals>>
 * <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,Approving Outstanding Approvals>>
 * <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsreject,Rejecting Outstanding Approvals>>
+* <<Desktop_Approvals.adoc#_desktop_approvals_overview,The Approvals Overview>>
+* <<Desktop_LevelRequests.adoc#_desktop_lr_actions_approvals,Level Request Details Approval Actions>>
+* The Rest API documentation linked through the Help menu in IKAN ALM.
 
 
 [[_desktop_outstandingapprovalsscreen]]

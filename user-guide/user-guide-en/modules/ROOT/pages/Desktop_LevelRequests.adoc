@@ -1244,7 +1244,7 @@ The following sections deal with the procedures involved when using the __Level 
 +
 The _Level Requests Overview_ screen is displayed:
 +
-image::Desktop-LevelRequests-Overview.png[,1023,668] 
+image::Desktop-LevelRequests-Overview.png[,1119,708] 
 +
 
 [NOTE]
@@ -1254,7 +1254,7 @@ If the __Auto Refresh __option is activated, the __Level Requests Overview__ scr
 
 . Use the search criteria on the _Search_ panel to only display the Level Requests you are looking for.
 +
-image::Desktop-LevelRequests-SearchPanel.png[,854,230] 
+image::Desktop-LevelRequests-SearchPanel.png[,1119,283] 
 +
 The following options are available:
 
@@ -1391,7 +1391,7 @@ For more information, refer to the section <<Desktop_LevelRequests.adoc#_dekstop
 
 If your Global IKAN ALM Manager has activated RSS Feeds at System Settings level, the orange _RSS_ button is available on the _Search Level Request_ panel.
 
-image::Desktop-LevelRequests-Overview-RSS.png[,1035,317] 
+image::Desktop-LevelRequests-Overview-RSS.png[,1125,331] 
 
 RSS is a web format used to publish frequently updated digital content, such as blogs, news feeds or podcasts.
 Consumers of RSS content use special browsers called aggregators to watch for new content in dozens or even hundreds of web feeds.
@@ -1710,6 +1710,10 @@ You can also click _Close_ to cancel the abort process and return to the _Level 
 
 . the Level Request is waiting for an Approval:
 +
+[[_desktop_lr_actions_approvals]]
++
+image::Desktop-LevelRequests-Detailed-Summary-Approval.png[,360,308]
++
 If the Level Request is waiting for an approval, in addition to the available options above, there are two additional options:
 +
 [cols="1,1", frame="topbot", options="header"]
@@ -1727,6 +1731,8 @@ If the Level Request is waiting for an approval, in addition to the available op
 For more info on the dialogs opened by these actions, refer to the section <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove, Approving Outstanding Approvals>>.
 
 . The Level Request is successful and can be delivered to a next level:
++
+image::Desktop-LevelRequests-Detailed-Summary-Deliver.png[,360,308]
 +
 If the Level Request is in status Success or Warning, the following buttons are available:
 +

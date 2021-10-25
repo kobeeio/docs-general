@@ -351,6 +351,11 @@ a|Enter the status of the Project Stream:
 
 |Show Hidden Packages
 |Indicate whether or not you want to display hidden Packages.
+
+|Show Accessible Projects
+|Indicate whether or not you want to display the Projects on which you have user access rights. 
+
+By default, the Projects which are accessible are shown.
 |===
 +
 The list of elements displayed in the tree at the right, will be limited to the Project Streams matching these search criteria.

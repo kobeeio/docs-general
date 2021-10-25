@@ -25,6 +25,14 @@ At the right, it contains the User Settings of the current user as well as the c
 
 image::GettingStarted-UserInterface-main-menu.png[,1200,217] 
 
+==== Recent Items and Search Filters
+
+The Main Menu sections for Level Requests, Packages and Projects remember up to 5 recently visited items. For Level Requests, these items also show the status of the Level Request.
+
+In addition, the Main Menu sections for Level Requests, Builds and Deploys, Packages and Projects also display up to 5 Search Filters.
+
+image::UserInterface-RecentItems.png[,564,438]
+
 === Submenus
 When you select the Global or Project Administration option from the Main Menu, the dependent Submenu is displayed in the gray banner below the Main Menu.
 

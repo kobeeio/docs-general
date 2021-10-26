@@ -102,13 +102,13 @@ Refer to the following procedures for more information:
 
 . Specify the required (advanced) search criteria.
 +
-image::Search_DefineCriteria.png[,875,553] 
+image::Search_DefineCriteria.png[,1122,712] 
 +
 . Click the _Save filter_ link.
 +
 The following pop-up window is displayed.
 +
-image::Search_SaveFilter.png[,484,239] 
+image::Search_SaveFilter.png[,467,217] 
 +
 . Enter the name and a description for the new filter and click the _Save_ button.
 +
@@ -131,7 +131,7 @@ On the Overview screens, search filters can be used instead of manually specifyi
 
 . To display the list of existing filters, click the down arrow of the _No filter selected_ drop-down box.
 +
-image::Search_SelectFilter.png[,854,271] 
+image::Search_SelectFilter.png[,1119,334] 
 +
 . Select the required filter from the list.
 +
@@ -150,7 +150,7 @@ The __Search Filters __panel displays the list of all filters defined for the cu
 +
 If required, you can limit the list of displayed filters by selecting the required _Search Page_ (Package Overview, Projects Overview, Level Request Overview of Build and Deploy Overview) from the drop-down list.
 +
-image::Search_ManageFilters.png[,1039,552] 
+image::Search_ManageFilters.png[,1162,604] 
 +
 . Click the image:icons/icon_viewRemote.png[,15,15] _View_ icon in front of the filter, to view the specified search criteria.
 +
@@ -165,7 +165,7 @@ See also <<Desktop_PersonalSettings.adoc#_cihhjjjej8,Modifying a filter`'s searc
 
 . Click the image:icons/edit.gif[,15,15] _Edit_ icon in front of the filter, to modify the name or the description.
 +
-image::Search_EditFilter.png[,512,239] 
+image::Search_EditFilter.png[,491,218] 
 +
 Confirm the modification, by clicking the _Save_ button.
 +
@@ -177,7 +177,7 @@ Modifying the search criteria is only possible on the Overview screens themselve
 +
 . Click the image:icons/delete.gif[,15,15] _Delete_ icon in front of the filter, to delete a specific filter.
 +
-image::Search_DeleteFilter.png[,509,151] 
+image::Search_DeleteFilter.png[,492,133] 
 +
 Confirm the deletion, by clicking the _Delete_ button.
 
@@ -199,7 +199,7 @@ There are two possible ways to do so:
 +
 The __Save Filter__ pop-up window is displayed.
 +
-image::Search_SaveFilter.png[,486,239] 
+image::Search_SaveFilter.png[,467,217] 
 +
 . If required, you can also at the same time adapt the _Name_ and __Description__.
 . Click __Save__.
@@ -207,4 +207,4 @@ image::Search_SaveFilter.png[,486,239]
 +
 
 
-image::Search_ConfirmUpdate.png[,368,115] 
+image::Search_ConfirmUpdate.png[,352,86] 

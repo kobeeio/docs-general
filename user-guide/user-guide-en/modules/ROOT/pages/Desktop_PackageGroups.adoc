@@ -39,7 +39,7 @@ Refer to the following procedures for more information:
 +
 The _Create Package Build Group_ screen is displayed.
 +
-image::Desktop-PackageGoups-Create.png[,600,327] 
+image::Desktop-PackageGoups-Create.png[,574,300] 
 +
 . Fill out the fields. Fields marked with a red asterisk are mandatory:
 +
@@ -97,7 +97,7 @@ image::Desktop-PackageGoups-Overview.png[,955,360]
 +
 . Use the search criteria on the _Search Package Build Groups_ panel to only display the Package Build Groups you are looking for.
 +
-image::Desktop-PackageGoups-Overview-SearchPanel.png[,996,98] 
+image::Desktop-PackageGoups-Overview-SearchPanel.png[,947,92] 
 +
 The following options are available:
 
@@ -158,7 +158,7 @@ image::Desktop-PackageGoups-Edit.png[,1139,608]
 +
 The following pop-up window is displayed:
 +
-image::Desktop-PackageGoups-Edit_Popup.png[,558,270] 
+image::Desktop-PackageGoups-Edit_Popup.png[,536,237] 
 +
 Edit the Package Build Group Information as required and click the _Save_ button.
 +
@@ -262,7 +262,7 @@ Build Results_ is set to __Yes__, all Build Results will be retrieved regardless
 +
 Modify the Dependency Level by selecting the appropriate level from the drop-down list.
 +
-image::Desktop-PackageGoups-ModifyDependencyLevel.png[,845,361] 
+image::Desktop-PackageGoups-ModifyDependencyLevel.png[,821,335] 
 +
 . Modifying the order of the packages.
 +
@@ -280,7 +280,7 @@ Valid positions are indicated with a green bar above the selected elements, inva
 +
 Example:
 +
-image::Desktop-PackageGoups-MovePackage.png[,959,359] 
+image::Desktop-PackageGoups-MovePackage.png[,940,340] 
 +
 [NOTE]
 ====
@@ -309,7 +309,7 @@ For more information on how to edit the Package, refer to <<Desktop_Packages.ado
 +
 A pop-up window asking you to confirm the removal is displayed.
 +
-image::Desktop-PackageGoups-ConfirmRemoval.png[,436,145] 
+image::Desktop-PackageGoups-ConfirmRemoval.png[,412,119] 
 +
 . Click __Yes__ to confirm the removal.
 +

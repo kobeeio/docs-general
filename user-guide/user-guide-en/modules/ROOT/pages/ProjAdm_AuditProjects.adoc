@@ -34,7 +34,7 @@ The following tests will return a warning:
 +
 If the Project configuration is consistent, the following screen is displayed:
 +
-image::ProjAdmin-Audit-Success.png[,964,610] 
+image::ProjAdmin-Audit-Success.png[,934,587] 
 +
 If there are errors in the Project configuration, the following screen is displayed:
 +

@@ -53,7 +53,7 @@ Refer to the following sections for more information about:
 +
 The __Outstanding Approvals__ screen displays all currently outstanding Approvals which you (or another member of your User Group) can approve or reject.
 +
-image::Desktop-OutstandingApprovals-Overview.png[,967,139] 
+image::Desktop-OutstandingApprovals-Overview.png[,1268,157] 
 +
 . Verify the information.
 +
@@ -251,7 +251,7 @@ image::Desktop-Approvals-Overview.png[,1217,747]
 +
 . Use the search criteria on the _Search Level Approvals_ panel to only display the Approvals you are looking for.
 +
-image::Approvals-SearchPanel.png[,855,270] 
+image::Approvals-SearchPanel.png[,1116,325] 
 +
 The following options are available:
 

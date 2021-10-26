@@ -57,7 +57,7 @@ The following actions are possible:
 +
 The _Create BUILD Level_ screen is displayed:
 +
-image::ProjAdmin-Levels-BuildLevel-Create.png[,516,497] 
+image::ProjAdmin-Levels-BuildLevel-Create.png[,469,422] 
 +
 
 [NOTE]
@@ -179,7 +179,7 @@ The procedure for creating Test and Production Levels is identical.
 The _Create TEST Level_ or _Create
 PRODUCTION Level_ screen is displayed:
 +
-image::ProjAdmin-Levels-ProductionLevel-Create.png[,511,482] 
+image::ProjAdmin-Levels-ProductionLevel-Create.png[,494,473] 
 +
 
 [NOTE]

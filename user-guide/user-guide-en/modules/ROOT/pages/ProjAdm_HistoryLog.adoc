@@ -9,7 +9,7 @@
 +
 The _Project History View_ screen is displayed:
 +
-image::ProjAdm-HistoryLog-Screen.png[,1043,546] 
+image::ProjAdm-HistoryLog-Screen.png[,949,477] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -73,7 +73,7 @@ The object was deleted
 +
 A _Comparison_ panel is added to the right of the _Versions_ panel.
 +
-image::ProjAdm-HistoryLog-Comparison.png[,964,637] 
+image::ProjAdm-HistoryLog-Comparison.png[,1260,775] 
 +
 The _Version Comparison_ panel displays the differences between the latest version of the object (shown in the "Latest" column) and the selected version of the object (shown in the "Selected" column). If the Object was deleted, the latest version will be equal to the status of the Object before it was deleted.
 

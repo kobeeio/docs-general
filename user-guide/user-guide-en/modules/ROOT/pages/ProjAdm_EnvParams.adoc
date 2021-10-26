@@ -268,7 +268,7 @@ You can also click:
 +
 The following confirmation window is displayed:
 +
-image::ProjAdmin-EnvParams-Delete.png[,383,388] 
+image::ProjAdmin-EnvParams-Delete.png[,814,451] 
 +
 . Optionally, select additional Environments. This allows for deleting parameters with the same key name on the selected Build and Deploy Environments.
 . Click _Delete_ to confirm the deletion of the Environment Parameter.
@@ -288,7 +288,7 @@ To avoid having to redefine Environment Parameters which are identical for multi
 +
 The following window displays the values of the parameter you are about to copy.
 +
-image::ProjAdmin-EnvParams-Copy.png[,462,529] 
+image::ProjAdmin-EnvParams-Copy.png[,814,620] 
 +
 . Indicate whether you want to replace the parameter in case it already exists in the target Build or Deploy Environment(s).
 . Select the Target Environment(s)

@@ -33,6 +33,7 @@ Refer to the following procedures for more information:
 * <<Desktop_Packages.adoc#_desktop_editpackage,Editing a Package>>
 * <<Desktop_Packages.adoc#_desktop_hideshowpackage,Hiding/Showing a Package>>
 * <<Desktop_Packages.adoc#_desktop_viewpackagehistory,Viewing the Package History>>
+* <<Desktop_Packages.adoc#_desktop_packagedetails_editcontents,Edit Contents>>
 
 
 [[_desktop_createpackage]]
@@ -131,11 +132,11 @@ For more information on adding File Revisions to the newly created Package, refe
 +
 The _Packages Overview_ window is displayed.
 +
-image::Desktop-Packages-PackagesOverview.png[,1015,497] 
+image::Desktop-Packages-PackagesOverview.png[,1071,525] 
 +
 . Use the search criteria on the _Search_ panel to only display the Packages you are looking for.
 +
-image::Desktop-Packages-PackagesOverview-SearchPanel.png[,996,98] 
+image::Desktop-Packages-PackagesOverview-SearchPanel.png[,983,99] 
 +
 The following options are available:
 
@@ -200,7 +201,7 @@ Columns marked with the image:icons/icon_sort.png[,15,15]  icon can be sorted al
 +
 The __Summary __tab page of the _Package Details_ screen is displayed.
 +
-image::Desktop-Packages-ViewPackage.png[,946,657] 
+image::Desktop-Packages-ViewPackage.png[,921,635] 
 +
 . Verify the settings.
 +
@@ -347,14 +348,14 @@ For more information on the _Auto Refresh_ settings, refer to the section <<User
 The information concerning the Package and the possible actions are spread over different panels.
 
 
-image::Desktop-PackageDetails-Tab-Summary.png[,892,483] 
+image::Desktop-PackageDetails-Tab-Summary.png[,1146,607] 
 
 
 [[_desktop_packagedetails_actions]]
 ==== Actions Panel
 
 
-image::Desktop-PackageDetails-Panel-Acttions.png[,330,254] 
+image::Desktop-PackageDetails-Panel-Acttions.png[,311,247] 
 
 The _Actions_ panel contains the _Edit Package_ link.
 This link will open a pop-up window allowing you to modify the Name, the Description, the Status, the Owner and the Target Release Date of the Package.
@@ -423,7 +424,7 @@ For more information, refer to the section <<Desktop_PackageGroups.adoc#_desktop
 ==== Latest Level Requests Panel
 
 
-image::Desktop-PackageDetails-Panel-LatestLR.png[,933,193] 
+image::Desktop-PackageDetails-Panel-LatestLR.png[,900,176] 
 
 This panel displays the ten latest Level Requests executed for the selected Package.
 On this list, you can click the _OID_ link of one of the Level Requests to display its details.
@@ -432,7 +433,7 @@ Clicking the Build Number will show the Build History of that Level Request.
 [[_desktop_packagedetails_viewcontents]]
 === View Contents
 
-image::Desktop-PackageDetails-Tab-ViewContents.png[,710,336] 
+image::Desktop-PackageDetails-Tab-ViewContents.png[,915,416] 
 
 The _View Contents_ panel lists all File Revisions currently connected to the Package.
 

@@ -206,7 +206,7 @@ You can also right-click the Tab Page label of any existing Tab Page and select 
 +
 The following screen is displayed:
 +
-image::Desktop-ManageDesktop-NewTabPage.png[,445,154] 
+image::Desktop-ManageDesktop-NewTabPage.png[,439,142] 
 +
 . Fill out the fields for the new Tab Page. 
 +
@@ -255,7 +255,7 @@ Desktop_ from the menu.
 +
 The following screen is displayed:
 +
-image::Desktop-ManageDesktop-EditTabPageLabel.png[,447,155] 
+image::Desktop-ManageDesktop-EditTabPageLabel.png[,436,140] 
 +
 . Edit the fields for the Tab Page. 
 +
@@ -279,7 +279,7 @@ Desktop_ from the menu.
 
 The following screen is displayed:
 
-image::Desktop-ManageDesktop-RemoveTabPage.png[,450,141] 
+image::Desktop-ManageDesktop-RemoveTabPage.png[,439,130] 
 
 Confirm or cancel the deletion of the Tab Page.
 
@@ -304,7 +304,7 @@ Click the _Add to Desktop_ button underneath the _Desktop Overview_ screen, or r
 +
 The following screen is displayed.
 +
-image::Desktop-ManageDesktop.png[,793,470] 
+image::Desktop-ManageDesktop.png[,768,454] 
 +
 . Define search criteria on the Search Project Stream panel.
 +
@@ -384,7 +384,7 @@ If you add a Package to your Desktop, all Levels belonging to the Project Stream
 +
 Example of the selection of a Package and a Project Stream:
 +
-image::Desktop-ManageDesktop-Example1.png[,790,471] 
+image::Desktop-ManageDesktop-Example1.png[,768,454] 
 +
 When adding an element to the Desktop, the underlying _Desktop
 Overview_ is immediately updated.

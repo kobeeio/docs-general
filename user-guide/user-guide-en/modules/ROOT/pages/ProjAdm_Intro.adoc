@@ -37,4 +37,4 @@ On the submenu, the different Project Administration options have become availab
 +
 
 
-image::ProjAdmin-ProjMgt-SubmenuOptions.png[,1023,80] 
+image::ProjAdmin-ProjMgt-SubmenuOptions.png[,1006,62] 

@@ -437,7 +437,7 @@ All Build Results_ has been set to __false__.
 
 The _Compress Build_ Phase compresses the Build result files in the Build Environment`'s Target Location.
 
-If the Agent Machine runs a Windows OS, the Compress Build Phase creates a `$$.$$zip` file, otherwise it creates a `$$.$$tar.gz` file
+The Archive format is determined by the alm.phases.compress.result.archiveFormat Environment Phase parameter. If set to zip, tgz or 7z, the chosen archive format will be used. If not set or set to auto, a format will be chosen based on the OS of the Agent Machine. If the Agent Machine runs a Windows OS, the Compress Build Phase creates a `$$.$$zip` file, otherwise it creates a `$$.$$tar.gz` file
 
 [[_phases_buildphases_archiveresult]]
 === Archive Result Phase 

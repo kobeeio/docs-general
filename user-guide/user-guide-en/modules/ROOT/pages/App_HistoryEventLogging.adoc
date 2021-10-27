@@ -23,7 +23,7 @@ For more information on how to switch to an _Overview_ screen, refer to the spec
 +
 A screen similar to this one, will appear.
 +
-image::History_OverviewScreen.png[,1010,352] 
+image::History_OverviewScreen.png[,1313,434] 
 +
 . Click the image:icons/history.gif[,15,15] _History_ link, underneath the __Overview__, to display the _History View_ screen.
 +
@@ -203,7 +203,7 @@ Select the version you want to compare by clicking its number on the _Versions_ 
 +
 The _Version Comparison_ panel is added to the right of the _Versions_ panel.
 +
-image::History_Differences.png[,941,718] 
+image::History_Differences.png[,934,712] 
 +
 The _Version Comparison_ panel displays the differences between the current version of the object (shown in the "Current" column) and the selected version of the object (shown in the "Selected" column)
 

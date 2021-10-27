@@ -175,10 +175,10 @@ This enables Continuous Integration or Nightly Builds.
 |_Issue Tracking_
 |A system external to IKAN ALM, where Issues (defects, enhancements, tasks, 
  .) may be defined for a Project.
-Samples are Atlassian JIRA, HP Quality Center, Collabnet TeamForge, Bugzilla or Trac.
+Samples are Atlassian JIRA, MicroFocus ALM, GitHub, Microsoft Team Foundation Server, Collabnet TeamForge, Bugzilla or Trac.
 IKAN ALM can plug in to such a System and keep up with the Issues that were handled for a Level Request. 
 
-The integration with JIRA, HP Quality Center and TeamForge is more advanced: Issues are automatically synchronized through the Lifecycle, and it is possible to keep a link with the Level Requests in the JIRA Issue, HP Quality Center Defect or TeamForge Artifact.
+The integration with JIRA, Microfocus ALM, GitHub and Microsoft TFS is more advanced: Issues are automatically synchronized through the Lifecycle, and it is possible to keep a link with the Level Requests in the JIRA Issue, MF ALM Defect, GitHub Issue or TFS Issue.
 
 |_Level_
 |A Level is a stage in the Lifecycle, a conceptual step in the process of promoting sources and build results from development to production.
@@ -222,7 +222,7 @@ If an Environment Parameter and a Machine Parameter have the same name, the Envi
 Builds in the Master Project Stream may use the sources or Build Result (e.g., a common library) from the Child Project Stream.
 
 |_Notification_
-|A message to a User defined in IKAN ALM via mail or netsend.
+|A message to a User defined in IKAN ALM via mail.
 Notifications may be sent when a Level Request fails or succeeds, when an Approval must be granted for a Level Request, when an Approval for a Level is rejected, when a Level Request is delivered to or from a certain Level, when the IKAN ALM Administrator wants to notify certain Users.
 
 |_OID (Level Request OID / Build OID / Deploy OID /Level Approval OID)_
@@ -302,7 +302,7 @@ This VCR Tag matches a Build [Level Request] with its source code in the VCR The
 |_Version Control Repository (VCR)_
 |An external versioning system holding different versions of sources.
 Related sources are bundled in a Project or subproject (sometimes also called a Module). A VCR Project may contain different development streams, called head (=main or trunk) or branch streams.
-IKAN ALM integrates with the following VCRs: Subversion, Git, CVS, Microsoft Visual SourceSafe, IBM ClearCase, Serena PVCS and TFVC.
+IKAN ALM integrates with the following VCRs: Subversion, Git, CVS, and TFVC.
 In order to connect to the VCR, a VCR Client must be installed on the IKAN ALM Server and correctly configured.
 The IKAN ALM Monitor interacts with the VCR by retrieving or tagging sources.
 The web interface interacts with the VCR to show revision numbers, modified sources, ... related to a Level Request.

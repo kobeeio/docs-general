@@ -102,10 +102,9 @@ a|From the drop-down list, select the required Notification Type for this Build 
 The following options are available:
 
 ** Mail
-** Netsend
 ** No Notification
 
-If _Mail_ or _Netsend_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
+If _Mail_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
 The notification is sent to the members of the Project User, Project Admin and Level Requester User Groups.
 
 |Notification Criteria
@@ -146,8 +145,7 @@ _Note:_ This option is not available for Package-based projects.
 
 |Requester User Group
 |From the drop-down list, you may select the required Requester User Group.
-Members of this User Group have the right to create Level Requests for this Build Level.
-If a Project User Group has been defined, this User Group will be selected as the default Requester User Group.
+Members of this User Group and any child User Groups have the right to create Level Requests for this Build Level.
 
 |Lifecycle
 |From the drop-down list, select the Lifecycle to which the Level must be assigned.
@@ -226,11 +224,10 @@ a|From the drop-down list, select the required Notification Type for this Test o
 
 The following options are available:
 
-* netsend
 * mail
 * No notification
 
-If _Mail_ or _Netsend_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
+If _Mail_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
 The notification is sent to the members of the Project User, Project Admin and Level Requester User Groups.
 
 |Notification Criteria
@@ -253,16 +250,15 @@ No notification will be sent when a Level Request for this Level has ended.
 
 |Requester User Group
 |From the drop-down menu, you may select the required Requester User Group.
-Members of this User Group have the right to create Level Requests for this Test or Production Level.
-If a Project User Group has been defined, this User Group will be selected as the default Requester User Group.
+Members of this User Group and any child User Groups have the right to create Level Requests for this Test or Production Level.
 
 |Pre-Notification User Group
 |From the drop-down menu, you may select the required Pre-Notification User Group.
-Members of this group will be notified when a Level Request is created for this Level.
+Members of this User Group and any child User Groups will be notified when a Level Request is created for this Level.
 
 |Post-Notification User Group
 |From the drop-down menu, you may select the required Post-Notification User Group.
-Members of this group will be notified when a Level Request for this Level has ended, depending on the Post-Notification Criteria.
+Members of this User Group and any Child User Groups will be notified when a Level Request for this Level has ended, depending on the Post-Notification Criteria.
 
 |Post-Notification Criteria
 a|From the drop-down list, select the required Post-Notification Criteria for this Test or Production Level.

@@ -242,8 +242,8 @@ The _Issue Tracking_ Phase links Issues, managed in an external Issue Tracking S
 
 In the case of a Build Level Request, the Issue Tracking Phase parses the commit comments that have been entered since the last successful Level Request for that Level and tries to match the Issue Pattern of the attached Issue Tracking System (<<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Creating an Issue Tracking System>>). All found Issues will be attached to the Level Request.
 
-For an Atlassian JIRA, HP Quality Center or CollabNet TeamForge Issue Tracking System, the Issue Tracking Phase will also connect to and try to identify the issues in JIRA, HP ALM or TeamForge.
-For each identified Issue, it will try to get additional information from JIRA, HP ALM or TeamForge (like description, status, owner and priority) and store it in IKAN ALM.
+For an Atlassian JIRA, MF ALM, GitHub or TFS Issue Tracking System, the Issue Tracking Phase will also connect to and try to identify the issues in JIRA, MF ALM, GitHub or TFS.
+For each identified Issue, it will try to get additional information from JIRA, MF ALM, GitHub or TFS (like description, status, owner and priority) and store it in IKAN ALM.
 
 When the Level Request is a Deliver Level Request, the Issue Tracking Phase enumerates all the Issues that have been attached to the previous successful Build Level Requests that have occurred since the last successful Deliver Level Request on this Level, and adds all of them to this Level Request.
 
@@ -253,7 +253,7 @@ Suppose we have built the following Builds: Build 3 with Issue 3, Build 4 with I
 Previously, Build 2 was delivered.
 If we now deliver Build 5, Issues 3,4,5 and 6 will be attached to the Deliver Level Request.
 
-For an Atlassian JIRA, HP ALM or TeamForge Issue Tracking System, the Issue Tracking Phase will also synchronize all the issues attached to the Deliver Level Request: it will compare the info about the issue in IKAN ALM with the current information in JIRA, HP ALM or TeamForge and update description, status, owner or priority if necessary.
+For an Atlassian JIRA, MF ALM, GitHub or TFS Issue Tracking System, the Issue Tracking Phase will also synchronize all the issues attached to the Deliver Level Request: it will compare the info about the issue in IKAN ALM with the current information in JIRA, MF ALM, GitHub or TFS and update description, status, owner or priority if necessary.
 
 If the Level Request was not successful, the Issue Tracking Phase does nothing, and exits with status __Success__, reporting that it did not process any Issues.
 

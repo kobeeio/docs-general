@@ -2787,7 +2787,7 @@ Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue T
 ====
 Issue information is only visible when the Project of the Level Request is linked to an Issue Tracking System. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
 
-If the project is connected to an HP Quality Center, Atlassian JIRA, Collabnet TeamForge or Microsoft Team Foundation Issue Tracking System, the description, status, owner and priority information will automatically be filled in based on the Issue information in the Issue Tracking System concerned.
+If the project is connected to an Atlassian JIRA, MicroFocus ALM, GitHub or Microsoft Team Foundation Issue Tracking System, the description, status, owner and priority information will automatically be filled in based on the Issue information in the Issue Tracking System concerned.
 For other Issue Tracking Systems, you can add the information manually.
 ====
 
@@ -2892,10 +2892,10 @@ You can also click _Cancel_ to return to the _Issues_ page without deleting the 
 
 [NOTE]
 ====
-This option is only available for Atlassian JIRA, HP Quality Center, Collabnet TeamForge and Microsoft Team Foundation.
+This option is only available for Atlassian JIRA, MicroFocus ALM, GitHub and Microsoft Team Foundation.
 ====
 
-HP Quality Center Defects, JIRA Issues, TeamForge and Team Foundation Artifacts may be linked to an IKAN ALM Level Request, based on the comments provided by the developers when they commit their code to the VCR.
+MF ALM Defects, JIRA Issues, GitHub Issues and Team Foundation Artifacts may be linked to an IKAN ALM Level Request, based on the comments provided by the developers when they commit their code to the VCR.
 IKAN ALM retrieves information from the corresponding Issue, such as a short description, the owner and the priority.
 This information is synchronized during the Issue Tracking Phase each time the Level Request is delivered to the next Level in the IKAN ALM Lifecycle.
 
@@ -2964,7 +2964,7 @@ This field is optional.
 [NOTE]
 ====
 
-For JIRA Issues, HP Quality Center Defects, TeamForge and Team Foundation Artifacts, it`'s sufficient to enter the Issue ID.
+For JIRA Issues, MicroFocus ALM Defects, GitHub Issues and Team Foundation Artifacts, it`'s sufficient to enter the Issue ID.
 After having created the Issue, synchronize the issue (<<Desktop_LevelRequests.adoc#_desktop_lr_issuesynchronize,Synchronizing an Issue>>) to automatically retrieve the additional fields from the Issue Tracking System.
 ====
 

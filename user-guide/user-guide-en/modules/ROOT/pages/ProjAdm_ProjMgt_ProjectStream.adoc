@@ -55,7 +55,7 @@ Create an additional Lifecycle before creating a Branch. <<ProjAdm_LifeCycles.ad
 +
 The following screen is displayed:
 +
-image::ProjAdmin-ProjMgt-ProjectStream-CreateBranch.png[,958,427] 
+image::ProjAdmin-ProjMgt-ProjectStream-CreateBranch.png[,1125,465] 
 +
 At the bottom of the screen, the _Project Streams
 Overview_ panel displays the currently defined Project Streams for the selected Project.
@@ -261,7 +261,7 @@ The following actions are possible:
 +
 The _Project Streams Overview_ screen is displayed:
 +
-image::ProjAdmin-ProjMgt-ProjectStream-Overview.png[,962,366] 
+image::ProjAdmin-ProjMgt-ProjectStream-Overview.png[,970,319] 
 +
 At the bottom of the screen, the _Project Streams
 Overview_ panel displays the currently defined Project Streams for the selected Project.
@@ -317,7 +317,7 @@ It allows to display the History of all create, update and delete operations per
 +
 The _Edit Project Stream_ screen is displayed:
 +
-image::ProjAdmin-ProjectStreams-View.png[,918,269] 
+image::ProjAdmin-ProjectStreams-View.png[,902,248] 
 +
 . Verify the settings.
 +
@@ -333,11 +333,11 @@ For a description of the fields, refer to <<ProjAdm_ProjMgt_ProjectStream.adoc#_
 +
 The _Edit Project Stream_ screen is displayed:
 +
-image::ProjAdmin-ProjectStreams-View.png[,918,269] 
+image::ProjAdmin-ProjectStreams-View.png[,902,248] 
 +
 . Click the _Edit_ button on the _Project Stream Info_ panel to edit the fields.
 +
-image::ProjAdmin-ProjMgt-ProjectStream-Edit-EditProjectStream.png[,559,442] 
+image::ProjAdmin-ProjMgt-ProjectStream-Edit-EditProjectStream.png[,536,421] 
 +
 For a description of the fields, refer to <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_createbranch,Creating a Branch Project Stream>>.
 . Click __Save__ to save your changes.
@@ -369,7 +369,7 @@ a|_RELATED TOPICS_
 +
 The following screen is displayed:
 +
-image::ProjAdmin-ProjMgt-ProjectStream-Delete.png[,820,328] 
+image::ProjAdmin-ProjMgt-ProjectStream-Delete.png[,791,303] 
 +
 . Verify if you really want to irrevocably delete the Project Stream.
 . Click __Delete__ to confirm the deletion. 
@@ -434,7 +434,7 @@ When the code in the Master Project Stream is built, the process will use the so
 +
 The _Edit Project Stream_ screen is displayed, containing the _Project Stream Info_ and the _Dependencies_ panels.
 +
-image::ProjAdmin-ProjectStream-Dependencies.png[,947,506] 
+image::ProjAdmin-ProjectStream-Dependencies.png[,1214,647] 
 +
 The Dependencies panel contains:
 
@@ -527,7 +527,7 @@ Stream Dependency__ screen of these Master Project Streams to edit their Depende
 +
 The following pop-up screen is displayed:
 +
-image::ProjAdmin-ProjectStream-AddDependency-Step1.png[,760,518] 
+image::ProjAdmin-ProjectStream-AddDependency-Step1.png[,729,500] 
 +
 . Define search criteria on the _Search Project Stream_ panel in case you do not immediately find the Project Stream you want to add.
 +
@@ -543,7 +543,7 @@ If a Project Stream can not be added, an error message will be displayed.
 ====
 . Specify the Build results or sources to be used.
 +
-image::ProjAdmin-ProjectStream-AddDependency-Step2.png[,744,231] 
+image::ProjAdmin-ProjectStream-AddDependency-Step2.png[,726,214] 
 +
 .. Select the __Code Retrieval__ mode from the drop-down list.
 +
@@ -597,7 +597,7 @@ You can also click:
 +
 The _Update Project Stream Dependency_ pop-up screen is displayed:
 +
-image::ProjAdmin-ProjectStream-UpdateDependency.png[,504,174] 
+image::ProjAdmin-ProjectStream-UpdateDependency.png[,487,154] 
 +
 . Edit the _Code Retrieval_ mode and __VCR Tag__, if required. 
 +

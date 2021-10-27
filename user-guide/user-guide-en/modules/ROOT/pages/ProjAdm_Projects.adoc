@@ -28,7 +28,7 @@ Refer to the following procedures for more information:
 +
 The __Projects Overview __screen is displayed.
 +
-image::ProjAdmin-Projects-Overview.png[,970,410] 
+image::ProjAdmin-Projects-Overview.png[,1232,525] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -154,7 +154,7 @@ This link is only available if you have Project Admin Access Rights to the Proje
 +
 The _Project Info_ screen is displayed.
 +
-image::ProjAdmin-Projects-AdminRights-Edit.png[,555,779] 
+image::ProjAdmin-Projects-AdminRights-Edit.png[,554,656] 
 +
 . Click the _Edit_ button.
 +
@@ -268,7 +268,7 @@ On this page the following buttons are available:
 +
 To make setting up a project easier, the most important project administration actions have also been grouped in subpanels aside the _Project Info_ panel.
 +
-image::ProjAdmin-Projects-EasyAccessPanels.png[,488,453] 
+image::ProjAdmin-Projects-EasyAccessPanels.png[,462,435] 
 +
 For an overview of the submenu options, refer to section <<ProjAdm_ProjMgtOptions.adoc#_projadm_projmgtoptions,Project Administration Options>>.
 

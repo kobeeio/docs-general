@@ -74,12 +74,6 @@ A Branch Project Stream will combine the Build Prefix and Suffix to obtain its r
 |_Build Tool_
 |Scripting Tool installed on a Build Environment
 
-|_Child Project Stream_
-|A Project Stream who`'s sources or Build Result are used to create Builds in one (or more) Parent Project Streams.
-The Parent Project Stream has then a dependency link to the sources, or the Build Result of the Child Project Stream. 
-
-Example: a child project stream may contain a common library that is used in several Parent Project Streams.
-
 |_Continuous Build Level_
 |A Build Level for which a Schedule has been defined verifying the latest sources in the VCR after a specified number of minutes (e.g., every 5 or 10 minutes). If the code has changed in the VCR, the Scheduler will notify the changes after the defined interval and a Level Request will be generated automatically.
 
@@ -217,10 +211,6 @@ This avoids having to (re)define Build and/or Deploy Parameters for each Environ
 
 If an Environment Parameter and a Machine Parameter have the same name, the Environment Parameter takes precedence.
 
-|_Master Project Stream_
-|The Master Project Stream is a Project Stream to which a Dependency (a Child Project Stream) is added.
-Builds in the Master Project Stream may use the sources or Build Result (e.g., a common library) from the Child Project Stream.
-
 |_Notification_
 |A message to a User defined in IKAN ALM via mail.
 Notifications may be sent when a Level Request fails or succeeds, when an Approval must be granted for a Level Request, when an Approval for a Level is rejected, when a Level Request is delivered to or from a certain Level, when the IKAN ALM Administrator wants to notify certain Users.
@@ -255,6 +245,17 @@ In general, all Projects have a main Project Stream called "`Head`", in which de
 In addition to this there will probably be one or more Branch Project Streams.
 A Branch Project Stream can be used for maintaining Project releases which are currently in Production, so that fixes can be rolled out automatically or urgent fixes can be promoted along a shorter (and faster) Lifecycle to production.
 A Branch Project Stream may also be used to allow parallel development, or to test upcoming Test and Production environments with different settings (new operating system, new compiler or database version, ...).
+
+|_Project Stream Dependency_
+|Project Streams can have dependencies on one another.
+
+A Child Project Stream is a Project Stream whose sources or Build Result are used to create Builds in one (or more) Parent Project Streams.
+The Parent Project Stream has then a dependency link to the sources, or the Build Result of the Child Project Stream. 
+
+The Parent Project Stream is a Project Stream to which a Dependency (a Child Project Stream) is added.
+Builds in the Parent Project Stream may use the sources or Build Result (e.g., a common library) from the Child Project Stream.
+
+Example: a child project stream may contain a common library that is used in several Parent Project Streams.
 
 |_Requested Build [Level Request$_
 |A manually (via the Command Line or the web interface) created Level Request on a Build Level that has no Schedule linked to it.

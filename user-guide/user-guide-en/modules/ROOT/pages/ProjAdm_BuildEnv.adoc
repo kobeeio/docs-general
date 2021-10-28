@@ -110,7 +110,7 @@ where:
 ** __b12__: Build Number
 ** __CONTBUILD__: Build Environment name
 ** __win__: Build suffix
-** __$$.$$zip__: extension referring to the compression method, __zip __for Windows platforms, __tar.gz__ for Unix and Linux platforms.
+** __$$.$$zip__: extension referring to the compression method as defined in the Compress Build Result Phase.
 
 |Build Suffix
 |In this field, enter the Build Suffix for the Build Environment, if required.
@@ -260,7 +260,7 @@ You can also click __Refresh __to retrieve the settings from the database or __C
 +
 The following screen is displayed:
 +
-image::ProjAdmin-BuildEnv-Delete.png[,764,463] 
+image::ProjAdmin-BuildEnv-Delete.png[,742,434] 
 +
 . Click __Delete__ to confirm the deletion.
 +
@@ -336,7 +336,7 @@ Refer to the following procedures for more information:
 +
 The _Build Environment Phases Overview_ screen is displayed:
 +
-image::ProjAdmin-BuildEnv-EditPhases.png[,724,515] 
+image::ProjAdmin-BuildEnv-EditPhases.png[,705,505] 
 +
 
 [NOTE]
@@ -381,7 +381,7 @@ Select the _Insert Phase_ link underneath the _Phases Overview_ panel.
 +
 The _Insert Phase_ screen is displayed.
 +
-image::ProjAdmin-BuildEnv-InsertPhase.png[,1047,732] 
+image::ProjAdmin-BuildEnv-InsertPhase.png[,928,652] 
 +
 . Select a Phase to insert from the _Available Phases_ panel.
 . Fill out the fields for the new Phase.
@@ -431,7 +431,7 @@ You can also click _Cancel_ to return to the previous screen without saving the 
 The _Edit Build Environment
 Phase_ window is displayed.
 +
-image::ProjAdmin-BuildEnv-EditBuildEnvPhase.png[,578,247] 
+image::ProjAdmin-BuildEnv-EditBuildEnvPhase.png[,546,227] 
 +
 . Edit the fields on the _Edit Build Environment Phase_ panel.
 +
@@ -469,7 +469,7 @@ Avoid changing a Phase`'s position in such a way that its _Next Phase on Error_ 
 +
 The _Phase Parameter Overview_ screen is displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParamsOverview.png[,851,623] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParamsOverview.png[,835,613] 
 +
 . Verify the Build Environment Phase Parameters.
 +
@@ -543,7 +543,7 @@ You can also click:
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-CreateParam.png[,383,121] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-CreateParam.png[,375,109] 
 +
 If a default Parameter value has been set in Global Administration, that value will be suggested.
 +
@@ -556,7 +556,7 @@ Set the value of the Build Environment Phase Parameter and click __Create__.
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-DeleteParamValue.png[,383,121] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-DeleteParamValue.png[,374,107] 
 +
 Click _Delete_ to confirm the deletion of the mandatory Build Environment Phase Parameter.
 +
@@ -567,7 +567,7 @@ You can also click _Cancel_ to close the pop-up window without deleting the Para
 The User will be redirected to the _Edit Phase_ screen (in the Global Administration context) and the _Edit Phase
 Parameter Value_ pop-up window is opened.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditGlobalPhaseParam.png[,853,696] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditGlobalPhaseParam.png[,875,826] 
 +
 You can Edit the Global Phase Parameter as described in the section <<GlobAdm_Phases.adoc#_globadm_phaseparameters_editing,Editing Phase Parameters>>.
 +
@@ -589,7 +589,7 @@ Parameters_ panel.
 +
 The _Delete Build Environment Phase_ screen is displayed.
 +
-image::ProjAdmin-BuildEnv-DeletePhase.png[,377,128] 
+image::ProjAdmin-BuildEnv-DeletePhase.png[,363,110] 
 +
 . Click _Yes_ to confirm the deletion of the Phase.
 +

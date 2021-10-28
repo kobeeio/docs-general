@@ -75,7 +75,7 @@ If the answer is __Yes__, the build was done with the latest sources from the VC
 Other differences between Build and Rebuild are indicated in the table describing the action flow.
 ====
 
-image::Desktop-LevelRequests-Flow-Build.png[,872,1262] 
+image::Desktop-LevelRequests-Flow-Build.png[,906,1108] 
 
 
 [cols="1,1", frame="topbot", options="header"]
@@ -281,7 +281,7 @@ If the answer is __Yes__, the build was done with the latest sources from the VC
 Other differences between Build and Rebuild are indicated in the table describing the action flow.
 ====
 
-image::Desktop-LevelRequests-Flow-BuildAndDeploy.png[,891,1238] 
+image::Desktop-LevelRequests-Flow-BuildAndDeploy.png[,907,1270] 
 
 
 [cols="1,1", frame="topbot", options="header"]
@@ -560,7 +560,7 @@ If the <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevelphases,Level Phases>> or the
 ====
 
 
-image::Desktop-LevelRequests-Flow-Deploy.png[,759,1067] 
+image::Desktop-LevelRequests-Flow-Deploy.png[,906,1252] 
 
 
 [cols="1,1", frame="topbot", options="header"]
@@ -706,7 +706,7 @@ This way, you will be able to easily create Level Requests by simply clicking an
 +
 The _Create Level Request: Select Level_ screen is displayed:
 +
-image::Desktop-LevelRequests-Create.png[,912,450] 
+image::Desktop-LevelRequests-Create.png[,1193,572] 
 +
 . Define search criteria on the _Search Project Stream_ panel.
 +
@@ -925,7 +925,7 @@ This is called a __Forced Build__.
 . Select _Level Requests > Create Level Request_ on the Main Menu.
 . If the Level belongs to a Package-based Project, you first need to select the required Package.
 +
-image::Desktop-LevelRequests-SelectPackage.png[,845,212] 
+image::Desktop-LevelRequests-SelectPackage.png[,825,187] 
 +
 
 [NOTE]
@@ -957,14 +957,14 @@ Request: Select Level __page, or the Desktop Page, depending on where you launch
 +
 Click this link to display or hide information concerning the Project, Project Stream, [Package,] Level and Version Control Repository, as well as information about the Environments linked to the Build Level.
 +
-image::Desktop-LevelRequests-Create-Build_AddInfo.png[,931,211] 
+image::Desktop-LevelRequests-Create-Build_AddInfo.png[,1206,244] 
 +
 * The _Show/Hide Modifications_ link 
 +
 Click this link to display or hide the _Modifications
 since previous successful Level Request_ panel, containing the added, deleted and modified files in the VCR compared with the previous successful Level Request.
 +
-image::Desktop-LevelRequests-Create-Build_Modifs.png[,574,300] 
+image::Desktop-LevelRequests-Create-Build_Modifs.png[,562,288] 
 +
 . Complete the fields in the _Create Level Request_ panel.
 +
@@ -1049,7 +1049,7 @@ If you add the selected package to a Desktop Tab Page, this step is avoided when
 
 . The _Create Level Request_ screen is displayed. 
 +
-image::Desktop-LevelRequests-Create-Deliver.png[,1053,746] 
+image::Desktop-LevelRequests-Create-Deliver.png[,1074,751] 
 +
 On this screen you will find the following sections:
 
@@ -1075,7 +1075,7 @@ Request: Select Level __page, or the Desktop Page, depending on where you launch
 +
 Click this link to display or hide information concerning the Project, Project Stream, [Package,] Level and Version Control Repository, as well as information about the Environments linked to the Build Level.
 +
-image::Desktop-LevelRequests-Create-Deliver_AddInfo.png[,924,207] 
+image::Desktop-LevelRequests-Create-Deliver_AddInfo.png[,1205,252] 
 
 . Complete the fields in the _Create Level Request_ panel.
 +
@@ -1101,7 +1101,7 @@ If required, enter an execution Date and Time for the Level Request in the forma
 You can also click the image:icons/calendar.gif[,18,19]  icon to select the execution date.
 The following screen is displayed:
 
-image::Desktop-LevelRequests-Calendar.png[,277,178] 
+image::Desktop-LevelRequests-Calendar.png[,263,183] 
 
 Click the required date to copy it into the _Requested
 Date/Time_ field.
@@ -1149,7 +1149,7 @@ If you add the selected package to a Desktop Tab Page, this step is avoided when
 ====
 . The _Create Level Request_ screen is displayed. 
 +
-image::Desktop-LevelRequests-Create-Rollback.png[,929,668] 
+image::Desktop-LevelRequests-Create-Rollback.png[,1200,847] 
 +
 On this screen you will find the following sections:
 
@@ -1174,7 +1174,7 @@ Request: Select Level __page, or the Desktop Page, depending on where you launch
 +
 Click this link to display or hide information concerning the Project, Project Stream, [Package,] Level and Version Control Repository, as well as information about the Environments linked to the Build Level.
 +
-image::Desktop-LevelRequests-Create-Rollback_AddInfo.png[,1019,212] 
+image::Desktop-LevelRequests-Create-Rollback_AddInfo.png[,1203,230] 
 +
 . Complete the fields in the _Create Level Request_ panel below.
 +
@@ -1200,7 +1200,7 @@ If required, enter an execution Date and Time for the Level Request in the forma
 You can also click the image:icons/calendar.gif[,18,19]  icon to select the execution date.
 The following screen is displayed:
 
-image::Desktop-LevelRequests-Calendar.png[,277,178] 
+image::Desktop-LevelRequests-Calendar.png[,263,183] 
 
 Click the required date to copy it into the _Requested
 Date/Time_ field.
@@ -1244,7 +1244,7 @@ The following sections deal with the procedures involved when using the __Level 
 +
 The _Level Requests Overview_ screen is displayed:
 +
-image::Desktop-LevelRequests-Overview.png[,1023,668] 
+image::Desktop-LevelRequests-Overview.png[,1157,713] 
 +
 
 [NOTE]
@@ -1254,7 +1254,7 @@ If the __Auto Refresh __option is activated, the __Level Requests Overview__ scr
 
 . Use the search criteria on the _Search_ panel to only display the Level Requests you are looking for.
 +
-image::Desktop-LevelRequests-SearchPanel.png[,854,230] 
+image::Desktop-LevelRequests-SearchPanel.png[,1119,283] 
 +
 The following options are available:
 
@@ -1391,7 +1391,7 @@ For more information, refer to the section <<Desktop_LevelRequests.adoc#_dekstop
 
 If your Global IKAN ALM Manager has activated RSS Feeds at System Settings level, the orange _RSS_ button is available on the _Search Level Request_ panel.
 
-image::Desktop-LevelRequests-Overview-RSS.png[,1035,317] 
+image::Desktop-LevelRequests-Overview-RSS.png[,1125,331] 
 
 RSS is a web format used to publish frequently updated digital content, such as blogs, news feeds or podcasts.
 Consumers of RSS content use special browsers called aggregators to watch for new content in dozens or even hundreds of web feeds.
@@ -1444,7 +1444,7 @@ These criteria will be used by the Report Generation.
 +
 The following dialog is displayed:
 +
-image::Desktop-LevelRequests-GenerateReport.png[,465,224] 
+image::Desktop-LevelRequests-GenerateReport.png[,454,210] 
 +
 The following selection fields are available:
 +
@@ -1498,9 +1498,9 @@ Report__.
 The report is generated.
 The following is an example of a report saved in PDF format:
 +
-image::Desktop-LevelRequests-PDFReport1.png[,1006,714] 
+image::Desktop-LevelRequests-PDFReport1.png[,991,702] 
 +
-image::Desktop-LevelRequests-PDFReport2.png[,1003,233] 
+image::Desktop-LevelRequests-PDFReport2.png[,990,220] 
 +
 More options are available when Generating a Report with the IKAN ALM Command Line.
 For more information, refer to the section <<CommandLine.adoc#_ccommandlineinterface,Command Line Interface (Optional)>>.
@@ -1566,19 +1566,19 @@ For more information on the _Auto Refresh_ settings, refer to the section <<User
 The _Summary_ page displays the status of the Level Request and, underneath, several panels providing detailed information.
 The panels displayed depend on the status of the Level Request.
 
-image::Desktop-LevelRequests-Detailed-Summary.png[,953,725] 
+image::Desktop-LevelRequests-Detailed-Summary.png[,1252,950] 
 
 ==== Status Header
 
 Some examples of Level Requests for release-based Projects:
 
-image::Desktop-LevelRequests-Detailed-Summary-Status.png[,743,245] 
+image::Desktop-LevelRequests-Detailed-Summary-Status.png[,721,220] 
 
-image::Desktop-LevelRequests-Detailed-Summary-Status-Fail.png[,602,249] 
+image::Desktop-LevelRequests-Detailed-Summary-Status-Fail.png[,585,219] 
 
 Example of a Level Request for a package-based Project:
 
-image::Desktop-LevelRequests-Detailed-Summary-Status-PackageBased.png[,598,239] 
+image::Desktop-LevelRequests-Detailed-Summary-Status-PackageBased.png[,584,219] 
 
 The header of the _Level Request Detail_ screen displays the status and the corresponding symbol of the selected Level Request, as well as the Level Request OID and description, the requester (User or Schedule) and the date and time at which the Level Request has been requested.
 
@@ -1631,7 +1631,7 @@ Depending on the status of the Level Request, the _Summary_ page may contain the
 
 The actions available in this panel depend on the status of the Level Request.
 
-image::Desktop-LevelRequests-Detailed-Summary-Actions.png[,360,308] 
+image::Desktop-LevelRequests-Detailed-Summary-Actions.png[,317,252] 
 
 Actions are available when the Level Request execution time is set to a moment in the future, if an Approval is pending for the Level Request, if the Level Request is still being executed, or if the Level Request is successful and can be delivered to the next level.
 
@@ -1660,7 +1660,7 @@ It is no longer possible to cancel a Level Request, once an assigned Approval ha
 +
 Clicking the _Update Level Request_ link shows the _Update Level Request_ screen.
 +
-image::Desktop-LevelRequests-Detailed-UpdateLevelRequest.png[,452,241] 
+image::Desktop-LevelRequests-Detailed-UpdateLevelRequest.png[,439,239] 
 +
 The following fields may be edited:
 +
@@ -1702,13 +1702,17 @@ Once the current Monitor, Build or Deploy Agent action is completed, the Level R
 +
 Clicking the _Abort Level Request_ action button displays the following screen.
 +
-image::Desktop-LevelRequests-Detailed-AbortLevelRequest.png[,452,123] 
+image::Desktop-LevelRequests-Detailed-AbortLevelRequest.png[,435,107] 
 +
 Click _Abort Level Request_ to confirm the action and return to the _Level Request Detail_ screen.
 +
 You can also click _Close_ to cancel the abort process and return to the _Level Request Detail_ screen.
 
 . the Level Request is waiting for an Approval:
++
+[[_desktop_lr_actions_approvals]]
++
+image::Desktop-LevelRequests-Detailed-Summary-Approval.png[,318,252]
 +
 If the Level Request is waiting for an approval, in addition to the available options above, there are two additional options:
 +
@@ -1727,6 +1731,8 @@ If the Level Request is waiting for an approval, in addition to the available op
 For more info on the dialogs opened by these actions, refer to the section <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove, Approving Outstanding Approvals>>.
 
 . The Level Request is successful and can be delivered to a next level:
++
+image::Desktop-LevelRequests-Detailed-Summary-Deliver.png[,318,252]
 +
 If the Level Request is in status Success or Warning, the following buttons are available:
 +
@@ -1747,7 +1753,7 @@ If the Level Request is in status Success or Warning, the following buttons are 
 
 This panel contains detailed information concerning the Level Request.
 
-image::Desktop-LevelRequests-Detailed-Summary-Info.png[,675,285] 
+image::Desktop-LevelRequests-Detailed-Summary-Info.png[,666,245] 
 
 
 [NOTE]
@@ -1830,7 +1836,7 @@ Code__ Phase.[[_desktop_lr_summary_buildsdeploys]]
 This panel contains the different Builds and/or Deploys that are related to the Level Request.
 
 
-image::Desktop-LevelRequests-Detailed-Summary-BuildsDeploys.png[,622,278] 
+image::Desktop-LevelRequests-Detailed-Summary-BuildsDeploys.png[,604,278] 
 
 The following information is available:
 
@@ -1908,10 +1914,10 @@ It displays the type and OID of the _Awaiting_ or _Rejected_ Approval for the Le
 If the Level Request has been Rejected, the Reason will also be displayed.
 
 
-image::Desktop-LevelRequests-Detailed-Summary-Approvals-Rejected.png[,632,269] 
+image::Desktop-LevelRequests-Detailed-Summary-Approvals-Rejected.png[,626,286] 
 
 
-image::Desktop-LevelRequests-Detailed-Summary-Approvals-Approved.png[,632,271] 
+image::Desktop-LevelRequests-Detailed-Summary-Approvals-Approved.png[,641,255] 
 
 
 [NOTE]
@@ -1923,7 +1929,7 @@ For a complete list of all Approvals defined for the Level Request, select the _
 
 This panel is only shown if there are Issues related to the Level Request.
 
-image::Desktop-LevelRequests-Detailed-Summary-Issues.png[,619,265] 
+image::Desktop-LevelRequests-Detailed-Summary-Issues.png[,611,248] 
 
 Issues can get linked to a Level Request in two ways: automatically by IKAN ALM during the execution of the Level Request or manually by a User after the Level Request has ended.
 Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>> for more information on defining an external Issue Tracking System, and to the section <<App_Phases.adoc#_phases_generalinformation,Phases - General Information>> for more information on the Issue Tracking Phase.
@@ -1970,9 +1976,9 @@ This is not necessarily the cause of the error status of the Level Request.
 For a complete overview of the status of _all_ the Phases, refer to the _Phase
 Logs_ tab page (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs,Phase Logs>>).
 
-image::Desktop-LevelRequests-Detailed-Summary-ErrorWarning1.png[,958,526] 
+image::Desktop-LevelRequests-Detailed-Summary-ErrorWarning1.png[,952,506] 
 
-image::Desktop-LevelRequests-Detailed-Summary-ErrorWarning2.png[,914,269] 
+image::Desktop-LevelRequests-Detailed-Summary-ErrorWarning2.png[,901,260] 
 
 The following information is displayed.
 
@@ -2048,7 +2054,7 @@ a|_RELATED TOPICS_
 This page displays the logs of the Level Phases, the Build and Deploy actions and their Build and Deploy Phases executed during the handling of a Level Request.
 It also provides more detailed information regarding the used Parameters. 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs_v2.png[,1022,663] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs_v2.png[,1396,879] 
 
 The following panels can be available:
 
@@ -2104,7 +2110,7 @@ If the Level Request status is set to __Awaiting
 requested Date/Time__, __Awaiting Pre-Approval__, _Canceled_ or _Rejected_ due to a Pre-approval that has been rejected, no Phase logs are available.
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-None.png[,445,148] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-None.png[,431,124] 
 
 If you activate the _Auto Refresh_ option, you can easily follow the execution of the different Phases.
 ====
@@ -2112,13 +2118,13 @@ If you activate the _Auto Refresh_ option, you can easily follow the execution o
 _Example of a running Phase_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_Running.png[,827,363] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_Running.png[,757,319] 
 
 _Example of a Phase with status
 Success_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_Success.png[,946,570] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_Success.png[,1215,616] 
 
 
 _Example of a skipped Deploy Phase_
@@ -2127,7 +2133,7 @@ In case of optional Deploys, (a) specific Deploy(s) can be skipped when creating
 The Level Request will always end with status _Warning_ due to the skipped Deploy, even if the execution of the Level Request was successful.
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_SkippedDeploy.png[,928,476] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_SkippedDeploy.png[,1200,617] 
 
 
 [[_desktop_lr_phaselogs_levelparameters]]
@@ -2137,7 +2143,7 @@ image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_SkippedDeploy.png[,928,4
 
 To view the Level Parameters used to execute the Level Request, click the Level Parameters heading to expand the panel. 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-LevelParameters.png[,959,572] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-LevelParameters.png[,926,554] 
 
 For each of the parameters, the table displays its key and value.
 
@@ -2149,12 +2155,12 @@ For more information on Level Parameters, refer to the section <<App_PredefLevel
 _Example of a Core Phase_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Phases.png[,945,416] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Phases.png[,1196,539] 
 
 _Example of a Custom Phase using Phase Parameters_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Phases2.png[,927,481] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Phases2.png[,1215,616] 
 
 Underneath the Level Parameters, the list of all different Level Phases and their status (__Success__, __Warning__, __Fail__, __Running__, _Not
 executed_ or __Aborted__), Start Date/Time and Duration is displayed.
@@ -2266,13 +2272,13 @@ Their Start Date/Time and duration are also indicated.
 _Example of a successful Build Action_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_BuildSuccess.png[,918,276] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_BuildSuccess.png[,1204,348] 
 
 
 _Example showing the list of Build Parameters used during the Build Action_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_BuildActionPlusBuildParameters.png[,922,439] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_BuildActionPlusBuildParameters.png[,1204,573] 
 
 If you open the information panel of a Build Action, the following information is displayed.
 
@@ -2336,7 +2342,7 @@ For each of the parameters, the table displays its key and value.
 
 For more information, refer to the section <<App_PredefLevelParams.adoc#_cpredefinedbuildparameters,Predefined Level Parameters>>.
 
-image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedBuildParameters.png[,325,74] 
+image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedBuildParameters.png[,773,121] 
 |===
 
 [[_chddiacf]]
@@ -2421,14 +2427,14 @@ _Example of a Deploy with status
 Success_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_DeploySuccess.png[,907,665] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_DeploySuccess.png[,1196,874] 
 
 
 _Example of a Deploy with status
 Warning_
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_DeployWarning.png[,910,551] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_DeployWarning.png[,1203,714] 
 
 If you open the information panel of a Deploy Action, the following information is displayed.
 
@@ -2492,7 +2498,7 @@ For each of the parameters, the table displays its key and value.
 
 For more information, refer to the section <<App_PredefDeployParams.adoc#_cpredefineddeployparameters,Predefined Deploy Parameters>>.
 
-image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedDeployParameters.png[,325,74] 
+image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedDeployParameters.png[,676,136] 
 |===
 
 [[_chdceehj]]
@@ -2571,7 +2577,7 @@ a|_RELATED TOPICS_
 On the _Results_ page you can (for each Build related to the Level Request) display the content of the compressed Build Result File, i.e., the files that were present in the Target Location at the moment the Build script ended and which are now stored in the Build Archive.
 
 
-image::Desktop-LevelRequests-Detailed-Results.png[,931,486] 
+image::Desktop-LevelRequests-Detailed-Results.png[,903,479] 
 
 If the option _Downloadable Build_ is activated for the Environment, you can also download the Build File or view its composition using a File Explorer.
 
@@ -2582,7 +2588,7 @@ The following information is displayed.
 If there are no Builds, the following information will be displayed:
 
 
-image::Desktop-LevelRequests-Detailed-Results-NoRelatedBuilds.png[,436,153] 
+image::Desktop-LevelRequests-Detailed-Results-NoRelatedBuilds.png[,423,144] 
 
 
 ====
@@ -2639,7 +2645,7 @@ Possible values are:
 |Status
 |The status of the Build that produced the result.
 
-|image:Desktop-LevelRequests-Detailed-PhaseLogs-DownloadBuildResult.png[,183,32] 
+|image:Desktop-LevelRequests-Detailed-PhaseLogs-DownloadBuildResult.png[,183,28] 
 |This link allows you to download the Build Result or to open it using a File Explorer.
 
 Note that this is only possible if the option _Downloadable Build_ has been activated on the Build Environment.
@@ -2647,7 +2653,7 @@ For more information, refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buil
 
 If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the __Expand All__ or __Collapse All__ links to show or hide the entire tree structure at once.
 
-image:Desktop-LevelRequests-Detailed-Results-expanded.png[,325,248] 
+image:Desktop-LevelRequests-Detailed-Results-expanded.png[,352,263] 
 |===
 
 [cols="1", frame="topbot"]
@@ -2674,7 +2680,7 @@ The _Approvals_ page displays the status of the Approvals that are defined for t
 The Approvals are ordered according to the sequence in which they should be approved.
 
 
-image::Desktop-LevelRequests-Detailed-Approvals.png[,917,258] 
+image::Desktop-LevelRequests-Detailed-Approvals.png[,901,246] 
 
 Before the Level Request can start, all Pre-Approvals need to be approved.
 Post-approvals need to be given at the end of the Level Request and enable to approve or reject the results or actions of the Level Request.
@@ -2694,7 +2700,7 @@ The following information is displayed:
 If there are no Approvals, the following information will be displayed:
 
 
-image::Desktop-LevelRequests-Detailed-Results-NoApprovals.png[,377,157] 
+image::Desktop-LevelRequests-Detailed-Results-NoApprovals.png[,368,151] 
 
 
 ====
@@ -2773,7 +2779,7 @@ The _Issues_ page displays the list of Issues that have been linked to a Level R
 Issues can get linked to a Level Request automatically by IKAN ALM during the execution of the Level Request, or manually by a User after the Level Request has ended.
 
 
-image::Desktop-LevelRequests-Detailed-Issues.png[,701,275] 
+image::Desktop-LevelRequests-Detailed-Issues.png[,683,264] 
 
 Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>for more information on defining on external Issue Tracking System, and to <<App_Phases.adoc#_phases_generalinformation,Phases - General Information>>for more information on the Issue Tracking Phase.
 
@@ -2781,7 +2787,7 @@ Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue T
 ====
 Issue information is only visible when the Project of the Level Request is linked to an Issue Tracking System. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
 
-If the project is connected to an HP Quality Center, Atlassian JIRA, Collabnet TeamForge or Microsoft Team Foundation Issue Tracking System, the description, status, owner and priority information will automatically be filled in based on the Issue information in the Issue Tracking System concerned.
+If the project is connected to an Atlassian JIRA, MicroFocus ALM, GitHub or Microsoft Team Foundation Issue Tracking System, the description, status, owner and priority information will automatically be filled in based on the Issue information in the Issue Tracking System concerned.
 For other Issue Tracking Systems, you can add the information manually.
 ====
 
@@ -2819,7 +2825,7 @@ Refer to <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Creating an I
 ====
 If there are no Issues, the following information will be displayed:
 
-image::Desktop-LevelRequests-Detailed-Results-NoIssues.png[,508,213] 
+image::Desktop-LevelRequests-Detailed-Results-NoIssues.png[,492,206] 
 ====
 
 [NOTE]
@@ -2850,7 +2856,7 @@ This option is provided to manually update the fields of an Issue linked to this
 +
 The __Edit Issue __screen is displayed:
 +
-image::Desktop-LevelRequests-Detailed-EditIssue.png[,431,321] 
+image::Desktop-LevelRequests-Detailed-EditIssue.png[,424,302] 
 +
 . Change the fields as required.
 +
@@ -2873,7 +2879,7 @@ This option is provided to manually update the fields of an Issue linked to this
 +
 The _Confirm Issue Deletion_ screen is displayed:
 +
-image::Desktop-LevelRequests-Detailed-DeleteIssue.png[,360,223] 
+image::Desktop-LevelRequests-Detailed-DeleteIssue.png[,352,220] 
 +
 . Click _Delete_ to confirm the Issue Deletion.
 +
@@ -2886,10 +2892,10 @@ You can also click _Cancel_ to return to the _Issues_ page without deleting the 
 
 [NOTE]
 ====
-This option is only available for Atlassian JIRA, HP Quality Center, Collabnet TeamForge and Microsoft Team Foundation.
+This option is only available for Atlassian JIRA, MicroFocus ALM, GitHub and Microsoft Team Foundation.
 ====
 
-HP Quality Center Defects, JIRA Issues, TeamForge and Team Foundation Artifacts may be linked to an IKAN ALM Level Request, based on the comments provided by the developers when they commit their code to the VCR.
+MF ALM Defects, JIRA Issues, GitHub Issues and Team Foundation Artifacts may be linked to an IKAN ALM Level Request, based on the comments provided by the developers when they commit their code to the VCR.
 IKAN ALM retrieves information from the corresponding Issue, such as a short description, the owner and the priority.
 This information is synchronized during the Issue Tracking Phase each time the Level Request is delivered to the next Level in the IKAN ALM Lifecycle.
 
@@ -2914,7 +2920,7 @@ This may be necessary when the automatic process did not detect some Issues, or 
 +
 The _Add Issue_ screen is displayed:
 +
-image::Desktop-LevelRequests-Detailed-AddIssue.png[,465,328] 
+image::Desktop-LevelRequests-Detailed-AddIssue.png[,433,297] 
 +
 The following fields are available.
 Fields marked with an asterisk are mandatory.
@@ -2958,7 +2964,7 @@ This field is optional.
 [NOTE]
 ====
 
-For JIRA Issues, HP Quality Center Defects, TeamForge and Team Foundation Artifacts, it`'s sufficient to enter the Issue ID.
+For JIRA Issues, MicroFocus ALM Defects, GitHub Issues and Team Foundation Artifacts, it`'s sufficient to enter the Issue ID.
 After having created the Issue, synchronize the issue (<<Desktop_LevelRequests.adoc#_desktop_lr_issuesynchronize,Synchronizing an Issue>>) to automatically retrieve the additional fields from the Issue Tracking System.
 ====
 
@@ -2993,7 +2999,7 @@ a|_RELATED TOPICS_
 The _Sources_ page displays the list of all the sources (and their revision numbers) in the VCR used by this Level Request.
 
 
-image::Desktop-LevelRequests-Detailed-Sources.png[,620,478] 
+image::Desktop-LevelRequests-Detailed-Sources.png[,602,474] 
 
 For Builds based on latest code, these files were tagged by IKAN ALM in the Tag Code Phase of this Level Request.
 
@@ -3028,7 +3034,7 @@ The _Modifications_ page allows you to verify the differences between the source
 Although there is no Build on Levels with only Deploy Environments, this information will still be visible for Level Requests on such Levels, since in this case there is always a Build that is deployed to that Level.
 
 
-image::Desktop-LevelRequests-Detailed-Modifications.png[,919,631] 
+image::Desktop-LevelRequests-Detailed-Modifications.png[,908,567] 
 
 The list of modifications shows additions in green, modifications in blue and deletions in red.
 The Type (File or Directory) and Modification Type are displayed in separate columns.
@@ -3128,7 +3134,7 @@ The _Dependencies_ page displays the specific Builds and/or Sources of the Child
 Note that the transitive dependencies of a Child whose sources are used will also be displayed, since they were also collected in the _Retrieve Code_ Phase.
 
 
-image::Desktop-LevelRequests-Detailed-Dependencies.png[,921,455] 
+image::Desktop-LevelRequests-Detailed-Dependencies.png[,909,432] 
 
 
 [NOTE]
@@ -3136,7 +3142,7 @@ image::Desktop-LevelRequests-Detailed-Dependencies.png[,921,455]
 If there are no Dependencies, the following information will be displayed:
 
 
-image::Desktop-LevelRequests-Detailed-Dependencies-None.png[,309,142] 
+image::Desktop-LevelRequests-Detailed-Dependencies-None.png[,285,122] 
 
 
 ====
@@ -3205,7 +3211,7 @@ result__, there will be a link between the _parent Build_ object and the _child 
 In that case, the _Build Usage_ panel provides information concerning the Level Requests using the Build Result of a specific Build.
 
 
-image::Desktop-LevelRequests-Detailed-Dependencies_BuildUsage.png[,921,491] 
+image::Desktop-LevelRequests-Detailed-Dependencies_BuildUsage.png[,915,438] 
 
 This information is useful in case there is a problem with a child library, or with the sources of a Project which is used by another Project.
 It allows you to find out whether other Projects use this child library, or these child sources.
@@ -3263,7 +3269,7 @@ Build_ object and the _child Level Request_ object.
 In that case, the _Level Request Usage_ table displays the Level Requests of parent projects that use this Level Request's sources.
 
 
-image::Desktop-LevelRequests-Detailed-Dependencies_LevelRequestUsage.png[,931,600] 
+image::Desktop-LevelRequests-Detailed-Dependencies_LevelRequestUsage.png[,913,691] 
 
 
 [NOTE]
@@ -3336,11 +3342,11 @@ The _Build History_ option allows to quickly verify the Lifecycle of a specific 
 . Select _Level Requests > Overview Level Requests_ on the Main Menu.
 . Click the _Build Number_ link you want to see the history for.
 +
-image::Desktop-BuildHistory-SelectBuildNumber.png[,1002,390] 
+image::Desktop-BuildHistory-SelectBuildNumber.png[,963,361] 
 +
 The _Build History_ screen is displayed:
 +
-image::Desktop-BuildHistory-Detail.png[,943,500] 
+image::Desktop-BuildHistory-Detail.png[,1214,634] 
 +
 If the __Auto Refresh__ option is activated, the _Build History_ screen will be refreshed each time the defined rate is expired. <<UserInterface.adoc#_desktop_autorefresh,Auto Refresh>>
 +
@@ -3421,7 +3427,7 @@ You can deactivate this, by deselecting the _Highlight where active_ option.
 +
 The _Builds and Deploys Overview_ screen is displayed:
 +
-image::Desktop-BuildsDeploys-Overview.png[,994,412] 
+image::Desktop-BuildsDeploys-Overview.png[,1314,499] 
 +
 
 [NOTE]
@@ -3437,7 +3443,7 @@ If the __Auto Refresh__ option is activated, the _Build and Deploys Overview_ sc
 You can select multiple statuses and/or action types on the select boxes using the _SHIFT_ or _CTRL_ key.
 ====
 +
-image::Desktop-LevelRequests-BuildsDeploys-SearchPanel.png[,852,234] 
+image::Desktop-LevelRequests-BuildsDeploys-SearchPanel.png[,1110,284] 
 +
 The following options are available:
 

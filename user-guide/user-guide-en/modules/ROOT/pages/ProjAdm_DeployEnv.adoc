@@ -137,7 +137,7 @@ You can also click the _Reset_ button to clear the fields and restore the initia
 +
 The following screen is displayed:
 +
-image::ProjAdmin-DeployEnv-Overview.png[,946,319] 
+image::ProjAdmin-DeployEnv-Overview.png[,1218,392] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -243,7 +243,7 @@ You can also click __Refresh __to retrieve the settings from the database or __C
 +
 The following screen is displayed:
 +
-image::ProjAdmin-DeployEnv-Delete.png[,786,259] 
+image::ProjAdmin-DeployEnv-Delete.png[,770,232] 
 +
 . Click __Delete__ to confirm the deletion.
 +
@@ -316,7 +316,7 @@ Refer to the following procedures for more information:
 +
 The _Deploy Environment Phases Overview_ screen is displayed:
 +
-image::ProjAdmin-DeployEnv-EditPhases.png[,747,509] 
+image::ProjAdmin-DeployEnv-EditPhases.png[,723,488] 
 +
 
 [NOTE]
@@ -350,7 +350,7 @@ Select the _Insert Phase_ link underneath the _Phases Overview_ panel.
 +
 The _Insert Phase_ is displayed.
 +
-image::ProjAdmin-DeployEnv-InsertPhase.png[,949,676] 
+image::ProjAdmin-DeployEnv-InsertPhase.png[,925,652] 
 +
 . Select a Phase to insert from the _Available Phases_ panel.
 . Fill out the fields for the new Phase.
@@ -400,7 +400,7 @@ You can also click _Cancel_ to return to the previous screen without saving the 
 The _Edit Deploy Environment
 Phase_ window is displayed.
 +
-image::ProjAdmin-DeployEnv-EditDeployEnvPhase.png[,576,253] 
+image::ProjAdmin-DeployEnv-EditDeployEnvPhase.png[,546,227] 
 +
 . Edit the fields on the _Edit Deploy Environment Phase_ panel.
 +
@@ -439,7 +439,7 @@ Avoid changing a Phase`'s position in such a way that its _Next Phase on Error_ 
 +
 The _Phase Parameter Overview_ screen is displayed.
 +
-image::ProjAdmin-BuildEnv-DeployEnvPhaseParamsOverview.png[,776,663] 
+image::ProjAdmin-DeployEnv-DeployEnvPhaseParamsOverview.png[,761,654] 
 +
 . Verify the Deploy Environment Phase Parameters.
 +
@@ -526,7 +526,7 @@ Set the value of the Deploy Environment Phase Parameter and click __Create__.
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-DeleteParamValue.png[,383,155] 
+image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-DeleteParamValue.png[,374,136] 
 +
 Click _Delete_ to confirm the deletion of the mandatory Deploy Environment Phase Parameter.
 +
@@ -536,7 +536,7 @@ You can also click _Cancel_ to close the pop-up window without deleting the Para
 The User will be redirected to the _Edit Phase_ screen (in the Global Administration context) and the _Edit Phase
 Parameter Value_ pop-up window is opened.
 +
-image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-EditGlobalPhaseParam.png[,765,648] 
+image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-EditGlobalPhaseParam.png[,743,630] 
 +
 You can Edit the Global Phase Parameter as described in the section <<GlobAdm_Phases.adoc#_globadm_phaseparameters_editing,Editing Phase Parameters>>.
 +
@@ -558,7 +558,7 @@ Parameters_ panel.
 +
 The _Delete Deploy Environment Phase_ screen is displayed.
 +
-image::ProjAdmin-DeployEnv-DeletePhase.png[,378,125] 
+image::ProjAdmin-DeployEnv-DeletePhase.png[,359,110] 
 +
 . Click _Yes_ to confirm the deletion of the Phase.
 +

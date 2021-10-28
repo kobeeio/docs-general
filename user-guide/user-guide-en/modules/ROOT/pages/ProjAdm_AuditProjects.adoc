@@ -34,11 +34,11 @@ The following tests will return a warning:
 +
 If the Project configuration is consistent, the following screen is displayed:
 +
-image::ProjAdmin-Audit-Success.png[,964,610] 
+image::ProjAdmin-Audit-Success.png[,934,587] 
 +
 If there are errors in the Project configuration, the following screen is displayed:
 +
-image::ProjAdmin-Audit-Error.png[,1037,573] 
+image::ProjAdmin-Audit-Error.png[,1097,588] 
 +
 Locked Project Streams and Levels have a image:icons/locked.gif[,15,15] _Locked_ icon in the _Locked_ field.
 In the sample screen above, this is the case for the _TestPartialBuild_ Level.
@@ -96,13 +96,6 @@ In such a case, each Build Environment must have a unique Build Suffix in order 
 |Error on a Build Environment: there is no Build script specified for the Build Environment.
 A Build script may be specified in the Project definition, or be overwritten in the Build Environment definition.
 
-|`Build tool is inconsistent with project
-build tool type`
-|Error message on a Build Environment.
-The Build Tool connected to the Build Environment is not of the Build Tool type that was specified in the Project Definition.
-
-For example: a Project definition with Ant as Build Tool type has a Build Environment that is linked to a Maven2 Scripting Tool definition.
-
 |`Connected Build Environment is not linked
 to a Level in the Lifecycle`
 |Error message on a Deploy Environment: the Build Environment that is linked to the Deploy Environment is not in the Lifecycle of the Level containing the Deploy Environment.
@@ -118,11 +111,9 @@ to an optional Level lower in the Lifecycle`
 |Error message on a Deploy Environment: the linked Build Environment may not be part of an optional Level.
 Otherwise, it would be possible to skip the optional Level and deploy a Build Result that was not created.
 
-|`Deploy tool is inconsistent with project
-deploy tool type`
-|Error message on a Deploy Environment.
-The Deploy Tool connected to the Deploy Environment is not of the Deploy Tool type that was specified on the Project Definition.
-For example: a Project definition with NAnt as Deploy Tool Type has a Deploy Environment that is linked to an Ant Scripting Tool definition.
+|`No Deploy Script specified`
+|Error on a Deploy Environment: there is no Deploy script specified for the Deploy Environment.
+A Deploy script may be specified in the Project definition, or be overwritten in the Deploy Environment definition.
 
 |`Empty mandatory parameter 'alm.phase.builder'
 in Phase 'Phase Display Name'`

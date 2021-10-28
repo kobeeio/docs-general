@@ -57,7 +57,7 @@ The following actions are possible:
 +
 The _Create BUILD Level_ screen is displayed:
 +
-image::ProjAdmin-Levels-BuildLevel-Create.png[,516,497] 
+image::ProjAdmin-Levels-BuildLevel-Create.png[,466,420] 
 +
 
 [NOTE]
@@ -102,10 +102,9 @@ a|From the drop-down list, select the required Notification Type for this Build 
 The following options are available:
 
 ** Mail
-** Netsend
 ** No Notification
 
-If _Mail_ or _Netsend_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
+If _Mail_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
 The notification is sent to the members of the Project User, Project Admin and Level Requester User Groups.
 
 |Notification Criteria
@@ -146,8 +145,7 @@ _Note:_ This option is not available for Package-based projects.
 
 |Requester User Group
 |From the drop-down list, you may select the required Requester User Group.
-Members of this User Group have the right to create Level Requests for this Build Level.
-If a Project User Group has been defined, this User Group will be selected as the default Requester User Group.
+Members of this User Group and any child User Groups have the right to create Level Requests for this Build Level.
 
 |Lifecycle
 |From the drop-down list, select the Lifecycle to which the Level must be assigned.
@@ -179,7 +177,7 @@ The procedure for creating Test and Production Levels is identical.
 The _Create TEST Level_ or _Create
 PRODUCTION Level_ screen is displayed:
 +
-image::ProjAdmin-Levels-ProductionLevel-Create.png[,511,482] 
+image::ProjAdmin-Levels-ProductionLevel-Create.png[,494,473] 
 +
 
 [NOTE]
@@ -226,11 +224,10 @@ a|From the drop-down list, select the required Notification Type for this Test o
 
 The following options are available:
 
-* netsend
 * mail
 * No notification
 
-If _Mail_ or _Netsend_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
+If _Mail_ is chosen, notifications will be created at the end of a Level Request on the Level, depending on the Notification Criteria.
 The notification is sent to the members of the Project User, Project Admin and Level Requester User Groups.
 
 |Notification Criteria
@@ -253,16 +250,15 @@ No notification will be sent when a Level Request for this Level has ended.
 
 |Requester User Group
 |From the drop-down menu, you may select the required Requester User Group.
-Members of this User Group have the right to create Level Requests for this Test or Production Level.
-If a Project User Group has been defined, this User Group will be selected as the default Requester User Group.
+Members of this User Group and any child User Groups have the right to create Level Requests for this Test or Production Level.
 
 |Pre-Notification User Group
 |From the drop-down menu, you may select the required Pre-Notification User Group.
-Members of this group will be notified when a Level Request is created for this Level.
+Members of this User Group and any child User Groups will be notified when a Level Request is created for this Level.
 
 |Post-Notification User Group
 |From the drop-down menu, you may select the required Post-Notification User Group.
-Members of this group will be notified when a Level Request for this Level has ended, depending on the Post-Notification Criteria.
+Members of this User Group and any Child User Groups will be notified when a Level Request for this Level has ended, depending on the Post-Notification Criteria.
 
 |Post-Notification Criteria
 a|From the drop-down list, select the required Post-Notification Criteria for this Test or Production Level.
@@ -338,7 +334,7 @@ The following actions are possible:
 +
 The _Levels Overview_ screen is displayed:
 +
-image::ProjAdmin-Levels-Overview.png[,975,387] 
+image::ProjAdmin-Levels-Overview.png[,958,362] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -372,13 +368,13 @@ For a description of the fields, refer to the sections <<ProjAdm_Levels.adoc#_pl
 +
 The _Edit Level_ screen is displayed.
 +
-image::ProjAdmin-Levels-TestLevel-Edit.png[,439,224] 
+image::ProjAdmin-Levels-TestLevel-Edit.png[,419,202] 
 +
 . Click the _Edit_ button on the _Level Info_ panel.
 +
 The following pop-up window will be displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,445,396] 
+image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,436,385] 
 +
 .. Edit the fields on the _Edit Level_ pop-up window.
 +
@@ -445,7 +441,7 @@ Refer to the following procedures for more information:
 +
 The _Level Phases Overview_ screen is displayed:
 +
-image::ProjAdmin-Levels-TestLevel-EditPhases.png[,768,477] 
+image::ProjAdmin-Levels-TestLevel-EditPhases.png[,753,459] 
 +
 . Use the links on the _Phases Overview_ panel to edit a Phase.
 +
@@ -496,7 +492,7 @@ Avoid changing a Phase`'s position in such a way that its _Next Phase on Error_ 
 +
 The _Edit Level Phase_ screen is displayed.
 +
-image::ProjAdmin-Levels-TestLevel-LevelPhase-Edit.png[,556,244] 
+image::ProjAdmin-Levels-TestLevel-LevelPhase-Edit.png[,546,228] 
 +
 . Edit the fields on the _Edit Level Phase_ window.
 +
@@ -517,7 +513,7 @@ You can also click __Refresh __to retrieve the settings from the database or__ C
 +
 The _Phase Parameter Overview_ screen is displayed.
 +
-image::ProjAdmin-Levels-TestLevel-EditPhases_ViewParams.png[,773,642] 
+image::ProjAdmin-Levels-TestLevel-EditPhases_ViewParams.png[,762,631] 
 +
 . Verify the Level Phase Parameters.
 +
@@ -578,7 +574,7 @@ This field may not be changed since it is defined in Global Administration.
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,295,143] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,507,220] 
 +
 Set the value of the Level Phase Parameter and click _Save_ to save the value.
 +
@@ -590,7 +586,7 @@ You can also click:
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-CreateParam.png[,383,121] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-CreateParam.png[,375,109] 
 +
 If a default Parameter value has been set in Global Administration, that value will be suggested.
 +
@@ -603,7 +599,7 @@ Set the value of the Level Phase Parameter and click __Create__.
 +
 The following pop-up window will be displayed.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-DeleteParamValue.png[,383,121] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-DeleteParamValue.png[,374,107] 
 +
 Click _Delete_ to confirm the deletion of the mandatory Level Phase Parameter.
 +
@@ -613,7 +609,7 @@ You can also click _Cancel_ to close the pop-up window without deleting the Para
 The User will be redirected to the _Edit
 Phase_ screen (in the Global Administration context) and the _Edit Phase Parameter_ pop-up window is opened.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditGlobalPhaseParam.png[,891,841] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditGlobalPhaseParam.png[,875,826] 
 +
 You can edit the Global Phase Parameter as described in the section <<GlobAdm_Phases.adoc#_globadm_phaseparameters_editing,Editing Phase Parameters>>.
 +
@@ -632,7 +628,7 @@ Parameters_ panel.
 +
 The _Delete Level Phase_ screen is displayed.
 +
-image::ProjAdmin-Levels-TestLevel-LevelPhase-Delete.png[,375,107] 
+image::ProjAdmin-Levels-TestLevel-LevelPhase-Delete.png[,362,95] 
 
 . Confirm the deletion by clicking the _Yes_ button.
 +
@@ -649,7 +645,7 @@ You can also click __No__ to return to the previous screen without deleting the 
 +
 The _Insert Phase_ screen is displayed.
 +
-image::ProjAdmin-Levels-TestLevel-InsertLevelPhase.png[,1048,713] 
+image::ProjAdmin-Levels-TestLevel-InsertLevelPhase.png[,1030,702] 
 
 . Select a Phase to insert from the _Available Phases_ panel.
 . Fill out the fields for the new Phase.
@@ -765,7 +761,7 @@ This link is only available if there is more than one Deploy Environment linked 
 +
 The following screen is displayed:
 +
-image::ProjAdmin-Levels-EditDeploySequence.png[,298,203] 
+image::ProjAdmin-Levels-EditDeploySequence.png[,281,187] 
 +
 . Change the __Sequence Number__.
 +
@@ -789,7 +785,7 @@ For more information on Approvals, refer to <<Desktop_Approvals.adoc#_desktop_ou
 +
 The _Edit Level_ screen is displayed.
 +
-image::ProjAdmin-Levels-Level-Edit.png[,986,483] 
+image::ProjAdmin-Levels-Level-Edit.png[,977,460] 
 +
 
 [NOTE]
@@ -801,7 +797,7 @@ Approvals can only be defined for Test and Production Levels.
 +
 The _Add Approval_ window is displayed:
 +
-image::ProjAdmin-Levels-ProductionLevel-LevelApprovalSequence.png[,339,171] 
+image::ProjAdmin-Levels-ProductionLevel-LevelApprovalSequence.png[,300,132] 
 
 . Select the required _User Group_ from the drop-down list. 
 +
@@ -840,12 +836,12 @@ If the Level is still linked to a Lifecycle you cannot delete the Level.
 +
 The following screen is displayed:
 +
-image::ProjAdmin-Levels-Delete.png[,644,599] 
+image::ProjAdmin-Levels-Delete.png[,620,581] 
 +
 . Click __Delete__ to confirm the deletion or _Back_ to return to the previous screen without deleting the Level.
 . If you try deleting a Level that is assigned to a Lifecycle, the following screen is displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Delete.png[,547,520] 
+image::ProjAdmin-Levels-TestLevel-Delete.png[,529,506] 
 +
 Remove the Level from the Lifecycle before deleting it. <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_removelevel,Removing a Level>>
 
@@ -859,7 +855,7 @@ Remove the Level from the Lifecycle before deleting it. <<ProjAdm_LifeCycles.ado
 +
 The _Clone Level_ screen is displayed.
 +
-image::ProjAdmin-Levels-CloneLevel.png[,905,484] 
+image::ProjAdmin-Levels-CloneLevel.png[,891,467] 
 +
 . Edit the fields on the _Level Info_ panel.
 +

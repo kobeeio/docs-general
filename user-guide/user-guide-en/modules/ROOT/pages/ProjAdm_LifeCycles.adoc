@@ -62,7 +62,7 @@ Lifecycle_ screen, is that the Level will automatically be connected to the Life
 +
 The _Create Lifecycle_ panel is displayed at the top of the _Create Lifecycle_ screen:
 +
-image::ProjAdmin-LifeCycles-Create.png[,479,274] 
+image::ProjAdmin-LifeCycles-Create.png[,461,265] 
 +
 The following fields are available.
 Fields marked with an asterisk are mandatory.
@@ -101,7 +101,7 @@ For more information on this panel, refer to <<ProjAdm_LifeCycles.adoc#_lifecycl
 +
 The _Edit Lifecyle_ screen is displayed.
 +
-image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,481,266] 
+image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,461,240] 
 +
 For more information, refer to the section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Editing a Lifecycle>>.
 
@@ -125,7 +125,7 @@ The following actions are possible:
 +
 The following screen is displayed:
 +
-image::ProjAdmin-LifeCycles-Overview.png[,969,341] 
+image::ProjAdmin-LifeCycles-Overview.png[,954,319] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -185,10 +185,10 @@ For more information, refer to the section <<ProjAdm_LifeCycles.adoc#_plifecycle
 +
 The __Edit Lifecycle __screen is displayed:
 +
-image::ProjAdmin-LifeCycles-Edit.png[,964,316] 
+image::ProjAdmin-LifeCycles-Edit.png[,1259,402] 
 . Click the _Edit_ button.
 +
-image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,481,266] 
+image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,461,240] 
 +
 .. Change the fields as required.
 +
@@ -325,7 +325,7 @@ Levels can only be inserted one by one.
 +
 One of the following screens is displayed:
 +
-image::ProjAdmin-LifeCycles-InsertLevel-Popup.png[,566,250] 
+image::ProjAdmin-LifeCycles-InsertLevel-Popup.png[,546,230] 
 
 . From the table, select the Level to be inserted.
 +
@@ -341,7 +341,7 @@ If you do not specify the position, the Level will be added after the last Level
 +
 If you try to insert a Level at an unauthorized position, a warning will be displayed.
 +
-image::ProjAdmin-LifeCycles-InsertLevel-WrongPosition.png[,705,184] 
+image::ProjAdmin-LifeCycles-InsertLevel-WrongPosition.png[,915,232] 
 +
 
 [NOTE]
@@ -386,7 +386,7 @@ Making the Training Level optional, means that Builds can be delivered from the 
 +
 The following message is displayed:
 +
-image::ProjAdmin-LifeCycles-Optional-Message.png[,356,71] 
+image::ProjAdmin-LifeCycles-Optional-Message.png[,337,54] 
 +
 __Note: __The Level that was made __Optional__, and all following Levels in the Lifecycle will be locked.
 . Unlock the Level using the __Audit Project __function.
@@ -441,14 +441,14 @@ This link is not available for the BASE Lifecycle, because the BASE Lifecycle ca
 +
 The following screen is displayed:
 +
-image::ProjAdmin-LifeCycles-Delete.png[,424,207] 
+image::ProjAdmin-LifeCycles-Delete.png[,423,191] 
 +
 . Click __Delete__ to confirm the deletion.
 +
 You can also click__ Back__, if you want to return to the previous screen without deleting the Lifecycle.
 . If you try to delete a Lifecycle that is connected to a Project Stream, the following screen is displayed:
 +
-image::ProjAdmin-LifeCycles-Delete-Error.png[,467,355] 
+image::ProjAdmin-LifeCycles-Delete-Error.png[,448,340] 
 +
 Remove the Lifecycle from the Project Stream before deleting it. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Editing Project Stream Settings>>
 
@@ -462,7 +462,7 @@ Remove the Lifecycle from the Project Stream before deleting it. <<ProjAdm_ProjM
 +
 . Click the image:icons/history.gif[,15,15] _History_ link in front of the Lifecycle to display its__ History View__.
 +
-image::ProjAdmin-LifeCycles-HistoryView.png[,709,431] 
+image::ProjAdmin-LifeCycles-HistoryView.png[,691,414] 
 +
 For more detailed information concerning this __History
 View__, refer to the section <<App_HistoryEventLogging.adoc#_historyeventlogging,History and Event Logging>>.
@@ -481,13 +481,13 @@ Click __Back __to return to the previous screen.
 +
 The __Edit Level __screen is displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Edit.png[,444,220] 
+image::ProjAdmin-Levels-TestLevel-Edit.png[,419,202] 
 +
 . Click the _Edit_ button on the _Level Info_ panel and edit the fields as required.
 +
 The following pop-up window will be displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,445,396] 
+image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,436,385] 
 +
 . Edit the fields on the _Edit Level_ panel.
 +

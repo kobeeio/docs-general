@@ -226,7 +226,7 @@ After a standard installation, one such properties file, called _clr.properties_
 Open the file in a text editor to display its content:
 
 
-image::CommandLine-CLRPropertiesfile.jpg[,578,606] 
+image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
 
 You can edit this standard file so that the settings match your requirements.
 Refer to the <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>for a description of the options and parameters.
@@ -645,7 +645,7 @@ After a standard installation, one such properties file, called _report.properti
 Open the file in a text editor to display its content:
 
 
-image::CommandLine-ReportPropertiesfile.jpg[,597,470] 
+image::CommandLine-ReportPropertiesfile.jpg[,497,393] 
 
 You can edit this standard file so that the settings match your requirements.
 Refer to the section <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>for a description of the options and parameters.
@@ -804,7 +804,7 @@ If you want to use this ANT Script yourself, customize it by:
 
 *Sample script:*
 
-image::CommandLine-SampleANTScript.jpg[,540,487] 
+image::CommandLine-SampleANTScript.jpg[,450,406] 
 
 *Output on success:*
 

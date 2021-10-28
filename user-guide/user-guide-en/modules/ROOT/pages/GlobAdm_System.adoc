@@ -9,7 +9,7 @@ The _System_ menu provides an entry to view or edit the IKAN ALM Server configur
 
 Users which have Global Admin Access rights will have access to the following Submenus:
 
-* <<GlobAdm_System.adoc#_globadm_system_settings,System System Settings>>
+* <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>
 * <<GlobAdm_System.adoc#_globadm_system_housekeeping,Housekeeping>>
 * <<GlobAdm_System.adoc#_globadm_system_housekeepinghistory,Housekeeping History>>
 * <<GlobAdm_System.adoc#_globadm_system_synchronizebuildarchive,Synchronize Build Archive>>
@@ -82,7 +82,7 @@ Changing this field requires preliminary actions, like installing the IKAN ALM S
 
 |IKAN ALM URL
 |In this field, enter the base IKAN ALM URL.
-This URL is used for creating hyperlinks in mails sent by IKAN ALM (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications) and for constructing the RSS feed link.
+This URL is used for creating hyperlinks in mails sent by IKAN ALM (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications), for constructing the RSS feed link and for constructing the URIs for the IKAN ALM REST API.
 
 |_Local File Copy Locations_
 |These fields are used for Build and Deploy actions.
@@ -129,7 +129,7 @@ The complete path will be assembled as follows: the prefix path (as specified in
 
 Remote Transporters are activated by defining them as the Transporter Protocol when specifying the settings for a Machine. 
 
-For more information, refer to the sections <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporters>>and <<GlobAdm_Machines.adoc#_globadm_machines,Machines>>.
+For more information, refer to the sections <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporters>> and <<GlobAdm_Machines.adoc#_globadm_machines,Machines>>.
 
 |Work Copy Location
 |This field contains the location of the Work Copy displayed as a remote location.
@@ -194,7 +194,7 @@ The following fields are available on the _Security_ subpanel.
 | Description
 
 |User Group with User Access Rights
-|This field contains the name of the User Group to which all Users requiring access to IKAN ALM must belong.
+|This field contains the name of the User Group to which all Users requiring access to IKAN ALM must belong. Note that Users can also get access to IKAN ALM when they belong to a Nested User Group of the selected User Group.
 
 You may select another User Group from the drop-down list, if required.
 
@@ -205,7 +205,7 @@ In this case, all authenticated users will have User access rights to IKAN ALM.
 |This field contains the name of the User Group to which all Users requiring Administrator Rights must belong.
 Note that this must be an _external_ User Group.
 
-Only users belonging to this User Group may create, edit and delete Global Administration definitions in IKAN ALM.
+Only users belonging to this or a Nested User Group may create, edit and delete Global Administration definitions in IKAN ALM.
 
 You may select another _external_ User Group from the drop-down list, if required.
 
@@ -236,6 +236,38 @@ The following fields are available on the _Mail_ subpanel.
 | Option
 | Meaning
 
+|SMTP Server
+|Select the Machine name of the SMTP Mail Server.
+
+|Port
+|This field contains the SMTP Port number used by IKAN ALM to connect to the Mail Server.
+
+This field is optional, by default port 25 is used.
+
+|Authentication Type
+a|Select which Authentication Type is required:
+
+* __Anonymous__: select this option, if the SMTP Server can be used without authentication.
+* __Authentication__: select this option, if the SMTP Server requires authentication.
+
+|User
+|This field contains the User name used to authenticate on the SMTP Server.
+
+This field is mandatory if _Authentication_ was chosen as Authentication Type.
+
+|Password
+|This field contains the masked Password used to authenticate on the SMTP Server.
+
+This field is mandatory if _Authentication_ was chosen as Authentication Type.
+
+The characters you enter are displayed as asterisks.
+
+|Repeat Password
+|In this field, re-enter the password used to authenticate on the SMTP Server.
+
+|From User
+|This field contains the _From:_ E-Mail Address used in IKAN ALM notification e-mails.
+
 |Content Type
 |Indicates which templates will be used to compose notification and approval mail messages.
 
@@ -261,40 +293,6 @@ If no match is found, the templates in the __default__ directory will be used.
 For the HTML formatted templates, a ___html__ suffix is added before the _$$.$$vm_ extension.
 
 For plain text templates, there is no such suffix.
-
-|SMTP Server
-|Select the Machine name of the SMTP Mail Server.
-
-|Port
-|This field contains the SMTP Port number used by IKAN ALM to connect to the Mail Server.
-
-This field is optional, by default port 25 is used.
-
-|From User
-|This field contains the _From:_ E-Mail Address used in IKAN ALM notification e-mails.
-
-This field is mandatory if SMTP was chosen as mail Protocol.
-
-|Authentication Type
-a|Select which Authentication Type is required:
-
-* __Anonymous__: select this option, if the SMTP Server can be used without authentication.
-* __Authentication__: select this option, if the SMTP Server requires authentication.
-
-|User
-|This field contains the User name used to authenticate on the SMTP Server.
-
-This field is mandatory if _Authentication_ was chosen as Authentication Type.
-
-|Password
-|This field contains the masked Password used to authenticate on the SMTP Server.
-
-This field is mandatory if _Authentication_ was chosen as Authentication Type.
-
-The characters you enter are displayed as asterisks.
-
-|Repeat Password
-|In this field, re-enter the password used to authenticate on the SMTP Server.
 |===
 
 [[_globadm_systemsettings_miscellaneous]]
@@ -311,7 +309,8 @@ The following fields are available on the _Miscellanous_ subpanel:
 | Meaning
 
 |Auto Refresh Rate
-|In this field, you can enter the number of seconds for the automatic refresh function on the <<Desktop_ManageDesktop.adoc#_managedesktop_desktopoverview,The Desktop Overview Screen>>, <<Desktop_LevelRequests.adoc#_desktop_lr_overviewscreen,Level Requests Overview>> and <<Desktop_LevelRequests.adoc#_desktop_lr_buildhistory,Build History Screen>>.
+|In this field, you can enter the number of seconds for the automatic refresh function on the <<Desktop_ManageDesktop.adoc#_managedesktop_desktopoverview,The Desktop Overview Screen>>, <<Desktop_LevelRequests.adoc#_desktop_lr_overviewscreen,Level Requests Overview>>,
+<<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>, <<Desktop_Packages.adoc#_desktop_packagedetails,Package Details>> and <<Desktop_LevelRequests.adoc#_desktop_lr_buildhistory,Build History Screen>>.
 
 As a result, these overview screens will be refreshed each time the interval expires (if the user has activated the <<Desktop_AutoRefresh.adoc#_desktop_autorefresh,Auto Refresh function on his or her Desktop submenu>>).
 
@@ -346,15 +345,15 @@ a|The IKAN ALM REST API enables you to interact with IKAN ALM programmatically a
 
 By default, this feature is disabled for security reasons.
 
-The IKAN ALM API is fully documented and accessible through the web interface: _Help > REST API Documentation_.
+The IKAN ALM REST API is fully documented and (when Restful Web services are Enabled)accessible through the web interface: _Help > REST API Documentation_.
 
 |Secure Server-Agent Communication
-|This indicates whether or not the XMLRPC communication between the IKAN ALM Server and Agent is done through a secure channel. 
+|This field indicates whether or not the web services communication between the IKAN ALM Web Application, IKAN ALM Server and IKAN ALM Agent is done through a secure channel. 
 
 |Build/Deploy Parameter Prefix
-|This option determines the value of the IKAN ALM Build/Deploy parameters prefix (by default alm) and the name of the ANT property file that is generated for Execute Build and Execute Deploy phases (by default alm_ant.properties).
+|This option determines the value of the IKAN ALM Build/Deploy parameters prefix (by default _alm_) and the name of the property file that is generated for _Execute Script_ Build or Deploy phases (by default _alm_ant.properties_ when you use an ANT Scripting Tool).
 
-In case you are upgrading from a version prior to IKAN ALM 5.0, this feature allows you to keep on working with the old scm4all parameter prefix and the old scm4all_ant.properties file, and not having to modify your Build and/or Deploy scripts.
+In case you are upgrading from a version prior to IKAN ALM 5.0, this feature allows you to keep on working with the old _scm4all_ parameter prefix and the old _scm4all_ant.properties_ file, and not having to modify your Build and/or Deploy scripts.
 
 _Note:_ This is a compatibility solution.
 At a certain point in time, you will have to modify your scripts and use the new _alm_ prefix. 
@@ -381,7 +380,7 @@ The _Housekeeping_ screen also shows information about the Build Archive, like t
 +
 The __Housekeeping__ screen is displayed:
 +
-image::GlobAdm-Housekeeping-Screen.png[,920,526] 
+image::GlobAdm-Housekeeping-Screen.png[,1199,676] 
 +
 On top of the screen, the _Build Archive Info_ panel displays the following information.
 +
@@ -588,14 +587,14 @@ Click the link to display the details for this Level Request.
 Select the check box in the table heading in order to select all the displayed Build Files.
 . The _Confirm Build Files Deletion_ popup window is displayed.
 +
-image::GlobAdm-Housekeeping-Delete.png[,258,90] 
+image::GlobAdm-Housekeeping-Delete.png[,244,82] 
 +
 . Click __Delete __to confirm the deletion or __Back__ to return to the previous screen without deleting the Build Files.
 +
 When the delete is confirmed, the removal is executed.
 The action is logged in the _Housekeeping History_ and the User is redirected to the _View Housekeeping Details_ screen where the result of the action is displayed.
 +
-image::GlobAdm-Housekeeping-Delete-Success.png[,1032,319] 
+image::GlobAdm-Housekeeping-Delete-Success.png[,1016,303] 
 
 
 [[_globadm_system_housekeepinghistory]]
@@ -612,7 +611,7 @@ It provides a _Search_ panel where the User can enter search criteria to restric
 +
 The __Housekeeping History__ screen is displayed:
 +
-image::GlobAdm-HousekeepingHistory-Screen.png[,668,375] 
+image::GlobAdm-HousekeepingHistory-Screen.png[,650,352] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -688,9 +687,9 @@ Possible statuses are:
 
 . You can click the image:icons/view.gif[,15,15] _View_ link to display the _View Housekeeping Details_ screen.
 +
-image::GlobAdm-HousekeepingHistory-Details_success.png[,1032,371] 
+image::GlobAdm-HousekeepingHistory-Details_success.png[,1015,357] 
 +
-image::GlobAdm-HousekeepingHistory-Details_error.png[,1030,336] 
+image::GlobAdm-HousekeepingHistory-Details_error.png[,1015,324] 
 
 
 [[_globadm_system_synchronizebuildarchive]]
@@ -706,7 +705,7 @@ During synchronization the status will be set to "`Non existing`".
 +
 The __Synchronize Build Archive__ screen is displayed:
 +
-image::GlobAdm-SynchBuildArchive-screen.png[,864,481] 
+image::GlobAdm-SynchBuildArchive-screen.png[,1104,621] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -806,7 +805,7 @@ In order to not overburden the IKAN ALM Server, it is best to limit the number o
 
 . The _Synchronize Build Archive Log_ screen is displayed.
 +
-image::GlobAdm-SynchBuildArchive-synchronize.png[,1009,240] 
+image::GlobAdm-SynchBuildArchive-synchronize.png[,883,249] 
 +
 The extra field _Synchronizing Status_ is displayed for each Project on the _Project Synchronization_ panel.
 +

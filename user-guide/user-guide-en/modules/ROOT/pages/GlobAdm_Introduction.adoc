@@ -29,9 +29,8 @@ Log_ which has been added to the _Miscellaneous_ section on the landing page.
 Refer to the following sections for detailed information:
 
 * <<GlobAdm_System.adoc#_globadm_system,System>>
-* <<GlobAdm_HistoryLog.adoc#_globadm_historylog,History Log>>
-* <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_users,Users and Groups Users>>
 * <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_groups,User Groups>>
+* <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_users,Users and Groups Users>>
 * <<GlobAdm_Machines.adoc#_globadm_machines,Machines>>
 * <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporters>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr,Version Control Repositories>>
@@ -39,5 +38,6 @@ Refer to the following sections for detailed information:
 * <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>
 * <<GlobAdm_Schedules.adoc#_globadm_schedules,Schedules>>
 * <<GlobAdm_Misc.adoc#_globadm_miscellaneous,Miscellaneous>>
-* <<GlobAdm_Phases.adoc#_globadm_phases,Phases>>
+* <<GlobAdm_HistoryLog.adoc#_globadm_historylog,History Log>>
 * <<GlobAdm_Project.adoc#_globadm_project,Projects>>
+* <<GlobAdm_Phases.adoc#_globadm_phases,Phases>>

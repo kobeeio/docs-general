@@ -145,7 +145,7 @@ _Note:_ This option is not available for Package-based projects.
 
 |Requester User Group
 |From the drop-down list, you may select the required Requester User Group.
-Members of this User Group and any child User Groups have the right to create Level Requests for this Build Level.
+Members of this User Group and any nested User Groups have the right to create Level Requests for this Build Level.
 
 |Lifecycle
 |From the drop-down list, select the Lifecycle to which the Level must be assigned.
@@ -250,15 +250,15 @@ No notification will be sent when a Level Request for this Level has ended.
 
 |Requester User Group
 |From the drop-down menu, you may select the required Requester User Group.
-Members of this User Group and any child User Groups have the right to create Level Requests for this Test or Production Level.
+Members of this User Group and any nested User Groups have the right to create Level Requests for this Test or Production Level.
 
 |Pre-Notification User Group
 |From the drop-down menu, you may select the required Pre-Notification User Group.
-Members of this User Group and any child User Groups will be notified when a Level Request is created for this Level.
+Members of this User Group and any nested User Groups will be notified when a Level Request is created for this Level.
 
 |Post-Notification User Group
 |From the drop-down menu, you may select the required Post-Notification User Group.
-Members of this User Group and any Child User Groups will be notified when a Level Request for this Level has ended, depending on the Post-Notification Criteria.
+Members of this User Group and any nested User Groups will be notified when a Level Request for this Level has ended, depending on the Post-Notification Criteria.
 
 |Post-Notification Criteria
 a|From the drop-down list, select the required Post-Notification Criteria for this Test or Production Level.

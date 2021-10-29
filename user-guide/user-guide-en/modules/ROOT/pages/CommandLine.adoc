@@ -739,21 +739,21 @@ image::CommandLine-VSCode-ExternalTools-Step2-alt.png[,1288,651]
 ----
 "commands": [
     {
-    "cwd": "D:\\IKANALM\\commandline",
-    "name": "Create Build Level Request for Webpad",
-    "color": "white",
-    "singleInstance": true,
-    "command": ".\\alm clr -serverhost:docalm -serverport:20021 -user:global -password:global clr -project:Webpad -level:CONTBUILD",
+    "cwd": "D:\\IKANALM\\commandline", // The path to the command line root directory
+    "name": "Create Build Level Request for Webpad", // The label on the button
+    "color": "white", // The color of the label
+    "singleInstance": true, // if set to true, restarts the terminal each time the button is clicked
+    "command": ".\\alm clr -serverhost:docalm -serverport:20021 -user:global -password:global clr -project:Webpad -level:CONTBUILD", // The commandline command to execute.
     }]
 ----
 +
 image::CommandLine-VSCode-ExternalTools-Step3.png[,1288,651] 
 +
-. Add as many "commands" entries as you like in the _settings.json_ file. Each command will represents a seperate Level Request button. Finally, save the file and click the _Refresh the action buttons_ icon on the bottom status bar to apply your changes.
+. Add as many "commands" entries as you like in the _settings.json_ file. Each command will represent a separate Level Request button. Finally, save the file and click the _Refresh the action buttons_ icon on the bottom status bar to apply your changes.
 +
 image::CommandLine-VSCode-ExternalTools-Step4.png[,1478,651] 
 +
-. To iniate the Level Request simply click the Level Request button in bottom the status bar.
+. To initiate the Level Request, simply click the Level Request button on the bottom status bar.
 +
 image::CommandLine-VSCode-ExternalTools-Step5.png[,1478,651] 
 

@@ -112,7 +112,7 @@ This step is optional in case of a Rebuild.
 
 This location is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
-If the Project Stream in which this Build is done, is Master for one or more Child Project Streams, the Sources or the Build Result (depending on the Dependency Type) of these Child Project Streams will also be retrieved from the VCR, respectively from the Build Archive, to the Work Copy location.
+If the Project Stream in which this Build is done, is Parent for one or more Child Project Streams, the Sources or the Build Result (depending on the Dependency Type) of these Child Project Streams will also be retrieved from the VCR, respectively from the Build Archive, to the Work Copy location.
 
 |6.
 |If the Retrieval process fails, the Monitor sets the Build Status of all Builds related to the Level Request to __Cancel__, the Level Request Status to _Fail_ and the action flow is terminated.
@@ -318,7 +318,7 @@ This step is optional in case of a Rebuild
 
 This location is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
-If the Project Stream in which this Build is done, is Master for one or more Child Project Streams, the Sources or the Build Result (depending on the Dependency Type) of these Child Project Streams will also be retrieved from the VCR, respectively from the Build Archive, to the Work Copy location.
+If the Project Stream in which this Build is done, is Parent for one or more Child Project Streams, the Sources or the Build Result (depending on the Dependency Type) of these Child Project Streams will also be retrieved from the VCR, respectively from the Build Archive, to the Work Copy location.
 
 |6.
 |If the Retrieval process fails, the Monitor sets the Build and Deploy Status of all Builds and Deploys related to the Level Request to __Cancel__, the Level Request Status to _Fail_ and the action flow is terminated.

@@ -259,7 +259,7 @@ If a Level is not locked, this field remains empty.
 If a Level is optional, this field contains a blue check mark (image:icons/checkmark_blue.gif[,15,15] ).
 
 |Notification Type (Criteria)
-|This field indicates the Notification Type associated to the Level (__Mail__, _Netsend_ or __No Notification__), followed, between brackets, by the Notification Criterion (__Always__, __Fail__, _Successful_ or __Never__).
+|This field indicates the Notification Type associated to the Level (__Mail__ or __No Notification__), followed, between brackets, by the Notification Criterion (__Always__, __Fail__, _Successful_ or __Never__).
 
 |Requester
 |This field indicates the name of the Requester User Group.

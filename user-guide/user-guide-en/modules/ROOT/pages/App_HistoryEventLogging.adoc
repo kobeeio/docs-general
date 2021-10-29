@@ -114,7 +114,7 @@ Phase Parameters
 |Project Streams
 |Project Streams
 
-Master Dependencies
+Parent Dependencies
 
 Child Dependencies
 

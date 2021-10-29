@@ -60,6 +60,8 @@ For that reason, there exist internal User Groups which can be managed in IKAN A
 When adding/editing the User Groups, one should keep in mind the fact that, unlike the external User Groups, those internal groups are not automatically synchronized when the User logs in.
 To avoid situations where no User with System Admin rights can login anymore, IKAN ALM does not allow to set an internal User Group as the User Group with the Admin Access Rights.
 
+IKAN ALM also has the concept of _Nested User Groups_. This feature allows User Groups to contain other User Groups. This means that User Groups defined in the external security system can be added to other (internal or external) IKAN ALM User Groups. These groups can then be used to assign certain roles in ALM, like for example assigning a group of users to the Project Admin role of a Project. This avoids the need to create specific principals and assign users in the external authentication system in order to give Users access to the correct IKAN ALM roles.
+
 The Users Overview option allows:
 
 * defining additional information fields for User IDs that have been used to log in to IKAN ALM
@@ -75,7 +77,7 @@ The Users Overview option allows:
 +
 The following screen is displayed:
 +
-image::GlobAdm-Users.png[,865,291] 
+image::GlobAdm-Users.png[,1121,358] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -198,7 +200,7 @@ It allows viewing the User History. <<GlobAdm_UsersGroups.adoc#_globadm_usersgro
 +
 The following screen is displayed:
 +
-image::GlobAdm-Users-Edit.png[,572,620] 
+image::GlobAdm-Users-Edit.png[,550,600] 
 +
 *Description:*
 
@@ -214,7 +216,7 @@ __Error: Maximum number of reserved active Users
 (X) reached__, where X is the maximum allowed number of reserved active users.
 You will have to expand your IKAN ALM license or archive other (obsolete) reserved User IDs, or mark other active reserved User IDs as non reserved, before you can reactive this User ID.
 
-* At the bottom of the screen, the __Related User Groups Overview__ panel is displayed. The overview contains the definitions of the User Groups to which the selected User ID belongs. See: <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_groups,User Groups>>
+* At the bottom of the screen, the __Related User Groups Overview__ panel is displayed. The overview contains the definitions of the User Groups to which the selected User ID belongs. The membership of a User Group can be obtained inderectly, through a _Nested User Group_. In such a case the _Parent Of_ field will contain the Nested User Group.  See: <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_groups,User Groups>>
 
 +
 [NOTE]
@@ -239,7 +241,7 @@ You can also click:
 . In the Global Administration context, select__ Users & Groups > Overview Users__.
 . Set the option _Connected Users_ to _Yes_ to display the list of Users currently connected.
 +
-image::GlobAdm-Users-Disconnect.png[,809,264] 
+image::GlobAdm-Users-Disconnect.png[,1060,319] 
 +
 . Click the image:icons/icon_disconnectUser.png[,15,15] _Disconnect_ link on the _Users Overview_ panel to immediately disconnect the User.
 +
@@ -306,10 +308,13 @@ For that reason, there exist internal User Groups which can be managed in IKAN A
 When adding/editing the User Groups, one should keep in mind the fact that, unlike the external User Groups, those internal are not automatically synchronized when the user logs in.
 To avoid situations where no User with System Admin rights may login anymore, IKAN ALM does not allow to set an internal User Group as the User Group with the Admin Access Rights.
 
+IKAN ALM also has the concept of _Nested User Groups_. This feature allows User Groups to contain other User Groups. This means that User Groups defined in the external security system can be added to other (internal or external) IKAN ALM User Groups. These groups can then be used to assign certain roles in ALM, like for example assigning a group of users to the Project Admin role of a Project. This avoids the need to create specific principals and assign users in the external authentication system in order to give Users access to the correct IKAN ALM roles.
+
 Refer to the following sections for detailed information:
 
 * <<GlobAdm_UsersGroups.adoc#_globadm_usergroupcreate,Creating a User Group>>
 * <<GlobAdm_UsersGroups.adoc#_globadm_usergroupsoverview,The User Groups Overview Screen>>
+* <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusernestedgroups,Editing the Nested User Groups>>
 
 [[_globadm_usergroupcreate]]
 === Creating a User Group 
@@ -324,7 +329,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-UserGroup-Create.png[,589,303] 
+image::GlobAdm-UserGroup-Create.png[,576,281] 
 +
 . Fill out the fields in the _Create User Group_ panel at the top of the screen. Fields marked with a red asterisk are mandatory:
 +
@@ -341,12 +346,12 @@ image::GlobAdm-UserGroup-Create.png[,589,303]
 |Enter a description for the new User Group in this field.
 
 |Type
-|In this field, select the User Group type from the drop-down list.
+a|In this field, select the User Group type from the drop-down list.
 
 The possible values are:
 
 * External: the User Group membership is synchronized with the external security system. This is done for each User individually at login.
-* Internal: the User Group membership is managed in IKAN ALM 
+* Internal: the User Group membership is managed in IKAN ALM, unless it has (a) Nested _external_ User Group(s).
 
 For more information, refer to the section <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>.
 |===
@@ -364,7 +369,7 @@ Groups Overview__ panel at the bottom of the screen.
 +
 The following screen is displayed:
 +
-image::GlobAdm-UserGroup-Overview.png[,968,425] 
+image::GlobAdm-UserGroup-Overview.png[,951,404] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -434,7 +439,7 @@ Columns marked with the image:icons/icon_sort.png[,15,15]  icon can be sorted al
 +
 The following screen is displayed:
 +
-image::GlobAdm-UserGroup-Edit.png[,977,428] 
+image::GlobAdm-UserGroup-Edit.png[,950,404] 
 +
 . Click the image:icons/edit.gif[,15,15] _Edit_ link in front of the User Group for which you want to modify the members.
 +
@@ -455,7 +460,7 @@ See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusernestedgroups,Editing
 +
 . The _User Group Usage_ panel displays the System Settings Access Rights and Levels and Projects the User Groups are connected to.
 +
-image::GlobAdm-UserGroup-UserGroupsUsage.png[,622,396] 
+image::GlobAdm-UserGroup-UserGroupsUsage.png[,598,383] 
 . Click _Save_ to confirm your changes.
 +
 This will bring you back to the _User Groups Overview_ screen.
@@ -466,9 +471,9 @@ You can also click:
 * _Back_ to return to the previous screen without saving the changes
 
 [[_globadm_usersgroups_editusernestedgroups]]
-=== Editing the Nested User Group Members
+=== Editing the Nested User Group
 
-. On the __Nested User Group Members__ panel underneath the _Edit User Group_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit Nested User Groups__ link to change the selected Nested User Groups.
+. On the __Nested User Groups__ panel underneath the _Edit User Group_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit Nested User Groups__ link to change the selected Nested User Groups.
 +
 The following screen is displayed:
 +
@@ -516,7 +521,8 @@ For external User Groups, changing the Group Members has only a temporary effect
 As soon as a User`'s IKAN ALM session is terminated and a new session is opened, IKAN ALM reads the settings from the external Security System and synchronizes the external IKAN ALM User Groups with the definitions available in this external security system.
 As a result a User added here will be deleted from the list, or vice versa.
 
-However, the membership of internal User Groups may only be managed through this interface.
+The membership of internal User Groups may only be managed through this interface.
+However by adding (a) Nested _external_ User Group(s) to an internal User Group, the User Group membership can be managed in the external Security System.
 ====
 +
 You can also click:
@@ -533,12 +539,12 @@ You can also click:
 
 * If the User Group is not connected to any other IKAN ALM Object, the following screen is displayed:
 +
-image::GlobAdm-UserGroup-Delete.png[,429,176] 
+image::GlobAdm-UserGroup-Delete.png[,414,182] 
 +
 Click __Delete __to confirm the deletion or __Back__ to return to the previous screen without deleting the entry.
 * If the User Group is still connected to IKAN ALM Objects on the System Project or Level Settings, the following dialog is displayed:
 +
-image::GlobAdm-UserGroup-Delete-Error.png[,658,639] 
+image::GlobAdm-UserGroup-Delete-Error.png[,622,616] 
 +
 
 [NOTE]

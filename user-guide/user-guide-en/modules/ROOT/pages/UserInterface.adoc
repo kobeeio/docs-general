@@ -25,11 +25,117 @@ At the right, it contains the User Settings of the current user as well as the c
 
 image::GettingStarted-UserInterface-main-menu.png[,1200,217] 
 
+[cols="1,1", frame="topbot", options="header"]
+|===
+| Menu option
+| Description
+
+|Desktop
+|Select this option to switch to the Desktop page. <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Managing the Desktop>>
+
+|Level Requests
+a|This drop-down menu contains the following options:
+
+* _Create Level Request_
++
+Select this option to create a new Level Request. <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_selectlevel,Create Level Request: Select Level>>
+* _Overview Level Requests_
++
+Select this option to switch to the _Level Request Overview_ screen. <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>>
++
+You can also directly click the Level Requests Top Menu Item to switch to this screen.
+* _Overview Builds and Deploys_
++
+Select this option to switch to the _Build and Deploy Overview_ screen. <<Desktop_LevelRequests.adoc#_desktop_lr_buildsdeploysoverview,Builds and Deploys Overview>>
+* _Recent Level Requests_
++
+A list of the most recently visited Level Requests.
+* _Level Request Filters_
++
+A list of defined search filters for the Level Request Overview screen.
+* _Build and Deploy Filters_
++
+A list of defined search filters for the Build and Deploy Overview screen.
+
+|Packages
+a|This drop-down menu contains the following options:
+
+* _Create Package_
++
+Select this option to create a new Package. <<Desktop_Packages.adoc#_desktop_createpackage,Creating a Package>>
+* _Create Package Build Group_
++
+Select this option to create a new Package Build Group. <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Creating a Package Build Group>>
+* _Overview Packages_
++
+Select this option to switch to the Package
+Overview_ screen. <<Desktop_Packages.adoc#_desktop_packageoverview,Packages Overview>>
++
+You can also directly click the Packages Top Menu Item to switch to this screen.
+* _Overview Package Build Groups_
++
+Select this option to switch to the Package Build Group
+Overview_ screen. <<Desktop_PackageGroups.adoc#_desktop_packagegroupsoverview,Package Build Groups Overview>>
+* _Recent Packages_
++
+A list of the most recently visited Packages.
+* _Package Filters_
++
+A list of defined search filters for the Package Overview screen.
+
+|Approvals
+a|This drop-down menu contains the following options:
+
+* _Outstanding Approvals_
++
+Select this option to switch to the Outstanding Approvals screen. <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsscreen,The Outstanding Approvals>>
+* _Overview Approvals_
++
+Select this option to switch to the Approvals Overview screen. <<Desktop_Approvals.adoc#_desktop_approvals_overview,The Approvals Overview>>
+
+|Project Administration
+a|This drop-down menu contains the following options:
+
+* _Project Administration_
++
+Select this option to switch to the Project Overview page. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_accessing,The Projects Overview Screen>>
+* _Recent Projects_
++
+A list of the most recently visited projects.
+* _Project Filters_
++
+A list of defined search filters for the Package Overview screen.
+
+|Global Administration
+|Select this option to switch to the Global Administration screen. <<GlobAdm_Introduction.adoc#_globadm_introduction,Global Administration>>
+|_Username_
+a|This drop-down menu contains the following options:
+
+* _Personal Settings_
++
+Select this option to switch to your Personal Settings screen. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings_edit,Editing Your Personal Settings>>
+* _Log out_
++
+Select this option to log out of IKAN ALM. <<Logon.adoc#_desktop_loogingoff,Logging out>>
+
+|_Help_
+a|This drop-down menu contains the following options:
+
+* _Help_
++
+Select this option to switch to this documentation site.
+* _REST API Documentation_
++
+Select this option to open the integrated IKAN ALM REST API Documentation screen.
+* _About_
++
+Select this option to switch to the About screen. This page shows information about your installed license.
+|===
+
+
 ==== Recent Items and Search Filters
 
-The Main Menu sections for Level Requests, Packages and Projects remember up to 5 recently visited items. For Level Requests, these items also show the status of the Level Request.
-
-In addition, the Main Menu sections for Level Requests, Builds and Deploys, Packages and Projects also display up to 5 Search Filters.
+The Main Menu sections for Level Requests, Packages and Projects remember up to 5 recently visited items. In addition, the Main Menu sections for Level Requests, Builds and Deploys, Packages and Projects also display up to 5 Search Filters.
 
 image::UserInterface-RecentItems.png[,564,438]
 

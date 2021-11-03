@@ -11,9 +11,6 @@ IKAN ALM currently supports different types of Version Control Repositories (VCR
 * <<GlobAdm_VCR.adoc#_globadm_vcr_svn,Subversion Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_git,Git Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_cvs,CVS Repositories>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_vss,Visual SourceSafe (VSS) Repositories>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_clearcase,ClearCase Repositories>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_pvcs,PVCS Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc,TFVC Version Control Repositories>>
 
 
@@ -38,7 +35,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Create.png[,590,258] 
+image::GlobAdm-VCR-Create.png[,573,245] 
 +
 . Select the _Type_ of Repository you want to create.
 +
@@ -51,10 +48,7 @@ For more information on those details, refer to the appropriate sections:
 * <<GlobAdm_VCR.adoc#_pcreatesvnrepository,Creating a Subversion Repository>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_git_create,Creating a Git Repository>>
 * <<GlobAdm_VCR.adoc#_pcreatecvsrepository,Creating a CVS Repository>>
-* <<GlobAdm_VCR.adoc#_pcreatevssrepository,Creating a VSS Version Control Repository>>
-* <<GlobAdm_VCR.adoc#_pcreateclearcasebaserepository,Creating a ClearCase Repository>>
-* <<GlobAdm_VCR.adoc#_pcreatepvcsrepository,Creating a PVCS Repository>>
-* <<GlobAdm_VCR.adoc#_pcreatepvcsrepository,Creating a PVCS Repository>>
+* <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_create,Creating a TFVC Repository>>
 
 
 [[_globadm_vcr_overview]]
@@ -65,7 +59,7 @@ For more information on those details, refer to the appropriate sections:
 +
 The overview of all defined Version Control Repositories is displayed.
 +
-image::GlobAdm-VCR-Overview.png[,981,590] 
+image::GlobAdm-VCR-Overview.png[,950,567] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -107,9 +101,6 @@ For more information, refer to the appropriate sections:
 * <<GlobAdm_VCR.adoc#_globadm_vcr_svn,Subversion Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_git,Git Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_cvs,CVS Repositories>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_vss,Visual SourceSafe (VSS) Repositories>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_clearcase,ClearCase Repositories>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_pvcs,PVCS Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc,TFVC Version Control Repositories>>
 
 
@@ -138,7 +129,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Create-Subversion.png[,585,633] 
+image::GlobAdm-VCR-Create-Subversion.png[,575,623] 
 +
 . Fill out the fields in the _Create Subversion Repository_ screen. 
 +
@@ -236,7 +227,7 @@ with the Repository.__
 +
 If the test is not successful, the following screen is displayed:
 +
-image::GlobAdm-VCR-Subversion-Create-Connection-Error.png[,733,508] 
+image::GlobAdm-VCR-Subversion-Create-Connection-Error.png[,720,496] 
 +
 Correct the errors reported in the Stack Trace field and perform the test again.
 . Once the test is successful, click__ Create__.
@@ -267,7 +258,7 @@ The overview of all defined Version Control Repositories is displayed.
 +
 Use the other search criteria to only display the Subversion Repositories you are looking for.
 +
-image::GlobAdm-VCR-Overview-Subversion.png[,1005,356] 
+image::GlobAdm-VCR-Overview-Subversion.png[,1316,434] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -324,7 +315,7 @@ Control Repository_ panel to only display the Subversion Repositories you are lo
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Subversion-Edit.png[,560,547] 
+image::GlobAdm-VCR-Subversion-Edit.png[,550,538] 
 +
 . Edit the fields as required.
 +
@@ -358,7 +349,7 @@ Control Repository_ panel to only display the Subversion Repositories you are lo
 +
 If the Subversion Repository is not connected to any Project, the following screen is displayed:
 +
-image::GlobAdm-VCR-Subversion-Delete.png[,460,375] 
+image::GlobAdm-VCR-Subversion-Delete.png[,456,359] 
 +
 . Click _Delete_ to confirm the deletion.
 +
@@ -366,7 +357,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note:__ If the Subversion Repository is connected to one or more Projects, the following screen is displayed:
 +
-image::GlobAdm-VCR-Subversion-Delete-Error.png[,696,691] 
+image::GlobAdm-VCR-Subversion-Delete-Error.png[,681,678] 
 +
 Before deleting the VCR, you must connect the reported Projects to another VCR.
 
@@ -509,6 +500,8 @@ SSH and scp URLs need to function without providing a password.
 If IKAN ALM is not able to establish a connection with the Git Repository within the defined period, it will consider the Repository to be inaccessible.
 
 The definition of a Time-Out value is mandatory.
+|Omit Blobs When Cloning
+|Select the Yes option to clone this Git repository with the _--filter=blob:none_ option active. Enabling this option can greatly speed up the Retrieve Code Phase. Consult the Git documentation for more information on this option.
 |===
 . Click __Test Connection__ to verify if IKAN ALM can establish a connection to the Git Repository. If the test is successful, the following message is displayed:
 +
@@ -517,7 +510,7 @@ with the Repository.__
 +
 If the test is not successful, the following screen is displayed:
 +
-image::GlobAdm-VCR-Git-Create-Connection-Error.png[,737,509] 
+image::GlobAdm-VCR-Git-Create-Connection-Error.png[,722,499] 
 +
 Correct the errors reported in the Stack Trace field and perform the test again.
 . Once the test is successful, click__ Create__.
@@ -548,7 +541,7 @@ The overview of all defined Version Control Repositories is displayed.
 +
 Use the other search criteria to only display the Git Repositories you are looking for.
 +
-image::GlobAdm-VCR-Overview-Git.png[,1010,279] 
+image::GlobAdm-VCR-Overview-Git.png[,1317,334] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -696,7 +689,7 @@ Before you can create the CVS Version Control Repository in IKAN ALM, you must i
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Create-CVS.png[,585,614] 
+image::GlobAdm-VCR-Create-CVS.png[,575,598] 
 +
 . Fill out the fields in the _Create CVS Repository_ screen. 
 +
@@ -794,7 +787,7 @@ with the Repository.__
 +
 If the test is not successful, the following screen is displayed: 
 +
-image::GlobAdm-VCR-CVS-Create-Connection-Error.png[,734,508] 
+image::GlobAdm-VCR-CVS-Create-Connection-Error.png[,721,497] 
 +
 Correct the errors reported in the Stack Trace field and perform the test again.
 . Once the test is successful, click __Create__.
@@ -825,7 +818,7 @@ The overview of all defined Version Control Repositories is displayed.
 +
 Use the other search criteria to only display the CVS Repositories you are looking for.
 +
-image::GlobAdm-VCR-Overview-CVS.png[,811,252] 
+image::GlobAdm-VCR-Overview-CVS.png[,1058,304] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -882,7 +875,7 @@ Control Repository_ panel to only display the CVS Repositories you are looking f
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-CVS-Edit.png[,536,659] 
+image::GlobAdm-VCR-CVS-Edit.png[,516,646] 
 +
 . Edit the fields as required.
 +
@@ -917,7 +910,7 @@ Control Repository_ panel to only display the CVS Repositories you are looking f
 +
 If the CVS Repository is not connected to any Project, the following screen is displayed:
 +
-image::GlobAdm-VCR-CVS-Delete.png[,427,360] 
+image::GlobAdm-VCR-CVS-Delete.png[,419,337] 
 +
 . Click __Delete__ to confirm the deletion.
 +
@@ -925,7 +918,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note: __If the CVS Repository is connected to one or more Projects, the following screen is displayed:
 +
-image::GlobAdm-VCR-CVS-Delete-Error.png[,480,499] 
+image::GlobAdm-VCR-CVS-Delete-Error.png[,471,486] 
 +
 Before deleting the VCR, you must connect the reported Projects to another VCR.
 
@@ -944,826 +937,6 @@ Control Repository_ panel to only display the CVS Repositories you are looking f
 For more detailed information concerning this __History
 View__, refer to the section <<App_HistoryEventLogging.adoc#_historyeventlogging,History and Event Logging>>.
 . Click __Back __to return to the __CVS Repositories Overview__ screen.
-
-
-[[_globadm_vcr_vss]]
-== Visual SourceSafe (VSS) Repositories 
-(((Version Control Repositories ,VSS (Visual Source Safe))))  (((VSS))) 
-
-Refer to the following sections for detailed information:
-
-* <<GlobAdm_VCR.adoc#_pcreatevssrepository,Creating a VSS Version Control Repository>>
-* <<GlobAdm_VCR.adoc#_pworkwithvssoverview,The VSS Repositories Overview Screen>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_vss_edit,Editing a VSS Repository>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_vss_delete,Deleting a VSS Repository>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_vss_history,Viewing the VSS Repository History>>
-
-[[_pcreatevssrepository]]
-=== Creating a VSS Version Control Repository 
-(((VSS ,Creating))) 
-
-[NOTE]
-====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM. 
-
-Before you can create the VSS Version Control Repository in IKAN ALM, you must install a VSS Client on the IKAN ALM Server.
-====
-
-. In the Global Administration context, select__ Version Control Repositories > Create__.
-. Select _VSS_ from the drop-down list in the _Type_ field.
-+
-The following screen is displayed:
-+
-image::GlobAdm-VCR-Create-VSS.png[,585,591] 
-+
-. Fill out the fields in the _Create Visual SourceSafe Repository_ screen. 
-+
-Fields marked with a red asterisk are mandatory:
-+
-
-[cols="1,1", frame="none", options="header"]
-|===
-| Field
-| Meaning
-
-|Type
-|Select the type of Version Control Repository you want to define.
-This field is mandatory.
-
-After you have selected the VCR type, the appropriate _Connection
-Details_ panel will be displayed underneath.
-
-|Name
-|Enter the name of the new VSS Repository definition in this field.
-This field is mandatory.
-
-|Description
-|Enter a description for the new VSS Repository in this field.
-This field is optional.
-|===
-
-. Fill out the fields in the _VSS Connection details_ panel.
-+
-Fields marked with a red asterisk are mandatory:
-+
-
-[cols="1,1", frame="none", options="header"]
-|===
-| Field
-| Meaning
-
-|Command Path
-|Enter the required Command Path of the VSS Client (absolute path to the __ss.exe__ file).
-
-|INI Path
-|Enter the VSS ROOT used to log in to VSS, or the __ssdir __environment variable (absolute path to the __srcsafe.ini__ file).
-
-|User ID
-|Enter the User ID that IKAN ALM will use to access the VSS Repository.
-
-|Password
-|Enter the Password that IKAN ALM will use to access the VSS Repository.
-
-The characters you enter are displayed as asterisks.
-
-|Repeat Password
-|Re-enter the Password that IKAN ALM will use to access the VSS Repository.
-
-|Date Format
-a|Enter the Date Format that is in use on the system where the VSS Client is running.
-
-Examples:
-
-* _MM/dd/yyyy_
-* _dd/MM/yy_
-
-
-|Time Format
-|Enter the Time Format that is used on the system where the VSS Client is running.
-
-Example:
-
-_HH:mm_
-
-|Time-Out (Sec.)
-|Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the VSS Repository within the defined period, it will consider the Repository to be inaccessible.
-
-The definition of a Time-Out value is mandatory.
-|===
-
-. Click __Test Connection __to verify if IKAN ALM can establish a connection to the VSS Repository. If the test is successful, the following message is displayed:
-+
-__Info: Could successfully establish a connection
-with the Repository.__
-+
-If the test is not successful, the following screen is displayed:
-+
-image::GlobAdm-VCR-VSS-Create-Connection-Error.png[,743,512] 
-+
-Correct the errors reported in the Stack Trace field and perform the test again.
-. Once the test is successful, click__ Create__.
-+
-The newly created VSS Repository is added to the _VSS
-Repositories Overview_ at the bottom of the screen.
-
-
-[cols="1", frame="topbot"]
-|===
-
-a|_RELATED TOPICS_
-
-* <<GlobAdm_VCR.adoc#_globadm_vcr,Version Control Repositories>>
-* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Creating a Project>>
-
-|===
-
-[[_pworkwithvssoverview]]
-=== The VSS Repositories Overview Screen 
-(((VSS ,Overview Screen))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-. Specify _VSS_ in the _Type_ field on the _Search Version Control Repositories_ panel.
-+
-Use the other search criteria to only display the VSS Repositories you are looking for.
-+
-image::GlobAdm-VCR-Overview-VSS.png[,737,272] 
-+
-If required, use the other search criteria to refine the items displayed on the overview.
-+
-The following options are available:
-
-* click the _Show/hide advanced options_ link to display or hide all available search criteria,
-* the _Search_ link to refresh the list based on the current search criteria,
-* the _Reset search_ link to clear the search fields.
-. Verify the information on the __VSS Repositories Overview__ panel.
-+
-For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatevssrepository,Creating a VSS Version Control Repository>>.
-. Depending on your access rights, the following links may be available on the _VSS Repositories Overview_ panel:
-+
-
-[cols="1,1", frame="topbot"]
-|===
-
-|image:icons/edit.gif[,15,15] 
-|Edit
-
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows editing a VSS Repository definition.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_vss_edit,Editing a VSS Repository>>
-
-|image:icons/delete.gif[,15,15] 
-|Delete
-
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows deleting a VSS Repository definition.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_vss_delete,Deleting a VSS Repository>>
-
-|image:icons/history.gif[,15,15] 
-|History
-
-This option is available to all IKAN ALM Users.
-It allows displaying the History of all create, update and delete operations performed on a VSS Repository.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_vss_history,Viewing the VSS Repository History>>
-|===
-
-[[_globadm_vcr_vss_edit]]
-=== Editing a VSS Repository 
-(((VSS ,Editing))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the VSS Repositories you are looking for.
-. Click the image:icons/edit.gif[,15,15] _Edit_ link to change the selected VSS Repository.
-+
-The following screen is displayed:
-+
-image::GlobAdm-VCR-VSS-Edit.png[,548,637] 
-+
-. Edit the fields as required.
-+
-For a description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatevssrepository,Creating a VSS Version Control Repository>>.
-+
-
-[NOTE]
-====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the VSS Repository. 
-
-The _Connected Projects_ panel displays the Projects the Repository is linked to. 
-====
-. Click __Save__ to save your changes.
-+
-You can also click:
-
-* _Refresh_ to retrieve the settings from the database.
-* _Back_ to return to the previous screen without saving the changes
-
-[[_globadm_vcr_vss_delete]]
-=== Deleting a VSS Repository 
-(((VSS ,Deleting))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the VSS Repositories you are looking for.
-. Click the image:icons/delete.gif[,15,15] _Delete_ link to delete the selected VSS Repository.
-+
-If the VSS Repository is not connected to any Project, the following screen is displayed:
-+
-image::GlobAdm-VCR-VSS-Delete.png[,445,326] 
-+
-. Click _Delete_ to confirm the deletion.
-+
-You can also click _Back_ to return to the previous screen without deleting the entry.
-+
-__Note:__ If the VSS Repository is connected to one or more Projects, the following screen is displayed:
-+
-image::GlobAdm-VCR-VSS-Delete-Error.png[,553,483] 
-+
-Before deleting the VCR, you must connect the reported Projects to another VCR.
-
-[[_globadm_vcr_vss_history]]
-=== Viewing the VSS Repository History 
-(((VSS ,History))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the VSS Repositories you are looking for.
-. Click the image:icons/history.gif[,15,15] _History_ link to display the__ VSS Repository History View__.
-+
-For more detailed information concerning this __History
-View__, refer to the section <<App_HistoryEventLogging.adoc#_historyeventlogging,History and Event Logging>>.
-. Click __Back __to return to the __VSS Repositories Overview__ screen.
-
-
-[[_globadm_vcr_clearcase]]
-== ClearCase Repositories 
-(((Version Control Repositories ,ClearCase)))  (((ClearCase))) 
-
-Refer to the following sections for detailed information:
-
-* <<GlobAdm_VCR.adoc#_pcreateclearcasebaserepository,Creating a ClearCase Repository>>
-* <<GlobAdm_VCR.adoc#_pworkwithclearcasebaseoverview,The ClearCase Repositories Overview Screen>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_clearcase_edit,Editing a ClearCase Repository>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_clearcase_delete,Deleting a ClearCase Repository>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_clearcase_history,Viewing the ClearCase Repository History>>
-
-[[_pcreateclearcasebaserepository]]
-=== Creating a ClearCase Repository 
-(((ClearCase ,Creating))) 
-
-[NOTE]
-====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
-
-Before you can create the ClearCase Version Control Repository in IKAN ALM, you must install a ClearCase Client on the IKAN ALM Server.
-====
-
-. In the Global Administration context, select__ Version Control Repositories > Create__.
-. Select from the drop-down list in the _Type_ field.
-+
-The following screen is displayed:
-+
-image::GlobAdm-VCR-Create-ClearCase.png[,585,607] 
-+
-. Fill out the fields in the _Create ClearCase Repository_ screen. 
-+
-Fields marked with a red asterisk are mandatory:
-+
-
-[cols="1,1", frame="none", options="header"]
-|===
-| Field
-| Meaning
-
-|Type
-|Select the type of Version Control Repository you want to define.
-This field is mandatory.
-
-After you have selected the VCR type, the appropriate _Connection
-Details_ panel will be displayed underneath.
-
-|Name
-|Enter the name of the new ClearCase Repository definition in this field.
-This field is mandatory.
-
-|Description
-|Enter a description for the new ClearCase Repository in this field.
-This field is optional.
-|===
-
-. Fill out the fields in the _ClearCase Connection details_ panel.
-+
-Fields marked with a red asterisk are mandatory:
-+
-
-[cols="1,1", frame="none", options="header"]
-|===
-| Field
-| Meaning
-
-|Command Path
-|Enter the required Command Path for the new ClearCase Repository.
-This is the directory containing the ClearCase client command (cleartool) to connect with the ClearCase Repository.
-
-|Cache Location
-|Enter the path to the Cache location for this ClearCase Repository.
-This directory is used by the Scheduler to check whether there are modifications in a ClearCase VOB (Versioned Objects Base). A ClearCase View, containing the VOB, will be created in this directory.
-
-On Windows, this path MUST be an UNC style path (\\server\share). If not, certain IKAN ALM operations will not function correctly.
-
-|ConfigSpec Location
-a|In this field, enter the absolute path to your customized ClearCase Configuration specification files.
-
-IKAN ALM will search this location for ConfigSpec files with names in the following format:
-
-* ConfigSpec_ProjectName_BranchID.vm
-* ConfigSpec_ProjectName.vm
-* ConfigSpec.vm
-
-IKAN ALM looks first for the most specific match (including the Branch ID in the name).
-
-If no match is found, IKAN ALM will look for the second best match (including the ProjectName).
-
-If again no match is found, IKAN ALM will look for the general ConfigSpec.vm file.
-
-If there is no ConfigSpec.vm available in the indicated location, the default ConfigSpec.vm available in the IKAN ALM classpath will be used.
-
-|Time-Out (Sec.)
-|Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the ClearCase Repository within the defined period, it will consider the Repository to be inaccessible.
-
-The definition of a Time-Out value is mandatory.
-
-|UCM - Project VOB
-|This field only applies, if the repository you want to connect to is a ClearCase UCM Repository.
-
-Enter the name of the Project VOB in which the UCM has been created.
-
-|UCM - Promote baseline to default recommended
-|This field only applies, if the repository you want to connect to is a ClearCase UCM Repository.
-
-_Select YES,_ if you want to promote each tagged Build (__Baseline__) created by IKAN ALM to the__ default recommended Baseline__.
-
-Note: If you set the stream policy__ POLICY_CHSTREAM_UNRESTRICTED__, the permission checking is skipped.
-
-You can only use this option, if the account running the webserver, under which IKAN ALM is running, has the status of Project VOB Owner, Stream Owner, Root (Unix), Member of the ClearCase Administrators Group (ClearCase on Windows only), Local Administrator of the ClearCase LT Server Host (ClearCase LT on Windows only).
-
-For more information, see the mkstream reference page in the ClearCase documentation.
-
-__Select NO__, if you do not want to promote each tagged Build (__Baseline__) created by IKAN ALM to the __default recommended Baseline__.
-
-In this case, this will be a manual process performed outside IKAN ALM.
-|===
-
-. Click __Test Connection__ to verify if IKAN ALM can establish a connection to the ClearCase Repository. If the test is successful, the following message is displayed:
-+
-__Info: Could successfully establish a connection
-with the Repository.__
-+
-If the test is not successful, the following screen is displayed:
-+
-image::GlobAdm-VCR-ClearCase-Create-Connection-Error.png[,791,359] 
-+
-Correct the errors reported in the Stack Trace field and perform the test again.
-. Once the test is successful, click __Create__.
-+
-The newly created ClearCase Repository is added to the__ ClearCase
-Repositories Overview__ at the bottom of the screen.
-
-
-[cols="1", frame="topbot"]
-|===
-
-a|_RELATED TOPICS_
-
-* <<GlobAdm_VCR.adoc#_globadm_vcr,Version Control Repositories>>
-* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Creating a Project>>
-
-|===
-
-[[_pworkwithclearcasebaseoverview]]
-=== The ClearCase Repositories Overview Screen 
-(((ClearCase ,Overview Screen))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-. Specify _ClearCase_ in the _Type_ field on the _Search Version Control Repositories_ panel.
-+
-Use the other search criteria to only display the ClearCase Repositories you are looking for.
-+
-image::GlobAdm-VCR-Overview-ClearCase.png[,912,251] 
-+
-If required, use the other search criteria to refine the items displayed on the overview.
-+
-The following options are available:
-
-* click the _Show/hide advanced options_ link to display or hide all available search criteria,
-* the _Search_ link to refresh the list based on the current search criteria,
-* the _Reset search_ link to clear the search fields.
-. Verify the information on the _ClearCase Repositories Overview_ panel.
-+
-For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreateclearcasebaserepository,Creating a ClearCase Repository>>.
-. Depending on your access rights, the following links may be available on the _ClearCase Repositories Overview_ panel:
-+
-
-[cols="1,1", frame="topbot"]
-|===
-
-|image:icons/edit.gif[,15,15] 
-|Edit
-
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows editing a ClearCase Repository definition.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_clearcase_edit,Editing a ClearCase Repository>>
-
-|image:icons/delete.gif[,15,15] 
-|Delete
-
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows deleting a ClearCase Repository definition.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_clearcase_delete,Deleting a ClearCase Repository>>
-
-|image:icons/history.gif[,15,15] 
-|History
-
-This option is available to all IKAN ALM Users.
-It allows displaying the History of all create, update and delete operations performed on a ClearCase Repository.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_clearcase_history,Viewing the ClearCase Repository History>>
-|===
-
-[[_globadm_vcr_clearcase_edit]]
-=== Editing a ClearCase Repository 
-(((ClearCase ,Editing))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the ClearCase Repositories you are looking for.
-. Click the image:icons/edit.gif[,15,15] _Edit_ link to change the selected ClearCase Repository.
-+
-The following screen is displayed:
-+
-image::GlobAdm-VCR-ClearCase-Edit.png[,744,618] 
-+
-. Edit the fields as required.
-+
-For a description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreateclearcasebaserepository,Creating a ClearCase Repository>>.
-+
-
-[NOTE]
-====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the ClearCase Repository. 
-
-The _Connected Projects_ panel displays the Projects the Repository is linked to. 
-====
-. Click __Save__ to save your changes.
-+
-You can also click:
-
-* _Refresh_ to retrieve the settings from the database.
-* _Back_ to return to the previous screen without saving the changes
-
-[[_globadm_vcr_clearcase_delete]]
-=== Deleting a ClearCase Repository 
-(((ClearCase ,Deleting))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the ClearCase Repositories you are looking for.
-. Click the image:icons/delete.gif[,15,15] _Delete_ link to delete the selected ClearCase Repository.
-+
-If no Projects are connected to the Repository, the following screen is displayed:
-+
-image::GlobAdm-VCR-ClearCase-Delete.png[,542,398] 
-+
-. Click _Delete_ to confirm the deletion.
-+
-You can also click __Back__ to return to the previous screen without deleting the entry.
-+
-__Note:__ If one or more Projects are connected to the Repository, the following screen is displayed:
-+
-image::GlobAdm-VCR-ClearCase-Delete-Error.png[,649,547] 
-+
-Before deleting the VCR, you must connect the reported Projects to another VCR.
-
-[[_globadm_vcr_clearcase_history]]
-=== Viewing the ClearCase Repository History 
-(((ClearCase ,History))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the ClearCase Repositories you are looking for.
-. Click the image:icons/history.gif[,15,15] _History_ link to display the__ ClearCase Repository History View__.
-+
-For more detailed information concerning this __History
-View__, refer to the section <<App_HistoryEventLogging.adoc#_historyeventlogging,History and Event Logging>>.
-. Click __Back __to return to the __ClearCase Repositories Overview__ screen.
-
-
-[[_globadm_vcr_pvcs]]
-== PVCS Repositories 
-(((PVCS)))  (((Version Control Repositories ,PVCS))) 
-
-Refer to the following sections for detailed information:
-
-* <<GlobAdm_VCR.adoc#_pcreatepvcsrepository,Creating a PVCS Repository>>
-* <<GlobAdm_VCR.adoc#_pworkwithpvcsoverview,The PVCS Repositories Overview Screen>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_pvcs_edit,Editing a PVCS Repository>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_pvcs_delete,Deleting a PVCS Repository>>
-* <<GlobAdm_VCR.adoc#_globadm_vcr_pvcs_history,Viewing the PVCS Repository History>>
-
-[[_pcreatepvcsrepository]]
-=== Creating a PVCS Repository 
-(((PVCS ,Creating))) 
-
-[NOTE]
-====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
-
-Before you can create the PVCS Version Control Repository in IKAN ALM, you must install a PVCS Client on the IKAN ALM Server.
-====
-
-. In the Global Administration context, select__ Version Control Repositories > Create__.
-. Select from the drop-down list in the _Type_ field.
-+
-The following screen is displayed:
-+
-image::GlobAdm-VCR-PVCS-Create.png[,585,633] 
-+
-. Fill out the fields in the _Create PVCS Repository_ screen. 
-+
-Fields marked with a red asterisk are mandatory:
-+
-
-[cols="1,1", frame="none", options="header"]
-|===
-| Field
-| Meaning
-
-|Type
-|Select the type of Version Control Repository you want to define.
-This field is mandatory.
-
-After you have selected the VCR type, the appropriate _Connection
-Details_ panel will be displayed underneath.
-
-|Name
-|Enter the name of the new PVCS Repository definition in this field.
-This field is mandatory.
-
-|Description
-|Enter a description for the new PVCS Repository in this field.
-This field is optional.
-|===
-
-. Fill out the fields in the _PVCS Connection details_ panel.
-+
-Fields marked with a red asterisk are mandatory:
-+
-
-[cols="1,1", frame="none", options="header"]
-|===
-| Field
-| Meaning
-
-|Command Path
-|Enter the path to the PCLI executable.
-This field is mandatory.
-
-|Project Database
-|Enter the location of the Project Database.
-This field is mandatory.
-
-|User ID
-|Enter the User ID that IKAN ALM will use to access the PVCS Repository.
-This field is optional.
-
-|Password
-|Enter the Password that IKAN ALM will use to access the PVCS Repository.
-This field is optional.
-
-The characters you enter are displayed as asterisks.
-
-|Repeat Password
-|Re-enter the Password that IKAN ALM will use to access the PVCS Repository.
-
-|Workspace
-|Enter the Workspace path to use.
-This field is optional.
-If none is specified, IKAN ALM will use the Root Workspace ("/RootWorkspace").
-
-|Log Date Format
-|Enter the Date format of modification dates output by the "pcli vlog" command, e.g., for the default format (MMM dd yyyy HH:mm:ss): `Oct 11 2014 11:53:04`
-
-|Log Date Locale
-|Enter the locale of the date format of modification dates output by the "pcli vlog" command, e.g., for the default format (MMM dd yyyy HH:mm:ss) :
-
-Locale = "en" : `Oct
-11 2014 11:53:04`
-
-Locale = "nl" : `Okt
-11 2014 11:53:04`
-
-This field is mandatory.
-The default value is "`en`".
-
-|Archive Suffix
-|Enter the suffix for PVCS archive files.
-
-This field is mandatory.
-The default value is "-arc"
-
-|Time-Out (Sec.)
-|Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the PVCS Repository within the defined period, it will consider the Repository to be inaccessible.
-
-The definition of a Time-Out value is mandatory.
-|===
-
-. Click __Test Connection__ to verify if IKAN ALM can establish a connection to the PVCS Repository. If the test is successful, the following message is displayed:
-+
-__Info: Could successfully establish a connection
-with the Repository.__
-+
-If the test is not successful, the following screen is displayed:
-+
-image::GlobAdm-VCR-PVCS-Create-Connection-Error.png[,740,509] 
-+
-Correct the errors reported in the Stack Trace field and perform the test again.
-. Once the test is successful, click __Create__.
-+
-The newly created PVCS Repository is added to the _PVCS
-Repositories Overview_ at the bottom of the screen.
-
-
-[cols="1", frame="topbot"]
-|===
-
-a|_RELATED TOPICS_
-
-* <<GlobAdm_VCR.adoc#_globadm_vcr,Version Control Repositories>>
-* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Creating a Project>>
-
-|===
-
-[[_pworkwithpvcsoverview]]
-=== The PVCS Repositories Overview Screen 
-(((PVCS ,Overview Screen))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed. 
-. Specify _PVCS_ in the _Type_ field on the _Search Version Control Repositories_ panel.
-+
-Use the other search criteria to only display the PVCS Repositories you are looking for.
-+
-image::GlobAdm-VCR-Overview-PVCS.png[,730,261] 
-+
-If required, use the other search criteria to refine the items displayed on the overview.
-+
-The following options are available:
-
-* click the _Show/hide advanced options_ link to display or hide all available search criteria,
-* the _Search_ link to refresh the list based on the current search criteria,
-* the _Reset search_ link to clear the search fields.
-. Verify the information on the __PVCS Repositories Overview__ panel.
-+
-For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatepvcsrepository,Creating a PVCS Repository>>.
-. Depending on your access rights, the following links may be available on the _PVCS Repositories Overview_ panel:
-+
-
-[cols="1,1", frame="topbot"]
-|===
-
-|image:icons/edit.gif[,15,15] 
-|Edit
-
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows editing a PVCS Repository definition.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_pvcs_edit,Editing a PVCS Repository>>
-
-|image:icons/delete.gif[,15,15] 
-|Delete
-
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows deleting a PVCS Repository definition.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_pvcs_delete,Deleting a PVCS Repository>>
-
-|image:icons/history.gif[,15,15] 
-|History
-
-This option is available to all IKAN ALM Users.
-It allows displaying the History of all create, update and delete operations performed on a PVCS Repository.
-
-<<GlobAdm_VCR.adoc#_globadm_vcr_pvcs_history,Viewing the PVCS Repository History>>
-|===
-
-[[_globadm_vcr_pvcs_edit]]
-=== Editing a PVCS Repository 
-(((PVCS ,Editing))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the PVCS Repositories you are looking for.
-. Click the image:icons/edit.gif[,15,15] _Edit_ link to change the selected PVCS Repository.
-+
-The following screen is displayed:
-+
-image::GlobAdm-VCR-PVCS-Edit.png[,571,688] 
-+
-. Edit the fields as required.
-+
-For a description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatepvcsrepository,Creating a PVCS Repository>>.
-+
-
-[NOTE]
-====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the PVCS Repository. 
-
-The _Connected Projects_ panel displays the Projects the Repository is linked to. 
-====
-. Click __Save__ to save your changes.
-+
-You can also click:
-
-* _Refresh_ to retrieve the settings from the database.
-* _Back_ to return to the previous screen without saving the changes
-
-[[_globadm_vcr_pvcs_delete]]
-=== Deleting a PVCS Repository  
-(((PVCS ,Deleting))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the PVCS Repositories you are looking for.
-. Click the image:icons/delete.gif[,15,15] _Delete_ link to delete the selected PVCS Repository.
-+
-If the PVCS Repository is not connected to any Project, the following screen is displayed:
-+
-image::GlobAdm-VCR-PVCS-Delete.png[,431,388] 
-+
-. Click _Delete_ to confirm the deletion.
-+
-You can also click __Back __to return to the previous screen without deleting the entry.
-+
-__Note:__ If the PVCS Repository is connected to one or more Projects, the following screen is displayed:
-+
-image::GlobAdm-VCR-PVCS-Delete-Error.png[,573,525] 
-+
-Before deleting the VCR, you must connect the reported Projects to a different VCR.
-
-[[_globadm_vcr_pvcs_history]]
-=== Viewing the PVCS Repository History 
-(((PVCS ,History))) 
-
-. In the Global Administration context, select__ Version Control Repositories > Overview__.
-+
-The overview of all defined Version Control Repositories is displayed.
-+
-Use the search criteria on the _Search Version
-Control Repository_ panel to only display the PVCS Repositories you are looking for.
-. Click the image:icons/history.gif[,15,15] _History_ link to display the__ PVCS Repository History View__.
-+
-For more detailed information concerning this __History
-View__, refer to the section <<App_HistoryEventLogging.adoc#_historyeventlogging,History and Event Logging>>.
-. Click __Back __to return to the __PVCS Repositories Overview__ screen.
 
 
 [[_globadm_vcr_tfvc]]
@@ -1792,7 +965,7 @@ Before you can create the TFVC Version Control Repository in IKAN ALM, you must 
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-TFVC-Create.png[,585,561] 
+image::GlobAdm-VCR-TFVC-Create.png[,573,536] 
 +
 . Fill out the fields in the _Create TFVC Repository_ screen. Fields marked with a red asterisk are mandatory:
 +
@@ -1871,7 +1044,7 @@ with the Repository.__
 +
 If the test is not successful, the following screen is displayed:
 +
-image::GlobAdm-VCR-TFVC-Create-Connection-Error.png[,749,508] 
+image::GlobAdm-VCR-TFVC-Create-Connection-Error.png[,720,497] 
 +
 Correct the errors reported in the Stack Trace field and perform the test again.
 . Once the test is successful, click__ Create__.
@@ -1902,7 +1075,7 @@ The overview of all defined Version Control Repositories is displayed.
 +
 Use the other search criteria to only display the TFVC Repositories you are looking for.
 +
-image::GlobAdm-VCR-Overview-TFVC.png[,809,287] 
+image::GlobAdm-VCR-Overview-TFVC.png[,1039,348] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -1959,7 +1132,7 @@ Control Repository_ panel to only display the TFVC Repositories you are looking 
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-TFVC-Edit.png[,648,585] 
+image::GlobAdm-VCR-TFVC-Edit.png[,636,572] 
 +
 . Edit the fields as required.
 +
@@ -1993,7 +1166,7 @@ Control Repository_ panel to only display the TFVC Repositories you are looking 
 +
 If the TFVC Repository is not connected to any Project, the following screen is displayed:
 +
-image::GlobAdm-VCR-TFVC-Delete.png[,544,280] 
+image::GlobAdm-VCR-TFVC-Delete.png[,533,265] 
 +
 . Click _Delete_ to confirm the deletion.
 +
@@ -2001,7 +1174,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note:__ If the TFVC Repository is connected to one or more Projects, the following screen is displayed:
 +
-image::GlobAdm-VCR-TFVC-Delete-Error.png[,648,433] 
+image::GlobAdm-VCR-TFVC-Delete-Error.png[,634,412] 
 +
 Before deleting the VCR, you must connect the reported Projects to another VCR.
 

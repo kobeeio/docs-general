@@ -34,7 +34,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Create.png[,599,270] 
+image::GlobAdm-ScriptingTools-Create.png[,573,243] 
 +
 . Select the _Type_ of Scripting Tool you want to create.
 +
@@ -57,7 +57,7 @@ For more information on those details, refer to the appropriate sections:
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Overview.png[,980,573] 
+image::GlobAdm-ScriptingTools-Overview.png[,953,553] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -133,7 +133,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-ANT-Create.png[,859,472] 
+image::GlobAdm-ScriptingTools-ANT-Create.png[,1111,592] 
 +
 . Fill out the fields in the _Create ANT Scripting Tool_ panel at the top of the screen.
 +
@@ -305,7 +305,7 @@ The overview of all defined Scripting Tools is displayed.
 
 . Specify _ANT_ in the _Type_ field on the search panel.
 +
-image::GlobAdm-ScriptingTools-ANT-Overview.png[,1017,487] 
+image::GlobAdm-ScriptingTools-ANT-Overview.png[,1313,605] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -358,7 +358,7 @@ Use the search criteria on the search panel to display the ANT Scripting Tools y
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-ANT-Edit.png[,1061,722] 
+image::GlobAdm-ScriptingTools-ANT-Edit.png[,1051,713] 
 +
 . Edit the fields as required.
 +
@@ -391,7 +391,7 @@ Use the search criteria on the search panel to display the ANT Scripting Tools y
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-ANT-Delete.png[,1077,389] 
+image::GlobAdm-ScriptingTools-ANT-Delete.png[,1067,379] 
 +
 . Click _Delete_ to confirm the deletion.
 +
@@ -399,7 +399,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note:__ If the ANT Scripting Tool is linked to one or more Build or Deploy Environments, the following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-ANT-Delete-Error.png[,831,518] 
+image::GlobAdm-ScriptingTools-ANT-Delete-Error.png[,820,507] 
 +
 You need to assign another Scripting Tool to these Environments, before deleting this ANT Scripting Tool.
 
@@ -463,7 +463,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Gradle-Create.png[,859,383] 
+image::GlobAdm-ScriptingTools-Gradle-Create.png[,1108,486] 
 +
 . Fill out the fields in the _Create Gradle Scripting Tool_ panel at the top of the screen.
 +
@@ -630,7 +630,7 @@ The overview of all defined Scripting Tools is displayed.
 
  . Specify _Gradle_ in the _Type_ field on the search panel.
 +
-image::GlobAdm-ScriptingTools-Gradle-Overview.png[,1021,309] 
+image::GlobAdm-ScriptingTools-Gradle-Overview.png[,1317,367] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -695,7 +695,7 @@ Use the search criteria on the search panel to display the Gradle Scripting Tool
 +
 The following screen is displayed: 
 +
-image::GlobAdm-ScriptingTools-Gradle-Edit.png[,1061,625] 
+image::GlobAdm-ScriptingTools-Gradle-Edit.png[,1085,638] 
 +
 . Edit the fields as required.
 +
@@ -727,7 +727,7 @@ Use the search criteria on the search panel to display the Gradle Scripting Tool
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Gradle-Delete.png[,758,307] 
+image::GlobAdm-ScriptingTools-Gradle-Delete.png[,727,291] 
 +
 
 . Click _Delete_ to confirm the deletion.
@@ -736,7 +736,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note:__ If the Gradle Scripting Tool is linked to one or more Build or Deploy Environments, the following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Gradle-Delete-Eror.png[,1002,572] 
+image::GlobAdm-ScriptingTools-Gradle-Delete-Eror.png[,978,558] 
 +
 You need to assign another Scripting Tool to these Environments, before deleting this Gradle Scripting Tool.
 
@@ -804,7 +804,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-NANT-Create.png[,856,416] 
+image::GlobAdm-ScriptingTools-NANT-Create.png[,1109,525] 
 +
 
 . Fill out the fields in the _Create NANT Scripting Tool_ panel at the top of the screen.
@@ -924,7 +924,7 @@ The overview of all defined Scripting Tools is displayed.
 
 . Specify _NANT_ in the _Type_ field on the search panel.
 +
-image::GlobAdm-ScriptingTools-NANT-Overview.png[,996,348] 
+image::GlobAdm-ScriptingTools-NANT-Overview.png[,960,321] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -977,7 +977,7 @@ Use the search criteria on the search panel to display the NANT Scripting Tools 
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-NANT-Edit.png[,1026,537] 
+image::GlobAdm-ScriptingTools-NANT-Edit.png[,1015,524] 
 +
 . Edit the fields as required.
 +
@@ -1010,7 +1010,7 @@ Use the search criteria on the search panel to display the NANT Scripting Tools 
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-NANT-Delete.png[,584,319] 
+image::GlobAdm-ScriptingTools-NANT-Delete.png[,569,306] 
 +
 
 . Click _Delete_ to confirm the deletion.
@@ -1019,7 +1019,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note: __If the NANT Scripting Tool is linked to one or more Build or Deploy Environments, the following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-NANT-Delete-Error.png[,800,528] 
+image::GlobAdm-ScriptingTools-NANT-Delete-Error.png[,789,516] 
 +
 You need to assign another Scripting Tool to these Environments, before deleting this NANT Scripting Tool.
 
@@ -1087,7 +1087,7 @@ This option is only available if you have Global Admin Access Rights in IKAN ALM
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Maven2-Create.png[,851,387] 
+image::GlobAdm-ScriptingTools-Maven2-Create.png[,1108,483] 
 +
 . Fill out the fields in the _Create Maven2 Scripting Tool_ panel at the top of the screen.
 +
@@ -1255,7 +1255,7 @@ The overview of all defined Scripting Tools is displayed.
 
 . Specify _Maven2_ in the _Type_ field on the search panel.
 +
-image::GlobAdm-ScriptingTools-Maven2-Overview.png[,870,273] 
+image::GlobAdm-ScriptingTools-Maven2-Overview.png[,1127,320] 
 +
 If required, use the other search criteria to refine the items displayed on the overview.
 +
@@ -1307,7 +1307,7 @@ Use the search criteria on the search panel to display the Maven2 Scripting Tool
 +
 The following screen is displayed.
 +
-image::GlobAdm-ScriptingTools-Maven2-Edit.png[,1029,649] 
+image::GlobAdm-ScriptingTools-Maven2-Edit.png[,1014,632] 
 +
 
 . Edit the fields as required.
@@ -1341,7 +1341,7 @@ Use the search criteria on the search panel to display the Maven2 Scripting Tool
 +
 The following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Maven2-Delete.png[,605,287] 
+image::GlobAdm-ScriptingTools-Maven2-Delete.png[,591,275] 
 +
 . Click _Delete_ to confirm the deletion.
 +
@@ -1349,7 +1349,7 @@ You can also click __Back __to return to the previous screen without deleting th
 +
 __Note:__ If the Maven2 Scripting Tool is linked to one or more Build or Deploy Environments, the following screen is displayed:
 +
-image::GlobAdm-ScriptingTools-Maven2-Delete-Error.png[,790,510] 
+image::GlobAdm-ScriptingTools-Maven2-Delete-Error.png[,777,494] 
 +
 You need to assign another Scripting Tool to these Environments, before deleting this Maven2 Scripting Tool.
 

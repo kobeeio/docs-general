@@ -10,6 +10,7 @@ IKAN ALM can be extended with an optional Command Line interface, allowing the c
 Possible uses:
 
 * Manual creation of Level Requests (CLR Command): <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
+* Manual creation of Packages (Package Command): <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>
 * Manual generation of Reports (Report Command): <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
 * Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>. Refer to the indicated sections.
 * Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>. Refer to the indicated section.
@@ -26,6 +27,9 @@ Refer to the following procedures for detailed information:
 
 * <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
 * <<CommandLine.adoc#_pcommandline_clr_propertiesfiles,Creating Level Requests Using a Properties File>>
+* <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>
+* <<CommandLine.adoc#_pcommandline_pack_filerevisions,Updating Contents of a Package Using an XML File>>
+* <<CommandLine.adoc#_pcommandline_pack_propertiesfiles,Creating Packages Using a Properties File>>
 * <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
 * <<CommandLine.adoc#_pcommandline_reports_propertiesfile,Generating Reports Using a Properties File>>
 

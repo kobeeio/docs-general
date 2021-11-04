@@ -20,6 +20,8 @@ The IKAN ALM Command Line interface can be installed on each client machine requ
 It requires a connection (TCP/IP) to the central IKAN ALM server.
 The connection with the IKAN ALM server is established using XML-RPC.
 
+The CLR and Package commands can also be executed through the IKAN ALM REST API. Consult the IKAN ALM REST API documentation for more information.
+
 [[_smanualusagecommandlineinterface]]
 == Manual Usage of the Command Line interface
 

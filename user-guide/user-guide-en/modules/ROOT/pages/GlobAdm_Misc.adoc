@@ -29,7 +29,7 @@ It is also a mean to test the Mail settings specified under __System Settings__.
 +
 The following screen is displayed:
 +
-image::GlobAdmin-Miscellaneous-NotifyUsers.png[,697,534] 
+image::GlobAdmin-Miscellaneous-NotifyUsers.png[,607,469] 
 +
 The following fields are available:
 +

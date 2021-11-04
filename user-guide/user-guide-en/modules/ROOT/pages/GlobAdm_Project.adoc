@@ -32,7 +32,7 @@ There are 2 types of Projects:
 [NOTE]
 ====
 
-Package-based Projects must connect to a VCR of type Subversion, TFVC or ClearCase.
+Package-based Projects must connect to a VCR of type Subversion, TFVC or Git.
 Other VCR types do not support working with isolated files and thus not with Packages in IKAN ALM.
 ====
 
@@ -212,7 +212,7 @@ They all have the format __$\{name}__:
 |This field contains the VCR Branch ID.
 The same ID must be available in the VCR linked to the Project.
 
-This field is required in case of a ClearCase UCM (mapped to the Integration Stream) or Team Foundation Projects(mapped to Main Branch ID). For Head Streams belonging to other VCR Project types, this field remains empty.
+This field is required in case of a Team Foundation Project (mapped to Main Branch ID). For Head Streams belonging to other VCR Project types, this field remains empty.
 |===
 +
 The following table contains some examples of Tag Templates and the resulting tags:
@@ -262,7 +262,7 @@ __Info: The Project Name exists in the VCR.__
 +
 If the test is not successful, the following pop-up window is displayed:
 +
-image::GlobAdmin-Project-Create-ErrorProjName.png[,736,520] 
+image::GlobAdmin-Project-Create-ErrorProjName.png[,715,492] 
 +
 Correct the errors reported in the Stack Trace field and perform the test again.
 . Once the test is successful, click __Create__.
@@ -307,7 +307,7 @@ a|_RELATED TOPICS_
 +
 The following screen is displayed:
 +
-image::GlobAdmin-Project-Clone.png[,888,428] 
+image::GlobAdmin-Project-Clone.png[,1146,529] 
 +
 . Define the required search criteria on the search panel.
 +

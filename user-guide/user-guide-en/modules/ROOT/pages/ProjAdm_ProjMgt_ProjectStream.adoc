@@ -212,8 +212,6 @@ They all have the format $\{name}:
 |For Branch Streams, enter in this field the VCR Branch ID.
 The same ID must be available in the VCR linked to the Project.
 
-For Head Streams belonging to a ClearCase UCM Project, enter the name of the UCM Integration Stream.
-
 For Head Streams belonging to a Team Foundation VC Project, enter the name of the Main Branch ID.
 
 For Head Streams belonging to other Project types, this field is not available.

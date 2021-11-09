@@ -10,6 +10,7 @@ IKAN ALM can be extended with an optional Command Line interface, allowing the c
 Possible uses:
 
 * Manual creation of Level Requests (CLR Command): <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
+* Manual creation of Packages (Package Command): <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>
 * Manual generation of Reports (Report Command): <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
 * Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>. Refer to the indicated sections.
 * Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>. Refer to the indicated section.
@@ -19,6 +20,8 @@ The IKAN ALM Command Line interface can be installed on each client machine requ
 It requires a connection (TCP/IP) to the central IKAN ALM server.
 The connection with the IKAN ALM server is established using XML-RPC.
 
+The CLR and Package commands can also be executed through the IKAN ALM REST API. Consult the IKAN ALM REST API documentation for more information.
+
 [[_smanualusagecommandlineinterface]]
 == Manual Usage of the Command Line interface
 
@@ -26,6 +29,9 @@ Refer to the following procedures for detailed information:
 
 * <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
 * <<CommandLine.adoc#_pcommandline_clr_propertiesfiles,Creating Level Requests Using a Properties File>>
+* <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>
+* <<CommandLine.adoc#_pcommandline_pack_filerevisions,Updating Contents of a Package Using an XML File>>
+* <<CommandLine.adoc#_pcommandline_pack_propertiesfiles,Creating Packages Using a Properties File>>
 * <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
 * <<CommandLine.adoc#_pcommandline_reports_propertiesfile,Generating Reports Using a Properties File>>
 
@@ -285,6 +291,269 @@ The following elements are available:
 . Once you have entered the complete command, press _Return_.
 +
 The results and console outputs are similar to those of the section above: <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>. Refer to step 4 of that section for more information.
+
+[[_pcommandline_pack_optionsparameters]]
+=== Creating or updating Packages by Specifying Options and Parameters
+(((Command Line Interface ,Parameters))) 
+
+. Prepare the Package creation.
++
+On a Windows platform:
+
+* Open a Command prompt.
+* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
++
+You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
+
++
+On a Unix platform:
+
+* Open a terminal console.
+* Browse to the IKAN ALM Command Line working directory.
++
+After a standard installation, this is: _/opt/ikan/alm/commandline_
++
+You may create a symbolic link to the `alm.sh` script so that it becomes accessible through other working directories.
+. Enter the required Level Request creation instruction.
++
+Format:
++
+__alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER]
+-user:$USERID -password:$PASSWORD [-secured=true|false] package parameters__
++
+The following elements are available:
++
+
+[cols="1,1,1", frame="topbot", options="header"]
+|===
+| Element
+| Description
+| Mandatory
+
+|alm
+|This element calls the _alm.cmd_ (Windows) or _alm.sh_ (Linux) file.
+|Yes
+
+|serverhost
+|This element allows defining the DHCP name or IP address of the host running the IKAN ALM Server.
+|Yes
+
+|serverport
+|This element allows defining the port number used to establish the connection to the IKAN ALM Server via XML-RPC.
+
+If this element is not provided, the default port number (20021) will be used.
+|No
+
+|user
+|This element allows defining a User ID with IKAN ALM access rights.
+|Yes
+
+|password
+|This element allows defining the password associated with the User ID used to access IKAN ALM.
+|Yes
+
+|secured
+|This element allows determining whether an encrypted connection must be used or not.
+
+If the IKAN ALM Server is using an encrypted connection, set the _secured_ element to __true__:
+
+_-secured=true_
+
+If the IKAN ALM Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter out.
+|No
+
+|package
+|This command creates or updates a Package.
+|Yes
+
+|parameters
+|The Package creation or update parameters are explained in the following step.
+|Yes
+|===
+. Define the Package creation or update parameters.
++
+Format:
++
+__package -project:[project name] [-projectstream:[build
+prefix[-build suffix]]] -package:[package name] 
+[-description:[description]] -action:[CREATE | UPDATE] [-owner:[owner 
+userId]] [-status=[Status Integer]] [-targetreleasedate:[target release date]]
+[-filerevisions:[xml file containing file revisions links]]__
++
+
+[cols="1,1,1", frame="topbot", options="header"]
+|===
+| Parameter
+| Description
+| Mandatory
+
+|project
+|This parameter allows defining the Project for which you create or update a Package.
+
+Use the Project name as defined in IKAN ALM.
+|Yes
+
+|projectstream
+|This parameter allows defining the Project Stream for which you create or update a Package.
+
+Use the Build Prefix (and Build Suffix) as defined in IKAN ALM to identify the Project Stream to create a Package for.
+
+If this parameter is not provided, the Package will be created for the Head Project Stream.
+|No
+
+|package
+|The name of the package.
+|Yes
+
+|description
+|This parameter allows defining the description of the Package.
+|No
+
+|action
+|The action to be performed: CREATE or UPDATE.
+|Yes
+
+|owner
+|This parameter allows defining the owner for the Package.
+|No
+
+|status
+|This parameter allows defining the status of the Package.
+On create, this parameter is always 0, or ACTIVE. On update, the status can be chosen by the user.
+|No
+
+|targetstartdate
+|This parameter allows defining the target release date of the Package.
+The accepted format is __yyyy-MM-dd__.
+|No
+
+|filerevisions
+|This parameter allows defining the file revisions the package contains in XML format.
+|No
+|===
+. Once you have entered the complete command, press _Return_.
++
+Result:
+
+* If the Package is created or updated successfully, A screen similar to the following is displayed:
++
+image::CommandLine-LRCreatedSuccessfully.png[,1148,155] 
++
+* If the Package cannot be created or updated, because there is no connection with the IKAN ALM Server, the following screen is displayed:
++
+image::CommandLine-ServerConnectionProblem.png[,1148,535] 
++
+* If the user entered an unknown command, the following screen is displayed:
++
+image::CommandLine-UnknownCommand.png[,1148,151] 
++
+* If the user entered unknown or incorrect command options, the screen similar to the following is displayed: 
++
+image::CommandLine-UnknownCommandOption.png[,1148,473] 
++
+Similar error messages are provided for unknown Project or Package names and incorrect User ID/Password combinations.
+
+[[_pcommandline_pack_filerevisions]]
+=== Updating Contents of a Package Using an XML File
+
+When creating or updating a package, you may include a filerevisions property referencing an XML file. This XML file should have the following format:
+
+image::CommandLine-Pack-filerevision-xml.png[,757,479]
+
+Each File Revision entry matches a single file in the Repository to be created, modified or deleted within the Package Contents definition.
+
+[cols="1,1,1", frame="topbot", options="header"]
+|===
+| Parameter
+| Description
+| Mandatory
+
+|name
+|The name of the file to be updated in the Package Contents.
+|Yes
+
+|path
+|The path to the file to be updated in the Package Contents.
+|Yes
+
+|action
+|The action to be performed on this file in the Package Contents: create, modify or delete.
+|Yes
+
+|revision
+|The Repository Revision of this file to be used in the Package Contents.
+|No
+|===
+
+
+[[_pcommandline_pack_propertiesfiles]]
+=== Creating and updating Packages Using a Properties File
+
+It is possible to save frequently used settings in a Properties file, so that you do not have to enter the complete Package creation/update parameters.
+After a standard installation, one such properties file, called _package.properties_ is available in the Command Line installation folder.
+
+Open the file in a text editor to display its content:
+
+
+image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
+
+You can edit this standard file so that the settings match your requirements.
+Refer to the <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>for a description of the options and parameters.
+You can also create any number of specific properties files by copying the standard file, editing the copies and saving them under logical names for later usage
+
+. Prepare the Package creation.
++
+On a Windows platform:
+
+* Open a Command prompt.
+* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
++
+You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
+
++
+On a Unix platform:
+
+* Open a terminal console.
+* Browse to the IKAN ALM Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
++
+You may create a symbolic link to the `alm.sh` script so that it becomes accessible through other working directories.
+
+. Make sure that the properties file to be used is available and that the settings match the requirements.
++
+If not, create the properties file and/or edit the settings with a text editor.
+. Create the Level Request by entering a command in the following format:
++
+__alm package -propertyfile:$PROPERTYFILENAME [-options]
+[-parameters]__
++
+The following elements are available:
++
+
+[cols="1,1,1", frame="topbot", options="header"]
+|===
+| Element
+| Description
+| Mandatory
+
+|alm
+|This element calls the __alm.cmd__ (Windows) or __alm.sh__ (Linux) file.
+|Yes
+
+|package
+|This element indicates that you want to create a Package.
+|Yes
+
+|propertyfile
+|This element allows selecting the properties file that must be used to create the Package.
+|Yes
+
+|options or parameters
+|Any option or parameter defined after the properties file _overrides_ the setting in the selected properties file.
+|No
+|===
+. Once you have entered the complete command, press _Return_.
++
+The results and console outputs are similar to those of the section above: <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>. Refer to step 4 of that section for more information.
 
 
 [[_pcommandline_report_optionsparameters]]

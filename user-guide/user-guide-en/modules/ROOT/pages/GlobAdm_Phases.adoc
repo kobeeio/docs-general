@@ -53,7 +53,7 @@ This option is only available if you have Global Administrator Access Rights in 
 +
 The following screen is displayed.
 +
-image::GlobAdm-Phases-Create.png[,620,584] 
+image::GlobAdm-Phases-Create.png[,609,577] 
 +
 . Fill out the fields in the _Create Phase_ panel at the top of the screen. Fields marked with a red asterisk are mandatory:
 +
@@ -162,7 +162,7 @@ __Note: __You can select only one file.
 +
 When the upload has succeeded, the following message is displayed:
 +
-image::GlobAdm-Phases-Create-UploadSuccess.png[,507,54] 
+image::GlobAdm-Phases-Create-UploadSuccess.png[,496,43] 
 +
 . Select the "`main`" script.
 +
@@ -213,7 +213,7 @@ a|_RELATED TOPICS_
 +
 The following screen is displayed:
 +
-image::GlobAdm-Phases-Overview.png[,1012,539] 
+image::GlobAdm-Phases-Overview.png[,1316,679] 
 +
 . Define the required search criteria on the search panel.
 +
@@ -302,12 +302,12 @@ For more detailed information on Phase Parameters, refer to the following sectio
 . On the _Phases Overview_ panel, click the image:icons/edit.gif[,15,15]  _Edit_ link in front of the Phase you want to edit.
 The following screen is displayed:
 +
-image::GlobAdm-Phases-Edit.png[,846,620] 
+image::GlobAdm-Phases-Edit.png[,1103,802] 
 +
 . Click the _Edit_ button to modify the Phase.
 The _Edit Phase_ pop-up window is displayed.
 +
-image::GlobAdm-Phases-Edit-popup.png[,573,626] 
+image::GlobAdm-Phases-Edit-popup.png[,555,618] 
 +
 For a description of the fields, refer to <<GlobAdm_Phases.adoc#_globadm_phases_creating,Creating a Phase Definition>>.
 +
@@ -380,7 +380,7 @@ For more information on uploading files, refer to the section <<GlobAdm_Phases.a
 +
 The _Phase Parameters_ panel displays all the defined Parameters of the Phase.
 +
-image::GlobAdm-Phases-PhaseParameters.png[,831,183] 
+image::GlobAdm-Phases-PhaseParameters.png[,1095,233] 
 +
 For a detailed description of the fields, refer to the section <<GlobAdm_Phases.adoc#_globadm_phaseparameters_creating,Creating Phase Parameters>>.
 +
@@ -421,7 +421,7 @@ For more information, refer to the section <<GlobAdm_Phases.adoc#_globadm_phasep
 +
 The _Connected Levels and Environments_ panel shows the Levels and Build or Deploy Environments where this Phase has been added.
 +
-image::GlobAdm-Phases-ConnectedEnvironments.png[,398,195] 
+image::GlobAdm-Phases-ConnectedEnvironments.png[,383,184] 
 +
 
 [NOTE]
@@ -446,7 +446,7 @@ You can also click:
 +
 When clicking the _Release_ button, a confirmation pop-up window is displayed.
 +
-image::GlobAdm-Phases-Release_confirmation.png[,363,107] 
+image::GlobAdm-Phases-Release_confirmation.png[,351,102] 
 +
 Click _Yes_ to confirm the release of the Phase.
 +
@@ -473,7 +473,7 @@ For more information, refer to the section <<GlobAdm_Phases.adoc#_globadm_phases
 +
 The following screen is displayed.
 +
-image::GlobAdm-Phases-Overview.png[,973,457] 
+image::GlobAdm-Phases-Overview.png[,1316,679] 
 +
 . Click the image:icons/edit.gif[,15,15]  _Edit_ link in front of the required Phase on the _Phases Overview_ panel.
 +
@@ -481,7 +481,7 @@ The _Edit Phase_ screen is displayed.
 +
 Underneath the _Phase Info_ panel, the _Phase Parameters_ panel displays all defined parameters.
 +
-image::GlobAdm-Phases-PhaseParameters.png[,837,191] 
+image::GlobAdm-Phases-PhaseParameters.png[,1095,233] 
 +
 . Verify the information on the _Phase Parameters_ panel.
 +
@@ -557,7 +557,7 @@ The _Edit Phase_ screen is displayed.
 +
 The following pop-up window will be displayed:
 +
-image::GlobAdm-Phases-CreatePhaseParameter.png[,497,326] 
+image::GlobAdm-Phases-CreatePhaseParameter.png[,486,318] 
 +
 . Fill out the fields in the _Create Phase_ panel at the top of the screen. Fields marked with a red asterisk are mandatory:
 +
@@ -662,7 +662,7 @@ The _Edit Phase_ screen is displayed.
 +
 The following pop-up window will be displayed:
 +
-image::GlobAdm-PhaseParameter-Edit.png[,504,446] 
+image::GlobAdm-PhaseParameter-Edit.png[,494,452] 
 +
 . Edit the fields as required.
 +
@@ -724,14 +724,14 @@ The _Edit Phase_ screen is displayed.
 +
 The following pop-up window will be displayed:
 +
-image::GlobAdm-PhaseParameter-Delete.png[,386,170] 
+image::GlobAdm-PhaseParameter-Delete.png[,374,161] 
 +
 
 [WARNING]
 --
 If the Parameter has been created in 1 or more Environments, the following Warning message is shown:
 
-image::GlobAdm-PhaseParameter-Delete-Warning.png[,450,83] 
+image::GlobAdm-PhaseParameter-Delete-Warning.png[,403,80] 
 --
 
 . Click _Delete_ to confirm the deletion.
@@ -776,7 +776,7 @@ If a label has been specified for a specific phase, you can display it by hoveri
 For more information on the usage of labels, refer to the section <<ProjAdm_Levels.adoc#_plevelenvmgt_insertphase,Inserting a Level Phase>>.
 ====
 +
-image::GlobAdm-PhaseParameter-MassEdit.png[,683,471] 
+image::GlobAdm-PhaseParameter-MassEdit.png[,669,461] 
 +
 . Select one or more items on the _Connected Environment Parameters_ list.
 
@@ -837,13 +837,13 @@ This wizard will guide you through the four steps of the Mass Replace Phase proc
 +
 .. STEP 1 - Select a Replacement Phase
 +
-image::GlobAdm-Phase-MassReplace_Step1.png[,698,563] 
+image::GlobAdm-Phase-MassReplace_Step1.png[,683,557] 
 +
 Select the Phase that will replace the original Phase from the _Replace With Phase_ table and click the _Next_ button.
 
 .. STEP 2 - Select the Connected Levels and Environments
 +
-image::GlobAdm-Phase-MassReplace_Step2.png[,696,567] 
+image::GlobAdm-Phase-MassReplace_Step2.png[,684,557] 
 +
 From the table of __Connected Levels and Environments__, select the Levels and Environments for which the original phase will be replaced by the phase you selected in step 1.
 +
@@ -857,7 +857,7 @@ If a Phase has a Label for a specific Environment, you can check its contents by
 +
 .. STEP 3 - Match Parameters
 +
-image::GlobAdm-Phase-MassReplace_Step3.png[,702,572] 
+image::GlobAdm-Phase-MassReplace_Step3.png[,686,559] 
 +
 In this step you have to match the parameters of the original Phase with those of the Replacement Phase.
 +
@@ -876,7 +876,7 @@ Select _Next_ if the parameter matching is OK.
 +
 .. STEP 4 - Confirmation Screen
 +
-image::GlobAdm-Phase-MassReplace_Step4.png[,612,491] 
+image::GlobAdm-Phase-MassReplace_Step4.png[,683,557] 
 +
 On the confirmation screen you can verify all the choices before actually replacing the phase:
 
@@ -920,7 +920,7 @@ The _Edit Phase_ screen is displayed.
 +
 The following pop-up window is displayed.
 +
-image::GlobAdm-Phase-MassDelete_01.png[,698,499] 
+image::GlobAdm-Phase-MassDelete_01.png[,683,486] 
 +
 . Select the Levels and/or Environments you want to delete the Phase from.
 +
@@ -958,7 +958,7 @@ a|_RELATED TOPICS_
 +
 The _Confirm Phase deletion_ screen is displayed.
 +
-image::GlobAdm-Phases-Delete-Confirm.png[,872,425] 
+image::GlobAdm-Phases-Delete-Confirm.png[,864,418] 
 +
 . Click _Delete_ to confirm the deletion.
 +
@@ -966,7 +966,7 @@ You can also click _Overview_ to return to the previous screen without deleting 
 +
 __Note:__ If you try to delete a Phase connected to at least one Environment, the following message is displayed:
 +
-image::GlobAdm-Phases-Delete-StillConnected.png[,575,55] 
+image::GlobAdm-Phases-Delete-StillConnected.png[,564,42] 
 +
 Before you can delete it, you must remove the Phase from all Environments it is connected to.
 +
@@ -997,7 +997,7 @@ A file dialog screen will be displayed, asking you where you want to save this .
 +
 The _Copy Phase_ screen is displayed.
 +
-image::GlobAdm-Phases-Copy.png[,1005,886] 
+image::GlobAdm-Phases-Copy.png[,993,876] 
 +
 . Modify the fields as required.
 +
@@ -1049,7 +1049,7 @@ View__, refer to the section <<App_HistoryEventLogging.adoc#_historyeventlogging
 +
 The _Import Phase_ screen is displayed.
 +
-image::GlobAdm-Phases-Import.png[,638,584] 
+image::GlobAdm-Phases-Import.png[,623,571] 
 +
 . Click the _Select File_ button to choose the Phase to be imported.
 +
@@ -1057,7 +1057,7 @@ A file dialog window opens, where you can choose a .jar file that contains a pre
 +
 Once you have selected a file, it will be uploaded and the Phase information contained in it will be read and then be displayed:
 +
-image::GlobAdm-Phases-Import-Success.png[,1011,785] 
+image::GlobAdm-Phases-Import-Success.png[,995,775] 
 +
 . Verify the properties of the Phase to be imported.
 +

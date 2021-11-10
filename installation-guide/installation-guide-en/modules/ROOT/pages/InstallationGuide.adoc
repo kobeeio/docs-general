@@ -1,37 +1,33 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
 :description: IKAN ALM Installation Guide (English)
-:revnumber: v5.8
-:revdate: 01.01.2018
+:revnumber: v5.9
+:revdate: 10.11.2021
 
 = IKAN ALM Installation Guide
  
 == Purpose
 
-This document explains how to install IKAN ALM using a graphical installer.
-If you want to install IKAN ALM using the console installer, please refer to the document __HowToALM
-5.8_Tomcat_Install__.
+This document explains how to install all IKAN ALM components.
 
-IKAN ALM consists of 3 major components:
+IKAN ALM consists of 4 major components:
 
+* IKAN ALM Web Application
 * IKAN ALM Server
 * IKAN ALM Agent
 * IKAN ALM Commandline
 
-
-
 image::ikanalm-architecture.png[,895,635] 
 
-An IKAN ALM installation needs exactly 1 _Server_ and at least 1 _Agent_ to function correctly. 
 
-The IKAN ALM _Server_ consists of 3 different components:
+The IKAN ALM Server and Web Application need to be installed on the same host. The IKAN ALM Agent and Commandline can be installed on remote hosts. For a complete installation, you need to install exactly 1 IKAN ALM _Server_ and _Web Application_, and at least 1 ALM _Agent_.
 
-* the IKAN ALM Web Application
-* the IKAN ALM Server daemon
-* the IKAN ALM Server environment
+The IKAN ALM Web Application is an interface to the IKAN ALM administration, and must be deployed in Apache Tomcat.
 
+The IKAN ALM _Server_ consists of 2 different components:
 
-The IKAN ALM Web Application is an interface to the IKAN ALM administration, and must be deployed on a Java EE Web container.
+* IKAN ALM Server daemon
+* IKAN ALM Server environment
 
 The IKAN ALM Server daemon itself consists of 2 sub-components, a Scheduler and a Monitor.
 The IKAN ALM Scheduler is responsible for observing the VCR (Version Control Repository) and creating a Build request when changes (modified sources) in the VCR are detected.
@@ -46,13 +42,12 @@ The IKAN ALM Server Environment contains the following important files and folde
 * Work Copy Location: the location where the sources that are checked out from the repository are stored before they are transported to the Agents,
 * Phase Catalog Location: the location where the Phases that have been imported will be stored, ready to be retrieved by remote Agents when needed,
 * Scripts Location: the location to be used for storing centralized build and deploy scripts,
-* Configuration with the (external) security system. For more information, refer to the Appendix <<_jaasconfiguration>>,
+* Configuration of an external authentication and authorization system. For more information, refer to the Appendix <<_jaasconfiguration>>,
 * Documentation in PDF format.
-
 
 A machine that needs to execute IKAN ALM Builds and Deploys must have the IKAN ALM _Agent_ installed.
 
-The IKAN ALM _Commandline_ can be installed separately and can be used as an alternative for the web interface to create Level Requests and Reports via a command prompt.
+The IKAN ALM _Commandline_ can be installed separately and can be used as an alternative for the web interface to create Level Requests and Reports, and create or update Packages from a Windows command prompt or Linux shell.
 
 Example configuration 1: Single machine, everything locally installed:
 
@@ -69,7 +64,7 @@ Example configuration 2: Multiple machines, remote Agent and Commandline:
 
 The following section provides an overview of the prerequisites for installing IKAN ALM.
 
-The complete requirements are available online at http://www.ikanalm.com[http://www.ikanalm.com,window=_blank].
+For the detailed Technical Requirements, consult xref:5.9@technical-sheet-en:root:techsheet.adoc[Technical Sheet].
 
 === Hardware Requirements
 
@@ -79,1053 +74,1412 @@ The complete requirements are available online at http://www.ikanalm.com[http://
 | Memory
 | Disk
 
+|IKAN ALM Web Application
+|Min 512MB, recommended 1GB or more
+|Min 1GB, recommended 5GB
 
 |IKAN ALM Server
-|Min 1GB, recommended 2GB
+|Min 512MB, recommended 1GB or more
 |Min 10GB, recommended 40GB
 
 |IKAN ALM Agent
-|Min 256MB, recommended 512MB
+|Min 512MB, recommended 1GB or more
 |Min 1GB
 
 |IKAN ALM Commandline
-|Min 128MB, recommended 256MB
-|Min 40MB
+|Min 256MB, recommended 256MB
+|Min 100MB
 |===
 
-
-Note that these are just indicative values.
-If the IKAN ALM Server will also act as a Build Server, it might have more demanding memory requirements depending on the number of builds that run concurrently.
-For a more mathematical approach, we refer to the article "`Capacity Planning for Software Build Management Servers`" on the "`CM Crossroads`" site: http://www.cmcrossroads.com/article/capacity-planning-software-build-management-servers[http://www.cmcrossroads.com/article/capacity-planning-software-build-management-servers,window=_blank].
-
 There is no hard and fast rule for disk storage space.
-The actual amount you will require depends on the number and size of the projects managed with IKAN ALM, and on the size of the build results stored in the build archive.
-More projects and larger build results mean more required disk space.
+The actual amount you will require depends on the number and size of projects managed with IKAN ALM, and the size of the build results stored in the build archive.
+The more projects and build results, and the larger they are, the more disk storage you will require.
+
+The amount of RAM and disk space needed by a machine that runs an ALM Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
+
 
 [[_bhbicaaj]]
-=== Java SE Runtime (JRE) 1.7 or 1.8
+=== Java 11
 
-All IKAN ALM components need at least a Java Development Kit (JDK) or a Server Java Runtime (Server JRE). IKAN ALM has been tested to run with both Oracle Java and OpenJDK.
-The Java SE Server Runtime Environment (Server JRE) or Software Development Kit (SDK) can be freely obtained from Oracle's website.
-Both 32-bit and 64-bit versions are supported.
-The latest version of Java SE can be downloaded from http://www.oracle.com/technetwork/java/javase/downloads/index.html[http://www.oracle.com/technetwork/java/javase/downloads/index.html,window=_blank].
+All IKAN ALM components need a full version of Java 11. IKAN ALM has been tested to run with both Oracle Java and Adoptium Eclipse Temurin (formerly AdoptOpenJDK). Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank]
 
-=== Application Server
+=== Tomcat 9
 
-The IKAN ALM Web application requires a Java EE 5 to 7 compliant web container, supporting the Servlet 2.5 to 3.1 and JSP 2.1 to 2.3 specifications.
+IKAN ALM requires at least a Java 11 compliant web container supporting the Servlet 4.0 and JSP 2.3 specifications. Earlier versions of Tomcat are not supported.
 
-==== Apache Tomcat 7 or 8
-
-IKAN ALM has been tested with Apache Tomcat 7.0.55 and later versions.
-When choosing a version, please check Tomcat`'s own prerequisites (e.g.
-Tomcat 8 requires at least Java SE v 7). 
-
-IKAN ALM has been proven to run on Tomcat on different Operating Systems, including recent versions of Windows and Linux, Sun Solaris, HP Unix, MacOS X, zLinux, ...  If a suitable Java Runtime is available (<<_bhbicaaj>>), IKAN ALM may run on other Operating Systems.
-Consult the detailed Technical Requirements on http://www.ikanalm.com[http://www.ikanalm.com,window=_blank]. 
+IKAN ALM has been tested with Apache Tomcat 9.0.33 and later versions.
+IKAN ALM has been proven to run on Tomcat on different Operating Systems, including recent versions of Windows and Linux, Sun Solaris, HP Unix, zLinux, …  If a suitable Java Runtime is available (see <<_bhbicaaj>>), IKAN ALM may run on other Operating Systems.
 
 ==== Enable Unicode support in Tomcat
 
-When using Unicode symbols in IKAN ALM (for instance, projects containing files with special characters in the name), an extra setting should be applied to the Tomcat's server.xml configuration file.
+When using Unicode symbols in IKAN ALM (for instance, projects containing files with special characters in the name), an extra setting should be applied to Tomcat's server.xml configuration file. 
 
-Modify the TOMCAT_HOME/conf/server.xml file: 
-
-in the http connector, add the attribute ``URIEncoding="UTF-8"``:
+Modify the _TOMCAT_HOME/conf/server.xml_ file by adding the attribute `URIEncoding="UTF-8"` in the http connector:
 
 [source]
 ----
-<Connector port="8080" protocol="HTTP/1.1"
-URIEncoding="UTF-8" connectionTimeout="200000" redirectPort="8443"
-/>
+<Connector port="8080"
+protocol="HTTP/1.1" URIEncoding="UTF-8" connectionTimeout="200000"
+redirectPort="8443" />
 ----
 
-This fix is based on the article: http://wiki.apache.org/tomcat/FAQ/CharacterEncoding[http://wiki.apache.org/tomcat/FAQ/CharacterEncoding,window=_blank].
+Please consult the Apache Tomcat wiki for more information regarding character encoding issues in Tomcat : https://cwiki.apache.org/confluence/display/TOMCAT/Character+Encoding[https://cwiki.apache.org/confluence/display/TOMCAT/Character+Encoding,window=_blank]
 
-==== Tomcat Memory Settings
+[[_java_options_for_tomcat]]
+==== Java options for Tomcat
 
-It is recommended to set the following memory settings for running IKAN ALM with Java 8 in Tomcat:
+It is recommended to set the following memory settings for running IKAN ALM in Tomcat with Java 11:
 
-* initial Java heap size (-Xms) : 128m
-* max Java heap size (-Xmx) : 384m
-* max Metaspace size (-XX:MaxMetaspace) : 128m
+* initial Java heap size (-Xms) : 512m
+* max Java heap size (-Xmx) : 1024m
+* max Metaspace size (-XX:MaxMetaspaceSize) : 256m
 
+You must also configure Tomcat to use the JAAS configuration file _ALM_HOME_/system/security/jaas.conf. You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
 
-If you launch Tomcat from the startup scripts, you need to create or edit TOMCAT_HOME/bin/setenv.bat (Windows) or TOMCAT_HOME/bin/setenv.sh (Linux/Unix), and to add, near the top of the file, a line like:
+If you launch Tomcat from the startup scripts, you need to create the file _TOMCAT_HOME/bin/setenv.bat_ (Windows) or _TOMCAT_HOME/bin/setenv.sh_ (Linux/Unix) with the following content :
 
-* for Windows:
-+
-`SET JAVA_OPTS=-Xms128m -Xmx384m -XX:MaxMetaspaceSize=128m`
-* for Linux/Unix:
-+
-`JAVA_OPTS=-Xms128m -Xmx384m -XX:MaxMetaspaceSize=128m`
-
-
-If you run Tomcat as a Windows service, you need to set the memory settings in the file TOMCAT_HOME/bin/service.bat.
-
-Add the following lines near the top of the file:
+For Windows:
 
 [source]
 ----
-set JvmMs=128
-set JvmMx=384
-set JvmArgs=-XX:MaxMetaspaceSize=128m
+SET JAVA_HOME=<JAVA_HOME>
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=_ALM_HOME_/system/security/jaas.conf
+----
+
+For Linux/Unix:
+
+[source]
+----
+JAVA_HOME=<JAVA_HOME>
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=_ALM_HOME_/system/security/jaas.conf
+----
+
+If you run Tomcat as a Windows service, you need to set the Java and memory settings in the file __TOMCAT_HOME/bin/service.bat__ :
+
+[source]
+----
+SET JAVA_HOME=<JAVA_HOME>
+SET JvmMs=512
+SET JvmMx=1024
+SET JvmArgs=-XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=_ALM_HOME_/system/security/jaas.conf
 ----
 
 After these modifications, you need to re-install the service by running "service.bat remove", followed by "service.bat install". You need Administrative privileges to run these commands.
 
-If you use Java 7, replace the setting `–XX:MaxMetaspaceSize=128m` with `-XX:MaxPermSize=128m`.
-For an explanation, refer to http://javaeesupportpatterns.blogspot.co.uk/2013/02/java-8-from-permgen-to-metaspace.html[http://javaeesupportpatterns.blogspot.co.uk/2013/02/java-8-from-permgen-to-metaspace.html,window=_blank].
 
 === Database
 
-IKAN ALM supports MySQL, MsSQL, Oracle and DB2 database as the back-end.
-During the installation, it is possible to verify a connection to an existing database, as well as to initialize the existing database with the default data.
-Beware that when the DB initializing option is selected, the existing data will be overwritten.
-Before initializing the database, make sure the database/scheme exists. 
+IKAN ALM supports MySQL, MsSQL, Oracle, PostgreSQL and DB2 for its internal database. For performance reasons, it is highly recommended that the network latency between the ALM Server and its database is as low as possible. To avoid problems with timestamps, it is recommended to have the ALM Server and its database in the same timezone. 
+
+During the installation, it is possible to initialize the existing database with the default data. Beware that when the database initializing option is selected, the existing data will be overwritten. Before initializing the database, make sure the database/scheme exists.
 
 For MySQL, it is recommended that the database has a character set of UTF8.
-Here is an example of the MySQL script creating a database from scratch:
+Here is an example of the MySQL statement to create a database :
 
 `CREATE DATABASE alm CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
 
 Consult your database documentation for more information on the appropriate UTF8-collation for your system.
+
+When using DB2 as the IKAN ALM database, some additional configuration is required.
+For more information, refer to <<_db2configuration>>.
+
 [[_installing]]
 == Installing IKAN ALM
 
 This section describes the different steps for installing IKAN ALM.
 
-=== Running the installer
+=== Configuring the Installer
 
-==== For Windows users
+The IKAN ALM installation scripts are delivered as an _IKAN_ALM_5.9_console_win.zip_ or _IKAN_ALM_5.9_console_linux.tar.gz_ file.
+Expand this file somewhere on the target machine. The expanded folder containing the IKAN ALM installer files (ANT scripts) will be denoted as _INSTALL_DIR_.
 
-Execute either the 32-bit or the 64-bit installer:
+The included installer will install the IKAN ALM components in the specified destination folders.
 
-* alm_install_5-8_x86.exe
-+
-To run this installer image, you will need to have a 32-bit Public Java Runtime Environment (Public JRE) installed.
-* alm_install_5-8_x64.exe
-+
-To run this installer image, you will need to have a 64-bit Public Java Runtime Environment (Public JRE) installed.
+Configure the different properties that will be used by the installation scripts by editing the _INSTALL_DIR/install.properties_ file.
 
+[WARNING]
+--
+_Do NOT use backward slashes_ ('\') in path properties, otherwise the installation may fail. Use forward slashes ('/') instead!
+--
 
-Refer to <<_troubleshooting>> when the IKAN ALM installer won't start.
+==== General settings
 
-The graphical IKAN ALM installer will start.
+[source]
+----
+# General Settings : Specify which components of IKAN ALM to install
+# ---------------------------------------------------------------------------
+# Flag to specify whether to install IKAN ALM Server or not: install : true
+# no install : false
+alm.server.install=true
+# Flag to specify whether to install the IKAN ALM Agent or not : install : true
+# no install : false
+alm.agent.install=true
+# Flag to specify whether to install the IKAN ALM Commandline or not : install : true
+# no install : false
+alm.commandline.install=true
+# Flag to specify whether the communication between the IKAN ALM components must
+# be secured.  Note that if one IKAN ALM component is installed secured, all components
+# must be installed secured.
+alm.xmlrpc.secure=false
+----
 
-Depending on the flavor of Windows OS used, there can be differences in the installer`'s behavior.
-If UAC is enabled (Windows Vista and later), Windows will ask for a confirmation for the program to make changes to the computer (if your user account is an administrator). If you are trying to install the application from an account other than Administrator, you might get the message "requested operation requires elevation".
+In the General Settings, you specify which components of IKAN ALM you want to install. 
 
-==== For Linux/Unix users
+Setting __alm.server.install__ to "true" will install the ALM Server and deploy the IKAN ALM Web Application to Tomcat. +
+Setting __alm.agent.install__ to "true" will install the ALM Agent. +
+Setting __alm.commandline.install__ to "true" will install the ALM Commandline.
 
-Before installing ALM, make sure that the '$JAVA_HOME/jre/lib/security/java.security' file has write access for the current user, otherwise the installation can fail.
-
-An example of granting the maximum access to the file:
-
-`sudo chmod 777 /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security`
-
-Open a shell, go to the folder containing the IKAN ALM installation files and execute ``java -jar alm_install_5.8.jar``.
-
-Assuming Java is installed and present in the PATH, the graphical IKAN ALM installer will start.
-
-=== Language Selection, Welcome, Readme and LicensePanels
-
-
-. Choose the installation language and click __OK__.
-+
-image::install_01.png[,170,181] 
-+
-The following welcome screen will be displayed:
-+
-image::install_02.png[,907,607] 
-. Click _Next_ to continue.
-+
-The following screen is displayed:
-+
-image::install_03.png[,907,607] 
-. Carefully read the readme information and click _Next_ to continue.
-+
-The following screen is displayed:
-+
-image::install_04.png[,907,607] 
-+
-. Read the license agreement carefully. Select the option "`I accept the terms of this license agreement`" and click the _Next_ button.
+If __alm.xmlrpc.secure__ is set to "true", then all communication between the ALM components is encrypted. As a consequence, if additional ALM components, like the ALM Agent or the ALM Commandline, are installed on remote hosts, they must also set __alm.xmlrpc.secure__ to "true" during installation, or communication with those components will fail.
 
 
-=== Selecting the Packages to Install
+==== ALM Server and ALM Web Application settings
 
-The packages panel is displayed:
+When installing the ALM Server and Web Application, set the properties described in the following sections :
 
+[[_general_alm_server_settings]]
+===== General and ALM Server Runtime settings
 
-image::install_05.png[,907,607] 
+[source]
+----
+# Destination folder of the IKAN ALM Server files :
+alm.server.installLocation=C:/alm
 
-Here you can select which IKAN ALM components you wish to install.
-By default, all components are selected.
+# Java Runtime to run the IKAN ALM Server with :
+alm.server.javaHome=d:/java/jdk1.6.0_45
 
-Select the component(s) you wish to install, and then click __Next__.
+# IKAN ALM Server Runtime parameters :
+# serverPort : port IKAN ALM Server is listening on (default=20021)
+alm.server.serverPort=20021
+# agentPort : port Agent should be listening on (default=20020)
+alm.server.agentPort=20020
+# Karaf ports, no need to change unless you have port conflicts
+alm.server.karaf.rmiRegistryPort=1100
+alm.server.karaf.rmiServerPort=44445
+alm.server.karaf.sshPort=8102
+----
 
-Refer to the following sections for more information on the installation options:
-
-* <<_bhbdhcii>>
-* <<_bhbheddb>>
-* <<_bhbdhaee>>
-
-
-[[_bhbdhcii]]
-=== Installing the Server
-
-This section explains the installation options of the IKAN ALM Server component.
-
-[NOTE]
-====
-The panels in this section are only displayed if you selected the "`ALM Server`" package.
-====
-
-[[_serverparameters_1]]
-==== ALM Server parameters (1 of 2)
-
-
-image::install_06.png[,907,607] 
-
-The following fields are available:
-
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
-| Field
+| Property
 | Description
 
+|
+
+alm.server.installLocation
+|
+
+The location where IKAN ALM should be installed. Further on in this document, this location will be referred to as _ALM_HOME_.
+|
+
+alm.server.javaHome
+|
+
+Set this to the Java Home of the Java Runtime that will be used to launch the ALM Server. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+|
+
+alm.server.serverPort
+|
+
+The port number the ALM Server listens on for incoming ALM Agent communication. Note that you must use this same port number in later ALM Agent installations, otherwise the Agent-Server communication may fail. The default is "20021".
+
+If you change this value, you will also have to change the "Server Port" property of the Machine representing the ALM Server in the IKAN ALM GUI.
+|
+
+alm.server.agentPort
+|
+
+The port number the local ALM Agent listens on for incoming ALM Server communication. You must use this port number when you install the ALM Agent on the ALM Server machine (= local Agent). The default is "20020".
+|
+
+alm.server.karaf.rmiRegistryPort +
+alm.server.karaf.rmiServerPort +
+alm.server.karaf.sshPort
+|
+
+The port numbers specific to the Apache Karaf container hosting the ALM Server daemon. Normally, there is no need to change these port numbers unless you have port conflicts.
+|===
+
+===== ALM Database configuration
+
+[source]
+----
+# Database configuration :
+# type : accepted values are MYSQL,MSSQL,ORACLE,DB2,POSTGRESQL
+alm.server.rdbms.type=MYSQL
+alm.server.rdbms.server=localhost
+alm.server.rdbms.port=3306
+alm.server.rdbms.user=root
+alm.server.rdbms.pwd=alm
+# dbname : database name or Oracle SID or Service name
+alm.server.rdbms.dbname=alm
+# dbschema : database schema (for DB2 and POSTGRESQL)
+alm.server.rdbms.dbschema=ALM
+# Flag to indicate whether to initialize the IKAN ALM database
+# WARNING : when set to "true", all IKAN ALM related tables in the target
+# database will be dropped and populated with initial data !!
+alm.server.rdbms.initALMDatabase=false
+----
+
+[cols="1,3", frame="topbot", options="header"]
+|===
+| Property
+| Description
 
 |
 
-Install Path
-|
+alm.server.rdbms.type
+a|The type of database that will host the ALM database.
 
-Select the location where IKAN ALM should be installed.
+The possible values are:
 
-The default is `C:\ALM` on Windows, and `$HOME/ALM` on Linux/Unix.
-You can change this location using the _Browse_ button.
-
-Further on in this document, this location will be referred to as ``ALM_HOME``.
-
-|
-
-Java Path
-|
-
-The installation directory of the Java Runtime that will be used to launch the Server.
-This can point to a Server JRE or JDK.
-By default, the Java Runtime that started the installer is selected.
-IKAN ALM needs a Server JRE or JDK 1.7 or 1.8.
-
-You can change this location using the _Browse_ button.
-Files will be copied to the Install Path, and a file will be modified in a subfolder of the Java Path, so make sure that the user who will run the installation has write access to these locations.
-
-Make sure that the selected Java Runtime is the same as the one that is used to start Tomcat!
-
-|
-
-Database type
-a|The type of database that will host the IKAN ALM database.
-
-The possible choices are:
-
-* MySQL (default)
-* MsSQL
-* Oracle
+* MYSQL (default)
+* MSSQL
+* ORACLE
 * DB2
-
-
-Specific parameters for the selected database can be provided later in the installation procedure.
-|===
-
-
-Click _Next_ to go to the second page of ALM Server parameters.
-
-[[_serverparameters_2]]
-==== ALM Server parameters (2 of 2)
-
-
-image::install_07.png[,907,607] 
-
-The following fields are available:
-
-[cols="1,1", frame="topbot", options="header"]
-|===
-| Field
-| Description
-
-
+* POSTGRESQL
 |
 
-Server port
-|
-
-The port number used for communication between the Server and its Agents.
-
-Note that you must use this same port number in subsequent IKAN ALM Agent installations, otherwise the Agent-Server communication may fail.
-
-Default: 20021
-
-|
-
-Agent port
-|
-
-The port number the local IKAN ALM Agent is going to listen on.
-
-Default: 20020
-
-|
-
-Karaf RMI Registry port
-|
-
-The RMI registry port used by the Karaf container the IKAN ALM Server is running in.
-
-Default: 1100
-
-|
-
-Karaf RMI Server port
-|
-
-The RMI server port used by the Karaf container the IKAN ALM Server is running in.
-
-Default: 44445
-
-|
-
-Karaf SSH port
-|
-
-The SSH port used by the Karaf container the IKAN ALM Server is running in.
-
-Default: 8102
-
-|
-
-Secure Server-Agent communication
-|
-
-When enabled, this causes all Server-Agent communication to be encrypted.
-
-Default: disabled
-|===
-
-
-Click _Next_ to go to the application server parameters panel.
-
-==== Tomcat parameters
-
-Provide the parameters of your Tomcat installation.
-
-
-image::install_08.png[,907,607] 
-
-The following fields are available:
-
-[cols="1,1", frame="topbot", options="header"]
-|===
-| Field
-| Description
-
-
-|
-
-Port
-|
-
-The Tomcat HTTP Connector port.
-
-Default: 8080
-
-|
-
-Tomcat home dir
-|
-
-Set this to the home directory of the Tomcat installation that will host the IKAN ALM Web application.
-|===
-
-
-Click _Next_ to go to the Database parameters panel.
-
-[[_bhbddifc]]
-==== Database connection parameters
-
-Depending on the database that was chosen to host the IKAN ALM database, a panel similar to this one will be displayed:
-
-
-image::install_09.png[,907,607] 
-
-The following fields are available:
-
-[cols="1,1", frame="topbot", options="header"]
-|===
-| Field
-| Description
-
-
-|
-
-Host
+alm.server.rdbms.server
 |
 
 The host name of the database server.
-
-Default: the host name of the local system
-
 |
 
-Port
+alm.server.rdbms.port
 |
 
 The port on which the database server is listening on.
-
-Default: the default port of the selected database type
-
 |
 
-Database name
+alm.server.rdbms.user
 |
 
-The name of the IKAN ALM database.
-
+Username of a user that can connect to the database and has write access to it.
 |
 
-Schema
+alm.server.rdbms.pwd
 |
 
-The schema name, only available when the database type is DB2.
-
-Default: ALM
-
+Password of the database user.
 |
 
-Username
+alm.server.rdbms.dbname
 |
 
-A valid user that can connect to the database and has write access to it.
-
+The name of the ALM database. For Oracle, this is the database's SID or Service name.
 |
 
-Password
+alm.server.rdbms.dbschema
 |
 
-A valid password.
-
+The database schema name. Required when the database type is DB2 or POSTGRESQL, optional for the other database types.
 |
 
-Initialize the database
+alm.server.rdbms.initALMDatabase
 |
 
-Specifies whether to initialize the IKAN ALM database.
+Set to "true" to initialize the ALM database during the installation process. Default is "false".
 
-*WARNING*: when enabled, all IKAN ALM related tables in the target database will be dropped and populated with initial data!
-
-|
-
-Validate connection
-|
-
-Specifies whether to test the database connection parameters after pressing the _Next_ button.
+*WARNING*: when set to "true", all ALM related tables in the target database will be dropped and populated with initial data!
 |===
 
 
-Click _Next_ to continue the installation.
 
-[[_bhbheddb]]
-=== Installing the Agent
+===== Apache Tomcat configuration
 
-When you selected the "`ALM Agent`" package, the following panel is displayed:
+[source]
+----
+# Apache Tomcat Configuration : 
+# set alm.server.tomcat to true if you want to deploy IKAN ALM under tomcat 
+alm.server.tomcat=true
+# catalina.base folder of the tomcat instance
+alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
+alm.server.tomcat.port=8080
+# catalina.home folder of tomcat. If left empty, ALM will assume catalina.home=catalina.base
+alm.server.tomcat.catalina.home=
+----
 
-
-image::install_10.png[,907,607] 
-
-The following fields are available:
-
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
-| Field
+| Property
 | Description
 
-
 |
 
-Install Path
+alm.server.tomcat
 |
 
-Select the target location where the IKAN ALM Agent should be installed.
-The default is `C:\ALM` on Windows, and `$HOME/ALM` on Linux/Unix.
-
-You can change this location using the Browse button.
-This field is initialized to the Server Install Path and greyed out when you also selected the IKAN ALM Server component.
-
+Set to "true" if you want to deploy the ALM Web Application to Tomcat. Default is "true".
 |
 
-Java Path
+alm.server.tomcat.home
 |
 
-The installation directory of the Java Runtime that will be used to launch the Agent.
-
-This can point to a Server JRE or JDK.
-By default, the Java Runtime that started the installer is selected.
-The IKAN ALM Agent needs a Server JRE or JDK 1.7 or 1.8.
-You can change this location using the _Browse_ button.
-
+Set this to the home directory of the Tomcat installation that will host the ALM Web Application.
 |
 
-Agent port
+alm.server.tomcat.port
 |
 
-The port the Agent will be listening on.
-
-The default value is `"20020`". I  f you change this value, you will also have to change the `"Agent Port`" property of the Machine representing this Agent in the IKAN ALM Global Administration.
-This field is initialized and greyed out when you also selected the IKAN ALM Server component.
-
+The Tomcat HTTP Connector port. Default is "8080".
 |
 
-Server host
+alm.server.tomcat.catalina.home
 |
 
-The hostname (or IP address) of the IKAN ALM Server machine.
-The Agent will try to connect to the Server by using this name or IP address and using the HTTP or HTTPS protocol.
-By default it is set to the host name of the local system.
-This field is initialized and greyed out when you also selected the IKAN ALM Server component.
-
-|
-
-Server port
-|
-
-The port the IKAN ALM Server is listening on.
-
-The Agent will try to connect to the Server on this port.
-The default value is "`20021`".
-
-This field is initialized and greyed out when you also selected the IKAN ALM Server component.
-
-|
-
-Karaf RMI Registry port
-|
-
-The RMI registry port used by the Karaf container the IKAN ALM Agent is running in.
-
-Default: 1099
-
-|
-
-Karaf RMI Server port
-|
-
-The RMI server port used by the Karaf container the IKAN ALM Agent is running in.
-
-Default: 44444
-
-|
-
-Karaf SSH port
-|
-
-The SSH port used by the Karaf container the IKAN ALM Agent is running in.
-
-Default: 8101
-
-|
-
-Secure Server-Agent communication
-|
-
-When enabled, this causes all Server-Agent communication to be encrypted.
-
-Default: disabled.
-
-This field is initialized and greyed out when you also selected the IKAN ALM Server component.
+The CATALINA_HOME of the Tomcat instance. If this value is left empty, which is the default, ALM will assume CATALINA_HOME=CATALINA_BASE. You will need to set this property if you installed Tomcat on Linux using a package manager (like apt), or if you configured your Tomcat to run multiple instances.
+Refer to https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt[https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt,window=_blank] for more information. 
 |===
 
 
-Click _Next_ to continue the installation.
 
-[[_bhbdhaee]]
-=== Installing the Commandline
+==== ALM Agent settings
+When installing the ALM Agent, set the following properties :
 
-When you selected the "`ALM CommandLine`" package, the following panel is displayed:
+[source]
+----
+# ---------------------------------------------------------------------------
+# IKAN ALM Agent Settings, when alm.agent.install=true :
+# ---------------------------------------------------------------------------
+# Destination folder of the IKAN ALM Agent files :
+# Recommended : use the IKAN ALM Server installLocation
+alm.agent.installLocation=C:/alm
 
+# Java Runtime to run the IKAN ALM Agent with (may be JRE or JDK):
+alm.agent.javaHome=d:/java/jdk1.6.0_45
 
-image::install_11.png[,907,607] 
+# IKAN ALM Agent Runtime parameters :
+# agentPort : port Agent should be listening on (default=20020)
+# serverPort : port Server is listening on (default=20021)
+# serverHost : host Server is running on (default=localhost)
+# hostname: optional, leave empty unless you want to override the system hostname
+#  retrieved as InetAddress.getHostName(), e.g. to use a fully qualified domain name like 
+#  almAgent.your.domain for communication with the IKAN ALM server
+# hostaddress: optional, leave empty unless you want to override the system hostaddress
+#  retrieved as InetAddress.getHostAddress(), e.g. to use a IP Address which differs from 
+#  the internal IP Address for communication with the IKAN ALM server
+alm.agent.agentPort=20020
+alm.agent.serverHost=localhost
+alm.agent.serverPort=20021
+alm.agent.hostname=
+alm.agent.hostaddress=
+# Karaf ports, no need to change unless you have port conflicts
+alm.agent.karaf.rmiRegistryPort=1099
+alm.agent.karaf.rmiServerPort=44444
+alm.agent.karaf.sshPort=8101
+# relative path to the Karaf log of the IKAN ALM Agent
+alm.agent.logfilepath=log/alm_agent.log
+----
 
-The following fields are available:
-
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
-| Field
+| Property
 | Description
 
+|
+
+alm.agent.installLocation
+|
+
+The location where IKAN ALM should be installed. When installing the ALM Agent together with the ALM Server, set this value to the value of the _alm.server.installLocation_ property (see <<_general_alm_server_settings>>).
+
+Further on in this document, this location will be referred to as _ALM_HOME_.
+|
+
+alm.agent.javaHome
+|
+
+Set this to the Java Home of the Java Runtime that will be used to launch the ALM Agent. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+|
+
+alm.agent.agentPort
+|
+
+The port number the ALM Agent listens on for incoming ALM Server communication. The default is "20020".
+
+If you change this value, you will also have to change the value of the _Agent Port_ field of the Machine representing this ALM Agent in the IKAN ALM GUI.
+|
+
+alm.agent.serverHost
+|
+
+The hostname (or IP address) of the ALM Server machine. The ALM Agent will try to connect to the ALM Server by using this hostname (or IP address) and using the HTTP or HTTPS protocol. The default is "localhost".
+|
+
+alm.agent.serverPort
+|
+
+The port number the ALM Server listens on for incoming ALM Agent communication. The ALM Agent will try to connect to the ALM Server on this port. The default is "20021".
+|
+
+alm.agent.hostname
+|
+
+This property is optional. Set this if you want to override the automatically detected hostname of the ALM Agent. It is important that the hostname entered here matches the value of the _DHCP Name_ field of the ALM Agent Machine set in the IKAN ALM GUI. If the values don't match, the ALM Agent may not receive any work (Builds or Deploys) from the ALM Server.
+|
+
+alm.agent.hostaddress
+|
+
+This property is optional. Set this if you want to override the automatically detected IP address of the ALM Agent. It is important that the IP address entered here matches the value of the _IP Address_ field of the ALM Agent Machine set in the IKAN ALM GUI. If the values don't match, the ALM Agent may not receive any work (Builds or Deploys) from the ALM Server.
+|
+
+alm.agent.karaf.rmiRegistryPort +
+alm.agent.karaf.rmiServerPort +
+alm.agent.karaf.sshPort
+|
+
+The port numbers specific to the Apache Karaf container hosting the ALM Agent daemon. Normally, there is no need to change these port numbers unless you have port conflicts.
+|
+
+alm.agent.logfilepath
+|
+
+Relative path to the Karaf log of the ALM Agent. This setting is used by the ALM Server when displaying the Machine Log of an ALM Agent on the _Machine Detailed Status_ screen in the IKAN ALM GUI. The default is "log/alm_agent.log".
+|===
+
+==== ALM Commandline settings
+When installing the ALM Commandline, set the following properties :
+
+[source]
+----
+# ---------------------------------------------------------------------------
+# IKAN ALM Commandline Settings, when alm.commandline.install=true :
+# ---------------------------------------------------------------------------
+# Destination folder of the IKAN ALM Commandline files :
+alm.commandline.installLocation=C:/alm/commandline
+
+# Java Runtime to run the IKAN ALM Commandline with (may be JRE or JDK):
+alm.commandline.javaHome=d:/java/jdk1.6.0_45
+----
+
+[cols="1,3", frame="topbot", options="header"]
+|===
+| Property
+| Description
 
 |
 
-Install Path
+alm.commandline.installLocation
 |
 
-Select the target location where IKAN ALM should be installed.
-The default is `C:\ALM` on Windows, and `$HOME/ALM` on Linux/Unix.
-You can change this location using the _Browse_ button.
-This field is initialized and greyed out when you also selected the IKAN ALM Server component or the IKAN ALM Agent component.
-
+The location where the ALM Commandline should be installed. When installing the ALM Commandline together with the ALM Server or Agent, do *NOT* set this value to the value of the _alm.server.installLocation_ or _alm.agent.installLocation_ property, but choose a subfolder of _ALM_HOME_ (like _ALM_HOME_/commandline), or a path outside of the _ALM_HOME_ folder structure.
 |
 
-Java Path
+alm.commandline.javaHome
 |
 
-The installation directory of the Java Runtime that will be used to launch the Commandline.
-This can point to a Server JRE or JDK.
-By default, the Java Runtime that started the installer is selected.
-The IKAN ALM Commandline needs at least a JRE or JDK 1.7.
-You can change this location using the _Browse_ button.
+Set this to the Java Home of the Java Runtime that will be used to launch the ALM Commandline. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |===
 
 
-Click _Next_ to continue the installation.
+=== Running the Installer
 
-=== Summary and installation
+By default, the installer uses the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the installation script.
 
-A Summary panel will be displayed:
+On Windows, edit _INSTALL_DIR\install.cmd_, and replace the line
 
+[source]
+----
+SET JAVA_HOME=
+----
 
-image::install_12.png[,907,607] 
+with something like :
 
-Verify all defined parameters, and click _Next_ to start the installation.
+[source]
+----
+SET JAVA_HOME=D:\java\openjdk-11.0.8_10_hotspot
+----
 
+On Linux or Unix, edit _INSTALL_DIR\install.sh_, and replace the line
 
-image::install_13.png[,907,607] 
+[source]
+----
+JAVA_HOME=
+----
 
-When this step has finished successfully, click _Next_ to perform post-installation actions.
+with something like :
 
+[source]
+----
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+----
 
-image::install_14.png[,907,607] 
+Launch the installer by executing the _install.cmd_ or _install.sh_ script.
 
-When all actions are completed successfully, the following will be displayed:
+[NOTE]
+====
+It is recommended to launch the installer from a command prompt, Powershell or Linux shell, to see the progress and the result of the installation. On Windows, if the installer is run as an Administrator, the Windows services for stopping and starting the ALM Server and Agent are automatically created. If not, you must register the Windows services manually after installation. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the ALM Server and Agent must always be manually registered after installation. See <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>>.
 
+The user running the installer should have write access to the install locations of the ALM Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
+====
 
-image::install_15.png[,907,607] 
+image::installer_finished.png[,681,359]
 
-If the message "`BUILD SUCCESSFUL`" is displayed, the post-installation actions were all successful.
+When the installation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
-Click _Next_ to check the last panel of the installation, which displays information about the uninstaller.
+[WARNING]
+====
+Do *NOT* remove the _INSTALL_DIR_ folder after installation, because you will need it to uninstall or upgrade IKAN ALM in the future.
+====
 
+If this was a new ALM Server installation (no re-installation or upgrade of an older version), and the property _alm.server.rdbms.initALMDatabase_ was not set to "true", then you must first initialize the ALM database manually before starting the ALM Server or Web Application.
 
-image::install_16.png[,907,607] 
+=== Initializing the ALM Database
 
-Click _Done_ to end the installation.
+The ALM database needs to be initialized before the ALM Server or Web Application can be used. The initialization can be performed during installation by setting the property _alm.server.rdbms.initALMDatabase_ to "true", or it can be performed manually after the installation has finished by running the script _INSTALL_DIR/initializeALMDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeALMDatabase.sh_ (Linux/Unix).
 
-During the installation, a log file was created in the folder ALM_HOME/FileBased named "`Install_V5.8_*.log`" (e.g., Install_V5.8_20130526100925_9002832048355522781.log). The installation summary can also be reviewed in the file ALM_HOME/Uninstaller/InstallSummary.htm.
+[NOTE]
+====
+The initialization scripts will drop and recreate the database tables needed by ALM and populate them with initial data. They will not drop or create the database or schema, so these items must be present before performing the initialization. The scripts will use the database settings as set in the _INSTALL_DIR/install.properties_ file.
+====
 
-If this was a new IKAN ALM Server installation (no re-installation or upgrade of an older version), and the '`Initialize the database`' option was NOT selected during the installation, the next step is to initialize the IKAN ALM database.
+By default, the initialization scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
+ _INSTALL_DIR/initializeALMDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeALMDatabase.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
-=== Initializing the IKAN ALM Database
+[NOTE]
+====
+It is recommended to launch the initialization scripts from a command prompt, Powershell or Linux shell, to see the progress and the result of the initialization. There is no need to run the scripts as Administrator.
+====
 
-This step must only be executed when you perform a new (first) IKAN ALM Server installation and if the '`Initialize the database`' option was NOT selected during the installation.
+Launch the ALM database initialization by executing the _INSTALL_DIR/initializeALMDatabase.cmd_ or _INSTALL_DIR/initializeALMDatabase.sh_ script.
 
-When using DB2 as the IKAN ALM database, some additional configuration is required.
-For more information, please refer to the section <<_db2configuration>>.
-
-To initialize the database, launch the script ALM_HOME/FileBased/initializeALMDatabase.cmd (Windows) or ALM_HOME/FileBased/initializeALMDatabase.sh (Linux/Unix):
-
-image::fig3_8.png[,694,353] 
-
+image::dbinit_finished.png[,681,359] 
 
 == Starting IKAN ALM
 
 This section describes the steps to perform the startup of the different IKAN ALM components.
 
-* If you want to configure IKAN ALM through its GUI, you must first start the IKAN ALM Web application (<<_bhbhhfha>>).
-* If you want to run Builds and Deploys, you must start the IKAN ALM Server and Agent (<<_bhbdbdje>> and <<_bhbhbcbb>>).
-* If you want to use the IKAN ALM Commandline interface, see <<_bhbdaahi>>
+* If you want to configure IKAN ALM through its GUI, you must first start the ALM Web application (<<_bhbhhfha>>).
+* If you want to run Builds and Deploys, you must start the ALM Server and Agent (<<_bhbdbdje>> and <<_bhbhbcbb>>).
+* If you want to use the ALM Commandline interface, see <<_bhbdaahi>>
 
 
 [[_bhbhhfha]]
-=== Starting the IKAN ALM Web application
+=== Starting the ALM Web Application
 
-To start the IKAN ALM Web application, you need to start the Apache Tomcat web server that is hosting it.
+To start the ALM Web Application, you need to start the Apache Tomcat web server that is hosting it.
 
-The IKAN ALM GUI can be reached by browsing to the url `\http://<host>:<port>/alm`.
-For example: \http://alm_server:8080/alm.
+The ALM GUI can be reached by browsing to the url `\http://<host>:<port>/alm`.
+For example: `\http://alm_server:8080/alm`.
 
 If this is the first installation of IKAN ALM, the License window will be displayed:
 
 
-image::fig4.1_1.png[,458,264] 
+image::no_license.png[,617,187]
 
 Provide a valid license, and then click __Submit__.
 
 Next, the Log in page will be displayed:
 
 
-image::Desktop-LicenseSubmitted-Success.png[,491,294] 
+image::license_installed.png[,520,255]
 
-Log in with user id "`global`", password "`global`".
+Log in with user id "`global`", password "`global`". For information about the other default users, see <<_jaasconfiguration>>.
 
-For more information on the IKAN ALM GUI, refer to the __IKAN ALM 5.8 User Guide__, which is located at _ALM_HOME/doc/ALMUserGuide.pdf._
+For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:root:Introduction.adoc[IKAN ALM User Guide].
 
 [[_bhbdbdje]]
-=== Starting the IKAN ALM Server
+=== Starting the ALM Server
 
-The IKAN ALM Server runs as an OSGi bundle inside a Karaf container.
-Therefore, to start the IKAN ALM Server, the Karaf container must be started first.
+It is recommended to run the ALM Server as a Windows or Linux service, and configure the service so that the ALM Server automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
 
-* _On Linux/Unix, from a shell:_
-+
-Launch the shell script "`ALM_HOME/daemons/server/startServer.sh`".
-+
-Use "`ALM_HOME/daemons/server/stopServer.sh`" to stop the IKAN ALM Server.
-* _On Windows, as a Windows Service:_
-+
-By default, the IKAN ALM Server is registered as a Windows service which will be started automatically at system start-up. 
-+
-Alternatively, you can control the service via __Start > Settings > Control Panel >Administrative
-Tools > Services__.
-The name of the IKAN ALM Server service is "`IKAN ALM 5.8 Server`".
-* _On Windows, from a Command Prompt:_
-+
-Launch the command file "`ALM_HOME/daemons/server/startServer.cmd`".
-+
-Use "`ALM_HOME/daemons/server/stopServer.cmd`" to stop the IKAN ALM Server.
+To start the ALM Server service on Windows, open a Command Prompt or Powershell, and execute :
+
+[source]
+----
+net start almsvr59
+----
+
+To start the ALM Server service on a System V compatible Linux system, open a shell and execute :
+
+[source]
+----
+sudo service almserver59 start
+----
+
+To start the ALM Server service on a Systemd compatible Linux system, open a shell and execute :
+
+[source]
+----
+sudo systemctl start almserver59
+----
+
+For troubleshooting, it can be useful to start the ALM Server by launching its startup script. On Windows, launch the command file _ALM_HOME/daemons/server/startServer.cmd_. On Linux, launch the shell script _ALM_HOME/daemons/server/startServer.sh_. 
+
+To stop the ALM Server, launch _ALM_HOME/daemons/server/stopServer.cmd_ or _ALM_HOME/daemons/server/stopServer.sh_.
 
 
 [[_bhbhbcbb]]
-=== Starting the IKAN ALM Agent
-** _On Linux/Unix, from a shell:_
-+
-Launch the shell script "`ALM_HOME/daemons/agent/startAgent.sh`".
-+
-Use "`ALM_HOME/daemons/agent/stopAgent.sh`" to stop the IKAN ALM Agent daemon.
-** _On Windows, as a Windows Service:_
-+
-By default, the IKAN ALM Agent is registered as a Windows service which will be started automatically at system start-up.
-Alternatively, you can control the service via __Start
-> Settings > Control Panel > Administrative Tools > Services__.
-+
-The name of the Agent service is "`IKAN ALM 5.8 Agent`".
-** _On Windows, from a Command Prompt:_
-+
-Launch the command file "`ALM_HOME/daemons/agent/startAgent.cmd`".
-+
-Use "`ALM_HOME/daemons/agent/stopAgent.cmd`" to stop the IKAN ALM Agent.
+=== Starting the ALM Agent
+
+It is recommended to run the ALM Agent as a Windows or Linux service, and configure the service so that the ALM Agent automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
+
+To start the ALM Agent service on Windows, open a Command Prompt or Powershell, and execute :
+
+[source]
+----
+net start almagent59
+----
+
+To start the ALM Agent service on a System V compatible Linux system, open a shell and execute :
+
+[source]
+----
+sudo service almagent59 start
+----
+
+To start the ALM Agent service on a Systemd compatible Linux system, open a shell and execute :
+
+[source]
+----
+sudo systemctl start almagent59
+----
+
+For troubleshooting, it can be useful to start the ALM Agent by launching its startup script. On Windows, launch the command file _ALM_HOME/daemons/agent/startAgent.cmd_. On Linux, launch the shell script _ALM_HOME/daemons/agent/startAgent.sh_. 
+
+To stop the ALM Agent, launch _ALM_HOME/daemons/agent/stopAgent.cmd_ or _ALM_HOME/daemons/agent/stopAgent.sh_.
 
 
 [[_bhbdaahi]]
-=== Using the IKAN ALM Commandline
+=== Using the ALM Commandline
 
-If you selected the IKAN ALM CommandLine package, it will be installed in ALM_HOME/commandline.
+The ALM Commandline can be used to create Level Requests and Reports, or create and update Packages.
 
-* To launch the IKAN ALM Commandline on Linux/Unix:
+* To launch the ALM Commandline on Windows:
 +
-Open a shell and launch "`ALM_HOME/commandline/alm.sh`".
-* To launch the IKAN ALM Commandline on Windows:
+Open a Command Prompt, cd into the installation folder of the ALM Commandline (for example : ALM_HOME/commandline), and launch _alm.cmd_.
+* To launch the ALM Commandline on Linux/Unix:
 +
-Open a Command Prompt and launch "`ALM_HOME/commandline/alm.cmd`".
+Open a shell, cd into the installation folder of the ALM Commandline (for example : ALM_HOME/commandline), and launch _./alm.sh_.
+
+For more detailed information about the ALM Commandline, refer to the section xref:5.9@user-guide-en:root:CommandLine.adoc[Commandline Interface] in the __IKAN ALM User Guide__.
 
 
-For more detailed information on the IKAN ALM Commandline, refer to the section _Command Line
-Interface_ in the __IKAN ALM User Guide - Release
-5.8__.
-[[_uninstalling]]
 == Uninstalling IKAN ALM
 
-To completely uninstall IKAN ALM from your system, do the following:
+To uninstall IKAN ALM, you must first configure the uninstaller located in _INSTALL_DIR_, and then run it.
 
-* _On Linux/Unix:_
-+
-Open a shell and execute the command "`java -jar ALM_HOME/Uninstaller/uninstaller.jar`"
-* _On Windows XP/2003:_
-+
-Open Control Panel > Add/Remove Programs, select the entry "`IKAN ALM 5.8`" and click "`Change/Remove`"
-* _On Windows Vista/Server2008 and above:_
-+
-Open "`Programs and Features`", select the entry "`IKAN ALM 5.8`" and click "`Uninstall/Change`"
+=== Configuring the Uninstaller
 
+Configure the different properties that will be used by the uninstallation scripts by editing the _INSTALL_DIR/uninstall.properties_ file.
 
-The uninstaller windows will be displayed: 
+[WARNING]
+--
+_Do NOT use backward slashes_ ('\') in path properties, otherwise the installation may fail. Use forward slashes ('/') instead!
+--
 
-image::fig5_1.png[,263,182] 
+==== General settings
 
-*WARNING:* if you enable the option "`Force the deletion of ...`" the uninstaller will DELETE the ENTIRE installation directory! This means that if your Build Archive, Deploy scripts or target environments are located in this installation directory, they will be REMOVED.
+[source]
+----
+# General Settings : Specify which components of IKAN ALM to uninstall
+# ---------------------------------------------------------------------------
+# Flag to specify whether to uninstall the IKAN ALM Server or not:  uninstall : true
+# no uninstall : false
+alm.server.uninstall=true
+# Flag to specify whether to uninstall the IKAN ALM Agent or not uninstall : true
+# no uninstall : false
+alm.agent.uninstall=true
+# Flag to specify whether to uninstall the IKAN ALM Commandline: or not uninstall : true
+# no uninstall : false
+alm.commandline.uninstall=true
+----
 
-If you leave this option disabled, the uninstaller will keep some files in the installation directory, like the original location of the Build Archive (ALM_HOME/system/buildArchive).
+In the General Settings, you specify which components of IKAN ALM you want to uninstall. 
 
-Click _Uninstall_ to start the removal.
+Setting __alm.server.uninstall__ to "true" will uninstall the ALM Server and remove the ALM Web Application from Tomcat. +
+Setting __alm.agent.uninstall__ to "true" will uninstall the ALM Agent. +
+Setting __alm.commandline.uninstall__ to "true" will uninstall the ALM Commandline.
 
-When finished, the following will be displayed:
+==== ALM Server and ALM Web Application settings
 
+[source]
+----
+# IKAN ALM Server Settings :
+# ---------------------------------------------------------------------------
+# Folder the IKAN ALM Server is installed in :
+alm.server.installLocation=C:/alm
 
-image::fig5_2.png[,258,181] 
+# Java Runtime the IKAN ALM Server is using
+alm.server.javaHome=d:/java/jdk1.6.0_45
 
-Click _Quit_ to end the uninstaller.
+# Flag to specify whether to uninstall the files that may be deployed to a tomcat server :
+# uninstall : true
+# no uninstall : false
+alm.server.tomcat.uninstall=true
+# Location of Apache Tomcat where the webapp was deployed during IKAN ALM Server Install :
+alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
+----
+
+[cols="1,3", frame="topbot", options="header"]
+|===
+| Property
+| Description
+
+|
+
+alm.server.installLocation
+|
+
+The location where IKAN ALM is installed. Further on in this document, this location will be referred to as _ALM_HOME_.
+|
+
+alm.server.javaHome
+|
+
+The Java Home of the Java Runtime that is used to launch the ALM Server. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+|
+
+alm.server.tomcat.uninstall
+|
+
+Set to "true" if you want to remove the ALM Web Application from Tomcat. Default is "true".
+|
+
+alm.server.tomcat.home
+|
+
+The home directory of the Tomcat installation that is hosting the ALM Web Application.
+|===
+
+==== ALM Agent settings
+
+[source]
+----
+# IKAN ALM Agent Settings :
+# ---------------------------------------------------------------------------
+# Folder the IKAN ALM Agent is installed in :
+alm.agent.installLocation=C:/alm
+----
+
+[cols="1,3", frame="topbot", options="header"]
+|===
+| Property
+| Description
+
+|
+
+alm.agent.installLocation
+|
+
+The location where IKAN ALM is installed.
+|===
+
+==== ALM Commandline settings
+
+[source]
+----
+# IKAN ALM Commandline Settings :
+# ---------------------------------------------------------------------------
+# Folder the IKAN ALM Commandline is installed in :
+alm.commandline.installLocation=C:/alm/commandline
+----
+
+[cols="1,3", frame="topbot", options="header"]
+|===
+| Property
+| Description
+
+|
+
+alm.commandline.installLocation
+|
+
+The location where the ALM Commandline is installed.
+|===
+
+=== Running the Uninstaller
+
+By default, the uninstallation scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
+ _INSTALL_DIR/uninstall.cmd_ (Windows) or _INSTALL_DIR/uninstall.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
+
+First stop Tomcat, ALM Server and ALM Agent, and then launch the uninstaller by executing the _uninstall.cmd_ or _uninstall.sh_ script.
+
+[NOTE]
+====
+It is recommended to launch the uninstaller from a command prompt, Powershell or Linux shell, to see the progress and the result of the uninstallation. On Windows, if the uninstaller is run as an Administrator, the Windows services for stopping and starting the ALM Server and Agent are automatically removed. If not, you must remove the Windows services manually *BEFORE* uninstallation. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the ALM Server and Agent must always be manually removed *BEFORE* uninstallation. See <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>>.
+
+The user running the uninstaller should have write access to the install locations of the ALM Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
+====
+
+The uninstaller will keep the following folders :
+
+* ALM_HOME/system/buildArchive
+
+* ALM_HOME/system/deployScripts
+
+* ALM_HOME/system/phaseCatalog
+
+If they need to be removed, they need to be deleted manually after the uninstallation.
+
+image::uninstaller_finished.png[,983,494]
+
+When the uninstallation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
 == Upgrading IKAN ALM
 
-The general approach to upgrading IKAN ALM is straightforward: first back up the current installation and the database, then reinstall the application and upgrade the database to a higher version.
+The general approach to upgrading IKAN ALM is to first backup the current installation and the ALM database, then reinstall ALM and migrate the ALM database to a higher version.
 
-If the upgrade process fails, you can restore the back-up, and continue running the previous version of IKAN ALM (and contact support).
+If the upgrade process fails, you can restore the backup and continue running the previous version of IKAN ALM.
 
-You should at least back up the following:
+You should at least backup the following:
 
 . IKAN ALM database
-. Build Archive Location: configured in System Settings
-+
-(default = ALM_HOME/system/buildArchive)
-. Deploy Scripts Location: configured in System Settings
-+
-(default = ALM_HOME/system/deployScripts)
-. Phase Catalog: configured in System Settings
-+
-(default = ALM_HOME/system/phaseCatalog)
+. Build Archive Location: configured in System Settings, default is _ALM_HOME_/system/buildArchive.
+. Deploy Scripts Location: configured in System Settings, default is _ALM_HOME_/system/deployScripts.
+. Phase Catalog: configured in System Settings, default is _ALM_HOME_/system/phaseCatalog.
 
 
 [NOTE]
 ====
-
-For safety reasons, it is highly recommended to back up the entire ALM_HOME directory.
-
-Experience has shown that, sometimes, one needs to restore a configuration like a security setting or the configuration of the log files.
+For safety reasons, it is highly recommended to back up the entire _ALM_HOME_ and _TOMCAT_HOME_ directory. Experience has shown that, sometimes, one needs to restore a configuration like a security setting or the configuration of the log files.
 ====
 
 === IKAN ALM Upgrade Procedure
 
-. Stop the IKAN ALM Server/Agent and the IKAN ALM application server (Tomcat) and make the back-up.
-+
-This is necessary to make sure you have the latest version of everything.
-. Uninstall the IKAN ALM Server and (if it has been installed) the local ALM Agent.
-+
-To do so, run the uninstaller on the IKAN ALM Server machine.
-+
-Information on how to do this can be found in the section <<_uninstalling>> or in the guide _HowToALM 5.8_Tomcat_Install.pdf_ (in case the previous version of IKAN ALM was installed with the console installer).
-. Highly recommended: also back up the ALM_HOME folder to keep the configuration.
-. Uninstall the remote agents.
-+
-Configure and run the uninstaller on each remote IKAN ALM Agent machine.
-+
-Information on how to do this can be found in the section <<_uninstalling>> or in the guide __HowToALM 5.8_AgentInstall.pdf__.
-. Configure and run the installer of the ALM Server and local ALM Agent.
-+
-Refer to the section <<_installing>> or to the document __How-ToALM 5.8_Tomcat_Install.pdf__.
-. Migrate the IKAN ALM database to the latest version.
-+
-To do this, run the Database Migration Tool (described in the next section) from the new ALM Server installation.
-. Finally, run the installer of the remote ALM Agents.
-+
-Refer to the guide _HowToALM5.8_AgentInstall.pdf._
+. Stop Tomcat, ALM Server and ALM Agent.
 
+. Make the backup.
+
+. Uninstall the current ALM Server, Agent and Commandline. See <<Uninstalling IKAN ALM>> for more information. Don't remove the _INSTALL_DIR_ of the uninstalled version yet.
+
+. Configure the installer of the new ALM. You can use the values set in the _INSTALL_DIR_/install.properties of the uninstalled version to set the values in the install.properties file of the new version. It's not recommended to copy the old install.properties over the new, since the structure of the file may have changed in the new version.
+
+. Run the installer of the new ALM.
+
+. Migrate the IKAN ALM database to the new version.
++
+To do this, run the Database Migration Tool. See <<Database Migration Tool>>.
+
+. Start Tomcat, ALM Server and ALM Agent.
+
+. Upgrade the ALM Agents that are installed on remote machines. 
++
+Remote Agents of version 5.8 and higher can be upgraded using the ALM GUI. 
++
+Remote Agents of version 5.7 and lower must first be manually uninstalled. After that, they can be re-installed using the ALM GUI.
++
+For more information about installing or upgrading ALM Agents using the ALM GUI, refer to xref:5.9@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[IKAN ALM Agent UI Installation].
 
 === Database Migration Tool
 
-The Database Migration Tool is a command line tool launched by the _migrateALMDatabase_ script.
-The tool automatically detects the current database version and, if needed, attempts to migrate it to the latest one.
+The Database Migration Tool is a commandline tool that automatically detects the current version of the ALM database and, if needed, attempts to migrate it to the latest version.
 
-As pointed out in the previous section, you should back up the IKAN ALM database before starting the DB migration.
+[WARNING]
+--
+You should always backup the ALM database before starting the migration!
+--
 
-To start the migration, you need to run the DB migration tool located in:
+To start the migration, run the script _INSTALL_DIR_/migrateALMDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix). 
 
-`ALM_HOME/FileBased/migrateALMDatabase.cmd` (on Windows) or
+By default, the Database Migration Tool uses the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the script. In this case, edit the 
+ _INSTALL_DIR_/migrateALMDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
-`ALM_HOME/FileBased/migrateALMDatabase.sh` (on Linux installations). 
+By default, the Database Migration Tool uses the database connection parameters defined in the _INSTALL_DIR/install.properties_ file. You can also define a custom path to the install.properties file by using the "-installProperties" switch.
 
-By default, the DB Migration Tool uses the database connection parameters defined in the _ALM_HOME/FileBased/install.properties_ file.
-You can also define a custom path to the install.properties by using the `-installProperties` switch (see the _migrateALMDatabase_ script file contents).
+The database migration will be performed in different steps: when migrating from the older 5.7 version, first the 5.7 to 5.8 migration will be executed, before migrating version 5.8 to the (latest) 5.9 version.
 
-The default Java executable is used to run the migration tool.
-In case it cannot be found, you may have to set the JAVA_HOME variable in the _migrateALMDatabase_ script file.
+A migration log is created in the _INSTALL_DIR/almDbMigration.log_ file and will also be displayed in the console window.
 
-The Database Migration will be done in different steps: when migrating from the older 5.2 version, first the 5.2 to 5.5 migration will be executed, before migrating version 5.5 to the (latest) 5.8 version.
+=== Clearing the browser cache
+
+After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-tomcatinstall-en:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
+
+=== Updating the JAAS configuration
+
+IKAN ALM 5.9 uses a new library for JAAS LoginModules when using LDAP or Microsoft Active Directory for authentication and authorization of users. As a consequence, the JAAS configuration files _ALM_HOME_/system/security/jaas.conf and _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml have changed. If you are using LDAP or Microsoft AD, then you must use the new JAAS configuration files and set the properties ldapUrl, bindDn, bindCredential, baseDn and roleBase to the correct values. For more details, see <<_jaasconfiguration_msad,JAAS configuration: Microsoft Active Directory>>.
+
+
+[appendix]
+[[_install_service_windows]]
+== Manually Installing and Removing the ALM Server and Agent as a Windows Service
+
+When the ALM installer is run as an Administrator, the Windows services for stopping and starting the ALM Server and Agent are automatically created. If not, you must register the Windows services manually after installation. 
+
+* To register the ALM Server as a Windows service:
++
+Execute "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat __install__".
+* To unregister the ALM Server as a Windows service:
++
+Execute "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat __remove__".
+
+* To register the ALM Agent as a Windows service:
++
+Execute "ALM_HOME/daemons/agent/karaf/bin/karaf-service.bat __install__".
+* To unregister the ALM Agent as a Windows service:
++
+Execute "ALM_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
+
+The _karaf-service.bat_ script must be run as Administrator.
+
+If you want to reconfigure a service, edit the file ALM_HOME/daemons/server/karaf/etc/karaf-wrapper.conf (for the ALM Server). You can, for example, change the amount of memory the ALM Server can use (in MB) by changing : "wrapper.java.maxmemory = 512".
 
 [NOTE]
 ====
-Migrating the older IKAN ALM database 5.2 to version 5.5 includes significant changes.
-Therefore, depending on the size of your database, it may take a while (up to a few hours).
+It is generally not recommended to change any of the other properties in the karaf-wrapper.conf file, as it may cause the ALM Server or Agent to stop working.
+
+For more information on the configuration file, refer to: http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html[http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html,window=_blank] and https://karaf.apache.org/manual/latest/#_service_wrapper[https://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]
 ====
 
-A migration log is created in the _ALM_HOME/FileBased/almDbMigration.log_ file and will also be displayed in the console window.
-
-
-image::DBMigration.png[,756,548] 
-
-
-:sectnums!:
-
 [appendix]
-== Manually Installing and Removing the IKAN ALM Server and Agentas a Windows Service
+[[_install_service_linux]]
+== Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems
 
-By default, the IKAN ALM installer registers the IKAN ALM Server and Agent components as Windows services.
-However, for convenience purposes, the IKAN ALM installation includes scripts to unregister or re-register the IKAN ALM Server and Agent as services.
+The ALM installer does not automatically install the ALM Server or Agent as a Linux/Unix daemon or service. These steps must be performed after installation.
 
-The procedures are identical for the ALM Agent and Server, so we will only describe them for the ALM Server:
+Since the ALM Server and Agent use Apache Karaf as their OSGi runtime environment, this basically comes down to using the Apache Karaf Wrapper feature (see the Karaf manual: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
 
-* To unregister the service, execute "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat remove".
-* To register the service, execute "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat install".
+We will describe this procedure for installing and removing the ALM Server as a service. For the ALM Agent, repeat the procedure, but substitute "server" with "agent" in all commands.
+
+First, stop the ALM Server and Agent.
+
+Open a Linux terminal, and make the Karaf "shell" command executable :
+[source]
+----
+chmod +x ALM_HOME/daemons/server/karaf/bin/shell
+----
+
+Set the JAVA_HOME environment variable to the Java Home of the Java Runtime that will be used to launch the ALM Server. For example "/usr/lib/jvm/java-11-openjdk".
+[source]
+----
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+----
+
+Change into the directory _ALM_HOME_/daemons/server/karaf/bin, and execute the Karaf service wrapper.
+[source]
+----
+cd ALM_HOME/daemons/server/karaf/bin
+ALM_HOME/daemons/server/karaf/bin/shell wrapper:install -n almserver59 -d "IKAN\ ALM\ 5.9\ Server" -D "IKAN\ ALM\ 5.9\ Server\ Service"
+----
+
+Depending on the type of your Linux or Unix Operating System, further instructions vary. See the following subsections for details.
+
+=== Systemd compatible Linux
+
+Specify the user that should run the ALM Server service in the systemd unit file. It is not recommended to run the ALM Server or Agent as the root user.
+
+Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59.service, and find the line
+[source]
+----
+Type=forking
+----
+Replace it with
+[source]
+----
+Type=forking
+User=<Linux user>
+----
+Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59.service file executable.
+[source]
+----
+chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59.service
+----
+Install the ALM Server service.
+[source]
+----
+sudo systemctl -f enable ALM_HOME/daemons/server/karaf/bin/almserver59.service
+----
+
+To start the ALM Server service, execute
+[source]
+----
+sudo systemctl start almserver59
+----
+
+To stop the ALM Server service, execute
+[source]
+----
+sudo systemctl stop almserver59
+----
+
+When you want to remove the ALM Server service, execute
+[source]
+----
+sudo systemctl disable almserver59
+----
+
+=== RedHat Linux SystemV system
+
+Specify the user that should run the ALM Server service in the SystemV init script file. It is not recommended to run the ALM Server or Agent as the root user.
+
+Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59-service, and find the line
+[source]
+----
+#RUN_AS_USER=
+----
+Replace it with 
+[source]
+----
+RUN_AS_USER=<Linux user>
+----
+Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59-service file executable.
+[source]
+----
+chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+----
+Install the ALM Server service.
+[source]
+----
+sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/init.d/
+sudo chkconfig almserver59-service --add
+sudo chkconfig almserver59-service on
+----
+
+To start the ALM Server service, execute
+[source]
+----
+sudo service almserver59-service start
+----
+
+To stop the ALM Server service, execute
+[source]
+----
+sudo service almserver59-service stop
+----
+
+When you want to remove the ALM Server service, execute
+[source]
+----
+sudo chkconfig almserver59-service --del
+sudo rm /etc/init.d/almserver59-service
+----
 
 
-If you want to reconfigure the service, edit the file ALM_HOME/daemons/server/karaf/etc/karaf-wrapper.conf.
-You can, for example, change the amount of memory the ALM Server can use (in Mb) by changing: wrapper.java.maxmemory = 512.
+=== Debian Linux SystemV system
+Specify the user that should run the ALM Server service in the SystemV init script file. It is not recommended to run the ALM Server or Agent as the root user.
 
-It is generally not recommended to change any of the other properties in the karaf-wrapper.conf file, as it may cause the ALM Server to stop working.
+Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59-service, and find the line
+[source]
+----
+#RUN_AS_USER=
+----
+Replace it with 
+[source]
+----
+RUN_AS_USER=<Linux user>
+----
+Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59-service file executable.
+[source]
+----
+chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+----
+Install the ALM Server service.
+[source]
+----
+sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/init.d/
+sudo update-rc.d almserver59-service defaults
+----
 
-For more information on the configuration file, refer to http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html[http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html,window=_blank] and http://karaf.apache.org/manual/latest/#_integration_in_the_operating_system[http://karaf.apache.org/manual/latest/#_integration_in_the_operating_system,window=_blank]. 
+To start the ALM Server service, execute
+[source]
+----
+sudo /etc/init.d/almserver59-service start
+----
 
-:sectnums:
+To stop the ALM Server service, execute
+[source]
+----
+sudo /etc/init.d/almserver59-service stop
+----
 
-:sectnums!:
-
-[appendix]
-== Manually Installing and Removing the IKAN ALM Server and Agentas a Daemon Process on Linux/Unix Systems
-
-The IKAN ALM installer does not automatically install the ALM Server or Agent as a Linux/Unix daemon.
-These steps must be performed after installation.
-
-Since the ALM Server and Agent use Apache Karaf as their OSGi runtime environment, this basically comes down to using the Apache Karaf Wrapper feature (see the Karaf 4.0 manual: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
-
-As an example, we will describe this procedure for installing and removing the ALM Server as a service on a CentOS Linux.
-For the ALM Agent, repeat the procedure, but substitute "server" with "agent".
-
-. If you are currently running the ALM Server, stop it by executing ALM_HOME/daemons/server/stopServer.sh
-. Launch the ALM Server Karaf by executing ALM_HOME/daemons/server/karaf/bin/karaf_server.sh . This will launch the ALM Server with the Karaf console enabled, which we will need to use the Karaf Wrapper feature.
-. After the startup messages have finished, press <enter> and you will see the Karaf console prompt: "karaf@root>"
-. In the Karaf console, execute "feature:install wrapper". This will install the Karaf Wrapper feature. You can verify that this worked by executing " feature:list | grep wrapper". This should give the output:
-+
-``wrapper  | 4.0.7
-| x | Started  | standard-4.0.7  | Provide OS integration``
-. Now we must call "wrapper:install" which will generate the necessary files to install the ALM Server as a Linux service. In the Karaf console, execute 'wrapper:install -s DEMAND_START -n almserver58 -d "IKAN ALM 5.8 Server" -D "IKAN ALM 5.8 Server Daemon"'. 
-+
-When this command succeeds, it conveniently reports the commands that we need to execute as subsequent steps.
-. Shut down the ALM Server Karaf: in the Karaf console, execute "shutdown -f"
-. Adapt the ALM_HOME/daemons/server/karaf/etc/almserver58-wrapper.conf file that was created, by adding the following options:
-**** Just before the KARAF_HOME, in the section of the general wrapper properties, set the path to the Java runtime you selected during the IKAN ALM Server installation (<<_bhbdhcii>>): 
-+
-set.default.JAVA_HOME=/opt/java/jdk1.8.0
-**** change the path to the java executable: 
-+
-wrapper.java.command=/opt/java/jdk1.8.0/bin/java
-* In the section of the JVM Parameters, add following parameters:
-+
-wrapper.java.additional.10=-XX:+UnlockDiagnosticVMOptions
-+
-wrapper.java.additional.11=-XX:+UnsyncloadClass
-. At this point everything is configured so we can install, remove, stop and start the IKAN ALM Server Linux daemon. All of these commands need administrative privileges, so you will need to execute them with "sudo" :
-+
-
-* To install the service:
-
-** ln -s /home/ikan/ALM/daemons/server/karaf/bin/almserver58-service /etc/init.d/
-** chkconfig almserver58-service --add
-
-* To start the service when the machine is rebooted:
-
-** chkconfig almserver58-service on
-
-* To disable starting the service when the machine is rebooted:
-
-** chkconfig almserver87-service off
-
-* To start the service:
-
-** service almserver58-service start
-
-* To stop the service:
-
-** service almserver58-service stop
-
-* To uninstall the service:
-
-** chkconfig almserver58-service --del
-** rm /etc/init.d/almserver58-service
+When you want to remove the ALM Server service, execute
+[source]
+----
+sudo update-rc.d -f almserver59-service remove
+sudo rm /etc/init.d/almserver59-service
+----
 
 
-:sectnums:
 
-:sectnums!:
+
+=== AIX
+
+Edit the file _ALM_HOME_/daemons/server/karaf/etc/almserver59-wrapper.conf. Remove the line that starts with
+[source]
+----
+set.JDK_JAVA_OPTIONS=...
+----
+Replace the "# JVM Parameters" section with
+[source]
+----
+# JVM Parameters            
+# note that n is the parameter number starting from 1.
+wrapper.java.additional.1=--add-reads=java.xml=java.logging 
+wrapper.java.additional.2=--add-exports=java.base/org.apache.karaf.specs.locator=java.xml,ALL-UNNAMED 
+wrapper.java.additional.3=--patch-module=java.base=lib/endorsed/org.apache.karaf.specs.locator-%KARAF_VERSION%.jar
+wrapper.java.additional.4=--patch-module=java.xml=lib/endorsed/org.apache.karaf.specs.java.xml-%KARAF_VERSION%.jar 
+wrapper.java.additional.5=--add-opens=java.base/java.security=ALL-UNNAMED 
+wrapper.java.additional.6=--add-opens=java.base/java.net=ALL-UNNAMED 
+wrapper.java.additional.7=--add-opens=java.base/java.lang=ALL-UNNAMED 
+wrapper.java.additional.8=--add-opens=java.base/java.util=ALL-UNNAMED 
+wrapper.java.additional.9=--add-opens=java.naming/javax.naming.spi=ALL-UNNAMED 
+wrapper.java.additional.10=--add-opens=java.rmi/sun.rmi.transport.tcp=ALL-UNNAMED 
+wrapper.java.additional.11=--add-exports=java.base/sun.net.www.protocol.file=ALL-UNNAMED 
+wrapper.java.additional.12=--add-exports=java.base/sun.net.www.protocol.ftp=ALL-UNNAMED 
+wrapper.java.additional.13=--add-exports=java.base/sun.net.www.protocol.http=ALL-UNNAMED 
+wrapper.java.additional.14=--add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED 
+wrapper.java.additional.15=--add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED 
+wrapper.java.additional.16=--add-exports=java.base/sun.net.www.content.text=ALL-UNNAMED 
+wrapper.java.additional.17=--add-exports=jdk.xml.dom/org.w3c.dom.html=ALL-UNNAMED 
+wrapper.java.additional.18=--add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED
+wrapper.java.additional.19=-Dkaraf.instances=%KARAF_HOME%/instances
+wrapper.java.additional.20=-Dkaraf.home=%KARAF_HOME%
+wrapper.java.additional.21=-Dkaraf.base=%KARAF_BASE%
+wrapper.java.additional.22=-Dkaraf.data=%KARAF_DATA%
+wrapper.java.additional.23=-Dkaraf.etc=%KARAF_ETC%
+wrapper.java.additional.24=-Dkaraf.log=%KARAF_LOG%
+wrapper.java.additional.25=-Dkaraf.restart.jvm.supported=true
+wrapper.java.additional.26=-Djava.io.tmpdir=%KARAF_DATA%/tmp
+wrapper.java.additional.27=-Djava.util.logging.config.file=%KARAF_ETC%/java.util.logging.properties
+wrapper.java.additional.28=-Dcom.sun.management.jmxremote
+wrapper.java.additional.29=-Dkaraf.startLocalConsole=false
+wrapper.java.additional.30=-Dkaraf.startRemoteShell=true
+----
+
+Specify the user that should run the ALM Server service in the SystemV init script file. It is not recommended to run the ALM Server or Agent as the root user.
+
+Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59-service, and find the line
+[source]
+----
+#RUN_AS_USER=
+----
+Replace it with 
+[source]
+----
+RUN_AS_USER=<Linux user>
+----
+In the same file, find the line
+[source]
+----
+su -m $RUN_AS_USER -s /bin/sh -c "$REALPATH $1"
+----
+Replace it with
+[source]
+----
+su $RUN_AS_USER -c "$REALPATH $1"
+----
+Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59-service file executable.
+[source]
+----
+chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+----
+Install the ALM Server service.
+[source]
+----
+sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/rc.d/init.d/
+sudo ln -s -f /etc/rc.d/init.d/almserver59-service /etc/rc.d/rc2.d/K20almserver59-service
+sudo ln -s -f /etc/rc.d/init.d/almserver59-service /etc/rc.d/rc2.d/S20almserver59-service
+----
+
+To start the ALM Server service, execute
+[source]
+----
+sudo /etc/rc.d/init.d/almserver59-service start
+----
+
+To stop the ALM Server service, execute
+[source]
+----
+sudo /etc/rc.d/init.d/almserver59-service stop
+----
+
+When you want to remove the ALM Server service, execute
+[source]
+----
+sudo rm /etc/rc.d/init.d/almserver59-service
+sudo rm /etc/rc.d/rc2.d/K20almserver59-service
+sudo rm /etc/rc.d/rc2.d/S20almserver59-service
+----
 
 [appendix]
 [[_jaasconfiguration]]
 == JAAS configuration
 
-For the authentication and authorization of users, IKAN ALM uses the Java Authentication and Authorization Service (JAAS) (see http://download.oracle.com/javase/6/docs/technotes/guides/security/jaas/JAASRefGuide.html[http://download.oracle.com/javase/6/docs/technotes/guides/security/jaas/JAASRefGuide.html,window=_blank]).
+For the authentication and authorization of users, IKAN ALM uses the Java Authentication and Authorization Service (JAAS) (see https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). JAAS authentication is performed in a pluggable fashion. This permits applications to remain independent from underlying authentication technologies. New or updated authentication technologies can be plugged into IKAN ALM without requiring modifications to the application itself.
 
-The IKAN ALM Server installation automatically preconfigures JAAS, so this appendix is only for troubleshooting, or if you want to adapt authentication, e.g., for using Windows domain authentication.
+The JAAS configuration used by Tomcat is set in the file _ALM_HOME_/system/security/jaas.conf. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details.
 
-JAAS authentication is performed in a pluggable fashion.
-This permits applications to remain independent from underlying authentication technologies.
-New or updated authentication technologies can be plugged into IKAN ALM without requiring modifications to the application itself.
+The JAAS configuration by the ALM Server can be found in the file _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml.
 
-=== IKAN ALM Server JAAS configuration
+By default, IKAN ALM is configured to use a password file that contains the authentication and authorization information of the 3 default users :
 
-The IKAN ALM Server installation modifies the java.security file of the Java Runtime that was selected in <<_serverparameters_1>>.
-This file is located in the subfolder jre/lib/security if the Java Runtime is a JDK, or in the subfolder lib/security when a Server JRE was selected.
+* "global", password "_global_", member of the user groups _ALM User_ and _ALM Administrator_ : a global administrator user that has full access rights.
 
-Note that if you use Tomcat to host the IKAN ALM Web application, it must be started with this selected Java Runtime, or else you will have authentication errors.
+* "project", password "_project_", member of the user groups _ALM User_ and _ALM Project_ : a user that represents an administrator of one or more Projects.
 
-The location of the login configuration file is set statically by specifying the URL in the login.config.url.n property (in the "`Default login configuration file`" paragraph).
+* "user", password "_user_", member of the user group _ALM User_ : a user that represents an end-user with limited access.
 
-For example:
+[NOTE]
+====
+While you can use the default security system based on a password file for getting started and for testing purposes, it is not recommended to use this for production. You should switch to a more secure system, like Microsoft Active Directory or LDAP.
+====
 
-[source]
-----
-## Default login configuration file##login.config.url.1=file:${user.home}/.java.login.config login.config.url.1=file:/opt/alm/system/security/jaas.config
-----
+The default JAAS configuration files contain examples for configuring ALM authentication and authorization using a password file, or using Microsoft Active Directory via the LDAP or LDAPS protocol.
 
-with "`/opt/alm/`" the chosen ALM_HOME.
+=== JAAS configuration: password file
 
-If multiple configuration files are specified (if n >= 2), they will be read and combined into one single configuration: 
+The default IKAN ALM JAAS configuration uses a simple password file. For Tomcat (jaas.conf), this looks like :
 
 [source]
 ----
-## Default login configuration file##login.config.url.1=file:${user.home}/.java.login.config login.config.url.1=file:c:/Documents and Settings/Administrator/.java.login.configlogin.config.url.2=file:c:/alm/system/security/jaas.config
+/** ALM Login **/
+ALM
+{
+    com.tagish.auth.FileLogin required pwdFile="_ALM_HOME_/system/security/passwd.config";
+};
 ----
 
-=== JVM option or user.home JAAS configuration
-
-If you are using Tomcat, there are two other ways to set up the JAAS configuration:
-
-. The first uses a system property which is set from the command line: -Djava.security.auth.login.config option.
-+
-When running Tomcat from a Linux/Unix shell or from a Windows Command Prompt, set the JAVA_OPTS variable in the file TOMCAT_HOME/bin/Catalina.sh or TOMCAT_HOME/bin/Catalina.bat: JAVA_OPTS=-Djava.security.auth.login.config=/opt/alm/system/security/jaas.config
-
-. The second option is to use the default configuration file which is loaded from the user`'s home directory: file:${user.home}/.java.login.config
-
-
-=== JAAS implementation: flat file security
-
-The IKAN ALM Server uses a simple JAAS implementation, where user groups and users are configured in a flat file.
-In the JAAS configuration file, this is specified as follows (when ALM_HOME=`"/opt/alm`"):
+For the ALM Server (JaasPropertiesLoginModule.xml) :
 
 [source]
 ----
-/** * ALM flat file security configuration  * Attention : the passwords in the passwd.config file must
-be stored in MD5 encryption format **/**/ALM{  com.tagish.auth.FileLogin required pwdFile=”/opt/alm/system/security/passwd.config";};
+	<!-- ALM login using File Login -->
+	<jaas:config name="ALM">
+		<jaas:module className="com.tagish.auth.FileLogin" flags="required">
+            pwdFile=_ALM_HOME_/system/security/passwd.config
+		</jaas:module>
+	</jaas:config>
 ----
 
-=== Flat file security: contents
-
-The contents of the passwd.config file when using flat file security is fairly easy and self-explanatory:
+The default password file (_ALM_HOME_/system/security/passwd.config) looks like this :
 
 [source]
 ----
-userid:encrypted password:groupname:groupname:groupnameuser:ee11cbb19052e40b07aac0ca060c23ee:ALM Userproject:46f86faa6bbf9ac94a7e459509a20ed0:ALM User:ALM Projectglobal:9c70933aff6b2a6d08c687a6cbb6b765:ALM User:ALM Administrator
+userid:encrypted password:groupname:groupname:groupname
+user:ee11cbb19052e40b07aac0ca060c23ee:ALM User
+project:46f86faa6bbf9ac94a7e459509a20ed0:ALM User:ALM Project
+global:9c70933aff6b2a6d08c687a6cbb6b765:ALM User:ALM Administrator
 ----
 
-The encrypted password is in MD5 encryption format.
-There are numerous free downloadable tools that can generate a MD5 checksum for a given string.
-There is even a JavaScript implementation that you can use online to calculate checksums at: http://pajhome.org.uk/crypt/md5/index.html[http://pajhome.org.uk/crypt/md5/index.html,window=_blank]
+Each line in the file represents a user. The format is <userId>:<password>:<groupname1>:<groupname2>:<groupname3>:... The passwords should be encrypted with the MD5 algorithm.
 
-For example, to add a user with User ID "`testuser`" and password "`testuser`" who belongs to the "`ALM User`" and "`ALM Project`" User Groups, do the following:
+For example, to add a user with User ID "`testuser`" and password "`testuser`" who belongs to the "`ALM User`" and "`ALM Project`" User Groups, add the following entry to the passwd.config file: 
 
-. Add following entry to the passwd.config file: `testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project`
+[source]
+----
+testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
+----
 
-. Stop and restart Apache Tomcat
+[[_jaasconfiguration_msad]]
+=== JAAS configuration: Microsoft Active Directory
 
-. Login to IKAN ALM using User ID "`testuser`" and Password "`testuser`".
+The default IKAN ALM JAAS configuration files contain examples of how to connect to Microsoft AD using LDAP. We will explain the example that uses the secure ldaps protocol. The instructions to use the less secure ldap protocol are similar : only the _ldapUrl_ properties are different.
 
+For Tomcat (jaas.conf) :
 
-:sectnums:
+[source]
+----
+/** Example LDAP Login using the Ldaptive library (https://www.ldaptive.org/) over a TLS/SSL connection
+**/
+/**
+LDAPLogin_SECURED
+{
+  org.ldaptive.jaas.LdapLoginModule required
+	provider="org.ldaptive.provider.unboundid.UnboundIDProvider"
+	ldapUrl="ldaps://ldaphost:636"
+	bindDn="CN=ldapuser,OU=Users,DC=company,DC=com"
+	bindCredential="ldapuserpassword"
+	baseDn="OU=Users,DC=company,DC=com"
+	subtreeSearch="true"
+	userFilter="(sAMAccountName={user})"
+	referral="follow";
+   org.ldaptive.jaas.LdapRoleAuthorizationModule required
+	provider="org.ldaptive.provider.unboundid.UnboundIDProvider"
+	ldapUrl="ldaps://ldaphost:636"
+	bindDn="CN=ldapuser,OU=Users,DC=company,DC=com"
+	bindCredential="ldapuserpassword"
+	baseDn="OU=Users,DC=company,DC=com"
+	subtreeSearch="true"
+	userFilter="(sAMAccountName={user})"
+	roleBase="OU=Groups,DC=company,DC=com"
+	roleFilter="(|(sAMAccountName={user})(member={dn}))"
+	roleAttribute="memberOf"
+	searchEntryHandlers="org.ldaptive.handler.RecursiveEntryHandler{{searchAttribute=memberOf}{mergeAttributes=CN}}"
+	referral="follow";
+};
+**/
+----
 
-:sectnums!:
+For ALM Server (JaasPropertiesLoginModule.xml) :
+
+[source]
+----
+	<!-- Example LDAP Login using the Ldaptive library (https://www.ldaptive.org/) over a TLS/SSL connection -->
+	<jaas:config name="LDAPLogin_SECURED">
+		<jaas:module className="org.ldaptive.jaas.LdapLoginModule" flags="required">
+			provider=org.ldaptive.provider.unboundid.UnboundIDProvider
+			ldapUrl=ldaps://ldaphost:636
+			bindDn=CN=ldapuser,OU=Users,DC=company,DC=com
+			bindCredential=ldapuserpassword
+			baseDn=OU=Users,DC=company,DC=com
+			subtreeSearch=true
+			userFilter=(sAMAccountName={user})
+			referral=follow
+			org.osgi.framework.BundleContext=dummy
+		</jaas:module>
+		<jaas:module className="org.ldaptive.jaas.LdapRoleAuthorizationModule" flags="required">
+			provider=org.ldaptive.provider.unboundid.UnboundIDProvider
+			ldapUrl=ldaps://ldaphost:636
+			bindDn=CN=ldapuser,OU=Users,DC=company,DC=com
+			bindCredential=ldapuserpassword
+			baseDn=OU=Users,DC=company,DC=com
+			subtreeSearch=true
+			userFilter=(sAMAccountName={user})
+			roleBase=OU=Groups,DC=company,DC=com
+			roleFilter=(|(sAMAccountName={user})(member={dn}))
+			roleAttribute=memberOf
+			searchEntryHandlers=org.ldaptive.handler.RecursiveEntryHandler{{searchAttribute=memberOf}{mergeAttributes=CN}}
+			referral=follow
+			org.osgi.framework.BundleContext=dummy
+		</jaas:module>
+	</jaas:config>
+
+----
+
+To configure IKAN ALM to authenticate using Microsoft AD, rename the JAAS config realm named "ALM" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.conf_ and _JaasPropertiesLoginModule.xml_ :
+
+[cols="1,3", frame="topbot", options="header"]
+|===
+| Property
+| Description
+
+|
+
+ldapUrl
+|
+
+Ldaps url to connect to the Active Directory Domain Controller. Usually of the form "ldaps://<hostname of dc>:636".
+|
+
+bindDn
+|
+
+Distinguished Name (DN) of an AD user that has sufficient access rights to connect to AD and retrieve another user's information.
+|
+
+bindCredential
+|
+
+Password of the bindDn user.
+|
+
+baseDn
+|
+
+Base DN of an Organizational Unit (OU) from which an LDAP search for a user will start.
+|
+
+roleBase
+|
+
+Base DN of an Organizational Unit (OU) from which an LDAP search for a user's roles will start.
+|===
+
+[NOTE]
+====
+Values set in the file _jaas.conf_ *MUST* be surrounded by ", while values set in the file _JaasPropertiesLoginModule.xml_ *MUST NOT* be surrounded by ".
+====
 
 [appendix]
 [[_db2configuration]]
@@ -1141,35 +1495,3 @@ The page size of a table space in DB2 is determined by the associated buffer poo
 So, if you want to use an existing DB2 database with the page size already set to 4K, a possible workaround would be to create a new buffer pool with a page size of 8K, and next to create a new table space (e.g., USERSPACE2) with a page size of 8K and associate it with the new buffer pool.
 
 Furthermore, you will also need to create a new system temporary tablespace (e.g., TEMPSPACE2) and associate it with a buffer pool that has a page size set to at least 8K.
-
-:sectnums:
-
-:sectnums!:
-
-[appendix]
-[[_troubleshooting]]
-== Troubleshooting
-
-=== The installer doesn't start and displays the error:"Java Runtime not found"
-
-When launching the 32-bit or 64-bit IKAN ALM installer on Windows, you may receive the following error, after which the IKAN ALM installer quits:
-
-
-image::figE.1.png[,346,204] 
-
-The most likely cause is that there is no suitable Java Runtime Environment (JRE) installed.
-The 32-bit installer needs a 32-bit JRE installed, while the 64-bit installer needs a 64-bit JRE installed.
-Furthermore, the JRE should be version 1.7 or 1.8.
-
-The solution is to install a suitable JRE.
-
-If for some reason you do not want to install a JRE, there is a workaround to launch the IKAN ALM installer with only a Java Development Kit (JDK) or a Server JRE installed: set the JAVA_HOME environment variable to point to the JDK or Server JRE folder, either globally on the system, or from a commandline prompt, and then launch the IKAN ALM installer.
-
-When you set JAVA_HOME from a commandline prompt, there are two possible pitfalls:
-
-* do not wrap the JAVA_HOME path in quotes, even when it contains spaces
-
-* when UAC is enabled (Windows Vista and later), the commandline prompt must have Administrative privileges (the title of the prompt must start with "Administrator:")
-
-
-:sectnums:

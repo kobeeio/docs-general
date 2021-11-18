@@ -133,7 +133,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 === Package-based Build and Deployment
 
-* Ability to select and move individual files or components through a lifecycle (Subversion, TFVC and ClearCase). Supports mainframe way of development
+* Ability to select and move individual files or components through a lifecycle (Git(Hub), Subversion and TFVC). Supports mainframe way of development
 * Specific revisions/versions of individual files can be chosen
 * A history log is maintained, allowing auditing the changes in the content of a Package (files added/removed/modified)
 * A Package Build Group concept handles dependencies between Packages

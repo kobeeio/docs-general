@@ -220,7 +220,7 @@ alm.commandline.install=true
 # Flag to specify whether the communication between the IKAN ALM components must
 # be secured.  Note that if one IKAN ALM component is installed secured, all components
 # must be installed secured.
-alm.xmlrpc.secure=false
+alm.xmlrpc.secure=true
 ----
 
 In the General Settings, you specify which components of IKAN ALM you want to install. 
@@ -229,7 +229,7 @@ Setting __alm.server.install__ to "true" will install the ALM Server and deploy 
 Setting __alm.agent.install__ to "true" will install the ALM Agent. +
 Setting __alm.commandline.install__ to "true" will install the ALM Commandline.
 
-If __alm.xmlrpc.secure__ is set to "true", then all communication between the ALM components is encrypted. As a consequence, if additional ALM components, like the ALM Agent or the ALM Commandline, are installed on remote hosts, they must also set __alm.xmlrpc.secure__ to "true" during installation, or communication with those components will fail.
+If __alm.xmlrpc.secure__ is set to "true", then all communication between the ALM components is encrypted. As a consequence, if additional ALM components, like the ALM Agent or the ALM Commandline, are installed on remote hosts, they must also set __alm.xmlrpc.secure__ to "true" during installation, or communication with those components will fail. We strongly recommend setting __alm.xmlrpc.secure__ to "True" for security reasons.
 
 
 ==== ALM Server and ALM Web Application settings

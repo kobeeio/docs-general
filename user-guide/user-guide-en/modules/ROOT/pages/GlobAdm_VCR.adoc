@@ -398,6 +398,8 @@ Refer to the following sections for detailed information:
 ====
 This option is only available if you have Global Administrator Access Rights in IKAN ALM.
 Before you can create the Git Version Control Repository in IKAN ALM, you must install a Git Client on the IKAN ALM Server.
+
+This Git repository definition will also allow you to connect with a https://www.github.com[GitHub] repository.
 ====
 
 . In the Global Administration context, select__ Version Control Repositories > Create__.
@@ -405,7 +407,7 @@ Before you can create the Git Version Control Repository in IKAN ALM, you must i
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Create-Git.png[,611,586] 
+image::GlobAdm-VCR-Create-Git.png[,613,607] 
 +
 . Fill out the fields in the _Create Git Repository_ screen. Fields marked with a red asterisk are mandatory:
 +
@@ -501,7 +503,7 @@ If IKAN ALM is not able to establish a connection with the Git Repository within
 
 The definition of a Time-Out value is mandatory.
 |Omit Blobs When Cloning
-|Select the Yes option to clone this Git repository with the _--filter=blob:none_ option active. Enabling this option can greatly speed up the Retrieve Code Phase. Consult the Git documentation for more information on this option.
+|Select the _Yes_ option to clone this Git repository with the _--filter=blob:none_ option active. Enabling this option can greatly speed up the _Retrieve Code_ Phase. Consult the Git clone documentation for more information on this option.
 |===
 . Click __Test Connection__ to verify if IKAN ALM can establish a connection to the Git Repository. If the test is successful, the following message is displayed:
 +
@@ -552,7 +554,7 @@ The following options are available:
 * the _Reset search_ link to clear the search fields.
 . Verify the information on the _Git Repositories Overview_ panel.
 +
-For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatesvnrepository,Creating a Subversion Repository>>.
+For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_globadm_vcr_git_create,Creating a Git Repository>>.
 . Depending on your access rights, the following links may be available on the _Git Repositories Overview_ panel:
 +
 
@@ -959,6 +961,8 @@ Refer to the following sections for detailed information:
 ====
 This option is only available if you have Global Administrator Access Rights in IKAN ALM.
 Before you can create the TFVC Version Control Repository in IKAN ALM, you must install a TFVC Client   (Team Explorer for MS Visual Studio or Team Explorer Everywhere for Team Foundation Server) on the IKAN ALM Server.
+
+This TFVC repository definition will also allow you to connect with an Azure Devops TFVC repository.
 ====
 . In the Global Administration context, select__ Version Control Repositories > Create__.
 . Select _TFVC_ from the drop-down list in the _Type_ field.
@@ -1017,7 +1021,6 @@ This field is mandatory.
 
 |User ID
 |Enter the User ID that IKAN ALM will use to access the TFVC Repository.
-Repository.
 
 This field is optional.
 

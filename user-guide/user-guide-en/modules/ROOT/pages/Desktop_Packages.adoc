@@ -158,7 +158,7 @@ For more information on the usage of search panels and filters, refer to the sec
 |image:icons/view.gif[,15,15] 
 |View
 
-This option is available to all IKAN ALM Users.
+This option is available to IKAN ALM Users with Project User Access Rights.
 It allows viewing the selected Package definition and its connected file revisions.
 
 <<Desktop_Packages.adoc#_desktop_viewpackage,Viewing Package Settings>>
@@ -166,13 +166,13 @@ It allows viewing the selected Package definition and its connected file revisio
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to IKAN ALM Users with Project User Access Rights.
 It allows editing the Package definition and/or its connected file revisions. <<Desktop_Packages.adoc#_desktop_editpackage,Editing a Package>>
 
 |image:icons/hide.gif[,15,15]  / image:icons/show.gif[,15,15] 
 |Hide / Show
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to IKAN ALM Users with Project User Access Rights.
 It allows hiding the selected Package.
 
 <<Desktop_Packages.adoc#_desktop_hideshowpackage,Hiding/Showing a Package>>

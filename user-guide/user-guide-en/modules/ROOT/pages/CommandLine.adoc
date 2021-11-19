@@ -160,7 +160,7 @@ Use the Level Name as defined in IKAN ALM.
 
 |tag
 |This parameter allows defining the Tag with which the Build will be tagged in the VCR.
-Only has effect on Level Requests of a Build Level If omitted, a tag name will be generated using the Tag Template of the Project Stream.
+Only has effect on Level Requests of a Build Level. If omitted, a tag name will be generated using the Tag Template of the Project Stream.
 |No
 
 |redeliver
@@ -176,6 +176,11 @@ In case you want to allow a redeliver, you must explicitly set the _redeliver_ p
 The accepted format is __dd/MM/yyyy HH:mm__.
 Only has effect on Level Requests of a Test or Production Level.
 If omitted, the Level Request will run as soon as possible.
+|No
+
+|deploysToExecute
+|This parameter allows choosing the Deploy Environments to Deploy to if the Level has Optional Deploys enabled in the chosen Lifecycle. Accepts a case sensitive comma separated list of names.
+If omitted when available, no Deploy Environments will be deployed to.
 |No
 
 |paramfile

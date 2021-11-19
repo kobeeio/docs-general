@@ -10,7 +10,7 @@ The IKAN ALM Issue Tracking functionality provides the possibility to link issue
 
 Issues can get linked to a Level Request in the following ways:
 
-* via an automatic search for handled issues in the comments provided by the developers when committing or checking in sources into the VCR. This automatic search is done in a separate Phase during the handling of a Build Level Request, and is based on a regular expression describing the issue tracking number format. Currently this is only supported for a Subversion, CVS or Microsoft Team Foundation Version Control Repository. 
+* via an automatic search for handled issues in the comments provided by the developers when committing or checking in sources into the VCR. This automatic search is done in a separate Phase during the handling of a Build Level Request, and is based on a regular expression describing the issue tracking number format. 
 * via the enumeration of solved issues when delivering to Test/Production levels enabling easy generation of Release Notes
 * via a manual addition of an issue to a successful Level Request, using the GUI widgets on the _Level Request Detail_ screen.
 
@@ -137,13 +137,13 @@ The characters you enter are displayed as asterisks.
 |Enter the Issue Pattern.
 
 This Issue Pattern must be a valid regular expression.
-For more information on how to provide valid regular expressions that may be interpreted by IKAN ALM, refer to http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html[http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html,window=_blank].
+For more information on how to provide valid regular expressions that may be interpreted by IKAN ALM, refer to https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html,window=_blank].
 
-If provided, this pattern will be used to detect issue numbers in the commit comments in the VCR (currently supported for Subversion, Git, Team Foundation and CVS). This pattern matching is done in a separate Phase at the end of a successful Build Level Request.
+If provided, this pattern will be used to detect issue numbers in the commit comments in the VCR. This pattern matching is done in a separate Phase at the end of a successful Build Level Request.
 
 The pattern matching is case insensitive, this is reflected in the examples below.
 
-Note that the field may be neglected (together with the Issue ID Pattern) for a Team Foundation ITS when it is connected to a Project with a Team Foundation versioning system: in that case the Work Items are directly connected to a Commit, so it`'s not necessary that IKAN ALM parses the issue comments to detect the connected Work Items
+Note that the field may be neglected (together with the Issue ID Pattern) for a Team Foundation ITS when it is connected to a Project with a Team Foundation versioning system: in that case the Work Items are directly connected to a Commit, so it`'s not necessary that IKAN ALM parses the issue comments to detect the connected Work Items.
 
 *Examples* (the bold text is the text that will be matched):
 

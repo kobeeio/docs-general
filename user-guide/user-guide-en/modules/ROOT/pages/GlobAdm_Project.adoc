@@ -204,7 +204,7 @@ They all have the format __$\{name}__:
 * __$\{buildNumber}__: This variable returns the number of the Build, so that the Build can be matched with its Tag.
 * __$\{projectName}__: This variable returns the name of the IKAN ALM Project.
 * __$\{vcrProjectName}__: This variable returns the VCR name of the Project.
-* __$\{dateTime(dateformat)}__: This variable returns the timestamp of the Building action in the indicated format. _yyyy-MM-dd_ is a valid format. For other valid formats, refer to http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html[http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html,window=_blank]
+* __$\{dateTime(dateformat)}__: This variable returns the timestamp of the Building action in the indicated format. _yyyy-MM-dd_ is a valid format. For other valid formats, refer to https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html,window=_blank]
 * $\{packageName}: This variable returns the name of the Package associated to the Level, when the Build is executed (only used for Package-based Projects). 
 
 
@@ -451,7 +451,7 @@ image::GlobAdmin-Project-Export-Dialog.png[,412,142]
 
 [NOTE]
 ====
-When editing the project export file, always change the project name, since IKAN ALM will refuse to import a project which name is already in use by another project.
+When editing the Project export file, always change the Project name, since IKAN ALM will refuse to import a Project when another Project with the same name already exists.
 ====
 
 

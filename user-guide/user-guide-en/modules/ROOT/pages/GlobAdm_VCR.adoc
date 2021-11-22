@@ -405,7 +405,7 @@ Before you can create the Git Version Control Repository in IKAN ALM, you must i
 +
 The following screen is displayed:
 +
-image::GlobAdm-VCR-Create-Git.png[,611,586] 
+image::GlobAdm-VCR-Create-Git.png[,627,549] 
 +
 . Fill out the fields in the _Create Git Repository_ screen. Fields marked with a red asterisk are mandatory:
 +
@@ -1017,7 +1017,6 @@ This field is mandatory.
 
 |User ID
 |Enter the User ID that IKAN ALM will use to access the TFVC Repository.
-Repository.
 
 This field is optional.
 

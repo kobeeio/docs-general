@@ -447,7 +447,7 @@ image::GlobAdm-UserGroup-EditUserGroup.png[,611,751]
 +
 . In the _Edit User Group_ panel, edit the fields as required.
 +
-. The _Nested User Group Members_ panel displays the User Groups that are a member of another User Group. This means they, as a child User Group, get the same access rights, receive the same notifications and have the same permissions as the users in the parent User Group.
+. The _Nested User Groups_ panel displays the User Groups that are a member of another User Group. This means they, as a child User Group, get the same access rights, receive the same notifications and have the same permissions as the users in the parent User Group.
 +
 .Nested User Group
 ====
@@ -481,10 +481,8 @@ image::GlobAdm-UserGroup-EditNestedUserGroups.png[,870,258]
 +
 Edit the fields in the __Edit Nested User Groups__ panel as required.
 +
-Determine the allocation of Names to this Nested User Group:
-
-* To add a Name to this Nested User Group, select the Name in the _Non Nested User Groups_ list and click the _<<_ button.
-* To remove a Name from this Nested User Group, select the Name in the _Nested User Groups_ list and click the __>> __button.
+* To add a User Group to the current User Group, select the User Group in the _Non Nested User Groups_ list and click the _<<_ button.
+* To remove a User Group from the current User Group, select the User Group in the _Nested User Groups_ list and click the __>> __button.
 +
 . Click __Save__ to save your changes.
 +
@@ -497,7 +495,7 @@ You can also click:
 [[_globadm_usersgroups_editusergroupmembers]]
 === Editing the User Group Members
 
-. On the __User Group Members__ panel underneath the _Nested User Group Members_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit User Group Members__ link to change the selected User Group definition. 
+. On the __User Group Members__ panel underneath the _Nested User Groups_ panel (See <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_editusergroup,Editing a User Group>>), click the image:icons/edit.gif[,15,15] __Edit User Group Members__ link to change the selected User Group definition. 
 +
 The following screen is displayed:
 +
@@ -549,7 +547,7 @@ image::GlobAdm-UserGroup-Delete-Error.png[,622,616]
 
 [NOTE]
 ====
-You will need to cancel the displayed connections, before you can delete the User Group.
+You will need to remove the User Group from the displayed connected IKAN ALM Objects, before you can delete the User Group.
 ====
 
 [[_globadm_usersgroups_usergrouphistory]]

@@ -7,7 +7,7 @@
 
 The _System_ menu provides an entry to view or edit the IKAN ALM Server configuration settings and to perform Housekeeping Actions in the IKAN ALM Build Archive. 
 
-Users which have Global Admin Access rights will have access to the following Submenus:
+Users that have Global Admin Access rights will have access to the following Submenus:
 
 * <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>
 * <<GlobAdm_System.adoc#_globadm_system_housekeeping,Housekeeping>>
@@ -222,7 +222,7 @@ Settings for connecting to an external mail system can also be defined on the Ma
 
 [NOTE]
 ====
-Theses Mail settings can be tested via the _Notify
+The Mail settings can be tested via the _Notify
 IKAN ALM Users_ submenu option. <<GlobAdm_Misc.adoc#_globadm_notifyusers,Notifying IKAN ALM Users>>
 ====
 
@@ -345,7 +345,7 @@ a|The IKAN ALM REST API enables you to interact with IKAN ALM programmatically a
 
 By default, this feature is disabled for security reasons.
 
-The IKAN ALM REST API is fully documented and (when Restful Web services are Enabled)accessible through the web interface: _Help > REST API Documentation_.
+The IKAN ALM REST API is fully documented and, when Restful Web services are enabled, accessible through the web interface: _Help > REST API Documentation_.
 
 |Secure Server-Agent Communication
 |This field indicates whether or not the web services communication between the IKAN ALM Web Application, IKAN ALM Server and IKAN ALM Agent is done through a secure channel. 

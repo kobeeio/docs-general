@@ -33,7 +33,7 @@ To override the predefined parameter value for a specific Environment, define a 
 [NOTE]
 ====
 
-On the _Miscellaneous_ tab of the _System Settings_ screen, you can specify the prefix for the predefined Parameters and properties file. <<GlobAdm_System.adoc#_globadm_systemsettings_miscellaneous,Miscellaneous>>
+On the _Miscellaneous_ subpanel of the _System Settings_ screen, you can specify the prefix for the predefined Parameters and properties file. See <<GlobAdm_System.adoc#_globadm_systemsettings_miscellaneous,System Settings - Miscellaneous>>.
 
 There also exist Predefined Level Parameters.
 They are available during the execution of a Custom Phase on a Level, They may not be overridden, since it is not (yet) possible to define Level Parameters.
@@ -82,7 +82,7 @@ For a description of the fields, see <<ProjAdm_EnvParams.adoc#_environmentparams
 
 [NOTE]
 ====
-The icon image:icons/icon_MachineParameter.png[,15,15]  indicates that the parameter is a Machine Parameter. <<GlobAdm_Machines.adoc#_globadm_machineparameters,Machine Parameters>> In order to show these Parameters, you should set the __Show Machine Parameters__ criterion to __Yes__.
+The icon image:icons/icon_MachineParameter.png[,15,15]  indicates that the parameter is a Machine Parameter. See <<GlobAdm_Machines.adoc#_globadm_machineparameters,Machine Parameters>>. In order to show these Parameters, you should set the __Show Machine Parameters__ criterion to __Yes__.
 
 Columns marked with the image:icons/icon_sort.png[,15,15]  icon can be sorted alphabetically (ascending or descending).
 ====
@@ -212,7 +212,7 @@ Select the _No_ option button, if the new Environment Parameter should not be de
 This field is not provided for secured Environment Parameters.
 
 |User Controlled    
-|Allow users with a Project User role to create, read, update and delete environment parameters. Once enabled, the parameters retain this state even if a project administrator disables this option afterwards.
+|Allow Users with a Project User role to create, read, update and delete Environment Parameters. Once enabled, the Parameters retain this state even if a Project Administrator disables this option afterwards.
 |===
 
 . Click __Create __to confirm the creation of the Environment Parameter.

@@ -110,7 +110,7 @@ where:
 ** __b12__: Build Number
 ** __CONTBUILD__: Build Environment name
 ** __win__: Build suffix
-** __$$.$$zip__: extension referring to the compression method as defined in the Compress Build Result Phase.
+** __$$.$$zip__: extension referring to the compression method as defined in the _Compress Build_ Core Phase. See <<App_Phases.adoc#_phases_buildphases_compressbuild,Compress Build Phase>>.
 
 |Build Suffix
 |In this field, enter the Build Suffix for the Build Environment, if required.
@@ -118,9 +118,7 @@ where:
 |Downloadable Build
 |Indicate whether you want the compressed Build Result created on this Build Level to be downloadable.
 
-If the option is activated, the compressed Build Results appear as a hyperlink on the _Results_ tab page of the _Level Request Detail_ screen.
-
-<<Desktop_LevelRequests.adoc#_desktop_lr_results,Results>>
+If the option is activated, the compressed Build Results appear as a hyperlink on the _Results_ tab page of the _Level Request Detail_ screen. See <<Desktop_LevelRequests.adoc#_desktop_lr_results,Level Request Detail - Results>>
 
 |Debug
 |Indicate whether or not the Debug option must be activated for this Build Environment.
@@ -128,7 +126,7 @@ If the option is activated, the compressed Build Results appear as a hyperlink o
 If Debug is activated for a Build Environment, the Source and Result Clean-up actions (<<Desktop_LevelRequests.adoc#_srebuildanddeploylr,(Re)Build and Deploy Level Requests>>) will not be performed, so that the user may use the available source to run the build script manually for testing purposes.
 
 |User Controlled Parameters
-|Allow users with a Project User role to create, read, update and delete environment parameters. Once enabled, the parameters retain this state even if a project administrator disables this option afterwards.
+|Allow Users with a Project User role to create, read, update and delete Environment Parameters. Once enabled, the Parameters retain this state even if a Project Administrator disables this option afterwards.
 |===
 
 . Verify the information on the _Build Environments Overview_ panel.
@@ -314,7 +312,7 @@ The default Phases are:
 * Cleanup Result
 
 
-When executing a Build for this Environment, a log will be created for each of the Phases. <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>
+When executing a Build for this Environment, a log will be created for each of the Phases. The logs will be shown on the _Level Request Details_ page. For more information, see : <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>.
 
 Refer to the following procedures for more information:
 

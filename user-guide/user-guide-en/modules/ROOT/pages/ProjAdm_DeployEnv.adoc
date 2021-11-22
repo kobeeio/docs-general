@@ -15,7 +15,7 @@ Deploy Environments must be assigned to a Level in a Lifecycle in order to be ac
 The Deploy Environments submenu option lets you start the following procedures:
 
 * <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Creating a Deploy Environment>>
-* <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironmentsoverview,Deploy Environments The Deploy Environments Overview Screen>>
+* <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironmentsoverview,The Deploy Environments Overview Screen>>
 +
 The _Deploy Environments Overview_ screen lets you verify and change the information concerning Deploy Environments and related Phases.
 The following actions are possible:
@@ -112,7 +112,7 @@ The decompressed files are compared and the following actions are taken:
 If Debug is activated for a Deploy Environment, the Build Clean-up action (<<Desktop_LevelRequests.adoc#_srebuildanddeploylr,action 28 of the Build and Deploy Level Requests Overview>>) will not be performed, so that the user may use the available build results to run the deploy script manually for testing purposes.
 
 |User Controlled Parameters
-|Allow users with a Project User role to create, read, update and delete environment parameters. Once enabled, the parameters retain this state even if a project administrator disables this option afterwards.
+|Allow Users with a Project User role to create, read, update and delete Environment Parameters. Once enabled, the Parameters retain this state even if a Project Administrator disables this option afterwards.
 |===
 
 . Verify the information on the _Deploy Environments Overview_ panel.
@@ -123,7 +123,7 @@ If Debug is activated for a Deploy Environment, the Build Clean-up action (<<Des
 This Overview lists __all__ Deploy Environments defined for __all__ Levels belonging to the selected Project.
 ====
 +
-For more information on the available links, refer to <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironmentsoverview,Deploy Environments The Deploy Environments Overview Screen>>.
+For more information on the available links, refer to <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironmentsoverview,The Deploy Environments Overview Screen>>.
 . Click _Create_ to confirm the creation of the new Deploy Environment.
 +
 You can also click the _Reset_ button to clear the fields and restore the initial values.
@@ -219,9 +219,9 @@ The following screen is displayed:
 +
 image::ProjAdmin-DeployEnv-Edit.png[,1217,499] 
 +
-. Click the _Edit_ button on the _Build Environment Info_ panel.
+. Click the _Edit_ button on the _Deploy Environment Info_ panel.
 +
-The __Edit Build Environment __window is displayed:
+The __Edit Deploy Environment __window is displayed:
 +
 image::ProjAdmin-DeployEnv-Edit_popup.png[,480,360] 
 +
@@ -230,7 +230,7 @@ image::ProjAdmin-DeployEnv-Edit_popup.png[,480,360]
 For a detailed description of the fields, refer to <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Creating a Deploy Environment>>.
 . Click Save, once you have finished your changes.
 +
-You can also click __Refresh __to retrieve the settings from the database or __Cancel __to return to the __Edit Build Environment__ screen without saving your changes.
+You can also click __Refresh __to retrieve the settings from the database or __Cancel __to return to the __Edit Deploy Environment__ screen without saving your changes.
 
 [[_projadm_deplenv_delete]]
 === Deleting a Deploy Environment 
@@ -294,7 +294,7 @@ The default Phases are:
 * Cleanup Build Result
 
 
-When executing a Deploy for this Environment, a log will be created for each of the Phases. <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>
+When executing a Deploy for this Environment, a log will be created for each of the Phases. The logs will be shown on the _Level Request Details_ page. For more information, see : <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>.
 
 Refer to the following procedures for more information:
 
@@ -344,11 +344,11 @@ Select the _Insert Phase_ link underneath the _Phases Overview_ panel.
 
 . Switch to the _Deploy Environments Overview_ screen.
 +
-<<ProjAdm_DeployEnv.adoc#_projadm_deployenvironmentsoverview,Deploy Environments The Deploy Environments Overview Screen>>
+<<ProjAdm_DeployEnv.adoc#_projadm_deployenvironmentsoverview,The Deploy Environments Overview Screen>>
 . On the _Deploy Environments Overview_ panel, click the image:icons/edit_phases.gif[,15,15] _Edit Phases_ link.
 . On the _Phases Overview_ panel, click the _Insert Phase_ link.
 +
-The _Insert Phase_ is displayed.
+The _Insert Phase_ screen is displayed.
 +
 image::ProjAdmin-DeployEnv-InsertPhase.png[,925,652] 
 +

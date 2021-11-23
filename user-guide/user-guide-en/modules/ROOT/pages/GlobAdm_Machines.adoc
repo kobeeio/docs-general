@@ -57,7 +57,7 @@ This field is optional.
 
 |Operating System
 |Select the required Operating System from the drop-down list.
-The Select ion of an Operating System is mandatory.
+The Selection of an Operating System is mandatory.
 
 |DHCP Enabled
 |Indicate whether or not the Machine is DHCP-enabled.
@@ -88,7 +88,7 @@ If the IKAN ALM Server uses the default value of 20021, you can also leave this 
 |Select the required Transporter Protocol from the drop-down list.
 The list contains the names of all Transporters defined in IKAN ALM (FTP, FileCopy and SSH).
 
-This Protocol defines how sources, scripts, build results and phases will be transported between the IKAN ALM Server locations (Build Archive, Work Copy, Script and Phase Catalog Loacation) and this Machine.
+This Protocol defines how sources, scripts, build results and phases will be transported between the IKAN ALM Server locations (Build Archive, Work Copy, Script and Phase Catalog Location) and this Machine.
 
 The Selection of a Transporter Protocol is mandatory.
 

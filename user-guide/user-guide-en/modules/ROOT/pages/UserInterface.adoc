@@ -41,21 +41,21 @@ a|This drop-down menu contains the following options:
 Select this option to create a new Level Request. <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_selectlevel,Create Level Request: Select Level>>
 * _Overview Level Requests_
 +
-Select this option to switch to the _Level Request Overview_ screen. <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>>
+Select this option to switch to the _Level Requests Overview_ screen. <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>>
 +
-You can also directly click the Level Requests Top Menu Item to switch to this screen.
+You can also directly click the _Level Requests_ Top Menu Item to switch to this screen.
 * _Overview Builds and Deploys_
 +
-Select this option to switch to the _Build and Deploy Overview_ screen. <<Desktop_LevelRequests.adoc#_desktop_lr_buildsdeploysoverview,Builds and Deploys Overview>>
+Select this option to switch to the _Builds and Deploys Overview_ screen. <<Desktop_LevelRequests.adoc#_desktop_lr_buildsdeploysoverview,Builds and Deploys Overview>>
 * _Recent Level Requests_
 +
 A list of the most recently visited Level Requests.
 * _Level Request Filters_
 +
-A list of defined search filters for the Level Request Overview screen.
+A list of defined search filters for the Level Requests Overview screen.
 * _Build and Deploy Filters_
 +
-A list of defined search filters for the Build and Deploy Overview screen.
+A list of defined search filters for the Builds and Deploys Overview screen.
 
 |Packages
 a|This drop-down menu contains the following options:
@@ -68,20 +68,20 @@ Select this option to create a new Package. <<Desktop_Packages.adoc#_desktop_cre
 Select this option to create a new Package Build Group. <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Creating a Package Build Group>>
 * _Overview Packages_
 +
-Select this option to switch to the Package
+Select this option to switch to the Packages
 Overview_ screen. <<Desktop_Packages.adoc#_desktop_packageoverview,Packages Overview>>
 +
-You can also directly click the Packages Top Menu Item to switch to this screen.
+You can also directly click the _Packages_ Top Menu Item to switch to this screen.
 * _Overview Package Build Groups_
 +
-Select this option to switch to the Package Build Group
+Select this option to switch to the Package Build Groups
 Overview_ screen. <<Desktop_PackageGroups.adoc#_desktop_packagegroupsoverview,Package Build Groups Overview>>
 * _Recent Packages_
 +
 A list of the most recently visited Packages.
 * _Package Filters_
 +
-A list of defined search filters for the Package Overview screen.
+A list of defined search filters for the Packages Overview screen.
 
 |Approvals
 a|This drop-down menu contains the following options:
@@ -98,13 +98,13 @@ a|This drop-down menu contains the following options:
 
 * _Project Administration_
 +
-Select this option to switch to the Project Overview page. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_accessing,The Projects Overview Screen>>
+Select this option to switch to the Projects Overview page. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_accessing,The Projects Overview Screen>>
 * _Recent Projects_
 +
-A list of the most recently visited projects.
+A list of the most recently visited Projects.
 * _Project Filters_
 +
-A list of defined search filters for the Package Overview screen.
+A list of defined search filters for the Projects Overview screen.
 
 |Global Administration
 |Select this option to switch to the Global Administration screen. <<GlobAdm_Introduction.adoc#_globadm_introduction,Global Administration>>
@@ -164,13 +164,13 @@ The __Selected Menu Indication __below the Submenu shows how the user switched t
 The following format is used: _Main Menu Option > Submenu
 Option_
 
+[[_babcjedaj8]]
+=== Search Panels
 
 image::UserInterface-SearchPanel.png[,983,161] 
 
-[[_babcjedaj8]]
-=== Search Panels
 _Search_ panels allow specifying search criteria, which restrict the list of items displayed in the _Overview_ panel.
-While defining those search criteria in comboboxes and text fields, you may use the standard * and ? wild card characters.
+While defining those search criteria in comboboxes and text fields, you may use the standard * and ? wildcard characters.
 The asterisk can represent 0, 1 or more characters.
 The question mark can represent exactly 1 character.
 

@@ -419,7 +419,7 @@ a|_RELATED TOPICS_
 == FTP Transporters 
 (((Transporters ,FTP)))  (((FTP Transporters))) 
 
-The built-in FTP Transporter Client makes it possible to use FTP as a protocol for transporting Custom Phase, build results, scripts or sources between the IKAN ALM server and one or more Agents.
+The built-in FTP Transporter Client makes it possible to use FTP as a protocol for transporting Custom Phases, build results, scripts or sources between the IKAN ALM Server and one or more Agents.
 
 [NOTE]
 ====
@@ -501,7 +501,7 @@ FTP Server mapped to a hostname: ``ftp.ikan.be``.
 |Server FTP Port
 |Enter the Port Number of the FTP Server running on the IKAN ALM Server.
 
-_Note:_ The value entered in this field will override the value specified in the System Settings. <<GlobAdm_System.adoc#_globadm_system_settings,System System Settings>>If not specified in the System Settings nor on this screen, the default FTP Port Number `21` will be used.
+_Note:_ The value entered in this field will override the value specified in the System Settings. See : <<GlobAdm_System.adoc#_globadm_system_settings,System System Settings>>. If not specified in the System Settings nor on this screen, the default FTP Port Number `21` will be used.
 
 |Connection Mode
 |Select the connection mode: _Passive_ or __Active__.
@@ -799,7 +799,7 @@ It allows you to define the hostname of the IKAN ALM Server Machine in case it i
 |Server SSH Port
 |Enter the Port Number of the SSH Server running on the IKAN ALM Server.
 
-_Note:_ The value entered in this field will overrule the value specified in the System Settings. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>If not specified in the System Settings nor on this screen, the default SSH Port Number `22` will be used.
+_Note:_ The value entered in this field will override the value specified in the System Settings. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>. If not specified in the System Settings nor on this screen, the default SSH Port Number `22` will be used.
 
 |Work Copy Path Prefix
 |Enter the prefix for the Work Copy Location (the location where the VCR interface places the checked out sources on the IKAN ALM Server so that it is accessible from a remote IKAN ALM Agent handling a build process). The Server Location will be formed by concatenating this prefix together with the Relative Location defined in the System Settings. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>

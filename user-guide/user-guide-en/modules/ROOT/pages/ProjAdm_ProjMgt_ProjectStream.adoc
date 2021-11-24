@@ -425,7 +425,7 @@ Click __Back __to return to the previous screen.
 (((Project Streams ,Dependencies)))  (((Project Stream Dependencies))) 
 
 Project Stream dependencies allow the reuse of common Projects (e.g., libraries) by other Projects.
-When the code in the Master Project Stream is built, the process will use the source code or the build result from the Child Project Stream(s), which is stored in the Source Environment in a new folder having the same name as the name of the Project in the VCR.
+When the code in the Parent Project Stream is built, the process will use the source code or the build result from the Child Project Stream(s), which is stored in the Source Environment in a new folder having the same name as the name of the Project in the VCR.
 
 . In the __Project Administration context__, select__ Project Stream > Overview__.
 . On the __Project Streams Overview__, click the image:icons/edit.gif[,15,15] _Edit_ link in front of the required Project Stream.
@@ -509,7 +509,7 @@ There are no links available on the__ The
 result or sources of Project Stream XXX are used by the following
 Project Stream(s)__ panel.
 Switch to the__ Project
-Stream Dependency__ screen of these Master Project Streams to edit their Dependency settings.
+Stream Dependency__ screen of these Parent Project Streams to edit their Dependency settings.
 ====
 
 . Click __Back__ to return to the previous screen.
@@ -549,25 +549,25 @@ The following options are available:
 
 * _Latest tagged code from the VCR_
 +
-Select this option, if you want to use the _source code_ of the last successful Build of the Child Branch to build the code of the Master Project.
+Select this option, if you want to use the _source code_ of the last successful Build of the Child Branch to build the code of the Parent Project.
 * _Specific tagged code from the VCR_
 +
-Select this option, if you want to use the _source code_ of the Child Branch tagged with the VCR tag selected in the _VCR Tag_ field below to build the code of the Master Project.
+Select this option, if you want to use the _source code_ of the Child Branch tagged with the VCR tag selected in the _VCR Tag_ field below to build the code of the Parent Project.
 The VCR Tag field is required.
 * _Latest tagged build from the Build Archive_
 +
-Select this option, if you want to use the _Build result_ of the last successful Build of the Child Branch to build the code of the Master Project.
+Select this option, if you want to use the _Build result_ of the last successful Build of the Child Branch to build the code of the Parent Project.
 The VCR Tag field must remain empty.
 * _Specific build from the build archive_
 +
-Select this option, if you want to use the _Build result_ of the Build of the Child Branch with the selected VCR Tag to build the code of the Master Project.
+Select this option, if you want to use the _Build result_ of the Build of the Child Branch with the selected VCR Tag to build the code of the Parent Project.
 The VCR Tag field is required.
 * _Latest Production code from the VCR_
 +
-Select this option, if you want to use the _source code_ that was tagged with the VCR tag of the Build that is currently Active on the last Level (usually a Production Level) of the Lifecycle of the Child Project Stream to build the code of the Master Project.
+Select this option, if you want to use the _source code_ that was tagged with the VCR tag of the Build that is currently Active on the last Level (usually a Production Level) of the Lifecycle of the Child Project Stream to build the code of the Parent Project.
 * _Latest Production Build from the Build Archive_
 +
-Select this option, if you want to use the _Build result_ of the Build that is currently Active on the LAST Level of the Lifecycle of the Child Project Stream to build the code of the Master Project.
+Select this option, if you want to use the _Build result_ of the Build that is currently Active on the LAST Level of the Lifecycle of the Child Project Stream to build the code of the Parent Project.
 
 .. Select the _VCR Tag_ from the drop-down list.
 +

@@ -256,7 +256,12 @@ If a Level is not locked, this field remains empty.
 |Optional
 |This field indicates whether or not this Level is optional.
 
-If a Level is optional, this field contains a blue check mark (image:icons/checkmark_blue.gif[,15,15] ).
+If a Level is optional, this field contains a red check mark (image:icons/checkmark_red.gif[,15,15] ).
+
+|Optional Deploys
+|This field indicates whether or not the Optional Deploys option is enabled on this Level.
+
+If the Optional Deploys option is enabled, this field contains a red check mark (image:icons/checkmark_red.gif[,15,15] ).
 
 |Notification Type (Criteria)
 |This field indicates the Notification Type associated to the Level (__Mail__ or __No Notification__), followed, between brackets, by the Notification Criterion (__Always__, __Fail__, _Successful_ or __Never__).
@@ -481,13 +486,13 @@ Click __Back __to return to the previous screen.
 +
 The __Edit Level __screen is displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Edit.png[,419,202] 
+image::ProjAdmin-Levels-TestLevel-Edit.png[,1099,599] 
 +
 . Click the _Edit_ button on the _Level Info_ panel and edit the fields as required.
 +
 The following pop-up window will be displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,436,385] 
+image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,512,431] 
 +
 . Edit the fields on the _Edit Level_ panel.
 +

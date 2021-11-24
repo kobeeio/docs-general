@@ -127,7 +127,7 @@ Underneath the _Project Info_ panel, the following links and buttons are availab
 
 * __History__. This link will display the __Project History View __screen.
 * __Clone Project__. Creates a new project by copying the current project in __Global Administration__.
-* __Unlock / Unlock__. Block or unblock all activity on this Project.
+* __Lock / Unlock__. Block or unblock all activity on this Project.
 * __Edit__ this project info.
 * __Refresh __to retrieve the settings from the database.
 * _Back_ to return to the __Projects Overview __screen.

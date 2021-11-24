@@ -48,7 +48,7 @@ You can create a new Branch if you want to
 
 [WARNING]
 --
-Create an additional Lifecycle before creating a Branch. <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Creating a Lifecycle>>
+Create an additional Lifecycle before creating a Branch. See: <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Creating a Lifecycle>>
 --
 
 . In the __Project Administration context__, select__ Project Stream > Create Branch__.
@@ -442,7 +442,6 @@ The Dependencies panel contains:
 
 +
 For each of the Project Streams on the Overviews, the following information is available:
-+
 
 [cols="1,1", frame="topbot", options="header"]
 |===
@@ -493,7 +492,7 @@ Refer to the _Code
 Retrieval_ field explanation above.
 |===
 
-. Use the links on the __Project Stream XXX depends on the results or sources of the following Project Stream(s)__, if required.
+. Use the links on the __Project Stream XXX depends on the results or sources of the following Project Stream(s)__ Panel, if required.
 +
 The following links may be available:
 

@@ -103,7 +103,7 @@ When executing a Phase, it can have the following status:
 |The Phase finished successfully
 
 |Warning
-|The Phase finished with a warnings
+|The Phase finished with warnings
 
 |Fail
 |The Phase failed
@@ -132,8 +132,7 @@ You can search for them in the _Phases
 Overview_ by restricting the search to Core Phases that can be used on a Level.
 Next to those Core Phases, you may enrich the functionality of IKAN ALM by creating your own Custom Phases which can be used on a Level.
 
-Level Phases may be inserted into the workflow of a Level (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Level Phases>>) and are logged on the __Phase Logs__ panel of the __Level
-Request Detail__ screen (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Level Phases>>).
+Level Phases may be inserted into the workflow of a Level (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Project Administration - Level Phases>>) and are logged on the __Phase Logs__ panel of the __Level Request Detail__ screen (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Level Request Detail - Phase Logs - Level Phases>>).
 
 They are executed by the Monitor Thread of the IKAN ALM Server, so they run on the IKAN ALM Server Machine!
 
@@ -174,8 +173,7 @@ See <<Desktop_LevelRequests.adoc#_desktop_lr_viewdependency,Build Dependencies>>
 
 In the case of a Partial Build, (<<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_createbranch,Creating a Branch Project Stream>>), only the modified source code will be retrieved and made available to the Agents running the Builds of the Level Request.
 
-The _alm.phase.retrieve.source.partialBuild.partialCheckout_ (Environment) Phase Parameter defines how this is done: if it is set to _true_ (default value) and if the VCR supports it (currently only Subversion), this is done by a partial checkout of the modified sources.
-Otherwise, all sources will be checked out, but only the modified sources will be transported to the source location of the Build Environment.
+The _alm.phase.retrieve.source.partialBuild.partialCheckout_ (Environment) Phase Parameter defines how this is done: if it is set to _true_ (default value), this is done by a partial checkout of the modified sources. Otherwise, all sources will be checked out, but only the modified sources will be transported to the source location of the Build Environment.
 
 When the Level Request has no Builds associated with it, the _Retrieve Code_ Phase does nothing and exits with status __Success__.
 In that case, you could remove the _Retrieve Code_ Phase from the Level`'s workflow.
@@ -437,7 +435,7 @@ All Build Results_ has been set to __false__.
 
 The _Compress Build_ Phase compresses the Build result files in the Build Environment`'s Target Location.
 
-The Archive format is determined by the alm.phases.compress.result.archiveFormat Environment Phase parameter. If set to zip, tgz or 7z, the chosen archive format will be used. If not set or set to auto, a format will be chosen based on the OS of the Agent Machine. If the Agent Machine runs a Windows OS, the Compress Build Phase creates a `$$.$$zip` file, otherwise it creates a `$$.$$tar.gz` file
+The Archive format is determined by the alm.phases.compress.result.archiveFormat Environment Phase parameter. If set to zip, tgz or 7z, the chosen archive format will be used. If not set or set to auto, a format will be chosen based on the OS of the Agent Machine. If the Agent Machine runs a Windows OS, the Compress Build Phase creates a `$$.$$zip` file, otherwise it creates a `$$.$$tar.gz` file.
 
 [[_phases_buildphases_archiveresult]]
 === Archive Result Phase 
@@ -515,7 +513,7 @@ By default, this limit is set to __0__, meaning that all Deploys on the Agent wi
 
 If another number is specified, a Deploy can only be started if there are not more running Deploys as indicated.
 So if the number is limited to 1, this means that all deploys will run sequentially on the Agent.
-If the number is set to 2, only 2 deploys can run concurrently, meaning that if there is a third Deploy with status _Ru,n_ , this third one will be added to a "`Waiting queue`" and it will only be started if one of the other (running) Deploys has finished.
+If the number is set to 2, only 2 deploys can run concurrently, meaning that if there is a third Deploy with status _Run_ , this third one will be added to a "`Waiting queue`" and it will only be started if one of the other (running) Deploys has finished.
 ====
 
 The following section describes each of the Core Deploy Phase in detail:

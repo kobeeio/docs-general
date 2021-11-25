@@ -5,20 +5,20 @@
 = Command Line Interface (Optional) 
 (((Command Line Interface))) 
 
-IKAN ALM can be extended with an optional Command Line interface, allowing the creation of Level Requests and the generation of Reports by means of a shell interface instead of the IKAN ALM web application.
+IKAN ALM can be extended with an optional Command Line interface, allowing the creation of Level Requests and Packages and the generation of Reports by means of a shell interface instead of the IKAN ALM Web Application.
 
 Possible uses:
 
 * Manual creation of Level Requests (CLR Command): <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
 * Manual creation of Packages (Package Command): <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>
 * Manual generation of Reports (Report Command): <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
-* Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>. Refer to the indicated sections.
-* Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>. Refer to the indicated section.
+* Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>.
+* Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>.
 
 
 The IKAN ALM Command Line interface can be installed on each client machine requiring its functionality.
-It requires a connection (TCP/IP) to the central IKAN ALM server.
-The connection with the IKAN ALM server is established using XML-RPC.
+It requires a connection (TCP/IP) to the central IKAN ALM Server.
+The connection with the IKAN ALM Server is established using XML-RPC.
 
 The CLR and Package commands can also be executed through the IKAN ALM REST API. Consult the IKAN ALM REST API documentation for more information.
 
@@ -67,7 +67,7 @@ __alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER]
 The following elements are available:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Element
 | Description
@@ -124,7 +124,7 @@ tag]] [-redeliver=true|false] [-startdate:[startdate]] [-paramfile:[parameter
 file]]__
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Parameter
 | Description
@@ -173,7 +173,7 @@ In case you want to allow a redeliver, you must explicitly set the _redeliver_ p
 
 |startdate
 |This parameter allows defining the requested starting date and time of the Level Request.
-The accepted format is __dd/MM/yyyy HH:mm__.
+The accepted format is __yyyy-MM-ddTHH:mm:ss__ (for example : 2021-11-29T23:15:00).
 Only has effect on Level Requests of a Test or Production Level.
 If omitted, the Level Request will run as soon as possible.
 |No
@@ -240,8 +240,8 @@ Open the file in a text editor to display its content:
 image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
 
 You can edit this standard file so that the settings match your requirements.
-Refer to the <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>for a description of the options and parameters.
-You can also create any number of specific properties files by copying the standard file, editing the copies and saving them under logical names for later usage
+Refer to the <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>> for a description of the options and parameters.
+You can also create any number of specific properties files by copying the standard file, editing the copies and saving them under logical names for later usage.
 
 . Prepare the Level Request creation.
 +
@@ -271,7 +271,7 @@ __alm clr -propertyfile:$PROPERTYFILENAME [-options]
 The following elements are available:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Element
 | Description
@@ -329,7 +329,7 @@ __alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER]
 The following elements are available:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Element
 | Description
@@ -386,7 +386,7 @@ userId]] [-status=[Status Integer]] [-targetreleasedate:[target release date]]
 [-filerevisions:[xml file containing file revisions links]]__
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Parameter
 | Description
@@ -427,7 +427,7 @@ If this parameter is not provided, the Package will be created for the Head Proj
 On create, this parameter is always 0, or ACTIVE. On update, the status can be chosen by the user.
 |No
 
-|targetstartdate
+|targetreleasedate
 |This parameter allows defining the target release date of the Package.
 The accepted format is __yyyy-MM-dd__.
 |No
@@ -467,7 +467,7 @@ image::CommandLine-Pack-filerevision-xml.png[,757,479]
 
 Each File Revision entry matches a single file in the Repository to be created, modified or deleted within the Package Contents definition.
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Parameter
 | Description
@@ -482,7 +482,12 @@ Each File Revision entry matches a single file in the Repository to be created, 
 |Yes
 
 |action
-|The action to be performed on this file in the Package Contents: create, modify or delete.
+a|The action to be performed on this file in the Package Contents. Valid values are : 
+
+* create
+* modify
+* delete
+
 |Yes
 
 |revision
@@ -503,7 +508,7 @@ Open the file in a text editor to display its content:
 image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
 
 You can edit this standard file so that the settings match your requirements.
-Refer to the <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>for a description of the options and parameters.
+Refer to the <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>> for a description of the options and parameters.
 You can also create any number of specific properties files by copying the standard file, editing the copies and saving them under logical names for later usage
 
 . Prepare the Package creation.
@@ -534,7 +539,7 @@ __alm package -propertyfile:$PROPERTYFILENAME [-options]
 The following elements are available:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Element
 | Description
@@ -595,7 +600,7 @@ __alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER]
 The following elements are available:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Element
 | Description
@@ -651,7 +656,7 @@ __report -design:$REPORTDESIGNFILE [-dest:$DESTINATIONFILE]
 [-group:[$GROUPINGVALUE]] [-order:[$ORDERINGVALUE]]__
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Parameter
 | Description
@@ -744,7 +749,7 @@ image::CommandLine-SearchCriteriaPropertiesFile.png[,1053,683]
 The following selection criteria are available:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
 | Criteria
 | Description
@@ -922,7 +927,7 @@ Open the file in a text editor to display its content:
 image::CommandLine-ReportPropertiesfile.jpg[,497,393] 
 
 You can edit this standard file so that the settings match your requirements.
-Refer to the section <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>for a description of the options and parameters.
+Refer to the section <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>> for a description of the options and parameters.
 You can also create any number of specific properties files by copying the standard file, editing the copies and saving them under logical names for later usage
 
 . Prepare the Report generation.
@@ -954,7 +959,7 @@ __alm report -propertyfile:[$PROPERTYFILENAME]
 The following elements are available:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Element
 | Description
@@ -1050,7 +1055,7 @@ image::CommandLine-EclipseExternalToolsDialog.png[,812,702]
 +
 . Provide the correct parameters to create a Level Request on the wanted level:
 +
-In the example above, the options are given to create a Level Request on the _CONTBUILD_ Level in the _DEMOCVS_ Project.
+In the example above, the options are given to create a Level Request on the _CONTBUILD_ Level in the _Webpad_ Project.
 
 . Click __Run__.
 +

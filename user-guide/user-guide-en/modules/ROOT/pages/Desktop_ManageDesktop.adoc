@@ -44,7 +44,7 @@ If your Desktop Overview is empty, you can add content to it using the _Add to D
 Per Tab Page, the following fields are available in the Classic view for each desktop element type.
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,4", frame="topbot", options="header"]
 |===
 | Field
 | Description
@@ -108,10 +108,10 @@ Click the link to access the <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedov
 |This field contains the VCR Tag (matching the defined template) and timestamp for the latest successful Request on the displayed Level.
 
 These indications are displayed as a link.
-Click the link to access the <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>> selected Level Request.
+Click the link to access the <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Detailed Overview>> for the selected Level Request.
 
 |Next
-a|For Build Levels with active Schedule, this field displays the timestamp that the next Level Request is expected to run.
+a|For Build Levels with an active Schedule, this field displays the date and time on which the next Level Request is expected to run.
 
 The Level Request will not run, if:
 
@@ -123,41 +123,41 @@ For other Levels, this field remains empty.
 |Action
 a|This field contains the action icons which are available for the Level:
 
-* image:icons/request.gif[,15,15] : For a Build Level, this icon allows creating a Level Request that will generate a new Build. For Build Levels with an active Scheduler, this matches a Forced Build. For Build Levels without active Scheduler, this matches a Requested Build. <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Creating a Build Level Request>>
-+
-For Test and Production Levels, this icon allows creating a Level Request for <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_deliver,Creating a Deliver Build Level Request>>.
-* image:icons/requestPlus.gif[,15,15] : This icon (only available for Build Levels) allows creating a Level Request that will generate a new Build. The Create Level Request dialog will contain additional information about the modifications since the last Level Request. For Levels with an active Scheduler, this matches a Force+ Build. For Build Levels without active Scheduler, this matches a Request+ Build. <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Creating a Build Level Request>>
-* image:icons/rollback.gif[,15,15] : This icon (only available for Production Levels) allows creating a Level Request that will restore a previous Build on that Level. Refer to <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_rollback,Creating a Rollback Build Level Request>>.
+* image:icons/request.gif[,15,15] and image:icons/requestPlus.gif[,15,15] : Request or Force a Build Level Request. Also see: <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Creating a Build Level Request>>.
+
+* image:icons/deliverBuild.png[,15,15] : Create a new Deliver Build Level Request. Also see: <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_deliver,Creating a Deliver Build Level Request>>.
+
+* image:icons/rollback.gif[,15,15] : Create a new Rollback Build Level Request. Also see: <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_rollback,Creating a Rollback Build Level Request>>.
 
 
 |Message
-a|If it is not possible to define a Request for a specific Level, the messages in this field may indicate the reason.
+a|If it is not possible to create a Request for a specific Level, the messages in this field may indicate the reason.
 
 * _A Level Request is pending for this Level of this Project Stream_
 +
 This message is displayed, if a Level Request is being executed or waiting for approval.
-You will need to wait until the current Level Request is completed, before you can define a new Level Request for this Level.
+You will need to wait until the current Level Request is completed, before you can create a new Level Request for this Level.
 * _The Level is locked_
 +
-It is not possible to define Level Requests for Locked Levels.
-You (or the Project Manager) must <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditing Projects>>, before you can define Level Requests for this Level.
+It is not possible to create Level Requests for Locked Levels.
+You (or the Project Manager) must unlock the Level by Auditing the Project before you can create Level Requests for this Level. See: <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditing Projects>>.
 * _No Request Rights_
 +
-It is not possible to define Level Requests, if the User ID you are logged in with does not have the required access rights.
+It is not possible to create Level Requests when the User ID you are logged in with does not have the required access rights.
 You must connect with a User ID having the right to run Requests or ask the Global Administrator to give this right to your User ID.
 * _The Project is locked_
 +
-It is not possible to define Level Requests for locked Projects.
+It is not possible to create Level Requests for locked Projects.
 +
-Unlock the Project first by clicking the _Unlock_ button on the __Projects Overview__. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
+Unlock the Project first by clicking the _Unlock_ button on the __Projects Overview__, or by Auditing the Project. See: <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>> and <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditing Projects>>.
 * _The Project Stream is locked_
 +
-It is not possible to define Level Requests for locked Project Streams.
-You (or the Project Manager) can unlock the Project Stream first by clicking the _Unlock_ button on the __Edit Project Stream screen__. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Editing Project Stream Settings>>
+It is not possible to create Level Requests for locked Project Streams.
+You (or the Project Manager) can unlock the Project Stream first by clicking the _Unlock_ button on the __Edit Project Stream screen__. See: <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Editing Project Stream Settings>>
 * _The Project Stream is frozen_
 +
-It is not possible to define Build Level Requests for frozen Project Streams.
-You (or the Project Manager) can unfreeze the Project Stream first by selecting another status from the _Status_ drop-down menu on the __Edit Project Stream screen__. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Editing Project Stream Settings>>
+It is not possible to create Build Level Requests for frozen Project Streams.
+You (or the Project Manager) can unfreeze the Project Stream first by selecting another status from the _Status_ drop-down menu on the __Edit Project Stream screen__. See: <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Editing Project Stream Settings>>
 
 
 |image:icons/remove.gif[,15,15] 
@@ -171,7 +171,7 @@ The screen will be refreshed each time you click the __Refresh__ button.
 
 [NOTE]
 ====
-If the __Auto Refresh__ option is activated, the Desktop will be refreshed each time the defined rate is expired. <<UserInterface.adoc#_desktop_autorefresh,Auto Refresh>>
+If the __Auto Refresh__ option is activated, the Desktop will be refreshed according to the Auto Refresh Rate set in System Settings. See: <<UserInterface.adoc#_desktop_autorefresh,Auto Refresh>>.
 ====
 . Click the _Add to Desktop_ button to open the _Add to Desktop_ pop-up window allowing you to add other elements to your desktop.
 +
@@ -353,12 +353,12 @@ a|Enter the status of the Project Stream:
 |Indicate whether or not you want to display hidden Packages.
 
 |Show Accessible Projects
-|Indicate whether or not you want to display the Projects on which you have user access rights. 
+|Indicate whether or not you only want to display the Projects you have User Access to. 
 
-By default, the Projects which are accessible are shown.
+By default, only the Projects you have User Access to are shown.
 |===
 +
-The list of elements displayed in the tree at the right, will be limited to the Project Streams matching these search criteria.
+The list of elements displayed in the tree at the right will be limited to the Project Streams matching these search criteria.
 +
 Click the _Reset_ button to clear the Search fields.
 

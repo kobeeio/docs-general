@@ -78,7 +78,7 @@ Other differences between Build and Rebuild are indicated in the table describin
 image::Desktop-LevelRequests-Flow-Build.png[,906,1108] 
 
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,5", frame="topbot", options="header"]
 |===
 | Step
 | Description
@@ -284,7 +284,7 @@ Other differences between Build and Rebuild are indicated in the table describin
 image::Desktop-LevelRequests-Flow-BuildAndDeploy.png[,907,1270] 
 
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,5", frame="topbot", options="header"]
 |===
 | Step
 | Description
@@ -314,7 +314,7 @@ If required, the Pre- and Post-Approval groups are defined on the <<ProjAdm_Leve
 This step is optional in case of a Rebuild
 
 |5.
-|If all Approvals of a Rebuild with Pre- or Post-Approval(s) are <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,granted>>> and if the requested Date/Time is reached, the Monitor sets the Level Request status to __Run__ and retrieves the Source Code from the VCR to a subdirectory of the Work Copy location on the IKAN ALM Server.
+|If all Approvals of a Rebuild with Pre- or Post-Approval(s) are <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,granted>>, and if the requested Date/Time is reached, the Monitor sets the Level Request status to __Run__ and retrieves the Source Code from the VCR to a subdirectory of the Work Copy location on the IKAN ALM Server.
 
 This location is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
@@ -563,7 +563,7 @@ If the <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevelphases,Level Phases>> or the
 image::Desktop-LevelRequests-Flow-Deploy.png[,906,1252] 
 
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,5", frame="topbot", options="header"]
 |===
 | Step
 | Description
@@ -1708,13 +1708,13 @@ Click _Abort Level Request_ to confirm the action and return to the _Level Reque
 +
 You can also click _Close_ to cancel the abort process and return to the _Level Request Detail_ screen.
 
-. the Level Request is waiting for an Approval:
+. The Level Request is waiting for an Approval:
 +
 [[_desktop_lr_actions_approvals]]
 +
 image::Desktop-LevelRequests-Detailed-Summary-Approval.png[,318,252]
 +
-If the Level Request is waiting for an approval, in addition to the available options above, there are two additional options:
+If the Level Request is waiting for an Approval, in addition to the available options above, there are two additional options:
 +
 [cols="1,1", frame="topbot", options="header"]
 |===
@@ -1730,7 +1730,7 @@ If the Level Request is waiting for an approval, in addition to the available op
 +
 For more info on the dialogs opened by these actions, refer to the section <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove, Approving Outstanding Approvals>>.
 
-. The Level Request is successful and can be delivered to a next level:
+. The Level Request is successful and can be delivered to a next Level:
 +
 image::Desktop-LevelRequests-Detailed-Summary-Deliver.png[,318,252]
 +
@@ -2781,11 +2781,11 @@ Issues can get linked to a Level Request automatically by IKAN ALM during the ex
 
 image::Desktop-LevelRequests-Detailed-Issues.png[,683,264] 
 
-Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>for more information on defining on external Issue Tracking System, and to <<App_Phases.adoc#_phases_generalinformation,Phases - General Information>>for more information on the Issue Tracking Phase.
+Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>> for more information on defining on external Issue Tracking System, and to <<App_Phases.adoc#_phases_generalinformation,Phases - General Information>> for more information on the Issue Tracking Phase.
 
 [NOTE]
 ====
-Issue information is only visible when the Project of the Level Request is linked to an Issue Tracking System. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
+Issue information is only visible when the Project of the Level Request is linked to an Issue Tracking System. See: <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
 
 If the project is connected to an Atlassian JIRA, MicroFocus ALM, GitHub or Microsoft Team Foundation Issue Tracking System, the description, status, owner and priority information will automatically be filled in based on the Issue information in the Issue Tracking System concerned.
 For other Issue Tracking Systems, you can add the information manually.
@@ -3116,7 +3116,7 @@ Build_ object and the _child Level Request_ object.
 
 [NOTE]
 ====
-Project Stream dependencies are defined on the Edit Project Stream Dependency Detail screen using the Code Retrieval field. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editdependency,Editing a Project Stream Dependency>>
+Project Stream dependencies are defined on the Edit Project Stream Dependency Detail screen using the Code Retrieval field. See: <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editdependency,Editing a Project Stream Dependency>>
 ====
 
 The _Dependencies_ page is the starting point to find all the information concerning:

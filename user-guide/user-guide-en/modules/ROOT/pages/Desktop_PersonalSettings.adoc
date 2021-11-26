@@ -120,14 +120,14 @@ For more information, refer to the section <<Desktop_PersonalSettings.adoc#_cihj
 
 [NOTE]
 ====
-Editing the name and description of the filter, can be done on the _Personal Settings_ screen (<<Desktop_PersonalSettings.adoc#_cihjfebab8,Managing Filter Definitions>>).
+Editing the name and description of the filter can be done on the _Personal Settings_ screen. See: <<Desktop_PersonalSettings.adoc#_cihjfebab8,Managing Filter Definitions>>.
 ====
 
 [[_cihidaeja2]]
 === Selecting a Search Filter 
 (((Search Filters ,Selecting))) 
 
-On the Overview screens, search filters can be used instead of manually specifying search criteria, you can select an existing filter
+On the Overview screens, you can select a search filter instead of manually specifying search criteria.
 
 . To display the list of existing filters, click the down arrow of the _No filter selected_ drop-down box.
 +
@@ -172,20 +172,20 @@ Confirm the modification, by clicking the _Save_ button.
 
 [NOTE]
 ====
-Modifying the search criteria is only possible on the Overview screens themselves. <<Desktop_PersonalSettings.adoc#_cihhjjjej8,Modifying a filter`'s search criteria>>
+Modifying the search criteria is only possible on the Overview screens. See: <<Desktop_PersonalSettings.adoc#_cihhjjjej8,Modifying a filter`'s search criteria>>
 ====
 +
-. Click the image:icons/delete.gif[,15,15] _Delete_ icon in front of the filter, to delete a specific filter.
+. Click the image:icons/delete.gif[,15,15] _Delete_ icon in front of the filter to delete a specific filter.
 +
 image::Search_DeleteFilter.png[,492,133] 
 +
-Confirm the deletion, by clicking the _Delete_ button.
+Confirm the deletion by clicking the _Delete_ button.
 
 [[_cihhjjjej8]]
 === Modifying a filter`'s search criteria 
 (((Search Filters ,Modifying Search Criteria))) 
 
-Modifying the search criteria of a filter is only possible on the Overview screens themselves.
+Modifying the search criteria of a filter is only possible on the Overview screens.
 
 . Select the filter you want to modify.
 +

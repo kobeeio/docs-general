@@ -21,7 +21,7 @@ For example: when deleting a Project, only the deletion of the Project is logged
 +
 For more information on how to switch to an _Overview_ screen, refer to the specific section.
 +
-A screen similar to this one, will appear.
+A screen similar to this one will appear.
 +
 image::History_OverviewScreen.png[,1313,434] 
 +
@@ -42,7 +42,7 @@ It contains the following sections:
 * The _Current State_ Panel displaying the current state of the Object
 * A subpanel allowing you to limit the number of versions to a specific Object Type.
 +
-This subpanel is only available for object types having an association (like Users or User Groups in System Settings, Levels and Lifecycles in Project Administration) or for fine grained object types which history is shown in their aggregate object type (like Build Parameters, which history are shown with the Build Environment).
+This subpanel is only available for object types having an association (like Users or User Groups in System Settings, Levels and Lifecycles in Project Administration) or for fine grained object types whose history is shown in their aggregate object type (like Build Parameters, whose history are shown with the Build Environment).
 * The _Versions_ Panel
 
 . Restrict the list of items displayed on the _Versions_ panel.
@@ -50,7 +50,6 @@ This subpanel is only available for object types having an association (like Use
 For certain objects, a subpanel to restrict the number of displayed items is available.
 +
 Specify the required selection criteria and click the _Search_ button.
-You can also click the _Reset_ button to clear the Search fields.
 +
 The following table lists the different selection options per object type:
 +
@@ -127,6 +126,8 @@ User Group Associations
 |User Groups
 
 User Associations
+
+Nested User Group Associations
 |===
 
 . Verify the information on the _Versions_ panel.
@@ -169,7 +170,7 @@ The following information fields are available:
 |The date/time the modification was saved.
 
 |Modification Type
-|The modification type can be one of the following:
+a|The modification type can be one of the following:
 
 * _Create_
 +
@@ -208,7 +209,7 @@ image::History_Differences.png[,934,712]
 The _Version Comparison_ panel displays the differences between the current version of the object (shown in the "Current" column) and the selected version of the object (shown in the "Selected" column)
 
 * The upper part of the _Version Comparison_ panel displays the Version, Modification Date, Modification Type and Modifying User of the two versions that are being compared
-* The lower part displays the object-specific values of the two versions that are being compared, high-lighting the fields where there are differences.
+* The lower part displays the object-specific values of the two versions that are being compared, highlighting the fields where there are differences.
 +
 
 [NOTE]

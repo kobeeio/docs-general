@@ -21,7 +21,7 @@ During the whole Lifecycle, each Package has its own Build number and evolves in
 From a __physical point of view__, it comes down to putting together a set of files to be extracted from the VCR during the execution of the Build Level Request as to present them to the Build and Tag Phases, and to finally execute the Deploy of this set of files.
 For Release-based Projects, the rules for extracting files from the VCR are specified in the Project Stream definition by selecting the type of Build, and IKAN ALM will automatically take care of the selection of the objects.
 For Package-based Projects on the other hand, the selection of files to be extracted from the VCR is done manually by the Users of the Project in the form of a Package.
-Refer to the section <<Desktop_Packages.adoc#_desktop_createpackage,Creating a Package>>for more in information.
+Refer to the section <<Desktop_Packages.adoc#_desktop_createpackage,Creating a Package>> for more information.
 
 From a __technical point of view__, Projects are defined and separated to use either Packages or Releases, and can never be mixed.
 
@@ -94,12 +94,12 @@ By default, both locked and unlocked Project Streams are displayed.
 By default, hidden Project Streams are not shown.
 
 |Show Accessible Projects
-|Indicate whether or not you want to display the Projects on which you have user access rights. 
+|Indicate whether or not you only want to display the Projects you have User Access to. 
 
-By default, the Projects which are accessible are shown.
+By default, only the Projects you have User Access to are shown.
 |===
 +
-The list of elements displayed in the tree at the right, will be limited to the Project Streams matching these search criteria.
+The list of elements displayed in the tree at the right will be limited to the Project Streams matching these search criteria.
 +
 Click the _Reset_ button to clear the Search fields.
 . Select the required Project Stream
@@ -248,10 +248,6 @@ Other available buttons:
 * __Refresh__: to refresh the information on the information panels
 * __Back__: to return to the _Package Overview_ screen
 +
-[NOTE]
-====
-If the __Auto Refresh__ option is activated, the screen will be refreshed each time the defined rate is expired. <<UserInterface.adoc#_desktop_autorefresh,Auto Refresh>>
-====
 
 . Click _Save_ to confirm your changes.
 +
@@ -259,7 +255,7 @@ Other available buttons:
 
 * __Clear__: to deselect all File Revisions. If in search mode, all matched files (and directories) will be unchecked.
 +
-Note that when clicking the Clear button while holding down the CTRL key, will select all files in the current tree.
+Note that clicking the Clear button while holding down the CTRL key will select all files in the current tree.
 * __Refresh__: to refresh the information on the information panels
 
 
@@ -284,7 +280,7 @@ The icon in front of the Package changes to image:icons/show.gif[,15,15] .
 Hidden Packages will not appear on the Overview screens for Level Requests, Approvals, Build and Deploys, nor on the _Create
 Level Request: Select Package_ screen when creating a Level Request for Package-based Projects.
 ====
-..... To "`unhide`" a hidden Package, click the image:icons/show.gif[,15,15] _Show_ link.
+. To "`unhide`" a hidden Package, click the image:icons/show.gif[,15,15] _Show_ link.
 +
 The icon will be changed appropriately.
 +
@@ -485,20 +481,7 @@ To exit the search mode and redisplay all files and folders in the tree, click t
 Search_ icon. 
 . Select the File Revisions you want to add to the Package and click __Save__.
 +
-The information on the _File
-Revisions Info_ panel is directly retrieved from the VCR.
-Use the _Refresh_ button to display the latest state. 
-+
-Using the _Clear_ button will deselect all items in the Package.
-Clicking the _Clear_ button while pressing the _CTRL_ key will select all items in the Package.
-+
 
-[NOTE]
-====
-Files which have been deleted from the VCR are shown struck through on the tree.
-
-At folder level, a red exclamation mark is displayed after the folder name.
-====
 +
 The following actions are possible:
 
@@ -518,8 +501,11 @@ The revision number will be displayed next to the selected File.
 +
 image::Desktop-Packages-SelectProjectStream-AddRevision.png[,486,197] 
 +
-__Note: __If you do not select a specific revision of a file, the latest revision will be used at the moment the Package is built.
-********* Deleting a File of Folder from the Package
+[NOTE]
+====
+If you do not select a specific revision of a file, the latest revision will be used at the moment the Package is built.
+====
+********* Deleting a File or Folder from the Package
 +
 To delete a File or Folder from the Package, deselect it in the tree.
 The name will be displayed in red.
@@ -528,9 +514,10 @@ To deselect all Files in the Package, you can use the _Clear_ button.
 +
 image::Desktop-Packages-SelectProjectStream-DeleteFile.png[,486,158] 
 +
-__Note: __If a File or Folder has been removed from the VCR, this is indicated by an exclamation mark after the File or Folder name.
-The removed file is shown by strike-through.
-It is advised to delete the file or folder from the package as to synchronize it with the VCR.
+[NOTE]
+====
+Files that have been deleted from the VCR, but are still linked to the Package, are displayed in red and with a strike-through font. The folders that contain those files are displayed with a a red exclamation mark after the folder's name. In this case, it is advised to also delete the removed files from the Package.
+====
 +
 image::Desktop-Packages-SelectProjectStream-DeletedVCRFile.png[,486,158] 
 +

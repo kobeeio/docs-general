@@ -159,8 +159,9 @@ The __Build Levels Defined in Project__ panel displays the different Build Level
 For more information on this panel, refer to <<ProjAdm_Levels.adoc#_levelenvmgt_overview,Levels Overview>>.
 . Click __Create__ to confirm the creation of the new Build Level.
 +
-You can also click _Reset_ to clear the fields and restore the initial values.
+You can also click 
 
+* _Reset_ to clear the fields and restore the initial values.
 * _Back_ to return to the previous screen without saving the changes.
 
 [[_plevelenvmgt_createtestorproductionlevel]]
@@ -368,13 +369,13 @@ For a description of the fields, refer to the sections <<ProjAdm_Levels.adoc#_pl
 +
 The _Edit Level_ screen is displayed.
 +
-image::ProjAdmin-Levels-TestLevel-Edit.png[,419,202] 
+image::ProjAdmin-Levels-TestLevel-Edit.png[,1099,599] 
 +
 . Click the _Edit_ button on the _Level Info_ panel.
 +
 The following pop-up window will be displayed:
 +
-image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,436,385] 
+image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,512,431] 
 +
 .. Edit the fields on the _Edit Level_ pop-up window.
 +
@@ -422,7 +423,7 @@ At present you can manually remove the _Tag
 Code_ Phase from Test and Production Levels.
 ====
 
-When executing a Level Request for this Level, a log will be created for each of the Phases. <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>
+When executing a Level Request for this Level, a log will be created for each of the Phases. The logs will be shown on the _Level Request Details_ page. For more information, see : <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>.
 
 Refer to the following procedures for more information:
 
@@ -693,8 +694,7 @@ Links for creating Build and Deploy Environments as well as for Changing the Dep
 [NOTE]
 ====
 You can also use the Build Environments and Deploy Environments submenu options for creating Environments.
-The Deploy sequence, however, can only be modified on the _Levels
-Overview_ screen. 
+The Deploy sequence, however, can only be modified on the _Edit Level_ screen. 
 ====
 
 Refer to the following procedures for more information:

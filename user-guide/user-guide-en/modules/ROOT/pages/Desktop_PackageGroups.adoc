@@ -24,7 +24,7 @@ For more details, refer to the description of this Phase in the appendix <<App_P
 Refer to the following procedures for more information:
 
 * <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Creating a Package Build Group>>
-* <<Desktop_PackageGroups.adoc#_desktop_packagegroupsoverview,Package Build Groups The Package Build Groups Overview Screen>>
+* <<Desktop_PackageGroups.adoc#_desktop_packagegroupsoverview,The Package Build Groups Overview Screen>>
 * <<Desktop_PackageGroups.adoc#_desktop_editpackagegroup,Editing a Package Build Group>>
 ** <<Desktop_PackageGroups.adoc#_desktop_packagegroups_addpackage,Adding a Package to a Package Build Group>>
 ** <<Desktop_PackageGroups.adoc#_bacdbadi,Removing a Package from a Package Build Group>>
@@ -76,7 +76,7 @@ For more information on adding Packages and rearranging the order of Packages, r
 |===
 . Once you have filled out the fields, click __Create__.
 +
-The _Edit Package Build Group_ is displayed.
+The _Edit Package Build Group_ screen is displayed.
 +
 image::Desktop-PackageGoups-Create2.png[,1217,336] 
 +
@@ -101,14 +101,9 @@ image::Desktop-PackageGoups-Overview-SearchPanel.png[,947,92]
 +
 The following options are available:
 
-* Show advanced options: to display all available search criteria.
 * Search: in principle it is not necessary to click the _Search_ option. The results on the overview will be automatically synchronized in function of the selected criteria.
 * Reset search: to clear all search criteria and display the full list of items.
-* Select an existing filter from the drop-down list.
-* Save filter: to save the current search criteria for future use.
 
-+
-For more information on the usage of search panels and filters, refer to the sections  and <<Desktop_PersonalSettings.adoc#_desktop_searchfilters,Defining Search Filters>>.
 . Depending on your access rights, the following links may be available on the _Package Build Groups Overview_ panel:
 +
 
@@ -226,15 +221,13 @@ The following search criteria are available.
 [NOTE]
 ====
 Packages can only be part of one Package Build Group.
-If you try to add a Package that is part of another Package Build Group, an error is displayed.
-For example: Sample error message: A Package can only be part of one Package Build Group.
-Package '`xyz`' is already part of Package Build Group 'zyx'
+If you try to add a Package that is part of another Package Build Group, an error is displayed : "A Package can only be part of one Package Build Group. Package '`xyz`' is already part of Package Build Group 'zyx'"
 ====
 
 . Click the _Add_ button to add the Package.
 +
 The Package will be added at the end of the list.
-You can change the order of the packages by changing the Dependency Level, or by dragging and dropping the Package to the appropriate place, as explained in steps 4 and 5.
+You can change the order of the packages by changing the Dependency Level, or by dragging and dropping the Package to the appropriate place.
 +
 Packages can only be added one at a time.
 Repeat this action for all the packages you want to add.
@@ -257,7 +250,7 @@ Results_ Phase will only retrieve the latest Build Results of the Packages with 
 [NOTE]
 ====
 Exception: if the option _Retrieve all
-Build Results_ is set to __Yes__, all Build Results will be retrieved regardless of their Dependency Level. <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Creating a Package Build Group>>
+Build Results_ is set to __Yes__, all Build Results will be retrieved regardless of their Dependency Level. See: <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Creating a Package Build Group>>
 ====
 +
 Modify the Dependency Level by selecting the appropriate level from the drop-down list.
@@ -291,7 +284,7 @@ If you change the order of the Packages, the Dependency Level may change as well
 +
 .. To display a connected Package`'s Settings, click the image:icons/view.gif[,15,15] _View_ link in the _Actions_ column after the required Package.
 +
-The _View Package_ screen is displayed. <<Desktop_Packages.adoc#_desktop_viewpackage,Viewing Package Settings>>
+The _View Package_ screen is displayed. See: <<Desktop_Packages.adoc#_desktop_viewpackage,Viewing Package Settings>>.
 .. Click _Back_ to return to the _Edit Package Build Group_ screen.
 . Editing a Package`'s settings
 +

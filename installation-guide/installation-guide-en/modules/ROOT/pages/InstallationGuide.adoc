@@ -101,7 +101,7 @@ The amount of RAM and disk space needed by a machine that runs an ALM Agent grea
 [[_bhbicaaj]]
 === Java 11
 
-All IKAN ALM components need a full version of Java 11. IKAN ALM has been tested to run with both Oracle Java and Adoptium Eclipse Temurin (formerly AdoptOpenJDK). Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank]
+All IKAN ALM components need a full version of Java 11. IKAN ALM has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
 
 === Tomcat 9
 
@@ -134,7 +134,7 @@ It is recommended to set the following memory settings for running IKAN ALM in T
 * max Java heap size (-Xmx) : 1024m
 * max Metaspace size (-XX:MaxMetaspaceSize) : 256m
 
-You must also configure Tomcat to use the JAAS configuration file _ALM_HOME_/system/security/jaas.conf. You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
+You must also configure Tomcat to use the JAAS configuration file _ALM_HOME_/system/security/jaas.conf (for example `C:/alm/system/security/jaas.conf` ). You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
 
 If you launch Tomcat from the startup scripts, you need to create the file _TOMCAT_HOME/bin/setenv.bat_ (Windows) or _TOMCAT_HOME/bin/setenv.sh_ (Linux/Unix) with the following content :
 
@@ -143,7 +143,7 @@ For Windows:
 [source]
 ----
 SET JAVA_HOME=<JAVA_HOME>
-SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=_ALM_HOME_/system/security/jaas.conf
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.conf
 ----
 
 For Linux/Unix:
@@ -151,7 +151,7 @@ For Linux/Unix:
 [source]
 ----
 JAVA_HOME=<JAVA_HOME>
-JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=_ALM_HOME_/system/security/jaas.conf
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.conf
 ----
 
 If you run Tomcat as a Windows service, you need to set the Java and memory settings in the file __TOMCAT_HOME/bin/service.bat__ :
@@ -161,7 +161,7 @@ If you run Tomcat as a Windows service, you need to set the Java and memory sett
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
 SET JvmMx=1024
-SET JvmArgs=-XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=_ALM_HOME_/system/security/jaas.conf
+SET JvmArgs=-XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.conf
 ----
 
 After these modifications, you need to re-install the service by running "service.bat remove", followed by "service.bat install". You need Administrative privileges to run these commands.
@@ -274,7 +274,7 @@ The location where IKAN ALM should be installed. Further on in this document, th
 alm.server.javaHome
 |
 
-Set this to the Java Home of the Java Runtime that will be used to launch the ALM Server. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+Set this to the Java Home of the Java Runtime that will be used to launch the ALM Server. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.server.serverPort
@@ -489,7 +489,7 @@ Further on in this document, this location will be referred to as _ALM_HOME_.
 alm.agent.javaHome
 |
 
-Set this to the Java Home of the Java Runtime that will be used to launch the ALM Agent. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+Set this to the Java Home of the Java Runtime that will be used to launch the ALM Agent. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.agent.agentPort
@@ -569,7 +569,7 @@ The location where the ALM Commandline should be installed. When installing the 
 alm.commandline.javaHome
 |
 
-Set this to the Java Home of the Java Runtime that will be used to launch the ALM Commandline. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+Set this to the Java Home of the Java Runtime that will be used to launch the ALM Commandline. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |===
 
 
@@ -682,9 +682,9 @@ For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:root:In
 [[_bhbdbdje]]
 === Starting the ALM Server
 
-It is recommended to run the ALM Server as a Windows or Linux service, and configure the service so that the ALM Server automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
+It is recommended to run the ALM Server as a Windows or Linux service, and configure it so that the ALM Server automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
 
-To start the ALM Server service on Windows, open a Command Prompt or Powershell, and execute :
+To start the ALM Server service on Windows, open a Command Prompt or PowerShell, and execute :
 
 [source]
 ----
@@ -713,9 +713,9 @@ To stop the ALM Server, launch _ALM_HOME/daemons/server/stopServer.cmd_ or _ALM_
 [[_bhbhbcbb]]
 === Starting the ALM Agent
 
-It is recommended to run the ALM Agent as a Windows or Linux service, and configure the service so that the ALM Agent automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
+It is recommended to run the ALM Agent as a Windows or Linux service, and configure it so that the ALM Agent automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
 
-To start the ALM Agent service on Windows, open a Command Prompt or Powershell, and execute :
+To start the ALM Agent service on Windows, open a Command Prompt or PowerShell, and execute :
 
 [source]
 ----
@@ -828,7 +828,7 @@ The location where IKAN ALM is installed. Further on in this document, this loca
 alm.server.javaHome
 |
 
-The Java Home of the Java Runtime that is used to launch the ALM Server. Valid examples are "D:\java\openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+The Java Home of the Java Runtime that is used to launch the ALM Server. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.server.tomcat.uninstall
@@ -891,7 +891,7 @@ The location where the ALM Commandline is installed.
 
 === Running the Uninstaller
 
-By default, the uninstallation scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
+By default, the uninstallation scripts uses the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
  _INSTALL_DIR/uninstall.cmd_ (Windows) or _INSTALL_DIR/uninstall.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
 First stop Tomcat, ALM Server and ALM Agent, and then launch the uninstaller by executing the _uninstall.cmd_ or _uninstall.sh_ script.
@@ -1480,6 +1480,7 @@ Base DN of an Organizational Unit (OU) from which an LDAP search for a user's ro
 ====
 Values set in the file _jaas.conf_ *MUST* be surrounded by ", while values set in the file _JaasPropertiesLoginModule.xml_ *MUST NOT* be surrounded by ".
 ====
+Refer to https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldaptive.org/docs/guide/jaas.html] for more information on the ldaptive JAAS properties.
 
 [appendix]
 [[_db2configuration]]

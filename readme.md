@@ -11,6 +11,7 @@ Always consult the "antora.yml" file in the document to verify, it should contai
 * demo-installation-guide 5.8
 * getting-started 5.8     	      
 * installation-guide 5.8  
+* rest-api 5.9 (in progress)
 * technical-sheet 5.9 (in progress)
 * user-guide 5.9 (in progress)
 * whats-new 5.9 (in progress)

@@ -442,11 +442,11 @@ Result:
 
 * If the Package is created or updated successfully, A screen similar to the following is displayed:
 +
-image::CommandLine-LRCreatedSuccessfully.png[,1148,155] 
+image::CommandLine-PackCreatedSuccessfully.png[,1152,119] 
 +
 * If the Package cannot be created or updated, because there is no connection with the IKAN ALM Server, the following screen is displayed:
 +
-image::CommandLine-ServerConnectionProblem.png[,1148,535] 
+image::CommandLine-PackServerConnectionProblem.png[,1152,551] 
 +
 * If the user entered an unknown command, the following screen is displayed:
 +

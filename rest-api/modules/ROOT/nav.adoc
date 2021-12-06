@@ -1,1 +1,4 @@
-* xref:App_RESTAPI.adoc[Contents]
+* xref:RESTAPI_Overview.adoc[Overview]
+* xref:RESTAPI_Usage.adoc[Usage]
+* xref:RESTAPI_Resources.adoc[Resources]
+* xref:RESTAPI_Definitions.adoc[Definitions]

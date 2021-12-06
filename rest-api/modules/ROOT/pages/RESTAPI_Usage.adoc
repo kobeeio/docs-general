@@ -1,0 +1,62 @@
+[[_usage]]
+== Usage
+
+=== Authentication and authorization
+
+Nearly all resources require an authenticated session. To get a session, use the /auth resource: <<RESTAPI_Resources.adoc#_1_authentication_resource,(See the authentication paragraph for all details)>>
+
+. Send a GET request to the /auth resource with the Accept header set to an accepted value:
+** application/json;charset=UTF-8 for JSON
+** application/xml;charset=UTF-8 for XML
+. The response will be an empty authentication view of the JSON or XML format with only the username and password fields available. Send a POST request to the /auth resource with this view filled in with your username and password and the Content-Type set to the correct accepted value.
+. If the login is successful, the response will have a JSESSIONID cookie. Adding this cookie to any future request will make that request use the session linked to the cookie. This means the request will be executed using the user profile linked to the session.
+
+=== Permissions
+
+Most of the actions in this API require permissions. These are the same permissions as the related request in IKAN ALM user interface. This means that some requests will require the user to have the correct role in order to be successful. This role will always be clearly stated in the documentation for the related resource. A user gets a certain role by being a member of a User Group.
+
+=== Using the documentation
+
+Resources are grouped by the first element of the path. A group can be opened or collapsed by clicking on the group name.
+
+Every resource is documented using the HTTP method to access this resource followed by the resource url and a short description. Values between curly brackets can be replaced.
+
+A resource can be opened or collapsed by clicking on the surrounding block. The resource will first show a list of acceptable parameters (if any), followed by the potential responses for this resource.
+
+When opening this documentation from within the IKAN ALM web interface, the GET resources can be tried out by clicking on the "try it out" button above the acceptable parameters list. When clicked, the parameters become editable and an execute button appears. Clicking the execute button will send a HTTP request to the resource and show the response. The "try it out" feature is disabled on all resources that can alter the database to avoid accidental changes to live data.
+
+This documentation does not show HEAD or OPTIONS methods for resources. Every resource also supports the HEAD and OPTIONS method.
+
+* The HEAD method only shows the headers for a GET request on the current resource. This can be useful for GET requests on id-based resources, because these include an ETag header that can be used to quickly verify if the object indicated by the requested id has been updated.
+* The OPTIONS method shows the accepted request methods that can be used for a resource.
+
+=== General usage advice
+
+* All dates that require a time are entered and returned using the ISO-8601 local date/time pattern without a timezone offset. The syntax for this pattern is `yyyy-MM-dd&#39;T&#39;HH:mm:ss`.
+* All dates that do not require a time are entered and returned using the ISO-8601 local date pattern. The syntax for this pattern is `yyyy-MM-dd`.
+* All boolean values accept the following values: true/false; yes/no; 1/0; on/off. Note that this value is case sensitive. Booleans are always returned as a true/false value.
+* If an input expects a list, this list uses a comma (,) as separator.
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : v1
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : IKAN ALM Support
+__Contact Email__ : support@ikanalm.com
+
+=== Consumes
+
+* `application/json;charset=UTF-8`
+* `application/xml;charset=UTF-8`
+** For XML examples of request bodies, consult the bundled REST API documentation found in the About section of the menu in IKAN ALM.
+
+
+=== Produces
+
+* `application/json;charset=UTF-8`
+* `application/xml;charset=UTF-8`
+

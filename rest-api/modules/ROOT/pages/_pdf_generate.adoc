@@ -14,4 +14,7 @@ The IKAN Development and IKAN ALM logos and names and all other IKAN product \
 or service names are trademarks of IKAN Development N.V. \
 All other trademarks are property of their respective owners.
 
-include::App_RESTAPI.adoc[]
+include::RESTAPI_Overview.adoc[]
+include::RESTAPI_Usage.adoc[]
+include::RESTAPI_Resources.adoc[]
+include::RESTAPI_Definitions.adoc[]

@@ -231,6 +231,7 @@ Setting __alm.commandline.install__ to "true" will install the ALM Commandline.
 
 If __alm.xmlrpc.secure__ is set to "true", then all communication between the ALM components is encrypted. As a consequence, if additional ALM components, like the ALM Agent or the ALM Commandline, are installed on remote hosts, they must also set __alm.xmlrpc.secure__ to "true" during installation, or communication with those components will fail. We strongly recommend setting __alm.xmlrpc.secure__ to "True" for security reasons.
 
+For more information, refer to <<_secureconfiguration, Manually changing the Secure Communication>>.
 
 ==== ALM Server and ALM Web Application settings
 
@@ -891,7 +892,7 @@ The location where the ALM Commandline is installed.
 
 === Running the Uninstaller
 
-By default, the uninstallation scripts uses the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
+By default, the uninstallation scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
  _INSTALL_DIR/uninstall.cmd_ (Windows) or _INSTALL_DIR/uninstall.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
 First stop Tomcat, ALM Server and ALM Agent, and then launch the uninstaller by executing the _uninstall.cmd_ or _uninstall.sh_ script.
@@ -1298,9 +1299,9 @@ sudo rm /etc/rc.d/rc2.d/S20almserver59-service
 
 For the authentication and authorization of users, IKAN ALM uses the Java Authentication and Authorization Service (JAAS) (see https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). JAAS authentication is performed in a pluggable fashion. This permits applications to remain independent from underlying authentication technologies. New or updated authentication technologies can be plugged into IKAN ALM without requiring modifications to the application itself.
 
-The JAAS configuration used by Tomcat is set in the file _ALM_HOME_/system/security/jaas.conf. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details.
+The JAAS configuration used by Tomcat is set in the file _ALM_HOME_/system/security/jaas.conf. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controlls the users that can log in via the ALM GUI and that can authenticate via the REST API.
 
-The JAAS configuration by the ALM Server can be found in the file _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml.
+The JAAS configuration by the ALM Server can be found in the file _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. This configuration controlls the users that can connect via the ALM Commandline.
 
 By default, IKAN ALM is configured to use a password file that contains the authentication and authorization information of the 3 default users :
 
@@ -1326,7 +1327,7 @@ The default IKAN ALM JAAS configuration uses a simple password file. For Tomcat 
 /** ALM Login **/
 ALM
 {
-    com.tagish.auth.FileLogin required pwdFile="_ALM_HOME_/system/security/passwd.config";
+    com.tagish.auth.FileLogin required pwdFile="ALM_HOME/system/security/passwd.config";
 };
 ----
 
@@ -1366,7 +1367,24 @@ testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
 
 The default IKAN ALM JAAS configuration files contain examples of how to connect to Microsoft AD using LDAP. We will explain the example that uses the secure ldaps protocol. The instructions to use the less secure ldap protocol are similar : only the _ldapUrl_ properties are different.
 
-For Tomcat (jaas.conf) :
+*For non secure ldap, the _ldapUrl_ will be of the following form:*
+[source]
+----
+ldapUrl="ldap://<AD_SERVER>:389"
+----
+
+*However, for  secure ldap, the _ldapUrl_ will be as follows:*
+[source]
+----
+ldapUrl="ldaps://<AD_SERVER>:636"
+----
+
+[NOTE]
+====
+When setting up a secure ldap connection, it is not sufficient to only change the Jaas configuration file of Tomcat and the ALM server. A certificate should be created and imported in the ALM keystore. Refer to the next paragraph on how to do this.
+====
+
+Example of Microsoft AD connection for Tomcat (jaas.conf) :
 
 [source]
 ----
@@ -1401,39 +1419,39 @@ LDAPLogin_SECURED
 **/
 ----
 
-For ALM Server (JaasPropertiesLoginModule.xml) :
+Example of Microsoft AD connection for the ALM Server (JaasPropertiesLoginModule.xml) :
 
 [source]
 ----
-	<!-- Example LDAP Login using the Ldaptive library (https://www.ldaptive.org/) over a TLS/SSL connection -->
-	<jaas:config name="LDAPLogin_SECURED">
-		<jaas:module className="org.ldaptive.jaas.LdapLoginModule" flags="required">
-			provider=org.ldaptive.provider.unboundid.UnboundIDProvider
-			ldapUrl=ldaps://ldaphost:636
-			bindDn=CN=ldapuser,OU=Users,DC=company,DC=com
-			bindCredential=ldapuserpassword
-			baseDn=OU=Users,DC=company,DC=com
-			subtreeSearch=true
-			userFilter=(sAMAccountName={user})
-			referral=follow
-			org.osgi.framework.BundleContext=dummy
-		</jaas:module>
-		<jaas:module className="org.ldaptive.jaas.LdapRoleAuthorizationModule" flags="required">
-			provider=org.ldaptive.provider.unboundid.UnboundIDProvider
-			ldapUrl=ldaps://ldaphost:636
-			bindDn=CN=ldapuser,OU=Users,DC=company,DC=com
-			bindCredential=ldapuserpassword
-			baseDn=OU=Users,DC=company,DC=com
-			subtreeSearch=true
-			userFilter=(sAMAccountName={user})
-			roleBase=OU=Groups,DC=company,DC=com
-			roleFilter=(|(sAMAccountName={user})(member={dn}))
-			roleAttribute=memberOf
-			searchEntryHandlers=org.ldaptive.handler.RecursiveEntryHandler{{searchAttribute=memberOf}{mergeAttributes=CN}}
-			referral=follow
-			org.osgi.framework.BundleContext=dummy
-		</jaas:module>
-	</jaas:config>
+<!-- Example LDAP Login using the Ldaptive library (https://www.ldaptive.org/) over a TLS/SSL connection -->
+<jaas:config name="LDAPLogin_SECURED">
+	<jaas:module className="org.ldaptive.jaas.LdapLoginModule" flags="required">
+		provider=org.ldaptive.provider.unboundid.UnboundIDProvider
+		ldapUrl=ldaps://ldaphost:636
+		bindDn=CN=ldapuser,OU=Users,DC=company,DC=com
+		bindCredential=ldapuserpassword
+		baseDn=OU=Users,DC=company,DC=com
+		subtreeSearch=true
+		userFilter=(sAMAccountName={user})
+		referral=follow
+		org.osgi.framework.BundleContext=dummy
+	</jaas:module>
+	<jaas:module className="org.ldaptive.jaas.LdapRoleAuthorizationModule" flags="required">
+		provider=org.ldaptive.provider.unboundid.UnboundIDProvider
+		ldapUrl=ldaps://ldaphost:636
+		bindDn=CN=ldapuser,OU=Users,DC=company,DC=com
+		bindCredential=ldapuserpassword
+		baseDn=OU=Users,DC=company,DC=com
+		subtreeSearch=true
+		userFilter=(sAMAccountName={user})
+		roleBase=OU=Groups,DC=company,DC=com
+		roleFilter=(|(sAMAccountName={user})(member={dn}))
+		roleAttribute=memberOf
+		searchEntryHandlers=org.ldaptive.handler.RecursiveEntryHandler{{searchAttribute=memberOf}{mergeAttributes=CN}}
+		referral=follow
+		org.osgi.framework.BundleContext=dummy
+	</jaas:module>
+</jaas:config>
 
 ----
 
@@ -1481,6 +1499,190 @@ Base DN of an Organizational Unit (OU) from which an LDAP search for a user's ro
 Values set in the file _jaas.conf_ *MUST* be surrounded by ", while values set in the file _JaasPropertiesLoginModule.xml_ *MUST NOT* be surrounded by ".
 ====
 Refer to https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldaptive.org/docs/guide/jaas.html] for more information on the ldaptive JAAS properties.
+
+When changing the JAAS configuration, both the Tomcat and ALM Server services must be restarted.  If the users can log in via the ALM GUI the configuration in Tomcat is correct.
+
+You can troubleshoot log in problems by activating additional logging.  This can be done by adding an extra _<logger>_ element in _TOMCAT_HOME_/webapps/alm/WEB-INF/classes/log4j2.xml
+
+[source]
+----
+<Logger name="org.ldaptive" level="trace" />
+
+----
+
+After restarting Tomcat and trying to log in, the log file _TOMCAT_HOME/logs/alm_webapp.log_ will contain extra info due to the logon attempt. This log can then be analyzed and / or sent to ALM Support.
+
+=== JAAS configuration: secure ldap (LDAP over SSL/TLS)
+
+As pointed out in the previous paragraph, secure ldap configuration (LDAP over SSL/TLS) requires the creation of a certificate that should be imported in the ALM keystore.
+
+The creation of the certificate is highly dependent on the Public Key Infrastructure (PKI) of your organization. Creating a certificate for Micrsoft AD can be done using the "Certificates" snap-in from the Microsoft Management Console (MMC). It is important that the certificate has the following properties:
+
+* Intended purpose is “Server authentication”
+
+* For "Subject name", the "Common Name" type must contain the FQ name of the server. So for example `dc1.example.com` and not `dc1`
+
+* The following types must be defined for "Subject Alternative name":
+
+** DNS = FQ name of the server, eg `dc1.example.com`
+** DNS = name of the domain, eg `example.com`
+** IP Address = ip address of the server
+
+The certificate must be exported to a file. This is possible in the format “DER encoded binary X.509”.
+
+The certificate file must then be imported into the "cacerts" keystore of the IKAN ALM Server (_ALM_HOME/system/ssl/alm_keystore_) that is also used when the communication is running secured between the different ALM Components. This is possible with the following command:
+
+[source]
+----
+
+<JAVA_HOME>\bin\keytool.exe -import -file <path_to_certificate> -keystore <ALM_HOME>/system/ssl/alm_keystore -alias <server_name>
+
+----
+
+*Example*
+
+[source]
+----
+
+D:\java\jdk11.0.10\bin\keytool.exe -import -file C:\temp\dc1_ldap.cer -keystore E:\alm\59\system\ssl\alm_keystore -alias dc1_ldap
+
+----
+
+The tool then asks for the keystore password. The default password of the IKAN ALM keystore is `almalm`.
+
+Answer _yes_ to the question whether this certificate can be trusted.
+
+[NOTE]
+====
+When switching to secure ldap the JAAS configuration of the ALM Web Application and the ALM Server need to be adjusted. Refer to the previous paragraph on how to do this.
+====
+
+[appendix]
+[[_secureconfiguration]]
+== Manually configuring the Secure Communication
+
+When running the IKAN ALM installer, the _alm.xmlrpc.secure_ installation parameter enables secure communication: when set to "true" communication between the installed ALM components is encrypted. As a consequence, if additional ALM components (like the ALM Agent or the ALM Commandline) are installed on remote hosts, they must also set _alm.xmlrpc.secure_ to "true" during installation, or communication with those components will fail. We strongly recommend setting _alm.xmlrpc.secure_ to "true" for security reasons.  However, the secure communication can be changed manually (switched off or on) after the installation.  Of course this switch should be done simultaneously for all installed IKAN ALM components.
+
+=== Secure Communication configuration: IKAN ALM Web Application
+
+The Secure Communication between the IKAN ALM Web Application and the IKAN ALM Server/Agent is controlled by a Context Parameter in the _TOMCAT_HOME/webapps/alm/WEB-INF/web.xml_ file:
+
+[source]
+----
+
+...
+<!-- Context parameter : type of communication (SSL) between webserver and server/agent-->
+<context-param>
+  <param-name>secured</param-name>
+  <param-value>true</param-value>
+</context-param>
+...
+
+----
+
+Set the _<param-value>_ to "false" if you want to disable the secure communication.
+
+The Tomcat service must be restarted after changing the context parameter.
+
+=== Secure Communication configuration: IKAN ALM Server
+
+The Secure Communication between the IKAN ALM Server and the IKAN ALM Agent/Web Application is controlled by parameters in the _server.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+
+The _server.cfg_ file can be found under _ALM_HOME/daemons/server/karaf/etc_.
+
+[source]
+----
+
+alm.server.serverPort=20021
+alm.xmlrpc.secure=true
+alm.server.database.cfg=etc/hibernate.properties
+alm.server.xml_rpc.cfg=etc/xml_rpc.properties
+alm.server.installer.corePoolSize=50
+alm.server.installer.keepAliveTime=300
+alm.server.installer.shutdownTimeout=60
+
+----
+
+Set the _alm.xmlrpc.secure_ value to "false" if you want to disable the secure communication.
+
+The _org.ops4j.pax.web.cfg_ file can also be found under _ALM_HOME/daemons/server/karaf/etc_.
+
+[source]
+----
+
+...
+org.osgi.service.http.enabled=false
+org.osgi.service.http.port=20021
+
+org.osgi.service.http.secure.enabled=true
+org.osgi.service.http.port.secure=20021
+...
+
+----
+
+Set the value of the _org.osgi.service.http.enabled_ parameter to "true" and that of the _org.osgi.service.http.secure.enabled_ parameter to "false" if you want to disable the secure communication.
+
+The IKAN ALM Server service must be restarted after changing the parameters in the _server.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+
+=== Secure Communication configuration: IKAN ALM Agent
+
+The Secure Communication between the IKAN ALM Agent and the IKAN ALM Server/Web Application is controlled by parameters in the _agent.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+
+The _agent.cfg_ file can be found under _ALM_HOME/daemons/agent/karaf/etc_.
+
+[source]
+----
+
+alm.agent.agentPort=20020
+alm.agent.serverPort=20021
+alm.agent.serverHost=ALM_SERVER_NAME
+alm.agent.hostname=
+alm.agent.hostaddress=
+alm.agent.logfilepath=log/alm_agent.log
+alm.xmlrpc.secure=true
+alm.agent.xml_rpc.cfg=etc/xml_rpc.properties
+
+----
+
+Set the _alm.xmlrpc.secure_ value to "false" if you want to disable the secure communication.
+
+The _org.ops4j.pax.web.cfg_ file can also be found under _ALM_HOME/daemons/server/karaf/etc_.
+
+[source]
+----
+
+...
+org.osgi.service.http.enabled=false
+org.osgi.service.http.port=20020
+
+org.osgi.service.http.secure.enabled=true
+org.osgi.service.http.port.secure=20020
+...
+
+----
+
+Set the value of the _org.osgi.service.http.enabled_ parameter to "true" and that of the _org.osgi.service.http.secure.enabled_ parameter to "false" if you want to disable the secure communication.
+
+The IKAN ALM Agent service must be restarted after changing the parameters in the _agent.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+
+=== Secure Communication configuration: IKAN ALM Commandline
+
+You do not need to configure any installation file of the IKAN ALM Commandline installation if you want to disable or enable the secure communication. Just set the value of the _-secured_ commandline option to "true" or "false" if you want encrypted or non encrypted communication with the IKAN ALM Server. This can also be done in the property files that can be set with the _-propertyfile_ option, eg. in `ALM_HOME/commandline/clr.properties` , or in `ALM_HOME/commandline/package.properties`
+
+This is also outlined in the usage of the IKAN ALM Commandline:
+
+[source]
+----
+
+...
+
+  -password         password to connect to the IKAN ALM Server
+  -secured          use encrypted connection or not (true|false)
+
+...
+
+----
+
 
 [appendix]
 [[_db2configuration]]

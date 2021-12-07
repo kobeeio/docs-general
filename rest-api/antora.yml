@@ -1,6 +1,6 @@
 name: rest-api
 title: REST API
 version: '5.9'
-start_page: ROOT:App_RESTAPI.adoc
+start_page: ROOT:RESTAPI_Overview.adoc
 nav:
 - modules/ROOT/nav.adoc

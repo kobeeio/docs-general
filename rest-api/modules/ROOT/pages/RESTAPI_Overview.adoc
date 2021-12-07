@@ -1,0 +1,19 @@
+= IKAN ALM REST API v1
+
+
+[[_overview]]
+== Overview
+The IKAN ALM REST API enables you to interact with IKAN ALM programmatically and integrate its functionality in scripts, other applications or stand-alone apps. This document describes the available REST resources including request and response codes. This version 1 of the IKAN ALM REST API has the following features:
+
+* Obtain information of existing Global Objects like Machines, Users, User Groups etc. It's possible to search and filter lists, or get detailed info of one specific object.
+* Obtain basic information of the existing Projects, their Project Streams and Lifecycles. You can search and filter lists, or get detailed info of one specific object.
+* Desktop functionality is almost at the same level as in the user interface: obtain information (search and filter lists, detailed info) of the existing Level Requests, Builds, Deploys, Approvals and Packages, but also create or update Level Requests, approve or reject Approvals and create or update Packages.
+* Export the data of an existing Project, and use it to import a complete new Project.
+
+== Version and URI
+
+This documentation is for *version 1* of the IKAN ALM REST API. The URIs for resources have the following structure:
+
+`http(s)://&lt;IKAN ALM URL&gt;/rest/v1/&lt;resource-name&gt;`
+
+For example, `https://your-domain/alm/rest/v1/levelrequests/123`

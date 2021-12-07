@@ -1,0 +1,2739 @@
+[[_definitions]]
+== Definitions
+
+[[_foreignkeyresource]]
+=== ForeignKeyResource
+A reference to another resource in the API.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|The id of the other resource. +
+**Example** : `0`|integer (int32)
+|**link** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_link,Link>>|<<RESTAPI_Definitions.adoc#_link,Link>>
+|**text** +
+__optional__|The type of the other resource +
+**Example** : `"Other Resource"`|string
+|===
+
+
+[[_link]]
+=== Link
+Details of a link to another resource
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**href** +
+__optional__|The location the Link is referencing. +
+**Example** : `"http://alm.example.local:8080/alm/rest/v1/link/href/1"`|string
+|**rel** +
+__optional__|The relation of the Link to the parent view. +
+**Example** : `"LinkRel"`|string
+|**title** +
+__optional__|The title of the Link. +
+**Example** : `"Title"`|string
+|===
+
+
+[[_linkedresource]]
+=== LinkedResource
+A reference to a constant subresource.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|The internal value of the linked SubResource. +
+**Example** : `0`|integer (int32)
+|**link** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_link,Link>>|<<RESTAPI_Definitions.adoc#_link,Link>>
+|**text** +
+__optional__|The (localized) name of the linked SubResource. +
+**Example** : `"Value for 0"`|string
+|===
+
+
+[[_xmlagentstatus]]
+=== XmlAgentStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlagentstatuslist]]
+=== XmlAgentStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**agentstatuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlagentstatus,XmlAgentStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlagentstatus,XmlAgentStatus>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmlapprovalstatus]]
+=== XmlApprovalStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlapprovalstatuslist]]
+=== XmlApprovalStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**approvalstatuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlapprovalstatus,XmlApprovalStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlapprovalstatus,XmlApprovalStatus>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmlapprovaltype]]
+=== XmlApprovalType
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlapprovaltypelist]]
+=== XmlApprovalTypeList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**approvaltypes** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlapprovaltype,XmlApprovalType>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlapprovaltype,XmlApprovalType>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmlapprovalview]]
+=== XmlApprovalView
+Details of a specific Approval.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**approve-datetime** +
+__optional__|The date on which the Approval was approved or rejected. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**approved-by-user** +
+__optional__|The User that handled the approval. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-id** +
+__optional__|The Level the Approval was requested for. +
+**Example** : `"1"`|string
+|**levelrequest** +
+__optional__|The Level Request the Approval was requested for. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**projectstream** +
+__optional__|The Project Stream the Approval was requested for. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**reason** +
+__optional__|The Reason the User approved or rejected the Approval. +
+**Example** : `"Approved By User X"`|string
+|**sequence-number** +
+__optional__|The position of the approval in the sequence of approvals. +
+**Example** : `1`|integer (int32)
+|**status** +
+__optional__|The Status of the approval (0=Unknown; 1=Awaiting Approval; 2=Awaiting Approval Predecessor; 3=Approved; 4=Rejected; 5=Cancelled; 6=Awaiting Level Request Finish). +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**type** +
+__optional__|The Type of the approval (1=Post-Approval 2=Pre-Approval). +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**usergroup** +
+__optional__|The User Group that is to handle the Approval. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|===
+
+
+[[_xmlapprovalviewlist]]
+=== XmlApprovalViewList
+A list of Approvals
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**approvals** +
+__optional__|A paginated list of Approvals that may be filtered and sorted. +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlapprovalview,XmlApprovalView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlapprovalview,XmlApprovalView>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlapprovepatchview]]
+=== XmlApprovePatchView
+A view for approving or rejecting an Approval
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**approve** +
+__optional__|Whether to approve (true) or reject (false) the Approval. +
+**Example** : `true`|boolean
+|**reason** +
+__optional__|The reason to approve or reject the Approval. Required if rejecting the approval, optional if approving. +
+**Example** : `"Approved by User X"`|string
+|===
+
+
+[[_xmlauthenticationview]]
+=== XmlAuthenticationView
+Details of a specific user session.
+ In case of a Post action, only provide the username and password.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**email-address** +
+__optional__|The Email Address of the current user. +
+**Example** : `"user@example.com"`|string
+|**is-administrator** +
+__optional__|Whether the user is part of the ALM Administrator usergroup. +
+**Example** : `false`|boolean
+|**is-reserved-user** +
+__optional__|Whether the user is a reserved user. +
+**Example** : `true`|boolean
+|**locale** +
+__optional__|The locale of the logged in user. +
+**Example** : `"en"`|string
+|**login-date** +
+__optional__|The date the user logged into the current session. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**login-host-ip** +
+__optional__|The IP Address of the host machine the user used to log in. +
+**Example** : `"0:0:0:0:0:0:0:1"`|string
+|**login-hostname** +
+__optional__|The hostname of the machine the user used to log in. +
+**Example** : `"localhost"`|string
+|**password** +
+__optional__|The password to use to login as. +
+**Example** : `"user"`|string
+|**user-fullname** +
+__optional__|The Username of the user. +
+**Example** : `"User"`|string
+|**username** +
+__optional__|The User Id to login as. +
+**Example** : `"user"`|string
+|===
+
+
+[[_xmlbuildarchivestatus]]
+=== XmlBuildArchiveStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlbuildarchivestatuslist]]
+=== XmlBuildArchiveStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**archivestatuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlbuildarchivestatus,XmlBuildArchiveStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlbuildarchivestatus,XmlBuildArchiveStatus>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmlbuildstatus]]
+=== XmlBuildStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlbuildstatuslist]]
+=== XmlBuildStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**statuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlbuildstatus,XmlBuildStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlbuildstatus,XmlBuildStatus>> > array
+|===
+
+
+[[_xmlbuildtype]]
+=== XmlBuildType
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlbuildtypelist]]
+=== XmlBuildTypeList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**buildtypes** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlbuildtype,XmlBuildType>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlbuildtype,XmlBuildType>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmlbuildview]]
+=== XmlBuildView
+Details of a specific Build.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**archived-status** +
+__optional__|The Archive Status of the Build File. +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**build-environment-id** +
+__optional__|The identifier of the Build Environment on which the Build was requested. +
+**Example** : `1`|integer (int32)
+|**build-environment-name** +
+__optional__|The Name of the Build Environment on which the Build was requested. +
+**Example** : `"CONTBUILD"`|string
+|**build-number** +
+__optional__|The Number of the Build. +
+**Example** : `1`|integer (int32)
+|**duration** +
+__optional__|The duration of the Build Execution in milliseconds. +
+**Example** : `1000`|integer (int64)
+|**end-datetime** +
+__optional__|The Date and Time on which the Build ended. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**file-name** +
+__optional__|The Name of the Build File produced by the Build. +
+**Example** : `"result.zip"`|string
+|**file-size** +
+__optional__|The Size of the Build File produced by the Build in bytes. +
+**Example** : `178890402`|integer (int64)
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**is-tagged-build** +
+__optional__|Whether the Build is tagged in the VCR. +
+**Example** : `true`|boolean
+|**levelrequest** +
+__optional__|A reference to the Level Request the Build is part of. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**machine-name** +
+__optional__|The Name of the Machine on which the Build was requested. +
+**Example** : `"ALMServer"`|string
+|**start-datetime** +
+__optional__|The Date and Time on which the Build started. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**status** +
+__optional__|The Status of the Build. +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|===
+
+
+[[_xmlbuildviewlist]]
+=== XmlBuildViewList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**builds** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlbuildview,XmlBuildView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlbuildview,XmlBuildView>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlclrview]]
+=== XmlCLRView
+A container view for creating a Level Request
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**build-number** +
+__optional__|Optional build number, can be set for a deliver or rollback Level Request (e.g. 88) +
+**Example** : `"30"`|string
+|**deploys-to-execute** +
+__optional__|Comma separated list of the names of the deploy environments to execute.
+ Only relevant if Optional Deploys are enabled on the Level) (e.g. testDeploy1, testDeploy2)&quot;)); +
+**Example** : `"DeployEnv1,DeployEnv2"`|< string > array
+|**description** +
+__optional__|Optional description of the Level Request (e.g. Build created with REST Interface) +
+**Example** : `"Level Request description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level** +
+__optional__|Name of the Level to create a Level Request for (e.g. TEST) +
+**Example** : `"LevelName"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**package** +
+__optional__|Optional Package to create a Level Request for (e.g. pack-1) +
+**Example** : `"PackageName"`|string
+|**parameters** +
+__optional__|A map of build and/or deploy parameters needed to create the Level Request. +
+**Example** : `{
+  "string" : "string"
+}`|< string, string > map
+|**project** +
+__optional__|Name of the Project to create a Level Request for +
+**Example** : `"ProjectName"`|string
+|**projectstream** +
+__optional__|Optional [build prefix]-[build-suffix] of the Project Stream (e.g. 1-0) to create a Level Request for +
+**Example** : `"1-0"`|string
+|**redeliver** +
+__optional__|Allow redelivering a Build to a test or production Level (disabled by default)(true or false) +
+**Example** : `"true"`|string
+|**start-date** +
+__optional__|Optional requested starting Date and Time (format dd/MM/yyyy HH:mm) (e.g. 20/10/2019 18:00) +
+**Example** : `"2019-11-22T08:17:39+0000"`|string
+|**tag** +
+__optional__|Optional tag with which the build will be tagged in the VCR (e.g. H_1-0_b1) +
+**Example** : `"B1-0_1"`|string
+|===
+
+
+[[_xmlcrufilerevisionview]]
+=== XmlCRUFileRevisionView
+Properties for a FileRevision to create or modify.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**action** +
+__optional__|The Action to perform on the File Revision. Can be either create, modify or delete. +
+**Example** : `"create"`|string
+|**name** +
+__optional__|The Name of the File Revision to create or update. +
+**Example** : `"readme.txt"`|string
+|**path** +
+__optional__|The Path of the File Revision to create or update. +
+**Example** : `"/demo/"`|string
+|**revision** +
+__optional__|The Revision number in the VCR of the File Revision to create or update. +
+**Example** : `"1"`|string
+|===
+
+
+[[_xmlcrupackageresultview]]
+=== XmlCRUPackageResultView
+A newly created or updated Package and related File Revisions.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**package** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_xmlpackageview,XmlPackageView>>|<<RESTAPI_Definitions.adoc#_xmlpackageview,XmlPackageView>>
+|**packagecru-report** +
+__optional__|Provides information on the status of individual steps during the Creation or Update of a Package and/or related File Revisions. +
+**Example** : `[ "string" ]`|< string > array
+|**validation-errors** +
+__optional__|Shows any validation problems that occurred during the Create or Update of a Package and/or related File Revisions. +
+**Example** : `{
+  "string" : "string"
+}`|< string, string > map
+|===
+
+
+[[_xmlcrupackageview]]
+=== XmlCRUPackageView
+Properties for a Package and associated File Revisions to create or update.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**archived** +
+__optional__|Whether the Package should be hidden. +
+**Example** : `false`|boolean
+|**description** +
+__optional__|The Description of the Package to create or update. +
+**Example** : `"Description for the new package"`|string
+|**filerevisions** +
+__optional__|A list of File Revisions to create or update alongside the Package. +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlcrufilerevisionview,XmlCRUFileRevisionView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlcrufilerevisionview,XmlCRUFileRevisionView>> > array
+|**name** +
+__optional__|The Name of the Package to create or update. +
+**Example** : `"example_package"`|string
+|**owner** +
+__optional__|${documentation.XmlCRUPackageView.Owner} +
+**Example** : `1`|integer (int32)
+|**project** +
+__optional__|The Name of the Project for which to create a Package. +
+**Example** : `"package_project"`|string
+|**projectstream** +
+__optional__|The Prefix and Suffix of a Project Stream for which to create a Package. +
+**Example** : `"1-0"`|string
+|**status** +
+__optional__|${documentation.XmlCRUPackageView.Status} +
+**Example** : `0`|integer (int32)
+|**target-release-date** +
+__optional__|${documentation.XmlCRUPackageView.TargetReleaseDate} +
+**Example** : `"2060-10-31"`|string
+|===
+
+
+[[_xmlcruprojectstreamview]]
+=== XmlCRUProjectStreamView
+Properties for a Project Stream.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**accept-forced-build** +
+__optional__|Optional boolean to indicate whether the project stream accepts forced builds. If not provided, defaults to true. +
+**Example** : `true`|boolean
+|**archived** +
+__optional__|Optional boolean to hide the project stream. If not provided, defaults to false. +
+**Example** : `false`|boolean
+|**buildprefix** +
+__optional__|Project stream buildprefix +
+**Example** : `"1-0"`|string
+|**buildsuffix** +
+__optional__|Project stream buildsuffix, will be ignored for a head project stream +
+**Example** : `"1-1"`|string
+|**buildtype** +
+__optional__|Optional integer to indicate project stream build type, e.g 0 is Full Build. Integer with possible values 0-3. If not provided, defaults to 0 (Full Build). +
+**Example** : `1`|integer (int32)
+|**description** +
+__optional__|Optional string, description of the project stream +
+**Example** : `"description"`|string
+|**highest-buildnumber** +
+__optional__|Optional integer, project stream highest build number. If not provided, defaults to 0. +
+**Example** : `0`|integer (int32)
+|**is-head** +
+__optional__|Optional boolean to indicate if this will be a head (true) or branch (false) project stream. If not provided, defaults to false (Branch). +
+**Example** : `false`|boolean
+|**is-tagbased** +
+__optional__|Optional boolean to build this project steam based on existing tags. If not provided, defaults to false. +
+**Example** : `false`|boolean
+|**lifecycle-oid** +
+__optional__|Oid of existing lifecycle in the project +
+**Example** : `1`|integer (int32)
+|**locked** +
+__optional__|Optional boolean to lock the branch. If not provided, defaults to false. +
+**Example** : `false`|boolean
+|**project-oid** +
+__optional__|oid of existing project +
+**Example** : `1`|integer (int32)
+|**status** +
+__optional__|Optional integer to indicate project stream status, e.g 0 is Under Construction. Integer with possible values 0-7. If not provided, defaults to 0 (Under Construction). +
+**Example** : `1`|integer (int32)
+|**tag-template** +
+__optional__|Optional template for the VCR tag of newly created level Requests. If not provided, defaults to a generic value based on the Project type: "${streamType}_${prefix}_${suffix_b${buildNumber}" for released based projects, "${streamType}_${prefix}_${suffix}_${packageName}_b${buildNumber}" for package based projects. +
+**Example** : `"${streamType}_${prefix}_${suffix}_b${buildNumber}"`|string
+|**vcr-branch-id** +
+__optional__|Id of the branch, required for branch project streams, and for the head of a TFVC connected project +
+**Example** : `"COMMON/branches/JDK11"`|string
+|===
+
+
+[[_xmlcreatelevelrequestview]]
+=== XmlCreateLevelRequestView
+Details of the newly created Level Request.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**buildnumber** +
+__optional__|Build Number +
+**Example** : `1`|integer (int32)
+|**description** +
+__optional__|Description +
+**Example** : `"The description of the created Level Request"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-id** +
+__optional__|Level Identifier +
+**Example** : `1`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**package-id** +
+__optional__|Identifier of the Package +
+**Example** : `1`|integer (int32)
+|**projectstream** +
+__optional__|Project Stream +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**requested-datetime** +
+__optional__|Requested Date and Time +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**tag** +
+__optional__|VCR Tag +
+**Example** : `"B1-0_1"`|string
+|**user** +
+__optional__|Name of the User +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|===
+
+
+[[_xmldeploystatus]]
+=== XmlDeployStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmldeploystatuslist]]
+=== XmlDeployStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**statuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmldeploystatus,XmlDeployStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmldeploystatus,XmlDeployStatus>> > array
+|===
+
+
+[[_xmldeployview]]
+=== XmlDeployView
+Details of a specific Deploy.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**deploy-environment-id** +
+__optional__|The identifier of the Deploy Environment on which the Deploy was requested. +
+**Example** : `1`|integer (int32)
+|**deploy-environment-name** +
+__optional__|The Name of the Deploy Environment on which the Deploy was requested. +
+**Example** : `"ALMServer"`|string
+|**duration** +
+__optional__|The duration of the Deploy Execution in milliseconds. +
+**Example** : `1000`|integer (int64)
+|**end-datetime** +
+__optional__|The Date and Time on which the Deploy ended. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**levelrequest** +
+__optional__|A reference to the Level Request the Deploy is part of. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**machine-name** +
+__optional__|The Name of the Machine on which the Deploy was requested. +
+**Example** : `"ALMServer"`|string
+|**sequence-number** +
+__optional__|The position of the Deploy in the sequence of Deploys. +
+**Example** : `1`|integer (int32)
+|**start-datetime** +
+__optional__|The Date and Time on which the Deploy started. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**status** +
+__optional__|The Status of the Deploy. +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|===
+
+
+[[_xmldeployviewlist]]
+=== XmlDeployViewList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**deploys** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmldeployview,XmlDeployView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmldeployview,XmlDeployView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlexportablebuildenvironmentview]]
+=== XmlExportableBuildEnvironmentView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**build-script** +
+__optional__|**Example** : `"string"`|string
+|**build-suffix** +
+__optional__|**Example** : `"string"`|string
+|**buildenvironmentparameters** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablebuildparameterview,XmlExportableBuildParameterView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablebuildparameterview,XmlExportableBuildParameterView>> > array
+|**buildtoolref** +
+__optional__|**Example** : `"string"`|string
+|**debug** +
+__optional__|**Example** : `true`|boolean
+|**downloadable-build** +
+__optional__|**Example** : `true`|boolean
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**machineref** +
+__optional__|**Example** : `"string"`|string
+|**name** +
+__optional__|**Example** : `"string"`|string
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**phases** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseview,XmlExportableEnvironmentPhaseView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseview,XmlExportableEnvironmentPhaseView>> > array
+|**source-location** +
+__optional__|**Example** : `"string"`|string
+|**target-location** +
+__optional__|**Example** : `"string"`|string
+|**user-parameters** +
+__optional__|**Example** : `true`|boolean
+|===
+
+
+[[_xmlexportablebuildparameterview]]
+=== XmlExportableBuildParameterView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**dynamic** +
+__optional__|**Example** : `true`|boolean
+|**editable** +
+__optional__|**Example** : `true`|boolean
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**key** +
+__optional__|**Example** : `"string"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**mandatory** +
+__optional__|**Example** : `true`|boolean
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**secured** +
+__optional__|**Example** : `true`|boolean
+|**user-controlled** +
+__optional__|**Example** : `true`|boolean
+|**value** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlexportabledeployenvironmentview]]
+=== XmlExportableDeployEnvironmentView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**build-environment-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**debug** +
+__optional__|**Example** : `true`|boolean
+|**deploy-script** +
+__optional__|**Example** : `"string"`|string
+|**deployenvironmentparameters** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportabledeployparameterview,XmlExportableDeployParameterView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportabledeployparameterview,XmlExportableDeployParameterView>> > array
+|**deploytoolref** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**machineref** +
+__optional__|**Example** : `"string"`|string
+|**name** +
+__optional__|**Example** : `"string"`|string
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**partial-deploy** +
+__optional__|**Example** : `true`|boolean
+|**phases** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseview,XmlExportableEnvironmentPhaseView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseview,XmlExportableEnvironmentPhaseView>> > array
+|**sequence-number** +
+__optional__|**Example** : `0`|integer (int32)
+|**source-location** +
+__optional__|**Example** : `"string"`|string
+|**target-location** +
+__optional__|**Example** : `"string"`|string
+|**user-parameters** +
+__optional__|**Example** : `true`|boolean
+|===
+
+
+[[_xmlexportabledeployparameterview]]
+=== XmlExportableDeployParameterView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**dynamic** +
+__optional__|**Example** : `true`|boolean
+|**editable** +
+__optional__|**Example** : `true`|boolean
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**key** +
+__optional__|**Example** : `"string"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**mandatory** +
+__optional__|**Example** : `true`|boolean
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**secured** +
+__optional__|**Example** : `true`|boolean
+|**user-controlled** +
+__optional__|**Example** : `true`|boolean
+|**value** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlexportableenvironmentphaseparameterview]]
+=== XmlExportableEnvironmentPhaseParameterView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**globalphaseparameter** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**integrationref** +
+__optional__|**Example** : `"string"`|string
+|**integrationtype** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|**Example** : `"string"`|string
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**value** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlexportableenvironmentphaseview]]
+=== XmlExportableEnvironmentPhaseView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**environment-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**environment-type** +
+__optional__|**Example** : `0`|integer (int32)
+|**fail-on-error** +
+__optional__|**Example** : `true`|boolean
+|**firstphase** +
+__optional__|**Example** : `true`|boolean
+|**globalphase** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**next-phase-on-fail-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**next-phase-on-success-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**next-phase-on-warning-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**parameters** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseparameterview,XmlExportableEnvironmentPhaseParameterView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseparameterview,XmlExportableEnvironmentPhaseParameterView>> > array
+|**phase-name** +
+__optional__|**Example** : `"string"`|string
+|**phase-version** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlexportablelevelview]]
+=== XmlExportableLevelView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**buildenvironments** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablebuildenvironmentview,XmlExportableBuildEnvironmentView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablebuildenvironmentview,XmlExportableBuildEnvironmentView>> > array
+|**debug** +
+__optional__|**Example** : `true`|boolean
+|**deployenvironments** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportabledeployenvironmentview,XmlExportableDeployEnvironmentView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportabledeployenvironmentview,XmlExportableDeployEnvironmentView>> > array
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locked** +
+__optional__|**Example** : `true`|boolean
+|**name** +
+__optional__|**Example** : `"string"`|string
+|**notification-criteria** +
+__optional__|**Example** : `0`|integer (int32)
+|**notification-type** +
+__optional__|**Example** : `0`|integer (int32)
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**phases** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseview,XmlExportableEnvironmentPhaseView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportableenvironmentphaseview,XmlExportableEnvironmentPhaseView>> > array
+|**post-notification-criteria** +
+__optional__|**Example** : `0`|integer (int32)
+|**postapprovals** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablepostapprovalusergroupassociationview,XmlExportablePostApprovalUserGroupAssociationView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablepostapprovalusergroupassociationview,XmlExportablePostApprovalUserGroupAssociationView>> > array
+|**postnotification-usergroupref** +
+__optional__|**Example** : `"string"`|string
+|**preapprovals** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablepreapprovalusergroupassociationview,XmlExportablePreApprovalUserGroupAssociationView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablepreapprovalusergroupassociationview,XmlExportablePreApprovalUserGroupAssociationView>> > array
+|**prenotification-usergroupref** +
+__optional__|**Example** : `"string"`|string
+|**requester-usergroupref** +
+__optional__|**Example** : `"string"`|string
+|**scheduleref** +
+__optional__|**Example** : `"string"`|string
+|**type** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlexportablelifecycleassociationview]]
+=== XmlExportableLifecycleAssociationView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**lifecycle-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**optional** +
+__optional__|**Example** : `true`|boolean
+|**optional-deploy** +
+__optional__|**Example** : `true`|boolean
+|**sequence-number** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlexportablelifecycleview]]
+=== XmlExportableLifecycleView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**is-base** +
+__optional__|**Example** : `true`|boolean
+|**lifecycle-associations** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablelifecycleassociationview,XmlExportableLifecycleAssociationView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablelifecycleassociationview,XmlExportableLifecycleAssociationView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|**Example** : `"string"`|string
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlexportablepostapprovalusergroupassociationview]]
+=== XmlExportablePostApprovalUserGroupAssociationView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**controlled-by-usergroup** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**sequencenumber** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlexportablepreapprovalusergroupassociationview]]
+=== XmlExportablePreApprovalUserGroupAssociationView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**controlled-by-usergroup** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**levelOid** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**sequencenumber** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlexportableprojectstreamview]]
+=== XmlExportableProjectStreamView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**accept-forced-build** +
+__optional__|**Example** : `true`|boolean
+|**archived** +
+__optional__|**Example** : `true`|boolean
+|**buildprefix** +
+__optional__|**Example** : `"string"`|string
+|**buildsuffix** +
+__optional__|**Example** : `"string"`|string
+|**buildtype** +
+__optional__|**Example** : `0`|integer (int32)
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**highest-buildnumber** +
+__optional__|**Example** : `0`|integer (int32)
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**is-head** +
+__optional__|**Example** : `true`|boolean
+|**is-tagbased** +
+__optional__|**Example** : `true`|boolean
+|**lifecycle-oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locked** +
+__optional__|**Example** : `true`|boolean
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**partial-build-tag** +
+__optional__|**Example** : `"string"`|string
+|**status** +
+__optional__|**Example** : `0`|integer (int32)
+|**tag-template** +
+__optional__|**Example** : `"string"`|string
+|**vcr-branch-id** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlexportableprojectview]]
+=== XmlExportableProjectView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**admingroupref** +
+__optional__|**Example** : `"string"`|string
+|**archived** +
+__optional__|**Example** : `true`|boolean
+|**buildscript** +
+__optional__|**Example** : `"string"`|string
+|**deployscript** +
+__optional__|**Example** : `"string"`|string
+|**description** +
+__optional__|**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**issuetrackingsystemref** +
+__optional__|**Example** : `"string"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locked** +
+__optional__|**Example** : `true`|boolean
+|**name** +
+__optional__|**Example** : `"string"`|string
+|**oid** +
+__optional__|**Example** : `0`|integer (int32)
+|**projecttype** +
+__optional__|**Example** : `0`|integer (int32)
+|**usergroupref** +
+__optional__|**Example** : `"string"`|string
+|**vcr-projectname** +
+__optional__|**Example** : `"string"`|string
+|**vcrref** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlfilerevisionview]]
+=== XmlFileRevisionView
+Details of a specific File Revision.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**name** +
+__optional__|The Name of the File Revision. +
+**Example** : `"readme.txt"`|string
+|**path** +
+__optional__|The Path of the File Revision. +
+**Example** : `"/demo/"`|string
+|**revision** +
+__optional__|The Revision number in the VCR of the File Revision. +
+**Example** : `"1"`|string
+|===
+
+
+[[_xmlfilerevisionviewlist]]
+=== XmlFileRevisionViewList
+A list of File Revisions
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**filerevisions** +
+__optional__|A list of File Revisions. +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlfilerevisionview,XmlFileRevisionView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlfilerevisionview,XmlFileRevisionView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlgitview]]
+=== XmlGitView
+Details of a specific Git Repository
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**cache-location** +
+__optional__|Cache Location +
+**Example** : `"file:///C:/almdemo/repository/git/"`|string
+|**clone-with-filter-blob-none** +
+__optional__|Clone with –filter=blob:none +
+**Example** : `true`|boolean
+|**command-path** +
+__optional__|Command Path +
+**Example** : `"c:/vcrs/git/bin"`|string
+|**default-branch-name** +
+__optional__|Default Branch Name +
+**Example** : `"main"`|string
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"GITRepository"`|string
+|**password** +
+__optional__|Password +
+**Example** : `"********"`|string
+|**repository-push-url** +
+__optional__|Repository URL +
+**Example** : `"file:///C:/almdemo/repository/git/"`|string
+|**repository-url** +
+__optional__|Repository URL +
+**Example** : `"file:///C:/almdemo/repository/git/"`|string
+|**timeout** +
+__optional__|Time-Out (seconds) +
+**Minimum value** : `30` +
+**Maximum value** : `3600` +
+**Example** : `30`|integer (int32)
+|**type** +
+__optional__|Repository Type (git) +
+**Example** : `"git"`|string
+|**user-id** +
+__optional__|User ID +
+**Example** : `"gituser"`|string
+|===
+
+
+[[_xmlgitviewlist]]
+=== XmlGitViewList
+A list of Git Repositories
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**gits** +
+__optional__|A paginated list of Git Repositories that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlgitview,XmlGitView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlgitview,XmlGitView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlglobalrefresource]]
+=== XmlGlobalRefResource
+Details of a Reference to a Global Object that 'exists' (should exist) in the IKAN ALM Instance 'from the exported Project' ('where the Project will be imported')
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**attributes** +
+__optional__|The Global Reference attributes needed to link to a specific global object. Mostly the 'name' attribute is sufficient, but sometimes additional attributes (type, phaseVersion,…) are needed to uniquely identify the Object. +
+**Example** : `{
+  "string" : "string"
+}`|< string, string > map
+|**refid** +
+__optional__|Identifier of a Global Reference Object. Will be used as replacing identifier in the Project Tree when linking a Project Object to a Global object, e.g. globalref-14. +
+**Example** : `1`|integer (int32)
+|**type** +
+__optional__|The Global Reference type (vcr, its=Issue Tracking System, usergroup, schedule, tool, machine, phase, phaseparameter, transporterprotocol, unknown). +
+**Example** : `"vcr"`|string
+|===
+
+
+[[_xmlissuetrackingsystempropertyview]]
+=== XmlIssueTrackingSystemPropertyView
+Details of a specific Issue Tracking System Property
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"restUrl"`|string
+|**secured** +
+__optional__|Secured +
+**Example** : `true`|boolean
+|**value** +
+__optional__|Property Value +
+**Example** : `"http://api.example.com"`|string
+|===
+
+
+[[_xmlissuetrackingsystempropertyviewlist]]
+=== XmlIssueTrackingSystemPropertyViewList
+A list of Issue Tracking System Properties
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**issuetrackingsystemproperties** +
+__optional__|${documentation.XmlIssueTrackingSystemPropertyView.value} +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlissuetrackingsystempropertyview,XmlIssueTrackingSystemPropertyView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlissuetrackingsystempropertyview,XmlIssueTrackingSystemPropertyView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlissuetrackingsystemview]]
+=== XmlIssueTrackingSystemView
+Details of a specific Issue Tracking System
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**add-comments** +
+__optional__|Add Comments +
+**Example** : `true`|boolean
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**issue-id-pattern** +
+__optional__|Issue ID Pattern +
+**Example** : `"[0-9]+"`|string
+|**issue-pattern** +
+__optional__|Issue Pattern +
+**Example** : `"[0-9A-Z][0-9A-Z][0-9A-Z]*-[0-9]+"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"ALM Issues System"`|string
+|**password** +
+__optional__|Password +
+**Example** : `"p@ssw0rd"`|string
+|**plugin-factory-class** +
+__optional__|**Example** : `"string"`|string
+|**url** +
+__optional__|URL +
+**Example** : `"http://example.com/issues/${issueId}"`|string
+|**user** +
+__optional__|User +
+**Example** : `"username"`|string
+|===
+
+
+[[_xmlissuetrackingsystemviewlist]]
+=== XmlIssueTrackingSystemViewList
+A list of Issue Tracking Systems
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**issuetrackingsystems** +
+__optional__|${documentation.XmlIssueTrackingSystemViewList.value} +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlissuetrackingsystemview,XmlIssueTrackingSystemView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlissuetrackingsystemview,XmlIssueTrackingSystemView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlissueview]]
+=== XmlIssueView
+Details of a specific Issue.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|The Description of the Issue. +
+**Example** : `"Example Issue Description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**issue-id** +
+__optional__|The identifier of the Issue in the Issue Tracking System. +
+**Example** : `"Example Issue Id"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**owner** +
+__optional__|The Owner of the Issue in the Issue Tracking System. +
+**Example** : `"Example Issue Owner"`|string
+|**priority** +
+__optional__|The Priority of the Issue. +
+**Example** : `"Example Issue Priority"`|string
+|**status** +
+__optional__|The Status of the Issue. +
+**Example** : `"Example Issue Status"`|string
+|**url** +
+__optional__|The Url of the Issue in the Issue Tracking System. +
+**Example** : `"Example Issue Url"`|string
+|===
+
+
+[[_xmlissueviewlist]]
+=== XmlIssueViewList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**issues** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlissueview,XmlIssueView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlissueview,XmlIssueView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmllevelrequestactiontype]]
+=== XmlLevelRequestActionType
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmllevelrequestactiontypelist]]
+=== XmlLevelRequestActionTypeList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**actiontypes** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmllevelrequestactiontype,XmlLevelRequestActionType>>" ]`|< <<RESTAPI_Definitions.adoc#_xmllevelrequestactiontype,XmlLevelRequestActionType>> > array
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmllevelrequestpatchview]]
+=== XmlLevelRequestPatchView
+A view for updating, cancelling or aborting a Level Request
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|Description of the Level Request to be updated. +
+**Example** : `"Level Request description"`|string
+|**requested-datetime** +
+__optional__|Requested Date and Time of the Level Request to be updated, in correct format (e.g M/d/yy h:mm a). +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**status** +
+__optional__|Target Status of the Level Request you want to Cancel (status=8) or Abort (status=10). +
+**Example** : `10`|integer (int32)
+|===
+
+
+[[_xmllevelrequestresultview]]
+=== XmlLevelRequestResultView
+Details of a specific Level Request.
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**action-type** +
+__optional__|The ActionType of the Level Request. +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**build-number** +
+__optional__|The Build Number of the Level Request. +
+**Example** : `1`|integer (int32)
+|**created-by-user** +
+__optional__|A reference to the User who requested the Level Request. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**created-on-datetime** +
+__optional__|The Date and Time on which the Level Request was created. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**createdby-user-id** +
+__optional__|The Name of the User who requested the Level Request. +
+**Example** : `"global"`|string
+|**description** +
+__optional__|The Description of the Level Request. +
+**Example** : `"Build Level Request for Example Project"`|string
+|**end-datetime** +
+__optional__|The Date and Time on which the Level Request ended. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**level-id** +
+__optional__|The identifier of the Level for which the Level Request was requested. +
+**Example** : `1`|integer (int32)
+|**level-name** +
+__optional__|The Name of the Level for which the Level Request was requested. +
+**Example** : `"Build"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**package** +
+__optional__|A reference to the Package for which the Level Request was requested. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**project** +
+__optional__|A reference to the Project for which the Level Request was requested. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**project-name** +
+__optional__|The Name of the Project for which the Level Request was requested. +
+**Example** : `"Example_Project"`|string
+|**projectstream** +
+__optional__|A reference to the Project Stream for which the Level Request was requested. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**projectstream-short-notation** +
+__optional__|The Project Stream for which the Level Request was requested. +
+**Example** : `"Example_Project H_1-0"`|string
+|**requested-datetime** +
+__optional__|The Date and Time on which the Level Request was requested to start. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**start-datetime** +
+__optional__|The Date and Time on which the Level Request started. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**status** +
+__optional__|The Status of the Level Request. +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**type** +
+__optional__|The Type of the Level Request. +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**vcr-tag** +
+__optional__|The Tag the Level Request is tagged with in the VCR. +
+**Example** : `"H_1-0_1"`|string
+|===
+
+
+[[_xmllevelrequestresultviewlist]]
+=== XmlLevelRequestResultViewList
+A list of Level Requests
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**levelrequests** +
+__optional__|A paginated list of Level Request Results that may be filtered and sorted. +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmllevelrequestresultview,XmlLevelRequestResultView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmllevelrequestresultview,XmlLevelRequestResultView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmllevelrequeststatus]]
+=== XmlLevelRequestStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmllevelrequeststatuslist]]
+=== XmlLevelRequestStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**statuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmllevelrequeststatus,XmlLevelRequestStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmllevelrequeststatus,XmlLevelRequestStatus>> > array
+|===
+
+
+[[_xmllevelrequesttype]]
+=== XmlLevelRequestType
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmllevelrequesttypelist]]
+=== XmlLevelRequestTypeList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**types** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmllevelrequesttype,XmlLevelRequestType>>" ]`|< <<RESTAPI_Definitions.adoc#_xmllevelrequesttype,XmlLevelRequestType>> > array
+|===
+
+
+[[_xmllifecycleview]]
+=== XmlLifecycleView
+Details of a specific Lifecycle
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**is-base** +
+__optional__|Whether this is a base or branch Lifecycle +
+**Example** : `true`|boolean
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"maintenancelifecycle"`|string
+|**project** +
+__optional__|The Project connected to the Lifecycle +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|===
+
+
+[[_xmllifecycleviewlist]]
+=== XmlLifecycleViewList
+A list of Lifecycles
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**lifecycles** +
+__optional__|${documentation.LifecycleViewList.value} +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmllifecycleview,XmlLifecycleView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmllifecycleview,XmlLifecycleView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlmachinestatusview]]
+=== XmlMachineStatusView
+Agent Log or Status Details of a specific Machine
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**agent-log** +
+__optional__|Agent Log +
+**Example** : `"string"`|string
+|**agentstatus** +
+__optional__|Agent Status (0=Shutting Down, 1=Idle, 2=Running Builds, 3=Running Deploys, 4=Running Builds and Deploys, 5=Could not connect) +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**dhcp-enabled** +
+__optional__|DHCP Enabled +
+**Example** : `true`|boolean
+|**dhcp-name** +
+__optional__|DHCP Name +
+**Example** : `"string"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**ip-address** +
+__optional__|IP Address +
+**Example** : `"127.0.0.1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"ALMServer"`|string
+|**serverstatus** +
+__optional__|Server Status (O=Shutting Down, 1=Idle, 2=Running Level Requests, 3=Could not connect) +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|===
+
+
+[[_xmlmachineview]]
+=== XmlMachineView
+Details of a specific Machine
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**agent-port** +
+__optional__|Agent Port +
+**Example** : `20020`|integer (int32)
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**dhcp-enabled** +
+__optional__|DHCP Enabled +
+**Example** : `true`|boolean
+|**dhcp-name** +
+__optional__|DHCP Name +
+**Example** : `"almserver.example.com"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**ip-address** +
+__optional__|IP Address +
+**Example** : `"127.0.0.1"`|string
+|**job-limit** +
+__optional__|Concurrent Deploy Limit +
+**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locked** +
+__optional__|Whether the Machine is Locked or not +
+**Example** : `true`|boolean
+|**name** +
+__optional__|Name +
+**Example** : `"ALMServer"`|string
+|**operatingsystem** +
+__optional__|Operating System +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**server-port** +
+__optional__|Server Port +
+**Example** : `20021`|integer (int32)
+|**transporterprotocol-id** +
+__optional__|Identifier of the Transporter Protocol linked to the Machine +
+**Example** : `1`|integer (int32)
+|**transporterprotocol-name** +
+__optional__|Name of the Transporter Protocol linked to the Machine +
+**Example** : `"Local FileCopy"`|string
+|===
+
+
+[[_xmlmachineviewlist]]
+=== XmlMachineViewList
+A list of Machines
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**machines** +
+__optional__|A paginated list of Machines that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlmachineview,XmlMachineView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlmachineview,XmlMachineView>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmloperatingsystem]]
+=== XmlOperatingSystem
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmloperatingsystemlist]]
+=== XmlOperatingSystemList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**operatingsystems** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmloperatingsystem,XmlOperatingSystem>>" ]`|< <<RESTAPI_Definitions.adoc#_xmloperatingsystem,XmlOperatingSystem>> > array
+|===
+
+
+[[_xmlpackagestatus]]
+=== XmlPackageStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlpackagestatuslist]]
+=== XmlPackageStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**statuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlpackagestatus,XmlPackageStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlpackagestatus,XmlPackageStatus>> > array
+|===
+
+
+[[_xmlpackageview]]
+=== XmlPackageView
+Details of a package
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**archived** +
+__optional__|Whether the Package is hidden. +
+**Example** : `false`|boolean
+|**description** +
+__optional__|The Description of the Package. +
+**Example** : `"Description for the package"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**latest-levelrequest** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|The Name of the Package. +
+**Example** : `"example_package"`|string
+|**owner** +
+__optional__|The Owner of the package. +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**project** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**project-name** +
+__optional__|The Name of the Project the Package is part of. +
+**Example** : `"H_1-0"`|string
+|**projectstream** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**projectstream-short-notation** +
+__optional__|The Project Stream the Package is part of. +
+**Example** : `"H_1-0"`|string
+|**status** +
+__optional__|The Status of the Package (0=Active, 1=Frozen, 2=Archived). +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**target-release-date** +
+__optional__|The Target Release Date of the Package. +
+**Example** : `"2030-11-22"`|string
+|===
+
+
+[[_xmlpackageviewlist]]
+=== XmlPackageViewList
+A list of Packages
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**packages** +
+__optional__|${documentation.XmlPackageViewList.value} +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlpackageview,XmlPackageView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlpackageview,XmlPackageView>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlphaselogformattype]]
+=== XmlPhaseLogFormatType
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlphaselogformattypelist]]
+=== XmlPhaseLogFormatTypeList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**formattypes** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlphaselogformattype,XmlPhaseLogFormatType>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlphaselogformattype,XmlPhaseLogFormatType>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|===
+
+
+[[_xmlphaselogstatus]]
+=== XmlPhaseLogStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlphaselogstatuslist]]
+=== XmlPhaseLogStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**statuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlphaselogstatus,XmlPhaseLogStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlphaselogstatus,XmlPhaseLogStatus>> > array
+|===
+
+
+[[_xmlphaselogview]]
+=== XmlPhaseLogView
+Details of a specific Phase
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**display-name** +
+__optional__|The human readable name of the Phase that was executed. +
+**Example** : `"Execute Script Phase"`|string
+|**duration** +
+__optional__|The duration of the Phase Execution. +
+**Example** : `178890402`|integer (int64)
+|**end-datetime** +
+__optional__|The Date and Time when the Phase ended execution. +
+**Example** : `"2019-11-22T08:17:50"`|string
+|**formattingData** +
+__optional__|Additional formatting data used to format the Phase Log. +
+**Example** : `"/xslt/ant/log.xsl"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**log-format** +
+__optional__|The format of the Phase Log (0=TXT; 1=XML). +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**message** +
+__optional__|The summary message of the Phase Log. +
+**Example** : `"Message"`|string
+|**phase-name** +
+__optional__|The internal name of the Phase that was executed. +
+**Example** : `"be.ikan.scm4all.phases.core.executeScript"`|string
+|**phase-version** +
+__optional__|The version of the Phase that was executed. +
+**Example** : `"5.9.0"`|string
+|**stackTrace** +
+__optional__|The stack trace of the Phase Log in case of a failure. +
+**Example** : `"Stack trace"`|string
+|**start-datetime** +
+__optional__|The Date and Time when the Phase started execution. +
+**Example** : `"2019-11-22T08:17:39"`|string
+|**status** +
+__optional__|The status of the Phase Execution (0=Not Executed; 1=Success; 2=Warning; 3=Fail; 4=Run; 5=Aborted). +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|===
+
+
+[[_xmlphaselogviewlist]]
+=== XmlPhaseLogViewList
+A list of Phase Logs
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**phases** +
+__optional__|A paginated list of Phase Logs that may be filtered and sorted. +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlphaselogview,XmlPhaseLogView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlphaselogview,XmlPhaseLogView>> > array
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlprojectexportview]]
+=== XmlProjectExportView
+Details of an Exported Project(Project Export Resource)/Details of the input to Import a Project (Project Import Resource)
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**globalreferences** +
+__optional__|References to Global Objects from the exported Project, like VCR, Build and Deploy Tools, User Groups, Machines, … These Objects should exist in the IKAN ALM instance when your are importing a Project. +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlglobalrefresource,XmlGlobalRefResource>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlglobalrefresource,XmlGlobalRefResource>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**projecttree** +
+__optional__|The exported Project Tree, containing Project, Project Streams, Lifecycles, Levels and all their sub elements. Will be entirely created when importing the Project. +
+**Example** : <<RESTAPI_Definitions.adoc#_xmlprojecttreeview,XmlProjectTreeView>>|<<RESTAPI_Definitions.adoc#_xmlprojecttreeview,XmlProjectTreeView>>
+|**version** +
+__optional__|IKAN ALM Version that generated the Export Project Tree. Must be identical to the version of the IKAN ALM instance where this tree will be imported. +
+**Example** : `"5-9.0"`|string
+|===
+
+
+[[_xmlprojectstreamstatus]]
+=== XmlProjectStreamStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlprojectstreamstatuslist]]
+=== XmlProjectStreamStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**statuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlprojectstreamstatus,XmlProjectStreamStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlprojectstreamstatus,XmlProjectStreamStatus>> > array
+|===
+
+
+[[_xmlprojectstreamview]]
+=== XmlProjectStreamView
+Details of a specific Project Stream
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**accept-forced-build** +
+__optional__|Accept Forced Build +
+**Example** : `true`|boolean
+|**archived** +
+__optional__|Hidden +
+**Example** : `true`|boolean
+|**buildprefix** +
+__optional__|Prefix +
+**Example** : `"string"`|string
+|**buildsuffix** +
+__optional__|Suffix +
+**Example** : `"string"`|string
+|**buildtype** +
+__optional__|Build Type +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**description** +
+__optional__|Description +
+**Example** : `"string"`|string
+|**highest-buildnumber** +
+__optional__|Highest Build Number +
+**Example** : `0`|integer (int32)
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**is-head** +
+__optional__|Type (Head or Branch stream) +
+**Example** : `true`|boolean
+|**is-tagbased** +
+__optional__|Whether the stream is Tag-Based +
+**Example** : `true`|boolean
+|**lifecycle** +
+__optional__|The Lifecycle connected to the Project Stream +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**lifecycle-name** +
+__optional__|Lifecycle Name +
+**Example** : `"string"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locked** +
+__optional__|Locked +
+**Example** : `true`|boolean
+|**partial-build-tag** +
+__optional__|VCR Tag in case of Tag-based Partial Build +
+**Example** : `"string"`|string
+|**project** +
+__optional__|The Project connected to the Project Stream +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**project-name** +
+__optional__|Project Name +
+**Example** : `"string"`|string
+|**projecttype** +
+__optional__|Project Type +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**status** +
+__optional__|Status +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**tag-template** +
+__optional__|Tag Template +
+**Example** : `"string"`|string
+|**vcr-branch-id** +
+__optional__|VCR Branch ID +
+**Example** : `"string"`|string
+|===
+
+
+[[_xmlprojectstreamviewlist]]
+=== XmlProjectStreamViewList
+A list of Project Streams
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**projectstreams** +
+__optional__|A paginated list of Project Streams that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlprojectstreamview,XmlProjectStreamView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlprojectstreamview,XmlProjectStreamView>> > array
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlprojecttreeview]]
+=== XmlProjectTreeView
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**levels** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablelevelview,XmlExportableLevelView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablelevelview,XmlExportableLevelView>> > array
+|**lifecycles** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportablelifecycleview,XmlExportableLifecycleView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportablelifecycleview,XmlExportableLifecycleView>> > array
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**project** +
+__optional__|**Example** : <<RESTAPI_Definitions.adoc#_xmlexportableprojectview,XmlExportableProjectView>>|<<RESTAPI_Definitions.adoc#_xmlexportableprojectview,XmlExportableProjectView>>
+|**projectstreams** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlexportableprojectstreamview,XmlExportableProjectStreamView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlexportableprojectstreamview,XmlExportableProjectStreamView>> > array
+|===
+
+
+[[_xmlprojecttype]]
+=== XmlProjectType
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlprojecttypelist]]
+=== XmlProjectTypeList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**projecttypes** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlprojecttype,XmlProjectType>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlprojecttype,XmlProjectType>> > array
+|===
+
+
+[[_xmlprojectview]]
+=== XmlProjectView
+Details of a specific Project
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**admingroup** +
+__optional__|Admin Access +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**archived** +
+__optional__|Hidden +
+**Example** : `true`|boolean
+|**buildscript** +
+__optional__|Build Script +
+**Example** : `"build.xml"`|string
+|**deployscript** +
+__optional__|Deploy Script +
+**Example** : `"deploy.xml"`|string
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**issuetrackingsystem** +
+__optional__|Issue Tracking System +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locked** +
+__optional__|Locked +
+**Example** : `true`|boolean
+|**name** +
+__optional__|Name +
+**Example** : `"name"`|string
+|**projecttype** +
+__optional__|Project Type +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**usergroup** +
+__optional__|User Access +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**vcr** +
+__optional__|VCR +
+**Example** : <<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>|<<RESTAPI_Definitions.adoc#_foreignkeyresource,ForeignKeyResource>>
+|**vcr-projectname** +
+__optional__|VCR Project Name +
+**Example** : `"Customers"`|string
+|===
+
+
+[[_xmlprojectviewlist]]
+=== XmlProjectViewList
+A list of Projects
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**projects** +
+__optional__|A paginated list of Projects that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlprojectview,XmlProjectView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlprojectview,XmlProjectView>> > array
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlrepositorylayout]]
+=== XmlRepositoryLayout
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlrepositorylayoutlist]]
+=== XmlRepositoryLayoutList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**repository-layouts** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlrepositorylayout,XmlRepositoryLayout>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlrepositorylayout,XmlRepositoryLayout>> > array
+|===
+
+
+[[_xmlserverstatus]]
+=== XmlServerStatus
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**text** +
+__optional__|**Example** : `"string"`|string
+|===
+
+
+[[_xmlserverstatuslist]]
+=== XmlServerStatusList
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**serverstatuses** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlserverstatus,XmlServerStatus>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlserverstatus,XmlServerStatus>> > array
+|===
+
+
+[[_xmlsvnview]]
+=== XmlSvnView
+Details of a specific Subversion Repository
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**command-path** +
+__optional__|Command Path +
+**Example** : `"c:/vcrs/svn/bin"`|string
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**fetch-meta-properties** +
+__optional__|Whether to fetch the SVN Meta Properties or not +
+**Example** : `true`|boolean
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"SVNRepository"`|string
+|**password** +
+__optional__|Password +
+**Example** : `"********"`|string
+|**repository-layout** +
+__optional__|Repository Layout +
+**Example** : <<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>|<<RESTAPI_Definitions.adoc#_linkedresource,LinkedResource>>
+|**repository-url** +
+__optional__|Repository URL +
+**Example** : `"file:///C:/almdemo/repository/svn/"`|string
+|**tags-directory** +
+__optional__|Tags Directory +
+**Example** : `"tags"`|string
+|**timeout** +
+__optional__|Time-Out (seconds) +
+**Minimum value** : `30` +
+**Maximum value** : `3600` +
+**Example** : `30`|integer (int32)
+|**trunk-directory** +
+__optional__|Trunk Directory +
+**Example** : `"trunk"`|string
+|**type** +
+__optional__|Repository Type (svn) +
+**Example** : `"svn"`|string
+|**user-id** +
+__optional__|User ID +
+**Example** : `"svnuser"`|string
+|===
+
+
+[[_xmlsvnviewlist]]
+=== XmlSvnViewList
+A list of Subversion Repositories
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**subversions** +
+__optional__|A paginated list of Subversion Repositories that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlsvnview,XmlSvnView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlsvnview,XmlSvnView>> > array
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlusergroupview]]
+=== XmlUserGroupView
+Details of a specific UserGroup
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**name** +
+__optional__|Name +
+**Example** : `"ALM Administrator"`|string
+|**type** +
+__optional__|Whether the User Group is Internal(0) or External(1) +
+**Example** : `0`|integer (int32)
+|===
+
+
+[[_xmlusergroupviewlist]]
+=== XmlUserGroupViewList
+A list of User Groups
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|**usergroups** +
+__optional__|A paginated list of User Groups that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmlusergroupview,XmlUserGroupView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmlusergroupview,XmlUserGroupView>> > array
+|===
+
+
+[[_xmluserview]]
+=== XmlUserView
+Details of a specific User
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**archived** +
+__optional__|Whether the User is Archived or not +
+**Example** : `true`|boolean
+|**browserID** +
+__optional__|The Browser ID of a connected User +
+**Example** : `"string"`|string
+|**description** +
+__optional__|Description +
+**Example** : `"description"`|string
+|**email-address** +
+__optional__|E-mail Address +
+**Example** : `"user@example.com"`|string
+|**id** +
+__optional__|The Uniform Resource Name (urn) of the retrieved object. +
+**Example** : `"urn:alm:viewName:1:1"`|string
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**locale** +
+__optional__|Locale +
+**Example** : `"en"`|string
+|**location** +
+__optional__|Location +
+**Example** : `"UserHouse"`|string
+|**login-date** +
+__optional__|The Login Time of a connected User +
+**Example** : `"1574353976919"`|string (date-time)
+|**login-hostIP** +
+__optional__|The IP Address of a connected User +
+**Example** : `"0:0:0:0:0:0:0:1"`|string
+|**login-hostname** +
+__optional__|The Hostname of a connected User +
+**Example** : `"localhost"`|string
+|**mobile-number** +
+__optional__|Mobile Number +
+**Example** : `"+32 (0)11 22 33 44"`|string
+|**name** +
+__optional__|Name +
+**Example** : `"User"`|string
+|**reserved** +
+__optional__|Whether the User is Reserved or not +
+**Example** : `true`|boolean
+|**tel-number** +
+__optional__|Phone Number +
+**Example** : `"+32 (0)11 22 33 44"`|string
+|**user-id** +
+__optional__|User ID +
+**Example** : `"user"`|string
+|===
+
+
+[[_xmluserviewlist]]
+=== XmlUserViewList
+A list of Users
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**count** +
+__optional__|**Example** : `0`|integer (int32)
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**page** +
+__optional__|**Example** : `0`|integer (int32)
+|**pagesize** +
+__optional__|**Example** : `0`|integer (int32)
+|**total** +
+__optional__|**Example** : `0`|integer (int32)
+|**users** +
+__optional__|A paginated list of Users that may be filtered and sorted +
+**Example** : `[ "<<RESTAPI_Definitions.adoc#_xmluserview,XmlUserView>>" ]`|< <<RESTAPI_Definitions.adoc#_xmluserview,XmlUserView>> > array
+|===
+
+
+[[_xmlvalidatedprojectimportview]]
+=== XmlValidatedProjectImportView
+Details of a Project Import Action
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|Name|Description|Schema
+|**imported-project** +
+__optional__|The imported Project, shown when import is successful. +
+**Example** : <<RESTAPI_Definitions.adoc#_xmlexportableprojectview,XmlExportableProjectView>>|<<RESTAPI_Definitions.adoc#_xmlexportableprojectview,XmlExportableProjectView>>
+|**links** +
+__optional__|**Example** : `[ "<<RESTAPI_Definitions.adoc#_link,Link>>" ]`|< <<RESTAPI_Definitions.adoc#_link,Link>> > array
+|**validation-errors** +
+__optional__|Shows any validation errors that occurred during the validation stage or the actual import. +
+**Example** : `{
+  "string" : "string"
+}`|< string, string > map
+|**validation-report** +
+__optional__|The Validation Report describing the result of the 3 Validation Stages (dry-run) and the Validation Import Stage (real import):
+* Stage One: Validation of the global references in the project tree;
+* Stage two: Validate whether the global references can be linked to a global object in the IKAN ALM Instance;
+* Stage Three: Validate whether the internal project links are correct;
+* Import Stage: only present when the other stages are validated, reports on the actual Project Import. +
+**Example** : `[ "string" ]`|< string > array
+|===
+
+

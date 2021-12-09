@@ -1646,7 +1646,7 @@ alm.agent.xml_rpc.cfg=etc/xml_rpc.properties
 
 Set the _alm.xmlrpc.secure_ value to "false" if you want to disable the secure communication.
 
-The _org.ops4j.pax.web.cfg_ file can also be found under _ALM_HOME/daemons/server/karaf/etc_.
+The _org.ops4j.pax.web.cfg_ file can also be found under _ALM_HOME/daemons/agent/karaf/etc_.
 
 [source]
 ----
@@ -1667,7 +1667,7 @@ The ALM Agent service must be restarted after changing the parameters in the _ag
 
 === Secure Communication configuration: ALM Commandline
 
-You do not need to configure any installation files of the ALM Commandline installation if you want to disable or enable the secure communication. Just set the value of the _-secured_ commandline option to "true" or "false" if you want encrypted or non-encrypted communication with the ALM Server. This can also be done in the property files that can be set with the _-propertyfile_ option, eg. in `ALM_HOME/commandline/clr.properties` , or in `ALM_HOME/commandline/package.properties`
+You do not need to configure any installation files of the ALM Commandline installation if you want to disable or enable the secure communication. Just set the value of the _-secured_ commandline option to "true" or "false" if you want encrypted or non-encrypted communication with the ALM Server. This can also be done in the property files that can be set with the _-propertyfile_ option, eg. in `ALM_HOME/commandline/clr.properties` , or in `ALM_HOME/commandline/package.properties`.
 
 This is also outlined in the usage of the ALM Commandline:
 

@@ -2110,7 +2110,7 @@ If the Level Request status is set to __Awaiting
 requested Date/Time__, __Awaiting Pre-Approval__, _Canceled_ or _Rejected_ due to a Pre-approval that has been rejected, no Phase logs are available.
 
 
-image::Desktop-LevelRequests-Detailed-PhaseLogs-None.png[,431,124] 
+image::Desktop-LevelRequests-Detailed-PhaseLogs-None.png[,325,124] 
 
 If you activate the _Auto Refresh_ option, you can easily follow the execution of the different Phases.
 ====
@@ -2342,7 +2342,7 @@ For each of the parameters, the table displays its key and value.
 
 For more information, refer to the section <<App_PredefLevelParams.adoc#_cpredefinedbuildparameters,Predefined Level Parameters>>.
 
-image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedBuildParameters.png[,773,121] 
+image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedBuildParameters.png[,325,121] 
 |===
 
 [[_chddiacf]]
@@ -2498,7 +2498,7 @@ For each of the parameters, the table displays its key and value.
 
 For more information, refer to the section <<App_PredefDeployParams.adoc#_cpredefineddeployparameters,Predefined Deploy Parameters>>.
 
-image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedDeployParameters.png[,676,136] 
+image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedDeployParameters.png[,325,136] 
 |===
 
 [[_chdceehj]]
@@ -2588,7 +2588,7 @@ The following information is displayed.
 If there are no Builds, the following information will be displayed:
 
 
-image::Desktop-LevelRequests-Detailed-Results-NoRelatedBuilds.png[,423,144] 
+image::Desktop-LevelRequests-Detailed-Results-NoRelatedBuilds.png[,325,144] 
 
 
 ====
@@ -2653,7 +2653,7 @@ For more information, refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buil
 
 If not, you can always visualize the tree by clicking the plus sign in front of the zip file, or use the __Expand All__ or __Collapse All__ links to show or hide the entire tree structure at once.
 
-image:Desktop-LevelRequests-Detailed-Results-expanded.png[,352,263] 
+image:Desktop-LevelRequests-Detailed-Results-expanded.png[,325,263] 
 |===
 
 [cols="1", frame="topbot"]

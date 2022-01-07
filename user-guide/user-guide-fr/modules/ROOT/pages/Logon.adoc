@@ -13,7 +13,7 @@ Pour plus d`'informations, se référer à la section <<GlobAdm_UsersGroups.adoc
 
 Un Utilisateur pourra se connecter avec succès que s`'il ne dépasse pas les restrictions imposées par la licence IKAN ALM.
 
-* Si un Utilisateur est défini comme __Utilisateur réservé__, il pourra toujours se connecter. Pour plus d`'informations concernant la définition d`'un Utilisateur réservé, se référer à la section <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_users,Utilisateurs et Groupes d`'utilisateurs Utilisateurs>>.
+* Si un Utilisateur est défini comme __Utilisateur réservé__, il pourra toujours se connecter. Pour plus d`'informations concernant la définition d`'un Utilisateur réservé, se référer à la section <<GlobAdm_UsersGroups.adoc#_globadm_usersgroups_users,Utilisateurs et Groupes d`'utilisateurs>>.
 * Si un Utilisateur n`'est pas défini comme un __Utilisateur réservé__, il est considéré comme étant un __Utilisateur flottant __et il ne pourra se connecter que si le nombre actuel d`'Utilisateurs flottants connectés est inférieur au nombre d`'Utilisateurs flottants défini dans la licence IKAN ALM.
 
 
@@ -32,22 +32,22 @@ Se référer aux sections suivantes pour une description plus détaillée:
 +
 Votre Administrateur IKAN ALM pourra vous donner l`'URL exacte.
 +
-Cet URL est spécifié dans la section _Courrier_ dans l'écran _Paramètres système_. <<GlobAdm_System.adoc#_ssystemsettings_tabmail,Courrier>>
+Cet URL est spécifié dans la section _Courrier_ dans l'écran _Paramètres système_. Voir <<GlobAdm_System.adoc#_ssystemsettings_system,Paramètres système>>
 +
 La fenêtre de _Connexion_ s`'affiche:
 +
-image::Logon.png[,478,257] 
+image::GettingStarted-Logging-login.png[,514,251]
 +
 
 [NOTE]
 ====
 Il est utile de sauvegarder un lien vers cet URL dans le répertoire des Favoris ou des marque-pages.
 ====
-. Introduisez votre code Utilisateur IKAN ALM et votre Mot de passe qui vous ont été fournis par votre Administrateur IKAN ALM. Ensuite cliquez sur le bouton __Se connecter__.
+. Introduisez votre code Utilisateur IKAN ALM et votre Mot de passe qui vous ont été fournis par votre Administrateur IKAN ALM. Ensuite, cliquez sur le bouton __Se connecter__.
 +
 Votre Bureau personnel s`'affiche:
 +
-image::Desktop-DesktopOverview.png[,859,384] 
+image::GettingStarted-Logging-desktop.png[,1140,857]
 +
 Pour une description détaillée de la gestion des éléments affichés dans le Bureau, se référer à la section <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Administrer son bureau>>.
 +
@@ -57,20 +57,20 @@ Pour une description détaillée de la gestion des éléments affichés dans le 
 Si vous vous connectez à IKAN ALM pour la première fois, vous devez saisir vos Paramètres personnels.
 Les champs _Nom
 utilisateur_ et _Adresse de Courrier_ doivent être obligatoirement remplis.
-Pour plus d`'informations, se référer à la section <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>.
+Pour plus d`'informations, se référer à la section <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Modifier vos Paramètres personnels>>.
 ====
 
 [[_ploggingout]]
 == Déconnexion d`'IKAN ALM 
-(((IKAN ALM ,Déconnexion de SCM4ALL)))  (((Déconnexion de SCM4ALL))) 
+(((IKAN ALM ,Déconnexion)))  (((Déconnexion de IKAN ALM))) 
 
-. Dans le Menu Principal, à droite, sélectionnez _Déconnexion_ à partir du menu déroulant des Paramètres Utilisateur.
+. Dans le Menu Principal, à droite, sélectionnez _Déconnexion_ à partir du menu déroulant des Paramètres de l'Utilisateur.
 +
-image::Logout.png[,901,115] 
+image::GettingStarted-Logging-logout-menu.png[,1004,115]
 +
 La fenêtre suivante s`'affiche:
 +
-image::Logon-Logout.png[,536,333] 
+image::GettingStarted-Logging-logout.png[,510,250]
 +
 . Vous pouvez maintenant établir une nouvelle connexion à IKAN ALM ou fermer votre fenêtre de navigateur.
 +
@@ -86,8 +86,7 @@ Pour accéder à cette option, sélectionnez _À propos de_ à partir du menu d�
 == Installer une Nouvelle Licence 
 (((Licence ,Installer)))  (((IKAN ALM ,Installer une nouvelle licence))) 
 
-Si, lors de la connexion à IKAN ALM, aucune licence valide n`'est trouvée, un erreur de message s`'affiche et le lien _Installer
-une nouvelle licence_ sera disponible.
+Si, lors de la connexion à IKAN ALM, aucune licence valide n`'est trouvée, un erreur de message s`'affiche et le lien _Installer une nouvelle licence_ sera disponible.
 
 [NOTE]
 ====
@@ -97,20 +96,20 @@ Cette option d`'installation est également disponible sur l`'écran __À propos
 +
 La fenêtre suivante s`'affiche:
 +
-image::Desktop-InstallLicense.png[,477,246] 
+image::GettingStarted-Logging-license-install.png[,612,191]
 +
-. Sélectionnez le fichier de licence (alm_license.lic) en utilisant le bouton __Parcourir__.
+. Sélectionnez le fichier de licence (alm_license.lic) en utilisant le bouton __Choisir un fichier__.
 +
 Votre Administrateur IKAN ALM pourra vous donner le nom exact du fichier et l`'endroit où il se trouve.
 . Cliquez sur le bouton __Submit__.
 +
-Si la licence est acceptée, la fenêtre suivante s`'affiche:
+Quand la licence est acceptée, la fenêtre suivante s`'affiche:
 +
-image::Desktop-LicenseSubmitted-Success.png[,475,256] 
+image::GettingStarted-Logging-license-success.png[,1175,561]
 +
 Si la licence n`'est pas acceptée, le message d`'erreur suivant s`'affiche:
 +
-image::Desktop-LicenseNotAccepted.png[,477,261] 
+image::GettingStarted-Logging-license-invalid.png[,469,254]
 +
 Il s`'agira probablement d`'un fichier de licence corrompu (ou d`'un fichier qui ne contient pas de licence IKAN ALM) ou d`'un fichier de licence contenant une licence expirée.
 Contactez votre Administrateur IKAN ALM ou votre vendeur IKAN ALM pour obtenir un nouveau fichier de licence.
@@ -131,7 +130,7 @@ Référez-vous au tableau ci-dessous pour trouver la solution adéquate:
 | Message d`'erreur
 | Solution
 
-|`Votre licence n`'est pas valide`
+|`Votre licence n'est pas valide`
 |Aucune licence IKAN ALM n`'est installée.
 Installez une licence suivant les instructions décrites dans la section <<Logon.adoc#_cjhbjaja,Installer une Nouvelle Licence>>.
 
@@ -140,8 +139,7 @@ Installez une licence suivant les instructions décrites dans la section <<Logon
 
 Contactez votre vendeur IKAN ALM pour obtenir une nouvelle licence.
 
-|``Le nombre maximum d`'Utilisateurs flottants
-connectés (x) est atteint``.
+|`Le nombre maximum d'Utilisateurs flottants connectés (x) est atteint`.
 
 x= le nombre d`'Utilisateurs flottants spécifié dans votre licence
 a|* Attendez et ré-essayez jusqu`'au moment où un des Utilisateurs flottants connectés se sera déconnecté d`'IKAN ALM
@@ -149,17 +147,15 @@ a|* Attendez et ré-essayez jusqu`'au moment où un des Utilisateurs flottants c
 ou
 * Contactez votre vendeur IKAN ALM pour étendre le nombre total d`'Utilisateurs flottants spécifié dans la licence.
 
-|``Il y a plus d`'Utilisateurs réservés actifs
-(x) dans la base de données que dans la licence (y)``.
+|`Il y a plus d'Utilisateurs réservés actifs(x) dans la base de données que dans la licence (y)`.
 
-x = le nombre d`'Utilisateurs réservés spécifié dans IKAN ALM
+x = le nombre d'Utilisateurs réservés spécifié dans IKAN ALM
 
-y= le nombre d`'Utilisateurs réservés spécifié dans la licence
-|Le nombre d`'Utilisateurs réservés définis dans IKAN ALM dépasse le nombre d`'Utilisateurs réservés permis dans la licence.
+y= le nombre d'Utilisateurs réservés spécifié dans la licence
+|Le nombre d'Utilisateurs réservés définis dans IKAN ALM dépasse le nombre d'Utilisateurs réservés permis dans la licence.
 Contactez votre vendeur IKAN ALM.
 
-|``Il y a plus de machines définies (x) dans
-la base de données que dans la licence (y)``.
+|`Il y a trop de machines définies (x) dans la base de données pour la licence (y)`.
 
 x = le nombre de machines définies dans IKAN ALM
 
@@ -181,6 +177,6 @@ Référez-vous au tableau ci-dessous pour trouver la solution adéquate:
 
 |``Votre licence expirera dans (x) jour(s)``.
 x= entre 14 et 0 jours
-|Votre licence IKAN ALM expirera bientôt.
+|Votre licence IKAN ALM va bientôt expirer.
 Contactez votre vendeur IKAN ALM.
 |===

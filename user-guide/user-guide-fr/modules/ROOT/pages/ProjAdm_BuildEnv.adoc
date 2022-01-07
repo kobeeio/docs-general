@@ -5,48 +5,48 @@
 = Environnements de construction  
 (((Options relatives à l'administration des projets ,Environnements de Construction)))  (((Administration des projets ,Environnements de Construction)))  (((Environnements de Construction))) 
 
-Les Environnements de Construction sont des emplacements où le code récupéré du RCV est construit.
-L`'environnement peut être spécifique à un Système d`'exploitation.
-De plus, il est possible d`'utiliser des paramètres de construction généraux et spécifiques pour chacun des Environnements de Construction.
+Les Environnements de construction sont des emplacements où le code Source récupéré du RCV est construit.
+L`'Environnement peut être spécifique à un Système d`'exploitation.
+De plus, il est possible d`'utiliser des paramètres de construction généraux et spécifiques pour chacun des Environnements de construction.
 
-Les Environnements de Construction doivent être associés à un Niveau avant de devenir actifs.
+Les Environnements de construction doivent être associés à un Niveau avant de devenir actifs.
 
-Les Environnements de Construction sont couramment utilisés dans les cas suivants:
+Les Environnements de construction sont couramment utilisés dans les cas suivants:
 
-* Lorsqu`'il est associé à un niveau de Construction, l`'Environnement de Construction permet la compilation du code Source extrait du RCV.
-* Lorsqu`'il est associé à un niveau de Test, l`'Environnement de Construction permet des Reconstructions du code pour vérifier si la compilation est possible sur d`'autres plates-formes, avec d`'autres paramètres de construction, etc.
+* Lorsqu`'il est associé à un niveau de Construction, l`'Environnement de construction permet la compilation du code Source extrait du RCV.
+* Lorsqu`'il est associé à un niveau de Test, l`'Environnement de construction permet des Reconstructions du code Source pour vérifier si la compilation est possible sur d`'autres plates-formes, avec d`'autres paramètres de construction, etc.
 
 
 L`'option _Environnements de construction_ permet de démarrer les procédures suivantes:
 
-* <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un environnement de construction>>
-* <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+* <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>>
+* <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 +
 L`'écran _Aperçu des Environnements de construction_ vous permet de vérifier et modifier les informations concernant les Environnements de construction et les Phases associées.
 Les actions suivantes sont possibles:
 
-** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Modifier un environnement de construction>>
-** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_delete,Supprimer un environnement de construction>>
-** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_clone,Cloner un environnement de construction>>
-** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'environnement de construction>>
-** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_viewparameters,Afficher les paramètres d`'environnement de construction>>
-** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_historyview,Afficher l`'historique d`'un environnement de construction>>
+** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Modifier un Environnement de construction>>
+** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_delete,Supprimer un Environnement de construction>>
+** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_clone,Cloner un Environnement de construction>>
+** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'Environnement de construction>>
+** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_viewparameters,Afficher les paramètres d`'Environnement de construction>>
+** <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_historyview,Afficher l`'historique d`'un Environnement de construction>>
 * Paramètres de construction
 +
-L`'écran __Aperçu des Paramètres __vous permet de créer, modifier, supprimer et copier les Paramètres de construction et de consulter leur historique.
-Pour plus d`'informations se référer au chapitre <<ProjAdm_EnvParams.adoc#_projadm_environmentparameters,Paramètres d`'environnement>>
+L`'écran __Aperçu des Paramètres__ vous permet de créer, modifier, supprimer et copier les Paramètres de construction et de consulter leur historique.
+Pour plus d`'informations se référer au chapitre <<ProjAdm_EnvParams.adoc#_projadm_environmentparameters,Paramètres d`'Environnement>>
 
 [[_pcreatebuildenvironment]]
-== Créer un environnement de construction
+== Créer un Environnement de construction
 (((Environnements de Construction ,Créer))) 
 
 . Dans le contexte de l'__Administration des projets__, sélectionnez __Environnements de construction > Créer__.
 +
 L'écran suivant s'affiche:
 +
-image::ProjAdmin-BuildEnv-Create.png[,866,191] 
+image::ProjAdmin-BuildEnv-Create.png[,1126,294] 
 
-. Complétez les champs pour le nouvel Environnement de Construction.
+. Complétez les champs pour le nouvel Environnement de construction.
 +
 Les champs suivants sont disponibles.
 Les champs marqués d`'un astérisque rouge doivent être complétés obligatoirement.
@@ -58,23 +58,23 @@ Les champs marqués d`'un astérisque rouge doivent être complétés obligatoir
 |Description
 
 |Nom
-|Saisissez dans ce champ la dénomination de l`'Environnement de Construction.
+|Saisissez dans ce champ la dénomination de l`'Environnement de construction.
 
 |Niveau
-|Si nécessaire, sélectionnez, à partir du menu déroulant, un niveau auquel vous voulez associer cet Environnement de Construction.
+|Si nécessaire, sélectionnez, à partir du menu déroulant, un niveau auquel vous voulez associer cet Environnement de construction.
 
 |Machine
-|Sélectionnez, à partir du menu déroulant, la Machine à laquelle cet Environnement de Construction doit être associé physiquement.
+|Sélectionnez, à partir du menu déroulant, la Machine à laquelle cet Environnement de construction doit être associé physiquement.
 
 _Note:_ Les Emplacements Source et Cible doivent exister ou doivent pouvoir être créés sur la Machine sélectionnée.
 
 |Outil de construction
-|Sélectionnez, à partir du menu déroulant, l`'Outil de Déploiement pour cet Environnement de Construction.
+|Sélectionnez, à partir du menu déroulant, l`'Outil de Déploiement pour cet Environnement de construction.
 
-Les chemins définis pour l`'Outil de Construction associé doivent exister sur la Machine associée à l`'Environnement de Construction.
+Les chemins définis pour l`'Outil de Construction associé doivent exister sur la Machine associée à l`'Environnement de construction.
 
 |Script de construction
-|Dans ce champ vous pouvez saisir le chemin relatif vers le script de construction que vous voulez sélectionner spécifiquement pour cet Environnement de Construction.
+|Dans ce champ vous pouvez saisir le chemin relatif vers le script de construction que vous voulez sélectionner spécifiquement pour cet Environnement de construction.
 
 Si vous laissez ce champ vide, le script de construction par défaut, comme défini dans les Paramètres du Projet, sera utilisé.
 
@@ -104,28 +104,28 @@ La dénomination du fichier est structurée comme suit: _webpad_H_1.0_b12_CONTBU
 * __H__: Type de branche: __H __pour une Branche principale, _B_ pour une Branche Secondaire
 * __1-0__: Préfixe de construction
 * __b12__: Numéro de construction
-* __CONTBUILD__: Dénomination de l`'Environnement de Construction
+* __CONTBUILD__: Dénomination de l`'Environnement de construction
 * __win__: Suffixe de construction
-* __zip__: extension référant à la méthode de compression, _$$.$$zip_ pour les plates-formes Windows, _$$.$$tgz_ pour les plates-formes Unix et Linux.
+* __zip__: extension référant à la méthode de compression comme défini dans la Phase de noyau _Compression de la construction_. Voir <<App_Phases.adoc#_phases_buildphases_compressbuild,Phase Compression de la construction>>..
 
 |Suffixe de construction
-|Si nécessaire, saisissez dans ce champ le suffixe de construction pour l`'Environnement de Construction.
+|Si nécessaire, saisissez dans ce champ le suffixe de construction pour l`'Environnement de construction.
 
 |Construction téléchargeable
-|Indiquez si les fichiers de construction compressés créés pour ce niveau de Construction sont téléchargeables ou non.
+|Indiquez si les fichiers de construction compressés créés pour ce Niveau de Construction sont téléchargeables ou non.
 
-Si l'option est activée, un lien donnant accès aux résultats de construction compressés sera affiché sur l'onglet _Résultats_ de l'écran __Informations détaillées__.
-
-Voir <<Desktop_LevelRequests.adoc#_desktop_lr_results,Résultats>>
+Si l'option est activée, un lien donnant accès aux résultats de construction compressés sera affiché sur l'onglet _Résultats_ de l'écran __Informations détaillées__. Voir <<Desktop_LevelRequests.adoc#_desktop_lr_results,Résultats>>
 
 |Débogage
-|Indiquez si l`'option de débogage doit être activée ou non pour cet Environnement de Construction.
+|Indiquez si l`'option de débogage doit être activée ou non pour cet Environnement de construction.
 
-Si l'option Débogage est activée pour un Environnement de Construction, les actions de Nettoyage du code Source et du Résultat <<Desktop_LevelRequests.adoc#_srebuildanddeploylr,15 et 16 de l'aperçu des
-Requêtes de niveau de Construction et de Déploiement>> ne seront pas exécutées pour que l'Utilisateur puisse utiliser le code Source disponible pour exécuter le script manuellement pour des tests.
+Si l'option Débogage est activée pour un Environnement de construction, les actions de Nettoyage du code Source et du Résultat <<Desktop_LevelRequests.adoc#_srebuildanddeploylr,15 et 16 de l'aperçu des Requêtes de Niveau de Construction et de Déploiement>> ne seront pas exécutées pour que l'Utilisateur puisse utiliser le code Source disponible pour exécuter le script manuellement pour des tests.
+
+|Paramètres contrôlés par Utilisateurs
+|Autorise les Utilisateurs avec un rôle d'Utilisateur de Projet à créer, lire, modifier et supprimer des Paramètres d'Environnement. Une fois autorisé, les Paramètres gardent cet état jusqu'à ce qu'un Administrateur de Projet annule cette option.
 |===
 
-. Vérifier les détails affichés dans le panneau __Aperçu des environnements de construction__.
+. Vérifier les détails affichés dans le panneau __Aperçu des Environnements de construction__.
 +
 
 [NOTE]
@@ -133,21 +133,21 @@ Requêtes de niveau de Construction et de Déploiement>> ne seront pas exécuté
 Cet aperçu affiche _tous_ les Environnements de construction défini pour _tous_ les Niveaux appartenant au Projet en question.
 ====
 +
-Pour plus d`'informations concernant les liens disponibles, voir la section <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>.
-. Une fois tous les champs complétés, cliquez sur le bouton _Créer_ pour confirmer la création du nouvel Environnement de Construction.
+Pour plus d`'informations concernant les liens disponibles, voir la section <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>.
+. Une fois tous les champs complétés, cliquez sur le bouton _Créer_ pour confirmer la création du nouvel Environnement de construction.
 +
 Vous pouvez également cliquer sur le bouton _Réinitialiser_ pour nettoyer les champs.
 
 
 [[_buildenvironmentsoverview]]
-== Aperçu des environnements de construction 
+== Aperçu des Environnements de construction 
 (((Environnements de Construction ,Aperçu)))  (((Environnements de Construction ,Modifier)))  (((Environnements de Construction ,Supprimer)))  (((Environnements de Construction ,Cloner))) 
 
 . Dans le contexte de l'__Administration des projets__, sélectionnez __Environnements de construction > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
-image::ProjAdmin-BuildEnv-Overview.png[,855,282] 
+image::ProjAdmin-BuildEnv-Overview.png[,1106,352] 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
 La liste des éléments dans l'aperçu est synchronisée automatiquement en fonction des critères sélectionnés.
@@ -159,7 +159,7 @@ Vous pouvez également:
 * cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs.
 . Vérifiez les informations disponibles dans l`'__Aperçu des Environnements de construction__.
 +
-Pour une description détaillée, se référer à la section <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un environnement de construction>>.
+Pour une description détaillée, se référer à la section <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>>.
 +
 
 [NOTE]
@@ -167,54 +167,44 @@ Pour une description détaillée, se référer à la section <<ProjAdm_BuildEnv.
 Les colonnes marquées de l'icône image:icons/icon_sort.png[,15,15]  peuvent être rangées par ordre alphabétique (ascendant ou descendant).
 ====
 
-. En fonction de vos droits d'accès, les liens suivants peuvent être disponibles dans la fenêtre __Aperçu des Environnements de construction__:
+. En fonction de vos droits d'accès, les liens/icônes suivants peuvent être disponibles dans la fenêtre __Aperçu des Environnements de construction__:
 +
 
-[cols="1,1", frame="topbot"]
+[cols="1,3", frame="topbot", options="header"]
 |===
+| Icône
+| Description
 
-|image:icons/edit.gif[,15,15]
-|Modifier
+|image:icons/edit.gif[,15,15]  Modifier
+|Cette option permet de modifier l`'Environnement de construction.
 
-Cette option permet de modifier l`'Environnement de Construction.
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Modifier un Environnement de construction>>
 
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_edit,Modifier un environnement de construction>>
-
-|image:icons/delete.gif[,15,15]
-|Supprimer
-
-Cette option permet de supprimer l`'Environnement de Construction.
+|image:icons/delete.gif[,15,15]  Supprimer
+|Cette option permet de supprimer l`'Environnement de construction.
 Si vous supprimez un Environnement, les informations historiques telles que les Constructions et les Logs de construction seront également supprimées.
 
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_delete,Supprimer un environnement de construction>>
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_delete,Supprimer un Environnement de construction>>
 
-|image:icons/clone.gif[,15,15]
-|Cloner
+|image:icons/clone.gif[,15,15]  Cloner
+|Cette option permet ce cloner un Environnement de construction.
 
-Cette option permet ce cloner un Environnement de Construction.
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_clone,Cloner un Environnement de construction>>
 
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_clone,Cloner un environnement de construction>>
+|image:icons/edit_phases.gif[,15,15]  Modifier les Phases
+|Cette option permet de modifier les Phases de l`'Environnement de construction.
 
-|image:icons/edit_phases.gif[,15,15]
-|Modifier les Phases
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'Environnement de construction>>
 
-Cette option permet de modifier les Phases de l`'Environnement de Construction.
+|image:icons/icon_viewparameters.png[,15,15]  Voir les Paramètres
+|Cette option permet d`'afficher les Paramètres de l`'Environnement de construction.
 
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'environnement de construction>>
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_viewparameters,Afficher les paramètres d`'Environnement de construction>>
 
-|image:icons/icon_viewparameters.png[,15,15]
-|Voir les Paramètres
+|image:icons/history.gif[,15,15]  Historique
+|Cette option permet d`'afficher l`'Historique de l`'Environnement de construction.
 
-Cette option permet d`'afficher les Paramètres de l`'Environnement de Construction.
-
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_viewparameters,Afficher les paramètres d`'environnement de construction>>
-
-|image:icons/history.gif[,15,15]
-|Historique
-
-Cette option permet d`'afficher l`'Historique de l`'Environnement de Construction.
-
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_historyview,Afficher l`'historique d`'un environnement de construction>>
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_historyview,Afficher l`'historique d`'un Environnement de construction>>
 |===
 +
 
@@ -225,44 +215,43 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 ====
 
 [[_projadm_buildenv_edit]]
-=== Modifier un environnement de construction
+=== Modifier un Environnement de construction
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
-Voir <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+Voir <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
-. Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ pour l`'Environnement de Construction requis.
+. Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ pour l`'Environnement de construction requis.
 +
 L`'écran suivant s`'affiche:
 +
-image::ProjAdmin-BuildEnv-Edit.png[,745,494] 
+image::ProjAdmin-BuildEnv-Edit.png[,909,495]
 
 . Ensuite, cliquez sur le lien _Modifier_ dans la fenêtre __Informations sur l`'Environnement de construction__.
 +
-L'écran _Modifier un Environnement
-de construction_ s'affiche:
+L'écran _Modifier l'Environnement de construction_ s'affiche:
 +
-image::ProjAdmin-BuildEnv-Edit_popup.png[,573,344] 
+image::ProjAdmin-BuildEnv-Edit_popup.png[,560,362] 
 
 . Si nécessaire, modifiez les champs.
 +
-Pour une description détaillée, se référer à la section <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un environnement de construction>>.
+Pour une description détaillée, se référer à la section <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>>.
 
 . Cliquez sur le bouton "Enregistrer" pour enregistrer vos modifications.
 +
 Vous pouvez également cliquer sur le bouton _Actualiser_ pour revenir aux valeurs d`'origine ou sur le bouton _Annuler_ pour retourner à l'écran _Modifier l'Environnement de construction_ sans enregistrer vos modifications.
 
 [[_projadm_buildenv_delete]]
-=== Supprimer un environnement de construction
+=== Supprimer un Environnement de construction
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
-<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
-. Cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ pour l`'Environnement de Construction sélectionné.
+. Cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ pour l`'Environnement de construction sélectionné.
 +
 L`'écran suivant s`'affiche:
 +
-image::ProjAdmin-BuildEnv-Delete.png[,928,472] 
+image::ProjAdmin-BuildEnv-Delete.png[,913,456] 
 
-. Cliquez sur le bouton _Supprimer_ pour confirmer la suppression de l`'environnement de construction.
+. Cliquez sur le bouton _Supprimer_ pour confirmer la suppression de l`'Environnement de construction.
 +
 Vous pouvez également cliquer sur le bouton _Précédent_ pour retourner à l'écran précédent sans supprimer l'Environnement.
 +
@@ -273,25 +262,25 @@ Si vous supprimez un Environnement de Construction, vous supprimez également le
 ====
 
 [[_projadm_buildenv_clone]]
-=== Cloner un environnement de construction 
+=== Cloner un Environnement de construction 
 (((Environnements de Construction ,Cloner))) 
 
-Si vous clonez un Environnement, toute la définition, y compris les Phases et les Paramètres, sera clonée
+Si vous clonez un Environnement, toute la définition, y compris les Phases et les Paramètres, sera clonée.
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
-<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
-. Cliquez sur le lien image:icons/clone.gif[,15,15] _Cloner_ pour cloner l`'Environnement de Construction.
+. Cliquez sur le lien image:icons/clone.gif[,15,15] _Cloner_ pour cloner l`'Environnement de construction.
 +
 L`'écran suivant s`'affiche:
 +
-image::ProjAdmin-BuildEnv-Clone.png[,1023,440] 
+image::ProjAdmin-BuildEnv-Clone.png[,1342,475]
 
 . Dans le panneau __Cloner un Environnement de Construction__, spécifiez le Nom, l`'Emplacement Cible et le Niveau pour le nouvel Environnement.
 +
 Si nécessaire, modifiez les autres champs.
-Pour une description détaillée des champs, se référer à la section <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un environnement de construction>>
+Pour une description détaillée des champs, se référer à la section <<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>>
 
 . Cliquez sur le bouton _Cloner_ pour confirmer l`'action.
 +
@@ -299,7 +288,7 @@ Vous pouvez également cliquer sur le bouton _Précédent_ pour retourner à l`'
 
 
 [[_projadm_buildenv_phases]]
-=== Phases d`'environnement de construction 
+=== Phases d`'Environnement de construction 
 (((Environnements de construction ,Phases)))  (((Phases ,Environnement de construction))) 
 
 Lors de la création d`'un Environnement de construction, IKAN ALM créera automatiquement le flux de Phases d`'Environnement de construction par défaut. 
@@ -316,16 +305,16 @@ Les Phases par défaut sont:
 * Nettoyage Emplacement Cible
 
 
-Lors de l`'exécution d`'une Construction sur un Environnement, un Journal sera créé pour chacune des Phases. Voir <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Informations détaillées>>
+Lors de l`'exécution d`'une Construction sur un Environnement, un Journal sera créé pour chacune des Phases. Les journaux seront visibles sur la page _Informations détaillées_ des Requêtes de niveau. Pour plus d'information, voir <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Informations détaillées>>
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
 * <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_buildenvphasesoverview,L'Aperçu des Phases d'Environnement de construction>>
-* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_insertphase,Insérer une Phase d`'environnement de construction>>
-* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'environnement de construction>>
+* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_insertphase,Insérer une Phase d`'Environnement de construction>>
+* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'Environnement de construction>>
 * <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_modifyorderphases,Modifier la séquence des Phases d'Environnement de construction>>
 * <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_viewbuildenvphaseparams,Afficher les Paramètres de phase d'Environnement de construction>>
-* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phasedelete,Supprimer une Phase d`'environnement de construction>>
+* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phasedelete,Supprimer une Phase d`'Environnement de construction>>
 
 [[_projadm_buildenv_buildenvphasesoverview]]
 ==== L'Aperçu des Phases d'Environnement de construction 
@@ -333,14 +322,13 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
-<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
 . Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien image:icons/edit_phases.gif[,15,15]  _Modifier les Phases_.
 +
-L`'écran _Aperçu des Phases d`'Environnement de
-construction_ s`'affiche.
+L`'écran _Aperçu des Phases d`'Environnement de construction_ s`'affiche.
 +
-image::ProjAdmin-BuildEnv-EditPhases.png[,935,526] 
+image::ProjAdmin-BuildEnv-EditPhases.png[,916,502] 
 +
 
 [NOTE]
@@ -353,42 +341,41 @@ Le lien vers cet écran est également disponible dans l'écran __Modifier un En
 Les liens suivants sont disponibles:
 
 * Les liens image:icons/up.gif[,15,15] _Monter_ et image:icons/down.gif[,15,15] _Descendre_ pour modifier l`'ordre des Phases.
-* Le lien image:icons/edit.gif[,15,15] _Modifier_ pour modifier les Paramètres de la Phase sélectionnée. <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'environnement de construction>>
+* Le lien image:icons/edit.gif[,15,15] _Modifier_ pour modifier les Paramètres de la Phase sélectionnée. <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'Environnement de construction>>
 * Le lien image:icons/icon_viewparameters.png[,15,15] _Voir les Paramètres_ pour gérer les Paramètres de phase obligatoires et optionnels. <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_viewbuildenvphaseparams,Afficher les Paramètres de phase d'Environnement de construction>>
-* Le lien image:icons/delete.gif[,15,15] _Supprimer_ pour supprimer une Phase. <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phasedelete,Supprimer une Phase d`'environnement de construction>>
+* Le lien image:icons/delete.gif[,15,15] _Supprimer_ pour supprimer une Phase. <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phasedelete,Supprimer une Phase d`'Environnement de construction>>
 +
 
 [NOTE]
 ====
 
-La modification des Phases pourrait avoir des effets indésirables sur le Cycle de Vie.
-Pour plus d'informations se référer au document _HOW TO Using and Developing a Phase in IKAN
-ALM_ (version anglaise).
+La modification des Phases pourrait avoir des effets indésirables sur le Cycle de vie.
+Pour plus d'informations se référer au document _HOW TO Using and Developing a Phase in IKAN ALM_ (version anglaise).
 ====
 
 . Insérez une Phase, si nécessaire.
 +
 Cliquez sur le lien _Insérer une Phase_ en bas du panneau __Aperçu des Phases__.
 +
-<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_insertphase,Insérer une Phase d`'environnement de construction>>
+<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_insertphase,Insérer une Phase d`'Environnement de construction>>
 
 . Cliquez sur le bouton _Précédent_ pour retourner à l`'écran __Aperçu des Environnements de Construction__.
 
 [[_projadm_buildenv_insertphase]]
-==== Insérer une Phase d`'environnement de construction 
+==== Insérer une Phase d`'Environnement de construction 
 (((Environnements de construction ,Phases ,Insérer))) 
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
-<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
 . Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien image:icons/edit_phases.gif[,15,15]  _Modifier les Phases_.
 
-. Dans le panneau __Aperçu des Phases__, cliquez sur le lien __Insérer une Phase__.
+. Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/edit_phases.gif[,15,15] __Insérer une Phase__.
 +
 L'écran _Insérer une Phase_ s'affiche.
 +
-image::ProjAdmin-BuildEnv-InsertPhase.png[,945,678] 
+image::ProjAdmin-BuildEnv-InsertPhase.png[,927,653] 
 
 . Sélectionnez la Phase à insérer à partir du panneau __Phases disponibles__.
 
@@ -397,7 +384,7 @@ image::ProjAdmin-BuildEnv-InsertPhase.png[,945,678]
 Les champs suivants sont disponibles:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -426,25 +413,24 @@ Si vous utilisez la même Phase plusieurs fois, il est utile d'ajouter un libell
 Vous pouvez également utiliser le bouton _Annuler_ pour retourner à l`'écran précédent sans enregistrer les modifications.
 
 [[_projadm_buildenv_editphase]]
-==== Modifier une Phase d`'environnement de construction 
+==== Modifier une Phase d`'Environnement de construction 
 (((Phases ,Environnements de Construction))) 
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
-<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
 . Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien image:icons/edit_phases.gif[,15,15]  _Modifier les Phases_.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase que vous voulez modifier.
 +
-L'écran _Modifier la Phase
-d`'Environnement de construction_ s'affiche.
+L'écran _Modifier la Phase d`'Environnement de construction_ s'affiche.
 +
-image::ProjAdmin-BuildEnv-EditBuildEnvPhase.png[,577,244] 
+image::ProjAdmin-BuildEnv-EditBuildEnvPhase.png[,562,230] 
 
 . Modifiez les champs dans le panneau __Modifier une Phase d'Environnement de construction__.
 +
-Pour une description détaillée des champs, se référer à la section <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_insertphase,Insérer une Phase d`'environnement de construction>>.
+Pour une description détaillée des champs, se référer à la section <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_insertphase,Insérer une Phase d`'Environnement de construction>>.
 
 . Cliquez sur le bouton _Enregistrer_ pour enregistrer vos modifications.
 +
@@ -456,19 +442,18 @@ Vous pouvez également cliquer sur le bouton _Actualiser_ pour revenir aux valeu
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
-<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
+<<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des Environnements de construction>>
 
  . Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien image:icons/edit_phases.gif[,15,15]  _Modifier les Phases_.
 
  . Utilisez les liens image:icons/up.gif[,15,15] _Monter_ et image:icons/down.gif[,15,15] _Descendre_ devant la Phase d'Environnement de construction pour modifier la position de la Phase sélectionnée dans la séquence.
 
- . Cliquez sur le bouton _Précédent_ pour retourner à l`'écran __Aperçu des Environnements de Construction__.
+ . Cliquez sur le bouton _Précédent_ pour retourner à l`'écran __Aperçu des Environnements de construction__.
 +
 
 [WARNING]
 --
-Attention de ne pas modifier la position d'une Phase de telle manière que sa _Phase
-suivante si erreur_ se trouve à une position antérieure dans le flux de travail: cela aurait une boucle infinie comme résultat.
+Attention de ne pas modifier la position d'une Phase de telle manière que sa _Phase suivante si erreur_ se trouve à une position antérieure dans le flux de travail: cela aurait une boucle infinie comme résultat.
 Sinon, modifiez sa __Phase suivante si erreur __avec une Phase postérieure.
 --
 
@@ -487,7 +472,7 @@ Sinon, modifiez sa __Phase suivante si erreur __avec une Phase postérieure.
 +
 L'écran _Aperçu des Paramètres de la phase_ s'affiche.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParamsOverview.png[,802,569] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParamsOverview.png[,787,554] 
 
 . Afficher les Paramètres de phase d'Environnement de construction.
 +
@@ -496,7 +481,7 @@ Le panneau _Paramètres de la phase_ affiche tous les Paramètres définis de la
 Les champs suivants sont disponibles:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Modifiable
@@ -535,8 +520,7 @@ Les valeurs possibles sont:
 |Ce champ indique si le Paramètre a été créé automatiquement lors de l'insertion de la Phase dans le Niveau.
 Ceci est le cas pour les Paramètres obligatoires.
 
-Les Paramètres non-obligatoires doivent être créés après l'insertion de la Phase dans un Niveau, en utilisant le lien __Créer un
-Paramètre__.
+Les Paramètres non-obligatoires doivent être créés après l'insertion de la Phase dans un Niveau, en utilisant le lien image:icons/icon_createparameter.png[,15,15] __Créer un Paramètre__.
 
 |Sécurisé
 |Non
@@ -547,7 +531,7 @@ Paramètre__.
 +
 La fenêtre suivante s'affiche.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,323,152] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,433,164] 
 +
 Spécifiez la valeur du Paramètre de phase d'Environnement de construction et cliquez sur le bouton _Enregistrer_ pour enregistrer la valeur.
 +
@@ -560,7 +544,7 @@ Les boutons suivants sont également disponibles:
 +
 La fenêtre suivante s'affiche.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-CreateParam.png[,383,144] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-CreateParam.png[,434,163]
 +
 Si une valeur de paramètre par défaut a été spécifiée dans la section Administration globale, cette valeur sera proposée.
 +
@@ -573,7 +557,7 @@ Spécifiez la valeur du Paramètre de phase d'Environnement de construction et c
 +
 La fenêtre suivante s'affiche.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-DeleteParamValue.png[,383,145] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-DeleteParamValue.png[,372,134] 
 +
 Cliquez sur le bouton _Supprimer_ pour confirmer la suppression du Paramètre de phase d'Environnement de construction obligatoire.
 +
@@ -581,20 +565,17 @@ Vous pouvez également cliquer sur le bouton _Annuler_ pour fermer l'écran sans
 
 . Cliquez sur le lien image:icons/Phase_EditEnvPhaseParameter.png[,15,15] _Modifier un Paramètre de phase global_ à côté du Paramètre de phase.
 +
-L'Utilisateur sera renvoyé vers l'écran _Modifier
-une Phase_ (dans le contexte de l'Administration globale) et l'écran _Modifier un Paramètre de phase_ s'affichera.
+L'Utilisateur sera renvoyé vers l'écran _Modifier une Phase_ (dans le contexte de l'Administration globale) et l'écran _Modifier un Paramètre de phase_ s'affichera.
 +
-image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditGlobalPhaseParam.png[,764,712] 
+image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditGlobalPhaseParam.png[,776,659] 
 +
 La procédure pour modifier le Paramètre de phase global est décrite dans la section <<GlobAdm_Phases.adoc#_globadm_phaseparameters_editing,Modifier les Paramètres de phase>>.
 +
-Pour retourner au Paramètre de phase dans le contexte de l'Administration des projets, cliquez sur le lien image:icons/Phase_EditEnvPhaseParameter.png[,15,15] _ Paramètre
-de phase d'environnement_ approprié dans le panneau __Paramètres
-d'environnement connectés__.
+Pour retourner au Paramètre de phase dans le contexte de l'Administration des projets, cliquez sur le lien image:icons/Phase_EditEnvPhaseParameter.png[,15,15] _Paramètre de phase d'environnement_ approprié dans le panneau __Paramètres d'environnement connectés__.
 
 
 [[_projadm_buildenv_phasedelete]]
-==== Supprimer une Phase d`'environnement de construction 
+==== Supprimer une Phase d`'Environnement de construction 
 (((Environnements de construction ,Phases ,Supprimer))) 
 
 . Accédez à l`'écran __Aperçu des Environnements de Construction__.
@@ -603,36 +584,35 @@ d'environnement connectés__.
 
 . Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien image:icons/edit_phases.gif[,15,15]  _Modifier les Phases_.
 
-. Dans le panneau __Aperçu des Phases__, cliquez sur le lien __Supprimer__.
+. Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_.
 +
-L`'écran _Supprimer une Phase d`'Environnement
-de construction_ s`'affiche.
+L`'écran _Confirmer la suppression d'une Phase d`'Environnement de construction_ s`'affiche.
 +
-image::ProjAdmin-BuildEnv-DeletePhase.png[,507,133] 
+image::ProjAdmin-BuildEnv-DeletePhase.png[,484,113] 
 
 . Cliquez sur le bouton _Oui_ pour confirmer la suppression de la Phase.
 +
 Vous pouvez également cliquer sur le bouton _Non_ pour retourner à l'écran précédent sans supprimer la Phase d'Environnement de construction.
 
 [[_projadm_buildenv_viewparameters]]
-=== Afficher les paramètres d`'environnement de construction 
+=== Afficher les paramètres d`'Environnement de construction 
 (((Environnements de Construction ,Aperçu des Paramètres de Construction)))  (((Paramètres ,Environnement de construction))) 
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
 +
 <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
 
-. Cliquez sur le lien image:icons/icon_viewparameters.png[,15,15] _Voir les Paramètres_ pour consulter les paramètres rattachés à l`'Environnement de Construction.
+. Cliquez sur le lien image:icons/icon_viewparameters.png[,15,15] _Voir les Paramètres_ pour consulter les paramètres rattachés à l`'Environnement de construction.
 +
 L`'écran suivant s`'affiche:
 +
-image::ProjAdmin-BuildEnv-ViewParameters.png[,835,471] 
+image::ProjAdmin-BuildEnv-ViewParameters.png[,1090,603] 
 +
 Pour une description détaillée des champs, se référer à la section <<ProjAdm_EnvParams.adoc#_environmentparams__create,Créer un Paramètre d`'Environnement>>.
 
 
 [[_projadm_buildenv_historyview]]
-=== Afficher l`'historique d`'un environnement de construction 
+=== Afficher l`'Historique d`'un Environnement de construction 
 (((Environnements de Construction ,Historique))) 
 
 . Accédez à l`'écran __Aperçu des Environnements de construction__.
@@ -641,7 +621,6 @@ Pour une description détaillée des champs, se référer à la section <<ProjAd
 
 . Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien _Historique __pour afficher l`'écran__ Aperçu de l`'Historique de l`'Environnement de construction_.
 +
-Pour une description détaillée de l`'__Aperçu de
-l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
+Pour une description détaillée de l`'__Aperçu de l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 +
 Cliquez sur le bouton _Précédent_ pour retourner à l`'écran précédent.

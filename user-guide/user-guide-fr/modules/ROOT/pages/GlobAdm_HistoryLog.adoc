@@ -9,7 +9,7 @@
 +
 L`'écran suivant s`'affiche: 
 +
-image::GlobAdm-HistoryLog-Screen.png[,745,600] 
+image::GlobAdm-HistoryLog-Screen.png[,955,772] 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
 La liste des éléments dans l'aperçu est synchronisée automatiquement en fonction des critères sélectionnés.
@@ -24,7 +24,7 @@ Vous pouvez également:
 Les critères de recherche suivants sont disponibles:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Critère
 | Description
@@ -68,7 +68,7 @@ L`'association a été retiré.
 [NOTE]
 ====
 
-Vous pouvez sélectionner plusieurs statuts ou actions à partir des listes de choix en utilisant les touches _SHIFT_ ou __CTRL__.
+Vous pouvez sélectionner plusieurs statuts ou actions à partir des listes de choix en utilisant les touches _MAJ_ ou __CTRL__.
 ====
 +
 Vous pouvez également cliquer sur le bouton _Réinitialiser_ pour nettoyer les champs de recherche.
@@ -77,7 +77,7 @@ Vous pouvez également cliquer sur le bouton _Réinitialiser_ pour nettoyer les 
 Les champs d`'information suivants sont disponibles:
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Champ
 | Description
@@ -126,7 +126,7 @@ L`'association a été retiré.
 +
 Le panneau __Comparaison des Versions __est ajouté à droite du panneau __Versions__.
 +
-image::GlobAdm-HistoryLog-Comparison.png[,1056,489] 
+image::GlobAdm-HistoryLog-Comparison.png[,1404,621] 
 +
 Le panneau _Comparaison des Versions_ affiche les différences entre la version actuelle de l`'objet (affichée dans la colonne "`Dernière version`") et la version sélectionnée de l`'objet (affichée dans la colonne "`Version sélectionnée`"). Si l`'objet a été supprimé, le statut de la dernière version sera égal au statut de l`'objet avant qu`'il ne soit supprimé.
 
@@ -139,4 +139,4 @@ Le panneau _Comparaison des Versions_ affiche les différences entre la version 
 La partie inférieure sera différente s`'il s`'agit d`'une association pour un type d`'action d`'ajout ou de retrait comme par exemple pour l`'association Groupe d`'Utilisateur - Utilisateur montré ci-dessous.
 ====
 +
-image::GlobAdm-HistoryLog-Comparison2.png[,1021,329] 
+image::GlobAdm-HistoryLog-Comparison2.png[,1329,402] 

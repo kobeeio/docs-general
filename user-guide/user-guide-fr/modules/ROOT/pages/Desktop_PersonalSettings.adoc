@@ -7,7 +7,7 @@
 
 La section "Paramètres personnels" est centrée sur les paramètres directement liés à votre compte, tels que votre nom, votre adresse de courrier, votre numéro de téléphone, ... 
 
-C'est aussi l'endroit où vous pouvez gérer vos Filtres de recherche personnels que vous utilisez pour spécifier les objets à afficher sur les différentes listes.
+C'est aussi l'endroit où vous pouvez gérer vos Filtres de recherche personnels utilisés pour spécifier les objets à afficher sur les différentes listes.
 
 Se référer aux procédures suivantes pour plus d`'information:
 
@@ -24,14 +24,14 @@ Se référer aux procédures suivantes pour plus d`'information:
 +
 L`'écran _Paramètres personnels_ s`'affiche.
 +
-image::Desktop-PersonalSettings-Edit.png[,393,326] 
+image::Desktop-PersonalSettings-Edit.png[,381,313] 
 +
 . Modifiez les champs.
 +
 Le tableau suivant décrit les champs disponibles.
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -96,12 +96,12 @@ Se référer aux procédures suivantes pour plus d`'information:
 
 . Spécifiez les critères de recherche (avancés) requis.
 +
-image::Search_DefineCriteria.png[,939,555] 
+image::Search_DefineCriteria.png[,1230,714] 
 . Cliquez sur le lien __Sauvegarder le Filtre__.
 +
 La fenêtre suivante s'affiche.
 +
-image::Search_SaveFilter.png[,484,239] 
+image::Search_SaveFilter.png[,466,216] 
 +
 . Saisissez le nom et la description du nouveau Filtre et cliquez sur le bouton __Sauvegarder__.
 +
@@ -113,18 +113,18 @@ Pour plus d`'informations, se référer à la section <<Desktop_PersonalSettings
 
 [NOTE]
 ====
-Dans l'écran __Paramètres personnels__, vous pouvez modifier le nom et la description du filtre (<<Desktop_PersonalSettings.adoc#_cihjfebab8,Gérer les définitions des Filtres>>).
+Dans l'écran __Paramètres personnels__, vous pouvez modifier le nom et la description du filtre. Voir: <<Desktop_PersonalSettings.adoc#_cihjfebab8,Gérer les définitions des Filtres>>.
 ====
 
 [[_cihidaeja2]]
 === Sélectionner un Filtre de recherche 
 (((Filtres de recherche ,Sélectionner))) 
 
-Dans les écrans d'aperçu, vous pouvez sélectionner un Filtre de recherche existant au lieu de saisir manuellement les critères de recherche
+Dans les écrans d'aperçu, vous pouvez sélectionner un Filtre de recherche au lieu de saisir manuellement les critères de recherche.
 
 . Pour afficher la liste des Filtres existants, cliquez sur la flèche vers le bas du champ __Aucun Filtre sélectionné__.
 +
-image::Search_SelectFilter.png[,938,272] 
+image::Search_SelectFilter.png[,1223,339] 
 +
 . Sélectionnez votre Filtre à partir de cette liste.
 +
@@ -134,7 +134,7 @@ Les critères de recherche seront remplis automatiquement et le résultat filtr�
 === Gérer les définitions des Filtres 
 (((Filtres de recherche ,Gérer)))  (((Filtres de recherche ,Modifier))) 
 
-Le panneau "Rechercher les Filtres" dans l'écran des Paramètres personnels vous permet d'afficher les définitions des filtres existants, de modifier leur nom et leur description ou de supprimer un Filtre
+Le panneau "Rechercher les Filtres" dans l'écran des Paramètres personnels vous permet d'afficher les définitions des Filtres existants, de modifier leur nom et leur description ou de supprimer un Filtre
 
 . Sélectionnez Bureau > Paramètres personnels.
 +
@@ -143,11 +143,11 @@ Le panneau _Rechercher les Filtres_ affiche la liste de tous les Filtres défini
 Si nécessaire, vous pouvez limiter la liste des Filtres affichés en sélectionnant la Page requise dans le champ déroulant _Rechercher
 la Page_ (Aperçu des Paquets, Aperçu des Projets, Aperçu des Requêtes de niveau ou Aperçu des Constructions et Déploiements)
 +
-image::Search_ManageFilters.png[,993,639] 
+image::Search_ManageFilters.png[,963,611] 
 +
 . Pour modifier les critères, cliquez sur l'icône image:icons/view.gif[,15,15] _Afficher_ devant le Filtre pour afficher les critères de recherche spécifiés.
 +
-Vous serez renvoyés à l'Aperçu approprié et les critères de recherche seront automatiquement appliqués.
+Vous serez renvoyé à l'Aperçu approprié et les critères de recherche seront automatiquement appliqués.
 +
 
 [NOTE]
@@ -158,19 +158,19 @@ Voir également la section <<Desktop_PersonalSettings.adoc#_cihhjjjej8,Modifier 
 
 . Pour le modifier, cliquez sur l'icône image:icons/edit.gif[,15,15] _Modifier_ devant le Filtre pour modifier son nom ou sa description.
 +
-image::Search_EditFilter.png[,512,239] 
+image::Search_EditFilter.png[,492,219] 
 +
 Confirmez la modification en cliquant sur le bouton __Sauvegarder__.
 +
 
 [NOTE]
 ====
-La modification des critères de recherche n'est possible que sur les écrans d'aperçu eux-mêmes. <<Desktop_PersonalSettings.adoc#_cihhjjjej8,Modifier les critères de recherche d'un Filtre>>
+La modification des critères de recherche n'est possible que sur les écrans d'aperçu eux-mêmes. Voir: <<Desktop_PersonalSettings.adoc#_cihhjjjej8,Modifier les critères de recherche d'un Filtre>>
 ====
 
-. Pour le supprimer, cliquez sur l'icône image:icons/delete.gif[,15,15] _Supprimer_ devant le Filtre pour supprimer un Filtre spécifique.
+. Cliquez sur l'icône image:icons/delete.gif[,15,15] _Supprimer_ devant le Filtre pour supprimer un Filtre spécifique.
 +
-image::Search_DeleteFilter.png[,509,151] 
+image::Search_DeleteFilter.png[,493,135] 
 +
 Cliquez sur le bouton _Supprimer_ pour confirmer la suppression du Filtre.
 
@@ -178,7 +178,7 @@ Cliquez sur le bouton _Supprimer_ pour confirmer la suppression du Filtre.
 === Modifier les critères de recherche d'un Filtre 
 (((Filtres de recherche ,Modifier les critères de recherche))) 
 
-La modification des critères de recherche d'un Filtre n'est possible que sur les écrans d'aperçu eux-mêmes
+La modification des critères de recherche d'un Filtre n'est possible que sur les écrans d'aperçu.
 
 . Sélectionnez le Filtre que vous voulez modifier.
 +
@@ -193,7 +193,7 @@ Vous avez deux possibilités:
 +
 L'écran _Sauvegarder le Filtre_ s'affiche.
 +
-image::Search_SaveFilter.png[,486,239] 
+image::Search_SaveFilter.png[,466,216] 
 +
 . Si nécessaire, vous pouvez en même temps modifier le _Nom_ et la __Description__.
 
@@ -201,4 +201,4 @@ image::Search_SaveFilter.png[,486,239]
 
 . Si le Filtre existe déjà, vous devez confirmer la mise à jour du Filtre existant en cliquant une deuxième fois sur __Enregistrer__.
 +
-image::Search_ConfirmUpdate.png[,368,115] 
+image::Search_ConfirmUpdate.png[,356,89] 

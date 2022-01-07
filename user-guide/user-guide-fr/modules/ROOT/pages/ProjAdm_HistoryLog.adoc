@@ -6,12 +6,12 @@
 (((Suivi de l’Historique)))  (((Administration des Projets ,Suivi de l’Historique))) 
 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Suivi de l'Historique__.
+. Dans le contexte de l'__Administration des Projets__, sélectionnez __Suivi de l'Historique__.
 +
 L'écran _Aperçu de l'Historique
 du Projet_ s'affiche:
 +
-image::ProjAdm-HistoryLog-Screen.png[,975,608] 
+image::ProjAdm-HistoryLog-Screen.png[,1274,772] 
 +
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
@@ -32,7 +32,7 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 Les champs d`'information suivants sont disponibles:
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Champ
 | Description
@@ -75,7 +75,7 @@ L`'objet a été supprimé.
 +
 Le panneau __Comparaison des Versions __est ajoutée à droite du panneau __Versions__.
 +
-image::ProjAdm-HistoryLog-Comparison.png[,911,625] 
+image::ProjAdm-HistoryLog-Comparison.png[,1167,804] 
 +
 Le panneau _Comparaison des Versions_ affiche les différences entre la version actuelle de l`'objet (affichée dans la colonne "`Dernière version`") et la version sélectionnée de l`'objet (affichée dans la colonne "`Version sélectionnée`"). Si l`'objet a été supprimé, le statut de la dernière version sera égal au statut de l`'objet avant qu`'il ne soit supprimé.
 

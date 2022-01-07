@@ -24,7 +24,7 @@ Le tableau suivant offre un aperçu des Paramètres de déploiement prédéfinis
 |alm.build.number
 |Ce Paramètre donne le numéro de la construction à déployer.
 
-Il s`'agit d`'un numéro séquentiel incrémenté par IKAN ALM lors de la création d`'une Requête de Niveau de construction.
+Il s`'agit d`'un numéro séquentiel incrémenté par IKAN ALM lors de la création d`'une Requête de niveau de construction.
 
 |alm.build.oid
 |Ce Paramètre donne l`'Identifiant Unique de la Construction à déployer.
@@ -58,7 +58,7 @@ Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
 * _MM/JJ/AAAA_ pour les Etats-Unis
 
 |alm.levelRequest.actionType
-a|Ce Paramètre donne le Type d`'action de Requête de Niveau.
+a|Ce Paramètre donne le Type d`'action de Requête de niveau.
 Les Types d`'action possibles sont:
 
 * Scheduled Build (Construction planifiée)
@@ -69,10 +69,10 @@ Les Types d`'action possibles sont:
 * Dependency Build (Dépendance de construction)
 
 |alm.levelRequest.levelName
-|Ce Paramètre donne le nom du Niveau sur lequel la Requête de Niveau est exécutée.
+|Ce Paramètre donne le nom du Niveau sur lequel la Requête de niveau est exécutée.
 
 |alm.levelRequest.oid
-|Ce Paramètre donne l`'Identifiant Unique de la Requête de Niveau.
+|Ce Paramètre donne l`'Identifiant Unique de la Requête de niveau.
 
 |alm.levelRequest.requester
 |Uniquement disponible s'il y a un Utilisateur Demandeur.
@@ -80,7 +80,7 @@ Les Types d`'action possibles sont:
 Ce paramètre donne le nom du Demandeur.
 
 |alm.levelRequest.startDateTime
-a|Ce Paramètre donne la date et l`'heure d`'exécution de la Requête de Niveau actuelle.
+a|Ce Paramètre donne la date et l`'heure d`'exécution de la Requête de niveau actuelle.
 
 Le format utilisé est date.heure.
 Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
@@ -89,7 +89,7 @@ Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
 * _MM/JJ/AAAA_ pour les Etats-Unis
 
 |alm.levelRequest.vcrTag
-|Ce Paramètre donne le tag de la Requête de Niveau.
+|Ce Paramètre donne le tag de la Requête de niveau.
 Le tag est défini comme __projectstream_prefix_b+buildoid_suffix__, _projectstream_ étant remplacé par _H_ pour la Branche Principale ou par _B_ pour la Branche Secondaire.
 
 |alm.package.oid
@@ -106,7 +106,7 @@ Exemple: _DEMOCVS_B_b_1_test_b2_CONTBUILD.zip_
 |Ce Paramètre donne le numéro du résultat de Construction précédent déployé sur ce Niveau.
 
 |alm.previous.levelRequest.vcrTag
-|Ce Paramètre donne le tag de la dernière Requête de Niveau exécutée correctement sur ce Niveau.
+|Ce Paramètre donne le tag de la dernière Requête de niveau exécutée correctement sur ce Niveau.
 
 |alm.project.buildToolTypeName
 a|Ce Paramètre donne le Type d`'Outil de Déploiement utilisé:
@@ -132,11 +132,10 @@ a|Ce Paramètre donne le Type d`'Outil de Déploiement utilisé:
 Cette dénomination peut être différente de la dénomination du Projet dans le Référentiel de Contrôle de Version (RCV) utilisé (voir alm.project.vcrProjectName)
 
 |alm.package.name
-|Ce Paramètre n`'est disponible que pour les Projets de type "`Paquets`". Il donne le nom du Paquet associé à la Requête de Niveau.
+|Ce Paramètre n`'est disponible que pour les Projets de type "`Paquets`". Il donne le nom du Paquet associé à la Requête de niveau.
 
 |alm.project.vcrName
-|Ce Paramètre donne la dénomination du RCV (telle que définie dans la section __Administration
-Globale__) auquel le Projet est relié.
+|Ce Paramètre donne la dénomination du RCV (telle que définie dans la section __Administration Globale__) auquel le Projet est relié.
 
 |alm.project.vcrProjectName
 |Ce Paramètre donne la dénomination du Projet dans le RCV.

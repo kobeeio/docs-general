@@ -2,10 +2,9 @@
 :imagesdir: ../images
 :description: IKAN ALM User Guide (French) 
 :revnumber: v5.9
-:revdate: 13.09.2021
+:revdate: 01.01.2022
 
 
-[[_projadm_introduction]]
 = Guide de l’Utilisateur: Introduction 
 (((IKAN ALM ,Introduction))) 
 
@@ -15,8 +14,7 @@ Il combine Intégration continue et Gestion des Cycles de Vie en offrant un seul
 
 Plusieurs Systèmes de gestion de versions existant sur le marché offrent un contrôle complet des versions, mais ils n`'englobent pas une solution intégrée pour la réalisation des Constructions ou des Déploiements automatisés, pour la gestion des librairies et les autres tâches importantes d`'un système ALM.
 Un grand nombre de leurs utilisateurs voudrait évoluer vers un niveau de pratique ALM plus avancé sans devoir abandonner leur outil de gestion de versions favori.
-IKAN ALM s`'intègre étroitement avec les solutions tierces de gestion des versions existantes (par exemple, Subversion, Git, Microsoft Team Version Control, IBM(R) Rational(R) ClearCase(R), Microsoft(R) Visual SourceSafe(R), Serena(R) PVCS Version Manager, CVS), avec les outils de construction et de déploiement (Make, Ant, Gradle, NAnt, Maven 2) ainsi qu`'avec les logiciels de suivi des incidents (Atlassian(R) JIRA(R), HP Quality Center, CollabNet TeamForge, Trac, Bugzilla, 
- .). IKAN ALM doit donc être vu comme une solution ALM unique ouverte à d`'autres outils.
+IKAN ALM s`'intègre étroitement avec les solutions tierces de gestion des versions existantes (par exemple, Subversion, Git, Microsoft Team Foundation Version Control, CVS), avec les outils de construction et de déploiement (Ant, Gradle, NAnt, Maven) ainsi qu`'avec les logiciels de suivi des incidents (Atlassian(R) JIRA(R), MicroFocus ALM, GitHub, Microsoft Team Foundation Server, CollabNet TeamForge, Trac, Bugzilla,...). IKAN ALM doit donc être vu comme une solution ALM unique ouverte à d`'autres outils.
 
 Actuellement, les cycles de développements courts Agile ou même des développements traditionnels, exigent l`'application de techniques telles que des constructions nocturnes, les tests unitaires, de régression, d`'intégration et de performance continus pour garantir la qualité et la stabilité du code délivré.
 En automatisant ces routines, IKAN ALM permet une fréquence de rafraîchissement accrue qui peut être incorporée dans les tâches journalières de développement en éliminant les goulots d`'étranglement dans les tâches routinières de contrôle.
@@ -37,7 +35,7 @@ Le tableau ci-dessus liste les trois catégories d`'utilisateurs d`'IKAN ALM.
 Nous conseillons de vous concentrer sur les actions réservées à votre catégorie d`'utilisateurs.
 Cliquez sur un des liens pour accéder à une description plus détaillée d`'une action.
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Catégorie d`'utilisateur
 | Actions permises
@@ -54,7 +52,7 @@ a|L`'Utilisateur normal peut exécuter les actions suivantes (en fonction des pa
 |Administrateur de projet
 a|L`'Utilisateur ayant des droits d`'accès d`'Administrateur de Projet peut exécuter les actions suivantes:
 
-* Créer ou modifier des <<ProjAdm_Projects.adoc#_projadm_projects,Projets>>
+* Modifier des <<ProjAdm_Projects.adoc#_projadm_projects,Projets>>
 * Créer ou modifier des <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadm_projectstreams,Branches>>
 * Créer ou modifier des <<ProjAdm_LifeCycles.adoc#_projadm_lifecycles,Cycles de vie>>
 * Créer ou modifier des <<ProjAdm_Levels.adoc#_projadm_levels,Niveaux>>
@@ -65,13 +63,15 @@ Pour une description détaillée des actions relatives à l`'administration des 
 |Administrateur global
 a|L`'Utilisateur ayant des droits d`'accès d`'Administrateur global peut exécuter les actions suivantes:
 
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un projet dans IKAN ALM>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Créer un projet dans IKAN ALM>>
 * <<GlobAdm_Project.adoc#_globadm_projectclone,Cloner un projet existant>>
 * Définir les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 * Créer ou modifier des <<GlobAdm_Machines.adoc#_globadm_machines,Machines>>
 * Créer ou modifier des <<GlobAdm_VCR.adoc#_globadm_vcr,Référentiels de contrôle de version>>
-* Créer ou modifier des<<GlobAdm_Transporters.adoc#_globadm_transporters,Transporteurs>>
+* Créer ou modifier des <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporteurs>>
 * Créer ou modifier des <<GlobAdm_ScriptingTools.adoc#_globadm_scriptingtools,Outils de script>>
+* Créer ou importer des <<GlobAdm_Phases.adoc#_globadm_phases,Phases>>
+* Créer ou modifier des <<GlobAdm_Schedules.adoc#_globadm_schedules,Plans horaires>>
 
 Pour une description détaillée des actions relatives à l`'administration globale, se référer à la section <<GlobAdm_Introduction.adoc#_globadm_introduction,Administration globale>>.
 |===

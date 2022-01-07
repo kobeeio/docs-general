@@ -7,7 +7,7 @@
 
 Le menu _Système_ propose des options pour afficher ou modifier les paramètres de configuration du Serveur IKAN ALM et pour exécuter des actions d`'épuration d`'archives dans IKAN ALM.
 
-Les utilisateurs ayant des droits d`'accès d`'Administrateur global auront accès aux options suivantes:
+Les utilisateurs qui ont des droits d`'accès d`'Administrateur global auront accès aux options suivantes:
 
 * <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 * <<GlobAdm_System.adoc#_globadm_system_housekeeping,Épuration des archives>>
@@ -15,7 +15,7 @@ Les utilisateurs ayant des droits d`'accès d`'Administrateur global auront acc�
 * <<GlobAdm_System.adoc#_globadm_system_synchronizebuildarchive,Synchronisation des Archives de construction>>
 
 
-Les utilisateurs n`'ayant pas de droits d`'accès d`'Administrateur global auront accès aux options suivantes:
+Les utilisateurs qui n'ont pas de droits d`'accès d`'Administrateur global auront accès aux options suivantes:
 
 * <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 * <<GlobAdm_System.adoc#_globadm_system_housekeepinghistory,Historique de l`'Épuration des Archives>>
@@ -26,20 +26,19 @@ Les utilisateurs n`'ayant pas de droits d`'accès d`'Administrateur global auron
 == Paramètres du système 
 (((Paramètres du système)))  (((Administration globale ,Paramètres du système))) 
 
-Les paramètres globaux du Serveur IKAN ALM, tels que les différents emplacements (les Archives, les Scripts, les Copies de travail et le Catalogue des Phases), les paramètres courrier et les paramètres de sécurité, sont définis dans l'écran __Paramètres
-système__.
-Certains de ces champs sont saisis automatiquement lors du processus d'installation.
+Les paramètres globaux du Serveur IKAN ALM, tels que les différents emplacements (les Archives, les Scripts, les Copies de travail et le Catalogue des Phases), les paramètres de courrier et les paramètres de sécurité, sont définis dans l'écran __Paramètres Système__.
+Certains de ces champs sont remplis automatiquement lors du processus d'installation.
 
 [NOTE]
 ====
 La modification de certains de ces Paramètres nécessite des actions préparatoires sur le Serveur IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Système > Paramètres système__.
+. Dans le contexte de l'Administration globale, sélectionnez __Système > Paramètres Système__.
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdmin-SystemSettings.png[,734,1065] 
+image::GlobAdmin-SystemSettings.png[,694,892]
 +
 
 [NOTE]
@@ -55,31 +54,33 @@ Les sous-panneaux suivants sont disponibles:
 * <<GlobAdm_System.adoc#_ssytemsettings_tabmiscellaneous,Autres activités>>
 
 +
-En-dessous du panneau Modifier les __Paramètres
-système__, vous trouverez le lien image:icons/history.gif[,15,15]  _Historique_.
-Cliquez sur ce lien pour afficher l`'écran __Aperçu de l`'Historique
-des Paramètres système__.
+En-bas du panneau __Paramètres Système__, vous trouverez le lien image:icons/history.gif[,15,15] _Historique_.
+Cliquez sur ce lien pour afficher l`'écran __Aperçu de l`'Historique des Paramètres système__.
 Pour plus d`'informations concernant l`'aperçu de l`'historique, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 
 
 [[_ssystemsettings_tablocalenvironment]]
 === Environnement local
 
-image::GlobAdmin-SystemSettings_LocalEnv.png[,734,472] 
+image::GlobAdmin-SystemSettings_LocalEnvironment.png[,832,404]
 
 Les champs suivants sont disponibles dans le sous-panneau __Environnement local__:
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
 
 |Serveur IKAN ALM
-|Ce champ contient le nom de la Machine qui actuellement héberge le Serveur IKAN ALM.
+|Ce champ contient le nom de la Machine qui héberge actuellement le Serveur IKAN ALM.
 
 Si nécessaire, sélectionnez la dénomination d`'une autre Machine à partir du menu déroulant.
 
 La modification de ce champ nécessite des actions préparatoires telles que l`'installation du Serveur IKAN ALM sur la nouvelle Machine cible, la migration des Emplacements utilisés par le transporteur FileCopy Local et l`'installation des Clients RCV nécessaires.
+
+|URL IKAN ALM
+|Dans ce champ, entrer l'URL de base IKAN ALM.
+Cet URL est utilisé pour la création de liens hypertextes dans les messages électroniques envoyés par IKAN ALM (Approbations, Pré-Notifications, Post-Notifications, Notifications des Requêtes de niveau Réussies/En erreur), pour construire le lien RSS feed et pour construire les URIs pour le REST API d'IKAN ALM.
 
 |_Emplacements locaux_
 |Ces champs sont utilisés par les Agents de Construction ou de Déploiement.
@@ -105,11 +106,11 @@ Si nécessaire, vous pouvez modifier le chemin vers l`'emplacement.
 |Emplacement des Scripts
 |Ce champ contient le chemin vers l`'Emplacement des Scripts de construction et de déploiement.
 
-Ce champ est utilisé si les scripts ne sont pas définis dans les codes Source depuis le Référentiel de Contrôle de Version (RCV).
+Ce champ est utilisé si les Scripts ne sont pas définis dans le code Source depuis le Référentiel de Contrôle de Version (RCV).
 
 Si nécessaire, vous pouvez modifier le chemin vers l`'emplacement.
 
-Ce champ permet de sauvegarder les scripts en dehors du Référentiel de Contrôle de Version et de les gérer à un emplacement central (sécurisé).
+Ce champ permet de sauvegarder les Scripts en dehors du Référentiel de Contrôle de Version et de les gérer à un emplacement central (sécurisé).
 
 |Emplacement du Catalogue des Phases
 |Ce champ contient le chemin vers l'Emplacement du Catalogue des Phases sur le Serveur IKAN ALM.
@@ -123,7 +124,7 @@ Le chemin d`'accès complet sera assemblé comme suit:
 
 le _PrefixeDeChemin_ (comme indiqué dans la définition du transporteur SSH, FTP ou FileCopy) concaténé avec l`'__Emplacement relatif__ défini dans cet onglet d`'Environnement local.
 
-Les transporteurs Distants sont activés par la définition du Protocole de transport lors de spécification des paramètres d`'une machine.
+Les transporteurs Distants sont activés par la définition du Protocole de transport lors de spécification des Paramètres d`'une Machine.
 
 Pour plus d`'information, se référer aux sections <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporteurs>> et <<GlobAdm_Machines.adoc#_globadm_machines,Machines>>.
 
@@ -148,7 +149,7 @@ Ce champ est utilisé si les scripts ne sont pas définis dans le Projet.
 
 Si nécessaire, vous pouvez modifier le chemin vers l`'emplacement.
 
-Ce champ permet que les scripts soient sauvegardés en dehors du Référentiel de Contrôle de Version et gérés à un emplacement central (sécurisé).
+Ce champ permet que les Scripts soient sauvegardés en dehors du Référentiel de Contrôle de Version et gérés à un emplacement central (sécurisé).
 
 |Emplacement du Catalogue des Phases
 |Ce champ contient l'emplacement du Catalogue des Phases affiché comme un emplacement distant.
@@ -164,40 +165,40 @@ Un Agent distant IKAN ALM qui doit installer une Phase utilisera cet emplacement
 Cette spécification n`'est nécessaire que si le Serveur SSH sur le Serveur IKAN ALM utilise un port SSH différent du numéro de port par défaut ``22``.
 Un serveur SSH doit être installé sur le Serveur IKAN ALM avant de pouvoir utiliser SSH comme Protocole du Transporteur.
 
-_Note:_ Ce numéro de port peut être écrasé par le numéro de port spécifié dans la définition du Transporteur. <<GlobAdm_Transporters.adoc#_globadm_secureshellcreate,Créer un Transporteur sécurisé SSH>>
+_Note:_ Ce numéro de port peut être remplacé par le numéro de port spécifié dans la définition du Transporteur. <<GlobAdm_Transporters.adoc#_globadm_secureshellcreate,Créer un Transporteur sécurisé SSH>>
 
 |Port FTP
 |Saisissez le numéro de port FTP.
 Cette spécification n`'est nécessaire que si le Serveur FTP sur le Serveur IKAN ALM utilise un port TCP différent du numéro de port par défaut ``21``.
 Un serveur FTP doit être installé sur le Serveur IKAN ALM avant de pouvoir utiliser FTP comme Protocole du Transporteur.
 
-_Note:_ Ce numéro de port peut être écrasé par le numéro de port spécifié dans la définition du Transporteur. <<GlobAdm_Transporters.adoc#_globadm_ftpcreate,Créer un Transporteur FTP>>
+_Note:_ Ce numéro de port peut être remplacé par le numéro de port spécifié dans la définition du Transporteur. <<GlobAdm_Transporters.adoc#_globadm_ftpcreate,Créer un Transporteur FTP>>
 |===
 
 [[_ssytemsettings_tabsecurity]]
 === Sécurité
 
-image::GlobAdmin-SystemSettings_Security.png[,735,107] 
+image::GlobAdmin-SystemSettings_Security.png[,715,86] 
 
 Les champs suivants sont disponibles dans le sous-panneau __Sécurité__.
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
 
-|Groupe d`'utilisateurs IKAN ALM
-|Ce champ contient la dénomination du Groupe d`'Utilisateurs auquel doivent appartenir tous les Utilisateurs nécessitant un accès à IKAN ALM.
+|Groupe des Droits Utilisateurs
+|Ce champ contient la dénomination du Groupe d`'Utilisateurs auquel doivent appartenir tous les Utilisateurs nécessitant un accès à IKAN ALM. Noter que les Utilisateurs peuvent aussi avoir accès à IKAN ALM quand ils appartiennent à un Groupe d'Utilisateurs imbriqué du Groupe d'Utilisateurs sélectionné.
 
 Si nécessaire, sélectionnez un autre Groupe d`'Utilisateurs à partir du menu déroulant.
 
 Si vous laissez ce champ vide, tous les Utilisateurs authentifiés auront des droits d`'accès d`'utilisateur au sein de l`'application IKAN ALM.
 
-|Groupe d`'administrateurs IKAN ALM
+|Groupe des Droits Administration globale
 |Ce champ contient la dénomination du Groupe d`'Utilisateurs auquel doivent appartenir tous les Utilisateurs nécessitant des droits d`'accès d`'Administrateur.
-Notez qu`'il doit s`'agir d`'un Groupe d`'utilisateurs __externe__.
+Notez qu`'il doit s`'agir d`'un Groupe d`'Utilisateurs __externe__.
 
-Seuls les Utilisateurs membres de ce groupe peuvent créer, modifier et supprimer les définitions d`'administration globale dans IKAN ALM.
+Seuls les Utilisateurs membres de ce groupe ou d'un groupe imbriqué peuvent créer, modifier et supprimer les définitions d`'Administration globale dans IKAN ALM.
 
 Si nécessaire, sélectionnez un autre Groupe d`'Utilisateurs _externe_ à partir du menu déroulant.
 
@@ -207,9 +208,9 @@ Si vous laissez ce champ vide, tous les Utilisateurs authentifiés auront des dr
 [[_ssystemsettings_tabmail]]
 === Courrier
 
-IKAN ALM peut envoyer des courriers de notification, automatiquement ou sur demande, en cas Constructions échouées ou réussies, pour demander une approbation avant de délivrer vers un Niveau de Test ou de Production, ou simplement pour notifier des Utilisateurs de modifications de Paramètres.
+IKAN ALM peut envoyer des courriers de notification, automatiquement ou sur demande, en cas de Constructions échouées ou réussies, pour demander une approbation avant de délivrer vers un Niveau de Test ou de Production, ou simplement pour notifier des Utilisateurs de modifications de Paramètres.
 
-Les Paramètres pour établir une connexion à un système de courrier externe peuvent également être définis dans cet onglet.
+Les Paramètres pour établir une connexion à un serveur de courrier externe peuvent également être définis dans cet onglet.
 
 [NOTE]
 ====
@@ -217,66 +218,23 @@ Les Paramètres de courrier peuvent être testés via l`'option _Notifier les Ut
 ====
 
 
-image::GlobAdmin-SystemSettings_Mail.png[,743,308] 
+image::GlobAdmin-SystemSettings_Mail.png[,830,259]
 
 Les champs suivants sont disponibles dans le sous-panneau __Courrier__.
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Option
 | Description
 
-|URL IKAN ALM
-|Saisissez dans ce champ l`'URL de base/connexion pour IKAN ALM.
-Cet URL sera utilisé pour la création de liens hypertextes dans les messages électroniques envoyés par IKAN ALM (Approbations, Pré-notifications, Post-notifications, Notification de succès ou d`'erreur de Requêtes de Niveau) et pour construire le lien du flux RSS.
-
-|Type de contenu
-a|Ce champ indique quels modèles seront utilisés pour composer les messages électroniques de notification ou d`'approbation. 
-
-Il y a deux options:
-
-** _HTML:_ les modèles contenant les Balises HTML seront utilisés.
-** __Texte brut__: les modèles sans Balises HTML seront utilisés.
-
-|Emplacement des modèles
-a|Par défaut, les modèles de messages électroniques se trouvent dans le répertoire suivant:
-
-_TOMCAT_HOME/webapps/alm/WEB-INF/classes/templates_
-
-Nous vous conseillons de modifier cet emplacement vers un répertoire du Serveur IKAN ALM si vous voulez adaptez les modèles à vos besoins.
-
-Les répertoires "`locaux`" correspondent aux Paramètres de langue de l`'Utilisateur:
-
-* _en_ pour l`'anglais
-* _fr_ pour le français
-* _de_ pour l`'allemand
-
-Si aucune correspondance n`'est trouvée, les modèles dans le répertoire par défaut seront utilisés.
-
-Pour les modèles en format HTML, le suffixe _\_html_ est ajouté avant l`'extension __$$.$$vm__.
-
-Pour les modèles en texte brut, aucun suffixe n`'est ajouté.
-
-|Protocole
-a|Sélectionnez le protocole courrier à utiliser:
-
-* SMTP
-* Lotus Notes Client
-* Lotus Notes DIIOP
-
 |Serveur SMTP
-|Sélectionnez la Machine du Serveur SMTP Mail.
+|Sélectionnez la Machine du Serveur SMTP du courrier.
 
 |Port
-|Ce champ contient le numéro de port SMTP utilisé par IKAN ALM pour établir la connexion avec le Serveur Courrier.
+|Ce champ contient le numéro de port SMTP utilisé par IKAN ALM pour établir la connexion avec le Serveur de courrier.
 
 Ce champ est optionnel.
 Par défaut, le numéro de port `25` sera utilisé.
-
-|Expéditeur
-|Ce champ contient le champ _Expéditeur_ utilisé dans les Notifications par courrier électronique envoyés par IKAN ALM.
-
-Ce champ est obligatoire si _SMTP_ a été sélectionné comme Protocole de courrier.
 
 |Type d`'authentification
 a|Sélectionnez le type d`'authentification requis:
@@ -296,22 +254,53 @@ Ce champ est obligatoire si _Authentification_ a été sélectionné comme type 
 
 |Répétez le Mot de passe
 |Dans ce champ, répétez le Mot de passe utilisé pour l`'authentification sur le Serveur SMTP.
+
+|Expéditeur
+|Ce champ contient le champ _Expéditeur_ utilisé dans les Notifications par courrier électronique envoyées par IKAN ALM.
+
+|Type de contenu
+a|Ce champ indique quels modèles seront utilisés pour composer les messages électroniques de notification ou d`'approbation. 
+
+Il y a deux options:
+* _HTML_: les modèles contenant les Balises HTML seront utilisés.
+* _Texte brut_: les modèles sans Balises HTML seront utilisés.
+
+|Emplacement des modèles
+a|Par défaut, les modèles de messages électroniques se trouvent dans le répertoire suivant:
+
+_TOMCAT_HOME/webapps/alm/WEB-INF/classes/templates_
+
+Nous vous conseillons de modifier cet emplacement vers un répertoire de la Machine du Serveur IKAN ALM, si vous voulez adaptez les modèles à vos besoins.
+
+Les sous-répertoires correspondent aux Types de contenu:
+
+* "simple" pour le type _Texte brut_
+* "xhtml" pour le type _HTML_
+
+Un second Emplacement des modèles est utilisé par le service/démon du Serveur IKAN ALM:
+
+_IKANALM_HOME/system/templates_
+
+Pour les modèles en format HTML, le suffixe _\_html_ est ajouté avant l`'extension __$$.$$vm__.
+
+Pour les modèles en texte brut, aucun suffixe n`'est ajouté.
 |===
 
 [[_ssytemsettings_tabmiscellaneous]]
 === Autres activités
 
-image::GlobAdmin-SystemSettings_Miscl.png[,735,159] 
+image::GlobAdmin-SystemSettings_Misc.png[,833,185]
 
 Les champs suivants sont disponibles dans le sous-panneau __Autres activités__:
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
 
 |Intervalle d`'actualisation automatique
-|Dans ce champ, vous pouvez saisir le nombre de secondes nécessaires pour la fonction d`'actualisation automatique disponible pour les écrans <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Administrer son bureau>>, <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des requêtes de niveau>> et <<Desktop_LevelRequests.adoc#_desktop_lr_buildhistory,Écran de l'Historique de Construction>>.
+|Dans ce champ, vous pouvez saisir le nombre de secondes nécessaires pour la fonction d`'actualisation automatique disponible pour les écrans <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Administrer son bureau>>, <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des Requêtes de niveau>>,
+<<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Détails de Requête de niveau>>, <<Desktop_Packages.adoc#_desktop_packagedetails,Détails du Paquet>> et <<Desktop_LevelRequests.adoc#_desktop_lr_buildhistory,Écran de l'Historique de Construction>>.
 
 Les aperçus seront ainsi actualisés chaque fois que l'intervalle aura expiré (si l'Utilisateur a activé la fonction <<UserInterface.adoc#_desktop_autorefresh,Actualisation automatique>> dans le sous-menu du Bureau).
 
@@ -320,22 +309,41 @@ Si vous ne voulez pas permettre l`'utilisation de l`'option __Actualisation auto
 |Flux RSS activés
 |Par ce champ vous pouvez activer la fonctionnalité RSS.
 
-Par conséquent, le bouton RSS sera disponible dans le panneau _Aperçu des
-requêtes de niveau_ de l`'Utilisateur.
+Par conséquent, le bouton RSS sera disponible dans le panneau _Aperçu des Requêtes de niveau_ de l`'Utilisateur.
 
 Par défaut, les flux RSS sont permis.
 
 Pour plus d`'informations, se référer à l`'appendice <<App_RSS.adoc#_rssfeedurldetails,Détails de l`'URL du flux RSS>>.
 
 |Services Web REST activés
-|Pour l`'instant, cette option ne fonctionne que pour l`'intégration avec les Cycles de vie SAP.
+a|Le REST API IKAN ALM vous permet d'interagir avec IKAN ALM par la programmation et intègrer cette fonctionalité dans des scripts, autres applications ou des apps stand-alone. l'Interaction est possible avec:
 
-Ces services permettent d`'exécuter des requêtes (HEAD et GET) sur des Utilisateurs, des Groupes d`'utilisateurs, des Référentiels de contrôle de version Subversion et des Systèmes de Suivi des Incidents dans l`'Administration globale, et sur des Projets, des Branches et des Cycles de Vie dans l`'Administration des projets.
+* Authentification
+* Approbations
+* Constructions & Déploiements
+* Constantes
+* Requêtes de niveau et Créer des Requêtes de niveau
+* Référentiels Git et Subversion
+* Systèmes de suivi d'incidents
+* Cycles de vie
+* Machines
+* Paquets
+* Projets
+* Import et Export de Projet
+* Branches de Projet
+* Groupes Utilisateurs et Utilisateurs
 
 Par défaut, cette option est désactivée pour des raisons de sécurité.
 
+Le REST API IKAN ALM est entièrement documenté, et, quand les Services Web REST sont activés, accessible via l'interface web : _Help > Documentation REST API_.
+
+|Communication sécurisée entre le Serveur et l'Agent
+|Ce champ indique si les services de communication web entre l'Application Web, le Serveur et l'Agent IKAN ALM sont actifs ou non via un canal sécurisé. 
+
 |Préfixe des Paramètres de Construction/Déploiement
-|Cette option définit la valeur du préfixe des Paramètres de Construction/Déploiement d`'IKAN ALM (__alm__ par défaut) et le nom du fichier des propriétés ANT qui est généré lors des phases Exécution du script de construction et Exécution du script de déploiement (
+|Cette option définit la valeur du préfixe des Paramètres de Construction/Déploiement d`'IKAN ALM (__alm__ par défaut) et le nom du fichier des propriétés ANT qui est généré lors des phases d'Exécution de script de construction et d'Exécution de script de déploiement (par défaut alm_ant.properties quand c'est un Outil de script ANT)
+
+Dans le cas ou vous provenez d'une version antèrieure à IKAN ALM 5.0, cette définition vous permet de garder le travail avec l'ancien préfixe de paramètres _scm4all_ et l'ancien fichier _scm4all_ant.properties_, et ne pas avoir à modified vos scripts de Construction et/ou Déploiement.
 
 _Note:_ Il s`'agit ici d`'une solution de compatibilité.
 A un certain moment, vous allez devoir modifier vos scripts et utiliser le nouveau préfixe __alm__.
@@ -363,17 +371,15 @@ L`'écran _Épuration des archives_ affiche également les informations concerna
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdm-Housekeeping-Screen.png[,1051,431] 
+image::GlobAdm-Housekeeping-Screen.png[,1401,550] 
 +
-En haut de l`'écran, le panneau _Informations
-de l`'Archivage_ affiche les informations suivantes:
+En haut de l`'écran, le panneau _Informations de l`'Archivage_ affiche les informations suivantes:
 +
 
 [NOTE]
 ====
 Les Informations de l`'Archivage sont basées sur les données physiques obtenues de l`'emplacement des Archives de Construction sur le Serveur IKAN ALM.
-Cet emplacement est défini dans l`'onglet _Environnement
-local_ des Paramètres système. <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
+Cet emplacement est défini dans l`'onglet _Environnement local_ des Paramètres système. <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 ====
 +
 
@@ -405,7 +411,7 @@ Vous pouvez également:
 Vous pouvez saisir ou sélectionner plusieurs critères de recherche pour peaufiner la recherche.
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Critère de base
 | Description
@@ -446,17 +452,15 @@ de fin de construction_ de la période.
 
 Vous pouvez également cliquer sur l`'icône image:icons/calendar.gif[,18,19]  pour sélectionner la "`Date/Heure de fin de construction depuis`".
 
-Sélectionnez la date requise afin de la copier dans le champ____.
+Sélectionnez la date requise afin de la copier dans le champ.
 
 Le temps sera établi au temps actuel.
 Si nécessaire, vous pouvez toutefois adapter le temps manuellement.
 
-Ce champ sera ignoré si une _Date
-de fin de construction_ a été sélectionnée.
+Ce champ sera ignoré si une _Date de fin de construction_ a été sélectionnée.
 
 |Date/heure de fin de construction jusqu`'à
-|Si vous voulez spécifier une période de dates, saisissez dans ce champ la dernière _date/heure
-de fin de construction_ de la période.
+|Si vous voulez spécifier une période de dates, saisissez dans ce champ la dernière _date/heure de fin de construction_ de la période.
 
 Vous pouvez également cliquer sur l`'icône image:icons/calendar.gif[,18,19]  pour sélectionner la "`Date/Heure de fin de construction jusqu`'à`".
 
@@ -559,7 +563,7 @@ Cliquez sur ce lien pour afficher les détails de cette Requête de Niveau.
 <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Informations détaillées>>
 
 |Statut de la Requête de niveau
-|Ce champ indique le statut de la Requête de Niveau. <<Desktop_LevelRequests.adoc#_desktop_lr_overviewscreen,L`'écran de l`'aperçu des requêtes de niveau>>
+|Ce champ indique le statut de la Requête de Niveau. <<Desktop_LevelRequests.adoc#_desktop_lr_overviewscreen,L`'écran de l`'Aperçu des Requêtes de niveau>>
 
 |Déployées
 |Ce champ indique si la Construction a été utilisée lors d`'un Déploiement ou pas.
@@ -571,16 +575,14 @@ Sélectionnez la case de sélection dans l'en-tête du tableau pour sélectionne
 
 . L`'écran _Confirmer la suppression des fichiers d`'Archives_ s`'affiche.
 +
-image::GlobAdm-Housekeeping-Delete.png[,348,99] 
+image::GlobAdm-Housekeeping-Delete.png[,336,81] 
 
 . Cliquez sur le bouton _Supprimer_ pour confirmer la suppression ou utilisez le bouton _Précédent_ pour retourner à l`'écran précédent sans supprimer les fichiers de Construction.
 +
 Après l`'avoir confirmée, la suppression sera exécutée.
-L`'action sera enregistrée dans l`'__Historique de l`'Épuration
-des Archives__ et l`'écran _Détail de l'aperçu
-de l'Épuration des Archives_ sera affiché sur lequel l`'Utilisateur pourra vérifier le résultat de cette action.
+L`'action sera enregistrée dans l`'__Historique de l`'Épuration des Archives__ et l`'écran _Détail de l'aperçu de l'Épuration des Archives_ sera affiché sur lequel l`'Utilisateur pourra vérifier le résultat de cette action.
 +
-image::GlobAdm-Housekeeping-Delete-Success.png[,1030,311] 
+image::GlobAdm-Housekeeping-Delete-Success.png[,1016,302] 
 
 
 [[_globadm_system_housekeepinghistory]]
@@ -598,7 +600,7 @@ Un panneau de recherche est disponible pour que l`'Utilisateur puisse saisir des
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdm-HousekeepingHistory-Screen.png[,764,386] 
+image::GlobAdm-HousekeepingHistory-Screen.png[,722,363] 
 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
@@ -612,7 +614,7 @@ Vous pouvez également:
 Vous pouvez saisir ou sélectionner plusieurs critères de recherche pour peaufiner la recherche.
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Critère
 | Description
@@ -628,7 +630,7 @@ Vous pouvez saisir ou sélectionner plusieurs critères de recherche pour peaufi
 
 Vous pouvez également cliquer sur l`'icône image:icons/calendar.gif[,18,19]  pour sélectionner la date.
 
-Sélectionnez la date requise afin de la copier dans le champ____.
+Sélectionnez la date requise afin de la copier dans le champ.
 
 L`'heure sera mise à _0:0_ (minuit). Il est cependant toujours possible de changer l`'heure manuellement.
 
@@ -637,18 +639,17 @@ L`'heure sera mise à _0:0_ (minuit). Il est cependant toujours possible de chan
 
 Vous pouvez également cliquer sur l`'icône image:icons/calendar.gif[,18,19]  pour sélectionner la date.
 
-Sélectionnez la date requise afin de la copier dans le champ____.
+Sélectionnez la date requise afin de la copier dans le champ.
 
 L`'heure sera mise à _0:0_ (minuit). Il est cependant toujours possible de changer l`'heure manuellement.
 |===
 
 . Vérifiez le résultat de la recherche dans l`'__Aperçu des Actions d`'Épuration des archives__.
 +
-Le panneau _Aperçu des Actions d`'Épuration des
-archives_ liste les informations suivantes pour chaque action d`'épuration:
+Le panneau _Aperçu des Actions d`'Épuration des archives_ liste les informations suivantes pour chaque action d`'épuration:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -675,16 +676,16 @@ Les valeurs possibles sont:
 
 . Vous pouvez utiliser le lien image:icons/view.gif[,15,15] _Afficher_ pour afficher l`'écran __Aperçu des Détails de l'Épuration des Archives__.
 +
-image::GlobAdm-HousekeepingHistory-Details_success.png[,1030,316] 
+image::GlobAdm-HousekeepingHistory-Details_success.png[,1015,303] 
 +
-image::GlobAdm-HousekeepingHistory-Details_error.png[,840,354] 
+image::GlobAdm-HousekeepingHistory-Details_error.png[,1258,322] 
 
 
 [[_globadm_system_synchronizebuildarchive]]
 == Synchronisation des Archives de construction 
 (((Synchronisation des archives de construction)))  (((Administration globale ,Synchronisation des archives de construction))) 
 
-L`'écran _Synchronisation des archives de construction_ permet à l`'Administrateur IKAN ALM de synchroniser la représentation physique des Archives de Construction dans le système de fichiers et la représentation logique des Archives de Construction dans la base de données d`'IKAN ALM.
+L`'écran _Synchronisation des Archives de construction_ permet à l`'Administrateur IKAN ALM de synchroniser la représentation physique des Archives de Construction dans le système de fichiers et la représentation logique des Archives de Construction dans la base de données d`'IKAN ALM.
 
 Par exemple: le statut d`'archivage d`'un fichier de Construction supprimé manuellement dans le système (via la commande de suppression du système d`'exploitation) sera toujours établi à "`présent`" dans la base de données d`'IKAN ALM.
 Le processus de synchronisation établira ce statut à "`non existant`".
@@ -693,7 +694,7 @@ Le processus de synchronisation établira ce statut à "`non existant`".
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdm-SynchBA-screen.png[,898,481] 
+image::GlobAdm-SynchBuildArchive-screen.png[,1156,601]
 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
@@ -707,7 +708,7 @@ La liste des éléments dans l'aperçu est synchronisée automatiquement en fonc
 Vous pouvez saisir ou sélectionner plusieurs critères de recherche pour peaufiner la recherche. 
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Critère de base
 | Description
@@ -747,7 +748,7 @@ Tous les Projets, cachés et non cachés, seront affichés.
 Le panneau _Aperçu des Projets_ liste les informations suivantes pour chaque fichier de Construction affiché:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -792,10 +793,9 @@ Pour ne pas surcharger le Serveur IKAN ALM, il vaut mieux de limiter le nombre d
 
 . L`'écran _Trace de la Synchronisation des Archives de construction_ s`'affiche.
 +
-image::GlobAdm-SynchBA-synchronize.png[,840,193] 
+image::GlobAdm-SynchBuildArchive-synchronize.png[,1089,235]
 +
-Le champ supplémentaire _Statut de la Synchronisation_ apparaît pour chaque Projet dans le panneau __Synchronisation des
-Projets__.
+Le champ supplémentaire _Statut de la Synchronisation_ apparaît pour chaque Projet dans le panneau __Synchronisation des Projets__.
 +
 Ce champ peut contenir les valeurs suivantes:
 
@@ -804,4 +804,4 @@ Ce champ peut contenir les valeurs suivantes:
 * __Synchronisation...__: La synchronisation de ce Projet n`'a pas encore commencé.
 * __Erreur__: Un problème est apparu lors de la synchronisation du Projet.
 
-. Cliquez sur le bouton _Actualiser _pour actualiser les statuts de synchronisation.
+. Cliquez sur le bouton _Actualiser_ pour actualiser les Statuts de synchronisation.

@@ -10,20 +10,20 @@ Les Plans horaires sont des définitions précisant au Planificateur quand les R
 
 Si un Plan horaire est associé à un Niveau de Construction, la Tâche (le service) de Planification d`'IKAN ALM vérifiera, chaque fois que l`'intervalle expire, si il y a eu des changements dans le Référentiel de Contrôle de Version pour la Branche à la quelle le Niveau est associé.
 
-S`'il y a eu des changements, une Requête de Niveau sera créée automatiquement pour le Niveau de Construction.
+S`'il y a eu des changements, une Requête de niveau sera créée automatiquement pour le Niveau de Construction.
 
 En d`'autres termes, les Plans horaires permettent des options telles que l`'automatisation des Constructions ou l`'intégration continue.
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
-* <<GlobAdm_Schedules.adoc#_globadm_schedulecreate,Créer un plan horaire>>
-* <<GlobAdm_Schedules.adoc#_globadm_schedulesoverview,Plans horaires Aperçu des plans horaires>>
-* <<GlobAdm_Schedules.adoc#_globadm_schedules_edit,Modifier la définition d`'un plan horaire>>
-* <<GlobAdm_Schedules.adoc#_globadm_schedules_delete,Supprimer une définition de plan horaire>>
-* <<GlobAdm_Schedules.adoc#_globadm_schedules_history,Afficher l`'historique d`'un plan horaire>>
+* <<GlobAdm_Schedules.adoc#_globadm_schedulecreate,Créer un Plan horaire>>
+* <<GlobAdm_Schedules.adoc#_globadm_schedulesoverview,Aperçu des Plans horaires>>
+* <<GlobAdm_Schedules.adoc#_globadm_schedules_edit,Modifier la définition d`'un Plan horaire>>
+* <<GlobAdm_Schedules.adoc#_globadm_schedules_delete,Supprimer une définition de Plan horaire>>
+* <<GlobAdm_Schedules.adoc#_globadm_schedules_history,Afficher l`'historique d`'un Plan horaire>>
 
 [[_globadm_schedulecreate]]
-== Créer un plan horaire
+== Créer un Plan horaire
 (((Plans horaires ,Créer))) 
 
 [NOTE]
@@ -35,13 +35,13 @@ Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Admin
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdm-Schedules-Create.png[,576,307] 
+image::GlobAdm-Schedules-Create.png[,563,296] 
 . Complétez les champs dans le panneau __Créer un Plan horaire__.
 +
 Les champs marqués d`'un astérisque rouge doivent être obligatoirement remplis. 
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -76,9 +76,9 @@ Cette valeur est prise en considération chaque fois que le Planificateur est re
 |Saisissez une valeur pour la période d`'inactivité (entre 0 et 3600 secondes) pour le nouveau Plan horaire.
 
 La période d`'inactivité permet d`'éviter qu`'une Construction soit lancée au moment où des développeurs cataloguent des fichiers.
-Lorsque l`'heure d`'exécution pour une Requête de Niveau générée par le Planificateur est atteinte, le Système vérifie d`'abord si le code Source a été modifié pendant la période d`'inactivité définie.
+Lorsque l`'heure d`'exécution pour une Requête de niveau générée par le Planificateur est atteinte, le Système vérifie d`'abord si le code Source a été modifié pendant la période d`'inactivité définie.
 
-Si le code Source n`'a pas été modifié pendant l`'intervalle défini, la récupération des données à partir du référentiel de contrôle de version est estimée fiable et permet d`'exécuter la Requête de Niveau.
+Si le code Source n`'a pas été modifié pendant l`'intervalle défini, la récupération des données à partir du référentiel de contrôle de version est estimée fiable et permet d`'exécuter la Requête de niveau.
 
 |Actif
 |Sélectionnez si le Plan horaire doit être actif ou non.
@@ -90,39 +90,33 @@ Si le code Source n`'a pas été modifié pendant l`'intervalle défini, la réc
 
 Evitez d`'utiliser un Plan horaire trop "`agressif`", qui vérifiera, par exemple, chaque minute s`'il y a eu des modifications.
 Cela pourrait stresser le RCV, surtout si le Plan horaire est rattaché à plusieurs Niveaux de Construction.
-Il vaut mieux utiliser un script complémentaire dans le RCV qui démarrera une Requête de Niveau à partir de l`'interface de la ligne de commande d`'IKAN ALM au moment où des codes Source ont été confirmés.
+Il vaut mieux utiliser un script complémentaire dans le RCV qui démarrera une Requête de niveau à partir de l`'interface de la ligne de commande d`'IKAN ALM au moment où des codes Source ont été confirmés.
 Référez-vous à la documentation de votre RCV pour plus d`'informations concernant les scripts complémentaires.
 ====
 +
 
 [NOTE]
 ====
-Un Plan horaire rattaché à un Niveau d`'une Branche basée sur une balise existante ne vérifiera pas s`'il y a eu des modifications dans le RCV, et par conséquent ce Plan horaire n`'aura pas d`'effet car il n`'est pas capable de vérifier ce qui a changé dans le RCV depuis la dernière Requête de Niveau.
+Un Plan horaire rattaché à un Niveau d`'une Branche basée sur une balise existante ne vérifiera pas s`'il y a eu des modifications dans le RCV, et par conséquent ce Plan horaire n`'aura pas d`'effet car il n`'est pas capable de vérifier ce qui a changé dans le RCV depuis la dernière Requête de niveau.
 Une Intégration continue sur une Branche basée sur une balise existante n`'est possible que via l`'usage de scripts RCV complémentaires qui démarreront une Requête de niveau IKAN ALM à partir de l`'interface de ligne de commande d`'IKAN ALM au moment ou une nouvelle balise a été créée.
 Référez-vous à la documentation de votre RCV pour plus d`'informations concernant les scripts complémentaires.
 ====
 . Après avoir complété les champs, cliquez sur le bouton __Créer__.
 +
-Le nouveau Plan horaire est ajouté à l`'__Aperçu
-des plans horaires__ dans la partie inférieure de l`'écran.
+Le nouveau Plan horaire est ajouté à l`'__Aperçu des Plans horaires__ dans la partie inférieure de l`'écran.
 +
-Dans les exemples ci-dessous, la question _"`Construction
-disponible?`"_ signifie: __"`Existe-t-il une
-Requête de Niveau de Construction pour le Niveau associé au Plan
-horaire?`"__.
-La question _"`Code modifié depuis la dernière Construction?`"_ signifie: __"`Le
-code Source dans le RCV a-t-il été modifié depuis la dernière Requête
-de Niveau de Construction pour le Niveau associé au Plan horaire?`"__.
+Dans les exemples ci-dessous, la question _"`Construction disponible?`"_ signifie: __"`Existe-t-il une Requête de niveau de Construction pour le Niveau associé au Plan horaire?`"__.
+La question _"`Code modifié depuis la dernière Construction?`"_ signifie: __"`Le code Source dans le RCV a-t-il été modifié depuis la dernière Requête de niveau de Construction pour le Niveau associé au Plan horaire?`"__.
 +
-image::GlobAdm-Schedules-Sample1.png[,975,536] 
+image::GlobAdm-Schedules-Sample1.png[,965,477] 
 +
-image::GlobAdm-Schedules-Sample2.png[,974,617] 
+image::GlobAdm-Schedules-Sample2.png[,965,567] 
 +
-image::GlobAdm-Schedules-Sample3.png[,974,526] 
+image::GlobAdm-Schedules-Sample3.png[,965,468] 
 +
-image::GlobAdm-Schedules-Sample4.png[,971,535] 
+image::GlobAdm-Schedules-Sample4.png[,965,486] 
 +
-image::GlobAdm-Schedules-Sample5.png[,971,526] 
+image::GlobAdm-Schedules-Sample5.png[,965,486] 
 
 
 [cols="1", frame="topbot"]
@@ -131,21 +125,21 @@ image::GlobAdm-Schedules-Sample5.png[,971,526]
 a|_Sujets apparentés:_
 
 * <<GlobAdm_Schedules.adoc#_globadm_schedules,Plans horaires>>
-* <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un niveau construction>>
-* <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de requêtes de niveau>>
+* <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un Niveau de construction>>
+* <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de Requêtes de niveau>>
 
 |===
 
 [[_globadm_schedulesoverview]]
 [[_pschedulesoverview]]
-== Aperçu des plans horaires 
+== Aperçu des Plans horaires 
 (((Plans horaires ,Aperçu))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdm-Schedules-Overview.png[,823,278] 
+image::GlobAdm-Schedules-Overview.png[,1060,340] 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
 La liste des éléments dans l'aperçu est synchronisée automatiquement en fonction des critères sélectionnés.
@@ -155,42 +149,38 @@ Vous pouvez également:
 * cliquer sur le lien _Montrer/Cacher les options avancées_ pour afficher ou masquer tous les critères de recherche disponibles,
 * cliquer sur le lien _Rechercher_ pour synchroniser la liste en fonction des critères de recherche actuels,
 * cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs.
-. Vérifiez les informations dans l`'__Aperçu des plans horaires__.
+. Vérifiez les informations dans l`'__Aperçu des Plans horaires__.
 +
-Pour une description détaillée des champs, se référer à la section <<GlobAdm_Schedules.adoc#_globadm_schedulecreate,Créer un plan horaire>>.
-. En fonction de vos droits d`'accès, les liens suivants peuvent être disponibles:
+Pour une description détaillée des champs, se référer à la section <<GlobAdm_Schedules.adoc#_globadm_schedulecreate,Créer un Plan horaire>>.
+. En fonction de vos droits d`'accès, les liens/icônes suivants peuvent être disponibles:
 +
 
-[cols="1,1", frame="topbot"]
+[cols="1,3", frame="topbot", options="header"]
 |===
+| Icône
+| Description
 
-|image:icons/edit.gif[,15,15] 
-|Modifier
-
-Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|image:icons/edit.gif[,15,15]  Modifier
+|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Plan horaire.
 
-<<GlobAdm_Schedules.adoc#_globadm_schedules_edit,Modifier la définition d`'un plan horaire>>
+<<GlobAdm_Schedules.adoc#_globadm_schedules_edit,Modifier la définition d`'un Plan horaire>>
 
-|image:icons/delete.gif[,15,15] 
-|Supprimer
-
-Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|image:icons/delete.gif[,15,15]  Supprimer
+|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Plan horaire.
 
-<<GlobAdm_Schedules.adoc#_globadm_schedules_delete,Supprimer une définition de plan horaire>>
+<<GlobAdm_Schedules.adoc#_globadm_schedules_delete,Supprimer une définition de Plan horaire>>
 
-|image:icons/history.gif[,15,15] 
-|Historique
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|image:icons/history.gif[,15,15]  Historique
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
 Elle permet d`'afficher l`'historique d`'un Plan horaire.
 
-<<GlobAdm_Schedules.adoc#_globadm_schedules_history,Afficher l`'historique d`'un plan horaire>>
+<<GlobAdm_Schedules.adoc#_globadm_schedules_history,Afficher l`'historique d`'un Plan horaire>>
 |===
 
 [[_globadm_schedules_edit]]
-=== Modifier la définition d`'un plan horaire 
+=== Modifier la définition d`'un Plan horaire 
 (((Plans horaires ,Modifier))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
@@ -199,11 +189,11 @@ Elle permet d`'afficher l`'historique d`'un Plan horaire.
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdm-Schedules-Edit.png[,609,690] 
+image::GlobAdm-Schedules-Edit.png[,609,461]
 
 . Si nécessaire, modifier les champs dans le panneau __Modifier un Plan horaire__.
 +
-Pour une description détaillée des champs, se référer à la section <<GlobAdm_Schedules.adoc#_globadm_schedulecreate,Créer un plan horaire>>.
+Pour une description détaillée des champs, se référer à la section <<GlobAdm_Schedules.adoc#_globadm_schedulecreate,Créer un Plan horaire>>.
 +
 
 [NOTE]
@@ -219,7 +209,7 @@ Les boutons suivants sont également disponibles:
 * _Précédent_ pour retourner à l`'écran précédent sans enregistrer les modifications.
 
 [[_globadm_schedules_delete]]
-=== Supprimer une définition de plan horaire 
+=== Supprimer une définition de Plan horaire 
 (((Plans horaires ,Supprimer))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
@@ -228,7 +218,7 @@ Les boutons suivants sont également disponibles:
 +
 Si le Plan horaire n`'est pas associé à un Niveau, l`'écran suivant s`'affiche:
 +
-image::GlobAdm-Schedules-Delete.png[,479,279] 
+image::GlobAdm-Schedules-Delete.png[,432,242]
 
 . Cliquez sur le bouton _Supprimer_ pour confirmer la suppression du Plan horaire.
 +
@@ -236,12 +226,12 @@ Vous pouvez également cliquer sur le bouton _Précédent_ pour retourner à l`'
 +
 __Note: __Si le Plan horaire est associé à un ou plusieurs Niveaux l`'écran suivant s`'affiche:
 +
-image::GlobAdm-Schedules-Delete-Error.png[,642,550] 
+image::GlobAdm-Schedules-Delete-Error.png[,619,663]
 +
 Avant de pouvoir supprimer le Plan horaire, vous devez enlever le Plan horaire pour tous les Niveaux listés.
 
 [[_globadm_schedules_history]]
-=== Afficher l`'historique d`'un plan horaire 
+=== Afficher l`'Historique d`'un Plan horaire 
 (((Plans horaires ,Historique))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
@@ -260,7 +250,7 @@ l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_hist
 a|_Sujets apparentés:_
 
 * <<GlobAdm_Schedules.adoc#_globadm_schedules,Plans horaires>>
-* <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un niveau de construction>>
-* <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de requêtes de niveau>>
+* <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un Niveau de construction>>
+* <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de Requêtes de niveau>>
 
 |===

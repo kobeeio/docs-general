@@ -13,14 +13,13 @@ Il donne accès aux fonctions couramment utilisées telles que:
 * la vérification du statut d`'un Projet (par un Chef de projet)
 * la livraison d`'une Construction dans le niveau d`'environnement Cible (par une personne habilitée)
 * l`'Approbation d`'un Déploiement sur un Environnement (par un responsable des versions)
-* ...
+* $$...$$
 
 
 Dans cette section vous trouvez la description détaillée des tâches suivantes:
 
+* <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Modifier vos Paramètres personnels>>
 * <<Desktop_LevelRequests.adoc#_desktop_levelrequests,Requêtes de niveau>>
 * <<Desktop_Packages.adoc#_desktop_packages,Paquets>> et <<Desktop_PackageGroups.adoc#_desktop_packagegroups,Groupes de Paquets de Construction>>
 * <<Desktop_Approvals.adoc#_desktop_outstandingapprovals,Approbations>>
 * <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Administrer son bureau>>
-* <<UserInterface.adoc#_desktop_autorefresh,Actualisation automatique>>
-* <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>

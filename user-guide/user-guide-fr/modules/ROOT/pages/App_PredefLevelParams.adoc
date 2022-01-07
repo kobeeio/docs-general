@@ -13,7 +13,7 @@ Le tableau suivant offre un aperçu des Paramètres des Environnements de niveau
 | Description
 
 |alm.levelRequest.actionType
-a|Ce Paramètre donne le Type d`'action de Requête de Niveau.
+a|Ce Paramètre donne le Type d`'action de Requête de niveau.
 
 Les types suivants sont possibles: 
 
@@ -28,7 +28,7 @@ Les types suivants sont possibles:
 |Ce Paramètre donne le numéro de construction.
 
 |alm.levelRequest.buildType
-a|Ce Paramètre donne le Type de Construction de la Requête de Niveau.
+a|Ce Paramètre donne le Type de Construction de la Requête de niveau.
 
 Les types suivants sont possibles: 
 
@@ -38,10 +38,10 @@ Les types suivants sont possibles:
 * Tag-based Build (Construction partielle basée sur version balisée)
 
 |alm.levelRequest.levelName
-|Ce Paramètre donne le nom du Niveau sur lequel la Requête de Niveau est exécutée.
+|Ce Paramètre donne le nom du Niveau sur lequel la Requête de niveau est exécutée.
 
 |alm.levelRequest.oid
-|Ce Paramètre donne l`'Identifiant Unique de la Requête de Niveau.
+|Ce Paramètre donne l`'Identifiant Unique de la Requête de niveau.
 
 |alm.levelRequest.requester
 |Uniquement disponible s'il y a un Utilisateur Demandeur.
@@ -54,7 +54,7 @@ Ce paramètre donne le nom du Demandeur.
 L'Emplacement des Copies de travail est étendu avec le OID Requête de niveau ((Par exemple, ``E:\Ikan\alm\system\system\workCopy\1170``)
 
 |alm.levelRequest.startDateTime
-a|Ce Paramètre donne la date et l`'heure d`'exécution de la Requête de Niveau actuelle. 
+a|Ce Paramètre donne la date et l`'heure d`'exécution de la Requête de niveau actuelle. 
 
 Le format utilisé est ``date.heure``. 
 
@@ -64,7 +64,7 @@ Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
 * `MM/JJ/AAAA` pour les Etats-Unis
 
 |alm.levelRequest.vcrTag
-|Ce Paramètre donne le tag de la Requête de Niveau.
+|Ce Paramètre donne le tag de la Requête de niveau.
 Le tag est défini comme `projectstream_prefix_b+buildoid_suffix` où: 
 
 `projectstream` est remplacé par `H` pour la Branche Principale et `B` pour une Branche Secondaire.
@@ -98,7 +98,7 @@ a|Ce Paramètre donne le Type d`'Outil de Déploiement utilisé:
 Cette dénomination peut être différente de la dénomination du Projet dans le Référentiel de Contrôle de Version (RCV) utilisé (voir alm.project.vcrProjectName).
 
 |alm.package.name
-|Ce Paramètre n`'est disponible que pour les Projets de type "Paquets". Il donne le nom du Paquet associé à la Requête de Niveau.
+|Ce Paramètre n`'est disponible que pour les Projets de type "Paquets". Il donne le nom du Paquet associé à la Requête de niveau.
 
 |alm.project.vcrName
 |Ce Paramètre donne la dénomination du RCV (telle que définie dans la section Administration Globale) auquel le Projet est relié.
@@ -126,7 +126,7 @@ a|Ce Paramètre donne le Type de Branche:
 |Ce Paramètre donne l`'Identifiant Unique de la Branche dans le RCV défini dans la Branche dans IKAN ALM (uniquement pour les Branches Secondaires).
 
 |Source
-|Ce Paramètre donne l'Emplacement Source qui est dérivé de l'Emplacement des Copies de travail dans les Paramètres Système.
+|Ce Paramètre donne l'Emplacement Source qui est dérivé de l'Emplacement des Copies de travail dans les Paramètres du Système.
 Cet Emplacement peut être étendu avec l`'OID Requête de niveau, "workcopy", le Nom du projet et le Nom RCV du projet.
 (Par exemple, ``E:\Ikan\alm\system\system\workCopy\1170\workcopy\Webpad\webpad``)
 |===

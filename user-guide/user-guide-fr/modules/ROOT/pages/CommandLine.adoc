@@ -2,37 +2,43 @@
 :imagesdir: ../images
 
 [[_comandlineinterface]]
-= Interface de ligne de commande (optionnelle) 
-(((Interface de ligne de commande))) 
+= Interface de Ligne de Commande (optionnelle) 
+(((Interface de Ligne de Commande))) 
 
-IKAN ALM peut être enrichi d`'une Interface optionnelle de ligne de commande, permettant la création de Requêtes de Niveau et la génération de Rapports en utilisant un Client shell au lieu de l`'application Web d`'IKAN ALM.
+IKAN ALM peut être enrichi d`'une Interface optionnelle de ligne de commande, permettant la création de Requêtes de niveau, de Paquets et la génération de Rapports en utilisant un Client shell au lieu de l`'application Web d`'IKAN ALM.
 
 Les utilisations possibles sont:
 
-* Création manuelle de Requêtes de Niveau (Commande CLR). <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de requêtes de niveau en spécifiant des optionset des paramètres>>
-* Génération manuelle de Rapports (Commande Report). <<CommandLine.adoc#_pcommandline_report_optionsparameters,Génération de rapports en définissant des options et desparamètres>>
-* Création de Requêtes de Niveau et de Rapports dans un IDE (Environnement de Développement Intégré) externe. Ce document décrit la procédure d`'intégration pour <<CommandLine.adoc#_pintegrateikanalminjdeveloper,JDeveloper>> et <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>. Pour plus d`'informations, se référer aux sections indiquées.
-* Création automatique de Requêtes de Niveau via un outil de script. Un outil de script est utilisé pour la définition de déclencheurs de création de Requêtes de Niveau (par exemple, la sauvegarde du serveur). Ce document décrit l`'usage d`'un <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,script ANT>>. Pour plus d`'informations, se référer à la section indiquée.
+* Création manuelle de Requêtes de niveau (Commande CLR). <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de Requêtes de niveau en spécifiant des options et des paramètres>>
+* Création manuelle de Paquets (Commande Package). <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Création de Paquets en spécifiant des options et des paramètres>>
+* Génération manuelle de Rapports (Commande Report). <<CommandLine.adoc#_pcommandline_report_optionsparameters,Génération de Rapports en définissant des options et des paramètres>>
+* Création de Requêtes de nveau et de Rapports dans un IDE (Environnement de Développement Intégré) externe. Ce document décrit la procédure d`'intégration pour <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> et <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>.
+* Création automatique de Requêtes de niveau via un outil de script. Un outil de script est utilisé pour la définition de déclencheurs de création de Requêtes de niveau (par exemple, la sauvegarde du serveur). Ce document décrit l`'usage d`'un <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,script ANT>>.
 
 
-L`'interface de ligne de commande d`'IKAN ALM peut être installée sur chaque Machine cliente nécessitant cette fonctionnalité.
-L`'interface a besoin d`'une connexion (TCP/IP) au serveur central d`'IKAN ALM.
-Elle se connecte via XML-RPC avec le serveur IKAN ALM.
+L`'interface de Ligne de Commande d`'IKAN ALM peut être installée sur chaque Machine cliente nécessitant cette fonctionnalité.
+L`'interface a besoin d`'une connexion (TCP/IP) au Serveur central d`'IKAN ALM.
+Elle se connecte via XML-RPC avec le Serveur IKAN ALM.
+
+Les commandes CLR et Package peuvent aussi être exécutées avec le REST API IKAN ALM. Consulter la documentation REST API IKAN ALM pour plus d`'information.
 
 [[_smanualusagecommandlineinterface]]
-== Utilisation manuelle de l`'interface de ligne de commande
+== Utilisation manuelle de l`'Interface de Ligne de Commande
 
 Référez-vous aux procédures suivantes, pour plus d`'informations:
 
-* <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de requêtes de niveau en spécifiant des optionset des paramètres>>
-* <<CommandLine.adoc#_pcommandline_clr_propertiesfiles,Création de requêtes de niveau en utilisant un fichier depropriétés>>
-* <<CommandLine.adoc#_pcommandline_report_optionsparameters,Génération de rapports en définissant des options et desparamètres>>
-* <<CommandLine.adoc#_pcommandline_reports_propertiesfile,Génération de rapports en utilisant un fichier de propriétés>>
+* <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de Requêtes de niveau en spécifiant des options et des paramètres>>
+* <<CommandLine.adoc#_pcommandline_clr_propertiesfiles,Création de Requêtes de niveau en utilisant un fichier de propriétés>>
+* <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Création de Paquets en spécifiant des options et des paramètres>>
+* <<CommandLine.adoc#_pcommandline_pack_filerevisions,Modifier le contenu d'un Paquet en utilisant un Fichier XML>>
+* <<CommandLine.adoc#_pcommandline_pack_propertiesfiles,Création de Paquets en utilisant un Fichier de propriétés>>
+* <<CommandLine.adoc#_pcommandline_report_optionsparameters,Génération de Rapports en définissant des options et des paramètres>>
+* <<CommandLine.adoc#_pcommandline_reports_propertiesfile,Génération de Rapports en utilisant un fichier de propriétés>>
 
 [[_pcommandline_clr_optionsparameters]]
-=== Création de requêtes de niveau en spécifiant des optionset des paramètres
+=== Création de Requêtes de niveau en spécifiant des options et des paramètres
 
-. Préparation de la création de la Requête de Niveau.
+. Préparation de la création de la Requête de niveau.
 +
 * Sous Windows:
 ** Accédez à la fenêtre de commande.
@@ -45,19 +51,18 @@ Vous pouvez ajouter cet emplacement à la variable définissant le Chemin d`'Env
 ** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
 +
 Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'accès à partir d`'autres répertoires de travail.
-. Saisissez l`'instruction requise pour la création de la Requête de Niveau.
+. Saisissez l`'instruction requise pour la création de la Requête de niveau.
 +
 Format:
 +
-__alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER]
--user:*USERID -password:$PASSWORD [-secured=true|false] clr paramètres__
+__alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER] -user:*USERID -password:$PASSWORD [-secured=true|false] *clr* paramètres__
 +
 Les éléments suivants sont disponibles:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
-| Elément
+| Élément
 | Description
 | Obligatoire
 
@@ -94,142 +99,140 @@ Si le Serveur IKAN ALM n`'utilise pas de connexion encryptée, établissez cet �
 |Non
 
 |clr
-|Cette commande signifie__ Create
-Level Request__.
+|Cette commande signifie__ Create Level Request__.
 |Oui
 
 |paramètres
-|Les Paramètres de création d`'une Requête de Niveau sont expliqués dans l`'étape suivante.
+|Les Paramètres de création d`'une Requête de niveau sont expliqués dans l`'étape suivante.
 |Oui
 |===
 
-. Définissez les Paramètres de création de la Requête de Niveau.
+. Définissez les Paramètres de création de la Requête de niveau.
 +
 Format:
 +
-__clr -project:[project name] [-projectstream:[build
-prefix[-build suffix]]] [-package:[package name]] -level:[level name]
-[-description:[description]] [-buildnumber:[buildnumber]] [-tag:[vcr
-tag]] [-redeliver=true|false] [-startdate:[startdate]] [-paramfile:[parameter
-file]]__
+__*clr* -project:[project name] [-projectstream:[build prefix[-build suffix]]] [-package:[package name]] -level:[level name] [-description:[description]] [-buildnumber:[buildnumber]] [-tag:[vcr tag]] [-redeliver=true|false] [-startdate:[startdate]] [-paramfile:[parameter file]]__
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Paramètre
 | Description
 | Obligatoire
 
 |project
-|Ce Paramètre donne la définition du Projet pour lequel vous créez une Requête de Niveau.
+|Ce Paramètre donne la définition du Projet pour lequel vous créez une Requête de niveau.
 
 Utilisez la dénomination du Projet définie dans IKAN ALM.
 |Oui
 
 |projectstream
-|Ce Paramètre donne la définition de la Branche Secondaire pour laquelle vous créez une Requête de Niveau.
+|Ce Paramètre donne la définition de la Branche Secondaire pour laquelle vous créez une Requête de niveau.
 
 Utilisez le préfixe (et le suffixe) de construction défini(s) dans IKAN ALM.
 
-Si Ce Paramètre est vide, la Requête de Niveau sera créée pour la Branche Principale du Projet.
+Si Ce Paramètre est vide, la Requête de niveau sera créée pour la Branche Principale du Projet.
 |Non
 
 |package
-|Ce Paramètre permet de définir le nom du Paquet pour lequel une Requête de Niveau doit être créé.
+|Ce Paramètre permet de définir le nom du Paquet pour lequel une Requête de niveau doit être créé.
 |Oui (uniquement pour des Projets de type "`Paquets`")
 
 |level
-|Ce Paramètre donne la définition de la dénomination du Niveau pour lequel vous créez la Requête de Niveau.
+|Ce Paramètre donne la définition de la dénomination du Niveau pour lequel vous créez la Requête de niveau.
 
 Utilisez la dénomination du Niveau définie dans IKAN ALM.
 |Oui
 
 |description
-|Ce Paramètre donne la définition de la description de la Requête de Niveau.
+|Ce Paramètre donne la définition de la description de la Requête de niveau.
 |Non
 
 |tag
 |Ce Paramètre donne la définition de la Balise RCV à associer à la Construction. 
 
-Ceci n`'est applicable qu`'à des Requêtes de Niveau d`'un Niveau de Construction.
-Si vous omettez ce Paramètre, la Balise sera générée basée sur le modèle de balise défini pour la Branche.
+Ceci n`'est applicable qu`'à des Requêtes de niveau d`'un Niveau de Construction. Si vous omettez ce Paramètre, la Balise sera générée basée sur le modèle de balise défini pour la Branche.
 |Non
 
 |redeliver
 |Ce Paramètre permet de re-délivrer des Résultats de Construction déjà délivrés sur des Niveaux de Test et de Production.
 
-Par défaut, ce Paramètre est établi à __false__: si aucune Requête de Niveau n`'est disponible sur le Niveau précédent dans le Cycle de Vie, ayant un numéro de Construction plus élevé, la Requête de Niveau actuelle active ne sera pas redélivrée via la ligne de commande.
+Par défaut, ce Paramètre est établi à __false__: si aucune Requête de niveau n`'est disponible sur le Niveau précédent dans le Cycle de vie, ayant un numéro de Construction plus élevé, la Requête de niveau actuelle active ne sera pas redélivrée via la ligne de commande.
 
 Si vous voulez permettre de re-délivrer, vous devez explicitement établir le Paramètre _redeliver_ à __true__.
 |Non
 
 |startdate
-|Ce Paramètre donne la définition de la date ou de l`'heure d`'exécution demandée pour la Requête de Niveau.
-Le format doit être: __dd/MM/yyyy
-HH:mm__. 
+|Ce Paramètre donne la définition de la date ou de l`'heure d`'exécution demandée pour la Requête de niveau.
+Le format doit être: __yyyy-MM-ddTHH:mm:ss__ (par exemple : 2021-11-29T23:15:00). 
 
-Ceci n`'est applicable qu`'à des Requêtes de Niveau d`'un Niveau de Test ou de Production.
-Si vous omettez ce Paramètre, la Requête de Niveau sera exécutée le plus tôt possible.
+Ceci n`'est applicable qu`'à des Requêtes de niveau d`'un Niveau de Test ou de Production.
+Si vous omettez ce Paramètre, la Requête de niveau sera exécutée le plus tôt possible.
+|Non
+
+|deploysToExecute
+|Ce Paramètre donne le choix des Environnements de Déploiement à déployer si le Niveau a l`'option des Déploiements optionnels activée dans le Cycle de vie choisi. Ce paramètre accepte une liste de noms sensibles à la casse et séparés par une virgule.
+Si c`'est omit quand c`'est disponible, les Environnements de Déploiement ne seront pas déployés.
 |Non
 
 |paramfile
-|Ce Paramètre donne la définition du nom du fichier de propriétés contenant les Paramètres de construction et de déploiement dans le format __key=value__.
+|Ce Paramètre donne la définition du nom du fichier de propriétés contenant les Paramètres de construction et de déploiement dans le format __clé=valeur__.
 |Non
 |===
 +
-Remarquez que vous ne devez pas définir de Type de Requête de Niveau, car il est déterminé automatiquement:
+Remarquez que vous ne devez pas définir de Type de Requête de niveau, car il est déterminé automatiquement:
 
-* Pour les Niveaux de Construction auxquels un Plan horaire est attaché, une Requête de Niveau de Construction Forcée sera créée.
-* Pour les Niveaux de Construction sans Plan horaire, une Requête de Niveau de Construction Demandée sera créée.
-* Pour les Niveaux de Test et de Production, une Requête de Niveau de distribution ou de déploiement sera créée, qui délivrera la dernière Construction de la Requête de Niveau correctement exécutée sur le Niveau précédent dans le Cycle de vie (tandis que dans l`'application Web, vous pouvez sélectionner la Construction à délivrer).
+* Pour les Niveaux de Construction auxquels un Plan horaire est attaché, une Requête de niveau de Construction Forcée sera créée.
+* Pour les Niveaux de Construction sans Plan horaire, une Requête de niveau de Construction Demandée sera créée.
+* Pour les Niveaux de Test et de Production, une Requête de niveau de distribution ou de déploiement sera créée, qui délivrera la dernière Construction de la Requête de niveau correctement exécutée sur le Niveau précédent dans le Cycle de vie (tandis que dans l`'application Web, vous pouvez sélectionner la Construction à délivrer).
 . Une fois la commande complètement saisie, cliquez la touche _Entrée_.
 +
 Résultat:
 
-* Si la Requête de Niveau est correctement créée, l`'écran suivant s`'affiche:
+* Si la Requête de niveau est correctement créée, l`'écran suivant s`'affiche:
 +
-image::CommandLine-LRCreatedSuccessfully.jpg[,539,274] 
+image::CommandLine-LRCreatedSuccessfully.png[,1148,15] 
 +
 
 [WARNING]
---
-Ces messages indiquent uniquement que la Requête de Niveau a été __créée__ correctement.
-Référez-vous à l`'<<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des requêtes de niveau>> dans l`'application Web pour vérifier si le Niveau a été également __exécuté__ correctement.
+-- 
+Ces messages indiquent uniquement que la Requête de niveau a été __créée__ correctement.
+Référez-vous à l`'<<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des Requêtes de niveau>> dans l`'application Web pour vérifier si le Niveau a été également __exécuté__ correctement.
 --
 
-* Si la Requête de Niveau ne peut pas être créée faute de connexion avec le Serveur IKAN ALM, l`'écran suivant s`'affiche:
+* Si la Requête de niveau ne peut pas être créée faute de connexion avec le Serveur IKAN ALM, l`'écran suivant s`'affiche:
 +
-image::CommandLine-ServerConnectionProblem.jpg[,539,282] 
+image::CommandLine-ServerConnectionProblem.png[,1148,535] 
 * Si l`'Utilisateur a introduit une commande inconnue, l`'écran suivant s`'affiche:
 +
-image::CommandLine-UnknownCommand.jpg[,540,190] 
+image::CommandLine-UnknownCommand.png[,1148,151] 
 * Si l`'Utilisateur a introduit une option de commande inconnue ou incorrecte, un écran similaire à l`'écran suivant s`'affiche:
 +
-image::CommandLine-UnknownCommandOption.jpg[,541,275] 
+image::CommandLine-UnknownCommandOption.png[,1148,473] 
 +
-Des messages d`'erreur comparables sont affichés en cas de Noms de Projet ou de Paquet inconnus ou de paires d`'Identifiant Utilisateur/Mot de Passe incorrectes.
-* Si la Requête de Niveau ne peut pas être créée en raison de Requêtes de Niveau en attente pour ce Niveau, l`'écran suivant s`'affiche:
+Des messages d`'erreur comparables sont affichés en cas de noms de Projet ou de Paquet inconnus ou de paires d`'Identifiant Utilisateur/Mot de Passe incorrectes.
+* Si la Requête de niveau ne peut pas être créée en raison de Requêtes de niveau en attente pour ce Niveau, l`'écran suivant s`'affiche:
 +
-image::CommandLine-PendingRequests.jpg[,539,274] 
+image::CommandLine-PendingRequests.png[,1148,144] 
 +
 Des messages d`'erreur comparables sont affichés si le résultat de construction ne peut pas être délivré, si le Niveau est verrouillé, si la Branche Secondaire est verrouillée ou s`'il y a une erreur d`'autorisation.
 
 [[_pcommandline_clr_propertiesfiles]]
-=== Création de requêtes de niveau en utilisant un fichier depropriétés
+=== Création de Requêtes de niveau en utilisant un fichier de propriétés
 
 Vous pouvez enregistrer des Paramètres fréquemment utilisés dans un Fichier de Propriétés.
-Ainsi vous ne devez pas à chaque fois réintroduire tous les Paramètres de création de Requête de Niveau.
+Ainsi vous ne devez pas à chaque fois réintroduire tous les Paramètres de création de Requête de niveau.
 Après une installation standard, un tel fichier de propriétés, nommé __clr.properties__, est disponible dans le répertoire d`'installation de l`'interface de ligne de commande.
 
 Ouvrez le fichier à l`'aide d`'un éditeur de texte pour en afficher son contenu:
 
-image::CommandLine-CLRPropertiesfile.jpg[,593,611] 
+image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
 
 Vous pouvez modifier ce fichier standard pour adapter les Paramètres à vos besoins.
-Pour une description des options et des Paramètres, se référer à la section <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de requêtes de niveau en spécifiant des optionset des paramètres>>.
-Vous pouvez également créer un nombre quelconque de fichiers de propriétés spécifiques en copiant le fichier standard, en modifiant cette copie et, ensuite, en sauvegardant le fichier sous un nom logique pour un usage ultérieur
+Pour une description des options et des Paramètres, se référer à la section <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de Requêtes de niveau en spécifiant des options et des paramètres>>.
+Vous pouvez également créer un nombre quelconque de fichiers de propriétés spécifiques en copiant le fichier standard, en modifiant cette copie et, ensuite, en sauvegardant le fichier sous un nom logique pour un usage ultérieur.
 
-. Préparation de la création de la Requête de Niveau.
+. Préparation de la création de la Requête de niveau.
 +
 * Sous Windows:
 ** Accédez à la fenêtre de commande.
@@ -247,17 +250,16 @@ Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'
 . Assurez-vous que le fichier des propriétés à utiliser est disponible et que les Paramètres correspondent aux besoins.
 +
 Si cela n`'est pas le cas, créez le fichier des propriétés et/ou modifiez les Paramètres à l`'aide d`'un éditeur de texte.
-. Créez la Requête de Niveau en saisissant une commande du format suivant:
+. Créez la Requête de niveau en saisissant une commande du format suivant:
 +
-__alm clr -propertyfile:$PROPERTYFILENAME [-options]
-[-paramètres]__
+__alm *clr* -propertyfile:$PROPERTYFILENAME [-options] [-paramètres]__
 +
 Les éléments suivants sont disponibles:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
-| Elément
+| Élément
 | Description
 | Obligatoire
 
@@ -266,11 +268,11 @@ Les éléments suivants sont disponibles:
 |Oui
 
 |clr
-|Cet élément indique que vous désirez créer une Requête de Niveau.
+|Cet élément indique que vous désirez créer une Requête de niveau.
 |Oui
 
 |propertyfile
-|Cet élément permet de sélectionner le fichier des propriétés à utiliser pour la création de la Requête de Niveau.
+|Cet élément permet de sélectionner le fichier des propriétés à utiliser pour la création de la Requête de niveau.
 |Oui
 
 |options ou paramètres
@@ -280,49 +282,293 @@ Les éléments suivants sont disponibles:
 
 . Une fois la commande complètement saisie, cliquez la touche _Entrée_.
 +
-Résultat:
+Les Résultats et les sorties de console sont similaires à ceux de la section précédente: <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de Requêtes de niveau en spécifiant des options et des paramètres>>. Se référer à l`'étape 4 de cette section pour plus d'information.
 
-* Si la Requête de Niveau est correctement créée, l`'écran suivant s`'affiche:
+[[_pcommandline_pack_optionsparameters]]
+=== Création et modification de Paquets en spécifiant des options et des paramètres
+(((Interface de Lignes de Commande, Paquets))) 
+
+. Préparer la création d`'un Paquet.
 +
-image::CommandLine-LRCreatedSuccessfully.jpg[,541,274] 
+Sous Windows :
+
+* Ouvrir une Invite de commande.
+* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _C:\alm\commandline_
++
+Vous pouvez ajouter cet emplacement à la variable d`'environnement PATH. Ainsi, il devient accessible pour les autres répertoires de travail.
+
++
+Sous Unix :
+
+* Ouvrir une Invite de commande.
+* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _/opt/ikan/alm/commandline_
++
+Vous pouvez créer un lien symbolique vers le script `alm.sh`. Ainsi, il devient accessible pour les autres répertoires de travail.
+. Entrer les instructions de création d`'une Requête de niveau requise.
++
+Format :
++
+__alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER] -user:$USERID -password:$PASSWORD [-secured=true|false] *package* paramètres__
++
+Les éléments suivants sont disponibles :
 +
 
-[WARNING]
---
-Ces messages indiquent uniquement que la Requête de Niveau a été __créée__ correctement.
-Référez-vous à l`'<<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des requêtes de niveau>> dans l`'application Web pour vérifier si le Niveau a été également __exécutée__ correctement.
---
+[cols="1,3,1", frame="topbot", options="header"]
+|===
+| Élément
+| Description
+| Obligatoire
 
-* Si la Requête de Niveau ne peut pas être créée faute de connexion avec le Serveur IKAN ALM, l`'écran suivant s`'affiche:
+|alm
+|Cet élément appelle le fichier _alm.cmd_ (Windows) ou _alm.sh_ (Linux).
+|Oui
+
+|serverhost
+| Cet élément permet de définir le nom DHCP ou l`'adresse IP de la machine du Serveur IKAN ALM.
+|Oui
+
+|serverport
+| Cet élément permet de définir le numéro de port utilisé pour établir la connexion vers le Serveur IKAN ALM via XML-RPC.
+
+Si cet élément n`'est pas fourni, le numéro de port par défaut (20021) sera utilisé.
+|Non
+
+|user
+| Cet élément permet de définir l`'Identifiant Utilisateur avec les droits d`'accès IKAN ALM.
+|Oui
+
+|password
+| Cet élément permet de définir le mot de passe associé à l`'Identifiant Utilisateur utilisé pour accéder à IKAN ALM.
+|Oui
+
+|secured
+| Cet élément permet de déterminer si une connexion cryptée doit être utilisée ou non.
+
+Si le Serveur IKAN ALM utilise une connexion cryptée, il faut mettre l`'élément _secured_ à __true__:
+
+_-secured=true_
+
+Si le Serveur IKAN ALM n`'utilise pas une connexion cryptée, il faut mettre l`'élément _secured_ à _false_ ou omettre le paramètre _secured_.
+|Non
+
+|package
+|Cette commande crée ou modifie le Paquet.
+|Oui
+
+|paramètres
+|La création ou la modification des paramètres du Paquet sont expliqués dans l`'étape suivante.
+|Oui
+
+|===
+
+. Définir la création ou la modification des paramètres du Paquet.
 +
-image::CommandLine-ServerConnectionProblem.jpg[,540,285] 
+Format :
++
+__*package* -project:[nom projet] [-projectstream:[préfixe[-suffixe]]] -package:[nom paquet] [-description:[description]] -action:[CREATE | UPDATE] [-owner:[propriétaire]] [-status=[Statut]] [-targetreleasedate:[Date de livraison cible]] [-filerevisions:[fichier xml contenant les liens des fichiers et des révisions]]__
++
+
+[cols="1,3,1", frame="topbot", options="header"]
+|===
+| Paramètre
+| Description
+| Obligatoire
+
+|project
+|Ce paramètre permet de définir le Projet pour lequel vous créez ou modifiez le Paquet.
+
+Utiliser le nom du Projet comme défini dans IKAN ALM.
+|Oui
+
+|projectstream
+| Ce paramètre permet de définir la Branche de Projet pour laquelle vous créez ou modifiez le Paquet.
+
+Utiliser le Préfixe (et Suffixe) de Construction comme défini dans IKAN ALM pour identifier la Branche qui supporte le Paquet.
+
+Si ce paramètre n`'est pas fourni, le Paquet sera crée sur la Branche principale.
+|Oui
+
+|package
+|Le nom du Paquet.
+|Oui
+
+|description
+| Ce paramètre permet de définir la description du Paquet.
+|Non
+
+|action
+|L`'action à exécuter: CREATE or UPDATE.
+|Oui
+
+|owner
+| Ce paramètre permet de définir le propriétaire du Paquet.
+|Non
+
+|status
+| Ce paramètre permet de définir le statut du Paquet.
+En création, ce paramètre est toujours à 0 ou ACTIF. En modification, le statut peut être choisi par l`'utilisateur.
+|Non
+
+|targetreleasedate
+| Ce paramètre permet de définir la Date de livraison cible du Paquet.
+Le format accepté est __yyyy-MM-dd__.
+|Non
+
+|filerevisions
+| Ce paramètre permet de définir le fichier contenant les fichiers et les révisions que le Paquet contient en format XML.
+|Non
+
+|===
+
+. Une fois la commande complètement saisie, cliquez la touche _Entrée_.
++
+Résultat :
+
+* Si le Paquet est créé ou modifié correctement, un écran similaire à celui qui suit est affiché :
++
+image::CommandLine-PackCreatedSuccessfully.png[,1152,119] 
++
+* Si le Paquet ne peut être créé ou modifié, parce qu`'il n`'y a pas de connexion avec le Serveur IKAN ALM, l`'écran suivant est affiché :
++
+image::CommandLine-PackServerConnectionProblem.png[,1152,551]
+
 * Si l`'Utilisateur a introduit une commande inconnue, l`'écran suivant s`'affiche:
 +
-image::CommandLine-UnknownCommand.jpg[,540,190] 
+image::CommandLine-UnknownCommand.png[,1148,151] 
+
 * Si l`'Utilisateur a introduit une option de commande inconnue ou incorrecte, un écran similaire à l`'écran suivant s`'affiche:
 +
-image::CommandLine-UnknownCommandOption.jpg[,540,274] 
+image::CommandLine-UnknownCommandOption.png[,1148,473] 
 +
-Des messages d`'erreur comparables sont affichés en cas de Noms de Projet inconnus ou de paires d`'Identifiant Utilisateur/Mot de Passe incorrectes.
-* Si la Requête de Niveau ne peut pas être créée en raison de Requêtes de Niveau en attente pour ce Niveau, l`'écran suivant s`'affiche:
+Des messages d`'erreur comparables sont affichés en cas de noms de Projet ou de Paquet  inconnus ou de paires d`'Identifiant Utilisateur/Mot de Passe incorrectes.
+
+[[_pcommandline_pack_filerevisions]]
+=== Modifier le contenu d`'un Paquet en utilisant un fichier XML
+
+Quand vous créez ou modifiez un Paquet, vous pouvez inclure le paramètre _-filerevisions_ référençant un fichier XML. Ce fichier XML doit avoir le format suivant :
+
+image::CommandLine-Pack-filerevision-xml.png[,757,479]
+
+Chaque entrée de Révision de fichier correspond à un fichier unique dans le Référentiel de contrôle de version lequel sera créé, modifié ou supprimé avec la définition du contenu du Paquet.
+
+
+[cols="1,3,1", frame="topbot", options="header"]
+|===
+| Paramètre
+| Description
+| Obligatoire
+
+|name
+|Le nom du fichier à modifier dans le contenu du Paquet.
+|Oui
+
+|path
+| Le chemin du fichier à modifier dans le contenu du Paquet.
+|Oui
+
+|action
+a|L`'action à exécuter sur ce fichier dans le contenu du Paquet. Les valeurs valides sont : 
+
+* create
+* modify
+* delete
+
+|Oui
+
+|revision
+| La Révision du fichier dans le Référentiel à modifier dans le contenu du Paquet.
+|Non
+|===
+
+
+[[_pcommandline_pack_propertiesfiles]]
+=== Créer et modifier les Paquets en utilisant un Fichier de propriétés
+
+Il es possible de sauvegarder les paramètres couramment utilisés dans un Fichier de propriétés. Ainsi, vous n`'avez pas à entrer tous les paramètres de création/modification du Paquet. 
+Après une installation standard, un Fichier de propriétés appelé _package.properties_ est disponible dans le répertoire d`'installation de Lignes de commande IKAN ALM.
+
+Ouvrir le fichier avec un éditeur de texte pour afficher son contenu :
+
+
+image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
+
+Vous pouvez éditer ce fichier standard pour que les paramètres correspondent à vos besoins.
+Se référer à: <<CommandLine.adoc#_pcommandline_pack_optionsparameters, Création de Paquets en spécifiant des options et des paramètres>> pour une description des options et des paramètres.
+Vous pouvez également créer d`'autres fichiers de propriétés en copiant le fichier standard, en éditant les copies et en les sauvant avec des noms logiques pour un usage ultérieur.
+
+. Préparer la création du Paquet.
 +
-image::CommandLine-PendingRequests.jpg[,540,274] 
+Sous Windows:
+* Ouvrir une Invite de commande.
+
+* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _C:\alm\commandline_
 +
-Des messages d`'erreur comparables sont affichés si le résultat de construction ne peut pas être délivré, si le Niveau et verrouillé, si la Branche Secondaire est verrouillée ou s`'il y a une erreur d`'autorisation.
+Vous pouvez ajouter cet emplacement à la variable d`'environnement PATH. Ainsi, il devient accessible pour les autres répertoires de travail.
+
++
+Sous Unix :
+
+* Ouvrir une Invite de commande.
+* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _/opt/ikan/alm/commandline_
++
+Vous pouvez créer un lien symbolique vers le script `alm.sh`. Ainsi, il devient accessible pour les autres répertoires de travail.
+
+. Vérifier que le fichier de propriétés à utiliser est disponible et que les paramètres correspondent aux besoins.
++
+Sinon, Créer un fichier de propriétés et/ou éditer les paramètres avec un éditeur de texte.
+. Créer un Paquet en écrivant une commande avec le format suivant :
++
+__alm *package* -propertyfile:$PROPERTYFILENAME -filerevisons:$FILEREVISIONS [-options] [-parameters]__
++
+Les éléments suivants sont disponibles :
++
+
+[cols="1,3,1", frame="topbot", options="header"]
+|===
+| Élément
+| Description
+| Obligatoire
+
+|alm
+|Cet élément appelle le fichier _alm.cmd_ (Windows) ou _alm.sh_ (Linux).
+|Oui
+
+|package
+|Cet élément indique que vous voulez créer/modifier un Paquet.
+|Oui
+
+|propertyfile
+|Cet élément permet de sélectionner le fichier de propriétés qui doit être utilisé pour créer le Paquet.
+|Oui
+
+|filerevisions
+| Ce paramètre permet de définir le fichier contenant les fichiers et les révisions que le Paquet contient en format XML.
+|Non
+
+|options ou parameters
+|Toute option ou paramètre défini après le fichier de propriétés  _remplace_ le paramètre dans le fichier de propriétés sélectionné.
+|Non
+|===
+. Une fois la commande complètement saisie, cliquez la touche _Entrée_.
++
+Les Résultats et les sorties de console sont similaires à ceux de la section précédente : <<CommandLine.adoc#_pcommandline_pack_optionsparameters, Création de Paquets en spécifiant des options et des paramètres>>. Se référer à l`'étape 4 de cette section pour plus d`'information.
+
+
+
 
 [[_pcommandline_report_optionsparameters]]
-=== Génération de rapports en définissant des options et desparamètres
+=== Génération de Rapports en définissant des options et des paramètres
 
 . Préparation de la génération du Rapport.
 +
-* Sous Windows:
+* Sous Windows :
 ** Accédez à la fenêtre de commande.
 ** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
 +
 Vous pouvez ajouter cet emplacement à la variable définissant le Chemin d`'Environnement (PATH), pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
 +
-* Sous Unix:
+* Sous Unix :
 ** Ouvrez une session terminal.
 ** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
 +
@@ -330,17 +576,16 @@ Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'
 
 . Saisissez l`'instruction requise pour la génération du Rapport.
 +
-Format:
+Format :
 +
-__alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER]
--user:$USERID -password:$PASSWORD [-secured=true|false] report PARAMETRES__
+__alm -serverhost:$HOSTNAME [-serverport:$PORTNUMBER] -user:$USERID -password:$PASSWORD [-secured=true|false] *report* paramètres__
 +
 Les éléments suivants sont disponibles:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
-| Elément
+| Élément
 | Description
 | Obligatoire
 
@@ -380,29 +625,26 @@ Si le Serveur IKAN ALM n`'utilise pas de connexion encryptée, établissez cet �
 |Cette commande permet de générer des Rapports.
 |Oui
 
-|PARAMETRES
+|paramètres
 |Les Paramètres de création d`'un Rapport sont expliqués dans l`'étape suivante.
 |Oui
 |===
 
 . Définissez les Paramètres de création du Rapport.
 +
-Format:
+Format :
 +
-__report -design:$REPORTDESIGNFILE [-dest:$DESTINATIONFILE]
--format:$FORMAT [-lang:$LANGUAGE] [-max:MAXRESULT] [-filter:$SEARCHCRITERIAFILE]
-[-group:[$GROUPINGVALUE]] [-order:[$ORDERINGVALUE]]__
+__*report* -design:$REPORTDESIGNFILE [-dest:$DESTINATIONFILE] -format:$FORMAT [-lang:$LANGUAGE] [-max:$MAXRESULT] [-filter:$SEARCHCRITERIAFILE] [-group:[$GROUPINGVALUE]] [-order:[$ORDERINGVALUE]]__
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
 | Paramètre
 | Description
 | Obligatoire
 
 |design
-|Ce Paramètre permet de sélectionner le fichier de formation Jasper Reports requis (l`'extension de ce fichier est __$$.$$jrxml__). Avec une installation standard, les fichiers sont dans le répertoire: __IKAN
-ALM_HOME/commandline/classes/reports/design__.
+|Ce Paramètre permet de sélectionner le fichier de format Jasper Reports requis (l`'extension de ce fichier est __$$.$$jrxml__). Avec une installation standard, les fichiers sont dans le répertoire: __ALM_HOME/commandline/classes/reports/design__.
 
 Utilisez le design qui correspond au format demandé.
 |Oui
@@ -412,7 +654,7 @@ Utilisez le design qui correspond au format demandé.
 
 Ne saisissez pas d`'extension, car IKAN ALM ajoutera l`'indication de format en tant qu`'extension.
 
-Si aucun nom n`'est saisi, le Rapport aura la dénomination par défaut _levelrequestoverview_[format].[format]_ et sera sauvegardé à l`'emplacement par défaut __IKAN ALM_HOME/commandline/classes/reports/generated_reports__.
+Si aucun nom n`'est saisi, le Rapport aura la dénomination par défaut _levelrequestoverview_[format].[format]_ et sera sauvegardé à l`'emplacement par défaut __ALM_HOME/commandline/classes/reports/generated_reports__.
 |Non
 
 |format
@@ -440,16 +682,16 @@ Si le Paramètre de langue n`'est pas spécifié, le Rapport sera généré en a
 |Non
 
 |max
-|Ce Paramètre permet de définir un nombre maximal de Requêtes de Niveau à inclure dans le Rapport.
+|Ce Paramètre permet de définir un nombre maximal de Requêtes de niveau à inclure dans le Rapport.
 
-Si plus de Requêtes de Niveau sont disponibles que le maximum spécifié, seules les Requêtes de Niveau les plus récentes seront reprises dans le Rapport.
+Si plus de Requêtes de niveau sont disponibles que le maximum spécifié, seules les Requêtes de niveau les plus récentes seront reprises dans le Rapport.
 |Non
 
 |filter
-|Ce Paramètre permet de sélectionner un fichier de propriétés contenant les critères de recherche.
-Seules les Requêtes de Niveau correspondant à tous les critères définis seront reprises dans le Rapport.
+|Ce Paramètre permet de sélectionner un fichier de propriétés contenant les critères de recherche (_search.properties_).
+Seules les Requêtes de niveau correspondant à tous les critères définis seront reprises dans le Rapport.
 
-Après une installation standard, un tel fichier des propriétés, nommé _search.properties_, est disponible dans le répertoire d`'installation de la ligne de commande.
+Après une installation standard, un tel fichier des propriétés nommé _search.properties_ est disponible dans le répertoire d`'installation de la ligne de commande.
 
 Vous pouvez modifier ce fichier standard pour que les Paramètres correspondent à vos besoins.
 Voir la description dans l`'étape suivante.
@@ -458,22 +700,22 @@ Vous pouvez également créer un nombre quelconque de fichiers de propriétés d
 |Non
 
 |group
-a|Ce Paramètre permet de définir comment les Requêtes de Niveau reportées seront groupées.
+a|Ce Paramètre permet de définir comment les Requêtes de niveau reportées seront groupées.
 
 Les valeurs suivantes sont permises:
 
-* projectname : groupées par Dénomination de Projet 
-* levelname : groupées par Dénomination de Niveau
+* projectname : groupées par dénomination de Projet 
+* levelname : groupées par dénomination de Niveau
 
-Si vous omettez ce Paramètre ou vous le laissez vide, les Requêtes de Niveau ne seront pas groupées.
+Si vous omettez ce Paramètre ou vous le laissez vide, les Requêtes de niveau ne seront pas groupées.
 |Non
 
 |order
-a|Ce Paramètre permet de définir comment les Requêtes de Niveau seront organisées.
+a|Ce Paramètre permet de définir comment les Requêtes de niveau seront organisées.
 
 Les valeurs suivantes sont permises:
 
-* asc : ordre ascendant (=default)
+* asc : ordre ascendant (=défaut)
 * desc : ordre descendant
 |Non
 |===
@@ -482,12 +724,12 @@ Les valeurs suivantes sont permises:
 +
 Ce fichier a la structure suivante:
 +
-image::commandline-searchcriteriapropertiesfile_explained.png[,1053,684] 
+image::commandline-searchcriteriapropertiesfile_explained.png[,1053,683] 
 +
 Les critères de sélection suivants sont disponibles:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
 | Critère
 | Description
@@ -495,26 +737,26 @@ Les critères de sélection suivants sont disponibles:
 |Nom de projet
 |Propriété: `search.project.name`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à un Projet spécifique, saisissez la dénomination de ce Projet, sinon vous pouvez saisir un nom générique.
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à un Projet spécifique, saisissez la dénomination de ce Projet, sinon vous pouvez saisir un nom générique.
 
 |Nom de paquet
 |Propriété: `search.package.name`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à un Paquet spécifique, saisissez la dénomination de ce Paquet.
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à un Paquet spécifique, saisissez la dénomination de ce Paquet.
 
 |Paquets cachés
 a|Propriété: `search.package.hidden`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à des Paquets cachés, saisissez une des valeurs suivantes:
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à des Paquets cachés, saisissez une des valeurs suivantes:
 
-* yes = afficher les Requêtes de Niveau appartenant à des Paquets cachés (archivés) ou les Requêtes de Niveau qui ne sont pas associées à un Paquet.
-* no = afficher les Requêtes de Niveau appartenant à des Paquets visibles (non-archivés) ou les Requêtes de Niveau qui ne sont pas associées à un Paquet.
+* yes = afficher les Requêtes de niveau appartenant à des Paquets cachés (archivés) ou les Requêtes de niveau qui ne sont pas associées à un Paquet.
+* no = afficher les Requêtes de niveau appartenant à des Paquets visibles (non-archivés) ou les Requêtes de niveau qui ne sont pas associées à un Paquet.
 * all = aucune restriction concernant le statut d`'archivage du Paquet.
 
 |Code du statut des Requêtes de niveau
 a|Propriété: `search.levelrequest.status`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau ayant un statut spécifique, saisissez un des codes de statut possibles:
+Si vous désirez limiter le Rapport aux Requêtes de niveau ayant un statut spécifique, saisissez un des codes de statut possibles:
 
 * 0 = Inconnu
 * 1 = En attente de l`'heure d`'exécution
@@ -531,12 +773,12 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau ayant un statut spé
 |Nom de niveau
 |Propriété: `search.level.name`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à un Niveau spécifique, saisissez la dénomination de ce Niveau.
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à un Niveau spécifique, saisissez la dénomination de ce Niveau.
 
 |Type de niveau
 a|Propriété: `search.level.name`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à un Type de Niveau spécifique, saisissez un des types de Niveau possibles:
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à un Type de Niveau spécifique, saisissez un des types de Niveau possibles:
 
 * 0 = Construction
 * 1 = Test
@@ -549,7 +791,7 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à un Ty
 
 `search.levelrequest.startdatetime.to`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau démarrées pendant un intervalle spécifique, saisissez l`'heure de début et de fin de _démarrage_ de l`'exécution des Requêtes de Niveau.
+Si vous désirez limiter le Rapport aux Requêtes de niveau démarrées pendant un intervalle spécifique, saisissez l`'heure de début et de fin de _démarrage_ de l`'exécution des Requêtes de niveau.
 
 |Intervalle de Dates et Heures de Fin des Requêtes de niveau
 |Propriétés:
@@ -558,7 +800,7 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau démarrées pendant 
 
 `search.levelrequest.enddatetime.to`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau qui se sont terminées pendant un intervalle spécifique, saisissez l`'heure de début et de fin _d`'arrêt_ de l`'exécution des Requêtes de Niveau.
+Si vous désirez limiter le Rapport aux Requêtes de niveau qui se sont terminées pendant un intervalle spécifique, saisissez l`'heure de début et de fin _d`'arrêt_ de l`'exécution des Requêtes de niveau.
 
 |Intervalle de Dates et Heures de Demande des Requêtes de niveau
 |Propriétés:
@@ -567,17 +809,17 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau qui se sont terminé
 
 `search.levelrequest.requestdatetime.to`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau demandées pendant un intervalle spécifique, saisissez l`'heure de début et de fin de _demande_ de l`'exécution des Requêtes de Niveau.
+Si vous désirez limiter le Rapport aux Requêtes de niveau demandées pendant un intervalle spécifique, saisissez l`'heure de début et de fin de _demande_ de l`'exécution des Requêtes de niveau.
 
 |Nom de Demandeur
 |Propriété: `search.username`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à un Demandeur spécifique, saisissez la dénomination de ce Demandeur.
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à un Demandeur spécifique, saisissez la dénomination de ce Demandeur.
 
 |Type d`'action de Requête
 a|Propriété: `search.levelrequest.actiontype`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau d`'un certain type d`'action, saisissez un des types d`'action possibles:
+Si vous désirez limiter le Rapport aux Requêtes de niveau d`'un certain type d`'action, saisissez un des types d`'action possibles:
 
 * 0 = Planifiée
 * 1 = Manuelle
@@ -590,7 +832,7 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau d`'un certain type d
 |Type de Requête de niveau
 a|Propriété: `search.levelrequest.type`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau d`'un type spécifique, saisissez un des types possibles:
+Si vous désirez limiter le Rapport aux Requêtes de niveau d`'un type spécifique, saisissez un des types possibles:
 
 * 0 = Construction basée sur le dernier code balisé
 * 1 = Construction basée sur un code balisé
@@ -602,12 +844,12 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau d`'un type spécifiq
 |Balise RCV
 |Propriété: `search.vcrtag`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau correspondant à une Balise RCV spécifique, saisissez cette Balise RCV.
+Si vous désirez limiter le Rapport aux Requêtes de niveau correspondant à une Balise RCV spécifique, saisissez cette Balise RCV.
 
 |Statut de la Branche
 a|Propriété: `search.projectstream.status`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau ayant un statut de Branche spécifique, saisissez une des indications de statut de Branche possibles:
+Si vous désirez limiter le Rapport aux Requêtes de niveau ayant un statut de Branche spécifique, saisissez une des indications de statut de Branche possibles:
 
 * 0 = En construction
 * 1 = Planifié
@@ -621,17 +863,17 @@ Si vous désirez limiter le Rapport aux Requêtes de Niveau ayant un statut de B
 |Préfixe de construction de la Branche
 |Propriété: `search.projectstream.buildprefix`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau ayant un préfixe de Branche spécifique, saisissez ce préfixe de Branche.
+Si vous désirez limiter le Rapport aux Requêtes de niveau ayant un préfixe de Branche spécifique, saisissez ce préfixe de Branche.
 
 |Suffixe de construction de la Branche
 |Propriété: `search.projectstream.buildsuffix`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau ayant un suffixe de Branche spécifique, saisissez ce suffixe de Branche.
+Si vous désirez limiter le Rapport aux Requêtes de niveau ayant un suffixe de Branche spécifique, saisissez ce suffixe de Branche.
 
 |Branches cachées
 a|Propriété: `search.projectstream.hidden`
 
-Si vous désirez limiter le Rapport aux Requêtes de Niveau appartenant à des Branches cachées, saisissez une des valeurs suivantes:
+Si vous désirez limiter le Rapport aux Requêtes de niveau appartenant à des Branches cachées, saisissez une des valeurs suivantes:
 
 * yes = afficher uniquement les Branches cachées
 * no = ne pas afficher les Branches cachées (la valeur par défaut)
@@ -651,20 +893,20 @@ N`'oubliez pas d`'enlever le signe # pour pouvoir activer un critère de recherc
 Le Rapport est généré.
 
 [[_pcommandline_reports_propertiesfile]]
-=== Génération de rapports en utilisant un fichier de propriétés
+=== Génération de Rapports en utilisant un fichier de propriétés
 
 Vous pouvez enregistrer des Paramètres fréquemment utilisés dans un Fichier de Propriétés.
 Ainsi vous ne devez pas à chaque fois ressaisir tous les Paramètres de génération de Rapport.
-Après une installation standard, un tel fichier de propriétés, nommé __report.properties__, est disponible dans le répertoire d`'installation de la ligne de commande.
+Après une installation standard, un tel fichier de propriétés nommé __report.properties__ est disponible dans le répertoire d`'installation de la ligne de commande.
 
 Ouvrez le fichier à l`'aide d`'un éditeur de texte pour en afficher son contenu:
 
 
-image::CommandLine-CLRPropertiesfile.jpg[,585,610] 
+image::CommandLine-CLRPropertiesfile.jpg[,565,593] 
 
 Vous pouvez modifier ce fichier standard pour faire correspondre les Paramètres à vos besoins.
-Pour une description des options et des Paramètres, se référer à la <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de requêtes de niveau en spécifiant des optionset des paramètres>>.
-Vous pouvez également créer un nombre quelconque de fichiers des propriétés spécifiques en copiant le fichier standard, en modifiant cette copie et, ensuite, en sauvegardant le fichier sous un nom logique pour un usage ultérieur
+Pour une description des options et des Paramètres, se référer à la <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de Requêtes de niveau en spécifiant des options et des paramètres>>.
+Vous pouvez également créer un nombre quelconque de fichiers des propriétés spécifiques en copiant le fichier standard, en modifiant cette copie et, ensuite, en sauvegardant le fichier sous un nom logique pour un usage ultérieur.
  
 . Préparation de la génération du Rapport.
 +
@@ -687,15 +929,14 @@ Si cela n`'est pas le cas, créez le fichier des propriétés et/ou modifiez les
 
 . Générez le Rapport en saisissant une commande du format suivant:
 +
-__alm report -propertyfile:[$PROPERTYFILENAME]
-[options ou paramètres]__
+__alm *report* -propertyfile:[$PROPERTYFILENAME] [options ou paramètres]__
 +
 Les éléments suivants sont disponibles:
 +
 
-[cols="1,1,1", frame="topbot", options="header"]
+[cols="1,3,1", frame="topbot", options="header"]
 |===
-| Elément
+| Élément
 | Description
 | Obligatoire
 
@@ -726,84 +967,71 @@ Le Rapport est généré.
 
 Pour plus d`'informations, se référer aux procédures suivantes:
 
-* <<CommandLine.adoc#_pintegrateikanalminjdeveloper,Intégration d`'IKAN ALM dans JDeveloper>>
+* <<CommandLine.adoc#_pintegrateikanalminvscode,Intégration d`'IKAN ALM dans Visual Studio Code>>
 * <<CommandLine.adoc#_pintegrateikanalmineclipse,Intégration d`'IKAN ALM dans Eclipse>>
 
 [[_pintegrateikanalminjdeveloper]]
-=== Intégration d`'IKAN ALM dans JDeveloper
+=== Intégration d`'IKAN ALM dans Visual Studio Code
 
-Cette procédure décrit comment installer IKAN ALM comme outil externe dans JDeveloper pour pouvoir créer des Requêtes de Niveau (forcées, demandées ou de distribution ou de déploiement) à partir de cet IDE
+Cette procédure décrit comment installer IKAN ALM comme outil externe dans Visual Studio Code pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution ou de déploiement) à partir de cet IDE.
 
-. Dans le Menu Principal de JDeveloper, sélectionnez _Tools | External Tools..._
+. Dans Visual Studio Code, cliquez sur le bouton _Extensions_ dans le menu de gauche et cherchez l`'extension _VsCode Action Buttons_. Ensuite, installer l`'extension.
 +
-L`'écran suivant s`'affiche:
-+
-image::CommandLine-JDeveloperExternalToolsDialog.jpg[,418,294] 
+image::CommandLine-VSCode-ExternalTools-Step1.png[,1201,972] 
 
-. Cliquez sur _Add..._
+. Une fois l`'installation terminée, cliquez sur l`'icon _Refreshes the action buttons_ sur la barre de statut en bas de page. Un popup pourrait montrer le message suivant "_VsCode Action Buttons: Vous n`'avez pas de commande active_". Cliquez l`'icon `'roue dentée`', ensuite cliquez sur _Extensions_, cela vous donnera la liste des extensions et cliquez sur _VsCode Action Buttons_.
 +
-L`'écran suivant s`'affiche:
-+
-image::CommandLine-JDeveloperCreateExternalToolsStep1DialogBlank.jpg[,511,340] 
+image::CommandLine-VSCode-ExternalTools-Step2.png[,1288,651] 
 
-. Sélectionnez les Paramètres requis pour créer une Requête de Niveau sur le Niveau requise:
+. Alternative: vous pouvez cliquer sur le bouton _Extensions_ dans le menu de gauche, sélectionnez l`'extension _VsCode Action Buttons_, cliquez sur l`'icon `'roue dentée`' et cliquez sur _Paramètres d`'extension_.
 +
-image::CommandLine-JDeveloperCreateExternalToolsStep1Dialog.jpg[,511,340] 
+image::CommandLine-VSCode-ExternalTools-Step2-alt.png[,1288,651] 
 
 +
-Dans l`'exemple ci-dessus, les options introduites créeront une Requête de Niveau sur le Niveau _CONTBUILD_ du Projet __DEMOCVS__.
+. Sur la page _Paramètres_, sélectionnez _Modifier dans settings.json_.
++
+[source]
+----
+"commands": [
+    {
+    "cwd": "D:\\IKANALM\\commandline", // Le chemin de l'Interface de Lignes de commande
+    "name": "Crée Requête de niveau de construction pour XXX", // Le libellé sur le bouton
+    "color": "white", // La couleur du libellé
+    "singleInstance": true, // si mis à true, relance le terminal chaque fois que le bouton est cliqué
+    "command": ".\\alm clr -serverhost:AAA -serverport:20021 -user:global -password:global clr -project:XXX -level:CONTBUILD", // La commande de Lignes de commande à exécuter.
+    }]
+----
++
+image::CommandLine-VSCode-ExternalTools-Step3.png[,1288,651] 
 
-. Cliquez sur le bouton __Next__.
+. Ajoutez plusieurs entrées de "commands" que vous voulez dans le fichier _settings.json_. Chaque commande représentera un bouton de Requête de niveau séparé. Finalement, sauvegardez le fichier et cliquez l`'icon _Refreshes the action buttons_ sur la barre de statut du bas de page pour appliquer vos changements.
 +
-L`'écran suivant s`'affiche:
-+
-image::CommandLine-JDeveloperCreateExternalToolsStep2Dialog.jpg[,511,341] 
+image::CommandLine-VSCode-ExternalTools-Step4.png[,1478,651] 
 
-. Sélectionnez les propriétés d`'affichage et cliquez sur le bouton __Next__.
+. Pour initialiser la Requête de niveau, simplement cliquer sur le bouton de Requête de nivea sur la barre de statut du bas de page.
 +
-L`'écran suivant s`'affiche:
-+
-image::CommandLine-JDeveloperCreateExternalToolsStep3Dialog.jpg[,508,339] 
-
-. Spécifiez l`'emplacement pour l`'intégration du nouvel outil et cliquez sur le bouton __Next__.
-+
-L`'écran suivant s`'affiche:
-+
-image::CommandLine-JDeveloperCreateExternalToolsStep4Dialog.jpg[,511,341] 
-
-. Spécifiez la disponibilité de l`'outil externe.
-+
-L`'exemple ci-dessus spécifie que l`'outil externe sera intégré dans le menu des raccourcis si un Projet Java est sélectionné.
-
-. Cliquez sur le bouton __Finish__.
-+
-Résultat:
-+
-A partir de maintenant vous pouvez créer des Requêtes de Niveau lors de sélection d`'un Projet Java dans JDeveloper.
-Le résultat de la ligne de commande d`'IKAN ALM sera affiché dans la fenêtre des messages.
-+
-image::CommandLine-JDeveloperResult.jpg[,540,347] 
+image::CommandLine-VSCode-ExternalTools-Step5.png[,1478,651] 
 
 [[_pintegrateikanalmineclipse]]
 === Intégration d`'IKAN ALM dans Eclipse
 
-Cette procédure décrit comment installer IKAN ALM comme outil externe dans Eclipse pour pouvoir créer des Requêtes de Niveau (forcées, demandées ou de distribution) à partir de cet IDE
+Cette procédure décrit comment installer IKAN ALM comme outil externe dans Eclipse pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution) à partir de cet IDE.
 
 . Dans le Menu Principal d`'Eclipse, sélectionnez _Run | External Tools Configuration..._
 +
 L`'écran suivant s`'affiche:
 +
-image::CommandLine-EclipseExternalToolsDialogBlank.jpg[,511,461] 
+image::CommandLine-EclipseExternalToolsDialogBlank.jpg[,426,384] 
 
 . Cliquez sur l`'icône __New launch configuration__.
 +
 L`'écran suivant s`'affiche:
 +
-image::CommandLine-EclipseExternalToolsDialog.jpg[,511,461] 
+image::CommandLine-EclipseExternalToolsDialog.jpg[,426,384] 
 
-. Sélectionnez les Paramètres requis pour créer une Requête de Niveau sur le Niveau requise:
+. Sélectionnez les Paramètres requis pour créer une Requête de niveau sur le Niveau requise:
 +
-Dans l`'exemple ci-dessus, les options introduites créeront une Requête de Niveau sur le Niveau _CONTBUILD_ du Projet __DEMOCVS__.
+Dans l`'exemple ci-dessus, les options introduites créeront une Requête de niveau sur le Niveau _CONTBUILD_ du Projet __DEMOCVS__.
 
 . Cliquez sur le bouton __Run__.
 +
@@ -811,15 +1039,15 @@ Les outils externes seront testés et enregistrés.
 +
 Le résultat de la commande est affiché dans une console Eclipse.
 +
-image::CommandLine-EclipseResult.jpg[,770,366] 
+image::CommandLine-EclipseResult.jpg[,642,306] 
 
 
 [[_sautomatecreatinglevelrequestswithant]]
-== Automatisation de la création de requêtes de niveau via un script ANT
+== Automatisation de la création de Requêtes de niveau via un script ANT
 
 Dans cette section vous trouverez un exemple d`'un script ANT qui:
 
-* crée une Requête de Niveau via l`'Interface de ligne de commande
+* crée une Requête de niveau via l`'Interface de ligne de commande
 * rapporte le statut de cette action
 
 Si vous désirez utiliser ce script ANT, vous devez l`'adapter à vos besoins:
@@ -830,12 +1058,12 @@ Si vous désirez utiliser ce script ANT, vous devez l`'adapter à vos besoins:
 
 *Exemple de script:*
 
-image::CommandLine-SampleANTScript.jpg[,540,487] 
+image::CommandLine-SampleANTScript.jpg[,450,406] 
 
 *Résultat après une exécution correcte:*
 
-image::CommandLine-ANTScriptExecSuccess.jpg[,540,284] 
+image::CommandLine-ANTScriptExecSuccess.png[,450,236] 
 
 *Résultat après une exécution erronée:*
 
-image::CommandLine-ANTScriptExecFailure.jpg[,540,320] 
+image::CommandLine-ANTScriptExecFailure.png[,450,268] 

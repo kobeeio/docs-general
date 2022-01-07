@@ -7,7 +7,7 @@
 
 Cet appendice donne des informations plus détaillées concernant le concept des "`Phases`" dans IKAN ALM.
 
-Quand IKAN ALM exécute des Requêtes de Niveau, des Constructions et des Déploiements, toutes les actions sont effectuées en exécutant une séquence de Phases.
+Quand IKAN ALM exécute des Requêtes de niveau, des Constructions et des Déploiements, toutes les actions sont effectuées en exécutant une séquence de Phases.
 
 Les Phases représentent des tâches ou des actions spécifiques qui doivent être exécutées par le système.
 
@@ -30,12 +30,12 @@ Dans IKAN ALM, nous distinguons 3 types de Phases en fonction de leur utilisatio
 
 Une Requête de niveau représente l'exécution d'un Niveau.
 Un Niveau est subdivisé en Phases de niveau.
-Ces Phases sont exécutées de manière séquentielle et, au moment où toutes les Phases sont achevées, la Requête de Niveau se termine.
-Une des Phases d`'une Requête de Niveau est la Phase de construction, qui exécutera les Constructions associées à la Requête de Niveau.
+Ces Phases sont exécutées de manière séquentielle et, au moment où toutes les Phases sont achevées, la Requête de niveau se termine.
+Une des Phases d`'une Requête de niveau est la Phase de construction, qui exécutera les Constructions associées à la Requête de niveau.
 Une Construction représente l'exécution d'un Environnement de construction.
 Ces Constructions sont, à leur tour, subdivisées en Phases de construction.
 Quand toutes les Phases de construction définies pour la Construction ont réussi, la Construction a également réussi.
-Les Déploiements d`'une Requête de Niveau sont traités de la même manière.
+Les Déploiements d`'une Requête de niveau sont traités de la même manière.
 
 [NOTE]
 ====
@@ -70,12 +70,12 @@ Il peut être modifié directement; sa valeur est déduite de l'ordre dans la s�
 En général, cette Phase sera la Phase de Nettoyage.
 
 |Abandon si erreur
-a|Ce champ spécifie si le statut qui englobe la Requête de Niveau, la Construction ou le Déploiement devra être établi à Échoué ou à Avertissement si la Phase rencontre une erreur.
+a|Ce champ spécifie si le statut qui englobe la Requête de niveau, la Construction ou le Déploiement devra être établi à Échoué ou à Avertissement si la Phase rencontre une erreur.
 
 Les valeurs possibles sont:
 
-* __Oui__: saisissez _Oui_ si la Phase est critique (par exemple, une Phase de Récupération des Sources, une Phase d'Exécution du script de construction, une Phase personnalisée de Compilation des Sources, ...). Le statut de la Requête de Niveau, de la Construction ou du Déploiement sera établi à __Échoué__.
-* __Non__: saisissez _Non_ pour une Phase non-critique (par exemple, une Phase de Nettoyage du fichier de construction archivée, une Phase de test personnalisée, ...). Le statut de la Requête de Niveau, de la Construction ou du Déploiement sera établi à __Avertissement__.
+* __Oui__: saisissez _Oui_ si la Phase est critique (par exemple, une Phase de Récupération des Sources, une Phase d'Exécution du script de construction, une Phase personnalisée de Compilation des Sources, ...). Le statut de la Requête de niveau, de la Construction ou du Déploiement sera établi à __Échoué__.
+* __Non__: saisissez _Non_ pour une Phase non-critique (par exemple, une Phase de Nettoyage du fichier de construction archivée, une Phase de test personnalisée, ...). Le statut de la Requête de niveau, de la Construction ou du Déploiement sera établi à __Avertissement__.
 
 |===
 
@@ -83,14 +83,14 @@ Les valeurs possibles sont:
 Pour plus d`'informations concernant la définition et la configuration des Phases, se référer aux sections suivantes: 
 
 * <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevelphases,Modifier une Phase de niveau>>
-* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'environnement de construction>>
-* <<ProjAdm_DeployEnv.adoc#_projadm_deployenv_phaseedit,Modifier une Phase d`'environnement de déploiement>>
+* <<ProjAdm_BuildEnv.adoc#_projadm_buildenv_editphase,Modifier une Phase d`'Environnement de construction>>
+* <<ProjAdm_DeployEnv.adoc#_projadm_deployenv_phaseedit,Modifier une Phase d`'Environnement de déploiement>>
 * <<GlobAdm_Phases.adoc#_globadm_phases_creating,Créer une définition de Phase>>
 * <<GlobAdm_Phases.adoc#_globadm_phases_editing,Modifier la définition d`'une Phase>>.
 
 Lors de l`'exécution d`'une Phase, le statut peut être établi à une des valeurs suivantes:
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Statut
 | Description
@@ -121,13 +121,12 @@ L'exécution d'une Phase peut être suivie sur l'onglet <<Desktop_LevelRequests.
 == Phases de niveau 
 (((Niveaux ,Phases)))  (((Phases ,Phases de niveau))) 
 
-Les Phases de niveau sont des actions qui doivent être exécutées pour achever une Requête de Niveau.
+Les Phases de niveau sont des actions qui doivent être exécutées pour achever une Requête de niveau.
 
 Une installation IKAN ALM originale (dite "vanilla") ne contient que les Phases de niveau du type "de noyau". Vous pouvez les rechercher via l'__Aperçu des Phases__ en limitant la recherche au Phases de noyau qui peuvent être utilisées sur un Niveau.
 Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'IKAN ALM en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Niveau.
 
-Les Phases de niveau peuvent être insérées dans le flux de travail d'un Niveau (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Phases de niveau>>) et sont enregistrées sur l'onglet __Journaux
-de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Phases de niveau>>).
+Les Phases de niveau peuvent être insérées dans le flux de travail d'un Niveau (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Administration des Projets - Phases de niveau>>) et sont enregistrées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Informations détaillées - Journaux de Phase - Nom de Phase>>).
 
 Elles sont initiées par le processus Moniteur du Serveur IKAN ALM, ce qui signifie qu`'elles s`'exécutent sur la Machine Serveur IKAN ALM!
 
@@ -154,24 +153,23 @@ Outre les Phases de niveau de noyau, vous pouvez créer vos propres Phases de ni
 === Récupération des Sources 
 (((Phases ,Phases de niveau ,Récupération des Sources))) 
 
-En général, la Phase __Récupération des Source__s est la première Phase exécutée dans une Requête de Niveau.
-Elle récupère (check out) les codes Source à partir du RCV et les copie dans l`'Emplacement de Transfert (un sous-répertoire de l`'Emplacement des Copies de travail) où ils seront disponibles pour les Agents exécutant les Constructions de la Requête de Niveau.
+En général, la Phase __Récupération des Source__s est la première Phase exécutée dans une Requête de niveau.
+Elle récupère (check out) les codes Source à partir du RCV et les copie dans l`'Emplacement de Transfert (un sous-répertoire de l`'Emplacement des Copies de travail) où ils seront disponibles pour les Agents exécutant les Constructions de la Requête de niveau.
 
-S`'il s`'agit d`'une Requête de Niveau pour un Niveau de Construction, les codes Source les plus récents sont récupérés; s`'il s`'agit d`'une Requête de Niveau pour un Niveau de Test, les codes Source balisés seront récupérés.
+S`'il s`'agit d`'une Requête de niveau pour un Niveau de Construction, les codes Source les plus récents sont récupérés; s`'il s`'agit d`'une Requête de niveau pour un Niveau de Test, les codes Source balisés seront récupérés.
 
-S`'il s`'agit d`'une Requête de Niveau pour un Niveau de Construction associée à une Branche basée sur une Balise existante, les codes Source ayant la Balise spécifiée dans le champ _Balise
-RCV_ lors de la création de la Requête de Niveau seront récupérés.
-Pour la description du champ __Balise RCV__, se référer à la section <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une requête de niveau de construction>>. 
+S`'il s`'agit d`'une Requête de niveau pour un Niveau de Construction associée à une Branche basée sur une Balise existante, les codes Source ayant la Balise spécifiée dans le champ _Balise
+RCV_ lors de la création de la Requête de niveau seront récupérés.
+Pour la description du champ __Balise RCV__, se référer à la section <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de niveau de Construction>>. 
 
-La Phase _Récupération des Sources_ récupère également les codes Source et/ou les résultats de construction de toutes les Constructions dépendantes desquelles dépend cette Requête de Niveau. <<Desktop_LevelRequests.adoc#_desktop_lr_viewdependency,Dépendances de construction>>
+La Phase _Récupération des Sources_ récupère également les codes Source et/ou les résultats de construction de toutes les Constructions dépendantes desquelles dépend cette Requête de niveau. Voir <<Desktop_LevelRequests.adoc#_desktop_lr_viewdependency,Dépendances de construction>>
 
-Dans le cas d`'une Construction partielle (<<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_createbranch,Créer une branche secondaire>>), seuls les codes Source modifiés seront récupérés et rendus disponibles pour les Agents exécutant les Constructions de la Requête de Niveau.
+Dans le cas d`'une Construction partielle (<<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_createbranch,Créer une Branche Secondaire>>), seuls les codes Source modifiés seront récupérés et rendus disponibles pour les Agents exécutant les Constructions de la Requête de niveau.
 
 Le Paramètre de phase (d'environnement) _alm.phase.retrieve.source.partialBuild.partialCheckout_ spécifie comment cela sera fait.
-S'il est établi à _true_ (la valeur par défaut) et si le RCV le supporte (actuellement uniquement Subversion), cela est effectué par la récupération partielle des codes Source modifiés.
-Sinon, tous les codes Source seront récupérés, tandis que seuls les codes Source modifiés seront transportés vers l'Emplacement Source de l'Environnement de Construction.
+S'il est établi à _true_ (la valeur par défaut) et si le RCV le supporte, cela est effectué par la récupération partielle des codes Source modifiés. Sinon, tous les codes Source seront récupérés, tandis que seuls les codes Source modifiés seront transportés vers l'Emplacement Source de l'Environnement de Construction.
 
-Si aucune Construction n`'est associée à la Requête de Niveau, la Phase _Récupération des Sources_ ne fait rien et se termine avec le statut __Réussi__.
+Si aucune Construction n`'est associée à la Requête de niveau, la Phase _Récupération des Sources_ ne fait rien et se termine avec le statut __Réussi__.
 Dans ce cas, vous pourriez supprimer la Phase _Récupération
 Code_ du flux de travail du Niveau.
 
@@ -179,12 +177,12 @@ Code_ du flux de travail du Niveau.
 === Construction 
 (((Phases ,Phases de niveau ,Construction))) 
 
-La Phase _Construction_ démarre l`'exécution des Constructions de la Requête de Niveau et en fait le suivi.
+La Phase _Construction_ démarre l`'exécution des Constructions de la Requête de niveau et en fait le suivi.
 
-Elle active les Agents de construction sur les Machines Agents pour démarrer toutes les Constructions en attente de la Requête de Niveau.
+Elle active les Agents de construction sur les Machines Agents pour démarrer toutes les Constructions en attente de la Requête de niveau.
 Ensuite, elle attend la fin de tous ces processus de Construction.
 
-Entre-temps, si une Requête de Niveau est annulée pendant la Phase de Construction, la Phase _Construction_ notifie et arrête les Agents de construction.
+Entre-temps, si une Requête de niveau est annulée pendant la Phase de Construction, la Phase _Construction_ notifie et arrête les Agents de construction.
 
 Si toutes les Constructions sont terminées, le statut de la Phase _Construction_ est établi en fonction des statuts des Constructions:
 
@@ -193,19 +191,19 @@ Si toutes les Constructions sont terminées, le statut de la Phase _Construction
 * Si toutes les Constructions ont réussi, le statut de la Phase _Construction_ est établi à __Réussi__.
 
 
-Si aucune Construction n`'est définie pour la Requête de Niveau, la Phase _Construction_ ne fait rien et se termine avec le statut __Réussi__.
+Si aucune Construction n`'est définie pour la Requête de niveau, la Phase _Construction_ ne fait rien et se termine avec le statut __Réussi__.
 Dans ce cas, vous pourriez supprimer la Phase _Construction_ du flux de travail du Niveau.
 
 [[_phases_levelphases_tagcode]]
 === Balisage 
 (((Phases ,Phases de niveau ,Balisage))) 
 
-La Phase _Balisage_ associe une Balise aux codes Source récupérés du RCV sur la base de la Balise définie dans les Paramètres de la Requête de Niveau.
+La Phase _Balisage_ associe une Balise aux codes Source récupérés du RCV sur la base de la Balise définie dans les Paramètres de la Requête de niveau.
 Si la Balise existe déjà dans le RCV, la Balise est modifiée.
 
 La Phase _Balisage_ n`'associe une Balise qu`'à condition que les codes Source récupérés soient les plus récents de la Branche RCV.
 Donc, elle n`'associera pas de Balise s`'il s`'agit d`'un Niveau de Construction d`'une Branche basée sur une balise existante.
-Elle n`'associera pas non plus de (nouvelle) Balise à une Requête de Niveau pour délivrer une Construction.
+Elle n`'associera pas non plus de (nouvelle) Balise à une Requête de niveau pour délivrer une Construction.
 Dans ces deux cas, du code balisé a été récupéré et par conséquent un balisage n'était pas nécessaire.
 Vous pourriez donc supprimer la Phase _Balisage_ du flux de travail du Niveau.
 
@@ -213,13 +211,13 @@ Vous pourriez donc supprimer la Phase _Balisage_ du flux de travail du Niveau.
 === Déploiement 
 (((Phases ,Phases de niveau ,Déploiement))) 
 
-La Phase _Déploiement_ démarre l`'exécution des Déploiements de la Requête de Niveau et en fait le suivi.
+La Phase _Déploiement_ démarre l`'exécution des Déploiements de la Requête de niveau et en fait le suivi.
 
-Elle active les Agents de déploiement sur les Machines Agents pour démarrer tous les Déploiements en attente de la Requête de Niveau ayant le numéro de Séquence 0.
+Elle active les Agents de déploiement sur les Machines Agents pour démarrer tous les Déploiements en attente de la Requête de niveau ayant le numéro de Séquence 0.
 Ensuite, elle attend la fin de tous ces Déploiements.
 Si tous ces Déploiements se sont terminés avec le statut _Réussi_ ou __Avertissement__, elle active les Déploiements ayant le numéro de Séquence 1, et ainsi de suite jusqu`'au moment où il n`'y a plus de Déploiements ou qu`'un Déploiement a échoué.
 
-Entre-temps, si une Requête de Niveau est annulée pendant la Phase de Déploiement, la Phase _Déploiement_ notifie et arrête les Agents de déploiement.
+Entre-temps, si une Requête de niveau est annulée pendant la Phase de Déploiement, la Phase _Déploiement_ notifie et arrête les Agents de déploiement.
 
 Si tous les Déploiements sont terminés, le statut de la Phase _Déploiement_ est établi en fonction des statuts des Déploiements:
 
@@ -228,36 +226,35 @@ Si tous les Déploiements sont terminés, le statut de la Phase _Déploiement_ e
 * Si tous les Déploiements ont réussi, le statut de la Phase _Déploiement_ est établi à __Réussi__.
 
 
-Si aucun Déploiement n`'est défini pour la Requête de Niveau, la Phase _Déploiement_ ne fait rien et se termine avec le statut __Réussi__.
+Si aucun Déploiement n`'est défini pour la Requête de niveau, la Phase _Déploiement_ ne fait rien et se termine avec le statut __Réussi__.
 Dans ce cas, vous pourriez supprimer la Phase _Déploiement_ du flux de travail du Niveau.
 
 [[_phases_levelphases_issuetracking]]
 === Suivi des Incidents 
 (((Phases ,Phases de niveau ,Suivi des Incidents))) 
 
-La Phase _Suivi des Incidents_ relie les Incidents, gérés dans un Système de Suivi des Incidents externe, à une Requête de Niveau en recherchant des références vers les Incidents dans les commentaires fournis lors des processus d`'enregistrement (commit) dans le RCV.
+La Phase _Suivi des Incidents_ relie les Incidents, gérés dans un Système de Suivi des Incidents externe, à une Requête de niveau en recherchant des références vers les Incidents dans les commentaires fournis lors des processus d`'enregistrement (commit) dans le RCV.
 
-S`'il s`'agit d`'une Requête de Niveau de construction, la Phase _Suivi des Incidents_ analyse les commentaires fournis depuis la dernière Requête de Niveau réussie pour ce Niveau.
-Elle cherchera des correspondances avec le modèle de recherche de Suivi d`'incident (<<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Créer un Système de Suivi des Incidents>>). Tous les Incidents trouvés seront reliés à la Requête de Niveau.
+S`'il s`'agit d`'une Requête de niveau de construction, la Phase _Suivi des Incidents_ analyse les commentaires fournis depuis la dernière Requête de niveau réussie pour ce Niveau.
+Elle cherchera des correspondances avec le modèle de recherche de Suivi d`'incident (<<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Créer un Système de Suivi des Incidents>>). Tous les Incidents trouvés seront reliés à la Requête de niveau.
 
-Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, HP Quality Center ou Collabnet TeamForge, la Phase _Suivi
-des Incidents_ établira également la connexion avec JIRA, HP ALM ou TeamForge et essaiera d`'identifier les Incidents.
-Pour chaque Incident identifié, elle essaiera de récupérer des informations supplémentaires de JIRA, HP ALM ou TeamForge telles que la description, le statut, le propriétaire et la priorité, et de sauvegarder ces informations dans IKAN ALM.
+Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, MF ALM, GitHub ou TFS, la Phase _Suivi des Incidents_ établira également la connexion avec JIRA, MF ALM, GitHub ou TFS et essaiera d`'identifier les Incidents.
+Pour chaque Incident identifié, elle essaiera de récupérer des informations supplémentaires de JIRA, MF ALM, GitHub ou TFS telles que la description, le statut, le propriétaire et la priorité, et de sauvegarder ces informations dans IKAN ALM.
 
-S`'il s`'agit d`'une Requête de Niveau pour délivrer une Construction, la Phase _Suivi des Incidents_ énumère tous les Incidents associés aux Requêtes de Niveau de Construction réussies depuis la dernière Requête de Niveau pour délivrer une Construction sur ce Niveau réussie, et les ajoute tous à cette Requête de Niveau.
+S`'il s`'agit d`'une Requête de niveau pour délivrer une Construction, la Phase _Suivi des Incidents_ énumère tous les Incidents associés aux Requêtes de niveau de Construction réussies depuis la dernière Requête de niveau pour délivrer une Construction sur ce Niveau réussie, et les ajoute tous à cette Requête de niveau.
 
 Par exemple:
 
 Supposons les Constructions suivantes: la Construction 3 reliée à l`'Incident 3, la Construction 4 reliée à l`'Incident 4, la Construction 5 reliée aux Incidents 5 et 6.
 Préalablement, la Construction 2 a été délivrée.
-Si nous délivrons la Construction 5, les Incidents 3, 4, 5 et 6 seront associés à la Requête de Niveau pour délivrer la Construction.
+Si nous délivrons la Construction 5, les Incidents 3, 4, 5 et 6 seront associés à la Requête de niveau pour délivrer la Construction.
 
-Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, HP ALM ou TeamForge, la Phase _Suivi des Incidents_ synchronisera tous les Incidents connectés à la Requête de Niveau pour délivrer une Construction: elle comparera les informations de l`'Incident dans IKAN ALM avec les informations actuelles dans JIRA, HP ALM ou TeamForge et, si nécessaire, elle mettra à jour la description, le statut, le propriétaire et la priorité.
+Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, MF ALM, GitHub ou TFS, la Phase _Suivi des Incidents_ synchronisera tous les Incidents connectés à la Requête de niveau pour délivrer une Construction: elle comparera les informations de l`'Incident dans IKAN ALM avec les informations actuelles dans JIRA, MF ALM, GitHub ou TFS et, si nécessaire, elle mettra à jour la description, le statut, le propriétaire et la priorité.
 
-Si la Requête de Niveau n`'a pas réussi, la Phase _Suivi
+Si la Requête de niveau n`'a pas réussi, la Phase _Suivi
 des Incidents_ ne fait rien et se termine avec le statut _Réussi_ rapportant qu`'elle n`'a traité aucun des Incidents.
 
-Si aucun Système de Suivi des Incidents n`'est attaché au Projet de cette Requête de Niveau, la Phase _Suivi des Incidents_ ne fait rien et se termine avec le statut __Réussi__.
+Si aucun Système de Suivi des Incidents n`'est attaché au Projet de cette Requête de niveau, la Phase _Suivi des Incidents_ ne fait rien et se termine avec le statut __Réussi__.
 
 [NOTE]
 ====
@@ -269,24 +266,24 @@ des Incidents_ pour les Niveaux pour lesquels vous voulez activer le Suivi des I
 === Jonction Révisions des Fichiers 
 (((Phases ,Phases de niveau ,Jonction Révisions des Fichiers))) 
 
-La phase _Jonction Révisions des Fichiers_ rattache les révisions des fichiers concernées à la Requête de Niveau.
+La phase _Jonction Révisions des Fichiers_ rattache les révisions des fichiers concernées à la Requête de niveau.
 
-Pour une Requête de Niveau de Construction, ceci est fait sur base des Révisions des Fichiers récupérées à partir du RCV lors de la Phase __Récupération des Sources__.
+Pour une Requête de niveau de Construction, ceci est fait sur base des Révisions des Fichiers récupérées à partir du RCV lors de la Phase __Récupération des Sources__.
 
-Pour une Requête de Niveau à délivrer ou à restaurer, ceci est fait sur base des Révisions des Fichiers rattachées à la Requête de Niveau (du Niveau précédent) qui sera délivrée ou restaurée.
-Même si ces Révisions des Fichiers sont également rattachées au Paquet, cette Phase est nécessaire pour fixer l`'état du contenu du Paquet au moment de l`'exécution de la Requête de Niveau car il est probable que ce contenu sera modifié dans le temps.
+Pour une Requête de niveau à délivrer ou à restaurer, ceci est fait sur base des Révisions des Fichiers rattachées à la Requête de niveau (du Niveau précédent) qui sera délivrée ou restaurée.
+Même si ces Révisions des Fichiers sont également rattachées au Paquet, cette Phase est nécessaire pour fixer l`'état du contenu du Paquet au moment de l`'exécution de la Requête de niveau car il est probable que ce contenu sera modifié dans le temps.
 
-Etant donné que cette Phase n`'est applicable que pour les Requêtes de Niveau de Paquets, elle ne s`'affichera que pour les Niveaux des Projets de type Paquets.
+Etant donné que cette Phase n`'est applicable que pour les Requêtes de niveau de Paquets, elle ne s`'affichera que pour les Niveaux des Projets de type Paquets.
 
 [[_phases_levelphases_cleanupworkcopy]]
 === Nettoyage Copies de travail 
 (((Phases ,Phases de niveau ,Nettoyage Copies de travail))) 
 
-La Phase _Nettoyage Copies de travail_ libère l`'Emplacement des Copies de travail à partir duquel les codes Source de la Requête de Niveau ont été récupérés.
+La Phase _Nettoyage Copies de travail_ libère l`'Emplacement des Copies de travail à partir duquel les codes Source de la Requête de niveau ont été récupérés.
 
 Cette Phase échoue si elle ne parvient pas à localiser ce répertoire.
 Typiquement, la valeur du champ _Abandon si
-erreur_ de cette Phase est mise à __Non__, ce qui engendre la fin de la Requête de Niveau avec le statut _Avertissement_ au lieu de _Échoué_ si la Phase rencontre une erreur.
+erreur_ de cette Phase est mise à __Non__, ce qui engendre la fin de la Requête de niveau avec le statut _Avertissement_ au lieu de _Échoué_ si la Phase rencontre une erreur.
 
 Si l`'option _Débogage_ est activée pour le Niveau, la Phase _Nettoyage Copies de travail_ ne fait rien et se termine avec le statut __Erreur__, rapportant que l`'option _Débogage_ est activée pour le Niveau.
 
@@ -345,7 +342,7 @@ Une installation IKAN ALM originale (dite "vanilla") ne contient que les Phases 
 des Phases__ en limitant la recherche aux Phases de noyau qui peuvent être utilisées sur un Environnement de construction.
 Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'IKAN ALM en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de construction.
 
-Les Phases de construction peuvent être insérées dans un Environnement de construction (<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phases,Phases d`'environnement de construction>>). Leurs actions pendant l'exécution d'une Construction sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_buildactions,Actions de Construction>>). 
+Les Phases de construction peuvent être insérées dans un Environnement de construction (<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phases,Phases d`'Environnement de construction>>). Leurs actions pendant l'exécution d'une Construction sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_buildactions,Actions de Construction>>). 
 
 Elles sont initiées par le processus de construction de l`'Agent IKAN ALM, ce qui signifie qu`'elles s`'exécutent sur la Machine de l`'Agent IKAN ALM!
 
@@ -387,8 +384,8 @@ La Phase _Vérification du script de construction_ essaie de localiser le Script
 La Phase échoue si elle n`'y parvient pas.
 
 D`'abord, elle détermine le script de construction à utiliser.
-Si un script de construction a été défini au niveau de l`'Environnement de Construction (<<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un environnement de construction>>), elle essaiera de le localiser.
-Si ce n`'est pas le cas, elle vérifiera si un script de construction a été défini au niveau du Projet (<<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>).
+Si un script de construction a été défini au niveau de l`'Environnement de Construction (<<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>>), elle essaiera de le localiser.
+Si ce n`'est pas le cas, elle vérifiera si un script de construction a été défini au niveau du Projet (<<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un Projet>>).
 
 Ensuite, elle essaiera de localiser le script de construction dans l`'Emplacement Source de l`'Environnement de Construction.
 
@@ -440,7 +437,7 @@ de tous les Résultats de Construction_ est établi à __false/Non__.
 
 La Phase _Compression de la construction_ compresse les fichiers de résultat de construction dans l`'Emplacement Cible de l`'Environnement de Construction.
 
-Si Windows est utilisé comme système d`'exploitation sur la Machine Agent, la Phase _Compression de la construction_ créera un fichier ``$$.$$zip``, sinon un fichier `$$.$$tar.gz` sera créé.
+Le format d`'archive est déterminé par le paramètre de Phase d`'Environnement alm.phases.compress.result.archiveFormat. S`'il est défini sur zip, tgz ou 7z, le format d`'archive choisi sera utilisé. S`'il n`'est pas défini ou défini sur auto, un format sera choisi en fonction du système d`'exploitation de la Machine Agent. Si la Machine Agent exécute un système d`'exploitation Windows, la phase de génération de compression crée un fichier `$$.$$zip`, sinon elle crée un fichier `$$.$$tar.gz`.
 
 [[_phases_buildphases_archiveresult]]
 === Archivage Résultat 
@@ -507,7 +504,7 @@ Une installation IKAN ALM originale (dite "vanilla") ne contient que les Phases 
 des Phases__ en limitant la recherche aux Phases de noyau qui peuvent être utilisées sur un Environnement de déploiement.
 Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'IKAN ALM en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de déploiement.
 
-Les Phases de déploiement peuvent être insérées dans un Environnement de déploiement (<<ProjAdm_DeployEnv.adoc#_projadm_deplanv_phases,Phases d`'environnement de déploiement>>) et leurs actions pendant l'exécution ou le déploiement sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_deployactions,Actions de Déploiement>>). 
+Les Phases de déploiement peuvent être insérées dans un Environnement de déploiement (<<ProjAdm_DeployEnv.adoc#_projadm_deplanv_phases,Phases d`'Environnement de déploiement>>) et leurs actions pendant l'exécution ou le déploiement sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_deployactions,Actions de Déploiement>>). 
 
 Elles sont initiées par un processus de déploiement de l`'Agent IKAN ALM, ce qui signifie qu`'elles s`'exécutent sur la Machine Agent IKAN ALM!
 
@@ -564,8 +561,8 @@ La Phase _Vérification du script de déploiement_ essaie de localiser le Script
 La Phase échoue si elle n`'y parvient pas.
 
 D`'abord, elle détermine le script de déploiement à utiliser.
-Si un script de déploiement a été défini au niveau de l`'Environnement de Déploiement (<<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Créer un environnement de déploiement>>), elle essaiera de le localiser.
-Si ce n`'est pas le cas, elle vérifiera si un script de déploiement a été défini au niveau du Projet (<<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>).
+Si un script de déploiement a été défini au niveau de l`'Environnement de Déploiement (<<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Créer un Environnement de déploiement>>), elle essaiera de le localiser.
+Si ce n`'est pas le cas, elle vérifiera si un script de déploiement a été défini au niveau du Projet (<<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un Projet>>).
 
 Ensuite, elle essaiera de localiser le script de déploiement dans le résultat de construction décompressé disponible dans l`'Emplacement Source de l`'Environnement de Déploiement.
 

@@ -5,85 +5,82 @@
 = Cycles de vie 
 (((Options relatives à l'administration des projets ,Cycles de vie)))  (((Administration des projets ,Cycles de vie)))  (((Cycles de vie))) 
 
-A chaque Branche d`'un Projet est associé un Cycle de Vie, définissant les étapes logiques dans le processus IKAN ALM.
+A chaque Branche d`'un Projet est associé un Cycle de vie, définissant les étapes logiques dans le processus IKAN ALM.
 Une telle étape est appelée un "`Niveau`" dans IKAN ALM.
-L`'option _Cycles
-de vie_ vous permet de définir les Cycles de Vie et de spécifier la séquence des Niveaux pour chaque Cycle de Vie.
+Le menu _Cycles de vie_ vous permet de définir les Cycles de vie et de spécifier la séquence des Niveaux pour chaque Cycle de vie.
 
-Lors de la création d`'un Projet IKAN ALM, la Branche Principale ainsi que le Cycle de Vie appelé BASE qui lui est associé, sont créés automatiquement.
+Lors de la création d`'un Projet IKAN ALM, la Branche Principale ainsi que le Cycle de vie appelé BASE qui lui est associé, sont créés automatiquement.
 
-Trois types de Niveaux différents peuvent être associés au Cycle de Vie: un niveau de Construction, de Test ou de Production.
-Il faut assigner au moins un niveau de Construction à un Cycle de Vie avant de pouvoir définir des Requêtes de Niveau dans la Branche reliée à ce Cycle de Vie.
-Le nombre de Niveaux de Test et de Production dans un Cycle de Vie est illimité.
+Trois types de Niveaux différents peuvent être associés au Cycle de vie: un niveau de Construction, de Test ou de Production.
+Il faut assigner au moins un niveau de Construction à un Cycle de vie avant de pouvoir définir des Requêtes de niveau dans la Branche reliée à ce Cycle de vie.
+Le nombre de Niveaux de Test et de Production dans un Cycle de vie est illimité.
 
-Les Niveaux peuvent être réutilisés dans d`'autres Cycles de Vie.
-Par exemple, un Cycle de Vie de "`correction urgente`" ou de "`patch`" peut contenir les mêmes Niveaux de Test et de Production que le Cycle de Vie normal, mais les Niveaux de Test intermédiaires peuvent être sautés.
+Les Niveaux peuvent être réutilisés dans d`'autres Cycles de vie.
+Par exemple, un Cycle de vie de "`correction urgente`" ou de "`patch`" peut contenir les mêmes Niveaux de Test et de Production que le Cycle de vie normal, aussi, les Niveaux de Test intermédiaires peuvent être optionnels.
 
 [NOTE]
 ====
-Le Cycle de Vie appelé BASE ne peut pas être réutilisé dans d`'autres Branches (secondaires). Il faut donc d`'abord créer un nouveau Cycle de Vie avant de créer une Branche Secondaire.
+Le Cycle de vie appelé BASE ne peut pas être réutilisé dans d`'autres Branches (secondaires). Il faut donc d`'abord créer un nouveau Cycle de vie avant de créer une première Branche Secondaire.
 ====
 
-L`'option _Cycles de Vie_ permet de démarrer les procédures suivantes:
+L`'option _Cycles de vie_ permet de démarrer les procédures suivantes:
 
-* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un cycle de vie>>
-* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un Cycle de vie>>
+* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 
-L`'écran _Aperçu des Cycles de vie et Niveaux
-associés_ vous permet de vérifier et modifier les informations concernant les Cycles de Vie et les Niveaux associés.
+L`'écran _Aperçu des Cycles de vie et Niveaux associés_ vous permet de vérifier et modifier les informations concernant les Cycles de vie et les Niveaux associés.
 Les actions suivantes sont possibles:
 
 * Modifier les définitions des Cycles de vie
-** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un cycle de vie>>
-** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un cycle de vie>>
+** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un Cycle de vie>>
+** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un Cycle de vie>>
 * Modifier le contenu d'un Cycle de vie
 ** <<ProjAdm_LifeCycles.adoc#_lifecycles_creatingadditionallevels,Créer des Niveaux supplémentaires>>
-** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_insertexistinglevel,Insérer un niveau>>
-** <<ProjAdm_LifeCycles.adoc#_lifecycles_changingorderlevels,Modifier la séquence des niveaux>>
+** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_insertexistinglevel,Insérer un Niveau existant>>
+** <<ProjAdm_LifeCycles.adoc#_lifecycles_changingorderlevels,Modifier la séquence des Niveaux>>
 ** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_optionallevels,Rendre un Niveau optionnel ou obligatoire>>
-** <<ProjAdm_LifeCycles.adoc#_lifecyclemgt_enableoptionaldeploys,Activer ou désactiver l'option "Déploiementsoptionnels">>
+** <<ProjAdm_LifeCycles.adoc#_lifecyclemgt_enableoptionaldeploys,Activer ou désactiver l'option "Déploiements optionnels">>
 * Modifier les Niveaux associés à un Cycle de vie
-** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlevelsettings,Modifier un niveau>>
-** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_removelevel,Retirer un niveau>>
+** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlevelsettings,Modifier un Niveau>>
+** <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_removelevel,Retirer un Niveau>>
 
 
 [NOTE]
 ====
 
 Les Niveaux (Construction, Test et Production) peuvent également être créés en utilisant l'option _Niveaux_ dans le sous-menu.
-L'avantage de les créer à stade est que, via l'écran __Modifier
-un Cycle de vie__, le Niveau sera automatiquement associé au Cycle de vie.
+L'avantage de les créer à stade est que, via l'écran __Modifier un Cycle de vie__, le Niveau sera automatiquement associé au Cycle de vie.
 ====
 
 [[_plifecyclemgt_createlifecycle]]
-== Créer un cycle de vie
-(((Cycles de vie ,Créer un cycle de vie))) 
+== Créer un Cycle de vie
+(((Cycles de vie ,Créer un Cycle de vie))) 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Cycles de vie > Créer__.
+. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Cycles de vie > Créer__.
 +
 Le panneau _Créer un Cycle de vie_ s`'affiche en haut de l`'écran.
 +
-image::ProjAdmin-LifeCycles-Create.png[,520,296] 
+image::ProjAdmin-LifeCycles-Create.png[,495,268] 
 +
 Les champs suivants sont disponibles.
 Les deux premiers champs doivent être complétés:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
 
 |Nom
-|Dans ce champ, saisissez la dénomination du nouveau Cycle de Vie.
+|Dans ce champ, saisissez la dénomination du nouveau Cycle de vie.
 
 |Description
-|Dans ce champ, entrez la description pour le nouveau Cycle de Vie.
+|Dans ce champ, entrez la description pour le nouveau Cycle de vie.
 
 |Base
-|Ce champ qui ne peut être que lu est toujours mis à __Non__, parce que le Cycle de Vie appelé BASE est créé automatiquement au moment de la création du projet.
-Il est impossible de créer des Cycles de Vie BASE supplémentaires.
+|Ce champ qui ne peut être que lu est toujours mis à __Non__, parce que le Cycle de vie appelé BASE est créé automatiquement au moment de la création du projet.
+Il est impossible de créer un Cycle de vie BASE supplémentaire.
 |===
 
 . Complétez les champs et cliquez sur le bouton __Créer__.
@@ -94,45 +91,42 @@ Il est impossible de créer des Cycles de Vie BASE supplémentaires.
 Vous pouvez également utiliser le bouton _Réinitialiser_ pour vider les champs.
 ====
 +
-Le nouveau Cycle de Vie est ajouté à la liste de Cycles de Vie définis pour le Projet sélectionné.
+Le nouveau Cycle de vie est ajouté à la liste de Cycles de vie définis pour le Projet sélectionné.
 . Informations supplémentaires.
 +
-En-dessous du panneau __Créer
-un Cycle de vie__, l'aperçu des Cycles de vie existants s'affiche.
+En-dessous du panneau __Créer un Cycle de vie__, l'aperçu des Cycles de vie existants s'affiche.
 +
-Pour plus d`'informations concernant ce panneau, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_screen,Aperçu des cycles de vie>>.
-. Cliquez sur le bouton _Créer_ pour créer le Cycle de vie.
+Pour plus d`'informations concernant ce panneau, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_screen,Aperçu des Cycles de vie>>.
+. Cliquez sur le bouton _Modifier_ pour modifier le Cycle de vie.
 +
-L'écran _Modifier un Cycle de
-vie_ s'affiche.
+L'écran _Modifier un Cycle de vie_ s'affiche.
 +
-image::ProjAdmin-LifeCycles-EditLifecycleScreen.png[,450,191] 
+image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,460,243]
 +
-Pour plus d`'informations, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un cycle de vie>>.
+Pour plus d`'informations, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un Cycle de vie>>.
 
 
 [[_plifecyclemgt_screen]]
-== Aperçu des cycles de vie 
+== Aperçu des Cycles de vie 
 (((Cycles de vie ,Aperçu))) 
 
-L`'écran _Aperçu des Cycles de vie et Niveaux
-associés_ vous permet de vérifier et modifier les informations concernant les Cycles de Vie et les Niveaux associés.
+L`'écran _Aperçu des Cycles de vie et Niveaux associés_ vous permet de vérifier et modifier les informations concernant les Cycles de vie et les Niveaux associés.
 Les actions suivantes sont possibles:
 
-** Modifier les définitions des Cycles de Vie
-* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un cycle de vie>>
-* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un cycle de vie>>
-* <<ProjAdm_LifeCycles.adoc#_lifecyclemgt_historyview,Afficher l`'historique d`'un cycle de vie>>
+** Modifier les définitions des Cycles de vie
+* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un Cycle de vie>>
+* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un Cycle de vie>>
+* <<ProjAdm_LifeCycles.adoc#_lifecyclemgt_historyview,Afficher l`'historique d`'un Cycle de vie>>
 
 [[_plifecyclemgt_accessing]]
-=== Écran des cycles de vie et des niveaux associés 
-(((Cycles de vie ,Écran des cycles de vie et des niveaux associés))) 
+=== Écran des Cycles de vie et des Niveaux associés 
+(((Cycles de vie ,Écran des Cycles de vie et des Niveaux associés))) 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Cycles de vie > Aperçu__.
+. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Cycles de vie > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
-image::ProjAdmin-LifeCycles-Overview.png[,991,332] 
+image::ProjAdmin-LifeCycles-Overview.png[,968,316] 
 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
@@ -145,34 +139,30 @@ Vous pouvez également:
 
 . Dans le panneau de l'Aperçu des Cycles de vie, vérifiez les informations disponibles pour le Cycle de vie.
 +
-Pour une description des champs, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un cycle de vie>>.
+Pour une description des champs, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un Cycle de vie>>.
 
-. En fonction de vos droits d'accès, les liens suivants peuvent être disponibles dans la fenêtre __Aperçu des Cycles de vie__:
+. En fonction de vos droits d'accès, les liens/icônes suivants peuvent être disponibles dans la fenêtre __Aperçu des Cycles de vie__:
 +
 
-[cols="1,1", frame="topbot"]
+[cols="1,3", frame="topbot", options="header"]
 |===
+| Icône
+| Description
 
-|image:icons/edit.gif[,15,15] __
-|Modifier
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur de Projet.
+|image:icons/edit.gif[,15,15]  Modifier
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur de Projet.
 Elle permet de modifier la définition du Cycle de vie.
 
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un cycle de vie>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un Cycle de vie>>
 
-|image:icons/delete.gif[,15,15] 
-|Supprimer
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur de Projet.
+|image:icons/delete.gif[,15,15]  Supprimer
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur de Projet.
 Elle permet de supprimer la définition du Cycle de vie, sauf celle du Cycle de vie BASE qui est associé à la Branche Principale. 
 
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un cycle de vie>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un Cycle de vie>>
 
-|image:icons/history.gif[,15,15] 
-|Historique
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|image:icons/history.gif[,15,15]  Historique
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
 Elle permet d`'afficher l`'Historique de toutes les opérations de création, de modification ou de suppression relatives à un Cycle de vie.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_historyview,Afficher l`'historique d`'un projet>>
@@ -180,33 +170,33 @@ Elle permet d`'afficher l`'Historique de toutes les opérations de création, de
 
 . Vérifiez les informations dans le panneau __Niveaux associés__. 
 +
-Pour plus d`'informations, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un cycle de vie>>.
+Pour plus d`'informations, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un Cycle de vie>>.
 
 
 [[_plifecyclemgt_editlifecycle]]
-=== Modifier les paramètres d`'un cycle de vie 
+=== Modifier les paramètres d`'un Cycle de vie 
 (((Cycles de vie ,Modifier))) 
 
 . Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 . Sélectionnez le lien image:icons/edit.gif[,15,15]  Modifier devant le Cycle de vie dont vous voulez modifier les paramètres.
 +
 L`'écran _Modifier un Cycle de vie_ s`'affiche:
 +
-image::ProjAdmin-LifeCycles-Edit.png[,458,198] 
+image::ProjAdmin-LifeCycles-Edit.png[,1293,416]
 
 . Cliquez sur le bouton __Modifier__.
 +
-image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,481,266] 
+image::ProjAdmin-LifeCycles-EditLifecycle-Popup.png[,460,243] 
 +
 
 .. Si nécessaire, modifiez les champs.
 +
-Pour une description détaillée, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un cycle de vie>>.
+Pour une description détaillée, se référer à la section <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un Cycle de vie>>.
 
-.. Cliquez sur le bouton _Enregistrer_ pour sauvegarder les informations du Cycle de Vie.
+.. Cliquez sur le bouton _Enregistrer_ pour sauvegarder les informations du Cycle de vie.
 +
 Les boutons suivants sont également disponibles:
 
@@ -216,8 +206,7 @@ Les boutons suivants sont également disponibles:
 
 [NOTE]
 ====
-Dans l'écran __Modifier un
-Cycle de vie__, Vous pouvez également modifier les Niveaux, rendre les Niveaux optionnels, activer l'option "Déploiements optionnels", ajouter des Niveaux supplémentaires en utilisant les liens pour la création de Niveaux et modifier la séquence des Niveaux.
+Dans l'écran __Modifier un Cycle de vie__, Vous pouvez également modifier les Niveaux, rendre les Niveaux optionnels, activer l'option "Déploiements optionnels", ajouter des Niveaux supplémentaires en utilisant les liens pour la création de Niveaux et modifier la séquence des Niveaux.
 Pour plus d`'informations, se référer à la section <<ProjAdm_Levels.adoc#_projadm_levels,Niveaux>>.
 ====
 
@@ -227,10 +216,10 @@ Pour plus d`'informations, se référer aux sections:
 
 * <<ProjAdm_LifeCycles.adoc#_lifecycles_definedlevels,Panneau des Niveaux associés>>
 * <<ProjAdm_LifeCycles.adoc#_lifecycles_creatingadditionallevels,Créer des Niveaux supplémentaires>>
-* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_insertexistinglevel,Insérer un niveau>>
-* <<ProjAdm_LifeCycles.adoc#_lifecycles_changingorderlevels,Modifier la séquence des niveaux>>
+* <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_insertexistinglevel,Insérer un Niveau existant>>
+* <<ProjAdm_LifeCycles.adoc#_lifecycles_changingorderlevels,Modifier la séquence des Niveaux>>
 * <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_optionallevels,Rendre un Niveau optionnel ou obligatoire>>
-* <<ProjAdm_LifeCycles.adoc#_lifecyclemgt_enableoptionaldeploys,Activer ou désactiver l'option "Déploiementsoptionnels">>
+* <<ProjAdm_LifeCycles.adoc#_lifecyclemgt_enableoptionaldeploys,Activer ou désactiver l'option "Déploiements optionnels">>
 
 
 [[_lifecycles_definedlevels]]
@@ -238,7 +227,7 @@ Pour plus d`'informations, se référer aux sections:
 
 Dans le Panneau des Niveaux associés, l'information suivante est disponible pour chacun des Niveaux définis.
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -247,16 +236,16 @@ Dans le Panneau des Niveaux associés, l'information suivante est disponible pou
 |Ce champ contient le nom que l'Utilisateur a spécifié pour le Niveau.
 Typiquement, il se réfère au type ou à la fonction du Niveau.
 
+Les Types de niveau suivants sont disponibles:
+
+ image:icons/icon_buildLevelNode.gif[,15,15]  Construction
+ 
+ image:icons/icon_testLevelNode.gif[,15,15]  Test
+ 
+ image:icons/icon_prodLevelNode.gif[,15,15]  Production
+
 |Description
-|Ce champ contient la description que l'Utilisateur à spécifiée pour le Niveau.
-
-|Type
-a|Ce champ indique le Type de Niveau.
-Les Types de Niveau suivants sont disponibles:
-
-* Construction
-* Test
-* Production
+|Ce champ contient la description que l'Utilisateur a spécifiée pour le Niveau.
 
 |Verrouillé
 |Ce champ indique si le Niveau est verrouillé ou pas.
@@ -268,19 +257,23 @@ Si le Niveau n'est pas verrouillé, ce champ reste vide.
 |Optionnel
 |Ce champ indique si le Niveau est optionnel ou pas.
 
-Si le Niveau est optionnel, ce champ contient une marque bleue (image:icons/checkmark_blue.gif[,15,15] ).
+Si le Niveau est optionnel, ce champ contient une marque rouge (image:icons/checkmark_red.gif[,15,15] ).
+
+|Déploiements optionnels
+|Ce champ indique si l'option des Déploiements optionnels est activée ou pas sur ce Niveau.
+
+Si l'option des Déploiements optionnels est activée, ce champ contient une marque rouge (image:icons/checkmark_red.gif[,15,15] ).
 
 |Type de notification (Critère)
-|Ce champ indique le Type de notification associé au Niveau (__Mail__, _Netsend_ ou __Pas
-de notification__), suivi, entre parenthèses, du Type de notification (__Toujours__, __Erreur__, _Réussi_ ou __Jamais__).
+|Ce champ indique le Type de notification associé au Niveau (__Mail__ ou __Pas de notification__), suivi, entre parenthèses, du Type de notification (__Toujours__, __Erreur__, _Réussi_ ou __Jamais__).
 
 |Demandeur
 |Ce champ indique le nom du Groupe d'utilisateurs du demandeur.
-Les membres de ce Groupe d'utilisateurs ont les droits pour créer une Requête de Niveau pour ce Niveau.
+Les membres de ce Groupe d'utilisateurs ont les droits pour créer une Requête de niveau pour ce Niveau.
 
 |Pré-notification
 |Ce champ indique le nom du Groupe d'utilisateurs qui doit recevoir une pré-notification.
-Les membres de ce Groupe seront notifiés si une Requête de Niveau est créée pour ce Niveau, c'est-à-dire avant son exécution.
+Les membres de ce Groupe seront notifiés si une Requête de niveau est créée pour ce Niveau, c'est-à-dire avant son exécution.
 
 |Pré-approbation
 |Ce champ liste les Groupes d'utilisateurs qui doivent recevoir une Pré-approbation pour ce Niveau, ainsi qu'un numéro de Séquence.
@@ -315,50 +308,51 @@ associés__, les liens suivants peuvent être disponibles:
 
 * _Créer un Niveau de Construction_
 +
-Ce lien est uniquement disponible, si aucun niveau de Construction n`'a été défini.
-Le premier niveau défini pour un Cycle de Vie doit être un niveau de Construction.
-Une fois le niveau de Construction défini, cette option n`'est plus disponible car un Cycle de Vie ne doit contenir qu`'un seul niveau de Construction.
+Ce lien est uniquement disponible, si aucun Niveau de construction n`'a été défini.
+Le premier niveau défini pour un Cycle de vie doit être un Niveau de Construction.
+Une fois le Niveau de Construction défini, cette option n`'est plus disponible car un Cycle de vie ne doit contenir qu`'un seul Niveau de Construction.
 +
-Pour une description détaillée de cette fonctionnalité, se référer à la section <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un niveau de construction>>.
+Pour une description détaillée de cette fonctionnalité, se référer à la section <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un Niveau de Construction>>.
 * _Créer un Niveau de Test_ et _Créer un Niveau de Production_
 +
-Ces options sont disponibles dès que le niveau de Construction, obligatoire pour le Cycle de Vie, a été défini.
+Ces options sont disponibles dès que le Niveau de Construction, obligatoire pour le Cycle de vie, a été défini.
 +
-Pour une description détaillée de cette fonctionnalité, se référer à la section <<ProjAdm_Levels.adoc#_beifijci,Créer un niveau de test ou de production>>.
+Pour une description détaillée de cette fonctionnalité, se référer à la section <<ProjAdm_Levels.adoc#_beifijci,Créer un Niveau de Test ou de Production>>.
 * _Insérer un Niveau existant_
 +
-Cette option devient disponible, si au moins un niveau existe pour ce Projet, qui n`'a pas encore été ajouté au Cycle de Vie. <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_insertexistinglevel,Insérer un niveau>>
+Cette option devient disponible, si au moins un niveau existe pour ce Projet, qui n`'a pas encore été ajouté au Cycle de vie. <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_insertexistinglevel,Insérer un Niveau>>
 
 [[_plifecyclemgt_insertexistinglevel]]
-==== Insérer un niveau 
+==== Insérer un Niveau existant
 (((Cycles de vie ,Niveaux ,Insérer))) 
 
 [NOTE]
 ====
-Vous pouvez insérer des Niveaux un par un.
+Vous pouvez insérer des Niveaux existants un par un.
 ====
 
 . Dans le panneau __Niveaux associés__, cliquez sur le lien __Insérer un Niveau existant__.
 +
 Un écrans similaire à celui-ci s'affichera: 
 +
-image::ProjAdmin-LifeCycles-InsertLevel-Popup.png[,538,232] 
+image::ProjAdmin-LifeCycles-InsertLevel-Popup.png[,513,210] 
 
 . À partir du tableau, sélectionnez le Niveau à insérer.
 +
 
 [NOTE]
 ====
-Si aucun Niveau n'est associé au Cycle de vie, vous ne pouvez insérer qu'un niveau de CONSTRUCTION.
+Ce lien est visible tant qu'il reste des Niveaux disponibles, lesquels ne sont pas encore insérés dans le Cycle de vie. 
+Si aucun Niveau n'est associé au Cycle de vie, vous ne pouvez insérer qu'un Niveau de CONSTRUCTION.
 ====
 
 . Déterminez sa position dans la séquence des Niveaux en sélectionnant le Niveau précédent à partir de la liste déroulante __Insérer après le Niveau__.
 +
 Si vous ne spécifiez pas la position, le Niveau sera ajouté après le dernier Niveau du même type.
 +
-Si vous tentez d'insérer un Niveau à une position non- autorisée, un avertissement s'affichera.
+Si vous tentez d'insérer un Niveau à une position non-autorisée, un message d'avertissement s'affichera.
 +
-image::ProjAdmin-LifeCycles-InsertLevel-WrongPosition.png[,620,224] 
+image::ProjAdmin-LifeCycles-InsertLevel-WrongPosition.png[,575,208] 
 +
 
 [NOTE]
@@ -378,15 +372,15 @@ Les boutons suivants sont également disponibles:
 
 . Déverrouiller un Niveau en utilisant la fonction __Auditer le Projet__.
 +
-Pour plus d'informations concernant l'audit d'un Projet, se référer à la section <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer un projet>>.
+Pour plus d'informations concernant l'audit d'un Projet, se référer à la section <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer le Projet>>.
 
 [[_lifecycles_changingorderlevels]]
-==== Modifier la séquence des niveaux 
+==== Modifier la séquence des Niveaux 
 (((Cycles de vie ,Niveaux ,Modifier la séquence))) 
  
 . Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 . Utilisez les liens image:icons/up.gif[,15,15] _Monter_ et image:icons/down.gif[,15,15] _Descendre_ devant le Niveau pour modifier la position du Niveau sélectionné dans la séquence des Niveaux définis. 
 +
@@ -394,37 +388,37 @@ Pour plus d'informations concernant l'audit d'un Projet, se référer à la sect
 [NOTE]
 ====
 Ces liens ne sont pas disponibles pour les Niveaux qui ne peuvent pas être repositionnés.
-Les Niveaux de test ne peuvent pas être positionnés après les Niveaux de production.
+Les Niveaux de test ne peuvent pas être positionnés après les Niveaux de Production.
 ====
 
 [[_plifecyclemgt_optionallevels]]
 ==== Rendre un Niveau optionnel ou obligatoire 
 (((Cycles de vie ,Niveaux ,Niveau optionnel)))  (((Cycles de vie ,Niveaux ,Niveau obligatoire))) 
 
-Rendre un Niveau optionnel signifie que le Niveau peut être ignoré dans le Cycle de Vie.
+Rendre un Niveau optionnel signifie que le Niveau peut être ignoré dans le Cycle de vie.
 
-Par exemple, considérons un Cycle de Vie pour lequel quatre Niveaux ont été définis: Construction, Test, Formation ou Production.
-Si vous mettez le Niveau de Formation comme optionnel, les Constructions pourront être délivrées directement en Production à partir du Niveau de Test sans devoir être délivrées sur le Niveau de Formation
+Par exemple, considérons un Cycle de vie pour lequel quatre Niveaux ont été définis: Construction, Test, Formation ou Production.
+Si vous mettez le Niveau de Formation comme optionnel, les Constructions pourront être délivrées directement en Production à partir du Niveau de Test sans devoir être délivrées sur le Niveau de Formation.
 
 . Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 . Sélectionnez le lien image:icons/optional.gif[,15,15] _Mettre optionnel_ devant le Niveau pour le mettre optionnel.
 +
 Le message suivant s`'affiche:
 +
-image::ProjAdmin-LifeCycles-Optional-Message.png[,524,63] 
+image::ProjAdmin-LifeCycles-Optional-Message.png[,517,59] 
 +
 
 [NOTE]
 ====
-Le Niveau rendu __Optionnel__, et tous les Niveaux suivants dans le Cycle de Vie, seront verrouillés.
+Le Niveau rendu __Optionnel__, et tous les Niveaux suivants dans le Cycle de vie, seront verrouillés.
 ====
 
 . Déverrouillez le Niveau en utilisant la fonction __Auditer le Projet__.
 +
-Voir <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer un projet>>
+Voir <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer le Projet>>
 +
 
 [NOTE]
@@ -434,10 +428,10 @@ Vous pouvez utiliser le lien _Mettre obligatoire_ pour mettre le Niveau à nouve
 ====
 
 [[_lifecyclemgt_enableoptionaldeploys]]
-==== Activer ou désactiver l'option "Déploiementsoptionnels"
+==== Activer ou désactiver l'option "Déploiements optionnels"
 
 Si vous activez la fonctionnalité _Déploiements
-optionnels_ pour un Niveau, vous pourrez ignorer des Déploiements pour des Environnements de déploiement spécifiques au moment où vous créez une Requête de niveau (Le Type d'action peut être (Re)Délivrer la construction ou Restaurer la construction). Voir également la section <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de requêtes de niveau>>.
+optionnels_ pour un Niveau, vous pourrez ignorer des Déploiements pour des Environnements de déploiement spécifiques au moment où vous créez une Requête de niveau (Le Type d'action peut être (Re)Délivrer la construction ou Restaurer la construction). Voir également la section <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de Requêtes de niveau>>.
 
 Ceci peut être utile, par exemple, dans le cas où vous exécutez une Requête de niveau avec plusieurs Déploiements et qu'un des Déploiements (non-bloquants) échoue.
 Cette option permet d'exécuter la Requête de niveau tout en ignorant le Déploiement échoué et de continuer à l'étape suivante dans le Cycle de vie. 
@@ -449,7 +443,7 @@ Si des Déploiements sont ignorés, le statut de la Requête de niveau sera éta
 
 . Accédez à l'écran __Aperçu des Cycles de vie__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_screen,Aperçu des cycles de vie>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_screen,Aperçu des Cycles de vie>>
 
 . Pour y accéder, cliquez sur l'icône image:icons/edit.gif[,15,15] _Modifier_ devant le Cycle de vie requis.
 
@@ -457,7 +451,7 @@ Si des Déploiements sont ignorés, le statut de la Requête de niveau sera éta
 
 . Déverrouiller un Niveau en utilisant la fonction __Auditer le Projet__.
 +
-Pour plus d'informations concernant l'audit d'un Projet, se référer à la section <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer un projet>>.
+Pour plus d'informations concernant l'audit d'un Projet, se référer à la section <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer le Projet>>.
 +
 
 [NOTE]
@@ -467,77 +461,76 @@ Vous pouvez utiliser le lien _Désactiver les Déploiements optionnels_ pour ren
 ====
 
 [[_plifecyclemgt_deletelifecycle]]
-=== Supprimer un cycle de vie 
+=== Supprimer un Cycle de vie 
 (((Cycles de vie ,Supprimer))) 
 
-. Accédez à l`'écran __Aperçu des Cycles de vie et niveaux associés__.
+. Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 . Sélectionnez le lien _Supprimer_ devant le Cycle de vie que vous voulez supprimer.
 +
 
 [NOTE]
 ====
-Ce lien n`'est pas disponible pour le Cycle de Vie BASE car il est impossible de supprimer le Cycle de Vie BASE.
+Ce lien n`'est pas disponible pour le Cycle de vie BASE car il est impossible de supprimer le Cycle de vie BASE.
 ====
 +
 L`'écran suivant s`'affiche:
 +
-image::ProjAdmin-LifeCycles-Delete.png[,443,213] 
+image::ProjAdmin-LifeCycles-Delete.png[,422,194] 
 
 . Cliquez sur _Supprimer_ pour confirmer la suppression.
 +
-Vous pouvez également utiliser le bouton _Précédent_ pour retourner à l`'écran précédent sans supprimer le Cycle de Vie.
+Vous pouvez également utiliser le bouton _Précédent_ pour retourner à l`'écran précédent sans supprimer le Cycle de vie.
 
-. Si vous essayez de supprimer un Cycle de Vie connecté à une Branche, l`'écran suivant s`'affiche:
+. Si vous essayez de supprimer un Cycle de vie connecté à une Branche, l`'écran suivant s`'affiche:
 +
-image::ProjAdmin-LifeCycles-Delete-Error.png[,535,374] 
+image::ProjAdmin-LifeCycles-Delete-Error.png[,507,341] 
 +
-Retirer le Cycle de Vie de la Branche avant de le supprimer. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Modifier les paramètres d`'une branche>>
+Retirer le Cycle de vie de la Branche avant de le supprimer. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,Modifier les paramètres d`'une Branche>>
 
 [[_lifecyclemgt_historyview]]
-=== Afficher l`'historique d`'un cycle de vie 
+=== Afficher l`'historique d`'un Cycle de vie 
 (((Cycles de vie ,Historique))) 
 
-. Accédez à l`'écran __Aperçu des Cycles de vie et niveaux associés__.
+. Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 . Pour y accéder, cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ devant le Cycle de vie pour en afficher l'__Aperçu de l'Historique__.
 +
-Pour une description détaillée de l`'__Aperçu de
-l`'Historique du Cycle de vie__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
+Pour une description détaillée de l`'__Aperçu de l`'Historique du Cycle de vie__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 +
 Cliquez sur le bouton _Précédent_ pour retourner à l`'écran précédent.
 
 [[_plifecyclemgt_editlevelsettings]]
-=== Modifier un niveau 
+=== Modifier un Niveau 
 (((Cycles de vie ,Niveaux ,Modifier))) 
 
 . Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
 . Dans le panneau __Niveaux associés__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant le Niveau requis.
 +
 L'écran _Modifier un Niveau_ s'affiche:
 +
-image::ProjAdmin-Levels-TestLevel-Edit.png[,444,248] 
+image::ProjAdmin-Levels-TestLevel-Edit.png[,423,221] 
 
 . Cliquez sur le bouton _Modifier_ dans la fenêtre __Informations du Niveau__. et, si nécessaire, modifiez les champs.
 +
 La fenêtre suivante s'affiche:
 +
-image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,454,482] 
+image::ProjAdmin-Levels-TestLevel-Edit_Popup.png[,437,407] 
 
-. Modifiez les paramètres dans le panneau __Modifier un niveau__.
+. Modifiez les paramètres dans le panneau __Modifier un Niveau__.
 +
-Pour une description détaillée des champs, se référer aux sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un niveau de construction>> et <<#_beifijci,Créer un niveau de test ou de production>>.
+Pour une description détaillée des champs, se référer aux sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un Niveau de Construction>> et <<#_beifijci,Créer un Niveau de Test ou de Production>>.
 
 . Modifiez les paramètres de Pré- et/ou Post-approbation.
 +
-Pour une description détaillée des champs, se référer à la section <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Les approbations>>.
+Pour une description détaillée des champs, se référer à la section <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Les Approbations>>.
 
 . Modifiez les phases.
 +
@@ -556,14 +549,14 @@ Les boutons suivants sont également disponibles:
 
 [NOTE]
 ====
-Retirer un niveau du Cycle de Vie ne le supprime pas du projet.
-Le niveau reste disponible pour être inséré dans n`'importe quel Cycle de Vie.
-Si vous voulez supprimer un Niveau, se référer à la section <<ProjAdm_Levels.adoc#_plevelenvmgt_deletelevel,Supprimer un niveau>>.
+Retirer un niveau du Cycle de vie ne le supprime pas du projet.
+Le niveau reste disponible pour être inséré dans n`'importe quel Cycle de vie.
+Si vous voulez supprimer un Niveau, se référer à la section <<ProjAdm_Levels.adoc#_plevelenvmgt_deletelevel,Supprimer un Niveau>>.
 ====
 
-. Accédez à l`'écran __Aperçu des Cycles de vie et niveaux associés__.
+. Accédez à l`'écran __Aperçu des Cycles de vie et Niveaux associés__.
 +
-<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des cycles de vie et des niveaux associés>>
+<<ProjAdm_LifeCycles.adoc#_plifecyclemgt_accessing,Écran des Cycles de vie et des Niveaux associés>>
 
  . Pour y accéder, cliquez sur l'icône image:icons/edit.gif[,15,15] _Modifier_ devant le Cycle de vie requis.
 
@@ -574,4 +567,4 @@ Si vous voulez supprimer un Niveau, se référer à la section <<ProjAdm_Levels.
 Le Niveau est retiré du Cycle de vie, mais il n'est pas supprimé.
 Vous pouvez réinsérer le Niveau à tout moment.
 +
-Pour supprimer le Niveau de façon permanente, se référer à la section <<ProjAdm_Levels.adoc#_plevelenvmgt_deletelevel,Supprimer un niveau>>.
+Pour supprimer le Niveau de façon permanente, se référer à la section <<ProjAdm_Levels.adoc#_plevelenvmgt_deletelevel,Supprimer un Niveau>>.

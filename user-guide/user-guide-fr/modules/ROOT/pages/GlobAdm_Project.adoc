@@ -13,22 +13,24 @@ Le menu _Projet_ est uniquement disponible aux Utilisateurs ayant des droits d`'
 
 Les procédures suivantes décrivent les options du menu Projet:
 
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Créer un projet dans IKAN ALM>>
-* <<GlobAdm_Project.adoc#_globadm_projectclone,Cloner un projet existant>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Créer un Projet>>
+* <<GlobAdm_Project.adoc#_globadm_projectclone,Cloner un Projet existant>>
+* <<GlobAdm_Project.adoc#_globadm_projectexport,Exporter un Projet existant>>
+* <<GlobAdm_Project.adoc#_globadm_projectimport,Importer un Projet>>
 
 [[_globadm_projectcreate]]
-== Créer un projet dans IKAN ALM
-(((Créer un projet dans IKAN ALM)))  (((Créer un projet dans IKAN ALM ,Édition Versions)))  (((Créer un projet dans IKAN ALM ,Paquets)))  (((Projets ,Édition Versions)))  (((Projets ,Paquets))) 
+== Créer un Projet
+(((Créer un Projet IKAN ALM)))  (((Créer un Pprojet IKAN ALM ,Édition Versions)))  (((Créer un Projet IKAN ALM ,Gestion Paquets)))  (((Projets ,Édition Versions)))  (((Projets ,Gestion Paquets))) 
 
 Il existe deux types de projets:
 
-* Projets de type "`Édition Versions`": IKAN ALM utilisera la structure existante dans le RCV pour que les objets à extraire soient récupérés automatiquement au moment de la Construction, en fonction du type de construction défini dans la Branche.
-* Projets de type "`Paquets`": ce concept permet de travailler avec des fichiers isolés du système RCV. Les objets doivent être ajoutés manuellement dans une structure de paquet créée dans IKAN ALM avant le lancement du processus de Construction.
+* Projets de type "`Édition versions`": IKAN ALM utilisera la structure existante dans le RCV pour que les objets à extraire soient récupérés automatiquement au moment de la Construction, en fonction du type de construction défini dans la Branche.
+* Projets de type "`Gestion Paquets`": ce concept permet de travailler avec des fichiers isolés du système RCV. Les objets doivent être ajoutés manuellement dans une structure de paquet créée dans IKAN ALM avant le lancement du processus de Construction.
 
 
 [NOTE]
 ====
-Les Projets de type Paquets ne doivent être connectés qu`'à un Référentiel de type Subversion, TFVC ou ClearCase.
+Les Projets de type Paquets ne doivent être connectés qu`'à un Référentiel de type Subversion, TFVC ou Git.
 Les autres types de RCV ne supportent pas de travailler avec des fichiers isolés et, par conséquent, de travailler avec des Paquets en IKAN ALM.
 ====
 
@@ -36,7 +38,7 @@ Les autres types de RCV ne supportent pas de travailler avec des fichiers isolé
 +
 L`'écran suivant s`'affiche: 
 +
-image::GlobAdmin-Project-Create.png[,1037,553] 
+image::GlobAdmin-Project-Create.png[,1211,632] 
 . Saisissez les champs dans les différentes sections.
 +
 Les champs marqués d`'un astérisque rouge doivent être obligatoirement remplis.
@@ -44,7 +46,7 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 * Paramètres du Projet
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -52,8 +54,7 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 |Type de Projet
 |Sélectionnez le type de Projet que vous voulez créer: Édition versions ou Paquets.
 
-En fonction du type de Projet sélectionné, vous pourrez modifier d'autres champs dans le panneau __Paramètres de
-la Branche Principale__. 
+En fonction du type de Projet sélectionné, vous pourrez modifier d'autres champs dans le panneau __Paramètres de la Branche Principale__. 
 
 |Nom
 |Saisissez dans ce champ la dénomination du nouveau Projet.
@@ -68,8 +69,7 @@ la Branche Principale__.
 |Saisissez dans ce champ la dénomination du Projet dans le RCV qui correspond au Projet dans IKAN ALM.
 Il est possible que la dénomination du Projet dans le RCV ne soit pas identique à la dénomination du Projet dans IKAN ALM.
 
-Vous pouvez vérifier si le Projet existe bien dans le Référentiel en cliquant sur le bouton __Vérifier le nom du Projet dans
-le RCV__. 
+Vous pouvez vérifier si le Projet existe bien dans le Référentiel en cliquant sur le bouton __Vérifier le nom du Projet dans le RCV__. 
 
 _Note:_ Ce champ reste vide pour des RCVs Subversion ayant une structure "orientée projet unique" et pour les RCVs Git.
 
@@ -88,16 +88,6 @@ Pour plus d'informations concernant les Systèmes de Suivi des Incidents, se ré
 Si un Système de Suivi des Incidents est sélectionné, IKAN ALM créera automatiquement une Phase de Niveau de Suivi des Incidents au moment de la création d`'un nouveau Niveau pour le Projet.
 
 Ce champ n`'est visible que si un Système de Suivi des Incidents externe est défini dans IKAN ALM. <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
-
-|Type outil de construction
-|Sélectionnez, à partir du menu déroulant, le Type d`'Outil de Construction (Ant, Gradle, NAnt ou Maven 2) à utiliser pour ce projet dans IKAN ALM.
-
-Seuls les Outils de script du type d'outil de construction sélectionné, peuvent être associés aux Environnements de construction créés dans le Projet.
-
-|Type outil de déploiement
-|Sélectionnez, à partir du menu déroulant, le Type d`'Outil de Déploiement (Ant, Gradle, NAnt ou Maven 2) à utiliser pour ce projet dans IKAN ALM.
-
-Seuls les Outils de script du type d'outil de déploiement sélectionné, peuvent être associés aux Environnements de déploiement créés dans le Projet.
 
 |Script de construction
 |Saisissez dans ce champ la dénomination du script de construction à utiliser pour ce Projet dans IKAN ALM.
@@ -120,7 +110,7 @@ Ce script sera utilisé par défaut pour l'exécution de Déploiements dans le P
 
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -214,14 +204,14 @@ Elles ont toutes le format _$\{name}:_
 * $\{buildNumber}: Cette variable donne le numéro de la Construction afin d`'associer la Construction à sa Balise.
 * $\{projectName}: Cette variable donne la dénomination du Projet IKAN ALM.
 * $\{vcrProjectName}: Cette variable donne la dénomination RCV du Projet.
-* $\{dateTime(dateformat)}: Cette variable donne le timestamp de l`'action de construction dans le format indiqué. _yyyy-MM-dd_ est un format valide. Pour d`'autres formats valides, se référer à http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html[http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html,window=_blank].
+* $\{dateTime(dateformat)}: Cette variable donne le timestamp de l`'action de construction dans le format indiqué. _yyyy-MM-dd_ est un format valide. Pour d`'autres formats valides, se référer à https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html,window=_blank].
 * $\{packageName}: Cette variable donne le Nom du Paquet associé au Niveau, au moment de la Construction (uniquement utilisée pour des Projets de type __Paquets__). 
 
 |Branche Secondaire dans le RCV
 |Ce champ contient le Nom de Branche dans le RCV.
 Le même identifiant doit être déclaré dans le RCV associé au Projet.
 
-Ce champ est requis pour les projets ClearCase UCM (apparié à la Branche d'Intégration) ou Team Foundation (apparié à l'ID Branche Principale). S`'il s`'agit d`'une Branche Principale appartenant à d`'autres types de projet RCV, ce champ reste vide.
+Ce champ est requis pour les projets Team Foundation (apparié à l'ID Branche Principale). S`'il s`'agit d`'une Branche Principale appartenant à d`'autres types de projet RCV, ce champ reste vide.
 |===
 +
 Le tableau suivant montre quelques exemples de modèles de balise et les Balises qui en résultent:
@@ -272,21 +262,19 @@ __Info: Le Nom de Projet est présent dans le RCV.__
 +
 Si le test échoue, l`'écran suivant s`'affiche:
 +
-image::GlobAdmin-Project-Create-ErrorProjName.png[,736,465] 
+image::GlobAdmin-Project-Create-ErrorProjName.png[,714,441] 
 +
 L`'écran principal affiche le message: __ERREUR:
-Le nom du Projet RCV n`'est pas défini dans le référentiel de contrôle
-de version__.
+Le nom du Projet RCV n`'est pas défini dans le Référentiel de contrôle de version__.
 +
 Corrigez les erreurs spécifiées dans la trace de pile et refaites le test.
 . Si les contrôles se terminent correctement, cliquez sur le bouton __Créer__.
 +
-Le Projet est créé et l'écran _Informations sur
-le Projet_ s'affichera dans le contexte de la gestion des projets.
+Le Projet est créé et l'écran _Informations sur le Projet_ s'affichera dans le contexte de la gestion des projets.
 Vous pouvez gérer le nouveau Projet en créant des Niveaux etc.
 Pour plus d`'informations, se référer à la section <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>.
 +
-image::GlobAdmin-Project-Create-EditProject.png[,626,755] 
+image::GlobAdmin-Project-Create-EditProject.png[,600,738] 
 +
 En-dessous du panneau __Informations sur le Projet__, les liens et boutons suivants sont disponibles:
 
@@ -311,28 +299,28 @@ a|_Sujets apparentés:_
 |===
 
 [[_globadm_projectclone]]
-== Cloner un projet existant 
-(((Projets ,Cloner un projet existant)))  (((Cloner un projet existant))) 
+== Cloner un Projet existant 
+(((Projets ,Cloner un Projet existant)))  (((Cloner un Projet existant))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Projet > Cloner un Projet existant__.
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-Project-Clone.png[,947,416] 
+image::GlobAdmin-Project-Clone.png[,1243,523] 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
-La liste des éléments dans l'aperçu est synchronisée automatiquement en fonction des critères sélectionnés.
+La liste des éléments dans l'aperçu est automatiquement synchronisée en fonction des critères sélectionnés.
 +
 Vous pouvez également:
 
 * cliquer sur le lien _Montrer/Cacher les options avancées_ pour afficher ou masquer tous les critères de recherche disponibles,
 * cliquer sur le lien _Rechercher_ pour synchroniser la liste en fonction des critères de recherche actuels,
 * cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs.
-. Ensuite, cliquez sur le lien image:icons/clone.gif[,15,15] _cloner_ devant le Projet requis.
+. Ensuite, cliquez sur le lien image:icons/clone.gif[,15,15] _Cloner_ devant le Projet requis.
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdmin-Project-Clone-Clone.png[,787,774] 
+image::GlobAdmin-Project-Clone-Clone.png[,776,761] 
 . Complétez ou modifiez les champs disponibles.
 +
 Les champs suivants sont disponibles:
@@ -365,14 +353,6 @@ Si nécessaire, vous pouvez sélectionner un autre Système de Suivi des Inciden
 
 |Type de Projet
 |Le type de Projet utilisé pour le Projet cloné est affiché et ne peut pas être modifié.
-
-|Type outil de construction
-|Par défaut, le Type d`'Outil de Déploiement utilisé pour le Projet cloné est affiché.
-Si nécessaire vous pouvez sélectionner un autre Outil de Construction à partir du menu déroulant.
-
-|Type outil de déploiement
-|Par défaut, le Type d`'Outil de Déploiement utilisé pour le Projet cloné est affiché.
-Si nécessaire vous pouvez sélectionner un autre Outil de Déploiement à partir du menu déroulant.
 
 |Script de construction
 |Par défaut, le script de construction utilisé pour le Projet cloné est affiché.
@@ -437,4 +417,70 @@ Vérifiez si c`'est souhaitable.
 
 . Auditez le Projet pour le déverrouiller.
 +
-Voir <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer un projet>>
+Voir <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer un Projet>>
+
+
+[[_globadm_projectexport]]
+== Exporter un Projet existant 
+
+. Dans le contexte de l'Administration globale, sélectionnez __Projet > Exporter un Projet_.
++
+L`'écran suivant s`'affiche:
++
+image::GlobAdmin-Project-Export.png[,1188,473]
++
+. Définir les critères de recherche requis sur le panneau de recherche.
++
+La liste des éléments dans le panneau d'Aperçu des Projets sera automatiquement synchronisée en fonction des critères sélectionnés.
++
+Vous pouvez aussi:
++
+* cliquer sur le lien _Montrer/Cacher les options avancées_ pour afficher ou cacher tous les critères de recherche disponibles,
+* cliquer sur le lien _Rechercher_ pour synchroniser la liste basée les critères de recherche actuels,
+* cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs de recherche.
+
+. Ensuite, cliquez sur le lien image:icons/Phase_Export.png[,15,15] _Exporter_ en face du Projet requis.
++
+L`'écran de dialogue suivant s`'affiche:
++
+image::GlobAdmin-Project-Export-Dialog.png[,408,141]
++
+. Sélectionnez le format de votre choix: _format XML (xml)_ or _format JSON (json)_ et cliquer sur _Exporter le Projet_. Le navigateur web récupérera le fichier et alors le sauvegardera automatiquement ou demandera où il devrait être sauvegardé.
++
+. Le fichier XML ou JSON peut être facilement édité avec un éditeur de texte pour réaliser les modifications nécessaires.
+
+[NOTE]
+====
+Quand un fichier de Projet exporté est édité, il faut toujours changer le nom du Projet, sinon IKAN ALM refusera d'Importer un Projet quand un Projet avec le même nom existe déjà.
+====
+
+
+[[_globadm_projectimport]]
+== Importer un Projet 
+
+. Dans le contexte de l'Administration globale, sélectionnez __Projet > Importer un Projet_.
++
+L`'écran suivant s`'affiche:
++
+image::GlobAdmin-Project-Import-Browse.png[,502,138]
++
+. Cliquez sur _Choisir un fichier_ dans le panneau Importer un Projet. Ensuite, le navigateur web demandera de sélectionner un fichier depuis la machine locale. Le format du fichier doit être XML ou JSON. Si le chargement est réussi l'écran suivant s'affiche:
++
+image::GlobAdmin-Project-Import-Upload.png[,502,159]
++
+. Ensuite, pressez le bouton _Importer_ pour importer le fichier de Projet chargé dans IKAN ALM.
++
+. Quand le processus d'import sera fini, IKAN ALM affichera un message d'information (si réussi) ou un message d'erreur. Le Rapport de validation dans le panneau d'Import de Projet fournit davantage de détails sur le résultat.
++
+** Exemple: Information
++
+image::GlobAdmin-Project-Import-Successful.png[,924,420]
++
+** Exemple: Erreur
++
+image::GlobAdmin-Project-Import-Error.png[,927,512]
++
+. Si réussi, pressez le lien _Modifier le Projet <nom-de-projet-importé>_ dans le panneau Importer un Projet pour aller vers l'écran d'Informations sur le Projet pour le nouveau Projet importé.
+
+
+

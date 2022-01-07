@@ -6,17 +6,16 @@
 = Groupes de Paquets de Construction 
 (((Bureau ,Groupes de Paquets de Construction)))  (((Groupes de Paquets de Construction))) 
 
-Un Groupe de Paquets de Construction établit la relation entre des Paquets permettant de transférer les dernières Constructions de tous ces Paquets, ou de Paquets spécifiques, d'un tel Groupe avant l'exécution du processus de Construction d'un Paquet.
+Un Groupe de Paquets de Construction établit la relation entre des Paquets permettant de transférer les dernières Constructions de tous ces Paquets, ou de Paquets spécifiques, dudit Groupe avant l'exécution du processus de Construction d'un Paquet.
 
 Cela peut, par exemple, être utile pour un Cycle de vie Mainframe pour lequel les Copybooks peuvent être modifiés dans un Paquet et utilisés par des programmes dans d'autres Paquets.
 Si ces Paquets sont rassemblés dans un Groupe de Paquets de Construction, les (versions correctes des) Copybooks seront transportées au moment de la compilation.
 
 [NOTE]
 ====
-Ce chapitre décrira comment créer et gérer les Groupe de Paquets de Construction.
+Ce chapitre décrira comment créer et gérer les Groupes de Paquets de Construction.
 
-Pour transférer les Paquets appartenant à un Groupe de Paquets de Construction au moment de l'exécution de la Construction, une nouvelle Phase de noyau a été ajoutée, notamment la Phase __Transfert
-des résultats du Groupe de Paquets__.
+Pour transférer les Paquets appartenant à un Groupe de Paquets de Construction au moment de l'exécution de la Construction, une nouvelle Phase dite __Transfert des résultats du Groupe de Paquets__ a été ajoutée.
 Cette Phase doit être insérée dans le flux de travail de l'Environnement de Construction.
 
 Pour des informations plus détaillées, se référer à la description de cette Phase dans l'appendice <<App_Phases.adoc#_phases_generalinformation,Phases - Informations générales>>.
@@ -41,12 +40,12 @@ Se référer aux procédures suivantes pour plus d`'information:
 +
 L'écran _Créer un Groupe de Paquets de Construction_ s'affiche.
 +
-image::Desktop-PackageGoups-Create.png[,628,352] 
+image::Desktop-PackageGoups-Create.png[,575,312] 
 +
 . Saisissez les champs. Les champs marqués d`'un astérisque rouge doivent être obligatoirement remplis.
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Champ
 | Description
@@ -64,13 +63,13 @@ a|Indiquez si la Phase "Transfert des résultats du Groupe de Paquets" doit réc
 
 * _Oui_
 +
-Si vous établissez cette option à __Oui__, tous les Résultats de Construction des Paquets connectés seront récupérés au moment où l'exécution de construction d'un Paquet appartenant au Groupe de Paquets de Construction est effectué.
+Si vous établissez cette option à __Oui__, tous les Résultats de Construction des Paquets connectés seront récupérés au moment où l'exécution de la construction d'un Paquet appartenant au Groupe de Paquets de Construction est effectué.
 Dans ce cas, les Niveaux de dépendance des Paquets ne seront pas pris en considération.
 * _Non_
 +
 Valeur par défaut.
 +
-Si vous établissez cette option à __Oui__, seuls les Résultats de Construction des Paquets connectés ayant un Niveau de dépendance inférieur seront récupérés au moment de l'exécution de construction d'un Paquet appartenant au Groupe de Paquets de Construction.
+Si vous établissez cette option à __No__, seuls les Résultats de Construction des Paquets connectés ayant un Niveau de dépendance inférieur seront récupérés au moment de l'exécution de la construction d'un Paquet appartenant au Groupe de Paquets de Construction.
 +
 Le Niveau de dépendance est spécifié au moment où le Paquet est ajouté au Groupe.
 Pour plus d'informations concernant l'ajout de Paquets et la gestion de l'ordre des Paquets, se référer à la section <<Desktop_PackageGroups.adoc#_desktop_packagegroups_addpackage,Ajouter un Paquet à un Groupe de Paquets de Construction>>.
@@ -80,7 +79,7 @@ Pour plus d'informations concernant l'ajout de Paquets et la gestion de l'ordre 
 +
 L'écran _Modifier un Groupe de Paquets de Construction_ s'affiche.
 +
-image::Desktop-PackageGoups-Create2.png[,840,421] 
+image::Desktop-PackageGoups-Create2.png[,821,396] 
 +
 . Ensuite, vous pouvez ajouter des Paquets en utilisant le lien __Ajouter un Paquet__.
 +
@@ -95,45 +94,37 @@ Pour plus d`'informations, se référer à la section <<Desktop_PackageGroups.ad
 +
 L'écran _Aperçu des Groupes de Paquets de Construction_ s'affiche.
 +
-image::Desktop-PackageGoups-Overview.png[,976,385] 
+image::Desktop-PackageGoups-Overview.png[,952,365] 
 +
 . Utilisez les critères de recherche dans le panneau de recherche _Groupes de Paquets de Construction_ pour n'afficher que les Groupes de Paquets de Construction qui vous intéressent.
 +
-image::Desktop-PackageGoups-Overview-SearchPanel.png[,972,125] 
+image::Desktop-PackageGoups-Overview-SearchPanel.png[,947,102] 
 +
 Les options suivantes sont disponibles:
 
-* Montrer les options avancées: utilisez cette option pour afficher tous les critères de recherche disponibles.
-* Rechercher: en principe, il n'est pas nécessaire de cliquer sur l'option __Rechercher__. Les résultats dans l'aperçu seront automatiquement synchronisés en fonction des critères de recherche sélectionnés.
-* Réinitialiser la recherche: utilisez cette option pour supprimer tous les critères de recherche et pour afficher la liste de tous les éléments.
-* Sélectionnez un Filtre existant à partir de la liste déroulante.
-* Sauvegarder le Filtre: Utilisez cette option pour sauvegarder les critères de recherche actuels pour une utilisation ultérieure.
+* _Rechercher_ en principe, il n'est pas nécessaire de cliquer sur l'option __Rechercher__. Les résultats dans l'aperçu seront automatiquement synchronisés en fonction des critères de recherche sélectionnés.
+* _Réinitialiser la recherche_ utilisez cette option pour supprimer tous les critères de recherche et pour afficher la liste de tous les éléments.
 
-+
-Pour plus d'informations concernant l'utilisation des panneaux de recherche et des Filtres, se référer aux sections <<UserInterface.adoc#_babcjedaj8,Les panneaux de recherche>> et <<Desktop_PersonalSettings.adoc#_desktop_searchfilters,Définir des Filtres de recherche>>.
-
-. En fonction de vos droits d'accès, les liens suivants peuvent être disponibles dans le panneau __Aperçu des Groupes de Paquets de Construction__:
+. En fonction de vos droits d'accès, les liens/icônes suivants peuvent être disponibles dans le panneau __Aperçu des Groupes de Paquets de Construction__:
 +
 
-[cols="1,1", frame="topbot"]
+[cols="1,3", frame="topbot", options="header"]
 |===
+| Icône
+| Description
 
-|image:icons/edit.gif[,15,15] __
-|Modifier
+|image:icons/edit.gif[,15,15]  Modifier
+|Cette option permet de modifier le Groupe de Paquets de Construction et/ou les Paquets y étant associés. <<Desktop_PackageGroups.adoc#_desktop_editpackagegroup,Modifier la définition d`'un Groupe de Paquets de Construction>>
 
-Cette option permet de modifier le Groupe de Paquets de Construction et/ou les Paquets y étant associés. <<Desktop_PackageGroups.adoc#_desktop_editpackagegroup,Modifier la définition d`'un Groupe de Paquets de Construction>>
+|image:icons/hide.gif[,15,15]  Cacher 
 
-|image:icons/hide.gif[,15,15]  / image:icons/show.gif[,15,15] 
-|Cacher / Montrer
-
-Cette option permet de cacher/montrer le Groupe de Paquets de Construction sélectionné.
+image:icons/show.gif[,15,15]  Montrer
+|Cette option permet de cacher/montrer le Groupe de Paquets de Construction sélectionné.
 
 <<Desktop_PackageGroups.adoc#_desktop_hideshowpackagegroup,Cacher/montrer un Groupe de Paquets de Construction>>
 
-|image:icons/history.gif[,15,15] 
-|Historique
-
-Cette option permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives au Groupe de Paquets de Construction.
+|image:icons/history.gif[,15,15]  Historique
+|Cette option permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives au Groupe de Paquets de Construction.
 
 <<Desktop_PackageGroups.adoc#_desktop_viewpackagegrouphistory,Afficher l'Historique des Groupes de Paquets de Construction>>
 |===
@@ -156,13 +147,13 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 +
 L`'écran suivant s`'affiche:
 +
-image::Desktop-PackageGoups-Edit.png[,843,676] 
+image::Desktop-PackageGoups-Edit.png[,822,656] 
 
 . Cliquez sur le bouton _Modifier_ si vous devez modifier la définition du Groupe de Paquets de Construction.
 +
 La fenêtre suivante s'affiche:
 +
-image::Desktop-PackageGoups-Edit_Popup.png[,577,283] 
+image::Desktop-PackageGoups-Edit_Popup.png[,536,252] 
 +
 Modifiez la définition du Groupe de Paquets de Construction comme requis et cliquez sur le bouton __Sauvegarder__.
 +
@@ -181,7 +172,7 @@ Pour plus d`'informations, se référer à la section <<Desktop_PackageGroups.ad
 +
 La fenêtre suivante s`'affiche. 
 +
-image::Desktop-PackageGoups-AddPackage.png[,645,447] 
+image::Desktop-PackageGoups-AddPackage.png[,692,442] 
 +
 . Rechercher le Paquet que vous voulez ajouter.
 +
@@ -190,7 +181,7 @@ Pour sélectionner le _Paquet_ requis, vous pouvez rechercher le Paquet en utili
 Les critères de recherche suivants sont disponibles.
 +
 
-[cols="1,1", frame="none", options="header"]
+[cols="1,2", frame="none", options="header"]
 |===
 | Champ
 | Description
@@ -232,15 +223,13 @@ Les critères de recherche suivants sont disponibles.
 [NOTE]
 ====
 Un Paquet ne peut appartenir qu'à un seul Groupe de Paquets de Construction.
-Si vous essayez d'ajouter un Paquet appartenant déjà à un autre Groupe de Paquets de Construction, un message d'erreur sera affiché.
-Par exemple: Un Paquet ne peut appartenir qu'à un seul Groupe de Paquets de Construction.
-Le Paquet 'xyz' appartient déjà au Groupe de Paquets de Construction 'zyx'.
+Si vous essayez d'ajouter un Paquet appartenant déjà à un autre Groupe de Paquets de Construction, un message d'erreur sera affiché: "Un Paquet ne peut appartenir qu'à un seul Groupe de Paquets de Construction. Le Paquet 'xyz' appartient déjà au Groupe de Paquets de Construction 'zyx'."
 ====
 
 . Cliquez sur le bouton _Ajouter_ pour ajouter le Paquet.
 +
 Le Paquet sera ajouté à la fin de la liste.
-Vous pouvez modifier l'ordre des Paquets en modifiant le Niveau de dépendance, ou en déplaçant le Paquet à la position requise, comme expliqué dans les étapes 4 et 5.
+Vous pouvez modifier l'ordre des Paquets en modifiant le Niveau de dépendance, ou en déplaçant le Paquet à la position requise.
 +
 Un seul Paquet peut être ajouté à la fois.
 Répétez cette action pour tous les Paquets que voulez ajouter.
@@ -263,12 +252,12 @@ des résultats du Groupe de Paquets_ ne récupérera que les derniers résultats
 [NOTE]
 ====
 Exception: si l'option _Récupération de
-tous les Résultats de Construction_ est établie à __Oui__, tous les Résultats de Construction seront récupérés quel que soit leur Niveau de dépendance. <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Créer un Groupe de Paquets de Construction>>
+tous les Résultats de Construction_ est établie à __Oui__, tous les Résultats de Construction seront récupérés quel que soit leur Niveau de dépendance. Voir :<<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Créer un Groupe de Paquets de Construction>>
 ====
 +
 Modifiez le Niveau de dépendance en sélectionnant le Niveau approprié à partir du menu déroulant.
 +
-image::Desktop-PackageGoups-ModifyDependencyLevel.png[,864,381] 
+image::Desktop-PackageGoups-ModifyDependencyLevel.png[,818,333] 
 
 . Modifier l`'ordre des Paquets.
 +
@@ -286,19 +275,19 @@ Pendant le déplacement d`'un élément, un bandeau vert indique un positionneme
 +
 Exemple d`'un déplacement en cours:
 +
-image::Desktop-PackageGoups-MovePackage.png[,984,372] 
+image::Desktop-PackageGoups-MovePackage.png[,897,339] 
 +
 
 [NOTE]
 ====
-Si vous modifiez l`'ordre des Paquets, le Niveau de dépendance pourrait modifier également;
+Si vous modifiez l`'ordre des Paquets, le Niveau de dépendance pourrait être modifié également.
 ====
 
 . Afficher les paramètres d'un Paquet.
 +
 .. Pour afficher les paramètres d'un Paquet associé, cliquez sur le lien image:icons/view.gif[,15,15] _Afficher_ dans la colonne des _Actions_ du Paquet concerné.
 +
-L'écran _Aperçu du Paquet_ s'affiche. <<Desktop_Packages.adoc#_desktop_viewpackage,Afficher les paramètres d`'un paquet>>
+L'écran _Aperçu du Paquet_ s'affiche. Voir: <<Desktop_Packages.adoc#_desktop_viewpackage,Afficher les Paramètres d`'un Paquet>>
 
 .. Cliquez sur le bouton _Précédent_ pour retourner à l'écran __Modifier un Groupe de Paquets de Construction__.
 
@@ -307,7 +296,7 @@ L'écran _Aperçu du Paquet_ s'affiche. <<Desktop_Packages.adoc#_desktop_viewpac
 .. Pour modifier les paramètres d'un Paquet associé, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ dans la colonne des _Actions_ du Paquet concerné.
 +
 L'écran _Modifier un Paquet_ s'affiche.
-Pour plus d'informations concernant la modification d'une définition de Paquet, se référer à la section <<Desktop_Packages.adoc#_desktop_editpackage,Modifier la définition d`'un paquet>>.
+Pour plus d'informations concernant la modification d'une définition de Paquet, se référer à la section <<Desktop_Packages.adoc#_desktop_editpackage,Modifier la définition d`'un Paquet>>.
 
 .. Cliquez sur le bouton _Précédent_ pour retourner à l'écran _Modifier un Groupe de Paquets de Construction_.
 
@@ -319,7 +308,7 @@ Pour plus d'informations concernant la modification d'une définition de Paquet,
 +
 Une fenêtre s'affiche vous demandant de confirmer le retrait.
 +
-image::Desktop-PackageGoups-ConfirmRemoval.png[,454,158] 
+image::Desktop-PackageGoups-ConfirmRemoval.png[,413,120] 
 
 . Cliquez sur _Oui_ pour confirmer le retrait.
 +
@@ -328,7 +317,7 @@ Vous pouvez également cliquer sur _Non_ pour retourner à l`'écran précédent
 
 [NOTE]
 ====
-Si vous retirer un des Paquets, le Niveau de dépendance des autres Paquets changera également.
+Si vous retirer un des Paquets, le Niveau de dépendance des autres Paquets changera automatiquement.
 ====
 
 [[_desktop_hideshowpackagegroup]]

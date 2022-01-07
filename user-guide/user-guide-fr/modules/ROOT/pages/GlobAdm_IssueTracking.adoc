@@ -6,13 +6,13 @@
 = Suivi des Incidents 
 (((Administration globale ,Suivi des Incidents)))  (((Suivi des Incidents))) 
 
-La fonctionnalité de Suivi des Incidents d`'IKAN ALM permet de relier des Incidents d`'un Système de Suivi des Incidents externe à une Requête de Niveau IKAN ALM.
+La fonctionnalité de Suivi des Incidents d`'IKAN ALM permet de relier des Incidents d`'un Système de Suivi des Incidents externe à une Requête de niveau IKAN ALM.
 
-Les Incidents peuvent être reliés à une Requête de Niveau selon l`'une des manières suivantes:
+Les Incidents peuvent être reliés à une Requête de niveau selon l`'une des manières suivantes:
 
-* via une recherche automatique d`'Incidents traités dans les commentaires fournis par les développeurs lors des processus d`'enregistrement (commit) et de chargement (check in) des codes Sources dans le RCV. Cette recherche automatique se fait dans une phase séparée pendant l`'exécution d`'une Requête de Niveau de Construction et se base sur une expression régulière décrivant le format du numéro de l`'Incident. Pour le moment, cette fonctionnalité est uniquement supportée pour les Référentiels de Contrôle de Version Subversion, CVS ou Microsoft Team Foundation. 
+* via une recherche automatique d`'Incidents traités dans les commentaires fournis par les développeurs lors des processus d`'enregistrement (commit) et de chargement (check in) des codes Sources dans le RCV. Cette recherche automatique se fait dans une phase séparée pendant l`'exécution d`'une Requête de niveau de Construction et se base sur une expression régulière décrivant le format du numéro de l`'Incident.
 * via l`'énumération des Incidents résolus au moment de délivrer vers les Niveaux de Test/Production, facilitant ainsi la génération de Notes de Réalisation.
-* en ajoutant manuellement l`'Incident à une Requête de Niveau réussie dans l`'écran __Informations détaillées__.
+* en ajoutant manuellement l`'Incident à une Requête de niveau réussie dans l`'écran __Informations détaillées__.
 
 
 [NOTE]
@@ -21,13 +21,13 @@ Les Incidents peuvent être reliés à une Requête de Niveau selon l`'une des m
 Un lien permettant de passer directement de l`'Incident dans IKAN ALM vers l`'Incident dans l`'outil de Suivi des Incidents externe est disponible si l`'outil externe dispose d`'une interface Web.
 ====
 
-En plus de cette fonctionnalité fondamentale de Suivi des Incidents, IKAN ALM garantit une intégration encore plus étroite avec Atlassian JIRA, HP Quality Center, Microsoft Team Foundation et CollabNet TeamForge grâce aux fonctionnalités additionnelles suivantes: 
+En plus de cette fonctionnalité fondamentale de Suivi des Incidents, IKAN ALM garantit une intégration encore plus étroite avec Atlassian JIRA, Microfocus ALM, Microsoft Team Foundation et GitHub grâce aux fonctionnalités additionnelles suivantes: 
 
 * la possibilité de tester la connexion avec le Système de Suivi des Incidents au moment de la création ou de la modification d`'une définition de Système de Suivi des Incidents.
-* la synchronisation automatique des incidents traités dans le Système de Suivi des Incidents: IKAN ALM récupère des informations additionnelles, telles que la description, le propriétaire, la priorité, 
- . de l`'Incident JIRA, du Defect HP Quality Center, de l'élément de travail Team Foundation ou de l`'Artefact TeamForge correspondant. Ces informations seront synchronisées chaque fois que le résultat de construction évoluera dans le Cycle de Vie IKAN ALM.
-* une synchronisation manuelle des incidents reliés à une Requête de Niveau via l`'écran __Informations détaillées__.
-* la possibilité d`'ajouter, suite à une Requête de Niveau réussie, un commentaire à l`'Incident dans JIRA, au Defect dans HP Quality Center, à l`'Artefact dans TeamForge ou à l'élément de travail Team Foundation. Ce commentaire contiendra un lien vers la Requête de Niveau en IKAN ALM.
+* la synchronisation automatique des Incidents traités dans le Système de Suivi des Incidents: IKAN ALM récupère des informations additionnelles, telles que la description, le propriétaire, la priorité, 
+ . de l`'Incident JIRA, du Defect Microfocus ALM, de l'élément de travail Team Foundation ou de l`'Incident GitHub correspondant. Ces informations seront synchronisées chaque fois que le résultat de construction évoluera dans le Cycle de vie IKAN ALM.
+* une synchronisation manuelle des Incidents reliés à une Requête de niveau via l`'écran __Informations détaillées__.
+* la possibilité d`'ajouter, suite à une Requête de niveau réussie, un commentaire à l`'Incident dans JIRA, au Defect dans Microfocus ALM, à l`'Incident dans GitHub ou à l'élément de travail Team Foundation. Ce commentaire contiendra un lien vers la Requête de niveau en IKAN ALM.
 
 
 Pour des informations plus détaillées, se référer aux sections suivantes.
@@ -36,9 +36,9 @@ Pour des informations plus détaillées, se référer aux sections suivantes.
 
 * <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Créer un Système de Suivi des Incidents>>
 * <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingoverview,Aperçu des Systèmes de Suivi des Incidents>>
-* <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un système de suivi des incidents>>
-* <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_delete,Supprimer une définition de système de suivi des incidents>>
-* <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'historique d`'un système de suivi des incidents>>
+* <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un Système de Suivi des Incidents>>
+* <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_delete,Supprimer une définition de Système de suivi des Incidents>>
+* <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'Historique d`'un Système de Suivi des Incidents>>
 
 *Les Propriétés d`'un Système de Suivi des Incidents*
 
@@ -46,12 +46,12 @@ Pour des informations plus détaillées, se référer aux sections suivantes.
 * <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_overview,Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents">>
 ** <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_edit,Modifier une Propriété de Système de Suivi des Incidents>>
 ** <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_delete,Supprimer une Propriété de Système de Suivi des Incidents>>
-** <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'historique d`'un système de suivi des incidents>>
+** <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'Historique d`'un Système de Suivi des Incidents>>
 
 
-Une fois le Système de Suivi des Incidents défini dans la section d`'Administration globale, vous devez l`'activer dans le Projet. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>
+Une fois le Système de Suivi des Incidents défini dans la section d`'Administration globale, vous devez l`'activer dans le Projet. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
 
-Si vous voulez que les Incidents soient reliés automatiquement à des Requêtes de Niveau de certains Niveaux, la Phase de Suivi des Incidents doit être associée à ces Niveaux.
+Si vous voulez que les Incidents soient reliés automatiquement à des Requêtes de niveau de certains Niveaux, la Phase de Suivi des Incidents doit être associée à ces Niveaux.
 Cela se fera automatiquement lors de la création de Niveaux dans des Projets pour lesquels un Système de Suivi des Incidents est déjà activé.
 Si vous activez un Système de Suivi des Incidents pour un Projet avec des Niveaux existants, vous devez ajouter manuellement la Phase de Suivi des Incidents pour ces Niveaux.
 Pour plus d`'informations, se référer aux sections <<App_Phases.adoc#_phases_levelphases_issuetracking,Suivi des Incidents>> et <<App_Phases.adoc#_phases_levelphases,Phases de niveau>>.
@@ -70,11 +70,11 @@ Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Admin
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdmin-IssueTracking-Create.png[,684,455] 
+image::GlobAdmin-IssueTracking-Create.png[,667,432] 
 . Complétez les champs dans le panneau __Créer un Système de Suivi des Incidents__.
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -83,7 +83,7 @@ image::GlobAdmin-IssueTracking-Create.png[,684,455]
 |Saisissiez la dénomination du Système de Suivi des Incidents externe.
 
 Ce champ est le seul champ obligatoire.
-Mais, si vous ne saisissez que le Nom, la capacité d`'intégration sera très élémentaire, signifiant que les Incidents devront être créés et reliés manuellement aux Requêtes de Niveaux d`'IKAN ALM.
+Mais, si vous ne saisissez que le Nom, la capacité d`'intégration sera très élémentaire, signifiant que les Incidents devront être créés et reliés manuellement aux Requêtes de niveaux d`'IKAN ALM.
 
 |Description
 |Saisissez la description du Système de Suivi des Incidents externe.
@@ -94,16 +94,16 @@ Les classes sont disponibles dans IKAN ALM en fonction du type de système:
 
 * système "générique" (Bugzilla, Track, Mantis, ...):
 +
-be.ikan.scm4all.plugin.issuetracking.generic.GenericITSPluginFactory 
+**be.ikan.scm4all.plugin.issuetracking.generic.GenericITSPluginFactory**
 +
-IKAN ALM offre une intégration de base avec ces Systèmes de Suivi des Incidents.
-* JIRA:be.ikan.scm4all.plugin.issuetracking.jira.JiraITSPluginFactory
-* HP Quality Center: be.ikan.scm4all.plugin.issuetracking.hpqc.HPQcITSPluginFactory
-* CollabNet TeamForge: be.ikan.scm4all.plugin.issuetracking.teamforge.TeamForgeITSPluginFactory
-* Microsoft Team Foundation: be.ikan.scm4all.plugin.issuetracking.tfs.TFSITSPluginFactory 
+* IKAN ALM offre une intégration de base avec ces Systèmes de Suivi des Incidents.
+JIRA: **be.ikan.scm4all.plugin.issuetracking.jira.JiraITSPluginFactory**
+MicroFocus ALM: **be.ikan.scm4all.plugin.issuetracking.mfalm.MFAlmITSPluginFactory**
+GitHub: **be.ikan.scm4all.plugin.issuetracking.github.GitHubITSPluginFactory**
+Microsoft Team Foundation: **be.ikan.scm4all.plugin.issuetracking.tfs.TFSITSPluginFactory** 
 
-*Note:* L`'intégration avec JIRA, HP ALM, Team Foundation et TeamForge récupère également les informations concernant les incidents, telles que le statut, la description et le propriétaire.
-Les Incidents sont synchronisés avec le Système de Suivi des Incidents externe chaque fois qu`'une Requête de Niveau est délivrée dans le Cycle de Vie.
+*Note:* L`'intégration avec JIRA, MF ALM, Team Foundation et GitHub récupère également les informations concernant les Incidents, telles que le statut, la description et le propriétaire.
+Les Incidents sont synchronisés avec le Système de Suivi des Incidents externe chaque fois qu`'une Requête de niveau est délivrée dans le Cycle de vie.
 
 |URL complet
 |Saisissez le modèle URL utilisé pour passer d`'un Incident dans IKAN ALM vers le Système de Suivi des Incidents externe.
@@ -115,18 +115,12 @@ Quelques exemples:
 
 Pour JIRA: `http(s)://host:port/browse/PROJECTKEY-$\{issueId}`
 
-Pour HP Quality Center: `testdirector:host:port/qcbin,domainname,projectname,[AnyUser];2:$\{issueId}`
-
-Pour TeamForge: `http(s)://host:port/sf/go/$\{issueId}`
-
 Pour Trac: `http(s)://host/ticket/$\{issueId}`
 
 Pour Bugzilla: `http(s)/host/bugs/show_bug.cgi?id=$\{issueId}`
 
 Pour Team Foundation: `http(s)://host[:port/tfs]/DefaultCollection/PROJECT_NAME/_workitems#_a=edit&id=$\{issueId}`
 
-*Note:* Les utilisateurs IKAN ALM qui utiliseront le lien vers HP Quality Center avec la commande « testdirector » devront avoir installé les "`Add-ins "` HP nécessaires.
-Se référer à la documentation HP pour plus de détails.
 
 |Utilisateur
 |Saisissez l`'identifiant utilisateur permettant de se connecter au système.
@@ -140,16 +134,16 @@ Les caractères sont remplacés par des astérisques.
 |Ressaisissez le Mot de passe de l`'utilisateur cité ci-dessus pour contrôle.
 
 |Modèle de recherche de Suivi d`'Incident
-|Saisissez le modèle de recherche de suivi d`'incident.
+|Saisissez le modèle de recherche de suivi d`'Incident.
 
 Ce modèle doit être une expression régulière valide.
-Pour plus d`'informations concernant les expressions régulières valides qui peuvent être interprétées par IKAN ALM, se référer à http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html[http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html,window=_blank].
+Pour plus d`'informations concernant les expressions régulières valides qui peuvent être interprétées par IKAN ALM, se référer à https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html[https://docs.oracle.com/en/java/javase/1/docs/api/java.base/java/util/regex/Pattern.html,window=_blank].
 
-Si fourni, ce modèle sera utilisé pour détecter les numéros d`'Incident dans les commentaires enregistrés dans le RCV (cette fonctionnalité est supportée pour Subversion, Git, Team Foundation et CVS). Cet appariement d`'expressions est réalisé dans une phase séparée à la fin d`'une Requête de Niveau de Construction réussie.
+Si fourni, ce modèle sera utilisé pour détecter les numéros d`'Incident dans les commentaires enregistrés dans le RCV. Cet appariement d`'expressions est réalisé dans une phase séparée à la fin d`'une Requête de niveau de Construction réussie.
 
 L`'appariement d`'expressions ne tient pas compte de la casse, comme illustré dans les exemples ci-dessous: 
 
-Notez que pour un système de Suivi des incidents Team Foundation ce champ peut être ignoré (ainsi que le Modèle d`'Identifiant de Suivi d`'Incident) s'il est connecté à un Projet avec un système de contrôle de versions Team Foundation: dans ce cas, les éléments de travail seront directement liés à une opération Commit.
+Notez que pour un système de Suivi des Incidents Team Foundation ce champ peut être ignoré (ainsi que le Modèle d`'Identifiant de Suivi d`'Incident) s'il est connecté à un Projet avec un système de contrôle de versions Team Foundation: dans ce cas, les éléments de travail seront directement liés à une opération Commit.
 Par conséquent, IKAN ALM ne doit plus analyser les commentaires des Incidents pour détecter les éléments de travail associés.
 
 *Exemples* (le texte en caractères gras est le texte qui sera apparié):
@@ -162,7 +156,7 @@ Exemple 1: webpad(\s)\*[0-9]\+((\s)*,(\s)\*[0-9]+)*
 
 Exemple 2: \[#([A-Z0-9]\+)-([0-9]+)\]
 
-- Petite correction dans le menu *[#WEBPAD-7]*.- Corrigé également le problème général IKAN ALM *[#ALM-3788]*.- Finalement, traité aussi l`'incident *[#gen-344]*.
+- Petite correction dans le menu *[#WEBPAD-7]*.- Corrigé également le problème général IKAN ALM *[#ALM-3788]*.- Finalement, traité aussi l`'Incident *[#gen-344]*.
 
 |Modèle d`'Identifiant de Suivi d`'Incident
 |Saisissez le Modèle d`'Identifiant de Suivi d`'Incident.
@@ -172,7 +166,7 @@ Il fait partie du modèle d`'Incident et doit également être une expression r�
 
 Ceci permet de sélectionner les chiffres en gras dans le commentaire du RCV.
 
-Pour un système de Suivi des incidents Team Foundation ce champ peut être ignoré (ainsi que le Modèle de recherche de Suivi d`'Incidents) s'il est connecté à un Projet avec ce système de contrôle de versions.
+Pour un système de Suivi des Incidents Team Foundation ce champ peut être ignoré (ainsi que le Modèle de recherche de Suivi d`'Incidents) s'il est connecté à un Projet avec ce système de contrôle de versions.
 
 Exemple 1: `[0-9]+`
 
@@ -190,7 +184,7 @@ Exemple 2: ``[A-Z0-9]+-``[0-9]+
 |Cette fonctionnalité n`'a pas d`'effet si vous utilisez le plugin GenericITSPlugin.
 
 Sélectionnez l`'option _Oui_ si vous voulez qu`'un commentaire soit automatiquement ajouté à l`'Incident dans le Système de Suivi des Incidents.
-Ce commentaire contiendra un lien vers la Requête de Niveau en IKAN ALM.
+Ce commentaire contiendra un lien vers la Requête de niveau en IKAN ALM.
 
 L`'ajout de ce commentaire sera également listé dans la Log de la Phase __Suivi des Incidents__.
 |===
@@ -199,7 +193,7 @@ L`'ajout de ce commentaire sera également listé dans la Log de la Phase __Suiv
 [NOTE]
 ====
 
-Pour des informations plus détaillées concernant les paramètres système spécifiques du Système de Suivi d'incidents, se référer au Guide d'intégration approprié (HowToALM_Integrating HPALM TestRunner, HowToALM_Integrating HPALM QualityCenter, HowToALM_Integrating JIRA, HowToALM_Integrating TeamForge ou HowToALM_Integrating Team Foundation). Ces guides sont uniquement disponibles en anglais.
+Pour des informations plus détaillées concernant les paramètres système spécifiques du Système de Suivi d'Incidents, se référer au Guide d'intégration approprié (HowToALM_Integrating MF ALM, HowToALM_Integrating JIRA, HowToALM_Integrating GitHub ou HowToALM_Integrating Team Foundation). Ces guides sont uniquement disponibles en anglais.
 ====
 
 . Après avoir complété les champs, cliquez sur le bouton __Créer__.
@@ -210,12 +204,12 @@ des Systèmes de Suivi des Incidents__ dans la partie inférieure de l`'écran.
 Un avertissement indiquant que certaines propriétés obligatoires doivent être définies, pourrait s`'afficher.
 Pour plus d`'informations concernant la modification des propriétés d`'un Système de Suivi des Incidents, se référer à la section <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_overview,Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents">>.
 +
-image::GlobAdmin-IssueTracking-Create-Warning.png[,517,53] 
+image::GlobAdmin-IssueTracking-Create-Warning.png[,505,37] 
 +
-Une fois le Système de Suivi des Incidents défini, vous devez l`'activer dans le Projet. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>
-. Si vous avez défini un Système de Suivi des Incidents JIRA, HP ALM, TeamForge ou Team Foundation, vous pouvez tester si IKAN ALM parvient à établir la connexion.
+Une fois le Système de Suivi des Incidents défini, vous devez l`'activer dans le Projet. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
+. Si vous avez défini un Système de Suivi des Incidents JIRA, MF ALM, GitHub ou Team Foundation, vous pouvez tester si IKAN ALM parvient à établir la connexion.
 +
-<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un système de suivi des incidents>>
+<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un Système de Suivi des Incidents>>
 
 
 [cols="1", frame="topbot"]
@@ -223,7 +217,7 @@ Une fois le Système de Suivi des Incidents défini, vous devez l`'activer dans 
 
 a|_Sujets apparentés:_
 
-* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>
+* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
 * <<Desktop_LevelRequests.adoc#_desktop_lr_issues,Incidents>>
 * <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
 * Phase: <<App_Phases.adoc#_phases_levelphases_issuetracking,Suivi des Incidents>>
@@ -238,7 +232,7 @@ a|_Sujets apparentés:_
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-IssueTracking-Overview.png[,1060,441] 
+image::GlobAdmin-IssueTracking-Overview.png[,1388,556] 
 . Définissez les critères de recherche requis dans le panneau de recherche.
 +
 La liste des éléments dans l'aperçu est synchronisée automatiquement en fonction des critères sélectionnés.
@@ -251,39 +245,35 @@ Vous pouvez également:
 . Vérifier les détails dans le panneau __Aperçu des Systèmes de Suivi des Incidents__.
 +
 Pour une description détaillée des champs, se référer à la section <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Créer un Système de Suivi des Incidents>>.
-. En fonction de vos droits d`'accès, les liens suivants peuvent être disponibles:
+. En fonction de vos droits d`'accès, les liens/icônes suivants peuvent être disponibles:
 +
 
-[cols="1,1", frame="topbot"]
+[cols="1,3", frame="topbot", options="header"]
 |===
+| Icône
+| Description
 
-|image:icons/edit.gif[,15,15] 
-|Modifier
-
-Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|image:icons/edit.gif[,15,15]  Modifier
+|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Système de Suivi des Incidents.
 
-<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un système de suivi des incidents>>
+<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un Système de Suivi des Incidents>>
 
-|image:icons/delete.gif[,15,15] 
-|Supprimer
-
-Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|image:icons/delete.gif[,15,15]  Supprimer
+|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition de Système de Suivi des Incidents.
 
-<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_delete,Supprimer une définition de système de suivi des incidents>>
+<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_delete,Supprimer une définition de Système de Suivi des Incidents>>
 
-|image:icons/history.gif[,15,15] 
-|Historique
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|image:icons/history.gif[,15,15]  Historique
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
 Elle permet d'afficher l'Historique de toutes les opérations de création, de mise à jour et de suppression exécutées sur le Système de Suivi des Incidents et ses Propriétés.
 
-<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'historique d`'un système de suivi des incidents>>
+<<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'Historique d`'un Système de Suivi des Incidents>>
 |===
 
 [[_globadm_issuetracking_edit]]
-=== Modifier la définition d`'un système de suivi des incidents 
+=== Modifier la définition d`'un Système de Suivi des Incidents 
 (((Suivi des Incidents ,Modifier))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
@@ -292,13 +282,13 @@ Elle permet d'afficher l'Historique de toutes les opérations de création, de m
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-IssueTracking-Edit.png[,742,667] 
-
-. Cliquez sur le bouton _Modifier_ dans le panneau __Infos du Système de Suivi des Incidents__.
+image::GlobAdmin-IssueTracking-Info.png[,871,743] 
++
+. Cliquez sur le bouton _Modifier_ du panneau _Informations sur le Système de Suivi des Incidents_.
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-IssueTracking-Edit-popup.png[,613,423] 
+image::GlobAdmin-IssueTracking-Edit.png[,620,400]
 
 . Si nécessaire, modifiez les champs.
 +
@@ -317,16 +307,15 @@ Les boutons suivants sont également disponibles:
 * _Actualiser_ pour récupérer les Paramètres tels qu`'ils sont enregistrés dans la base de données.
 * _Annuler_ pour retourner à l`'écran précédent sans enregistrer vos modifications.
 
-. Si vous avez défini un Système de Suivi des Incidents JIRA, HP ALM, TeamForge ou Team Foundation, y compris ces propriétés requises, vous pouvez tester si IKAN ALM parvient à établir la connexion.
+. Si vous avez défini un Système de Suivi des Incidents JIRA, MF ALM, GitHub ou Team Foundation, y compris ces propriétés requises, vous pouvez tester si IKAN ALM parvient à établir la connexion.
 +
 Cliquez sur le bouton __Vérifier la connexion__.
 +
-__INFO : Connexion correctement établie avec le
-Système de Suivi des Incidents.__
+__INFO : Connexion correctement établie avec le Système de Suivi des Incidents.__
 +
 Si le test échoue, l`'écran suivant s`'affiche:
 +
-image::GlobAdmin-IssueTracking-TestConnection-Fail.png[,814,409] 
+image::GlobAdmin-IssueTracking-TestConnection-Fail.png[,802,389] 
 +
 Corrigez les erreurs spécifiés dans la trace de pile et refaites le test.
 
@@ -335,7 +324,7 @@ Corrigez les erreurs spécifiés dans la trace de pile et refaites le test.
 Pour plus d`'informations, se référer à la section <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_overview,Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents">>
 
 [[_globadm_issuetracking_delete]]
-=== Supprimer une définition de système de suivi des incidents 
+=== Supprimer une définition de Système de Suivi des Incidents 
 (((Suivi des Incidents ,Supprimer))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
@@ -344,7 +333,7 @@ Pour plus d`'informations, se référer à la section <<GlobAdm_IssueTracking.ad
 +
 L`'écran suivant s`'affiche:
 +
-image::GlobAdmin-IssueTracking-Delete.png[,754,300] 
+image::GlobAdmin-IssueTracking-Delete.png[,738,290] 
 
 . Cliquez sur le bouton _Supprimer_ pour confirmer la suppression du Système de Suivi des Incidents sélectionné.
 +
@@ -352,20 +341,19 @@ Vous pouvez également cliquer sur le bouton _Précédent_ pour retourner à l`'
 +
 __Note:__ Si le Système de Suivi des Incidents est associé à un ou plusieurs Projet(s), l`'écran suivant s`'affiche:
 +
-image::GlobAdmin-IssueTracking-Delete-Error.png[,748,558] 
+image::GlobAdmin-IssueTracking-Delete-Error.png[,738,542] 
 +
 Vous devez modifier la définition des Projets affichés, avant de pouvoir supprimer le Système de Suivi des Incidents.
 
 [[_globadm_issuetracking_history]]
-=== Afficher l`'historique d`'un système de suivi des incidents 
+=== Afficher l`'Historique d`'un Système de Suivi des Incidents 
 (((Suivi des Incidents ,Historique))) 
 
 . Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
 
 . Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ pour afficher l`'__Aperçu de l`'Historique du Système de Suivi des Incident__s.
 +
-Pour une description détaillée de l`'__Aperçu de
-l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
+Pour une description détaillée de l`'__Aperçu de l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 
 . Cliquez sur le bouton _Précédent_ pour retourner à l`'écran précédent.
 
@@ -375,7 +363,7 @@ l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_hist
 
 a|_Sujets apparentés:_
 
-* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>
+* <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
 * <<Desktop_LevelRequests.adoc#_desktop_lr_issues,Incidents>>
 * <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
 * Phase: <<App_Phases.adoc#_phases_levelphases_issuetracking,Suivi des Incidents>>
@@ -396,7 +384,7 @@ des Incidents > Aperçu_ et cliquez sur le lien image:icons/edit.gif[,15,15] _Mo
 
 . Cet écran contient le panneau __Aperçu des Propriétés du Système de Suivi des Incidents__.
 +
-image::GlobAdmin-IssueTracking-Info-ITSPropertiesPanel.png[,725,673] 
+image::GlobAdmin-IssueTracking-Info-ITSPropertiesPanel.png[,803,678] 
 +
 Cet écran permet de créer, modifier ou supprimer les Propriétés du Système de Système de Suivi de Suivi des Incidents.
 +
@@ -409,13 +397,14 @@ Vous ne pouvez pas définir de Propriétés qui ont été implémentées par la 
 ====
 +
 
-[cols="1,1", frame="topbot"]
+[cols="1,3", frame="topbot", options="header"]
 |===
 
-|image:icons/icon_createparameter.png[,15,15] 
-|Créer
+| Icon
+| Description
 
-Ce lien n'est disponible que si une Propriété a été définie par la Plugin Factory Class, mais que sa valeur n'a pas encore été spécifiée.
+|image:icons/icon_createparameter.png[,15,15]  Créer
+|Ce lien n'est disponible que si une Propriété a été définie par la Plugin Factory Class, mais que sa valeur n'a pas encore été spécifiée.
 Sinon, seuls les liens __Modifier__, _Supprimer_ et _Historique_ seront disponibles.
 
 Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'accès d'Administrateur global.
@@ -423,18 +412,14 @@ Elle permet de créer une définition de Propriété de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_create,Créer une Propriété d'un Système de Suivi des Incidents>>
 
-|image:icons/edit.gif[,15,15]
-|Modifier
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|image:icons/edit.gif[,15,15]  Modifier
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
 Elle permet de modifier une définition de Propriété de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_edit,Modifier une Propriété de Système de Suivi des Incidents>>
 
-|image:icons/delete.gif[,15,15] 
-|Supprimer
-
-Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|image:icons/delete.gif[,15,15]  Supprimer
+|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
 Elle permet de supprimer une définition de Propriété de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_delete,Supprimer une Propriété de Système de Suivi des Incidents>>
@@ -448,12 +433,12 @@ Elle permet de supprimer une définition de Propriété de Suivi des Incidents.
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-IssueTracking-EditProperties-Create.png[,502,238] 
+image::GlobAdmin-IssueTracking-EditProperties-Create.png[,492,244] 
 +
 Les champs suivants sont affichés:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -468,7 +453,7 @@ Saisissez la valeur nécessaires pour une utilisation correcte du Système de Su
 
 Exemple pour la propriété JIRA jiraRESTUrl: `http(s)://machine:8090/rest`
 
-Exemple pour la propriété TeamForge teamForgeWSUrl: `http(s)://teamforge1.my.domain`
+Exemple pour la propriété GitHub gitHubRESTUrl: `https://api.github.com/repos/{organization}/{repository}`
 
 Exemple pour la propriété Team Foundation collectionURL: `http(s)://ServerName[:8080/tfs]/DefaultCollection`
 
@@ -509,7 +494,7 @@ Les boutons suivants sont également disponibles:
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-IssueTracking-EditProperties-Edit.png[,508,258] 
+image::GlobAdmin-IssueTracking-EditProperties-Edit.png[,491,245] 
 +
 Pour une description des champs, se référer à la section <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_create,Créer une Propriété d'un Système de Suivi des Incidents>>.
 
@@ -528,7 +513,7 @@ Les boutons suivants sont également disponibles:
 +
 L'écran suivant s'affiche:
 +
-image::GlobAdmin-IssueTracking-EditProperties-Delete.png[,519,227] 
+image::GlobAdmin-IssueTracking-EditProperties-Delete.png[,489,222] 
 
 . Cliquez sur le bouton _Supprimer_ pour confirmer la suppression de la Propriété.
 +

@@ -1,7 +1,7 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
 
-= Aperçu de l`'interface utilisateur 
+= Aperçu de l`'Interface Utilisateur 
 (((Interface Utilisateur)))  (((Administration des projets ,Interface utilisateur))) 
 
 Se référer aux sections suivantes pour des informations plus détaillées concernant:
@@ -18,21 +18,134 @@ Se référer aux sections suivantes pour des informations plus détaillées conc
 === Menu Principal
 L'Interface Utilisateur d'IKAN ALM est composée de 3 sections principales: le Bureau, la section Administration des projets et la section Administration globale.
 Ces sections sont accessibles à partir du __Menu Principal__, la barre d'outils bleue en haut de l'écran.
-À droite, elle contient les Paramètres Utilisateur de l'Utilisateur actuel ainsi que l'aide contextuelle.
+À droite, elle contient les Paramètres de l'Utilisateur actuel ainsi que l'aide contextuelle.
 
 
-image::UserInterface_MainMenu_Sections.png[,936,299] 
+image::GettingStarted-UserInterface-main-menu.png[,978,182] 
+
+[cols="1,2", frame="topbot", options="header"]
+|===
+| Menu option
+| Description
+
+|Bureau
+|Sélectionner cette option pour charger la page du Bureau. <<Desktop_ManageDesktop.adoc#_desktop_managedesktop,Gérer le Bureau>>
+
+|Requêtes de niveau
+a|Ce menu déroulant contient les options suivantes:
+
+* _Créer une Requête de niveau_
++
+Choisir cette option pour créer une Requête de niveau. <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_selectlevel,Créer une Requête de niveau: Choisir un Niveau>>
+* _Aperçu des Requêtes de niveau_
++
+Choisir cette option pour afficher l'écran _Aperçu des Requêtes de niveau_. <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des Requêtes de niveau>>
++
+Vous pouvez aussi cliquer directement le Menu _Requêtes de niveau_ pour afficher cet écran.
+* _Aperçu des Constructions et des Déploiements_
++
+Choisir cette option pour afficher l'écran _Aperçu des Constructions et des Déploiements_. <<Desktop_LevelRequests.adoc#_desktop_lr_buildsdeploysoverview,Aperçu des Constructions et des Déploiements>>
+* _Requêtes de niveau récentes_
++
+Une liste des plus récentes Requêtes de niveau visitées.
+* _Filtres de Requêtes de niveau_
++
+Une liste des Filtres de recherche définis pour l'écran d'Aperçu des Requêtes de niveau.
+* _Filtres de Constructions et de Déploiements_
++
+Une liste des Filtres de recherche définis pour l'écran d'Aperçu des Constructions et des Déploiements.
+
+|Paquets
+a|Ce menu déroulant contient les options suivantes:
+
+* _Créer un Paquet_
++
+Choisir cette option pour créer un nouveau Paquet. <<Desktop_Packages.adoc#_desktop_createpackage,Créer un Paquet>>
+* _Créer un Groupe de Paquets de Construction_
++
+Choisir cette option pour créer un nouveau Groupe de Paquets de Construction. <<Desktop_PackageGroups.adoc#_desktop_createpackagegroup,Créer un Groupe de Paquets de Construction>>
+* _Aperçu des Paquets_
++
+Choisir cette option pour afficher l'écran d'Aperçu des Paquets. <<Desktop_Packages.adoc#_desktop_packageoverview,Aperçu des Paquets>>
++
+Vous pouvez aussi cliquer directement le Menu _Paquets_ pour afficher cet écran.
+* _Aperçu des Groupes de Paquets de Construction_
++
+Choisir cette option pour afficher l'écran _Aperçu des Groupes de Paquets de Construction_. <<Desktop_PackageGroups.adoc#_desktop_packagegroupsoverview,Aperçu des Groupes de Paquets de Construction>>
+* _Paquets récents_
++
+Une liste des plus récents Paquets visités.
+* _Filtres de Paquets_
++
+Une liste des Filtres de recherche définis pour l'écran d'Aperçu des Paquets.
+
+|Approbations
+a|Ce menu déroulant contient les options suivantes:
+
+* _Approbations en attente_
++
+Choisir cette option pour afficher l'écran des Approbations en attente. <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsscreen,Approbations en attente>>
+* _Aperçu des Approbations_
++
+Choisir cette option pour afficher l'écran d'Aperçu des Approbations. <<Desktop_Approvals.adoc#_desktop_approvals_overview,Aperçu des Approbations>>
+
+|Menu d'Administration des projets 
+a|Ce menu déroulant contient les options suivantes:
+
+* _Menu d'Administration des projets_
++
+Choisir cette option pour afficher l'écran d'Aperçu des Projets. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_accessing,Aperçu des Projets>>
+* _Projets récents_
++
+Une liste des plus récents Projets visités.
+* _Filtres de Projets_
++
+Une liste des Filtres de recherche définis pour l'écran d'Aperçu des Projets.
+
+|Menu d'Administration globale
+|Choisir cette option pour afficher l'écran d'Administration globale. <<GlobAdm_Introduction.adoc#_globadm_introduction,Aperçu d'Administration globale>>
+
+|_Nom de l'Utilisateur_
+a|Ce menu déroulant contient les options suivantes:
+
+* _Paramètres Personnels_
++
+Choisir cette option pour afficher l'écran les Paramètres Personnels. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings_edit,Modifier vos Paramètres Personnels>>
+* _Déconnexion_
++
+Choisir cette option pour quitter IKAN ALM. <<Logon.adoc#_desktop_loogingoff,Déconnexion>>
+
+|_Aide_
+a|Ce menu déroulant contient les options suivantes:
+
+* _Aide_
++
+Choisir cette option pour aller vers la documentation du site.
+* _Documentation REST API_
++
+Choisir cette option pour ouvrir l'écran de la Documentation intégrée REST API d'IKAN ALM.
+* _À propos de_
++
+Choisir cette option pour ouvrir l'écran À propos d'IKAN ALM. Cette page montre les informations au sujet de votre licence installée.
+|===
+
+
+==== Choix récents et Filtres de recherche
+
+Les sections des Menus principaux des Requêtes de niveau, des Paquets et des Projets retiennent les 5 éléments récemment visités. En plus, ces sections et la section des Constructions et des Déploiements montrent 5 Filtres de recherche.
+
+image::UserInterface-RecentItems.png[,709,414]
 
 === Sous-menus
-Si vous sélectionnez l'option "Administration des projets" ou "Administration globale" à partir du Menu Principal, le sous-menu dépendant s'affiche dans la barre grise en-dessous du Menu Principal.
+Si vous sélectionnez l'option "Menu d'Administration des projets" ou "Menu d'Administration globale" à partir du Menu Principal, le sous-menu dépendant s'affiche dans la barre grise en-dessous du Menu Principal.
 
-Les options de sous-menu suivi d'un petit triangle disposent d'un menu déroulant contenant des options de sélection supplémentaires.
+Les options de sous-menu suivies d'un petit triangle disposent d'un menu déroulant contenant des options de sélection supplémentaires.
 
 Dans les écrans IKAN ALM, les _Liens_ sont disponibles dans ou en-dessous des panneaux d'Aperçu.
 Si vous cliquez un de ces liens, un autre écran IKAN ALM s'affichera.
 
 
-image::UserInterface_MainMenu_Navigating.png[,937,392] 
+image::UserInterface_MainMenu_Navigating.png[,1012,404]
 
 
 [[_regularikanalmscreens]]
@@ -42,19 +155,19 @@ image::UserInterface_MainMenu_Navigating.png[,937,392]
 Un écran IKAN ALM contient les éléments principaux suivants:
 
 
-image::UserInterface-Screens.png[,948,551] 
+image::UserInterface-Screens.png[,1222,704] 
 
 === Le fil d'Ariane
-Le _Fil d'Ariane_ en-dessous du sous-menu montre comment l'utilisateur a accédé l'écran IKAN ALM affiché.
-Le format suivant est utilisé: _Option du Menu Principal
-> option du sous-menu_
+Le _fil d'Ariane_ en-dessous du sous-menu montre comment l'utilisateur a accédé l'écran IKAN ALM affiché.
+Le format suivant est utilisé: _Option du Menu Principal > option du sous-menu_
 
 [[_babcjedaj8]]
 === Les panneaux de recherche
-image::UserInterface-SearchPanel.png[,965,156] 
+
+image::UserInterface-SearchPanel.png[,1218,173] 
 
 Les panneaux de _Recherche_ permettent de spécifier les critères de recherche qui limiteront la liste des éléments dans le panneau __Aperçu__.
-Pour spécifier ces critères de recherche via les listes déroulantes ou les champs de texte, vous pouvez utiliser les caractères génériques '*' and '?'. L'astérisque peut représenter 0, 1 ou plusieurs caractères.
+Pour spécifier ces critères de recherche via les listes déroulantes ou les champs de texte, vous pouvez utiliser les caractères génériques '*' et '?'. L'astérisque peut représenter 0, 1 ou plusieurs caractères.
 Le point d'interrogation représente seulement 1 caractère.
 
 Par défaut, seuls les critères de recherche les plus communs sont affichés dans le panneau de recherche.
@@ -68,7 +181,7 @@ Les Filtres existants peuvent être sélectionnés à partir du menu déroulant.
 Pour plus d`'informations concernant l'utilisation des Filtres, se référer à la section <<Desktop_PersonalSettings.adoc#_cihjfebab8,Gérer les définitions des Filtres>>.
 
 === Les panneaux de création
-image::UserInterface-CreatePanel.png[,488,259] 
+image::GettingStarted-UserInterface-create-panels.png[,453,285] 
 
 Les panneaux de _Création_ permettent de définir de nouveaux objets IKAN ALM.
 Les champs obligatoires sont marqués d'un astérisque rouge.
@@ -77,7 +190,7 @@ Cliquez sur le bouton _Créer_ pour créer l'objet.
 En fonction de l'objet que vous créez, le bouton _Réinitialiser_ nettoiera les champs et/ou restaurera les valeurs initiales.
 
 === Les panneaux d'Aperçu
-Les panneaux d'__Aperçu _sont affichés en-dessous du panneau de _Recherche_ ou de __Création_.
+Les panneaux d'_Aperçu_ sont affichés en-dessous du panneau de _Recherche_ ou de _Création_.
 Si aucun critère de recherche n'est spécifié, l'aperçu liste tous les objets IKAN ALM du type sélectionné.
 Si des critères de recherche sont spécifiés, seuls les objets IKAN ALM correspondant aux critères de recherche sont affichés.
 
@@ -89,11 +202,11 @@ Tous les critères de recherche appliqués sont indiqués en bas de la liste des
 Le panneau d'__Aperçu__ peut afficher un ou plusieurs liens à gauche des objets IKAN ALM listés.
 Les options diffèrent en fonction des objets IKAN ALM affichés et des droits d'accès de l'Utilisateur.
 
-Si vous disposez des droits d'accès d'Utilisateur, les liens suivants sont disponibles:
+Si vous disposez des droits d'accès d'Utilisateur, les liens/icônes suivants sont disponibles:
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
-| Option
+| Icône
 | Description
 
 |image:icons/view.gif[,15,15]  Afficher 
@@ -117,48 +230,47 @@ Utilisez ce lien pour afficher le statut d'activité de la Machine et les derni�
 
 Si vous disposez de droits d'accès d'Administrateur de Projet ou d'Administrateur global, les options additionnelles suivantes peuvent être disponibles:
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Option
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Si vous sélectionnez l'option _Modifier__, un panneau de _Modification_ sera affiché en-dessous du __fil d'Ariane_.
+|Si vous sélectionnez l'option _Modifier_, un panneau de _Modification_ sera affiché en-dessous du _fil d'Ariane_.
 
 Vous aurez la possibilité de modifier les valeurs requises et de sauvegarder les modifications.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Si vous sélectionnez l'option _Supprimer_, un panneau de _Confirmation
-de la suppression_ sera affiché en-dessous du __fil
-d'Ariane__.
+|Si vous sélectionnez l'option _Supprimer_, un panneau de _Confirmation de la suppression_ sera affiché en-dessous du _fil d'Ariane_.
 
 Vous pourrez confirmer ou annuler la suppression.
 
 |image:icons/lock.gif[,15,15]  Verrouiller
+
 image:icons/unlock.gif[,15,15]  Déverrouiller
-|Cette option est spécifique pour les panneaux _Aperçu des Projets_ et __Aperçu
-des Branches__.
+|Ces options sont spécifiques pour les panneaux _Aperçu des Projets_ et _Aperçu des Branches_.
 
 |image:icons/hide.gif[,15,15]  Cacher
-image:icons/show.gif[,15,15]  Montrer
-|Ces options sont spécifiques pour les panneaux _Aperçu des Projets_ et __Aperçu
-des Branches__.
 
-elles vous permettent de cacher des Projets ou des Branches spécifiques dans l'aperçu des résultats de recherche.
+image:icons/show.gif[,15,15]  Montrer
+|Ces options sont spécifiques pour les panneaux _Aperçu des Projets_ et _Aperçu des Branches_.
+
+Elles vous permettent de cacher des Projets ou des Branches spécifiques dans l'Aperçu des résultats de recherche.
 
 |image:icons/optional.gif[,15,15]  Mettre optionnel
+
 image:icons/required.gif[,15,15]  Mettre obligatoire
-|Ces options sont spécifiques pour l'__Aperçu des Cycles de vie__.
+|Ces options sont spécifiques pour l'_Aperçu des Cycles de vie_.
 
 Elles vous permettent rendre un Niveau optionnel. 
 
 |image:icons/icon_editProperties.png[,15,15]  Modifier les propriétés
-|Cette option est spécifique pour l'écran __Aperçu des Systèmes de Suivi des Incidents__.
+|Cette option est spécifique pour l'écran _Aperçu des Systèmes de Suivi des Incidents_.
 
 Elle vous permet de modifier la valeur d'une Propriété pour garantir l'utilisation correcte du Système de Suivi des Incidents.
 
 |image:icons/icon_disconnectUser.png[,15,15]  Déconnecter un Utilisateur
-|Cette option est spécifique pour l'écran __Aperçu des Utilisateurs__.
+|Cette option est spécifique pour l'écran _Aperçu des Utilisateurs_.
 
 Elle vous permet de déconnecter des Utilisateurs avant que leur session n'expire.
 |===
@@ -172,11 +284,11 @@ Les colonnes marquées de l'icône image:icons/sort.gif[,18,19]  peuvent être r
 [[_desktop_autorefresh]]
 == Actualisation automatique
 
-Si votre Administrateur global IKAN ALM a spécifié un _Intervalle d'actualisation automatique_ dans le panneau _Autres activités_ dans l'écran <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>, l'option __Actualiser automatiquement__ sera disponible dans le Bureau et dans les aperçus des Requêtes de niveau et des Constructions et Déploiements.
+Si votre Administrateur global IKAN ALM a spécifié un _Intervalle d'actualisation automatique_ dans le panneau _Autres activités_ dans l'écran <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>, l'option _Actualisation automatique_ sera disponible dans le Bureau et dans les Aperçus des Requêtes de niveau et des Constructions et Déploiements.
 
-Si l'option _Actualisation automatique_ est activée, l'écran sera réinitialisé suivant l'intervalle spécifié dans le champ "Intervalle d'actualisation automatique" dans les Paramètres système.
+Si l'option _Actualisation automatique_ est activée, l'écran sera réinitialisé suivant l'intervalle spécifié dans le champ "Intervalle d'actualisation automatique" dans les Paramètres du système.
 
 Sélectionnez cette option pour l'activer ou la désactiver.
 
 
-image::Desktop-AutoRefresh-SubmenuOption.png[,937,228] 
+image::GettingStarted-UserInterface-auto-refresh.png[,1094,67] 

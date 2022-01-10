@@ -453,7 +453,7 @@ Saisissez la valeur nécessaires pour une utilisation correcte du Système de Su
 
 Exemple pour la propriété JIRA jiraRESTUrl: `http(s)://machine:8090/rest`
 
-Exemple pour la propriété GitHub gitHubRESTUrl: `https://api.github.com/repos/{organization}/{repository}`
+Exemple pour la propriété GitHub gitHubRESTUrl: `https://api.github.com/repos/\{organization}/\{repository}`
 
 Exemple pour la propriété Team Foundation collectionURL: `http(s)://ServerName[:8080/tfs]/DefaultCollection`
 

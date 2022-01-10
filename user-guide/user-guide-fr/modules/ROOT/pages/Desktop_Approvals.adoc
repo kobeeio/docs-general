@@ -71,7 +71,7 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 | Description
 
 |Statut
-|Ce champ affiche le statut image:icons/icon_approvalWaiting_approval.png[,15,15] __En attente d`'Approbation__.
+|Ce champ affiche le statut image:icons/icon_approvalWaitingApproval.png[,15,15] __En attente d`'Approbation__.
 
 Ce statut signifie que vous (ou un autre membre de votre Groupe d`'utilisateurs) pouvez accorder ou rejeter cette Approbation.
 

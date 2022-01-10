@@ -724,7 +724,7 @@ Les valeurs suivantes sont permises:
 +
 Ce fichier a la structure suivante:
 +
-image::commandline-searchcriteriapropertiesfile_explained.png[,1053,683] 
+image::CommandLine-SearchCriteriaPropertiesFile.png[,1053,683] 
 +
 Les critères de sélection suivants sont disponibles:
 +

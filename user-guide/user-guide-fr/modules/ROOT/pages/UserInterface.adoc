@@ -284,7 +284,7 @@ Les colonnes marquées de l'icône image:icons/sort.gif[,18,19]  peuvent être r
 [[_desktop_autorefresh]]
 == Actualisation automatique
 
-Si votre Administrateur global IKAN ALM a spécifié un _Intervalle d'actualisation automatique_ dans le panneau _Autres activités_ dans l'écran <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>, l'option _Actualisation automatique_ sera disponible dans le Bureau et dans les Aperçus des Requêtes de niveau et des Constructions et Déploiements.
+Si votre Administrateur global IKAN ALM a spécifié un __Intervalle d'actualisation automatique__ dans le panneau _Autres activités_ dans l'écran <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>, l'option __Actualisation automatique__ sera disponible dans le Bureau et dans les Aperçus des Requêtes de niveau et des Constructions et Déploiements.
 
 Si l'option _Actualisation automatique_ est activée, l'écran sera réinitialisé suivant l'intervalle spécifié dans le champ "Intervalle d'actualisation automatique" dans les Paramètres du système.
 

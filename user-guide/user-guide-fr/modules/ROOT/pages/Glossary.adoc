@@ -6,17 +6,17 @@
 [appendix]
 = Glossaire
 
-[cols="1,1", frame="topbot"]
+[cols="1,2", frame="topbot"]
 |===
 
-|_Agent de construction IKAN ALM_
+|_Agent de construction_
 |Un sous-processus (démon) de l`'Agent IKAN ALM qui exécutera les Constructions d`'une Requête de niveau dans un Environnement de Construction sur une Machine Agent.
 
-|_Agent de déploiement IKAN ALM_
+|_Agent de déploiement_
 |Un sous-processus (démon) de l`'Agent IKAN ALM qui exécutera les Déploiements d`'une Requête de niveau dans un Environnement de Déploiement sur une Machine Agent.
 
 |_Agent IKAN ALM_
-|Un processus (démon) se trouvant sur une Machine ayant des sous-processus pour l`'exécution des Constructions ou des Déploiements.
+|Un processus (démon/service) se trouvant sur une Machine ayant des sous-processus pour l`'exécution des Constructions ou des Déploiements.
 Si l`'Agent est sur la même Machine que le Serveur IKAN ALM on parle d`'un Agent "local", s`'il est sur une autre Machine, on parle d`'un Agent "distant". Pendant le processus de Construction ou de Déploiement, l`'Agent IKAN ALM interagit à distance avec le processus Moniteur IKAN ALM et localement avec un Transporteur et un Outil de script qui doivent être correctement configurés sur la Machine.
 
 |_Approbation_
@@ -170,9 +170,10 @@ Les Notifications peuvent être envoyées quand une Requête de niveau échoue o
 Il s`'agit d`'un numéro séquentiel qui est incrémenté par IKAN ALM quand une Requête de niveau de construction est créée.
 Le numéro de construction le plus élevé est sauvegardé sur la Branche.
 
-|_OID (OID Requête de niveau / OID Construction / OID Déploiement/ OID
-Approbation de Niveau)_
+|_OID_
 |Identifiant de l`'Objet.
+
+(OID Requête de niveau, OID Construction, OID Déploiement, OID Approbation de Niveau)
 Il s`'agit du numéro unique utilisé pour faciliter l`'identification d`'une Requête de niveau, d`'une Construction, d`'un Déploiement ou d`'une Approbation de Niveau.
 
 |_Outil de construction_

@@ -5,7 +5,7 @@
 = Suivi de l`'Historique 
 (((Suivi de l’historique)))  (((Administration globale ,Suivi de l’historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Historique__.
+. Dans le __Menu d'Administration globale, sélectionnez __Suivi de l'Historique__.
 +
 L`'écran suivant s`'affiche: 
 +
@@ -124,7 +124,7 @@ L`'association a été retiré.
 
 . Cliquez sur une version spécifique dans le panneau _Versions d`'objets de l`'Administration Globale_ pour afficher les différences entre cette version et la version actuelle de l`'objet.
 +
-Le panneau __Comparaison des Versions __est ajouté à droite du panneau __Versions__.
+Le panneau __Comparaison des Versions __est ajouté à droite du panneau __Versions d`'objets de l`'Administration Globale__.
 +
 image::GlobAdm-HistoryLog-Comparison.png[,1404,621] 
 +

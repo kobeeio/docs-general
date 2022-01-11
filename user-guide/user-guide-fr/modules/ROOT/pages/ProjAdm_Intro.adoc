@@ -12,7 +12,7 @@ Les éléments IKAN ALM suivants sont couramment utilisés par les Administrateu
 
 == Accéder à l'Aperçu des Projets
 
-Dans le Menu Principal, cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13] _Administration des projets_.
+Dans le Menu Principal, cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13] _Menu d'Administration des projets_.
 
 L'aperçu de tous les Projets sera affiché.
 
@@ -20,7 +20,7 @@ L'aperçu de tous les Projets sera affiché.
 
 À partir de l'__Aperçu des Projets__, vous pouvez accéder aux options de l'Administration des projets.
 
-Dans le reste de ce document, nous référerons à cette section de l'interface comme le "Contexte de l'Administration des projets". 
+Dans le reste de ce document, nous référerons à cette section de l'interface comme le "Menu d'Administration des projets". 
 
 
 . Dans l'__Aperçu des Projets__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant le Projet que vous voulez modifier.
@@ -30,7 +30,7 @@ Dans le reste de ce document, nous référerons à cette section de l'interface 
 ====
 Si vous disposez de droits d'accès d'Utilisateur, vous pouvez accéder à cet Aperçu via le lien _Afficher_ (le nombre d'options disponibles sera limité).
 ====
-. Vous vous trouvez maintenant dans le "Contexte de l'Administration des projets".
+. Vous vous trouvez maintenant dans le "Menu d'Administration des projets".
 +
 Dans le sous-menu, les différentes options de l'Administration des projets sont disponibles.
 +

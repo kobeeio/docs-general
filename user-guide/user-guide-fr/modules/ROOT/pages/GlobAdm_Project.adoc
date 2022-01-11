@@ -34,7 +34,7 @@ Les Projets de type Paquets ne doivent être connectés qu`'à un Référentiel 
 Les autres types de RCV ne supportent pas de travailler avec des fichiers isolés et, par conséquent, de travailler avec des Paquets en IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Projet > Créer un Projet__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Projet > Créer un Projet__.
 +
 L`'écran suivant s`'affiche: 
 +
@@ -52,7 +52,7 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 | Description
 
 |Type de Projet
-|Sélectionnez le type de Projet que vous voulez créer: Édition versions ou Paquets.
+|Sélectionnez le type de Projet que vous voulez créer: _Édition versions_ ou _Gestion Paquets_.
 
 En fonction du type de Projet sélectionné, vous pourrez modifier d'autres champs dans le panneau __Paramètres de la Branche Principale__. 
 
@@ -81,13 +81,6 @@ Si un Système de Suivi des Incidents est spécifié dans ce champ, IKAN ALM cr�
 Ce champ n'est visible que si un Système de Suivi des Incidents a été défini dans IKAN ALM.
 
 Pour plus d'informations concernant les Systèmes de Suivi des Incidents, se référer au chapitre <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
-
-|Système de Suivi des Incidents
-|Sélectionnez, à partir du menu déroulant, le Système de Suivi des Incidents.
-
-Si un Système de Suivi des Incidents est sélectionné, IKAN ALM créera automatiquement une Phase de Niveau de Suivi des Incidents au moment de la création d`'un nouveau Niveau pour le Projet.
-
-Ce champ n`'est visible que si un Système de Suivi des Incidents externe est défini dans IKAN ALM. <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
 
 |Script de construction
 |Saisissez dans ce champ la dénomination du script de construction à utiliser pour ce Projet dans IKAN ALM.
@@ -270,7 +263,7 @@ Le nom du Projet RCV n`'est pas défini dans le Référentiel de contrôle de ve
 Corrigez les erreurs spécifiées dans la trace de pile et refaites le test.
 . Si les contrôles se terminent correctement, cliquez sur le bouton __Créer__.
 +
-Le Projet est créé et l'écran _Informations sur le Projet_ s'affichera dans le contexte de la gestion des projets.
+Le Projet est créé et l'écran _Informations sur le Projet_ s'affichera dans le __Menu d'Administration des projets__.
 Vous pouvez gérer le nouveau Projet en créant des Niveaux etc.
 Pour plus d`'informations, se référer à la section <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un projet>>.
 +
@@ -302,7 +295,7 @@ a|_Sujets apparentés:_
 == Cloner un Projet existant 
 (((Projets ,Cloner un Projet existant)))  (((Cloner un Projet existant))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Projet > Cloner un Projet existant__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Projet > Cloner un Projet existant__.
 +
 L'écran suivant s'affiche:
 +
@@ -316,7 +309,7 @@ Vous pouvez également:
 * cliquer sur le lien _Montrer/Cacher les options avancées_ pour afficher ou masquer tous les critères de recherche disponibles,
 * cliquer sur le lien _Rechercher_ pour synchroniser la liste en fonction des critères de recherche actuels,
 * cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs.
-. Ensuite, cliquez sur le lien image:icons/clone.gif[,15,15] _Cloner_ devant le Projet requis.
+. Ensuite, cliquez sur le lien image:icons/clone.gif[,15,15] _Cloner_ devant le Projet choisi.
 +
 L`'écran suivant s`'affiche:
 +
@@ -326,7 +319,7 @@ image::GlobAdmin-Project-Clone-Clone.png[,776,761]
 Les champs suivants sont disponibles:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -423,7 +416,7 @@ Voir <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects,Auditer un Projet>>
 [[_globadm_projectexport]]
 == Exporter un Projet existant 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Projet > Exporter un Projet_.
+. Dans le __Menu d'Administration globale__, sélectionnez __Projet > Exporter un Projet_.
 +
 L`'écran suivant s`'affiche:
 +
@@ -439,7 +432,7 @@ Vous pouvez aussi:
 * cliquer sur le lien _Rechercher_ pour synchroniser la liste basée les critères de recherche actuels,
 * cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs de recherche.
 
-. Ensuite, cliquez sur le lien image:icons/Phase_Export.png[,15,15] _Exporter_ en face du Projet requis.
+. Ensuite, cliquez sur le lien image:icons/Phase_Export.png[,15,15] _Exporter_ en face du Projet choisi.
 +
 L`'écran de dialogue suivant s`'affiche:
 +
@@ -458,7 +451,7 @@ Quand un fichier de Projet exporté est édité, il faut toujours changer le nom
 [[_globadm_projectimport]]
 == Importer un Projet 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Projet > Importer un Projet_.
+. Dans le __Menu d'Administration globale__, sélectionnez __Projet > Importer un Projet_.
 +
 L`'écran suivant s`'affiche:
 +

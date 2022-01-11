@@ -54,7 +54,7 @@ Les actions suivantes sont possibles:
 == Créer un Niveau de Construction
 (((Niveaux ,Créer))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Niveaux > Créer un Niveau de Construction__.
+. Dans les options du __Menu d'Administration des Projets__, sélectionnez __Niveaux > Créer un Niveau de Construction__.
 +
 L'écran _Créer un Niveau de Construction_ s'affiche.
 +
@@ -170,7 +170,7 @@ Les boutons suivants sont également disponibles:
 Les procédures pour la création de Niveaux de Test et de Production sont identiques.
 ====
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez _Niveaux > Créer un Niveau de Test_ ou __Créer un Niveau de Production__.
+. Dans les options du __Menu d'Administration des Projets__, sélectionnez _Niveaux > Créer un Niveau de Test_ ou __Créer un Niveau de Production__.
 +
 L'écran _Créer un Niveau de Test_ ou _Créer un Niveau de Production_ s'affiche.
 +
@@ -280,8 +280,7 @@ Vous pouvez toujours modifier la séquence des Niveaux en utilisant les options 
 |Cycle de vie
 |Sélectionnez, à partir du menu déroulant, le Cycle de vie de rattachement.
 
-_Note:_ Si, dans l'écran __Modifier un Cycle de vie__, vous créez un Niveau de Test ou de Production en utilisant le lien _Créer
-un Niveau de Test_ ou __Créer un Niveau de Production__, le nom du Cycle de vie sera déjà rempli.
+_Note:_ Si, dans l'écran __Modifier un Cycle de vie__, vous créez un Niveau de Test ou de Production en utilisant le lien _Créer un Niveau de Test_ ou __Créer un Niveau de Production__, le nom du Cycle de vie sera déjà rempli.
 |===
 
 . Vérifiez les détails des autres Niveaux de Test ou de Production définis pour le Projet.
@@ -320,7 +319,7 @@ Les actions suivantes sont possibles:
 === Écran de l`'Administration des Niveaux 
 (((Niveaux ,Aperçu))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Niveaux > Aperçu__.
+. Dans les options du __Menu d'Administration des Projets__, sélectionnez __Niveaux > Aperçu__.
 +
 L'écran _Aperçu des Niveaux_ s'affiche:
 +
@@ -431,7 +430,7 @@ Pour plus d`'informations, se référer aux procédures suivantes:
 [[_plevelenvmgt_levelphasesoverview]]
 ===== Écran de l`'Aperçu des Phases de niveau
  
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Niveaux > Aperçu__.
+. Dans les options du __Menu d'Administration des Projets__, sélectionnez __Niveaux > Aperçu__.
 
 . Devant le Niveau approprié, cliquez sur l`'icône image:icons/edit_phases.gif[,15,15] _Modifier les Phases_ pour afficher l`'Aperçu des Phases de niveau.
 
@@ -568,7 +567,7 @@ La fenêtre suivante s'affiche.
 +
 image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,444,158] 
 +
-Spécifiez la valeur du Paramètre de phase de Niveau et cliquez sur le bouton _Enregistrer_ pour enregistrer la valeur.
+Spécifiez la valeur du Paramètre de phase de Niveau et cliquez sur le bouton _Sauvegarder_ pour enregistrer la valeur.
 +
 Les boutons suivants sont également disponibles:
 
@@ -704,7 +703,7 @@ Pour plus d`'informations, se référer aux procédures suivantes:
 
 . Accédez à l`'écran __Modifier un Niveau__.
 +
-<<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un Nniveau>>
+<<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un Niveau>>
 
 . En-dessous du panneau __Environnements__, cliquez sur le lien __Créer un Environnement de construction__.
 +
@@ -720,7 +719,7 @@ Pour une description complète de la procédure, se référer à la section <<Pr
 
 . Accédez à l`'écran __Modifier un Niveau__.
 +
-<<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un niveau>>
+<<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un Niveau>>
 
 . En-dessous du panneau __Environnements__, cliquez sur le lien __Créer un Environnement de déploiement__.
 +
@@ -751,7 +750,7 @@ Par exemple: un Environnement de déploiement met à jour la base de données d`
 
 [NOTE]
 ====
-Ce lien n'est disponible que s'il existe plus d'un Environnement de déploiement pour le Niveau.
+Ce lien n'est disponible que s'il existe plusieurs Environnements de déploiement pour le Niveau.
 ====
 +
 L'écran suivant s'affiche:
@@ -762,12 +761,12 @@ image::ProjAdmin-Levels-EditDeploySequence.png[,387,189]
 +
 Utilisez la liste déroulante à gauche de l`'Environnement de déploiement pour modifier le Numéro de séquence.
 
-. Cliquez sur le bouton _Enregistrer_ pour enregistrer la nouvelle séquence.
+. Cliquez sur le bouton _Sauvegarder_ pour enregistrer la nouvelle séquence.
 +
 Vous pouvez également cliquer sur le bouton _Actualiser_ pour revenir aux valeurs d`'origine ou sur le bouton _Annuler_ pour retourner à l'écran précédant sans enregistrer vos modifications.
 
 [[_levelenvmgt_approvalsequence]]
-==== Les approbations 
+==== Les Approbations 
 (((Approbations ,Séquence d’approbations))) 
 
 Pour les Niveaux de Test et de Production vous pouvez spécifier la séquence des Pré- et Post-approbations.
@@ -833,7 +832,7 @@ Si le Niveau est toujours associé à un Cycle de vie, vous ne pouvez pas suppri
 +
 <<ProjAdm_Levels.adoc#_plevelenvmgt_accessing,Écran de l`'Administration des Niveaux>>
 
-. Cliquez sur le lien _Supprimer_ affiché en-dessous des paramètres du niveau:
+. Cliquez sur le icône image:icons/delete.gif[,15,15] _Supprimer_ devant le Niveau à supprimer:
 +
 L`'écran suivant s`'affiche:
 +
@@ -881,7 +880,7 @@ Sans doute, vous aurez également à modifier les Emplacements Source et surtout
 +
 <<ProjAdm_Levels.adoc#_plevelenvmgt_accessing,Écran de l`'Administration des Niveaux>>
 
-. Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ affiché en-dessous des paramètres du niveau pour afficher l`'écran __Aperçu de l`'Historique du Niveau__.
+. Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ devant le Niveau pour afficher l`'écran __Aperçu de l`'Historique du Niveau__.
 +
 Pour une description détaillée de l`'__Aperçu de l`'Historique du Niveau__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 +

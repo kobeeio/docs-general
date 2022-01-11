@@ -40,7 +40,7 @@ Pour plus d`'informations se référer au chapitre <<ProjAdm_EnvParams.adoc#_pro
 == Créer un Environnement de construction
 (((Environnements de Construction ,Créer))) 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Environnements de construction > Créer__.
+. Dans le __Menu d'Administration des projets__, sélectionnez __Environnements de construction > Créer__.
 +
 L'écran suivant s'affiche:
 +
@@ -143,7 +143,7 @@ Vous pouvez également cliquer sur le bouton _Réinitialiser_ pour nettoyer les 
 == Aperçu des Environnements de construction 
 (((Environnements de Construction ,Aperçu)))  (((Environnements de Construction ,Modifier)))  (((Environnements de Construction ,Supprimer)))  (((Environnements de Construction ,Cloner))) 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Environnements de construction > Aperçu__.
+. Dans le __Menu d'Administration des projets__, sélectionnez __Environnements de construction > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
@@ -533,7 +533,7 @@ La fenêtre suivante s'affiche.
 +
 image::ProjAdmin-BuildEnv-BuildEnvPhaseParams-EditValue.png[,433,164] 
 +
-Spécifiez la valeur du Paramètre de phase d'Environnement de construction et cliquez sur le bouton _Enregistrer_ pour enregistrer la valeur.
+Spécifiez la valeur du Paramètre de phase d'Environnement de construction et cliquez sur le bouton _Sauvegarder_ pour enregistrer la valeur.
 +
 Les boutons suivants sont également disponibles:
 
@@ -619,7 +619,7 @@ Pour une description détaillée des champs, se référer à la section <<ProjAd
 +
 <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Aperçu des environnements de construction>>
 
-. Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien _Historique __pour afficher l`'écran__ Aperçu de l`'Historique de l`'Environnement de construction_.
+. Dans le panneau __Aperçu des Environnements de construction__, cliquez sur le lien image:icons/history.gif[,15,15] _Historique __pour afficher l`'écran__ Aperçu de l`'Historique de l`'Environnement de construction_.
 +
 Pour une description détaillée de l`'__Aperçu de l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 +

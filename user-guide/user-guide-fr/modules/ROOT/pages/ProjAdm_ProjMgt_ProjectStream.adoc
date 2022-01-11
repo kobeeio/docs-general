@@ -50,7 +50,7 @@ Vous pouvez créer une Branche Secondaire pour:
 Avant de créer une première Branche Secondaire, vous devez créer un Cycle de vie additionnel. Voir: <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_createlifecycle,Créer un Cycle de vie>>
 --
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Créer une Branche Secondaire__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Créer une Branche Secondaire__.
 +
 L'écran suivant s'affiche:
 +
@@ -240,7 +240,7 @@ Les actions suivantes sont possibles:
 === Écran de l`'Aperçu des Branches 
 (((Branches ,Écran de l’Aperçu des Branches))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -294,7 +294,7 @@ Elle permet d`'afficher l`'Historique de toutes les opérations de création, de
 === Afficher les paramètres d'une Branche 
 (((Branches du Projet ,Afficher les paramètres))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Pour y accéder, cliquez sur l'icône image:icons/edit.gif[,15,15] _Modifier_ devant la Branche requise.
 +
@@ -310,9 +310,9 @@ Pour une description, se référer à la section <<ProjAdm_ProjMgt_ProjectStream
 
 [[_projadmin_projectstream_editing]]
 === Modifier les paramètres d`'une Branche 
-(((Branches ,Modifier les paramètres d’une branche))) 
+(((Branches ,Modifier les paramètres d’une Branche))) 
  
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Pour y accéder, cliquez sur l'icône image:icons/edit.gif[,15,15] _Modifier_ devant la Branche requise.
 +
@@ -350,7 +350,7 @@ a|_Sujets apparentés:_
 === Supprimer une Branche 
 (((Branches ,Supprimer une Branche))) 
  
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Cliquez sur le lien image:icons/remove.gif[,15,15] _Supprimer_ dans le panneau __Aperçu des Branches__.
 +
@@ -373,7 +373,7 @@ Il peut s`'avérer utile de verrouiller une Branche, par exemple, si des activit
 
 Déverrouiller la Branche signifie que vous autorisez à nouveau ces actions pour la Branche
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Cliquez sur le lien image:icons/lock.gif[,15,15] _Verrouiller_ ou image:icons/unlock.gif[,15,15] _Déverrouiller_ dans le panneau __Aperçu des Branches__.
 
@@ -384,7 +384,7 @@ Déverrouiller la Branche signifie que vous autorisez à nouveau ces actions pou
 Si une Branche est définie comme étant "`cachée`", par défaut elle ne sera plus affichée dans les panneaux d`'Aperçu.
 Cela peut s`'avérer très utile pour ne plus afficher d`'anciennes Branches sans perdre les informations historiques (Requêtes de niveau, ...) associées à ces Branches.
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Cliquez sur le lien image:icons/hide.gif[,15,15] _Cacher_ en face de la Branche que vous désirez cacher.
 +
@@ -404,7 +404,7 @@ Cliquez sur le lien _Montrer les options avancées_ pour afficher ce critère.
 [[_projadm_projectstream_historyview]]
 === Afficher l'Historique de la Branche
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Pour y accéder, cliquez sur l'icône image:icons/history.gif[,15,15] _Historique_ dans l'__Aperçu des Branches _pour afficher l'__Aperçu de l'Historique de la Branche_.
 +
@@ -419,7 +419,7 @@ Cliquez sur le bouton _Précédent_ pour retourner à l`'écran précédent.
 Les Dépendances de Branches permettent la réutilisation de composants communs (par exemple, des librairies) dans d`'autres Projets.
 Au moment de la construction du code appartenant à la Branche, le processus se servira de ce code Source importé ou du Résultat de construction de la Branche importée, *placé dans l`'environnement Source dans un nouveau répertoire ayant le nom du Projet dans le RCV*
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Dans l'__Aperçu des Branches__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Branche requise.
 +
@@ -503,9 +503,9 @@ Accédez à l'écran _Ajouter une Dépendance de Branche_ de cette Branche Paren
 
 [[_projadmin_projectstream_adddependency]]
 === Ajouter une Dépendance de Branche 
-(((Branches du Projet , Dépendances ,Ajouter))) 
+(((Branches du Projet, Dépendances ,Ajouter))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
+. Dans les options du __Menu de l'Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
 . Dans l'__Aperçu des Branches__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Branche requise.
 
@@ -567,7 +567,7 @@ Sélectionnez cette option si vous voulez utiliser le _Résultat de Construction
 +
 La Balise RCV n'est utile que si le champ "Récupération des données issues de" est établi à "Code balisé spécifique à partir du RCV" ou "Construction spécifique à partir des Archives de construction".
 +
-__Note: __Cette option ne peut être utilisée que s'il existe une Construction, sinon aucune Balise RCV n'est disponible.
+__Note:__ Cette option ne peut être utilisée que s'il existe une Construction, sinon aucune Balise RCV n'est disponible.
 
 . Cliquez sur _Créer_ pour créer la Dépendance de Branche.
 +
@@ -578,7 +578,7 @@ Les boutons suivants sont également disponibles:
 
 [[_projadmin_projectstream_editdependency]]
 === Modifier une Dépendance de Branche 
-(((Branches du Projet ,Dépendances ,Modifier))) 
+(((Branches du Projet, Dépendances ,Modifier))) 
 
 . Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Branches > Aperçu__.
 
@@ -606,7 +606,7 @@ Les boutons suivants sont également disponibles:
 === Retirer une Dépendance de Branche 
 (((Branches du Projet ,Dépendances ,Retirer))) 
 
-. Dans le __Contexte de l'Administration des projets__, sélectionnez __Branches > Aperçu__.
+. Dans le __Menu de l'Administration des projets__, sélectionnez __Branches > Aperçu__.
 
 . Dans l'__Aperçu des Branches__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Branche requise.
 

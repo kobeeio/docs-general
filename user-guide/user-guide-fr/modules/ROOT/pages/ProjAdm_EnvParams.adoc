@@ -58,7 +58,7 @@ Les actions suivantes sont possibles:
 Cette option n'est disponible que si vous disposez de droits d'accès d'Administrateur de Projet.
 ====
 
-. Dans le __Contexte de l'Administration des projets__, sélectionnez _Environnements de construction > Paramètres de construction_ ou __Environnements de déploiement > Paramètres de déploiement__.
+. Dans le __Menu d'Administration des projets__, sélectionnez _Environnements de construction > Paramètres de construction_ ou __Environnements de déploiement > Paramètres de déploiement__.
 +
 L'écran suivant s'affiche:
 +

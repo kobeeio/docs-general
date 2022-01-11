@@ -42,10 +42,10 @@ Les sections suivantes sont affichées:
 * Le panneau _État actuel_ affiche l`'état actuel de l`'objet.
 * Un sous-panneau permet de restreindre la recherche aux versions d`'un type d`'objet spécifique.
 +
-Ce sous-panneau n`'est disponible que pour les types d`'objet ayant une association (tels que les Utilisateurs ou les Groupes d`'Utilisateurs dans la section des Paramètres système, et les Niveaux et Cycles de Vie dans la section d`'Administration des Projets) ou pour les types d`'objet dont l`'historique est affiché dans les écrans de leur type d`'objet de regroupement (tels que les Paramètres de construction, pour lesquels l`'historique est affiché sur le même écran que l`'Environnement de Construction).
+Ce sous-panneau n`'est disponible que pour les types d`'objet ayant une association (tels que les Utilisateurs ou les Groupes d`'Utilisateurs dans la section des Paramètres système, et les Niveaux et Cycles de vie dans la section d`'Administration des Projets) ou pour les types d`'objet dont l`'historique est affiché dans les écrans de leur type d`'objet de regroupement (tels que les Paramètres de construction, pour lesquels l`'historique est affiché sur le même écran que l`'Environnement de Construction).
 
 * Le panneau des _Versions_
-. Limitez la liste des éléments affichés dans le panneau des __Versions__.
+. Limitez la liste des éléments affichés dans le panneau des __Versions [objets]__.
 +
 Pour certains objets, un sous-panneau permet de restreindre le nombre d`'éléments affichés.
 +
@@ -138,17 +138,17 @@ Associations Groupes d`'Utilisateurs imbriqués
 Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent être rangées par ordre alphabétique (ascendant ou descendant). 
 ====
 
-. Vérifiez les informations affichées dans le panneau des __Versions__. 
+. Vérifiez les informations affichées dans le panneau des __Versions [objets]__. 
 +
-En-dessous du panneau __Etat actuel__, le panneau des _Versions_ s`'affiche listant toutes les modifications faites à cet objet ou aux objets associés.
+En-dessous du panneau __Etat actuel__, le panneau des _Versions [objets]_ s`'affiche listant toutes les modifications faites à cet objet ou aux objets associés.
 L`'état du premier élément non associé dans la liste devrait toujours être le même que l`'état actuel de l`'objet.
 +
 
 [NOTE]
 ====
-Il est possible que le panneau des versions soit vide ou qu`'elle ne liste pas toutes les versions précédentes.
+Il est possible que le panneau des _Versions [objets]_ soit vide ou qu`'il ne liste pas toutes les versions précédentes.
 Les objets créés lors du processus d`'installation ne disposeront pas d`'une version de création.
-Les objets créés ou modifiés dans une version de SCM4ALL antérieure à la version 4.3 n`'ont pas d`'historique dans la base de données d`'IKAN ALM.
+Les objets créés ou modifiés dans une version de SCM4ALL antérieure à la version 4.3 n`'ont pas d`'Historique dans la base de données d`'IKAN ALM.
 ====
 +
 Les champs d`'information suivants sont disponibles:
@@ -204,11 +204,11 @@ Fichiers qui ont été ajoutés ou supprimés du Paquet, ou leur révision a ét
 +
 Sélectionnez la version à comparer en cliquant sur son numéro de version dans l`'aperçu.
 +
-Le panneau __Comparaison des Versions __est ajoutée à droite du panneau __Versions__.
+Le panneau __Comparaison des Versions [objets]__ est ajoutée à droite du panneau __Versions [objets]__.
 +
 image::History_Differences.png[,1176,681] 
 +
-Le panneau _Comparaison des Versions_ affiche les différences entre la version actuelle de l`'objet (affichée dans la colonne "`actuelle`") et la version sélectionnée de l`'objet (affichée dans la colonne "`sélectionnée`").
+Le panneau _Comparaison des Versions [objets]_ affiche les différences entre la version actuelle de l`'objet (affichée dans la colonne "`actuelle`") et la version sélectionnée de l`'objet (affichée dans la colonne "`sélectionnée`").
 
 * La partie supérieure du panneau _Comparaison des Versions_ affiche la version, la date de modification, le type d`'action et le demandeur pour les deux versions comparées.
 * La partie inférieure affiche les valeurs spécifiques à l`'objet pour les deux versions comparées, mettant en surbrillance les champs présentant des différences.
@@ -216,7 +216,7 @@ Le panneau _Comparaison des Versions_ affiche les différences entre la version 
 
 [NOTE]
 ====
-Le panneau _Comparaison des Versions_ n`'est pas affiché pour l`'association Groupe d`'Utilisateurs - Utilisateur et ni pour les Paquets.
+Le panneau _Comparaison des Versions [objets]_ n`'est pas affiché pour l`'association Groupe d`'Utilisateurs - Utilisateur et ni pour les Paquets.
 Voir les écrans exemples ci-dessous.
 ====
 +

@@ -34,7 +34,7 @@ Pour plus d`'informations se référer au chapitre <<ProjAdm_EnvParams.adoc#_pro
 == Créer un Environnement de déploiement
 (((Environnements de déploiement ,Créer))) 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Environnements de déploiement > Créer__.
+. Dans le __Menu d'Administration des projets__, sélectionnez __Environnements de déploiement > Créer__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -45,7 +45,7 @@ Les champs suivants sont disponibles.
 Les champs marqués d`'un astérisque rouge doivent être complétés obligatoirement.
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -510,7 +510,7 @@ La fenêtre suivante s'affiche.
 +
 image::ProjAdmin-DeployEnv-DeployEnvPhaseParams-EditValue.png[,300,136] 
 +
-Spécifiez la valeur du Paramètre de phase d'Environnement de déploiement et cliquez sur le bouton _Enregistrer_ pour enregistrer la valeur.
+Spécifiez la valeur du Paramètre de phase d'Environnement de déploiement et cliquez sur le bouton _Sauvegarder_ pour enregistrer la valeur.
 +
 Les autres boutons disponibles sont: 
 

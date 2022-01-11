@@ -46,7 +46,7 @@ En plus, quand vous créez une Phase personnalisée, vous devez spécifier où l
 
 Tous les types de Phases insérées dans le flux de travail d'un Niveau, d'un Environnement de construction ou d'un Environnement de déploiement, contiennent les champs généraux suivants:
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -354,7 +354,7 @@ La section suivante décrit de manière plus détaillée chacune des Phases de c
 * <<App_Phases.adoc#_phases_buildphases_transportdeployscript,Transfert du script de déploiement>>
 * <<App_Phases.adoc#_phases_buildphases_transportpackagerersults,Transfert des résultats du Groupe de Paquets>>
 * <<App_Phases.adoc#_phases_buildphases_compressbuild,Compression de la construction>>
-* <<App_Phases.adoc#_phases_buildphases_archiveresult,Archivage Résultat>>
+* <<App_Phases.adoc#_phases_buildphases_archiveresult,Archivage du Résultat>>
 * <<App_Phases.adoc#_phases_buildphases_cleanupsource,Nettoyage Emplacement Source>>
 * <<App_Phases.adoc#_phases_buildphases_cleanupresult,Nettoyage Emplacement Cible>>
 
@@ -440,8 +440,8 @@ La Phase _Compression de la construction_ compresse les fichiers de résultat de
 Le format d`'archive est déterminé par le paramètre de Phase d`'Environnement alm.phases.compress.result.archiveFormat. S`'il est défini sur zip, tgz ou 7z, le format d`'archive choisi sera utilisé. S`'il n`'est pas défini ou défini sur auto, un format sera choisi en fonction du système d`'exploitation de la Machine Agent. Si la Machine Agent exécute un système d`'exploitation Windows, la phase de génération de compression crée un fichier `$$.$$zip`, sinon elle crée un fichier `$$.$$tar.gz`.
 
 [[_phases_buildphases_archiveresult]]
-=== Archivage Résultat 
-(((Phases ,Phases de construction ,Archivage Résultat))) 
+=== Archivage du Résultat 
+(((Phases ,Phases de construction ,Archivage du Résultat))) 
 
 La Phase _Archivage du résultat_ transfère le fichier de construction compressé à partir de l`'Emplacement Cible de l`'Environnement de Construction sur la Machine Agent IKAN ALM vers l`'Emplacement des Archives de construction sur la Machine Serveur IKAN ALM, utilisant le Transporteur associé à la Machine Agent IKAN ALM.
 

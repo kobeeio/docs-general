@@ -8,7 +8,7 @@
 Lorsqu`'un Utilisateur demande un Audit d`'un Projet, IKAN ALM vérifie que:
 
 * L`'Emplacement des Archives de construction existe pour toutes les Branches du projet. 
-** Pour la Branche Principale, cet emplacement correspond au chemin suivant __EmplacementArchiveConstructionParamètresSystème/NomProjet/PréfixeBrancheConstruction__. 
+** Pour la Branche Principale, cet emplacement correspond au chemin suivant: __EmplacementArchiveConstructionParamètresSystème/NomProjet/PréfixeBrancheConstruction__. 
 ** Pour la Branche Secondaire, cet emplacement correspond au chemin suivant: __EmplacementArchiveConstructionParamètresSystème/NomProjet/PréfixeBrancheConstruction.SuffixeBrancheConstruction__.
 
 +
@@ -29,7 +29,7 @@ Les conditions suivantes peuvent engendrer un message d`'avertissement:
 == Auditer un Projet
 (((Auditer ,Projet))) 
 
-. Dans le contexte de l'__Administration des projets__, sélectionnez __Auditer le Projet__.
+. Dans le __Menu d'Administration des projets__, sélectionnez __Auditer le Projet__.
 +
 Si la configuration du Projet est cohérente, l`'écran suivant s`'affiche.
 +
@@ -40,7 +40,7 @@ S`'il y a des erreurs dans la configuration du Projet, l`'écran suivant s`'affi
 image::ProjAdmin-Audit-Error.png[,1224,588] 
 +
 Pour les Branches et les Niveaux verrouillés, l`'icône image:icons/locked.gif[,15,15] est reprise dans le champ __Verrouillé__.
-Dans l`'exemple ci-dessus, c`'est le cas pour le Niveau __TEST__.
+Dans l`'exemple ci-dessus, c`'est le cas pour le Niveau __PRODUCTION__.
 Les messages d`'erreur ou d`'avertissement sont affichés en rouge dans le champ __Message__.
 +
 Pour la liste des messages d`'erreur ou d`'avertissement, référez-vous à la section <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects_errorswarnings,Messages d`'erreur et d`'avertissement>>

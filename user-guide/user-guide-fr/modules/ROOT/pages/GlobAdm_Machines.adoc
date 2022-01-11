@@ -31,7 +31,7 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Créer__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -136,7 +136,7 @@ a|_Sujets apparentés:_
 == Aperçu des Machines 
 (((Machines ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -218,7 +218,7 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 == Modifier la définition d`'une Machine 
 (((Machines ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ sur le panneau __Aperçu des Machines__.
 +
@@ -236,7 +236,7 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 Le panneau _Environnements connectés_ affiche les Environnements qui utilisent la Machine sélectionnée.
 ====
 
-. Cliquez sur le bouton _Enregistrer_ pour sauvegarder vos modifications.
+. Cliquez sur le bouton _Sauvegarder_ pour sauvegarder vos modifications.
 +
 Les boutons suivants sont également disponibles:
 
@@ -246,7 +246,7 @@ Les boutons suivants sont également disponibles:
 [[_globadm_machinesoverview_remoteinstall]]
 == Installer un Agent IKAN ALM distant 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 . Cliquez sur le lien image:icons/remoteInstall.png[,16,16] __Installer__ sur le panneau __Aperçu des Machines__.
 +
 L`'écran suivant s`'affiche: 
@@ -363,7 +363,7 @@ Par exemple, pour utiliser une Adresse IP laquelle diffère de l'Adresse IP inte
 
 |===
 
-Lee trois premiers champs qui suivent sont les numéros de port spécifiques du conteneur Karaf gérant le démon/service de l'Agent IKAN ALM. Normallement, il y a pas besoin de changer ces numéros de port sauf si vous rencontrez des conflits. Pour plus d'information, se référer à la documentation sur le Conteneur 4.0 de Karaf: https://karaf.apache.org/manual/latest/#_instances .
+Lee trois premiers champs qui suivent sont les numéros de port spécifiques du conteneur Karaf gérant le démon/service de l'Agent IKAN ALM. Normallement, il n'y a pas besoin de changer ces numéros de port sauf si vous rencontrez des conflits. Pour plus d'information, se référer à la documentation sur le Conteneur 4.0 de Karaf: https://karaf.apache.org/manual/latest/#_instances .
 
 [cols="1,2", frame="topbot", options="header"]
 |===
@@ -495,7 +495,7 @@ Entrer le Délai d'expiration en secondes après lequel le processus PowerShell 
 
 [[_globadm_machinesoverview_viewparameters]]
 == Gérer les Paramètres d`'une Machine
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 
 . Pour y accéder, cliquez sur le lien image:icons/icon_viewparameters.png[,15,15] _Voir les Paramètres_ dans le panneau __Aperçu des Machines__.
 +
@@ -523,7 +523,7 @@ Pour plus d'informations, se référer aux sections suivantes:
 == Supprimer une définition de Machine 
 (((Machines ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 
 . Cliquez sur le lien _Supprimer_ sur le panneau _Aperçu des Machines_. 
 +
@@ -545,7 +545,7 @@ Vous devez d`'abord lier les Environnements à une autre Machine, ou supprimer l
 == Vérifier le Statut d`'une Machine 
 (((Machines ,Statut))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 
 . Cliquez sur le lien image:icons/status.gif[,15,15] _Statut_ sur le panneau __Aperçu des Machines__. 
 +
@@ -571,7 +571,7 @@ Les statuts suivants sont possibles:
 
 |image:icons/status_green.gif[,15,15] _En attente_
 |La connexion avec l`'Agent/le Serveur s`'est établie correctement.
-Actuellement, l`'Agent/le Serveur n`'est pas en train d`'exécuter ni de Requête de niveau, ni de Construction ni de Déploiement.
+Actuellement, l`'Agent/le Serveur n`'est pas en train d`'exécuter de Requête de niveau, ni de Construction ni de Déploiement.
 
 |image:icons/status_green.gif[,15,15] _Constructions en cours_
 |La connexion avec l`'Agent s`'est établie correctement.
@@ -612,7 +612,7 @@ Le panneau _Trace de la Machine_ affiche les dernières 150 lignes de sortie du 
 == Écran de l`'Aperçu des Phases installées 
 (((Aperçu des Phases installées))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 
 . Cliquez sur le lien image:icons/installed_phases.gif[,15,15] _Phases installées_ sur le panneau __Aperçu des Machines__.
 +
@@ -681,7 +681,7 @@ Si une Phase d'une Requête de niveau est exécutée sur un Agent ou un Serveur 
 == Afficher l`'Historique d`'une Machine 
 (((Machines ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu__.
 
 . Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ pour afficher l`'écran __Aperçu de l`'Historique de la Machine__.
 +
@@ -722,7 +722,7 @@ Les actions suivantes sont possibles:
 === Aperçu des Paramètres de machine 
 (((Paramètres machines ,Aperçu)))  (((Machines ,Paramètres))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu des Paramètres de Machine__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu des Paramètres de Machine__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -731,7 +731,7 @@ image::GlobAdmin-Machines-MachineParameters-Overview.png[,969,675]
 
 [NOTE]
 ====
-Vous pouvez également accéder à l`'__Aperçu des Paramètres _via l`'__Aperçu des Machines_, en sélectionnant image:icons/icon_GlobalAdmin_13x13.png[,13,13] _(Administration globale) > Machines > Aperçu_ et en sélectionnant ensuite le lien image:icons/icon_viewparameters.png[,15,15] _Voir les Paramètres_ pour la Machine requise.
+Vous pouvez également accéder à l`'__Aperçu des Paramètres _via l`'__Aperçu des Machines_, en sélectionnant image:icons/icon_GlobalAdmin_13x13.png[,13,13] _(Menu d'Administration globale) > Machines > Aperçu_ et en sélectionnant ensuite le lien image:icons/icon_viewparameters.png[,15,15] _Voir les Paramètres_ pour la Machine requise.
 ====
 
 . Définissez les critères de recherche requis dans le panneau de recherche.
@@ -800,7 +800,7 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 === Créer un Paramètre de machine 
 (((Paramètres machines ,Créer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu des Paramètres de machine__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu des Paramètres de machine__.
 
 . Cliquez sur le lien image:icons/icon_createparameter.png[,15,15] _Créer un Paramètre_ à côté du nom de la machine pour afficher la fenêtre __Créer un Paramètre de machine__.
 +
@@ -813,7 +813,7 @@ image::GlobAdmin-Machines-MachineParameters-Create.png[,375,349]
 Les champs suivants sont disponibles.
 +
 
-[cols="1,2", frame="topbot", options="header"]
+[cols="1,3", frame="topbot", options="header"]
 |===
 | Champ
 | Description
@@ -887,7 +887,7 @@ Les boutons suivants sont également disponibles:
 === Modifier un Paramètre de machine 
 (((Paramètres machines ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu des Paramètres de machine__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu des Paramètres de machine__.
 
 . Dans la colonne __Actions__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier un Paramètre_ à côté du Paramètre de machine à modifier.
 +
@@ -910,7 +910,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer un Paramètre de machine 
 (((Paramètres machines ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu des Paramètres de machine__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu des Paramètres de machine__.
 
 . Dans la colonne __Actions__, cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer un Paramètre_ à côté du Paramètre de machine à supprimer.
 +
@@ -930,7 +930,7 @@ Vous pouvez également cliquer sur le bouton _Annuler_ pour retourner à l`'écr
 
 Cette fonctionnalité permet de copier la définition complète d`'un Paramètre de machine d`'une Machine source vers une ou plusieurs Machine(s) cible(s)
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu des Paramètres de machine__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu des Paramètres de machine__.
 
 . Dans la colonne __Actions__, cliquez sur le lien image:icons/copy_parameter.gif[,15,15] _Copier un Paramètre_ à côté du Paramètre de machine à copier.
 +
@@ -953,7 +953,7 @@ Les boutons suivants sont également disponibles:
 === Afficher l`'Historique d`'un Paramètre de machine 
 (((Paramètres machines ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Machines > Aperçu des Paramètres de machine__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Machines > Aperçu des Paramètres de machine__.
 
 . Cliquez sur l'icône image:icons/history.gif[,15,15] _Historique_ pour afficher l`'écran __Aperçu de l`'Historique de la Machine__.
 +

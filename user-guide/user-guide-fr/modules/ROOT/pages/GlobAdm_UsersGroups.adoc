@@ -72,7 +72,7 @@ L`'__Aperçu des noms d`'Utilisateurs__ permet les actions suivantes:
 === Écran de l`'Aperçu des Utilisateurs
 (((Utilisateurs ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
 +
 L`'écran suivant s`'affiche:
 +
@@ -176,7 +176,7 @@ Elle permet d`'afficher l`'historique d`'un Utilisateur.
 === Modifier les Paramètres d`'un Utilisateur 
 (((Utilisateurs ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
 . Dans l`'aperçu, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ du Nom d`'Utilisateur dont vous voulez modifier la définition.
 +
 L`'écran suivant s`'affiche:
@@ -215,7 +215,7 @@ Vous pouvez également utiliser le bouton _Actualiser_ pour récupérer les Para
 === Déconnecter un Utilisateur 
 (((Utilisateurs ,Déconnecter))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
 
 . Établissez l'option _Utilisateurs connectés_ à _Oui_ pour afficher la liste des Utilisateurs actuellement connectés.
 +
@@ -230,7 +230,7 @@ Par conséquent, l`'Utilisateur devra se reconnecter s`'il veut continuer ses ac
 === Afficher l`'Historique d`'un Utilisateur 
 (((Utilisateurs ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Utilisateurs_.
 
 . Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ dans le panneau _Aperçu des Utilisateurs_ pour afficher l`'écran __Aperçu de l`'Historique de l`'Utilisateur__. 
 +
@@ -297,7 +297,7 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 ====
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Créer un Groupe Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Créer un Groupe Utilisateurs_.
 +
 L`'écran suivant s`'affiche:
 +
@@ -338,7 +338,7 @@ Le nouveau Groupe d`'utilisateurs sera ajouté à l`'__Aperçu des Groupes d`'ut
 === Aperçu des Groupes d`'utilisateurs 
 (((Groupes d’utilisateurs ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
 +
 L`'écran suivant s`'affiche:
 +
@@ -412,7 +412,7 @@ Les colonnes marquées de l`'icône image:icons/icon_sort.png[,15,15]  peuvent �
 === Modifier un Groupe d`'utilisateurs 
 (((Groupes d’utilisateurs ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
 +
 L`'écran suivant s`'affiche:
 +
@@ -510,7 +510,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer un Groupe d`'utilisateurs 
 (((Groupes d’utilisateurs ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
 
 . Cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ pour supprimer la définition du Groupe d`'Utilisateurs sélectionné.
 * Si le Groupe d`'Utilisateurs n`'est pas lié à un autre composant d`'IKAN ALM, l`'écran suivant s`'affiche: 
@@ -532,7 +532,7 @@ Vous aurez à retirer le Groupe d'utilisateurs des Objets connectés affichés a
 === Afficher l`'Historique d`'un Groupe d`'utilisateurs 
 (((Groupes d’utilisateurs ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Utilisateurs & Groupes > Aperçu des Groupes Utilisateurs_.
 
 . Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ pour afficher l`'écran __Aperçu de l`'Historique du Groupe d`'Utilisateurs__. 
 +

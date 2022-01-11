@@ -23,7 +23,7 @@ Se référer aux procédures suivantes pour plus d`'information:
 == Écran de l`'Aperçu des Projets
 (((Projets ,Aperçu))) 
 
-. Cliquez sur l'icône _Administration des projets_ image:icons/icon_ProjectAdmin_13x13.png[,13,13]  dans le Menu Principal.
+. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13] _Menu d'Administration des projets_ dans le Menu Principal.
 +
 L'écran __Aperçu des Projets __s'affiche.
 +
@@ -102,7 +102,7 @@ Elle permet d`'afficher l`'Historique de toutes les opérations de création, de
 Cette option n'est disponible que pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Utilisateur.
 ====
 
-. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Administration des Projets_ dans le Menu Principal.
+. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des Projets_ dans le Menu Principal.
 . Cliquez sur le lien image:icons/view.gif[,15,15] _Afficher_ dans le panneau __Aperçu des Projets__.
 +
 Ce lien est disponible si vous avez des droits d`'accès d`'Utilisateur sur le Projet.
@@ -136,7 +136,7 @@ Pour faciliter l'affichage de tous les paramètres du Projet, les actions princi
 == Modifier les paramètres d`'un Projet 
 (((Projets ,Modifier))) 
 
-. Dans le menu principal, cliquez sur l`'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Administration des Projets_.
+. Dans le menu principal, cliquez sur l`'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des Projets_.
 
 . Pour y accéder, cliquez sur l'icône image:icons/edit.gif[,15,15] _Modifier_ dans le panneau Aperçu des Projets.
 +
@@ -280,7 +280,7 @@ Pour un aperçu des options disponibles dans le sous-menu, se référer à la se
 == Supprimer un Projet 
 (((Projets ,Supprimer))) 
 
-. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Administration des Projets_ dans le Menu Principal.
+. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des Projets_ dans le Menu Principal.
 
 . Cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ dans le panneau __Aperçu des Projets__.
 +
@@ -304,7 +304,7 @@ Verrouiller un Projet consiste à bloquer toutes les activités du Projet, telle
 Il peut s`'avérer utile de verrouiller un Projet, par exemple, si les Paramètres de configuration ont changé ou si des actions administratives sont nécessaires sur le RCV.
 Déverrouiller le Projet signifie que vous autorisez à nouveau ces actions pour le Projet
 
-. Dans le menu principal, cliquez sur l`'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Administration des Projets_.
+. Dans le menu principal, cliquez sur l`'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des Projets_.
 
 . Cliquez sur le lien image:icons/lock.gif[,15,15] _Verrouiller_ ou image:icons/unlock.gif[,15,15] _Déverrouiller_ dans le panneau __Aperçu des Projets__.
 +
@@ -321,7 +321,7 @@ Cette fonctionnalité est également disponible via le bouton _Verrouiller/Déve
 En définissant un Projet comme "`caché`", par défaut, il ne sera plus affiché dans les panneaux d`'aperçu.
 Cela peut s`'avérer très utile pour ne plus afficher d`'anciens Projets sans perdre les informations historiques (Requêtes de niveau, ...) associées à ces Projets.
 
-. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Administration des projets_ dans le Menu Principal.
+. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des projets_ dans le Menu Principal.
 
 . Cliquez sur le lien image:icons/hide.gif[,15,15] _Cacher_ devant le Projet que vous voulez cacher.
 +
@@ -343,7 +343,7 @@ Cliquez sur le lien _Montrer les options avancées_ pour afficher ce critère.
 == Afficher l`'historique d`'un Projet 
 (((Projets ,Historique))) 
 
-. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Administration des Projets_ dans le Menu Principal.
+. Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des Projets_ dans le Menu Principal.
 
 . Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ dans le panneau _Aperçu des Projets_ pour afficher l`'écran __Aperçu de l`'Historique du Projet__.
 +

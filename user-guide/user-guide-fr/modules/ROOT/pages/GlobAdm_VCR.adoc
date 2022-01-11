@@ -30,7 +30,7 @@ Vous devez d`'abord installer un client RCV sur le Serveur IKAN ALM pour pouvoir
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez _Référentiels de contrôle de version > Créer_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Référentiels de contrôle de version > Créer_.
 +
 L`'écran suivant s`'affiche:
 +
@@ -50,10 +50,10 @@ Pour plus d'informations concernant ces détails, se référer aux sections appr
 
 
 [[_globadm_vcr_overview]]
-== Écran de l`'aperçu des Référentiels 
+== Écran de l`'Aperçu des Référentiels 
 (((Référentiel ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de contrôle de version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -68,8 +68,8 @@ Vous pouvez également:
 * cliquer sur le lien _Rechercher_ pour synchroniser la liste en fonction des critères de recherche actuels,
 * cliquer sur le lien _Réinitialiser la recherche_ pour nettoyer les champs.
 
-. Vérifiez les informations dans le panneau __Aperçu des Référentiels__.
-. En fonction de vos droits d'accès, les liens/icônes suivants peuvent être disponibles dans le panneau __Aperçu des Référentiels Subversion__:
+. Vérifiez les informations dans le panneau __Aperçu des Référentiels de Contrôle de Version__.
+. En fonction de vos droits d'accès, les liens/icônes suivants peuvent être disponibles dans le panneau __Aperçu des Référentiels de Contrôle de Version__:
 +
 
 [cols="1,3", frame="topbot", options="header"]
@@ -120,7 +120,7 @@ Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Admin
 
 Vous devez d`'abord installer un client Subversion sur le Serveur IKAN ALM pour pouvoir créer un Référentiel de contrôle de version Subversion sur le Serveur IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 
 . Sélectionnez _Subversion_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -251,7 +251,7 @@ a|_Sujets apparentés:_
 === Aperçu des Référentiels Subversion 
 (((Subversion))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche. 
 
@@ -304,7 +304,7 @@ Voir <<GlobAdm_VCR.adoc#_globadm_vcr_svn_history,Afficher l`'Historique d`'un R�
 === Modifier un Référentiel Subversion 
 (((Subversion ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -340,7 +340,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer un Référentiel Subversion 
 (((Subversion ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -366,7 +366,7 @@ Avant de supprimer le Référentiel, vous devez assigner le(s) Projet(s) listés
 === Afficher l`'Historique d`'un Référentiel Subversion 
 (((Subversion ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -400,7 +400,7 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 Avant de pouvoir créer le Référentiel de Contrôle de Version Git dans IKAN ALM, vous devez installer un client Git sur le Serveur IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 
 . Sélectionnez _Git_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -533,7 +533,7 @@ a|_Sujets apparentés:_
 === Écran de l'Aperçu des Référentiels Git 
 (((Git ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 
@@ -586,7 +586,7 @@ Elle permet d`'afficher l`'historique de toutes les opérations de création, de
 === Modifier un Référentiel Git 
 (((Git ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -622,7 +622,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer un Référentiel Git 
 (((Git ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -648,7 +648,7 @@ Avant de supprimer les RCVs, vous devez connecter les Projets signalés à un au
 === Afficher l'Historique d`'un Référentiel Git 
 (((Git ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -684,7 +684,7 @@ Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Admin
 Avant de pouvoir créer le Référentiel de Contrôle de Version CVS dans IKAN ALM, vous devez installer un client CVS sur le Serveur IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 
 . Sélectionnez _CVS_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -821,7 +821,7 @@ a|_Sujets apparentés:_
 === Aperçu des Référentiels CVS 
 (((CVS ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche. 
 
@@ -874,7 +874,7 @@ Elle permet d`'afficher l`'historique d`'un Référentiel CVS.
 === Modifier un Référentiel CVS 
 (((CVS ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -910,7 +910,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer un Référentiel CVS 
 (((CVS ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -937,7 +937,7 @@ Avant de supprimer le Référentiel, vous devez assigner le(s) Projet(s) listés
 === Afficher l`'historique d`'un Référentiel CVS 
 (((CVS ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -973,7 +973,7 @@ Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Admin
 Avant de pouvoir créer le Référentiel de Contrôle de Version TFVC dans IKAN ALM, vous devez installer un Client TFVC (Team Explorer pour MS Visual Studio ou Team Explorer Everywhere pour Team Foundation Server) sur le Serveur IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 
 . Sélectionnez _TFVC_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -1079,7 +1079,7 @@ a|_Sujets apparentés:_
 === Écran de l'Aperçu des Référentiels TFVC 
 (((TFVC ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 
@@ -1132,7 +1132,7 @@ Elle permet d`'afficher l`'historique de toutes les opérations de création, de
 === Modifier un Référentiel TFVC 
 (((Git ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -1168,7 +1168,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer un Référentiel TFVC 
 (((Git ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +
@@ -1195,7 +1195,7 @@ Avant de supprimer les RCVs, vous devez connecter les Projets signalés à un au
 === Afficher l'Historique d`'un Référentiel TFVC 
 (((Git ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Aperçu__.
 +
 L'aperçu de tous les Référentiels de contrôle de version s'affiche.
 +

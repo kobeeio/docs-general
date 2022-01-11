@@ -111,7 +111,7 @@ Si le Serveur IKAN ALM n`'utilise pas de connexion encryptée, établissez cet �
 +
 Format:
 +
-__*clr* -project:[project name] [-projectstream:[build prefix[-build suffix]]] [-package:[package name]] -level:[level name] [-description:[description]] [-buildnumber:[buildnumber]] [-tag:[vcr tag]] [-redeliver=true|false] [-startdate:[startdate]] [-paramfile:[parameter file]]__
+__ *clr* -project:[project name] [-projectstream:[build prefix[-build suffix]]] [-package:[package name]] -level:[level name] [-description:[description]] [-buildnumber:[buildnumber]] [-tag:[vcr tag]] [-redeliver=true|false] [-startdate:[startdate]] [-paramfile:[parameter file]]__
 +
 
 [cols="1,3,1", frame="topbot", options="header"]
@@ -365,7 +365,7 @@ Si le Serveur IKAN ALM n`'utilise pas une connexion cryptée, il faut mettre l`'
 +
 Format :
 +
-__*package* -project:[nom projet] [-projectstream:[préfixe[-suffixe]]] -package:[nom paquet] [-description:[description]] -action:[CREATE | UPDATE] [-owner:[propriétaire]] [-status=[Statut]] [-targetreleasedate:[Date de livraison cible]] [-filerevisions:[fichier xml contenant les liens des fichiers et des révisions]]__
+__ *package* -project:[nom projet] [-projectstream:[préfixe[-suffixe]]] -package:[nom paquet] [-description:[description]] -action:[CREATE | UPDATE] [-owner:[propriétaire]] [-status=[Statut]] [-targetreleasedate:[Date de livraison cible]] [-filerevisions:[fichier xml contenant les liens des fichiers et des révisions]]__
 +
 
 [cols="1,3,1", frame="topbot", options="header"]
@@ -634,7 +634,7 @@ Si le Serveur IKAN ALM n`'utilise pas de connexion encryptée, établissez cet �
 +
 Format :
 +
-__*report* -design:$REPORTDESIGNFILE [-dest:$DESTINATIONFILE] -format:$FORMAT [-lang:$LANGUAGE] [-max:$MAXRESULT] [-filter:$SEARCHCRITERIAFILE] [-group:[$GROUPINGVALUE]] [-order:[$ORDERINGVALUE]]__
+__ *report* -design:$REPORTDESIGNFILE [-dest:$DESTINATIONFILE] -format:$FORMAT [-lang:$LANGUAGE] [-max:$MAXRESULT] [-filter:$SEARCHCRITERIAFILE] [-group:[$GROUPINGVALUE]] [-order:[$ORDERINGVALUE]]__
 +
 
 [cols="1,3,1", frame="topbot", options="header"]
@@ -979,11 +979,11 @@ Cette procédure décrit comment installer IKAN ALM comme outil externe dans Vis
 +
 image::CommandLine-VSCode-ExternalTools-Step1.png[,1201,972] 
 
-. Une fois l`'installation terminée, cliquez sur l`'icon _Refreshes the action buttons_ sur la barre de statut en bas de page. Un popup pourrait montrer le message suivant "_VsCode Action Buttons: Vous n`'avez pas de commande active_". Cliquez l`'icon `'roue dentée`', ensuite cliquez sur _Extensions_, cela vous donnera la liste des extensions et cliquez sur _VsCode Action Buttons_.
+. Une fois l`'installation terminée, cliquez sur l`'icône _Refreshes the action buttons_ sur la barre de statut en bas de page. Un popup pourrait montrer le message suivant "_VsCode Action Buttons: Vous n`'avez pas de commande active_". Cliquez l`'icône `'roue dentée`', ensuite cliquez sur _Extensions_, cela vous donnera la liste des extensions et cliquez sur _VsCode Action Buttons_.
 +
 image::CommandLine-VSCode-ExternalTools-Step2.png[,1288,651] 
 
-. Alternative: vous pouvez cliquer sur le bouton _Extensions_ dans le menu de gauche, sélectionnez l`'extension _VsCode Action Buttons_, cliquez sur l`'icon `'roue dentée`' et cliquez sur _Paramètres d`'extension_.
+. Alternative: vous pouvez cliquer sur le bouton _Extensions_ dans le menu de gauche, sélectionnez l`'extension _VsCode Action Buttons_, cliquez sur l`'icône `'roue dentée`' et cliquez sur _Paramètres d`'extension_.
 +
 image::CommandLine-VSCode-ExternalTools-Step2-alt.png[,1288,651] 
 
@@ -1004,11 +1004,11 @@ image::CommandLine-VSCode-ExternalTools-Step2-alt.png[,1288,651]
 +
 image::CommandLine-VSCode-ExternalTools-Step3.png[,1288,651] 
 
-. Ajoutez plusieurs entrées de "commands" que vous voulez dans le fichier _settings.json_. Chaque commande représentera un bouton de Requête de niveau séparé. Finalement, sauvegardez le fichier et cliquez l`'icon _Refreshes the action buttons_ sur la barre de statut du bas de page pour appliquer vos changements.
+. Ajoutez plusieurs entrées de "commands" que vous voulez dans le fichier _settings.json_. Chaque commande représentera un bouton de Requête de niveau séparé. Finalement, sauvegardez le fichier et cliquez l`'icône _Refreshes the action buttons_ sur la barre de statut du bas de page pour prendre en compte vos changements.
 +
 image::CommandLine-VSCode-ExternalTools-Step4.png[,1478,651] 
 
-. Pour initialiser la Requête de niveau, simplement cliquer sur le bouton de Requête de nivea sur la barre de statut du bas de page.
+. Pour initialiser la Requête de niveau, simplement cliquer sur le bouton de Requête de niveau sur la barre de statut du bas de page.
 +
 image::CommandLine-VSCode-ExternalTools-Step5.png[,1478,651] 
 

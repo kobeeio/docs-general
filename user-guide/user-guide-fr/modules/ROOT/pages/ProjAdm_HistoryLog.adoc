@@ -6,7 +6,7 @@
 (((Suivi de l’Historique)))  (((Administration des Projets ,Suivi de l’Historique))) 
 
 
-. Dans le contexte de l'__Administration des Projets__, sélectionnez __Suivi de l'Historique__.
+. Dans le __Menu d'Administration des Projets__, sélectionnez __Suivi de l'Historique__.
 +
 L'écran _Aperçu de l'Historique
 du Projet_ s'affiche:
@@ -73,7 +73,7 @@ L`'objet a été supprimé.
 
 . Cliquez sur une version spécifique dans le panneau _Versions d`'objets de l`'Administration des Projets_ pour afficher les différences entre cette version et la version actuelle de l`'objet.
 +
-Le panneau __Comparaison des Versions __est ajoutée à droite du panneau __Versions__.
+Le panneau __Comparaison des Versions du Projet__ est ajoutée à droite du panneau __Versions d`'objets de l`'Administration des Projets__.
 +
 image::ProjAdm-HistoryLog-Comparison.png[,1167,804] 
 +

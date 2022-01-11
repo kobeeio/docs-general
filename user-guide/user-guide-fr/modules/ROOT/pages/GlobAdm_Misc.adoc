@@ -23,7 +23,7 @@ Cette option permet d`'envoyer, à partir de l`'application IKAN ALM, des messag
 Ceci permet, par exemple, d`'envoyer un avertissement aux Utilisateurs connectés, ou de notifier des Utilisateurs appartenant à un groupe d`'utilisateurs spécifique que certains Paramètres ont été modifiés.
 C`'est aussi un moyen pour tester les Paramètres de courrier spécifiés dans l`'onglet _Courrier_ des Paramètres système.
 
-. Dans le contexte de l'Administration globale, sélectionnez _Autres activités > Notifier les Utilisateurs_.
+. Dans le __Menu d'Administration globale__, sélectionnez _Autres activités > Notifier les Utilisateurs_.
 +
 L`'écran suivant s`'affiche:
 +

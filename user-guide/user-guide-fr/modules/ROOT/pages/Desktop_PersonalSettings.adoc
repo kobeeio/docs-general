@@ -134,14 +134,13 @@ Les critères de recherche seront remplis automatiquement et le résultat filtr�
 === Gérer les définitions des Filtres 
 (((Filtres de recherche ,Gérer)))  (((Filtres de recherche ,Modifier))) 
 
-Le panneau "Rechercher les Filtres" dans l'écran des Paramètres personnels vous permet d'afficher les définitions des Filtres existants, de modifier leur nom et leur description ou de supprimer un Filtre
+Le panneau "Rechercher les Filtres" dans l'écran des Paramètres personnels vous permet d'afficher les définitions des Filtres existants, de modifier leur nom et leur description ou de supprimer un Filtre.
 
 . Sélectionnez Bureau > Paramètres personnels.
 +
 Le panneau _Rechercher les Filtres_ affiche la liste de tous les Filtres définis par l'Utilisateur actuel.
 +
-Si nécessaire, vous pouvez limiter la liste des Filtres affichés en sélectionnant la Page requise dans le champ déroulant _Rechercher
-la Page_ (Aperçu des Paquets, Aperçu des Projets, Aperçu des Requêtes de niveau ou Aperçu des Constructions et Déploiements)
+Si nécessaire, vous pouvez limiter la liste des Filtres affichés en sélectionnant la Page requise dans le champ déroulant _Rechercher la Page_. (Aperçu des Paquets, Aperçu des Projets, Aperçu des Requêtes de niveau ou Aperçu des Constructions et Déploiements)
 +
 image::Search_ManageFilters.png[,963,611] 
 +

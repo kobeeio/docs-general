@@ -590,14 +590,13 @@ image::Desktop-LevelRequests-Flow-Deploy.png[,906,1252]
 |Le processus Moniteur sur le serveur IKAN ALM détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
 
 Cette étape est optionnelle.
-Si nécessaire, les Groupes de Pré- et de Post-notifications sont définis dans l`'écran __Modifier un Niveau__. <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un niveau>>
+Si nécessaire, les Groupes de Pré- et de Post-notifications sont définis dans l`'écran __Modifier un Niveau__. <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les Paramètres d`'un niveau>>
 
 |3.
 |Le Moniteur génère les Pré- et les Post-approbations nécessaires.
 
 Cette étape est optionnelle.
-Si nécessaire, les Groupes de Pré- et de Post-approbations sont définis dans l`'écran __Aperçu
-de la séquence des Approbations du Niveau__. <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Les approbations>>
+Si nécessaire, les Groupes de Pré- et de Post-approbations sont définis dans l`'écran __Aperçu de la séquence des Approbations du Niveau__. <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Les Approbations>>
 
 |4.
 |Dès qu`'une des Approbations est <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsreject,rejetée>>, le Moniteur établit le statut de la Requête de niveau à __Rejeté__ et la séquence d`'actions se termine.
@@ -633,30 +632,30 @@ Si ce processus échoue, les étapes 7 et 8 sont réalisées.
 Si ce processus réussit, l`'étape 10 est réalisée.
 
 |10.
-|Si la décompression réussit, l`'Agent de Déploiement vérifie le script de déploiement.
+|Si la décompression réussit, l`'Agent de Déploiement vérifie le Script de déploiement.
 Ce processus comprend deux phases:
 
-__Dans la première phase__, l`'Agent de Déploiement détermine le script de déploiement à utiliser.
-D`'abord, il vérifie si un script de déploiement a été défini pour cet <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironments,Environnements de déploiement>>.
-Si cela est le cas, l`'Agent de Déploiement suppose qu`'il doit localiser et utiliser ce script de déploiement.
-Si aucun script de déploiement n`'a été spécifié pour l`'Environnement de Déploiement, l`'Agent de Déploiement suppose qu`'il doit localiser et utiliser le script de déploiement défini dans les <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,paramètres d`'un projet>>.
+__Dans la première phase__, l`'Agent de Déploiement détermine le Script de déploiement à utiliser.
+D`'abord, il vérifie si un Script de déploiement a été défini pour cet <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironments,Environnements de déploiement>>.
+Si cela est le cas, l`'Agent de Déploiement suppose qu`'il doit localiser et utiliser ce Script de déploiement.
+Si aucun Script de déploiement n`'a été spécifié pour l`'Environnement de Déploiement, l`'Agent de Déploiement suppose qu`'il doit localiser et utiliser le Script de déploiement défini dans les <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Paramètres d`'un Projet>>.
 
-__Dans la seconde phase__, l`'Agent de Déploiement essaie de localiser le script de déploiement qu`'il a déterminé devoir utiliser durant la première phase.
+__Dans la seconde phase__, l`'Agent de Déploiement essaie de localiser le Script de déploiement qu`'il a déterminé devoir utiliser durant la première phase.
 D`'abord, il cherche dans le résultat de construction décompressé disponible dans l`'emplacement Source de l`'Environnement de Déploiement.
-Si le script de déploiement est trouvé, le processus de vérification du script de déploiement réussit et l`'étape 11 sera réalisée.
+Si le script de déploiement est trouvé, le processus de vérification du Script de déploiement réussit et l`'étape 11 sera réalisée.
 
-Si le script de déploiement n`'est pas trouvé dans le résultat de construction décompressé, l`'Agent de Déploiement recherche l`'emplacement IKAN ALM par défaut de script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
+Si le Script de déploiement n`'est pas trouvé dans le résultat de construction décompressé, l`'Agent de Déploiement recherche l`'emplacement IKAN ALM par défaut de Script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
-Si le script de déploiement est trouvé, il sera transféré vers l`'emplacement Source de l`'Environnement de Déploiement défini sur cette Machine et pour ce Niveau.
+Si le Script de déploiement est trouvé, il sera transféré vers l`'emplacement Source de l`'Environnement de Déploiement défini sur cette Machine et pour ce Niveau.
 Le mécanisme de transfert utilisé sera le même que celui utilisé pour le résultat de construction.
-Le processus de vérification du script de déploiement est exécuté et l`'étape 11 est réalisée.
+Le processus de vérification du Script de déploiement est exécuté et l`'étape 11 est réalisée.
 
-Si le script de déploiement n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement IKAN ALM de script ne réussit pas, l`'action de vérification du script de déploiement échoue et les étapes 7 et 8 sont réalisées.
+Si le Script de déploiement n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement IKAN ALM de Script ne réussit pas, l`'action de vérification du Script de déploiement échoue et les étapes 7 et 8 sont réalisées.
 
 |11.
-|Si la vérification du script de déploiement réussit, l`'Agent de Déploiement exécute le script de déploiement.
+|Si la vérification du Script de déploiement réussit, l`'Agent de Déploiement exécute le Script de déploiement.
 
-D`'abord, le script de déploiement est alimenté avec les Paramètres suivants: l`'emplacement Source, l`'emplacement Cible, les Paramètres IKAN ALM standard et les Paramètres de déploiement définis par l`'utilisateur.
+D`'abord, le Script de déploiement est alimenté avec les Paramètres suivants: l`'emplacement Source, l`'emplacement Cible, les Paramètres IKAN ALM standard et les Paramètres de déploiement définis par l`'utilisateur.
 
 Puis, l`'Outil de Déploiement défini pour l`'Environnement de Déploiement (Ant, Gradle, NAnt ou Maven2) déploie la Construction sur l`'emplacement Cible.
 
@@ -667,8 +666,7 @@ Si cette opération réussit, l`'étape 12 est réalisée.
 |12.
 |Si le Déploiement réussit, l`'Agent de Déploiement nettoie les fichiers de construction sur l`'emplacement Source de déploiement pour cette requête.
 
-Si l`'option de _Débogage_ est activée pour un Environnement de Déploiement, l`'action de _Nettoyage
-du résultat de construction_ ne sera pas réalisée pour que l`'Utilisateur puisse utiliser le résultat de construction disponible lors de l`'exécution manuelle du Script de Déploiement pour des raisons de test.
+Si l`'option de _Débogage_ est activée pour un Environnement de Déploiement, l`'action de _Nettoyage du résultat de construction_ ne sera pas réalisée pour que l`'Utilisateur puisse utiliser le résultat de construction disponible lors de l`'exécution manuelle du Script de Déploiement pour des raisons de test.
 
 Comme l`'échec de cette étape n`'est pas bloquant, l`'étape 13 est ensuite réalisée, que l`'opération soit réussie ou non.
 
@@ -691,15 +689,14 @@ Si l`'action 12 échoue (Nettoyage construction), le statut de déploiement est 
 |Les Notifications requises sont envoyées.
 
 Tous les utilisateurs appartenant au _groupe
-d`'utilisateurs ayant des droits d`'accès d`'utilisateur_ ou au __groupe d`'utilisateurs ayant des droits d`'accès d`'Administrateur__, ainsi que les Utilisateurs __ayant des droits de requête
-sur le Niveau__, reçoivent les Notifications requises.
+d`'utilisateurs ayant des droits d`'accès d`'utilisateur_ ou au __groupe d`'utilisateurs ayant des droits d`'accès d`'Administrateur__, ainsi que les Utilisateurs __ayant des droits de requête sur le Niveau__, reçoivent les Notifications requises.
 (Ces Groupes sont définis dans l`'écran des <<GlobAdm_Project.adoc#_globadm_projectcreate,Projets>>)
 
-Le type de Notification (mail ou aucun) et les critères de Notification (le statut de la Requête de niveau étant RÉUSSI, ÉCHOUÉ, AVERTISSEMENT ou TOUJOURS) sont définis dans les sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un niveau de construction>>, <<#_beifijci,Créer un niveau de test ou de production>> ou <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un niveau>>.
+Le type de Notification (mail ou aucun) et les critères de Notification (le statut de la Requête de niveau étant RÉUSSI, ÉCHOUÉ, AVERTISSEMENT ou TOUJOURS) sont définis dans les sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un Niveau de Construction>>, <<#_beifijci,Créer un Niveau de Test ou de Production>> ou <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les paramètres d`'un niveau>>.
 |===
 
 [[_desktop_lr_creatinglevelrequest]]
-== Création de requêtes de niveau 
+== Création de Requêtes de niveau 
 (((Requêtes de niveau ,Créer))) 
 
 Les sections suivantes traitent les procédures concernant la création d`'une nouvelle Requête de niveau:
@@ -767,7 +764,7 @@ Il y a trois types de Niveau:
 * Test
 * Production
 
-Voir les sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un niveau de construction>> et <<#_beifijci,Créer un niveau de test ou de production>>.
+Voir les sections <<ProjAdm_Levels.adoc#_plevelenvmgt_createlevel,Créer un Niveau de Construction>> et <<#_beifijci,Créer un Niveau de Test ou de Production>>.
 
 |Optionnel
 a|Ce champ indique si le Niveau est optionnel ou non dans le Cycle de vie rattaché à la Branche.
@@ -822,17 +819,17 @@ Si aucun horaire n`'est défini pour le Niveau de Construction, la Construction 
 
 Si un horaire est défini pour le Niveau de Construction, et si l`'option permettant la Construction forcée est activée pour la Branche concernée, la Construction pourra être __forcée__.
 
-<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de niveau de construction>>
+<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de Niveau de Construction>>
 
 |image:icons/deliver.gif[,15,15]  Délivrer
 |Cette icône permet de créer une Requête de niveau qui délivrera une Construction sur un Niveau de Test ou de Production sélectionné.
 
-<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_deliver,Création d`'une Requête de niveau pour délivrer une construction>>
+<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_deliver,Création d`'une Requête de niveau pour délivrer une Construction>>
 
 |image:icons/rollback.gif[,15,15]  Restaurer
 |Cette icône permet de créer une Requête de niveau qui restaurera une version précédente de l`'application sur un Niveau de Test ou de Production sélectionné.
 
-<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_rollback,Création d`'une Requête de niveau pour restaurer une construction>>
+<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_rollback,Création d`'une Requête de niveau pour restaurer une Construction>>
 |===
 +
 Les messages suivants peuvent remplacer ou compléter les icônes de création de Requêtes de niveau:
@@ -916,7 +913,7 @@ a|_SUJETS APPARENTÉS_
 |===
 
 [[_desktop_lr_createlevelrequest_build]]
-=== Création d`'une Requête de niveau de construction 
+=== Création d`'une Requête de niveau de Construction 
 (((Requêtes de niveau ,Construction demandée)))  (((Requêtes de niveau ,Construction forcée))) 
 
 Les Requêtes de niveau sont créées en cliquant sur les icônes _Demander/Forcer_ (image:icons/request.gif[,15,15]  / image:icons/requestPlus.gif[,15,15] ).
@@ -1058,7 +1055,7 @@ image::Desktop-LevelRequests-Deliver-SelectPackage.png[,778,201]
 
 [NOTE]
 ====
-Si vous ajoutez le Paquet sélectionné à un onglet de Bureau, cette étape est évitée lors de la création d'une Requête de niveau. <<Desktop_ManageDesktop.adoc#_managedesktop_addingelements,Ajouter un élément à un onglet de bureau>>
+Si vous ajoutez le Paquet sélectionné à un onglet de Bureau, cette étape est évitée lors de la création d'une Requête de niveau. <<Desktop_ManageDesktop.adoc#_managedesktop_addingelements,Ajouter un élément à un onglet de Bureau>>
 ====
 
 . L`'écran _Créer des Requêtes de niveau_ s`'affiche.
@@ -1137,7 +1134,7 @@ Dans ce cas, le __Type d`'action de Requête__ sera "`Re-délivrer`".
 
 . Si disponible, vérifiez et/ou modifiez la définition des Paramètres de Construction et de Déploiement dans le panneau Paramètres.
 +
-Pour plus d`'informations sur les Paramètres disponibles, se référer à la section <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de niveau de construction>>.
+Pour plus d`'informations sur les Paramètres disponibles, se référer à la section <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de niveau de Construction>>.
 
 . Une fois tous les Paramètres définis, cliquez sur le bouton __Créer__.
 +
@@ -1159,7 +1156,7 @@ image::Desktop-LevelRequests-Rollback-SelectPackage.png[,794,193]
 
 [NOTE]
 ====
-Si vous ajoutez le Paquet sélectionné à un onglet de Bureau, cette étape est évitée lors de la création d'une Requête de niveau. <<Desktop_ManageDesktop.adoc#_managedesktop_addingelements,Ajouter un élément à un onglet de bureau>>
+Si vous ajoutez le Paquet sélectionné à un onglet de Bureau, cette étape est évitée lors de la création d'une Requête de niveau. <<Desktop_ManageDesktop.adoc#_managedesktop_addingelements,Ajouter un élément à un onglet de Bureau>>
 ====
 
 . L'écran _Créer une Requête de niveau_ s'affiche. 
@@ -1230,7 +1227,7 @@ La liste affiche toutes les Constructions précédentes liées au niveau qui ont
 
 . Si disponible, vérifiez et/ou modifiez la définition des Paramètres de Construction et de Déploiement dans le panneau __Paramètres__.
 +
-Pour plus d`'informations concernant les paramètres disponibles, se référer à la section <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de niveau de construction>>.
+Pour plus d`'informations concernant les paramètres disponibles, se référer à la section <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_build,Création d`'une Requête de niveau de Construction>>.
 
  . Une fois tous les Paramètres définis, cliquez sur le bouton __Créer__.
 +
@@ -1245,7 +1242,7 @@ Les sections suivantes traitent les procédures concernées lorsque vous consult
 
 * <<Desktop_LevelRequests.adoc#_desktop_lr_overviewscreen,Écran de l`'Aperçu des Requêtes de niveau>>
 * <<Desktop_LevelRequests.adoc#_prssfeeds,La fonctionnalité RSS>>
-* <<Desktop_LevelRequests.adoc#_desktop_lr_generatereport,Génération d`'un rapport>>
+* <<Desktop_LevelRequests.adoc#_desktop_lr_generatereport,Génération d`'un Rapport>>
 * <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Informations détaillées>>
 
 [[_desktop_lr_overviewscreen]]
@@ -1270,7 +1267,7 @@ image::Desktop-LevelRequests-SearchPanel.png[,1226,329]
 +
 Les options suivantes sont disponibles:
 
-* Générer le rapport: utilisez cette option pour générer un rapport pour les Requêtes de niveau spécifiées. Ce Rapport peut être exporté en format PDF, CSV, RTF ou XLS.
+* Générer le Rapport: utilisez cette option pour générer un Rapport pour les Requêtes de niveau spécifiées. Ce Rapport peut être exporté en format PDF, CSV, RTF ou XLS.
 * Rechercher: en principe, il n'est pas nécessaire de cliquer sur l'option __Rechercher__. Les résultats dans l'aperçu seront automatiquement synchronisés en fonction des critères de recherche sélectionnés.
 * Réinitialiser la recherche: utilisez cette option pour supprimer tous les critères de recherche et pour afficher la liste de tous les éléments. 
 * Sélectionnez un Filtre existant à partir de la liste déroulante.
@@ -1289,7 +1286,7 @@ Si l'option _Actualisation automatique_ est activée, l'__Aperçu des Requêtes 
 
 . Cliquez sur le lien _Générer le rapport_ pour générer le Rapport de l`'Aperçu des Requêtes de niveau.
 +
-Voir la section <<Desktop_LevelRequests.adoc#_desktop_lr_generatereport,Génération d`'un rapport>> pour plus de détails sur l`'aperçu d`'un Rapport de Requêtes de niveau.
+Voir la section <<Desktop_LevelRequests.adoc#_desktop_lr_generatereport,Génération d`'un Rapport>> pour plus de détails sur l`'aperçu d`'un Rapport de Requêtes de niveau.
 
 . Vérifiez les champs d`'information de la Requête de niveau concernée.
 +
@@ -1345,8 +1342,8 @@ Les types suivants sont disponibles:
 * image:icons/icon_redeliverBuild.png[,15,15] _Re-délivrer_
 * image:icons/rollback.gif[,15,15] _Restaurer_
 
-Voir la section <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de requêtes de niveau>> pour la description de ces actions de Requête de niveau.
-La Construction initiée par l`'Outil de planification est comparable au type d`'action d`'une requête de construction pour une Requête de niveau, mais celle-ci est démarrée automatiquement.
+Voir la section <<Desktop_LevelRequests.adoc#_desktop_lr_creatinglevelrequest,Création de Requêtes de niveau>> pour la description de ces actions de Requête de niveau.
+La Construction initiée par l`'Outil de planification est comparable au type d`'action d`'une Requête de Construction pour une Requête de niveau, mais celle-ci est démarrée automatiquement.
 
 |Utilisateur
 |Ce champ contient l`'Identifiant Utilisateur ayant créé la Requête de niveau.
@@ -1438,7 +1435,7 @@ Vous trouverez l'extension RSSOwl sur le site des mises à jour d'Eclipse: http:
 Pour une description plus détaillée de la structure de l`'URL IKAN ALM, se référer à l`'appendice <<App_RSS.adoc#_rssfeedurldetails,Détails de l`'URL du flux RSS>>.
 
 [[_desktop_lr_generatereport]]
-=== Génération d`'un rapport 
+=== Génération d`'un Rapport 
 (((Requêtes de niveau ,Rapports)))  (((Rapports ,Requêtes de niveau))) 
 
 Cette fonctionnalité permet de générer un Rapport pour les Requêtes de niveau spécifiées.
@@ -1583,7 +1580,7 @@ Le statut de la Requête de niveau détermine quels panneaux seront affichés.
 image::Desktop-LevelRequests-Detailed-Summary.png[,1233,936] 
 
 
-==== Indication du statut
+==== Indication du Statut
 Quelques exemples de Requêtes de niveau pour des Projets de type Édition versions:
 
 image::Desktop-LevelRequests-Detailed-Summary-Status.png[,736,218] 
@@ -1613,7 +1610,7 @@ présélectionnés
 |Nom de projet et Préfixe de construction (et, optionnellement, le Suffixe de construction dans le cas d'une Requête de niveau pour une Branche Secondaire).
 
 |Paquet
-(uniquement pour des Projets de type "`Paquets`")
+(uniquement pour des Projets de type "`Gestion Paquets`")
 |Nom de projet, Préfixe de construction (et, optionnellement, le Suffixe de construction) et le Nom de Paquet.
 
 |Niveau
@@ -1639,8 +1636,8 @@ En fonction du statut de la Requête de niveau, l'onglet _Résumé_ peut conteni
 * <<Desktop_LevelRequests.adoc#_desktop_lr_summary_errorwarning,Infos Erreurs/Avertissements>>[[_desktop_lr_summary_actions]]
 
 [[_desktop_lr_summary_actions]]
-==== Actions Panel
-Selon le statut de la Requête de niveau, différentes actions seront disponibles dans ce panneau.
+==== Panneau Actions
+Selon le Statut de la Requête de niveau, différentes actions seront disponibles dans ce panneau.
 
 image::Desktop-LevelRequests-Detailed-Summary-Actions.png[,310,172] 
 
@@ -1651,7 +1648,7 @@ Des actions sont disponibles si le temps d'exécution de la Requête de niveau s
 Les liens/icônes d'actions suivants seront disponibles:
 +
 
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Icône
 | Description
@@ -1690,11 +1687,9 @@ Ce moment ne peut pas se situer dans le passé.
 Si vous ne remplissez pas ce champ, la valeur du champ sera la date système actuelle.
 |===
 +
-Cliquez sur _Modifier la Requête de niveau_ pour sauvegarder les modifications et retourner à l'écran __Informations
-détaillées__.
+Cliquez sur _Modifier la Requête de niveau_ pour sauvegarder les modifications et retourner à l'écran __Informations détaillées__.
 +
-Vous pouvez également cliquer sur le bouton _Fermer_ pour annuler la mise à jour et retourner à l'écran __Informations
-détaillées__.
+Vous pouvez également cliquer sur le bouton _Fermer_ pour annuler la mise à jour et retourner à l'écran __Informations détaillées__.
 
 . La Requête de niveau est en cours:
 +
@@ -1749,20 +1744,20 @@ image::Desktop-LevelRequests-Detailed-Summary-Deliver.png[,311,178]
 +
 Si la Requête de niveau a le statut Réussie ou Avertissement, les boutons suivants sont disponibles :
 +
-[cols="1,1", frame="topbot", options="header"]
+[cols="1,2", frame="topbot", options="header"]
 |===
 | Bouton
 | Description
 
-|image:icons/icon_deliverBuild.png[,16,16] image:icons/optional.gif[,16,16]  Délivrer vers un Niveau optionnel
-|Cliquer sur ce bouton pour délivrer vers le Niveau optionnel indiqué. 
-
 |image:icons/icon_deliverBuild.png[,16,16]  Délivrer vers un Niveau
 |Cliquer sur ce bouton pour délivrer vers le Niveau non-optionnel indiqué.
+
+|image:icons/icon_deliverBuild.png[,16,16] image:icons/optional.gif[,16,16]  Délivrer vers un Niveau optionnel
+|Cliquer sur ce bouton pour délivrer vers le Niveau optionnel indiqué. 
 |===
 
 [[_desktop_lr_summary_info]]
-==== Panneau d'information
+==== Panneau d'Information
 Ce panneau contient des informations détaillées concernant la Requête de niveau.
 
 image::Desktop-LevelRequests-Detailed-Summary-Info.png[,628,261] 
@@ -1910,7 +1905,7 @@ _Note:_ L`'OID ne correspond pas au numéro de construction/déploiement!
 |Ce champ indique la durée totale de l`'exécution de la Construction ou du Déploiement.
 
 |Balise de la Construction partielle
-|En cas d'une Branche Secondaire de type "Construction partielle" (<<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_createbranch,Créer une branche secondaire>>), ce champ contient la balise de la Construction partielle.
+|En cas d'une Branche Secondaire de type "Construction partielle" (<<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_createbranch,Créer une Branche secondaire>>), ce champ contient la balise de la Construction partielle.
 
 Pendant la Phase __Récupération Code__, seules les sources ayant une Balise différente ont été récupérées et sont disponibles pour la Construction.
 |===
@@ -1924,8 +1919,7 @@ Se référer à l'onglet _Journaux de Phase_ en-dessous de l'en-tête de statut,
 ==== Approbations
 Ce panneau n'est affiché que si la Requête de niveau a été rejetée ou si la Requête de niveau attend sa Pré-approbation ou sa Post-approbation.
 
-Il affiche le type et l'OID de l'approbation _En
-attente_ ou _Rejetée_ de la Requête de niveau, son statut et le Groupe d`'utilisateurs auquel doit appartenir l'Utilisateur pour pouvoir approuver ou rejeter l'Approbation.
+Il affiche le type et l'OID de l'approbation _En attente_ ou _Rejetée_ de la Requête de niveau, son statut et le Groupe d`'utilisateurs auquel doit appartenir l'Utilisateur pour pouvoir approuver ou rejeter l'Approbation.
 Si la Requête de niveau a été rejetée, la raison sera également affichée.
 
 image::Desktop-LevelRequests-Detailed-Summary-Approvals-Rejected.png[,601,243] 
@@ -2119,9 +2113,7 @@ Cliquez sur un nom de Phase/Action pour développer son panneau d'information.
 
 [NOTE]
 ====
-Si le statut de la Requête de niveau est établi à __En
-attente de l'heure d'exécution__, __En attente
-de pré-approbation__, _Annulée_ ou _Rejetée_ à cause d'une Pré-approbation rejetée, aucun Journal de Phase ne sera disponible.
+Si le statut de la Requête de niveau est établi à __En attente de l'heure d'exécution__, __En attente de pré-approbation__, _Annulée_ ou _Rejetée_ à cause d'une Pré-approbation rejetée, aucun Journal de Phase ne sera disponible.
 
 
 image::Desktop-LevelRequests-Detailed-PhaseLogs-None.png[,314,109] 
@@ -2133,7 +2125,7 @@ Si vous activez l'option __Actualisation automatique__, vous pouvez facilement s
 
 image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_Running.png[,689,328] 
 
-*Exemple d'une Phase avec statut Réussie*
+*Exemple d'une Phase avec le statut Réussie*
 
 image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_Success.png[,1177,475] 
 
@@ -2416,11 +2408,11 @@ Les Actions de Déploiement sont affichées sur un fond blanc dans la liste des 
 Leur description contient l'OID de déploiement et le nom de la Machine sur laquelle elles sont exécutées.
 La début de l'exécution et la durée sont également indiquées.
 
-*Exemple d'un Déploiement terminé avec statut Réussi*
+*Exemple d'un Déploiement terminé avec le statut Réussi*
 
 image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_DeploySuccess.png[,1181,863] 
 
-*Exemple d'un Déploiement terminé avec statut Avertissement*
+*Exemple d'un Déploiement terminé avec le statut Avertissement*
 
 image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_DeployWarning.png[,1182,686] 
 
@@ -2664,7 +2656,7 @@ Avant que la Requête de niveau ne puisse démarrer, toutes les Pré-approbation
 Les Post-approbations doivent être approuvées à la fin d`'une Requête de niveau, ce qui permet d`'approuver ou de rejeter les résultats ou les actions de la Requête de niveau.
 Les Approbations peuvent être approuvées ou rejetées par les Utilisateurs appartenant au Groupe d`'utilisateurs de l`'Approbation.
 
-Pour plus d`'informations concernant la définition d`'Approbations sur un Niveau, se référer à la section <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Les approbations>>.
+Pour plus d`'informations concernant la définition d`'Approbations sur un Niveau, se référer à la section <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Les Approbations>>.
 
 [NOTE]
 ====
@@ -2913,9 +2905,7 @@ Les champs marqués d`'un astérisque sont obligatoires.
 |Incident
 |Saisissez le numéro utilisé pour identifier l`'Incident dans le Système de Suivi des Incidents externe.
 
-Cette valeur est utilisée dans le panneau _Incidents
-correspondants_ (dans l`'écran __Informations
-détaillées__) pour établir un lien direct vers l`'Incident dans l`'interface Web du Système de Suivi des Incidents externe.
+Cette valeur est utilisée dans le panneau _Incidents correspondants_ (dans l`'écran __Informations détaillées__) pour établir un lien direct vers l`'Incident dans l`'interface Web du Système de Suivi des Incidents externe.
 
 Ce champ est obligatoire.
 
@@ -3178,10 +3168,10 @@ S`'il s`'agit d`'une Dépendance du type __Code Source__, ce champ reste vide.
 . Vous pouvez utiliser les liens _OID_ pour afficher les informations détaillées de la Requête de niveau.
 
 [[_deskopt_lr_viewbuildusage]]
-==== Usage d'une construction - Détail 
-(((Informations détaillées ,Usage)))  (((Requêtes de niveau ,Usage d'une construction)))  (((Usage d'une construction))) 
+==== Usage d'une Construction - Détail 
+(((Informations détaillées ,Usage)))  (((Requêtes de niveau ,Usage d'une Construction)))  (((Usage d'une Construction))) 
 
-Dans le cas d`'une *réutilisation d`'un résultat de construction*, un lien sera établi entre la *Construction parente* et la *Construction dépendante*. 
+Dans le cas d`'une réutilisation d`'un *Résultat de construction*, un lien sera établi entre la *Construction parente* et la *Construction dépendante*. 
 
 Dans ce cas, le panneau _Usage d'une construction - Détail_ fournit des informations concernant les Requêtes de niveau utilisant le Résultat de construction d'une Construction spécifique.
 
@@ -3238,7 +3228,7 @@ Cliquez sur le lien pour afficher les détails de la Requête de niveau.
 ==== Usage d'une Requête de niveau - Détail 
 (((Informations détaillées ,Usage d'une Requête de niveau)))  (((Requêtes de niveau ,Usage d'une Requête de niveau)))  (((Usage d'une Requête de niveau))) 
 
-Dans le cas d`'une *réutilisation des composants Source*, un lien sera établi entre la *Construction parente* et *la Requête de niveau dépendante*.
+Dans le cas d`'une réutilisation des *Composants Source*, un lien sera établi entre la *Construction parente* et *la Requête de niveau dépendante*.
 Dans ce cas, le panneau _Usage d'une Requête de niveau_ affiche les Requêtes de niveau de Projets parent utilisant les Sources de cette Requête de niveau.
 
 image::Desktop-LevelRequests-Detailed-Dependencies_LevelRequestUsage.png[,912,727] 

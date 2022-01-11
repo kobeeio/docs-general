@@ -17,7 +17,7 @@ Les sections suivantes expliquent comment définir et gérer un Outil de script 
 
 [NOTE]
 ====
-Vous devez toujours installer l`'Outil de Script défini sur l`'Agent IKAN ALM avant de pouvoir exécuter les Scripts de Construction et de Déploiement.
+Vous devez toujours installer l`'Outil de Script défini dans l'Administration globale avant de pouvoir exécuter les Scripts de Construction et de Déploiement sur l`'Agent IKAN ALM.
 ====
 
 [[_sglobadm_scriptingtools_create]]
@@ -29,7 +29,7 @@ Vous devez toujours installer l`'Outil de Script défini sur l`'Agent IKAN ALM a
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -51,7 +51,7 @@ Pour plus d'informations concernant ces détails, se référer aux sections appr
 == L'aperçu des Outils de script 
 (((Outils de script , Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
@@ -120,7 +120,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 ====
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _ANT_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -167,7 +167,7 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 |Saisissez dans ce champ le chemin de Java (__JAVA_HOME__) pour lancer ANT. 
 
 Si vous ne saisissez pas de valeur dans ce champ, le chemin de Java par défaut défini au niveau du Système sera utilisé pour lancer ANT.
-Dans ce cas, le chemin de Java (__JAVA_HOME__)____ doit être défini comme une variable d`'environnement sur la Machine.
+Dans ce cas, le chemin de Java (__JAVA_HOME__) doit être défini comme une variable d`'environnement sur la Machine.
 
 |Options de Java VM
 |Saisissez dans ce champ les options de Java VM (Machine Virtuelle Java) utilisées pour lancer ANT.
@@ -195,7 +195,7 @@ En fonction de la version de ANT utilisée, le chemin de classe (CLASSPATH) doit
 * jars/classes pour votre analyseur syntaxique XML
 * jars/zip fichiers pour le JDK (Kit de Développement Java)
 
-*Pour ANT 1.6.x:*
+*Pour ANT 1.6.x et supérieur:*
 
 * ant.jar
 * ant-launcher.jar
@@ -207,7 +207,7 @@ En fonction de la version de ANT utilisée, le chemin de classe (CLASSPATH) doit
 * ant-launcher.jar
 * les dépendances externes requises (telles que tools.jar)
 
-__Note: __Si vous utilisez le Lanceur ANT, n`'incluez pas _ant.jar_ dans le chemin de classe Java, sinon les dépendances ne seront pas trouvées et le script se terminera en erreur.
+__Note:__ Si vous utilisez le Lanceur ANT, n`'incluez pas _ant.jar_ dans le chemin de classe Java, sinon les dépendances ne seront pas trouvées et le script se terminera en erreur.
 
 Pour plus d`'informations, se référer à la section _Exécuter
 ANT via Java_ dans le manuel __Apache ANT__.
@@ -241,7 +241,7 @@ Les options suivantes sont disponibles:
 * TXT: le fichier journal sera un simple fichier de texte
 * XML: le fichier journal sera un fichier XML
 
-Les fichiers txt seront plus petits et leur contenu peut être affiché pendant l'exécution de l'outil.
+Les fichiers TXT seront plus petits et leur contenu peut être affiché pendant l'exécution de l'outil.
 
 L'affichage des fichiers journaux XML peut être personnalisé en fournissant des modèles XSL personnalisés.
 Cependant, les fichiers journaux XML sont plus grands et ne peuvent être affichés qu'après que l'Outil soit exécuté.
@@ -297,7 +297,7 @@ a|_Sujets apparentés:_
 === Aperçu des Outils de script ANT 
 (((ANT ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu de tous les Outils de script définis sera affiché.
 
@@ -342,7 +342,7 @@ Elle permet d`'afficher l`'historique de toutes les opérations de création, de
 === Modifier la définition d`'un Outil de script ANT 
 (((ANT ,Modifier)))
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -375,7 +375,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition d`'outil de script ANT 
 (((ANT ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -401,7 +401,7 @@ Avant de supprimer l`'Outil de Script ANT, vous devez assigner un autre Outil de
 === Afficher l`'historique d`'un Outil de script ANT 
 (((ANT ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -438,7 +438,7 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 ====
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _Gradle_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -618,7 +618,7 @@ a|_Sujets apparentés:_
 === Aperçu des Outils de script Gradle 
 (((Gradle ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 
@@ -663,7 +663,7 @@ Elle permet d`'afficher l`'historique de toutes les opérations de création, de
 === Modifier la définition d`'un Outil de script Gradle 
 (((Outils de script Gradle ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -696,7 +696,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition d`'outil de script Gradle 
 (((Outils de script Gradle ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -722,7 +722,7 @@ Avant de supprimer l`'Outil de script Gradle, vous devez assigner un autre Outil
 === Afficher l`'historique d`'un Outil de script Gradle 
 (((Outils de script Gradle ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -775,7 +775,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 ====
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _NANT_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -899,7 +899,7 @@ a|_Sujets apparentés:_
 === Aperçu des Outils de script NANT 
 (((NANT ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 
@@ -944,7 +944,7 @@ Elle permet d`'afficher l`'historique de toutes les opérations de création, de
 === Modifier la définition d`'un Outil de script NANT 
 (((NANT ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -977,7 +977,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition d`'outil de script NANT 
 (((NANT ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -1003,7 +1003,7 @@ Avant de supprimer l`'Outil de Script NANT, vous devez assigner un autre Outil d
 === Afficher l`'historique d`'un Outil de script NANT 
 (((NANT ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -1042,7 +1042,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 ====
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _Maven2_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -1213,7 +1213,7 @@ a|_Sujets apparentés:_
 === Aperçu des Outils de script Maven2 
 (((Gradle ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 
@@ -1258,7 +1258,7 @@ Elle permet d`'afficher l`'Historique de toutes les opérations de création, de
 === Modifier la définition d`'un Outil de script Maven2 
 (((Maven2 ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -1291,7 +1291,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition d`'outil de script Maven2 
 (((Maven2 ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +
@@ -1317,7 +1317,7 @@ Avant de supprimer l`'Outil de Script Maven2, vous devez assigner un autre Outil
 === Afficher l`'historique d`'un Outil de script Maven2 
 (((Maven2 ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Outils de script > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Aperçu__.
 +
 L'aperçu des tous les Outils de script définis s'affiche.
 +

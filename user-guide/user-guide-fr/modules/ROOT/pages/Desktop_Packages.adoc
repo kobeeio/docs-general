@@ -6,7 +6,7 @@
 (((Bureau ,Paquets)))  (((Paquets))) 
 
 Les Paquets vous permettent de déplacer manuellement un ou plusieurs fichiers individuels d`'une Branche dans le RCV (Branche principale ou Branche secondaire) à travers le Cycle de vie d`'IKAN ALM.
-Pour chaque Branche dans un Projet de type "Paquets", un ou plusieurs Paquets peuvent être créés.
+Pour chaque Branche dans un Projet de type "Gestion Paquets", un ou plusieurs Paquets peuvent être créés.
 Cela constitue la différence avec la procédure de travail originale dans une Branche d`'un Projet de type "Éditions Versions", pour laquelle un processus automatisé et configurable définit quelles Révisions des fichiers doivent être extraites de la Branche principale (head) ou de la Branche secondaire (branch) du RCV et traitées durant le Cycle de vie.
 
 __D`'un point de vue logique__, les Paquets sont des vues partielles ou ponctuelles d`'une Branche, puisque le contenu (logique) d`'un Paquet peut évoluer entre 2 constructions et peut être réutilisé plusieurs fois, dans le temps, à travers le Cycle de vie de la Branche à laquelle il appartient. 
@@ -64,7 +64,7 @@ Les critères de recherche suivants sont disponibles:
 |Sélectionnez le Référentiel de Contrôle de Version à partir d`'une liste déroulante.
 
 |Type de Projet
-|Ce champ indique le Type de Projet __Paquets__.
+|Ce champ indique le Type de Projet __Gestion Paquets__.
 
 |Type de Branche
 |Sélectionnez le type de Branche: Branche principale ou Branche secondaire.
@@ -108,7 +108,7 @@ Cochez la Branche que vous souhaitez utiliser et cliquez sur le bouton __Sélect
 +
 L`'écran _Créer un Paquet_ s`'affiche.
 +
-image::Desktop-Packages-CreatePackage-Create.png[,479,279] 
+image::Desktop-Packages-CreatePackage-Create.png[,456,284] 
 +
 Le nom de la Branche sélectionnée est rempli automatiquement.
 Si vous voulez sélectionner une autre Branche, cliquez sur le bouton image:icons/icon_SelectProjectStream.png[,25,15]  à droite pour retourner à la fenêtre __Sélectionner une Branche__. 

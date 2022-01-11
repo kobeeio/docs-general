@@ -31,7 +31,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Plans horaires > Créer__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -135,7 +135,7 @@ a|_Sujets apparentés:_
 == Aperçu des Plans horaires 
 (((Plans horaires ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Plans horaires > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
@@ -183,7 +183,7 @@ Elle permet d`'afficher l`'historique d`'un Plan horaire.
 === Modifier la définition d`'un Plan horaire 
 (((Plans horaires ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Plans horaires > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ pour modifier le Plan horaire sélectionné.
 +
@@ -201,7 +201,7 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 Le panneau _Niveaux connectés_ affiche les Niveaux reliés au Plan horaire sélectionné.
 ====
 
-. Cliquez sur le bouton _Enregistrer_ pour sauvegarder vos modifications.
+. Cliquez sur le bouton _Sauvegarder_ pour sauvegarder vos modifications.
 +
 Les boutons suivants sont également disponibles:
 
@@ -212,7 +212,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition de Plan horaire 
 (((Plans horaires ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Plans horaires > Aperçu__.
 
 . Cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ pour supprimer le Plan horaire sélectionné.
 +
@@ -234,12 +234,11 @@ Avant de pouvoir supprimer le Plan horaire, vous devez enlever le Plan horaire p
 === Afficher l`'Historique d`'un Plan horaire 
 (((Plans horaires ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Plans horaires > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Plans horaires > Aperçu__.
 
 . Cliquez sur l'icône image:icons/history.gif[,15,15] _Historique_ pour afficher l`'__Aperçu de l`'Historique du Plan horaire__.
 +
-Pour une description détaillée de l`'__Aperçu de
-l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
+Pour une description détaillée de l`'__Aperçu de l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_historyeventlogging,Enregistrement de l`'historique et des événements>>.
 
 . Cliquez sur le bouton _Précédent_ pour retourner à l`'écran précédent.
 

@@ -57,7 +57,7 @@ Les Emplacements relatifs à tous les Transporteurs distants doivent être défi
 Un Transporteur est activé en reliant le Transporteur à une Machine représentant l`'Agent IKAN ALM (<<GlobAdm_Machines.adoc#_globadm_machinesoverview,L'Aperçu des Machines>>), et en reliant cette Machine à un Environnement de Construction ou de Déploiement (<<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>> ou <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Créer un Environnement de déploiement>>).
 ====
 
-Ce chapitre décrit trois Transporteurs différents, chacun favorisant des protocoles différents pour le transfert des codes Sources, des Scripts et des résultats de construction.
+Ce chapitre décrit trois Transporteurs différents, chacun favorisant des protocoles différents pour le transfert des codes Sources, des Scripts et des Résultats de construction.
 
 Pour une description plus détaillée, se référer aux sections suivantes:
 
@@ -75,7 +75,7 @@ Pour une description plus détaillée, se référer aux sections suivantes:
 Cette option n'est disponible que si vous disposez de droits d'accès d'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
 +
 L'écran suivant s'affiche:
 +
@@ -97,7 +97,7 @@ Pour plus d'informations concernant ces détails, se référer aux sections appr
 == L'Aperçu des Protocoles de transfert 
 (((Transporteurs ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
@@ -183,7 +183,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _FileCopy_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -284,7 +284,7 @@ a|_Sujets apparentés:_
 === Aperçu des Transporteurs FileCopy 
 (((Transporteurs FileCopy ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 
@@ -337,7 +337,7 @@ Elle permet d`'afficher l`'historique d`'un Transporteur FileCopy.
 === Modifier la définition d`'un Transporteur FileCopy 
 (((Transporteurs FileCopy ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -370,7 +370,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition de Transporteur FileCopy 
 (((Transporteurs FileCopy ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -397,7 +397,7 @@ Avant de pouvoir supprimer le Transporteur FileCopy, vous devez modifier la déf
 === Afficher l`'Historique d`'un Transporteur FileCopy 
 (((Transporteurs FileCopy ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -453,7 +453,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _FTP_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -590,7 +590,7 @@ a|_Sujets apparentés:_
 === Aperçu des Transporteurs FTP  
 (((Transporteurs FTP ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 
@@ -643,7 +643,7 @@ Voir <<GlobAdm_Transporters.adoc#_globadm_transporter_ftp_history,Afficher l`'Hi
 === Modifier la définition d`'un Transporteur FTP 
 (((Transporteurs FTP ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -676,7 +676,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition de Transporteur FTP 
 (((Transporteurs FTP ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -702,7 +702,7 @@ Avant de pouvoir supprimer le Transporteur FTP, vous devez modifier la définiti
 === Afficher l`'Historique d`'un Transporteur FTP 
 (((Transporteurs FTP ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -761,7 +761,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
 
 . Dans le panneau de recherche, sélectionnez _SSH_ à partir de la liste déroulante dans le champ __Type__.
 +
@@ -906,7 +906,7 @@ a|_Sujets apparentés:_
 === Aperçu des Transporteurs sécurisés SSH 
 (((Transporteurs sécurisés SSH ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 
@@ -957,7 +957,7 @@ Elle permet d`'afficher l`'historique d`'un Transporteur FTP.
 === Modifier la définition d`'un Transporteur SSH 
 (((Transporteurs sécurisés SSH ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -990,7 +990,7 @@ Les boutons suivants sont également disponibles:
 === Supprimer une définition de Transporteur SSH 
 (((Transporteurs sécurisés SSH ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +
@@ -1018,7 +1018,7 @@ Avant de pouvoir supprimer le Transporteur SSH, vous devez modifier la définiti
 === Afficher l`'Historique d`'un Transporteur SSH 
 (((Transporteurs sécurisés SSH ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Transporteurs > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Aperçu__.
 +
 L'aperçu des tous les Protocoles de transfert définis s'affiche.
 +

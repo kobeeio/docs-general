@@ -34,7 +34,7 @@ Certains de ces champs sont remplis automatiquement lors du processus d'installa
 La modification de certains de ces Paramètres nécessite des actions préparatoires sur le Serveur IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Système > Paramètres Système__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Système > Paramètres Système__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -367,7 +367,7 @@ Le système supprimera ces fichiers des Archives de Construction et établira le
 L`'écran _Épuration des archives_ affiche également les informations concernant les Archives de Construction, telles que le nombre total de fichiers de Construction dans les archives, la taille totale des archives et l`'espace libre sur le disque dur sur lequel sont installés ces Archives.
 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Système > Épuration des archives__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Système > Épuration des archives__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -596,7 +596,7 @@ L`'écran _Historique de l`'Épuration des Archives_ affiche l`'historique des a
 Un panneau de recherche est disponible pour que l`'Utilisateur puisse saisir des critères de recherche afin de restreindre le nombre d`'actions affichées dans l`'historique.
 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Système > Historique de l'Épuration des archives__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Système > Historique de l'Épuration des archives__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -690,7 +690,7 @@ L`'écran _Synchronisation des Archives de construction_ permet à l`'Administra
 Par exemple: le statut d`'archivage d`'un fichier de Construction supprimé manuellement dans le système (via la commande de suppression du système d`'exploitation) sera toujours établi à "`présent`" dans la base de données d`'IKAN ALM.
 Le processus de synchronisation établira ce statut à "`non existant`".
 
-. Dans le contexte de l'Administration globale, sélectionnez __Système > Synchronisation des Archives__.
+. Dans le __Menu d'Administration globale, sélectionnez __Système > Synchronisation des Archives__.
 +
 L`'écran suivant s`'affiche:
 +

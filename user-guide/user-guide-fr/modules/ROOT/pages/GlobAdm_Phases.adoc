@@ -7,10 +7,10 @@
 (((Administration globale ,Phases)))  (((Phases))) 
 
 Quand IKAN ALM exécute des Requêtes de niveau, des Constructions et des Déploiements, toutes les actions sont effectuées en exécutant une séquence de Phases.
-Ces Phases sont définies dans la base de données d'IKAN ALM et peuvent être consultées et modifiées dans la section _Phases_ dans le contexte de l'__Administration
+Ces Phases sont définies dans la base de données d'IKAN ALM et peuvent être consultées et modifiées dans la section _Phases_ dans le __Menu d'__Administration
 globale__.
 Une fois définies dans l'__Administration
-globale__, les Phases peuvent être associées à des Niveaux ou à des Environnements de construction ou de déploiement dans le contexte de l'__Administration des projets__.
+globale__, les Phases peuvent être associées à des Niveaux ou à des Environnements de construction ou de déploiement dans le __Menu d'__Administration des projets__.
 
 La fonctionnalité de base d'IKAN ALM est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
 Vous devez les considérer comme faisant partie intégrante d'IKAN ALM.
@@ -51,7 +51,7 @@ Pour une explication complète du concept des Phases, se référer à la section
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Créer__.
 +
 L`'écran suivant s`'affiche.
 . En haut de l'écran, complétez les champs dans le panneau __Créer une Phase__. Les champs marqués d`'un astérisque rouge doivent être complétés obligatoirement.
@@ -212,7 +212,7 @@ a|_Sujets apparentés:_
 == Écran de l`'aperçu des Phases 
 (((Phases ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
@@ -294,7 +294,7 @@ Pour des informations plus détaillées concernant les Paramètres de phase, se 
 
 //
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase que vous voulez modifier.
 +
@@ -406,7 +406,7 @@ Les liens/icônes suivants sont disponibles dans le panneau __Paramètres de pha
 <<GlobAdm_Phases.adoc#_globadm_phaseparameters_deleting,Supprimer les Paramètres de phase>>
 
 |image:icons/Phase_MassEdit.png[,15,15]  Modifier en masse
-|Cette option permet d'modifier les valeurs d'un Paramètre dans ses Environnements connectés.
+|Cette option permet de modifier la valeur d'un Paramètre dans les Phases installées dans les Environnements connectés.
 
 <<GlobAdm_Phases.adoc#_globadm_phaseparameters_massediting,Modifier en masse les Paramètres de phase>>
 |===
@@ -468,7 +468,7 @@ Pour plus d`'informations, se référer à la section <<GlobAdm_Phases.adoc#_glo
 == Aperçu des Paramètres de Phase 
 (((Phases ,Paramètres de phase)))  (((Paramètres de phase)))  (((Paramètres de phase ,Aperçu)))  (((Phases ,Paramètres de phase ,Aperçu)))  (((Paramètres ,Phase))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 +
 L`'écran suivant s`'affiche.
 +
@@ -540,7 +540,7 @@ a|_Sujets apparentés:_
 == Créer des Paramètres de phase 
 (((Phases ,Paramètres de phase ,Créer)))  (((Paramètres de phase ,Créer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase requise dans l'__Aperçu des Phases__.
 +
@@ -646,7 +646,7 @@ a|_Sujets apparentés:_
 == Modifier les Paramètres de phase 
 (((Phases ,Paramètres de phase ,Modifier)))  (((Paramètres de phase ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase requise dans l'__Aperçu des Phases__.
 +
@@ -676,7 +676,7 @@ Si le champ _Environnement_ est vide, cela signifie que la Phase a été ajouté
 . Cliquez sur le lien image:icons/Phase_EditEnvPhaseParameter.png[,15,15] _Modifier un Paramètre de phase d'environnement_ à côté d'un Paramètre d'environnement.
 +
 L'Utilisateur sera renvoyé vers l'écran _Aperçu
-des Paramètres de la phase_ (dans le contexte de l'Administration de Projet) et l'écran _Modifier la valeur du Paramètre_ s'affichera.
+des Paramètres de la phase_ (dans le __Menu d'Administration de Projet) et l'écran _Modifier la valeur du Paramètre_ s'affichera.
 +
 image::GlobAdm-PhaseParameter-Edit-ParameterValue.png[,771,657] 
 
@@ -688,7 +688,7 @@ Les boutons suivants sont également disponibles:
 * _Annuler_ pour retourner à l'écran _Aperçu des Paramètres de la phase_ sans enregistrer la valeur. <<GlobAdm_Phases.adoc#_globadm_phaseparameters_overview,Aperçu des Paramètres de Phase>>
 +
 Pour retourner à l'écran _Modifier un Paramètre
-de phase_ (dans le contexte de l'Administration globale), cliquez sur un des liens image:icons/Phase_EditEnvPhaseParameter.png[,15,15] __ Modifier
+de phase_ (dans le __Menu d'Administration globale), cliquez sur un des liens image:icons/Phase_EditEnvPhaseParameter.png[,15,15] __ Modifier
 un Paramètre de phase global.__.
 +
 
@@ -711,7 +711,7 @@ a|_Sujets apparentés:_
 == Supprimer les Paramètres de phase 
 (((Phases ,Paramètres de phase ,Supprimer)))  (((Paramètres de phase ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase requise dans l'__Aperçu des Phases__.
 +
@@ -755,7 +755,7 @@ a|_Sujets apparentés:_
 == Modifier en masse les Paramètres de phase 
 (((Phases ,Paramètres de phase ,Modifier en masse)))  ((( Paramètres de phase ,Modifier en masse))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase requise dans l'__Aperçu des Phases__.
 +
@@ -821,7 +821,7 @@ Ce processus est beaucoup plus facile que de devoir supprimer la Phase et d'ins�
 ====
 Vous devez disposer de droits d'accès d'Administrateur global pour pouvoir __Remplacer des Phases en masse__.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant le Phase requise.
 +
@@ -909,7 +909,7 @@ Ce processus est beaucoup plus facile que de devoir supprimer la Phase dans chaq
 ====
 Vous devez disposer de droits d'accès d'Administrateur global pour pouvoir __Supprimer des Phases en masse__.
 ====
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant la Phase requise dans l'__Aperçu des Phases__.
 +
@@ -951,7 +951,7 @@ a|_Sujets apparentés:_
 == Supprimer une définition de Phase 
 (((Phases ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ devant la Phase que vous voulez supprimer.
 +
@@ -980,7 +980,7 @@ En supprimant une définition de Phase, vous supprimerez également le fichier .
 == Exporter la définition d`'une Phase. 
 (((Phases ,Paramètres de phase ,Exporter)))  (((Paramètres de phase ,Exporter))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/Phase_Export.png[,15,15] _Exporter_ devant la Phase que vous voulez exporter.
 +
@@ -1005,7 +1005,7 @@ La combinaison des actions _Exporter_ puis _Importer_ une Phase ne permet pas la
 == Copier la définition d`'une Phase. 
 (((Phases ,Copier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/Phase_Copy.gif[,15,15] _Copier_ devant la Phase que vous voulez copier.
 +
@@ -1053,7 +1053,7 @@ Vous pouvez également utiliser le bouton _Aperçu_ pour retourner à l`'__Aper�
 == Afficher l`'historique d`'une Phase 
 (((Phases ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Aperçu__.
 
 . Dans le panneau __Aperçu des Phases__, cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ devant la Phase de laquelle vous voulez afficher l'historique.
 +
@@ -1068,7 +1068,7 @@ l`'Historique__, se référer à la section <<App_HistoryEventLogging.adoc#_hist
 == Importer une définition de Phase 
 (((Phases ,Importer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Phases > Importer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Phases > Importer__.
 +
 L`'écran _Importer une Phase_ s`'affiche.
 +
@@ -1078,7 +1078,7 @@ image::GlobAdm-Phases-Import.png[,697,580]
 +
 Une fenêtre dans laquelle vous pouvez choisir un fichier .jar contenant une Phase préalablement exportée s'affiche. 
 +
-Une fois que vous aurez sélectionné un fichier, il sera chargé et l'information contenu dans la Phase sera lue et, ensuite, affichée:
+Une fois que vous aurez sélectionné un fichier, il sera chargé et l'information contenue dans la Phase sera lue et, ensuite, affichée:
 +
 image::GlobAdm-Phases-Import-Success.png[,992,763] 
 

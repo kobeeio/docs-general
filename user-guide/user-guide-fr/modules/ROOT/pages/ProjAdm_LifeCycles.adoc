@@ -57,7 +57,7 @@ L'avantage de les créer à stade est que, via l'écran __Modifier un Cycle de v
 == Créer un Cycle de vie
 (((Cycles de vie ,Créer un Cycle de vie))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Cycles de vie > Créer__.
+. Dans les options du __Menu d'Administration des Projets__, sélectionnez __Cycles de vie > Créer__.
 +
 Le panneau _Créer un Cycle de vie_ s`'affiche en haut de l`'écran.
 +
@@ -122,7 +122,7 @@ Les actions suivantes sont possibles:
 === Écran des Cycles de vie et des Niveaux associés 
 (((Cycles de vie ,Écran des Cycles de vie et des Niveaux associés))) 
 
-. Dans les options du Menu de l'__Administration des Projets__, sélectionnez __Cycles de vie > Aperçu__.
+. Dans les options du __Menu d'Administration des Projets__, sélectionnez __Cycles de vie > Aperçu__.
 +
 L'écran suivant s'affiche:
 +

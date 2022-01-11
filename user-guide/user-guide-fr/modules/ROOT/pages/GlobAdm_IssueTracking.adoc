@@ -66,7 +66,7 @@ Pour plus d`'informations, se référer aux sections <<App_Phases.adoc#_phases_l
 Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
 ====
 
-. Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Créer__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Suivi des Incidents > Créer__.
 +
 L`'écran suivant s`'affiche:
 +
@@ -198,8 +198,7 @@ Pour des informations plus détaillées concernant les paramètres système spé
 
 . Après avoir complété les champs, cliquez sur le bouton __Créer__.
 +
-Le nouveau Système de Suivi de Incidents est ajouté à l`'__Aperçu
-des Systèmes de Suivi des Incidents__ dans la partie inférieure de l`'écran.
+Le nouveau Système de Suivi de Incidents est ajouté à l`'__Aperçu des Systèmes de Suivi des Incidents__ dans la partie inférieure de l`'écran.
 +
 Un avertissement indiquant que certaines propriétés obligatoires doivent être définies, pourrait s`'afficher.
 Pour plus d`'informations concernant la modification des propriétés d`'un Système de Suivi des Incidents, se référer à la section <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_overview,Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents">>.
@@ -228,7 +227,7 @@ a|_Sujets apparentés:_
 == Aperçu des Systèmes de Suivi des Incidents 
 (((Suivi des Incidents ,Aperçu))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Suivi des Incidents > Aperçu__.
 +
 L'écran suivant s'affiche:
 +
@@ -276,7 +275,7 @@ Elle permet d'afficher l'Historique de toutes les opérations de création, de m
 === Modifier la définition d`'un Système de Suivi des Incidents 
 (((Suivi des Incidents ,Modifier))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Suivi des Incidents > Aperçu__.
 
 . Pour y accéder, cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant le Système de Suivi des Incidents que vous voulez modifier.
 +
@@ -327,7 +326,7 @@ Pour plus d`'informations, se référer à la section <<GlobAdm_IssueTracking.ad
 === Supprimer une définition de Système de Suivi des Incidents 
 (((Suivi des Incidents ,Supprimer))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Suivi des Incidents > Aperçu__.
 
 . Cliquez sur le lien image:icons/delete.gif[,15,15] _Supprimer_ pour supprimer le Système de Suivi des Incidents sélectionné.
 +
@@ -349,7 +348,7 @@ Vous devez modifier la définition des Projets affichés, avant de pouvoir suppr
 === Afficher l`'Historique d`'un Système de Suivi des Incidents 
 (((Suivi des Incidents ,Historique))) 
 
-. Dans le contexte de l'Administration globale, sélectionnez __Suivi des Incidents > Aperçu__.
+. Dans le __Menu d'Administration globale__, sélectionnez __Suivi des Incidents > Aperçu__.
 
 . Cliquez sur le lien image:icons/history.gif[,15,15] _Historique_ pour afficher l`'__Aperçu de l`'Historique du Système de Suivi des Incident__s.
 +
@@ -374,13 +373,11 @@ a|_Sujets apparentés:_
 == Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents" 
 (((Propriétés d’un Système de Suivi des Incidents)))  (((Systèmes de Suivi des Incidents ,Propriétés ,Aperçu)))  (((Systèmes de Suivi des Incidents ,Propriétés ,Créer)))  (((Systèmes de Suivi des Incidents ,Propriétés ,Modifier)))  (((Systèmes de Suivi des Incidents ,Propriétés ,Supprimer))) 
 
-Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents" est disponible dans l'écran __Modifier
-le Système de Suivi des Incidents__.
+Le panneau "Aperçu des Propriétés du Système de Suivi des Incidents" est disponible dans l'écran __Modifier le Système de Suivi des Incidents__.
 
 . Accéder à l'écran __Modifier un Système de Suivi des Incidents__.
 +
-Dans le contexte de l'Administration globale, sélectionnez _Suivi
-des Incidents > Aperçu_ et cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant le Système de Suivi des Incidents pour lequel vous voulez afficher les Propriétés. 
+Dans le __Menu d'Administration globale__, sélectionnez _Suivi des Incidents > Aperçu_ et cliquez sur le lien image:icons/edit.gif[,15,15] _Modifier_ devant le Système de Suivi des Incidents pour lequel vous voulez afficher les Propriétés. 
 
 . Cet écran contient le panneau __Aperçu des Propriétés du Système de Suivi des Incidents__.
 +
@@ -400,12 +397,12 @@ Vous ne pouvez pas définir de Propriétés qui ont été implémentées par la 
 [cols="1,3", frame="topbot", options="header"]
 |===
 
-| Icon
+| Icône
 | Description
 
 |image:icons/icon_createparameter.png[,15,15]  Créer
 |Ce lien n'est disponible que si une Propriété a été définie par la Plugin Factory Class, mais que sa valeur n'a pas encore été spécifiée.
-Sinon, seuls les liens __Modifier__, _Supprimer_ et _Historique_ seront disponibles.
+Sinon, seuls les liens __Modifier__ et __Supprimer__ seront disponibles.
 
 Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'accès d'Administrateur global.
 Elle permet de créer une définition de Propriété de Suivi des Incidents.

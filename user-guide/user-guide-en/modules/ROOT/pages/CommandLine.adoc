@@ -12,7 +12,7 @@ Possible uses:
 * Manual creation of Level Requests (CLR Command): <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Creating Level Requests by Specifying Options and Parameters>>
 * Manual creation of Packages (Package Command): <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Creating Packages by Specifying Options and Parameters>>
 * Manual generation of Reports (Report Command): <<CommandLine.adoc#_pcommandline_report_optionsparameters,Generating Reports by Specifying Options and Parameters>>
-* Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>.
+* Creation of Level Requests in an external IDE. This guide describes the integration procedure for <<CommandLine.adoc#_pintegrateikanalminvscode,Visual Studio Code>> and <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>.
 * Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>.
 
 
@@ -992,10 +992,10 @@ The Report will be generated.
 
 Refer to the following procedures for detailed information:
 
-* <<CommandLine.adoc#pintegrateikanalminvscode,Integrating IKAN ALM in Visual Studio Code>>
+* <<CommandLine.adoc#_pintegrateikanalminvscode,Integrating IKAN ALM in Visual Studio Code>>
 * <<CommandLine.adoc#_pintegrateikanalmineclipse,Integrating IKAN ALM in Eclipse>>
 
-[[pintegrateikanalminvscode]]
+[[_pintegrateikanalminvscode]]
 === Integrating IKAN ALM in Visual Studio Code
 
 This procedure describes how to set up IKAN ALM as an external tool in Visual Studio Code, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE

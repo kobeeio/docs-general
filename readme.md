@@ -8,13 +8,12 @@ Always consult the "antora.yml" file in the document to verify, it should contai
 
 * alm-reports 5.8
 * data-model 5.8
-* demo-installation-guide 5.8
 * getting-started 5.8     	      
-* installation-guide 5.8  
-* rest-api 5.9 (in progress)
-* technical-sheet 5.9 (in progress)
-* user-guide 5.9 (in progress)
-* whats-new 5.9 (in progress)
+* installation-guide 5.9(EN) & 5.8(FR)
+* rest-api 5.9(EN) & 5.8(FR)
+* technical-sheet 5.9(EN) & 5.8(FR)
+* user-guide 5.9(EN) & 5.9(FR)
+* whats-new 5.9(EN) & 5.8(FR)
 
 
 

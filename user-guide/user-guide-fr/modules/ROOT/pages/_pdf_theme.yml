@@ -53,3 +53,5 @@ heading:
   font-family: Source Sans Pro
   font-color: #2d2d2c
   margin-top: 16
+  h4-font-size: 14
+  h5-font-size: 12  

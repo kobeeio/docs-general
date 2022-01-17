@@ -1,4 +1,7 @@
 :doctype: book
+// Copy revision number and date from the first adoc file
+:revnumber: v5.9
+:revdate: 01.01.2022
 :TOC:
 :sectnums:
 :title: IKAN ALM Guide de l'Utilisateur
@@ -7,7 +10,7 @@
 :toc-title: Table des matières
 
 :author: IKAN Development N.V., Kardinaal Mercierplein 2, 2800 Malines, BELGIQUE + \
-(C) 2006 - 2021 IKAN Development N.V. + \
+(C) 2006 - 2022 IKAN Development N.V. + \
 Aucune partie de ce document ne peut être reproduite ou transmise à quelque fin ou \
 par quelque moyen que ce soit, électronique ou mécanique, sans l'autorisation explicite \
 et écrite de IKAN Development N.V. \
@@ -15,63 +18,168 @@ Les noms et logos IKAN Development et IKAN ALM et tout autre nom de produits ou 
 de services IKAN sont des marques déposées de IKAN Development N.V. \
 Toutes les autres marques déposées sont la propriété de leurs propriétaires respectifs.
 
-//Getting Started
+// Empty lines before and after include directive is recommended to avoid unexpected results 
+// Level offsets prevent docbook section hierarchy errors
+
+= IKAN ALM Guide de l'Utilisateur
+
+//---
+// Getting Started
+//---
+
+= Démarrer avec IKAN ALM
+
+:leveloffset: +1
+
 include::Introduction.adoc[Introduction]
-include::Logon.adoc[Logging in and out]
-include::UserInterface.adoc[User Interface Overview]
 
-//Desktop
+include::Logon.adoc[Procédures de connexion et de déconnexion]
+
+include::UserInterface.adoc[Aperçu de l’interface utilisateur]
+
+:leveloffset: -1
+
+//---
+// Desktop
+//---
+
+= Bureau
+
+:leveloffset: +1
+
 include::Desktop_Introduction.adoc[Introduction]
-include::Desktop_PersonalSettings.adoc[Personal Settings]
-include::Desktop_LevelRequests.adoc[Level Requests]
-include::Desktop_Packages.adoc[Packages]
-include::Desktop_PackageGroups.adoc[Package Groups]
-include::Desktop_Approvals.adoc[Approvals]
-include::Desktop_ManageDesktop.adoc[Managing the Desktop]
 
-//Project Administration
-include::ProjAdm_Intro.adoc[Project Administration]
-include::ProjAdm_Projects.adoc[Projects]
-include::ProjAdm_ProjMgtOptions.adoc[Project Administration Options]
-include::ProjAdm_ProjMgt_ProjectName.adoc[Project Name]
-include::ProjAdm_HistoryLog.adoc[History Log]
-include::ProjAdm_ProjMgt_ProjectStream.adoc[Project Streams]
-include::ProjAdm_LifeCycles.adoc[Lifecycles]
-include::ProjAdm_Levels.adoc[Levels]
-include::ProjAdm_BuildEnv.adoc[Build Environments]
-include::ProjAdm_DeployEnv.adoc[Deploy Environments]
-include::ProjAdm_EnvParams.adoc[Environment Parameters]
-include::ProjAdm_AuditProjects.adoc[Auditing Projects]
+include::Desktop_PersonalSettings.adoc[Paramètres personnels]
 
-//Global Administration
-include::GlobAdm_Introduction.adoc[Global Administration]
-include::GlobAdm_System.adoc[System]
-include::GlobAdm_HistoryLog.adoc[History Log]
-include::GlobAdm_UsersGroups.adoc[Users and Groups]
+include::Desktop_LevelRequests.adoc[Requêtes de niveau]
+
+include::Desktop_Packages.adoc[Paquets]
+
+include::Desktop_PackageGroups.adoc[Groupes de Paquets de Construction]
+
+include::Desktop_Approvals.adoc[Approbations]
+
+include::Desktop_ManageDesktop.adoc[Administrer son bureau]
+
+:leveloffset: -1
+
+//---
+// Project Administration
+//---
+
+= Administration des projets
+
+:leveloffset: +1
+
+include::ProjAdm_Intro.adoc[Administration des projets]
+
+include::ProjAdm_Projects.adoc[Projets]
+
+include::ProjAdm_ProjMgtOptions.adoc[Options relatives à l’administration des projets]
+
+include::ProjAdm_ProjMgt_ProjectName.adoc[Dénomination du Projet]
+
+include::ProjAdm_HistoryLog.adoc[Suivi de l’Historique]
+
+include::ProjAdm_ProjMgt_ProjectStream.adoc[Branches]
+
+include::ProjAdm_LifeCycles.adoc[Cycles de vie]
+
+include::ProjAdm_Levels.adoc[Niveaux]
+
+include::ProjAdm_BuildEnv.adoc[Environnements de construction]
+
+include::ProjAdm_DeployEnv.adoc[Environnements de déploiement]
+
+include::ProjAdm_EnvParams.adoc[Paramètres d’environnement]
+
+include::ProjAdm_AuditProjects.adoc[Auditer un projets]
+
+:leveloffset: -1
+
+//---
+// Global Administration
+//---
+
+= Administration globale
+
+:leveloffset: +1
+
+include::GlobAdm_Introduction.adoc[Administration globale]
+
+include::GlobAdm_System.adoc[Système]
+
+include::GlobAdm_HistoryLog.adoc[Suivi de l’Historique]
+
+include::GlobAdm_UsersGroups.adoc[Utilisateurs et Groupes d’utilisateurs]
+
 include::GlobAdm_Machines.adoc[Machines]
-include::GlobAdm_Transporters.adoc[Transporters]
-include::GlobAdm_VCR.adoc[Version Control Repositories]
-include::GlobAdm_IssueTracking.adoc[Issue Tracking]
-include::GlobAdm_ScriptingTools.adoc[Scripting Tools]
+
+include::GlobAdm_Transporters.adoc[Transporteurs]
+
+include::GlobAdm_VCR.adoc[Référentiels de contrôle de version]
+
+include::GlobAdm_IssueTracking.adoc[Suivi des Incidents]
+
+include::GlobAdm_ScriptingTools.adoc[Outils de script]
+
 include::GlobAdm_Phases.adoc[Phases]
-include::GlobAdm_Schedules.adoc[Schedules]
-include::GlobAdm_Project.adoc[Projects]
-include::GlobAdm_Misc.adoc[Miscellaneous]
 
-//Commandline Interface
-include::CommandLine.adoc[Commandline Interface]
+include::GlobAdm_Schedules.adoc[Plans horaires]
 
-//Appendices
-include::App_HistoryEventLogging.adoc[History and Event Logging]
-include::App_PredefLevelParams.adoc[Predefined Level Parameters]
-include::App_PredefBuildParams.adoc[Predefined Build Parameters]
-include::App_PredefDeployParams.adoc[Predefined Deploy Parameters]
-include::App_Subversion.adoc[Subversion General Information]
-include::App_RSS.adoc[RSS URL Details]
-include::App_Phases.adoc[Phases General Information]
+include::GlobAdm_Project.adoc[Projet]
 
-//Glossary
-include::Glossary.adoc[Glossary of Terms]
+include::GlobAdm_Misc.adoc[Autres activités]
+
+:leveloffset: -1
+
+//---
+// Commandline Interface
+//---
+
+= Interface de ligne de commande
+
+:leveloffset: +1
+
+include::CommandLine.adoc[Interface de ligne de commande (optionnelle)]
+
+:leveloffset: -1
+
+//---
+// Appendices
+//---
+
+= Appendices
+
+:leveloffset: +1
+
+include::App_HistoryEventLogging.adoc[Enregistrement de l’historique et des événements]
+
+include::App_PredefLevelParams.adoc[Paramètres de niveau prédéfinis]
+
+include::App_PredefBuildParams.adoc[Paramètres de construction prédéfinis]
+
+include::App_PredefDeployParams.adoc[Paramètres de déploiement prédéfinis]
+
+include::App_Subversion.adoc[Subversion - informations générales]
+
+include::App_RSS.adoc[Détails de l’URL du flux RSS]
+
+include::App_Phases.adoc[Phases - Informations générales]
+
+:leveloffset: -1
+
+//---
+// Glossary
+//---
+
+= Glossaire
+
+:leveloffset: +1
+
+include::Glossary.adoc[Glossaire]
+
+:leveloffset: -1
 
 [index]
 = Index

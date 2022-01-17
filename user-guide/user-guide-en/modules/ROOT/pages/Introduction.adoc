@@ -4,7 +4,12 @@
 :revnumber: v5.9
 :revdate: 13.09.2021
 
-= IKAN ALM User Guide: Introduction  
+ifdef::backend-pdf[]
+= Introduction
+endif::[]
+ifdef::backend-html5[]
+= IKAN ALM User Guide: Introduction 
+endif::[] 
 (((IKAN ALM ,Introduction))) 
 
 IKAN ALM offers a uniquely integrated web-based _Application

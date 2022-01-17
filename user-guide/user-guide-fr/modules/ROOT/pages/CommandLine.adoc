@@ -12,7 +12,7 @@ Les utilisations possibles sont:
 * Création manuelle de Requêtes de niveau (Commande CLR). <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Création de Requêtes de niveau en spécifiant des options et des paramètres>>
 * Création manuelle de Paquets (Commande Package). <<CommandLine.adoc#_pcommandline_pack_optionsparameters,Création de Paquets en spécifiant des options et des paramètres>>
 * Génération manuelle de Rapports (Commande Report). <<CommandLine.adoc#_pcommandline_report_optionsparameters,Génération de Rapports en définissant des options et des paramètres>>
-* Création de Requêtes de nveau et de Rapports dans un IDE (Environnement de Développement Intégré) externe. Ce document décrit la procédure d`'intégration pour <<CommandLine.adoc#pintegrateikanalminvscode,Visual Studio Code>> et <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>.
+* Création de Requêtes de nveau et de Rapports dans un IDE (Environnement de Développement Intégré) externe. Ce document décrit la procédure d`'intégration pour <<CommandLine.adoc#_pintegrateikanalminvscode,Visual Studio Code>> et <<CommandLine.adoc#_pintegrateikanalmineclipse,Eclipse>>.
 * Création automatique de Requêtes de niveau via un outil de script. Un outil de script est utilisé pour la définition de déclencheurs de création de Requêtes de niveau (par exemple, la sauvegarde du serveur). Ce document décrit l`'usage d`'un <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,script ANT>>.
 
 
@@ -970,7 +970,7 @@ Pour plus d`'informations, se référer aux procédures suivantes:
 * <<CommandLine.adoc#_pintegrateikanalminvscode,Intégration d`'IKAN ALM dans Visual Studio Code>>
 * <<CommandLine.adoc#_pintegrateikanalmineclipse,Intégration d`'IKAN ALM dans Eclipse>>
 
-[[_pintegrateikanalminjdeveloper]]
+[[_pintegrateikanalminvscode]]
 === Intégration d`'IKAN ALM dans Visual Studio Code
 
 Cette procédure décrit comment installer IKAN ALM comme outil externe dans Visual Studio Code pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution ou de déploiement) à partir de cet IDE.

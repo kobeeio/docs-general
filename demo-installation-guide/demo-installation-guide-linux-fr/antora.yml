@@ -1,6 +1,0 @@
-name: demo-installation-guide-linux-fr
-title: Demo Installation Guide (Linux)
-version: '5.9'
-start_page: ROOT:LinuxDemo.adoc
-nav:
-- modules/ROOT/nav.adoc  

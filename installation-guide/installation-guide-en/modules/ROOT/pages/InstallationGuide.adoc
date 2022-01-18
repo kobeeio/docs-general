@@ -985,7 +985,7 @@ A migration log is created in the _INSTALL_DIR/almDbMigration.log_ file and will
 
 === Clearing the browser cache
 
-After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache-en:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
+After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
 
 === Updating the JAAS configuration
 

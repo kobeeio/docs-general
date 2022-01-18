@@ -21,7 +21,7 @@ Dès lors, les Utilisateurs ne peuvent pas être créés via un menu dans IKAN A
 Si l`'Utilisateur possède les droits d`'accès appropriés, il pourra se connecter à IKAN ALM.
 Sur la base de cette première connexion réussie, l`'Utilisateur sera créé automatiquement dans IKAN ALM.
 
-Un Identifiant Utilisateur doit exister dans ce Système de sécurité externe pour effectuer une <<Logon.adoc#_desktop_loggingon,Connexion à IKAN ALM>> et de pouvoir définir ses <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>.
+Un Identifiant Utilisateur doit exister dans ce Système de sécurité externe pour effectuer une <<Logon.adoc#_ploggingin,Connexion à IKAN ALM>> et de pouvoir définir ses <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>.
 
 Si votre licence IKAN ALM ne permet pas d`'Utilisateurs flottants, il sera impossible de se connecter avec un autre Identifiant Utilisateur une fois le nombre maximal d`'Utilisateurs réservés actifs atteint.
 Si des Utilisateurs additionnels nécessitent de se connecter à IKAN ALM, vous avez deux possibilités:
@@ -260,7 +260,7 @@ a|_Sujets apparentés:_
 (((Administration globale ,Groupes d’utilisateurs)))  (((Groupes d’utilisateurs))) 
 
 Puisque IKAN ALM se sert de l`'interface JAAS pour enregistrer l`'authentification des Identifiants Utilisateur/Mots de Passe à partir des Systèmes de sécurité existants dans votre organisation, les Identifiants Utilisateur et leur appartenance à des Groupes d`'Utilisateurs sont gérés en dehors d`'IKAN ALM.
-Dès lors, un Identifiant Utilisateur ne peut être utilisé pour effectuer une <<Logon.adoc#_desktop_loggingon,Connection à IKAN ALM>> ou pour définir ses <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>> que s`'il existe dans ce Système de sécurité externe.
+Dès lors, un Identifiant Utilisateur ne peut être utilisé pour effectuer une <<Logon.adoc#_ploggingin,Connection à IKAN ALM>> ou pour définir ses <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>> que s`'il existe dans ce Système de sécurité externe.
 
 Les droits d`'accès dans IKAN ALM sont basés sur l`'appartenance des Identifiants Utilisateur à des Groupes d`'Utilisateurs.
 Il y a deux types de Groupes d`'utilisateurs: Externes et Internes.

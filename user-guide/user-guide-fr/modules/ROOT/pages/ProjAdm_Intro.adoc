@@ -1,6 +1,7 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
 
+[[_projadm_introduction]]
 = Administration des projets 
 (((Administration des projets))) 
 

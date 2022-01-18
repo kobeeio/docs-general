@@ -32,7 +32,7 @@ Se référer aux sections suivantes pour une description plus détaillée:
 +
 Votre Administrateur IKAN ALM pourra vous donner l`'URL exacte.
 +
-Cet URL est spécifié dans la section _Courrier_ dans l'écran _Paramètres système_. Voir <<GlobAdm_System.adoc#_ssystemsettings_system,Paramètres système>>
+Cet URL est spécifié dans la section _Courrier_ dans l'écran _Paramètres système_. Voir <<GlobAdm_System.adoc#_globadm_system,Paramètres système>>
 +
 La fenêtre de _Connexion_ s`'affiche:
 +

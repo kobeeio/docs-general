@@ -62,7 +62,7 @@ a|L`'Utilisateur ayant des droits d`'accès d`'Administrateur de Projet peut ex�
 * Créer ou modifier des <<ProjAdm_Levels.adoc#_projadm_levels,Niveaux>>
 * Créer ou modifier des <<ProjAdm_BuildEnv.adoc#_projadm_buildenvironments,Environnements de construction>> ou des <<ProjAdm_DeployEnv.adoc#_projadm_deployenvironments,Environnements de déploiement>>
 
-Pour une description détaillée des actions relatives à l`'administration des projets, se référer à la section <<Introduction.adoc#_projadm_introduction,Administration des projets>>.
+Pour une description détaillée des actions relatives à l`'administration des projets, se référer à la section <<ProjAdm_Intro.adoc#_projadm_introduction,Administration des projets>>.
 
 |Administrateur global
 a|L`'Utilisateur ayant des droits d`'accès d`'Administrateur global peut exécuter les actions suivantes:

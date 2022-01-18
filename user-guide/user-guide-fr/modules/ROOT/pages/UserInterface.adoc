@@ -113,7 +113,7 @@ a|Ce menu déroulant contient les options suivantes:
 Choisir cette option pour afficher l'écran les Paramètres Personnels. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings_edit,Modifier vos Paramètres Personnels>>
 * _Déconnexion_
 +
-Choisir cette option pour quitter IKAN ALM. <<Logon.adoc#_desktop_loogingoff,Déconnexion>>
+Choisir cette option pour quitter IKAN ALM. <<Logon.adoc#_ploggingout,Déconnexion>>
 
 |_Aide_
 a|Ce menu déroulant contient les options suivantes:

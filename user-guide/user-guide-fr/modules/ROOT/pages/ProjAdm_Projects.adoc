@@ -199,7 +199,7 @@ Pour plus d`'informations, se référer à la section <<ProjAdm_Projects.adoc#_p
 |Ce champ, accessible en lecture seulement, indique si le Projet est caché ou non.
 
 Par défaut, un Projet qui vient d`'être créé n`'est pas caché.
-Pour plus d`'informations, se référer à la section <<ProjAdm_Projects.adoc#_porjadm_projectsoverview_hidingshowing,Cacher/Montrer un Projet>>.
+Pour plus d`'informations, se référer à la section <<ProjAdm_Projects.adoc#_projadm_projectsoverview_hidingshowing,Cacher/Montrer un Projet>>.
 
 |Référentiel
 |Ce champ indique le RCV (Référentiel de contrôle de version) utilisé pour le Projet.

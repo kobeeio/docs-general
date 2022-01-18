@@ -11,7 +11,7 @@ Actuellement, IKAN ALM supporte différents types de Référentiels de Contrôle
 * <<GlobAdm_VCR.adoc#_sglobadmin_vcr_svn,Référentiels de contrôle de version Subversion>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_git,Référentiels de contrôle de version Git>>
 * <<GlobAdm_VCR.adoc#_sglobadmin_vcr_cvs,Référentiels de contrôle de version CVS>>
-* <<GlobAdm_VCR.adoc#_sglobadmin_vcr_vss,Référentiels de contrôle de version TFVC>>
+* <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc,Référentiels de contrôle de version TFVC>>
 
 
 L`'administration de ces types de RCV est expliquée dans les sections suivantes.

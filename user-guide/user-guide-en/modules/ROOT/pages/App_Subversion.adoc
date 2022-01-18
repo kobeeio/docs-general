@@ -415,7 +415,7 @@ URL/tags/calc
 
 [[_sappc_fetchmetaproperties]]
 == Fetching Meta Properties 
- (((Subversion ,Fetching Meta Properties))) 
+(((Subversion ,Fetching Meta Properties))) 
 
 Subversion provides interfaces for adding, modifying, and removing versioned metadata on versioned directories and files.
 Those metadata are referred to as __properties__, see the "Version Control with Subversion, Chapter 7 - Advanced Properties" book at http://svnbook.red-bean.com/en/1.2/svn.advanced.props.html[http://svnbook.red-bean.com/en/1.2/svn.advanced.props.html,window=_blank], which explains how to use and set these properties on files and directories. 

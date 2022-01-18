@@ -64,7 +64,7 @@ Example configuration 2: Multiple machines, remote Agent and Commandline:
 
 The following section provides an overview of the prerequisites for installing IKAN ALM.
 
-For the detailed Technical Requirements, consult xref:5.9@technical-sheet-en:root:techsheet.adoc[Technical Sheet].
+For the detailed Technical Requirements, consult xref:5.9@technical-sheet-en:ROOT:TechSheet.adoc[Technical Sheet].
 
 === Hardware Requirements
 
@@ -678,7 +678,7 @@ image::license_installed.png[,520,255]
 
 Log in with user id "`global`", password "`global`". For information about the other default users, see <<_jaasconfiguration>>.
 
-For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:root:Introduction.adoc[IKAN ALM User Guide].
+For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:ROOT:Introduction.adoc[IKAN ALM User Guide].
 
 [[_bhbdbdje]]
 === Starting the ALM Server
@@ -754,7 +754,7 @@ Open a Command Prompt, cd into the installation folder of the ALM Commandline (f
 +
 Open a shell, cd into the installation folder of the ALM Commandline (for example : ALM_HOME/commandline), and launch _./alm.sh_.
 
-For more detailed information about the ALM Commandline, refer to the section xref:5.9@user-guide-en:root:CommandLine.adoc[Commandline Interface] in the __IKAN ALM User Guide__.
+For more detailed information about the ALM Commandline, refer to the section xref:5.9@user-guide-en:ROOT:CommandLine.adoc[Commandline Interface] in the __IKAN ALM User Guide__.
 
 
 == Uninstalling IKAN ALM
@@ -961,7 +961,7 @@ Remote Agents of version 5.8 and higher can be upgraded using the ALM GUI.
 +
 Remote Agents of version 5.7 and lower must first be manually uninstalled. After that, they can be re-installed using the ALM GUI.
 +
-For more information about installing or upgrading ALM Agents using the ALM GUI, refer to xref:5.9@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[IKAN ALM Agent UI Installation].
+For more information about installing or upgrading ALM Agents using the ALM GUI, refer to xref:5.9@how-to-ui-agentinstall-en:ROOT:HowTo_UIAgentInstall.adoc[IKAN ALM Agent UI Installation].
 
 === Database Migration Tool
 
@@ -985,7 +985,7 @@ A migration log is created in the _INSTALL_DIR/almDbMigration.log_ file and will
 
 === Clearing the browser cache
 
-After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
+After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
 
 === Updating the JAAS configuration
 

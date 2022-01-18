@@ -263,7 +263,7 @@ image::GlobAdmin-Machines-RemoteInstall.png[,911,1158]
 
 [NOTE]
 ====
-For more in depth information of the Remote Agent installation, refer to the xref:5.9@how-to-ui-agentinstall-en:root:howto_uiagentinstall.adoc[Agent UI Installation How-to] document .
+For more in depth information of the Remote Agent installation, refer to the xref:5.9@how-to-ui-agentinstall-en:ROOT:HowTo_UIAgentInstall.adoc[Agent UI Installation How-to] document.
 ====
 
 . The _Agent Install Configuration_ screen displays the status of the Agent Installation process. It also displays the _Installation Configuration_ pane which contains the necessary values in order to run an Agent Installation.

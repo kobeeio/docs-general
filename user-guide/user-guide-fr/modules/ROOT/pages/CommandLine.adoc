@@ -518,7 +518,7 @@ Vous pouvez créer un lien symbolique vers le script `alm.sh`. Ainsi, il devient
 Sinon, Créer un fichier de propriétés et/ou éditer les paramètres avec un éditeur de texte.
 . Créer un Paquet en écrivant une commande avec le format suivant :
 +
-__alm *package* -propertyfile:$PROPERTYFILENAME -filerevisons:$FILEREVISIONS [-options] [-parameters]__
+__alm *package* -propertyfile:$PROPERTYFILENAME -filerevisions:$FILEREVISIONS [-options] [-parameters]__
 +
 Les éléments suivants sont disponibles :
 +

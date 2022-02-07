@@ -1,0 +1,156 @@
+// The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
+:imagesdir: ../images
+:description: Quoi de nouveau dans IKAN ALM 5.9
+:revnumber: v5.9
+:revdate: 26.01.2022
+
+= Quoi de nouveau dans IKAN ALM - Version 5.9
+
+IKAN ALM est une solution Web multi-plateformes pour la gestion du cycle de vie des applications. Il combine des initiatives DevOps (construction et intégration continues) et la gestion du cycle de vie pour prendre en charge la complexité des architectures orientées services et des systèmes hautement distribués.
+
+IKAN ALM englobe tous les aspects du processus de Gestion du Cycle de vie des Applications, offrant la gestion des constructions, l’intégration continue, la reconstruction, la construction manuelle, la gestion des versions, les processus d’approbation et la gestion du déploiement. Au sein d’IKAN ALM, vous définissez, mettez en œuvre et appliquez des processus de cycle de vie logiciel adaptés à votre organisation, y compris le développement, les tests, l’assurance qualité et la production finale.
+
+IKAN ALM est un outil *indépendant de la méthodologie* et *neutre pour le référentiel* (permettant le développement multi-plateformes). IKAN ALM est conforme aux normes de l’industrie, telles que CMMI, ITIL et PRINCE. Il aide votre organisation à appliquer, contrôler, auditer, générer des rapports et faciliter les meilleures pratiques et directives pour la gestion du cycle de vie des applications, et fournit des avantages qui garantissent la conformité aux exigences d’audit et améliorent les communications avec les différentes parties du système informatique.
+
+La version 5.9 d'IKAN ALM inclut les améliorations majeures suivantes :
+
+== Nouvelles fonctionalités
+
+=== REST API amélioré
+L’ancienne API REST a été reformatée et de nouveaux points d'accès ont été ajoutés :
+
+* Les points d'accès *GET* existants dispose maintenant d'une pagination et d'une fonctionalité de recherche.
+* La fonctionalité du Bureau est aussi disponible à travers de nouveaux ou étendus points d'accès REST:
+** _createlevelrequests_ : Créer une Requête de niveau
+** _levelrequests_ : Mettre à jour, Abandonner ou Avorter une Requête de niveau
+** _approvals_ : Approbations en attente/Aperçu des Approbations, Approver ou Rejeter une Approbation
+** _packages_ : Créer, Mettre à jour et Lister des Paquets
+* La nouvelle fonctionnalité: Importer et Exporter un projet est également disponible via l’API REST.
+* Nouveau point d'accès *POST* pour les Branches _projectstreams_ lequel permet la création de Branches de Projets
+* La documentation de l’API REST est disponible à partir de l’Interface Utilisateur Web IKAN ALM en tant qu’interface utilisateur Swagger interactive.
+
+
+image::image1.png[,933,439]
+
+=== Mises à niveau internes (Java 11, frameworks, CSS reformatage)
+Afin de prendre en charge Java 11, toutes les bibliothèques du "troisième tiers" utilisées par IKAN ALM ont été vérifiées, mises à jour et testées de manière approfondie. Cela inclut la mise à niveau des frameworks utilisés en interne suivants :
+
+* Hibernate 5 (ORM)
+* Apache Struts 2.5 (UI)
+* Apache Karaf 4.2.8 (OSGi Container)
+* "vt-ldap" a été remplacé par "ldaptive" (API Java pour la connexion au serveur LDAP). Un support a été ajouté pour le protocole "ldaps"
+* xml-rpc: Mise à niveau des librairies et reformatage du support xml-rpc sécurisé
+
+Dand l'Interface Utilisateur, tous les CSS ont été convertis en utilisant les paradigmes ITCSS/BEM pour une meilleure  maintenabilité.
+
+=== Import/Export d'un Projet
+Cette nouvelle fonctionnalité permet d’exporter un projet à partir d’une instance IKAN ALM (par exemple: Tester) et de l’importer ensuite dans une autre instance (par exemple: Production). Il peut également être utilisé pour créer facilement des projets en adaptant des projets précédemment exportés et en les important en tant que nouveaux projets. Les formats xml et json sont pris en charge.
+
+image::image2.png[,881,231]
+
+=== Groupes d'utilisateurs imbriqués
+Cette fonctionnalité permet à des groupes d’utilisateurs de contenir d’autres groupes d’utilisateurs. Cela signifie que les groupes d’utilisateurs définis dans un système d’authentification externe (comme LDAP ou Active Directory) peuvent être ajoutés aux groupes d’utilisateurs IKAN ALM internes. Ces groupes internes peuvent ensuite être utilisés pour attribuer certains rôles dans IKAN ALM, comme par exemple l’affectation d’un groupe d’utilisateurs au rôle d’Administrateur d’un projet. Cela évite d’avoir à créer des "principals" spécifiques et à affecter des utilisateurs dans le système d’authentification externe afin de donner aux utilisateurs finaux l’accès aux rôles IKAN ALM corrects.
+
+image::image3.png[,609,448]
+
+=== Installation d'un Agent distant
+Une Installation d’Agent IKAN ALM peut être configurée, démarrée et gérée à partir de l’Application Web IKAN ALM. IKAN ALM automatise le transfert complet des fichiers, l’installation, l’enregistrement du service ou du démon et le démarrage à l’aide de Secure Shell ou PowerShell.
+
+image::image4.png[,862,495]
+
+Le processus d’Installation de l’Agent est surveillé par le serveur IKAN ALM. La progression du processus d’installation est consignée et peut être suivie à partir de l’Interface Utilisateur.
+
+image::image5.png[,911,231]
+
+=== Les Archives de construction indépendantes de la plate-forme
+En plus des formats zip et tar.gz existants, il est maintenant possible de stocker les constructions dans l’Archive de construction au format "7z" pour prendre en charge une meilleure portabilité entre les systèmes Windows et Linux.
+
+image::image6.png[,758,346]
+
+=== Nouvelle présentation du Bureau
+Les éléments de Bureau peuvent désormais être présentés sous forme de tuiles(vignettes), ce qui entraîne une nouvelle représentation graphique de l’état des différents Niveaux dans une Branche de Projet ou un Paquet. Ce nouveau Bureau par Tuiles est une option alternative au Bureau classique qui a également été révisé.
+
+image::image7.png[,1090,502]
+
+=== Support pour la Base de données PostgreSQL
+PostgreSQL a été ajouté en tant que Base de données de production prise en charge par IKAN ALM. Les versions 11, 12 et 13 ont été testées sur les plates-formes Windows et Linux.
+
+=== Support pour GitHub
+
+Le cycle de vie des applications dans IKAN ALM peut désormais commencer à partir de sources stockées dans un référentiel GitHub. Tout comme avec Git, un processus de constructions et de déploiement basé sur un Paquet (style Mainframe) est possible en sélectionnant et en déplaçant des fichiers ou des composants individuels tout au long d’un cycle de vie. En outre, les Incidents GitHub fournis dans les commentaires de validation (commit) des sources GitHub (et d’autres RVCs pris en charge) seront identifiés par IKAN ALM et automatiquement liés aux constructions.
+
+=== Intégration de MF ALM comme système d'Incidents et de Tests
+
+IKAN ALM intègre le système de défauts (defects) Micro Focus ALM en reliant les défauts MF ALM à une action de construction et/ou de déploiement d'une Requête de niveau IKAN ALM. Les artefacts sont liés automatiquement en fonction des commentaires fournis par les développeurs lors de la validation du code (commit) dans le Référentiel de Contrôle de Versions. IKAN ALM récupère des informations supplémentaires à partir du défaut (defect) MF ALM associé, telles qu’une brève description, le propriétaire et la priorité. Ces informations sont mises à jour chaque fois que le résultat de la construction évolue dans le cycle de vie IKAN ALM. De nouvelles phases sont également disponibles pour exécuter les tests MF ALM (UFT).
+
+image::image10.png[,850,521]
+
+== Fonctionalités améliorées
+
+=== Amélioration de plusieurs utilisations de l'Interface Utilisateur
+
+* Améliorations du Menu
+** Montre les Projets, Paquets, et Requêtes de niveau les plus récents dans le Menu principal
+** Montre les Filtres de recherche dans le Menu principal
+** Les Filtres de recherche sont automatiquement rechargés quand un utilisateur revient vers une page
+
+image::image8.png[,938,434]
+
+* Améliorations apportées au panneau Détails de la Requête de niveau
+** Onglet Sommaire : Approver/Rejeter la Requête de niveau
+** Onglet Sommaire : Délivrer la construction vers le Niveau suivant
+** Onglet Résultats : Expanser/Réduire tous les répertoires a été ajouté pour expanser ou réduire complétement le Résultat de construction
+* Page de modification d'un Environnement de construction ou déploiement: Ajout d'un lien vers l'Aperçu des Paramètres
+
+=== Nouveaux champs du Paquet
+
+Trois nouveaux champs ont été ajoutés à la définition du Paquet afin d’améliorer sa visibilité :
+
+* Statut
+* Propriétaire
+* Date de livraison cible
+
+Tous les champs sont facultatifs et n’ont aucun impact sur les Paquets existants. 
+
+Le champ "Statut" a l’impact suivant sur la vie du paquet :
+
+* "Actif", le paquet peut être construit et déployé, et son contenu (fichiers) peut être modifié.
+* "Gelé", le paquet ne peut pas être construit et son contenu ne peut pas être modifié. Il peut toujours être déployé.
+* "Archivé", le paquet ne peut pas être construit ni déployé, et son contenu ne peut pas être modifié.
+
+image::image9.png[,598,304]
+
+Les champs "Propriétaire" et "Date de livraison cible" sont informatifs et peuvent être utilisés pour trouver des paquets plus rapidement.
+
+=== Intégration Git améliorée
+Le nom de la branche principale par défaut dans Git peut maintenant être configuré. Lors de la création d’une nouvelle définition Git, ce nom par défaut est _main_. Dans les versions antérieures d’IKAN ALM, ce nom par défaut n’était pas configurable et sa valeur était toujours _master_.
+L’intégration Git prend désormais également en charge un processus de construction et de déploiement basé sur un paquet (style Mainframe), en sélectionnant et en déplaçant des fichiers ou des composants individuels tout au long d’un cycle de vie.
+
+=== Migration de la documentation vers Asciidoc
+La documentation IKAN ALM 5.9, y compris la documentation du Guide de l’utilisateur intégrée à l’Interface Utilisateur IKAN ALM, a été migrée vers Asciidoc et est disponible en ligne à l’adresse https://docs.ikanalm.com . Cela nous permet d’améliorer continuellement la documentation sans que les clients aient besoin de mettre à niveau leur installation IKAN ALM. Les fichiers PDF et la version 5.8 de la documentation sont également publiés en ligne.
+
+=== Amélioration de la flexibilité de l’Outil de script
+Les champs Type de construction et Type de déploiement dans un Projet ont été supprimés. Ils restraignaient inutilement le type d’Outil de script des Environnements de construction et de déploiement. La suppression permet une configuration plus flexible des Outils de script pour les actions de construction ou de déploiement.
+
+=== Extension des intégrations: DevOps Azure (RCV et Suivi des Incidents) et Cloud Jira (Suivi des Incidents) 
+L’intégration existante avec Microsoft Team Foundation Server (Contrôle de version et Système de suivi des incidents) prend désormais également en charge les services DevOps Azure, le contrôle de version en ligne de Microsoft et la gestion des exigences.
+
+L’intégration du Système de suivi des incidents Jira a été améliorée pour fonctionner avec le système en ligne Jira Cloud d’Atlassian.
+
+=== Plusieurs petites améliorations
+
+* Support pour MySQL 8
+* Support pour Oracle 19c
+* Filtre des Projets accessibles dans les écrans de _Créer un Paquet_ et _Ajouter au Bureau_
+* Les paramètres de construction/déploiement/machine nouvellement créés sont désormais mis obligatoires par défaut
+* Ajout du paramètre _Controlé par Utilisateurs_ de construction et de déploiement pour faciliter le travail des Administrateurs globaux et de projet
+
+== Fonctionalités obsolètes, fin du support
+
+* Suppression de la prise en charge du Système de suivi d'incidents Microsoft Visual SourceSafe
+* Suppression de la prise en charge du Système de suivi d'incidents PVCS
+* Suppression de la prise en charge du Système de suivi d'incidents TeamForge
+* Suppression de la prise en charge de la gestion des tests HP Quality Center
+
+== Résolution des bogues
+Plusieurs petits bogues et optimisations ont aussi été implémentés. Reportez-vous au fichier Readme.txt du produit installé pour plus de détails.

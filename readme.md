@@ -13,7 +13,7 @@ Always consult the "antora.yml" file in the document to verify, it should contai
 * rest-api 5.9
 * technical-sheet 5.9(EN) & 5.9(FR)
 * user-guide 5.9(EN) & 5.9(FR)
-* whats-new 5.9
+* whats-new 5.9(EN) & 5.9(FR)
 
 
 

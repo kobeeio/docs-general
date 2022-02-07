@@ -38,7 +38,7 @@ The installation procedure of ALM Reports only supports Apache Tomcat 9 as valid
 
 === Database
 
-ALM Reports supports all database servers that IKAN ALM supports as the database server for the IKAN ALM database.
+ALM Reports supports MySQL, MsSQL, Oracle, and PostgreSQL as the database server for the IKAN ALM database.
 
 The installation procedure of ALM Reports only supports MySQL and Microsoft SQL Server as the JasperReports Server database.
 [[_installingkanalmreports]]

@@ -14,4 +14,4 @@ The IKAN Development and IKAN ALM logos and names and all other IKAN product \
 or service names are trademarks of IKAN Development N.V. \
 All other trademarks are property of their respective owners.
 
-include::WhatsNew.adoc[]
+include::ALMreports.adoc[]

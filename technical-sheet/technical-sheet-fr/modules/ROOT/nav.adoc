@@ -1,1 +1,1 @@
-* xref:TechSheet.adoc[Contents]
+* xref:TechSheet.adoc[Contenu]

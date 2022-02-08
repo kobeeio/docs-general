@@ -1,1 +1,1 @@
-* xref:GettingStarted.adoc[Contents]
+* xref:GettingStarted.adoc[Contenu]

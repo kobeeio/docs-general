@@ -1,1 +1,1 @@
-* xref:InstallationGuide.adoc[Contents]
+* xref:InstallationGuide.adoc[Contenu]

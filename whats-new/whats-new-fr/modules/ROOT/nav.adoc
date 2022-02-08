@@ -1,1 +1,1 @@
-* xref:WhatsNew.adoc[Contents]
+* xref:WhatsNew.adoc[Contenu]

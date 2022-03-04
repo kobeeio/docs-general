@@ -134,7 +134,7 @@ It is recommended to set the following memory settings for running IKAN ALM in T
 * max Java heap size (-Xmx) : 1024m
 * max Metaspace size (-XX:MaxMetaspaceSize) : 256m
 
-You must also configure Tomcat to use the JAAS configuration file _ALM_HOME_/system/security/jaas.conf (for example `C:/alm/system/security/jaas.conf` ). You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
+You must also configure Tomcat to use the JAAS configuration file _ALM_HOME_/system/security/jaas.config (for example `C:/alm/system/security/jaas.config` ). You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
 
 If you launch Tomcat from the startup scripts, you need to create the file _TOMCAT_HOME/bin/setenv.bat_ (Windows) or _TOMCAT_HOME/bin/setenv.sh_ (Linux/Unix) with the following content :
 
@@ -143,7 +143,7 @@ For Windows:
 [source]
 ----
 SET JAVA_HOME=<JAVA_HOME>
-SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.conf
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
 ----
 
 For Linux/Unix:
@@ -151,7 +151,7 @@ For Linux/Unix:
 [source]
 ----
 JAVA_HOME=<JAVA_HOME>
-JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.conf
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
 ----
 
 If you run Tomcat as a Windows service, you need to set the Java and memory settings in the file __TOMCAT_HOME/bin/service.bat__ :
@@ -161,7 +161,7 @@ If you run Tomcat as a Windows service, you need to set the Java and memory sett
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
 SET JvmMx=1024
-SET JvmArgs=-XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.conf
+SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
 ----
 
 After these modifications, you need to re-install the service by running "service.bat remove", followed by "service.bat install". You need Administrative privileges to run these commands.
@@ -989,7 +989,7 @@ After upgrading ALM, it is recommended for all users to clear their browser cach
 
 === Updating the JAAS configuration
 
-IKAN ALM 5.9 uses a new library for JAAS LoginModules when using LDAP or Microsoft Active Directory for authentication and authorization of users. As a consequence, the JAAS configuration files _ALM_HOME_/system/security/jaas.conf and _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml have changed. If you are using LDAP or Microsoft AD, then you must use the new JAAS configuration files and set the properties ldapUrl, bindDn, bindCredential, baseDn and roleBase to the correct values. For more details, see <<_jaasconfiguration_msad,JAAS configuration: Microsoft Active Directory>>.
+IKAN ALM 5.9 uses a new library for JAAS LoginModules when using LDAP or Microsoft Active Directory for authentication and authorization of users. As a consequence, the JAAS configuration files _ALM_HOME_/system/security/jaas.config and _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml have changed. If you are using LDAP or Microsoft AD, then you must use the new JAAS configuration files and set the properties ldapUrl, bindDn, bindCredential, baseDn and roleBase to the correct values. For more details, see <<_jaasconfiguration_msad,JAAS configuration: Microsoft Active Directory>>.
 
 
 [appendix]
@@ -1299,7 +1299,7 @@ sudo rm /etc/rc.d/rc2.d/S20almserver59-service
 
 For the authentication and authorization of users, IKAN ALM uses the Java Authentication and Authorization Service (JAAS) (see https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). JAAS authentication is performed in a pluggable fashion. This permits applications to remain independent from underlying authentication technologies. New or updated authentication technologies can be plugged into IKAN ALM without requiring modifications to the application itself.
 
-The JAAS configuration used by Tomcat is set in the file _ALM_HOME_/system/security/jaas.conf. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controls the users that can log in via the ALM GUI and that can authenticate via the REST API.
+The JAAS configuration used by Tomcat is set in the file _ALM_HOME_/system/security/jaas.config. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controls the users that can log in via the ALM GUI and that can authenticate via the REST API.
 
 The JAAS configuration by the ALM Server can be found in the file _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. This configuration controls the users that can connect via the ALM Commandline.
 
@@ -1320,7 +1320,7 @@ The default JAAS configuration files contain examples for configuring ALM authen
 
 === JAAS configuration: password file
 
-The default IKAN ALM JAAS configuration uses a simple password file. For Tomcat (jaas.conf), this looks like :
+The default IKAN ALM JAAS configuration uses a simple password file. For Tomcat (jaas.config), this looks like :
 
 [source]
 ----
@@ -1384,7 +1384,7 @@ ldapUrl="ldaps://<AD_SERVER>:636"
 When setting up a secure ldap connection, it is not sufficient to only change the Jaas configuration file of Tomcat and the ALM server. A certificate should be created and imported in the ALM keystore. Refer to the next paragraph on how to do this.
 ====
 
-Example of Microsoft AD connection for Tomcat (jaas.conf) :
+Example of Microsoft AD connection for Tomcat (jaas.config) :
 
 [source]
 ----
@@ -1455,7 +1455,7 @@ Example of Microsoft AD connection for the ALM Server (JaasPropertiesLoginModule
 
 ----
 
-To configure IKAN ALM to authenticate using Microsoft AD, rename the JAAS config realm named "ALM" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.conf_ and _JaasPropertiesLoginModule.xml_ :
+To configure IKAN ALM to authenticate using Microsoft AD, rename the JAAS config realm named "ALM" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.config_ and _JaasPropertiesLoginModule.xml_ :
 
 [cols="1,3", frame="topbot", options="header"]
 |===
@@ -1496,7 +1496,7 @@ Base DN of an Organizational Unit (OU) from which an LDAP search for a user's ro
 
 [NOTE]
 ====
-Values set in the file _jaas.conf_ *MUST* be surrounded by ", while values set in the file _JaasPropertiesLoginModule.xml_ *MUST NOT* be surrounded by ".
+Values set in the file _jaas.config_ *MUST* be surrounded by ", while values set in the file _JaasPropertiesLoginModule.xml_ *MUST NOT* be surrounded by ".
 ====
 Refer to https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldaptive.org/docs/guide/jaas.html] for more information on the ldaptive JAAS properties.
 

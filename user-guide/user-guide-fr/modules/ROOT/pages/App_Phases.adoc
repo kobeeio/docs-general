@@ -11,13 +11,13 @@ Quand Kobee exécute des Requêtes de niveau, des Constructions et des Déploiem
 
 Les Phases représentent des tâches ou des actions spécifiques qui doivent être exécutées par le système.
 
-Elles sont définies dans la base de données d'Kobee et peuvent être consultées et modifiées dans la section Phases dans le contexte de l'Administration globale.
+Elles sont définies dans la base de données de Kobee et peuvent être consultées et modifiées dans la section Phases dans le contexte de l'Administration globale.
 Une fois définies dans l'Administration globale, les Phases peuvent être associées à des Niveaux ou à des Environnements de construction ou de déploiement dans le contexte de l'Administration des projets.
 
 Les Phases sont subdivisées en différents types en fonction de leur créateur (des Phases "de noyau" et des Phases "personnalisées") et de leur utilisation (des Phases de niveau, de construction et de déploiement).
 
-La fonctionnalité de base d'Kobee est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
-Vous devez les considérer comme faisant partie intégrante d'Kobee.
+La fonctionnalité de base de Kobee est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
+Vous devez les considérer comme faisant partie intégrante de Kobee.
 Quand un nouveau Niveau, un nouvel Environnement de construction ou de déploiement est créé, son flux de travail par défaut sera créé et sera entièrement constitué d'une séquence de Phases de noyau.
 Ensuite, vous pouvez modifier ce flux de travail par défaut en supprimant des Phases de noyau, en modifiant la séquence ou en ajoutant vos propres Phases, les Phases dites "personnalisées". Vous pouvez les créer à partir de zéro dans l'Administration globale, sur la base d'un ou plusieurs scripts et ressources existants, ou vous pouvez importer une Phase personnalisée existante en utilisant la fonctionnalité "Importer une Phase".
 
@@ -56,7 +56,7 @@ Tous les types de Phases insérées dans le flux de travail d'un Niveau, d'un En
 
 |Version de la Phase
 |Combiné avec le nom de la Phase, ce champ forme l'identifiant unique de la Phase.
-La version des Phases de noyau correspond à la version d'Kobee (par exemple, 6.0).
+La version des Phases de noyau correspond à la version de Kobee (par exemple, 6.0).
 
 La version des Phases personnalisées se conforme au format expliqué dans la section <<GlobAdm_Phases.adoc#_globadm_phases_creating,Créer une définition de Phase>>.
 
@@ -124,7 +124,7 @@ L'exécution d'une Phase peut être suivie sur l'onglet <<Desktop_LevelRequests.
 Les Phases de niveau sont des actions qui doivent être exécutées pour achever une Requête de niveau.
 
 Une installation Kobee originale (dite "vanilla") ne contient que les Phases de niveau du type "de noyau". Vous pouvez les rechercher via l'__Aperçu des Phases__ en limitant la recherche au Phases de noyau qui peuvent être utilisées sur un Niveau.
-Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Niveau.
+Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité de Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Niveau.
 
 Les Phases de niveau peuvent être insérées dans le flux de travail d'un Niveau (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Administration des Projets - Phases de niveau>>) et sont enregistrées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Informations détaillées - Journaux de Phase - Nom de Phase>>).
 
@@ -295,7 +295,7 @@ La Phase _Exécution script_ exécute un script sur la Machine du Serveur Kobee 
 Le script (alm.phase.mainScript) ainsi que l'Outil de script (alm.phase.builder) doivent être définis par un Paramètre de phase obligatoire après l'insertion de cette Phase dans un Niveau.
 
 La Phase _Exécution script_ a été introduite au niveau du Niveau à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee), en même temps que les Phases personnalisées.
-Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
+Le journal généré par le script est sauvegardé dans la base de données de Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Niveau (par exemple, lors de la création d'un nouveau Niveau à partir de zéro).
 
 Si le script réussit, la Phase _Exécution script_ se termine avec le statut __Réussi__.
@@ -321,7 +321,7 @@ L'Outil de script (alm.phase.builder) qui exécute le script dépend du Type d'e
 
 La Phase de niveau personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee), en même temps que la Phase __Exécution
 script__.
-Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
+Le journal généré par le script est sauvegardé dans la base de données de Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Niveau (par exemple, lors de la création d'un nouveau Niveau à partir de zéro).
 
 Si le script réussit, la _Phase de niveau personnalisée_ se termine avec le statut __Réussi__.
@@ -340,7 +340,7 @@ La définition dans l'Administration globale peut également spécifier qu'elle 
 Les Phases de construction sont des actions qui doivent être exécutées pour achever une Construction.
 Une installation Kobee originale (dite "vanilla") ne contient que les Phases de construction du type "de noyau". Vous pouvez les rechercher via l'__Aperçu
 des Phases__ en limitant la recherche aux Phases de noyau qui peuvent être utilisées sur un Environnement de construction.
-Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de construction.
+Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité de Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de construction.
 
 Les Phases de construction peuvent être insérées dans un Environnement de construction (<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phases,Phases d`'Environnement de construction>>). Leurs actions pendant l'exécution d'une Construction sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_buildactions,Actions de Construction>>). 
 
@@ -483,7 +483,7 @@ L'Outil de script (alm.phase.builder) qui exécute le script dépend du Type d'e
 Si ce type d'exécution est différent de l'Outil de script associé à l'Environnement de construction, sa valeur doit être établie après l'insertion de cette Phase dans un Environnement de construction.
 
 La Phase de construction personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee).
-Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
+Le journal généré par le script est sauvegardé dans la base de données de Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Environnement de construction (par exemple, lors de la création d'un nouvel Environnement de construction à partir de zéro).
 
 Si le script réussit, la Phase de _Construction_ personnalisée se termine avec le statut __Réussi__.
@@ -502,7 +502,7 @@ La définition dans l'Administration globale peut également spécifier qu'elle 
 Les Phases de déploiement sont des actions qui doivent être exécutées pour achever un Déploiement.
 Une installation Kobee originale (dite "vanilla") ne contient que les Phases de déploiement du type "de noyau". Vous pouvez les rechercher via l'__Aperçu
 des Phases__ en limitant la recherche aux Phases de noyau qui peuvent être utilisées sur un Environnement de déploiement.
-Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de déploiement.
+Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité de Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de déploiement.
 
 Les Phases de déploiement peuvent être insérées dans un Environnement de déploiement (<<ProjAdm_DeployEnv.adoc#_projadm_deplanv_phases,Phases d`'Environnement de déploiement>>) et leurs actions pendant l'exécution ou le déploiement sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_deployactions,Actions de Déploiement>>). 
 
@@ -615,7 +615,7 @@ L'Outil de script (alm.phase.builder) qui exécute le script dépend du Type d'e
 Si ce type d'exécution est différent de l'Outil de script associé à l'Environnement de déploiement, sa valeur doit être établie après l'insertion de cette Phase dans un Environnement de déploiement.
 
 La Phase de déploiement personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee).
-Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
+Le journal généré par le script est sauvegardé dans la base de données de Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Environnement de déploiement (par exemple, lors de la création d'un nouvel Environnement de déploiement à partir de zéro).
 
 Si le script réussit, la Phase de _déploiement_ personnalisée se termine avec le statut __Réussi__.

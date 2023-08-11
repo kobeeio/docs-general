@@ -16,7 +16,7 @@ Se référer aux sections suivantes pour des informations plus détaillées conc
 (((Interface Utilisateur ,Navigation))) 
 
 === Menu Principal
-L'Interface Utilisateur d'Kobee est composée de 3 sections principales: le Bureau, la section Administration des projets et la section Administration globale.
+L'Interface Utilisateur de Kobee est composée de 3 sections principales: le Bureau, la section Administration des projets et la section Administration globale.
 Ces sections sont accessibles à partir du __Menu Principal__, la barre d'outils bleue en haut de l'écran.
 À droite, elle contient les Paramètres de l'Utilisateur actuel ainsi que l'aide contextuelle.
 
@@ -123,10 +123,10 @@ a|Ce menu déroulant contient les options suivantes:
 Choisir cette option pour aller vers la documentation du site.
 * _Documentation REST API_
 +
-Choisir cette option pour ouvrir l'écran de la Documentation intégrée REST API d'Kobee.
+Choisir cette option pour ouvrir l'écran de la Documentation intégrée REST API de Kobee.
 * _À propos de_
 +
-Choisir cette option pour ouvrir l'écran À propos d'Kobee. Cette page montre les informations au sujet de votre licence installée.
+Choisir cette option pour ouvrir l'écran À propos de Kobee. Cette page montre les informations au sujet de votre licence installée.
 |===
 
 

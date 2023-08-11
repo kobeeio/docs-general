@@ -240,9 +240,9 @@ Une Phase de niveau peut être une Phase de noyau (par exemple, la Phase _Récup
 des Sources_ ou une Phase de niveau personnalisée créée ou importée par l'Utilisateur dans le Catalogue des Phases.
 
 |_Phase de noyau_
-|Les Phases de noyau constituent la fonctionnalité "de noyau" d'Kobee.
+|Les Phases de noyau constituent la fonctionnalité "de noyau" de Kobee.
 Elles peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
-Vous devez les considérer comme faisant partie intégrante d'Kobee.
+Vous devez les considérer comme faisant partie intégrante de Kobee.
 Quand un nouveau Niveau, un nouvel Environnement de construction ou de déploiement est créé, son flux de travail par défaut sera créé et consistera entièrement d'une séquence de Phases de noyau.
 Ce flux de travail par défaut peut être modifié en supprimant des Phases de noyau, en modifiant la séquence des Phases ou en ajoutant des Phases personnalisées.
 

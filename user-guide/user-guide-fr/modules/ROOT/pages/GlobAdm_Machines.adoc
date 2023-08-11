@@ -350,7 +350,7 @@ L'Agent essaiera de se connecter au Serveur en utilisant ce nom ou l'adresse IP.
 
 |Port du Serveur	
 |Dans ce champ, entrer le numéro de Port (entre 0 et 65536) avec lequel l'Agent essaiera de se connecter au Serveur. Ce champ est optionnel. Quand il est laissé vide, il est défini par la valeur dans les Informations de la Machine.
-Ce paramètre peut être vérifié dans l'Administration Globale d'Kobee: Voir Paramètres système, Panneau <<GlobAdm_System.adoc#_ssystemsettings_tablocalenvironment,Environnement local>> :
+Ce paramètre peut être vérifié dans l'Administration Globale de Kobee: Voir Paramètres système, Panneau <<GlobAdm_System.adoc#_ssystemsettings_tablocalenvironment,Environnement local>> :
 la valeur de __Serveur Kobee__ représente la Machine du Serveur IKAN ALM.
 Allez dans __Administration Globale  > Machines > Aperçu__.
 Contrôlez la propriété __Port du Serveur__ de la Machine du Serveur Kobee. S'il n'y a pas de Port du Serveur défini pour la la Machine du Serveur IKAN ALM, le port __20021__ sera utilisé.

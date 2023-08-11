@@ -7,13 +7,13 @@
 (((Administration globale ,Phases)))  (((Phases))) 
 
 Quand Kobee exécute des Requêtes de niveau, des Constructions et des Déploiements, toutes les actions sont effectuées en exécutant une séquence de Phases.
-Ces Phases sont définies dans la base de données d'Kobee et peuvent être consultées et modifiées dans la section _Phases_ dans le __Menu d'__Administration
+Ces Phases sont définies dans la base de données de Kobee et peuvent être consultées et modifiées dans la section _Phases_ dans le __Menu d'__Administration
 globale__.
 Une fois définies dans l'__Administration
 globale__, les Phases peuvent être associées à des Niveaux ou à des Environnements de construction ou de déploiement dans le __Menu d'__Administration des projets__.
 
-La fonctionnalité de base d'Kobee est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
-Vous devez les considérer comme faisant partie intégrante d'Kobee.
+La fonctionnalité de base de Kobee est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
+Vous devez les considérer comme faisant partie intégrante de Kobee.
 
 Vous pouvez étendre cette fonctionnalité de base en créant vos propres Phases.
 Il y a deux options:
@@ -100,26 +100,26 @@ Les versions suivantes NE sont PAS légales:
 * 1.0.0-beta2
 
 |Nom d'affichage par défaut
-|Le nom de la Phase tel qu'il sera affiché dans l'Interface Utilisateur d'Kobee, par exemple, dans les panneaux _Informations détaillées_ ou __Aperçu des
+|Le nom de la Phase tel qu'il sera affiché dans l'Interface Utilisateur de Kobee, par exemple, dans les panneaux _Informations détaillées_ ou __Aperçu des
 Phases d'Environnement de construction__.
 
 Ce nom par défaut sera utilisé si aucun nom d'affichage spécifique pour la langue de l'interface de l'Utilisateur n'est fourni.
 Ce champ est obligatoire.
 
 |Nom d'affichage [anglais]
-|Le nom anglais de la Phase tel qu'il sera affiché dans l'Interface Utilisateur d'Kobee pour un Utilisateur pour lequel la langue spécifiée dans ses__ Paramètres
+|Le nom anglais de la Phase tel qu'il sera affiché dans l'Interface Utilisateur de Kobee pour un Utilisateur pour lequel la langue spécifiée dans ses__ Paramètres
 personnels__ est l'anglais. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>
 
 Ce champ est optionnel.
 
 |Nom d'affichage [français]
-|Le nom français de la Phase tel qu'il sera affiché dans l'Interface Utilisateur d'Kobee pour un Utilisateur pour lequel la langue spécifiée dans ses__ Paramètres
+|Le nom français de la Phase tel qu'il sera affiché dans l'Interface Utilisateur de Kobee pour un Utilisateur pour lequel la langue spécifiée dans ses__ Paramètres
 personnels__ est le français. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>
 
 Ce champ est optionnel.
 
 |Nom d'affichage [allemand]
-|Le nom allemand de la Phase tel qu'il sera affiché dans l'Interface Utilisateur d'Kobee pour un Utilisateur pour lequel la langue spécifiée dans ses__ Paramètres
+|Le nom allemand de la Phase tel qu'il sera affiché dans l'Interface Utilisateur de Kobee pour un Utilisateur pour lequel la langue spécifiée dans ses__ Paramètres
 personnels__ est l'allemand. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Paramètres personnels>>
 
 Ce champ est optionnel.
@@ -1096,7 +1096,7 @@ Le panneau _Paramètres de la phase importée_ affiche les paramètres définis 
 
 . Cliquez sur le bouton _Importer_ pour importer la Phase.
 +
-Si vous cliquez sur le bouton __Importer__, la Phase et ses Paramètres sont créés dans la base de données d'Kobee.
+Si vous cliquez sur le bouton __Importer__, la Phase et ses Paramètres sont créés dans la base de données de Kobee.
 Les scripts et les autres fichiers contenus dans la Phase sont enregistrés dans un fichier .jar et copiés vers l'Emplacement du Catalogue des Phases (tel que défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>).
 +
 Vous pouvez également utiliser le bouton _Aperçu_ pour retourner à l`'__Aperçu des Phases__ sans importer la Phase.

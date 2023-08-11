@@ -13,7 +13,7 @@ Nearly all resources require an authenticated session. To get a session, use the
 
 === Permissions
 
-Most of the actions in this API require permissions. These are the same permissions as the related request in IKAN ALM user interface. This means that some requests will require the user to have the correct role in order to be successful. This role will always be clearly stated in the documentation for the related resource. A user gets a certain role by being a member of a User Group.
+Most of the actions in this API require permissions. These are the same permissions as the related request in Kobee user interface. This means that some requests will require the user to have the correct role in order to be successful. This role will always be clearly stated in the documentation for the related resource. A user gets a certain role by being a member of a User Group.
 
 === Using the documentation
 
@@ -23,7 +23,7 @@ Every resource is documented using the HTTP method to access this resource follo
 
 A resource can be opened or collapsed by clicking on the surrounding block. The resource will first show a list of acceptable parameters (if any), followed by the potential responses for this resource.
 
-When opening this documentation from within the IKAN ALM web interface, the GET resources can be tried out by clicking on the "try it out" button above the acceptable parameters list. When clicked, the parameters become editable and an execute button appears. Clicking the execute button will send a HTTP request to the resource and show the response. The "try it out" feature is disabled on all resources that can alter the database to avoid accidental changes to live data.
+When opening this documentation from within the Kobee web interface, the GET resources can be tried out by clicking on the "try it out" button above the acceptable parameters list. When clicked, the parameters become editable and an execute button appears. Clicking the execute button will send a HTTP request to the resource and show the response. The "try it out" feature is disabled on all resources that can alter the database to avoid accidental changes to live data.
 
 This documentation does not show HEAD or OPTIONS methods for resources. Every resource also supports the HEAD and OPTIONS method.
 
@@ -45,14 +45,14 @@ __Version__ : v1
 
 === Contact information
 [%hardbreaks]
-__Contact__ : IKAN ALM Support
+__Contact__ : Kobee Support
 __Contact Email__ : support@ikanalm.com
 
 === Consumes
 
 * `application/json;charset=UTF-8`
 * `application/xml;charset=UTF-8`
-** For XML examples of request bodies, consult the bundled REST API documentation found in the About section of the menu in IKAN ALM.
+** For XML examples of request bodies, consult the bundled REST API documentation found in the About section of the menu in Kobee.
 
 
 === Produces

@@ -4,7 +4,7 @@
 
 [[_authentication_resource]]
 ===  Authentication
-This resource represents Authentication. Use it to obtain authentication info, authenticate or log out from IKAN ALM.
+This resource represents Authentication. Use it to obtain authentication info, authenticate or log out from Kobee.
 
 
 [[_loginusingpost]]
@@ -87,7 +87,7 @@ GET /auth
 
 
 ===== Description
-Get an Authentication View. If you do not have a valid session, it will return an empty View that can be filled in and posted to authenticate to IKAN ALM. If you have a valid session, it will return information about this session.
+Get an Authentication View. If you do not have a valid session, it will return an empty View that can be filled in and posted to authenticate to Kobee. If you have a valid session, it will return information about this session.
 
 
 ===== Responses
@@ -130,7 +130,7 @@ DELETE /auth
 
 
 ===== Description
-Deletes the Authentication Session of the current user, logging him/her out of IKAN ALM.
+Deletes the Authentication Session of the current user, logging him/her out of Kobee.
 
 
 ===== Responses
@@ -665,7 +665,7 @@ __required__|The identifier of the Build to retrieve the Phases for.|integer (in
 
 [[_constants_resource]]
 ===  Constants
-This resource represents Constants. Use it to obtain details of constants used in IKAN ALM.
+This resource represents Constants. Use it to obtain details of constants used in Kobee.
 
 
 [[_getallapprovalstatusesusingget]]
@@ -7946,7 +7946,7 @@ Get a paginated list of Users, optionally filtered by name, userid or connection
 |===
 |Type|Name|Description|Schema|Default
 |**Query**|**connectedusers** +
-__optional__|Whether to show a list of Users that are currently connected to IKAN ALM.|boolean|
+__optional__|Whether to show a list of Users that are currently connected to Kobee.|boolean|
 |**Query**|**name** +
 __optional__|The name to filter the User by.|string|
 |**Query**|**page** +

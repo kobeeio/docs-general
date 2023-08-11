@@ -8,7 +8,7 @@
 
 Les Plans horaires sont des définitions précisant au Planificateur quand les Requêtes de Niveau pour un Niveau spécifique doivent être exécutées automatiquement.
 
-Si un Plan horaire est associé à un Niveau de Construction, la Tâche (le service) de Planification d`'IKAN ALM vérifiera, chaque fois que l`'intervalle expire, si il y a eu des changements dans le Référentiel de Contrôle de Version pour la Branche à la quelle le Niveau est associé.
+Si un Plan horaire est associé à un Niveau de Construction, la Tâche (le service) de Planification d`'Kobee vérifiera, chaque fois que l`'intervalle expire, si il y a eu des changements dans le Référentiel de Contrôle de Version pour la Branche à la quelle le Niveau est associé.
 
 S`'il y a eu des changements, une Requête de niveau sera créée automatiquement pour le Niveau de Construction.
 
@@ -28,7 +28,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Plans horaires > Créer__.
@@ -90,7 +90,7 @@ Si le code Source n`'a pas été modifié pendant l`'intervalle défini, la réc
 
 Evitez d`'utiliser un Plan horaire trop "`agressif`", qui vérifiera, par exemple, chaque minute s`'il y a eu des modifications.
 Cela pourrait stresser le RCV, surtout si le Plan horaire est rattaché à plusieurs Niveaux de Construction.
-Il vaut mieux utiliser un script complémentaire dans le RCV qui démarrera une Requête de niveau à partir de l`'interface de la ligne de commande d`'IKAN ALM au moment où des codes Source ont été confirmés.
+Il vaut mieux utiliser un script complémentaire dans le RCV qui démarrera une Requête de niveau à partir de l`'interface de la ligne de commande d`'Kobee au moment où des codes Source ont été confirmés.
 Référez-vous à la documentation de votre RCV pour plus d`'informations concernant les scripts complémentaires.
 ====
 +
@@ -98,7 +98,7 @@ Référez-vous à la documentation de votre RCV pour plus d`'informations concer
 [NOTE]
 ====
 Un Plan horaire rattaché à un Niveau d`'une Branche basée sur une balise existante ne vérifiera pas s`'il y a eu des modifications dans le RCV, et par conséquent ce Plan horaire n`'aura pas d`'effet car il n`'est pas capable de vérifier ce qui a changé dans le RCV depuis la dernière Requête de niveau.
-Une Intégration continue sur une Branche basée sur une balise existante n`'est possible que via l`'usage de scripts RCV complémentaires qui démarreront une Requête de niveau IKAN ALM à partir de l`'interface de ligne de commande d`'IKAN ALM au moment ou une nouvelle balise a été créée.
+Une Intégration continue sur une Branche basée sur une balise existante n`'est possible que via l`'usage de scripts RCV complémentaires qui démarreront une Requête de niveau Kobee à partir de l`'interface de ligne de commande d`'IKAN ALM au moment ou une nouvelle balise a été créée.
 Référez-vous à la documentation de votre RCV pour plus d`'informations concernant les scripts complémentaires.
 ====
 . Après avoir complété les champs, cliquez sur le bouton __Créer__.
@@ -161,19 +161,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Plan horaire.
 
 <<GlobAdm_Schedules.adoc#_globadm_schedules_edit,Modifier la définition d`'un Plan horaire>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Plan horaire.
 
 <<GlobAdm_Schedules.adoc#_globadm_schedules_delete,Supprimer une définition de Plan horaire>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique d`'un Plan horaire.
 
 <<GlobAdm_Schedules.adoc#_globadm_schedules_history,Afficher l`'historique d`'un Plan horaire>>

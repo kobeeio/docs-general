@@ -5,7 +5,7 @@
 = Packages 
 (((Desktop ,Packages)))  (((Packages))) 
 
-A Package allows moving one or more individual files selected manually from a VCR Stream (Head or Branch) through the IKAN ALM Lifecycle.
+A Package allows moving one or more individual files selected manually from a VCR Stream (Head or Branch) through the Kobee Lifecycle.
 One or multiple Packages may be created in each Project Stream of a Package-based Project.
 This is different from the original way of working in the Project Streams of Release-based projects, where a configurable automated process defines which file revisions are retrieved from the head (trunk) or branch of the versioning system and moved in the Lifecycle.
 
@@ -19,7 +19,7 @@ However, there is no automated control on concurrent development on a file used 
 During the whole Lifecycle, each Package has its own Build number and evolves independently of the other Packages
 
 From a __physical point of view__, it comes down to putting together a set of files to be extracted from the VCR during the execution of the Build Level Request as to present them to the Build and Tag Phases, and to finally execute the Deploy of this set of files.
-For Release-based Projects, the rules for extracting files from the VCR are specified in the Project Stream definition by selecting the type of Build, and IKAN ALM will automatically take care of the selection of the objects.
+For Release-based Projects, the rules for extracting files from the VCR are specified in the Project Stream definition by selecting the type of Build, and Kobee will automatically take care of the selection of the objects.
 For Package-based Projects on the other hand, the selection of files to be extracted from the VCR is done manually by the Users of the Project in the form of a Package.
 Refer to the section <<Desktop_Packages.adoc#_desktop_createpackage,Creating a Package>> for more information.
 
@@ -158,7 +158,7 @@ For more information on the usage of search panels and filters, refer to the sec
 |image:icons/view.gif[,15,15] 
 |View
 
-This option is available to IKAN ALM Users with Project User Access Rights.
+This option is available to Kobee Users with Project User Access Rights.
 It allows viewing the selected Package definition and its connected file revisions.
 
 <<Desktop_Packages.adoc#_desktop_viewpackage,Viewing Package Settings>>
@@ -166,13 +166,13 @@ It allows viewing the selected Package definition and its connected file revisio
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Project User Access Rights.
+This option is available to Kobee Users with Project User Access Rights.
 It allows editing the Package definition and/or its connected file revisions. <<Desktop_Packages.adoc#_desktop_editpackage,Editing a Package>>
 
 |image:icons/hide.gif[,15,15]  / image:icons/show.gif[,15,15] 
 |Hide / Show
 
-This option is available to IKAN ALM Users with Project User Access Rights.
+This option is available to Kobee Users with Project User Access Rights.
 It allows hiding the selected Package.
 
 <<Desktop_Packages.adoc#_desktop_hideshowpackage,Hiding/Showing a Package>>
@@ -180,7 +180,7 @@ It allows hiding the selected Package.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows to display the History of all create, update and delete operations performed on a Package.
 
 <<Desktop_Packages.adoc#_desktop_viewpackagehistory,Viewing the Package History>>

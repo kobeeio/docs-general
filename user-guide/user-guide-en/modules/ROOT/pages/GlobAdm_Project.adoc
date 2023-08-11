@@ -21,19 +21,19 @@ The Project menu options are explained in the following procedures:
 
 [[_globadm_projectcreate]]
 == Creating a Project 
-(((Creating an IKAN ALM Project)))  (((Creating an IKAN ALM Project ,Release-based)))  (((Creating an IKAN ALM Project ,Package-based)))  (((Projects ,Release-based)))  (((Projects ,Package-based)))  (((Creating an IKAN ALM Project))) 
+(((Creating an Kobee Project)))  (((Creating an IKAN ALM Project ,Release-based)))  (((Creating an IKAN ALM Project ,Package-based)))  (((Projects ,Release-based)))  (((Projects ,Package-based)))  (((Creating an IKAN ALM Project))) 
 
 There are 2 types of Projects:
 
-* Release-based Projects: IKAN ALM will work with the existing structure in the VCR (Version Control Repository) system, so that the objects to be extracted from the VCR will be retrieved automatically when starting the build process.
-* Package-based Projects: IKAN ALM introduces the Package concept, which enables to work with isolated files from the VCR system. Objects must be selected manually in a Package structure created in IKAN ALM before starting the Build process.
+* Release-based Projects: Kobee will work with the existing structure in the VCR (Version Control Repository) system, so that the objects to be extracted from the VCR will be retrieved automatically when starting the build process.
+* Package-based Projects: Kobee introduces the Package concept, which enables to work with isolated files from the VCR system. Objects must be selected manually in a Package structure created in IKAN ALM before starting the Build process.
 
 
 [NOTE]
 ====
 
 Package-based Projects must connect to a VCR of type Subversion, TFVC or Git.
-Other VCR types do not support working with isolated files and thus not with Packages in IKAN ALM.
+Other VCR types do not support working with isolated files and thus not with Packages in Kobee.
 ====
 
 [[_pcreateproject]]
@@ -69,11 +69,11 @@ Settings_ panel.
 |Enter a description for the new Project in this field.
 
 |VCR
-|From the drop-down list, select the VCR to be used for this IKAN ALM Project.
+|From the drop-down list, select the VCR to be used for this Kobee Project.
 
 |VCR Project Name
-|Enter the name of the VCR Project matching this IKAN ALM Project.
-It is possible that the VCR Project Name does not match the IKAN ALM Project Name. 
+|Enter the name of the VCR Project matching this Kobee Project.
+It is possible that the VCR Project Name does not match the Kobee Project Name. 
 
 You can verify whether the project with the specified VCR Project Name exists in the linked VCR by clicking the _Check
 Project Name in the VCR_ button.
@@ -83,27 +83,27 @@ _Note:_ This field stays empty for Subversion VCRs with single-project layout an
 |Issue Tracking System
 |Select one of the available Issue Tracking Systems from the drop-down menu.
 
-If an Issue Tracking System is specified in this field, IKAN ALM will always automatically create an Issue Tracking Level Phase when a new Level is created for the Project.
+If an Issue Tracking System is specified in this field, Kobee will always automatically create an Issue Tracking Level Phase when a new Level is created for the Project.
 
-This field is only visible if external Issue Tracking Systems have been defined in IKAN ALM.
+This field is only visible if external Issue Tracking Systems have been defined in Kobee.
 
 For more information on Issue Tracking systems, refer to the chapter <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>
 
 |Build Script
-|In this field, enter the name of the Build Script to be used for this IKAN ALM Project.
+|In this field, enter the name of the Build Script to be used for this Kobee Project.
 
 This script will be used by default when executing Builds in the Project, but may be overwritten when defining a Build Environment.
 
 |Deploy Script
-|In this field, enter the name of the Deploy Script to be used for this IKAN ALM Project.
+|In this field, enter the name of the Deploy Script to be used for this Kobee Project.
 
 This script will be used by default when executing Deploys in the Project, but may be overwritten when defining a Deploy Environment.
 
 |Locked
-|This read-only field is set to __Yes__, because an IKAN ALM Project can only be unlocked when is audited and fully configured.
+|This read-only field is set to __Yes__, because an Kobee Project can only be unlocked when is audited and fully configured.
 
 |Hidden
-|This read-only field is defaulted to __No__, because an IKAN ALM Project cannot be hidden when it is still being created.
+|This read-only field is defaulted to __No__, because an Kobee Project cannot be hidden when it is still being created.
 |===
 +
 * Project Security Settings (Optional)
@@ -114,7 +114,7 @@ This script will be used by default when executing Deploys in the Project, but m
 | Meaning
 
 |User Access
-|From the drop-down list, select the User Group that will have User Access Rights for the new IKAN ALM Project.
+|From the drop-down list, select the User Group that will have User Access Rights for the new Kobee Project.
 
 If defined, this setting overrides the__ User
 Group with User Access Rights__ defined in the _System
@@ -123,7 +123,7 @@ Settings_ dialog. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Set
 This group is the default group that is set as Requester when creating a Level Request.
 
 |Admin Access
-|From the drop-down list, select the User Group that will have Administrator Access Rights for the new IKAN ALM Project.
+|From the drop-down list, select the User Group that will have Administrator Access Rights for the new Kobee Project.
 
 If defined, this setting overrides the__ User
 Group with Admin Access Rights __defined in the__ System
@@ -138,24 +138,24 @@ Settings__ dialog. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Se
 | Meaning
 
 |Build Prefix
-|Enter the Build Prefix to be used for the HEAD Project Stream of the new IKAN ALM Project.
+|Enter the Build Prefix to be used for the HEAD Project Stream of the new Kobee Project.
 
 |Status
-|Select the required status for the HEAD Project Stream of the new IKAN ALM Project.
+|Select the required status for the HEAD Project Stream of the new Kobee Project.
 
 |Description
-|Enter a description for the HEAD Project Stream of the new IKAN ALM Project.
+|Enter a description for the HEAD Project Stream of the new Kobee Project.
 
 |Locked
-|Select whether or not the HEAD Project Stream of the new IKAN ALM Project must be locked.
+|Select whether or not the HEAD Project Stream of the new Kobee Project must be locked.
 
 By default, this option is set to __No__.
 
 |Hidden
-|This read-only field is defaulted to __No__, because an IKAN ALM Project Stream cannot be hidden when it is still being created.
+|This read-only field is defaulted to __No__, because an Kobee Project Stream cannot be hidden when it is still being created.
 
 |Tag-Based
-|When creating a Release-based Project, select whether or not the HEAD Project Stream of the new IKAN ALM Project must be Tag-based.
+|When creating a Release-based Project, select whether or not the HEAD Project Stream of the new Kobee Project must be Tag-based.
 
 By default, this option is set to __No__.
 
@@ -175,7 +175,7 @@ The following options are available:
 When creating a Package-based Project, this option is unchangeably set to __Full Build__.
 
 |Accept Forced Build
-|When creating a Release-based Project, select whether or not the HEAD Project Stream of the new IKAN ALM Project must accept Forced Builds, i.e., allow Builds to bypass the Schedule set on the Build Level.
+|When creating a Release-based Project, select whether or not the HEAD Project Stream of the new Kobee Project must accept Forced Builds, i.e., allow Builds to bypass the Schedule set on the Build Level.
 
 By default, this option is set to __Yes__.
 
@@ -202,7 +202,7 @@ They all have the format __$\{name}__:
 * __$\{suffix}__: This variable returns the Build Suffix defined for the Branch Stream. (If this variable is included in a Template for a Head Stream, it is ignored.)
 * __$\{streamType}__: This variable returns the Type indication for a Stream: _H_ for Head Stream or _B_ for Branch Stream.
 * __$\{buildNumber}__: This variable returns the number of the Build, so that the Build can be matched with its Tag.
-* __$\{projectName}__: This variable returns the name of the IKAN ALM Project.
+* __$\{projectName}__: This variable returns the name of the Kobee Project.
 * __$\{vcrProjectName}__: This variable returns the VCR name of the Project.
 * __$\{dateTime(dateformat)}__: This variable returns the timestamp of the Building action in the indicated format. _yyyy-MM-dd_ is a valid format. For other valid formats, refer to https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html,window=_blank]
 * $\{packageName}: This variable returns the name of the Package associated to the Level, when the Build is executed (only used for Package-based Projects). 
@@ -363,10 +363,10 @@ You may select another Build Script from the drop-down list, if required.
 You may select another Deploy Script from the drop-down list, if required.
 
 |Locked
-|This read-only field is set to _No_, because a new IKAN ALM Project is configured accordant to the cloned Project.
+|This read-only field is set to _No_, because a new Kobee Project is configured accordant to the cloned Project.
 
 |Hidden
-|This read-only field is defaulted to __No__, because an IKAN ALM Project cannot be hidden when it is still being created.
+|This read-only field is defaulted to __No__, because an Kobee Project cannot be hidden when it is still being created.
 
 |Project Security Settings - User Access
 |By default, the User Group with User Access Rights used for the cloned Project is displayed.
@@ -451,7 +451,7 @@ image::GlobAdmin-Project-Export-Dialog.png[,412,142]
 
 [NOTE]
 ====
-When editing the Project export file, always change the Project name, since IKAN ALM will refuse to import a Project when another Project with the same name already exists.
+When editing the Project export file, always change the Project name, since Kobee will refuse to import a Project when another Project with the same name already exists.
 ====
 
 
@@ -468,9 +468,9 @@ image::GlobAdmin-Project-Import-Browse.png[,417,143]
 +
 image::GlobAdmin-Project-Import-Upload.png[,417,165]
 +
-. Next, press the _Import_ button to import the uploaded project file into IKAN ALM.
+. Next, press the _Import_ button to import the uploaded project file into Kobee.
 +
-. When the import process is finished, IKAN ALM will display either an info message (when successful) or an error message. The Validation Report in the Import Project panel provides more details about the result.
+. When the import process is finished, Kobee will display either an info message (when successful) or an error message. The Validation Report in the Import Project panel provides more details about the result.
 +
 ** Example: Info
 +

@@ -3,7 +3,7 @@
 
 [[_globadm_miscellaneous]]
 = Miscellaneous 
-(((Global Administration ,Miscellaneous)))  (((Miscellaneous)))  (((Miscellaneous ,Notifying IKAN ALM Users))) 
+(((Global Administration ,Miscellaneous)))  (((Miscellaneous)))  (((Miscellaneous ,Notifying Kobee Users))) 
 
 [NOTE]
 ====
@@ -12,20 +12,20 @@ The __Miscellaneous __menu is only available to users with Global Administrator 
 
 The Miscellaneous menu options are explained in the following procedures:
 
-* <<GlobAdm_Misc.adoc#_globadm_notifyusers,Notifying IKAN ALM Users>>
+* <<GlobAdm_Misc.adoc#_globadm_notifyusers,Notifying Kobee Users>>
 
 
 [[_globadm_notifyusers]]
-== Notifying IKAN ALM Users 
-(((Notifying IKAN ALM Users))) 
+== Notifying Kobee Users 
+(((Notifying Kobee Users))) 
 
 [[_pnotifyusers]]
-This option allows sending e-mail messages to other IKAN ALM users from within IKAN ALM.
+This option allows sending e-mail messages to other Kobee users from within IKAN ALM.
 
 This makes it possible, for example, to send a warning to connected users, or to notify users belonging to a certain User Group that some settings have been changed.
 It is also a mean to test the Mail settings specified under __System Settings__.
 
-. In the Global Administration context, select _Miscellaneous > Notify IKAN ALM Users_.
+. In the Global Administration context, select _Miscellaneous > Notify Kobee Users_.
 +
 The following screen is displayed:
 +
@@ -40,7 +40,7 @@ The following fields are available:
 | Meaning
 
 |To
-|Select whether you want to send your message to the connected IKAN ALM Users, to the members of a specific User Group or to all IKAN ALM Users.
+|Select whether you want to send your message to the connected Kobee Users, to the members of a specific User Group or to all IKAN ALM Users.
 
 |Specific User Group
 |If you send your message to a specific User Group, select the required User Group from the drop-down list.
@@ -56,7 +56,7 @@ If you do not send your message to a specific User Group, leave this field blank
 
 . Make the required selections and enter your message. Then click __Send Mail__.
 +
-The IKAN ALM Users matching your selection will receive your message.
+The Kobee Users matching your selection will receive your message.
 The _SMTP From User_ defined in the System Settings will be marked as the Sender of the message.
 +
 You can also click the _Reset_ button to clear the fields.

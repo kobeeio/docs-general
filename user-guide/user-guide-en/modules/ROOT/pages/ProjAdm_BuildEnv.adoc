@@ -80,16 +80,16 @@ If you leave this field empty, the default Build Script, as defined on the Proje
 |Source Location
 |This field contains the path to the physical location where the source code, the dependent source code or the dependent build result will be placed
 
-IKAN ALM adds the Build OID and the Project Name:
+Kobee adds the Build OID and the Project Name:
 
 _SourceLocation/BuildOID/ProjectName_VCR_
 
 This location is passed to the Build Script as a parameter named__ source__.
 
 |Target Location
-a|For a Build Environment, this field contains the path to the physical location where IKAN ALM expects the result of the executed Build Script to be found.
+a|For a Build Environment, this field contains the path to the physical location where Kobee expects the result of the executed Build Script to be found.
 
-IKAN ALM adds Build OID:
+Kobee adds Build OID:
 
 _TargetLocation/BuildOID_
 
@@ -298,7 +298,7 @@ You can also click __Back__ to return to the previous screen without cloning the
 === Build Environment Phases 
 (((Build Environments ,Phases)))  (((Phases ,Build Environment))) 
 
-When creating a Build Environment IKAN ALM will automatically link the default flow of Build Environment Phases to it. 
+When creating a Build Environment Kobee will automatically link the default flow of Build Environment Phases to it. 
 
 The default Phases are:
 
@@ -357,7 +357,7 @@ The following links are available:
 
 Changing the Phases can have undesirable consequences on the Lifecycle.
 For more information, refer to the document __HOW
-TO Using and Developing a Phase in IKAN ALM__.
+TO Using and Developing a Phase in Kobee__.
 ====
 
 . Insert a Phase, if required.
@@ -494,7 +494,7 @@ Initially, when the Phase is inserted, the value will be copied from the Default
 This field may be changed by Editing the Phase Parameter.
 
 |Integration Type
-a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an IKAN ALM Global Administration object type.
+a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an Kobee Global Administration object type.
 
 The possible values are:
 

@@ -16,14 +16,14 @@ This appendix provides general information on the connection and definition of t
 == Repository Connection 
 (((Subversion ,Repository Connection))) 
 
-IKAN ALM connects with the repository using the SVN client which must be installed on the IKAN ALM Server machine.
+Kobee connects with the repository using the SVN client which must be installed on the IKAN ALM Server machine.
 The Command Path refers to the path where this SVN client is located.
 
 A Subversion Repository is identified via its Repository URL, e.g., _\file:///path/to/repos_ or _svn://servername_ or __\http://my.domain/repos__.
 For more information, see the on-line book about Subversion "Version Control with Subversion, Chapter 2 - Basic Concepts" at http://svnbook.red-bean.com/en/1.7/svn.basic.version-control-basics.html[http://svnbook.red-bean.com/en/1.7/svn.basic.version-control-basics.html,window=_blank].
 In chapter 7 of this book you will find a table about repository URLs and a topic about the Subversion Repository. 
 
-In most cases a User ID and Password must be provided, unless the repository is not protected (e.g., for the _svn_ protocol, _anon-access = write_ in the ``svnserver.con file``) or unless the credentials of the user running the IKAN ALM web server or application server process are stored in this user's private runtime config area (__~/.subversion/auth/ _or __%APPDATA%/Subversion/Auth/_). See also http://svnbook.red-bean.com/en/1.7/svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.credcache[http://svnbook.red-bean.com/en/1.7/svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.credcache,window=_blank].
+In most cases a User ID and Password must be provided, unless the repository is not protected (e.g., for the _svn_ protocol, _anon-access = write_ in the ``svnserver.con file``) or unless the credentials of the user running the Kobee web server or application server process are stored in this user's private runtime config area (__~/.subversion/auth/ _or __%APPDATA%/Subversion/Auth/_). See also http://svnbook.red-bean.com/en/1.7/svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.credcache[http://svnbook.red-bean.com/en/1.7/svn.serverconfig.netmodel.html#svn.serverconfig.netmodel.credcache,window=_blank].
 
 [[_sappc_repositorydefinition]]
 == Repository Definition 
@@ -62,7 +62,7 @@ In the case of a Project-oriented or Single Project-oriented Repository Layout, 
 
 ==== Tags Directory
 
-The Tags Directory is the directory where IKAN ALM creates the tags (also called labels) after a successful build.
+The Tags Directory is the directory where Kobee creates the tags (also called labels) after a successful build.
 Its default name is __tags__, but other names are allowed, e.g., __tag__.
 
 This directory may reside directly under the repository path, or be defined per project, depending on the settings of the Repository Layout field.
@@ -76,7 +76,7 @@ See the <<App_Subversion.adoc#_sappc_layoutexamples,Layout Examples>> for the co
 [[_sappc_layoutexamples]]
 === Layout Examples
 
-This section provides some possible repository project layouts followed by the possible solution in IKAN ALM for a Subversion Repository.
+This section provides some possible repository project layouts followed by the possible solution in Kobee for a Subversion Repository.
 
 [NOTE]
 ====
@@ -112,7 +112,7 @@ Structure in the Subversion Repository:
 |===
 
 
-Definition in IKAN ALM:
+Definition in Kobee:
 
 [NOTE]
 ====
@@ -195,7 +195,7 @@ Structure in the Subversion Repository:
 |===
 
 
-Definition in IKAN ALM:
+Definition in Kobee:
 
 [NOTE]
 ====
@@ -272,7 +272,7 @@ Structure in the Subversion Repository:
 |===
 
 
-Definition in IKAN ALM:
+Definition in Kobee:
 
 [NOTE]
 ====
@@ -353,7 +353,7 @@ Structure in the Subversion Repository:
 |===
 
 
-Definition in IKAN ALM:
+Definition in Kobee:
 
 [NOTE]
 ====
@@ -420,7 +420,7 @@ URL/tags/calc
 Subversion provides interfaces for adding, modifying, and removing versioned metadata on versioned directories and files.
 Those metadata are referred to as __properties__, see the "Version Control with Subversion, Chapter 7 - Advanced Properties" book at http://svnbook.red-bean.com/en/1.2/svn.advanced.props.html[http://svnbook.red-bean.com/en/1.2/svn.advanced.props.html,window=_blank], which explains how to use and set these properties on files and directories. 
 
-IKAN ALM makes it possible to use those properties during the build and deploy processes.
+Kobee makes it possible to use those properties during the build and deploy processes.
 If the "Fetch Meta Properties" value is set to __yes__, the following will happen during the build process:
 
 

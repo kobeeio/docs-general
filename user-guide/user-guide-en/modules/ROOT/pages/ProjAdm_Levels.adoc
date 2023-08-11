@@ -5,7 +5,7 @@
 = Levels 
 (((Project Administration ,Levels)))  (((Project Management Options ,Levels)))  (((Levels))) 
 
-This option allows defining Levels and their Environments, which can be assigned to a IKAN ALM Project Lifecycle.
+This option allows defining Levels and their Environments, which can be assigned to a Kobee Project Lifecycle.
 
 A Level is a logical environment, a step in the Lifecycle.
 It consists of one (or more) Build and/or Deploy Environment(s) which are physical environments.
@@ -21,7 +21,7 @@ There are three Level Types:
 ====
 
 Before you can define Build or Deploy Environments, the required <<GlobAdm_Machines.adoc#_globadm_machines,Machines>> and <<GlobAdm_ScriptingTools.adoc#_globadm_scriptingtools,Scripting Tools>> must have been defined.
-This is the task of the IKAN ALM Global Administrator.
+This is the task of the Kobee Global Administrator.
 Once you have created the Levels, you need to assign them to a Lifecycle in order to use them.
 ====
 
@@ -398,7 +398,7 @@ For more information, refer to the sections:
 ==== Level Phases 
 (((Levels ,Phases)))  (((Level Phases))) 
 
-When creating a Level (Build, Test or Production), IKAN ALM will automatically link the default flow of core Level Phases to it. 
+When creating a Level (Build, Test or Production), Kobee will automatically link the default flow of core Level Phases to it. 
 
 The core Phases are:
 
@@ -459,7 +459,7 @@ The following links are available:
 
 Changing the Phases can have undesirable consequences on the Lifecycle.
 For more information, refer to the document __HOW
-TO Using and Developing a Phase in IKAN ALM__.
+TO Using and Developing a Phase in Kobee__.
 ====
 . Insert a Phase, if required.
 +
@@ -541,7 +541,7 @@ Initially, when the Phase is inserted, the value will be copied from the Default
 This field may be changed by Editing the Phase Parameter.
 
 |Integration Type
-a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an IKAN ALM Global Administration object type.
+a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an Kobee Global Administration object type.
 
 The possible values are:
 

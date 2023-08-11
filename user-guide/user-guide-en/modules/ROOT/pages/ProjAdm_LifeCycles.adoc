@@ -7,7 +7,7 @@
 
 Each Project Stream has a Lifecycle connected to it.
 This Lifecycle defines the logical steps of the ALM processes.
-Such a logical step is called a Level in IKAN ALM.
+Such a logical step is called a Level in Kobee.
 The Lifecycles Submenu lets you define Lifecycles and set up the sequence of Levels for each Lifecycle.
 
 During the creation process of a Project, the Head Project Stream is created automatically, as well as the BASE Lifecycle connected to that Head Project Stream. 
@@ -147,7 +147,7 @@ For a description of the fields, refer to the section <<ProjAdm_LifeCycles.adoc#
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to Kobee Users with Project Administrator Access Rights.
 It allows editing the Lifecycle definition.
 
 <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Editing a Lifecycle>>
@@ -155,7 +155,7 @@ It allows editing the Lifecycle definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to Kobee Users with Project Administrator Access Rights.
 It allows deleting a Lifecycle definition, except for the BASE Lifecycle that is connected to the Head Project Stream. 
 
 <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Deleting a Lifecycle>>
@@ -163,7 +163,7 @@ It allows deleting a Lifecycle definition, except for the BASE Lifecycle that is
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows to display the History of all create, update and delete operations performed on a Lifecycle.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_historyview,Viewing the Project History>>

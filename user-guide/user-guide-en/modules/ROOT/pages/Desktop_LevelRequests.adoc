@@ -90,7 +90,7 @@ image::Desktop-LevelRequests-Flow-Build.png[,906,1108]
 A Build Level Request directly goes on to step 5; a Rebuild Level Request may pass steps 2, 3 and/or 4.
 
 |2.
-|The Monitor Process on the IKAN ALM Server picks up the created Level Request and sends the required Pre- and Post-Notifications.
+|The Monitor Process on the Kobee Server picks up the created Level Request and sends the required Pre- and Post-Notifications.
 
 This is an optional step in case of a Rebuild, since there are no Pre- or Post Notifications on a Build Level.
 
@@ -108,7 +108,7 @@ If required, the Pre- and Post-Approval groups are defined on the <<ProjAdm_Leve
 This step is optional in case of a Rebuild.
 
 |5.
-|If all Approvals of a Rebuild with Pre- or Post-Approval(s) are <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,granted>>, and if the requested Date/Time is reached, the Monitor sets the Level Request status to __Run__ and retrieves the Source Code from the VCR to a subdirectory of the Work Copy location on the IKAN ALM Server.
+|If all Approvals of a Rebuild with Pre- or Post-Approval(s) are <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,granted>>, and if the requested Date/Time is reached, the Monitor sets the Level Request status to __Run__ and retrieves the Source Code from the VCR to a subdirectory of the Work Copy location on the Kobee Server.
 
 This location is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
@@ -122,7 +122,7 @@ If the Project Stream in which this Build is done, is Parent for one or more Chi
 Since a (Re)Build Level Request may have more than one Build, steps 8 till 18 will be performed for each Build related to the Level Request.
 
 |8.
-|As the Build Status is set to __Ready__, the Builder Agent on the Machine(s) where a Build must be executed, picks up this _Ready_ status and transports the Source Code from the Work Copy Location on the IKAN ALM Server to the Build Environment Source Location, defined on this Machine and for this Build Level. 
+|As the Build Status is set to __Ready__, the Builder Agent on the Machine(s) where a Build must be executed, picks up this _Ready_ status and transports the Source Code from the Work Copy Location on the Kobee Server to the Build Environment Source Location, defined on this Machine and for this Build Level. 
 
 Which transport action (local FileCopy, remote FileCopy, SecureCopy or FTP) will be used depends on the type of Transporter that is linked to the Machine containing the Build Environment.
 Refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buildenvironments,Build Environments>>.
@@ -148,18 +148,18 @@ If no specific Build Script was defined for the Build Environment, the Builder a
 __In the second phase__, the Builder tries to locate the Build Script it has determined it must use during the first phase.
 First the Builder searches checked-out source code available in the Source Location of the Build Environment.
 If the Build Script is found, the Verify Build Script process succeeds and step 12 will be performed.
-If the Build Script is not found in the checked-out source code, the Builder searches the default IKAN ALM Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>. 
+If the Build Script is not found in the checked-out source code, the Builder searches the default Kobee Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>. 
 
 If the Build Script is found, it will be transported to the Build Environment Source Location defined on this Machine and for this Build Level.
 The same transport mechanism will be used as for the Source Code.
 The Verify Build Script process succeeds and step 12 will be performed. 
 
-If the Build Script is not found here either, or if the transport process from the IKAN ALM Script Location does not succeed, the Verify Build Script action fails and steps 9 and 10 are performed.
+If the Build Script is not found here either, or if the transport process from the Kobee Script Location does not succeed, the Verify Build Script action fails and steps 9 and 10 are performed.
 
 |12.
 |If the Build Script Verification process succeeds, the Builder Agent executes the Build Script.
 
-First, the Build Script is provided with the following parameters: Build Script Location, Source Location, Target Location, standard IKAN ALM parameters and user-defined Build Parameters.
+First, the Build Script is provided with the following parameters: Build Script Location, Source Location, Target Location, standard Kobee parameters and user-defined Build Parameters.
 
 Then, the defined Build Tool for the Build Environment (Ant, Gradle, NAnt or Maven2) generates the Build artifacts (e.g., executables, libraries, ...). The Build Script should include a copy mechanism that transfers minimum one Build artifact to the Target Location of the Build Environment.
 Only the Build artifacts in the Target Location will be available if the Build Result must be deployed later on.
@@ -178,16 +178,16 @@ As the failure of this step is not blocking, step 14 is performed next, whether 
 
 |14.
 |The Builder Agent compresses the Build artifacts on the Build Environment Target Location.
-Depending on the Operating System of the IKAN ALM server holding the Build Archive, a *.zip or *.tar.tgz will be created.
+Depending on the Operating System of the Kobee server holding the Build Archive, a *.zip or *.tar.tgz will be created.
 
 If this operation fails, steps 9 and 10 are performed.
 
 If this operation succeeds, step 15 is performed.
 
 |15.
-|The Builder Agent archives the Compressed Build to the Build Archive on the IKAN ALM Server.
+|The Builder Agent archives the Compressed Build to the Build Archive on the Kobee Server.
 
-The Build Archive Location on the IKAN ALM Server is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
+The Build Archive Location on the Kobee Server is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
 Which transport action (local FileCopy, remote FileCopy, SecureCopy or FTP) will be used depends on the type of Transporter that is linked to the Machine containing the Build Environment.
 
@@ -238,14 +238,14 @@ In this case step 20 will also be skipped and the next step will be step 22.
 |If the Tagging Process fails, the Monitor will set the Level Request status to _Fail_ and the action flow is terminated.
 
 |22.
-|If the Tagging Process is successful or if it was skipped because the Code was already tagged, the Monitor cleans up the used subdirectories in the Work Copy Location on the IKAN ALM Server.
+|If the Tagging Process is successful or if it was skipped because the Code was already tagged, the Monitor cleans up the used subdirectories in the Work Copy Location on the Kobee Server.
 
 This means that all files retrieved from the VCR or from the Build Archive are deleted.
 
 As the failure of this step is not blocking, step 23 is performed next, whether the operation was successful or not.
 
 |23.
-|The Monitor Process on the IKAN ALM Server determines the final Level Request status.
+|The Monitor Process on the Kobee Server determines the final Level Request status.
 
 The final Level Request Status is set to __Success__, if all Monitor actions (in yellow) were executed successfully and the Build Status has been set to __Success__.
 
@@ -296,7 +296,7 @@ image::Desktop-LevelRequests-Flow-BuildAndDeploy.png[,907,1270]
 A Build Level Request directly goes on to step 5, a Rebuild Level Request may pass steps 2,3 and/or 4.
 
 |2.
-|The Monitor Process on the IKAN ALM Server picks up the created Level Request and sends the required Pre- and Post-Notifications.
+|The Monitor Process on the Kobee Server picks up the created Level Request and sends the required Pre- and Post-Notifications.
 
 This is an optional step in case of a Rebuild, since there are no Pre- or Post Notifications on a Build Level.
 
@@ -314,7 +314,7 @@ If required, the Pre- and Post-Approval groups are defined on the <<ProjAdm_Leve
 This step is optional in case of a Rebuild
 
 |5.
-|If all Approvals of a Rebuild with Pre- or Post-Approval(s) are <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,granted>>, and if the requested Date/Time is reached, the Monitor sets the Level Request status to __Run__ and retrieves the Source Code from the VCR to a subdirectory of the Work Copy location on the IKAN ALM Server.
+|If all Approvals of a Rebuild with Pre- or Post-Approval(s) are <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,granted>>, and if the requested Date/Time is reached, the Monitor sets the Level Request status to __Run__ and retrieves the Source Code from the VCR to a subdirectory of the Work Copy location on the Kobee Server.
 
 This location is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
@@ -328,7 +328,7 @@ If the Project Stream in which this Build is done, is Parent for one or more Chi
 Since a (Re)Build and Deploy Level Request may have more than one Build, steps 8 till 18 will be performed for each Build related to the Level Request.
 
 |8.
-|As the Build Status is set to __Ready__, the Builder Agent on the Machine(s) where a Build must be executed, picks up this _Ready_ status and transports the Source code from the Work Copy Location on the IKAN ALM Server to the Build Environment Source Location, defined on this Machine and for this Build Level. 
+|As the Build Status is set to __Ready__, the Builder Agent on the Machine(s) where a Build must be executed, picks up this _Ready_ status and transports the Source code from the Work Copy Location on the Kobee Server to the Build Environment Source Location, defined on this Machine and for this Build Level. 
 
 Which transport action (local FileCopy, remote FileCopy, SecureCopy or FTP) will be used depends on the type of Transporter that is linked to the Machine containing the Build Environment.
 Refer to the section <<ProjAdm_BuildEnv.adoc#_projadm_buildenvironments,Build Environments>>.
@@ -356,18 +356,18 @@ __In the second phase__, the Builder tries to locate the Build Script it has det
 First it searches in the checked out source code available in the Source Location of the Build Environment. 
 
 If the Build Script is found, the Verify Build Script process succeeds and step 12 will be performed.
-If the Build Script is not found in the checked out source code, the Builder searches the default IKAN ALM Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>. 
+If the Build Script is not found in the checked out source code, the Builder searches the default Kobee Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>. 
 
 If the Build Script is found, it will be transported to the Build Environment Source Location defined on this Machine and for this Build Level.
 The same transport mechanism will be used as for the Source Code.
 The Verify Build Script process succeeds and step 12 will be performed. 
 
-If the Build Script is not found here either, or if the transport process from the IKAN ALM Script Location does not succeed, the Verify Build Script action fails and steps 9 and 10 are performed.
+If the Build Script is not found here either, or if the transport process from the Kobee Script Location does not succeed, the Verify Build Script action fails and steps 9 and 10 are performed.
 
 |12.
 |If the Build Script Verification process succeeds, the Builder Agent executes the Build Script.
 
-First, the Build Script is provided with the following parameters: Build Script Location, Source Location, Target Location, standard IKAN ALM parameters and user-defined Build Parameters.
+First, the Build Script is provided with the following parameters: Build Script Location, Source Location, Target Location, standard Kobee parameters and user-defined Build Parameters.
 
 Then the defined Build Tool for the Build Environment (Ant, Gradle, NAnt or Maven2) generates the Build (e.g., executables, libraries,...). The Build Script should include a copy mechanism that transfers minimum one Build artifact to the Target Location of the Build Environment.
 Only the Build artifacts in the Target Location will be available if the Build Result must be deployed later on.
@@ -387,16 +387,16 @@ As the failure of this step is not blocking, step 14 is performed next, whether 
 
 |14.
 |The Builder Agent compresses the Build artifacts on the Build Environment Target Location.
-Depending on the Operating System of the IKAN ALM Server holding the Build Archive, a *.zip or *.tar.tgz file will be created.
+Depending on the Operating System of the Kobee Server holding the Build Archive, a *.zip or *.tar.tgz file will be created.
 
 If this operation fails, steps 9 and 10 are performed.
 
 If this operation succeeds, step 15 is performed.
 
 |15.
-|The Builder Agent archives the compressed Build to the Build Archive on the IKAN ALM Server.
+|The Builder Agent archives the compressed Build to the Build Archive on the Kobee Server.
 
-The Build Archive Location on the IKAN ALM Server is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
+The Build Archive Location on the Kobee Server is defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
 Which transport action (local FileCopy, remote FileCopy, SecureCopy or FTP) will be used depends on the type of Transporter that is linked to the Machine containing the Build Environment.
 
@@ -445,7 +445,7 @@ In this case step 20 will also be skipped and the next step will be step 22.
 |If the Tagging Process fails, the Monitor will set the Level Request status to Fail and the action flow is terminated.
 
 |22.
-|If the Tagging Process is successful or if it was skipped because the Code was already tagged, the Monitor cleans up the used subdirectories of the Work Copy on the IKAN ALM Server.
+|If the Tagging Process is successful or if it was skipped because the Code was already tagged, the Monitor cleans up the used subdirectories of the Work Copy on the Kobee Server.
 
 This means that all files retrieved from the VCR are deleted.
 
@@ -493,18 +493,18 @@ If no Deploy Script was defined there either, the Verify Deploy Script process f
 __In the second phase__, the Deployer tries to locate the Deploy Script it has determined it must use in the first step.
 First it searches the decompressed Build Result in the Source location of the Deploy Environment (<<ProjAdm_DeployEnv.adoc#_projadm_deployenvironments,Deploy Environments>>). If the Deploy Script is found, the Verify Deploy Script process succeeds and step 29 will be performed.
 
-If the Deploy Script is not found in the decompressed Build result, the Deployer searches the default IKAN ALM Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
+If the Deploy Script is not found in the decompressed Build result, the Deployer searches the default Kobee Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
 If the Deploy Script is found, it will be transported to the Deploy Environment Source Location, defined on this Machine and for this Level.
 The same transport mechanism will be used as for the Build Result.
 The Verify Deploy Script process succeeds and step 29 will be performed.
 
-If the Build Script is not found here either or the transport from the IKAN ALM Script Location does not succeed, the Verify Deploy Script action fails and steps 25 and 26 are performed.
+If the Build Script is not found here either or the transport from the Kobee Script Location does not succeed, the Verify Deploy Script action fails and steps 25 and 26 are performed.
 
 |29.
 |If the Verify Deploy Script process succeeds, the Deployer Agent executes the Deploy Script.
 
-The Deploy Script is provided with the following parameters: Source Location, Target Location, standard IKAN ALM Parameters and user-defined Deploy Parameters.
+The Deploy Script is provided with the following parameters: Source Location, Target Location, standard Kobee Parameters and user-defined Deploy Parameters.
 
 The defined Deploy Tool (Ant, Gradle, NAnt or Maven2) for the Deploy Environment deploys the Build to the Target Location.
 
@@ -529,7 +529,7 @@ If Deployer action 30 (Clean up Build) failed, the Deploy Status will be set to 
 (If another action failed, the Deploy Status will be set to _Fail_ as indicated by steps 25 and 26).
 
 |32.
-|As soon as the Monitor Process on the IKAN ALM Server finds that all Deploy actions connected to a Level Request have the _Success_ or _Warning_ Status, it determines the final Level Request status.
+|As soon as the Monitor Process on the Kobee Server finds that all Deploy actions connected to a Level Request have the _Success_ or _Warning_ Status, it determines the final Level Request status.
 
 The final Level Request Status is set to __Success__, if all Monitor actions (in yellow) were executed successfully and both the Build Statuses and the Deploy Statuses have been set to __Success__.
 
@@ -573,7 +573,7 @@ image::Desktop-LevelRequests-Flow-Deploy.png[,906,1252]
 |A Level Request is created manually by the User (via the <<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_selectlevel,Web Interface>> or the <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Command Line>>) or automatically by the Scheduler.
 
 |2.
-|The Monitor Process on the IKAN ALM Server picks up the Level Request and optionally sends the required Pre- and Post-Notifications.
+|The Monitor Process on the Kobee Server picks up the Level Request and optionally sends the required Pre- and Post-Notifications.
 
 The Pre- and Post-Notification groups are optionally defined on the <<ProjAdm_Levels.adoc#_levelenvmgt_approvalsequence,Level Settings screen>>.
 
@@ -628,18 +628,18 @@ __In the second phase__, the Deployer tries to locate the Deploy Script it has d
 First it searches the decompressed Build Result in the Source location of the Deploy Environment.
 If the Deploy Script is found, the Verify Deploy Script process succeeds and step 11 will be performed.
 
-If the Deploy Script is not found in the decompressed Build result, the Deployer searches the default IKAN ALM Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
+If the Deploy Script is not found in the decompressed Build result, the Deployer searches the default Kobee Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
 If the Deploy Script is found it will be transported to the Deploy Environment Source Location, defined on this Machine and for this Level.
 The same transport mechanism will be used as for the Build Result.
 The Verify Deploy Script process succeeds and step 11 will be performed.
 
-If the Deploy Script is not found here either or the transport from the IKAN ALM Script Location does not succeed, the Verify Deploy Script action fails and steps 7 and 8 are performed
+If the Deploy Script is not found here either or the transport from the Kobee Script Location does not succeed, the Verify Deploy Script action fails and steps 7 and 8 are performed
 
 |11.
 |If the Verify Deploy Script process succeeds, the Deployer Agent executes the Deploy Script.
 
-First the Deploy Script is provided with the following parameters: Source Location, Target Location, standard IKAN ALM Parameters and user-defined Deploy Parameters.
+First the Deploy Script is provided with the following parameters: Source Location, Target Location, standard Kobee Parameters and user-defined Deploy Parameters.
 
 The defined Deploy Tool for the Deploy Environment (Ant, Gradle, NAnt or Maven2) deploys the Build to the Target Location.
 
@@ -664,7 +664,7 @@ If Deployer action 12 (Clean up Build) failed, the Deploy Status will be set to 
 (If another action failed, the Deploy Status will be set to Fail as indicated by steps 7 and 8).
 
 |14.
-|As soon as the Monitor Process on the IKAN ALM Server detects a Deploy with Deploy Status _Success_ or __Warning__, it determines the final Level Request status.
+|As soon as the Monitor Process on the Kobee Server detects a Deploy with Deploy Status _Success_ or __Warning__, it determines the final Level Request status.
 
 The final Level Request Status is set to __Success__, if all Monitor actions (in yellow) were executed successfully and the Deploy Status has been set to __Success__.
 
@@ -1015,7 +1015,7 @@ A Build/Deploy Parameter can have the following characteristics:
 * _Editable Parameters_ have a default value, but you can change this value each time you create a Level Request.
 * _Uneditable Parameters_ have a fixed value, which cannot be changed when you create a Level Request. Use the _Show Uneditable Parameters_ link to display them.
 * _Dynamic Parameters_ dispose of a list of allowed values. You can select one of these allowed values from the drop-down list, when you create a Level Request.
-* _Secured Parameters_ are non-editable parameters whose value cannot be read by any IKAN ALM User.
+* _Secured Parameters_ are non-editable parameters whose value cannot be read by any Kobee User.
 +
 By default, the uneditable parameters are hidden.
 Use the _Show Uneditable Parameters_ option to display them.
@@ -1232,7 +1232,7 @@ For a detailed description of this screen refer to <<Desktop_LevelRequests.adoc#
 The following sections deal with the procedures involved when using the __Level Requests Overview__:
 
 * <<Desktop_LevelRequests.adoc#_desktop_lr_overviewscreen,Level Requests Overview>>
-* <<Desktop_LevelRequests.adoc#_desktop_lr_rssfeeds,The IKAN ALM RSS Functionality>>
+* <<Desktop_LevelRequests.adoc#_desktop_lr_rssfeeds,The Kobee RSS Functionality>>
 * <<Desktop_LevelRequests.adoc#_desktop_lr_generatereport,Generating a Report>>
 * <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>
 
@@ -1386,10 +1386,10 @@ Click the Level Request`'s _OID_ link in front of the required Level Request.
 For more information, refer to the section <<Desktop_LevelRequests.adoc#_dekstop_lr_detailedoverview,Level Request Detail>>.
 
 [[_desktop_lr_rssfeeds]] 
-=== The IKAN ALM RSS Functionality 
+=== The Kobee RSS Functionality 
 (((RSS Functionality))) 
 
-If your Global IKAN ALM Manager has activated RSS Feeds at System Settings level, the orange _RSS_ button is available on the _Search Level Request_ panel.
+If your Global Kobee Manager has activated RSS Feeds at System Settings level, the orange _RSS_ button is available on the _Search Level Request_ panel.
 
 image::Desktop-LevelRequests-Overview-RSS.png[,1125,331] 
 
@@ -1399,7 +1399,7 @@ Programs known as feed readers or aggregators can check a list of feeds on behal
 
 RSS feeds can be shown by a plug-in in the user`'s IDE or by other RSS Readers including the Mozilla Firefox browser. 
 
-IKAN ALM provides RSS Feeds for displaying data about the last 10 Level Requests that meet specified criteria.
+Kobee provides RSS Feeds for displaying data about the last 10 Level Requests that meet specified criteria.
 
 . Select __Level Requests > Overview Level Request__s on the Main Menu.
 . Specify for which Level Requests you want information to appear in the RSS feed.
@@ -1421,7 +1421,7 @@ To do so, select and copy the URL from the Location Bar of your browser window, 
 +
 The RSSOwl plug-in can be found on the Eclipse update site: http://www.rssowl.org/[http://www.rssowl.org/,window=_blank].
 +
-You find a detailed explanation of the structure of the IKAN ALM URL in the section <<App_RSS.adoc#_drssfeedurldetails,RSS URL Details>>.
+You find a detailed explanation of the structure of the Kobee URL in the section <<App_RSS.adoc#_drssfeedurldetails,RSS URL Details>>.
 
 [[_desktop_lr_generatereport]]
 === Generating a Report 
@@ -1502,7 +1502,7 @@ image::Desktop-LevelRequests-PDFReport1.png[,991,702]
 +
 image::Desktop-LevelRequests-PDFReport2.png[,990,220] 
 +
-More options are available when Generating a Report with the IKAN ALM Command Line.
+More options are available when Generating a Report with the Kobee Command Line.
 For more information, refer to the section <<CommandLine.adoc#_ccommandlineinterface,Command Line Interface (Optional)>>.
 
 . Use the _Close_ button to return to the _Level Requests Overview_ screen.
@@ -1931,7 +1931,7 @@ This panel is only shown if there are Issues related to the Level Request.
 
 image::Desktop-LevelRequests-Detailed-Summary-Issues.png[,611,248] 
 
-Issues can get linked to a Level Request in two ways: automatically by IKAN ALM during the execution of the Level Request or manually by a User after the Level Request has ended.
+Issues can get linked to a Level Request in two ways: automatically by Kobee during the execution of the Level Request or manually by a User after the Level Request has ended.
 Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>> for more information on defining an external Issue Tracking System, and to the section <<App_Phases.adoc#_phases_generalinformation,Phases - General Information>> for more information on the Issue Tracking Phase.
 
 For each issue the following information is displayed:
@@ -2211,7 +2211,7 @@ Each Phase may contain the following subpanels:
 The Log can be downloaded if the Log Format type of the Scripting Tool is set to __TXT__.
 
 
-Level Phases are handled by the IKAN ALM Server.
+Level Phases are handled by the Kobee Server.
 By default, the Level Phases listed in the following table may be available.
 However, since the defined Level workflow can be altered (<<ProjAdm_Levels.adoc#_plevelenvmgt_levelphasesoverview,The Level Phases Overview Screen>>), not all Phases may be present in the Phases Log.
 
@@ -2227,24 +2227,24 @@ For a more detailed description, refer to the section <<App_Phases.adoc#_phases_
 | Description
 
 |Retrieve Code
-|The IKAN ALM Server retrieves the source code from the VCR (and sometimes, in the case of certain dependencies, also the build results from the Build Archive) and stores it in a sub folder of the Work Copy Location so that the Agent can use it to perform a build.
+|The Kobee Server retrieves the source code from the VCR (and sometimes, in the case of certain dependencies, also the build results from the Build Archive) and stores it in a sub folder of the Work Copy Location so that the Agent can use it to perform a build.
 
 |Build
 |This Phase monitors the status of the Builds linked to the Level Request.
-The IKAN ALM Server notifies and does the follow-up of the IKAN ALM Agents that execute the Builds linked to the Level Request.
+The Kobee Server notifies and does the follow-up of the IKAN ALM Agents that execute the Builds linked to the Level Request.
 
 |Tag Code
-|The IKAN ALM Server tags the source code after a successful Build on a Build Level.
+|The Kobee Server tags the source code after a successful Build on a Build Level.
 The tagging will not be performed for a Build Level in a Tag-based Project Stream, nor for Deliver or Rollback Level Requests.
 
 |Deploy
 |This Phase monitors the status of the Deploys linked to the Level Request.
-The IKAN ALM Server notifies and does the follow-up of the IKAN ALM Agents that execute the Deploys linked to the Level Request.
+The Kobee Server notifies and does the follow-up of the IKAN ALM Agents that execute the Deploys linked to the Level Request.
 
 |Link File Revisions
 |This is a specific Phase for Levels in Package-based Projects, which is absent for Release-based Projects.
 
-Based on the contents of the Package at the moment of the Level Request execution, the IKAN ALM Server registers the checked-out versions extracted from the VCR for the Level.
+Based on the contents of the Package at the moment of the Level Request execution, the Kobee Server registers the checked-out versions extracted from the VCR for the Level.
 
 This information allows verifying the contents (i.e., the linked File Revisions) of the Package at the moment of Level Request execution, given the fact that this contents may vary in time.
 
@@ -2258,7 +2258,7 @@ For Build Level Requests, the log will contain Issue matching information from c
 For Deliver Level Requests, it will contain the enumeration of Issues since the previous Deliver to the Level.
 
 |Cleanup Work Copy
-|The IKAN ALM Server cleans up the Work Copy folder where the source files (and other stored artifacts) have been checked out from the VCR in the _Retrieve
+|The Kobee Server cleans up the Work Copy folder where the source files (and other stored artifacts) have been checked out from the VCR in the _Retrieve
 Code_ Phase.
 |===
 
@@ -2348,7 +2348,7 @@ image:Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedBuildParameters.png[,
 [[_chddiacf]]
 ===== Build Phases
 
-Build Phases are executed by the IKAN ALM Agent while handling a Build.
+Build Phases are executed by the Kobee Agent while handling a Build.
 
 Each of these Phases have a status indication.
 An _Error_ status does not always mean that the Build as a whole has failed.
@@ -2368,13 +2368,13 @@ For a complete description of the Build Phases, refer to <<App_Phases.adoc#_phas
 
 |Transport Source
 |The _Transport
-Source Phase_ transports the required Source code from the Work Copy Location on the IKAN ALM Server to the Build Environment Source Location.
+Source Phase_ transports the required Source code from the Work Copy Location on the Kobee Server to the Build Environment Source Location.
 
 It logs what was transferred and which Transporter was used in the _Message_ field.
 
 |Verify Build Script
 |The _Verify
-Build Script Phase_ tries to locate the defined build script in the checked-out source code or in the IKAN ALM Script Location.
+Build Script Phase_ tries to locate the defined build script in the checked-out source code or in the Kobee Script Location.
 
 It fails when it can't find a build script.
 
@@ -2401,7 +2401,7 @@ It logs the full path of the compressed file in the _Message_ field.
 
 |Archive Result
 |The _Archive
-Result Phase_ copies the compressed Build file to the Build Archive Location on the IKAN ALM Server.
+Result Phase_ copies the compressed Build file to the Build Archive Location on the Kobee Server.
 
 It logs what was transferred and which Transporter was used in the _Message_ field.
 
@@ -2521,7 +2521,7 @@ For a complete description of the Deploy Phases, refer to <<App_Phases.adoc#_pha
 
 |Transport Build Result
 |The _Transport
-Build Phase_ transports the Build from the Build Archive on the IKAN ALM Server to the Deploy Environment Source Location.
+Build Phase_ transports the Build from the Build Archive on the Kobee Server to the Deploy Environment Source Location.
 
 It logs what was transferred and which Transporter was used in the _Message_ field.
 
@@ -2533,7 +2533,7 @@ It logs where the Build results were decompressed in the _Message_ field.
 
 |Verify Deploy Script
 |The _Verify
-Deploy Script Phase_ tries to locate the defined deploy script in the decompressed Build result or in the IKAN ALM Script Location.
+Deploy Script Phase_ tries to locate the defined deploy script in the decompressed Build result or in the Kobee Script Location.
 
 It fails when it can't find a deploy script.
 
@@ -2600,7 +2600,7 @@ image::Desktop-LevelRequests-Detailed-Results-NoRelatedBuilds.png[,325,144]
 
 |Build File Name
 a|The name of the Build File that holds the compressed Build results.
-This file is stored in the IKAN ALM Build Archive Location.
+This file is stored in the Kobee Build Archive Location.
 
 If the option <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Downloadable Build>> is activated for this Build Environment, this name is displayed as a hyperlink.
 
@@ -2628,7 +2628,7 @@ If the Build failed, this field is empty
 |Archive Status
 a|The status of the Archive.
 
-To be able to download the Build file, the archive must be _Present_ in the IKAN ALM database.
+To be able to download the Build file, the archive must be _Present_ in the Kobee database.
 
 Possible values are:
 
@@ -2752,7 +2752,7 @@ This field is empty for waiting Approvals.
 
 |Reason
 |This field contains the comment the User entered in the _Reason_ field when he or she granted or rejected the Approval.
-For some special events, like Level Request cancellations, abortions or failures, this reason is automatically provided by IKAN ALM.
+For some special events, like Level Request cancellations, abortions or failures, this reason is automatically provided by Kobee.
 |===
 
 [cols="1", frame="topbot"]
@@ -2776,7 +2776,7 @@ a|_RELATED TOPICS_
 (((Level Requests ,Issues)))  (((Level Request Detail ,Issues)))  (((Issues))) 
 
 The _Issues_ page displays the list of Issues that have been linked to a Level Request.
-Issues can get linked to a Level Request automatically by IKAN ALM during the execution of the Level Request, or manually by a User after the Level Request has ended.
+Issues can get linked to a Level Request automatically by Kobee during the execution of the Level Request, or manually by a User after the Level Request has ended.
 
 
 image::Desktop-LevelRequests-Detailed-Issues.png[,683,264] 
@@ -2830,7 +2830,7 @@ image::Desktop-LevelRequests-Detailed-Results-NoIssues.png[,492,206]
 
 [NOTE]
 ====
-Apart from the Issue ID, the information in the fields may not be automatically filled in when IKAN ALM synchronizes the Issues with the Issue Tracking System.
+Apart from the Issue ID, the information in the fields may not be automatically filled in when Kobee synchronizes the Issues with the Issue Tracking System.
 In that case, the values need to be provided manually by editing the Issue. 
 ====
 
@@ -2895,9 +2895,9 @@ You can also click _Cancel_ to return to the _Issues_ page without deleting the 
 This option is only available for Atlassian JIRA, MicroFocus ALM, GitHub and Microsoft Team Foundation.
 ====
 
-MF ALM Defects, JIRA Issues, GitHub Issues and Team Foundation Artifacts may be linked to an IKAN ALM Level Request, based on the comments provided by the developers when they commit their code to the VCR.
-IKAN ALM retrieves information from the corresponding Issue, such as a short description, the owner and the priority.
-This information is synchronized during the Issue Tracking Phase each time the Level Request is delivered to the next Level in the IKAN ALM Lifecycle.
+MF ALM Defects, JIRA Issues, GitHub Issues and Team Foundation Artifacts may be linked to an Kobee Level Request, based on the comments provided by the developers when they commit their code to the VCR.
+Kobee retrieves information from the corresponding Issue, such as a short description, the owner and the priority.
+This information is synchronized during the Issue Tracking Phase each time the Level Request is delivered to the next Level in the Kobee Lifecycle.
 
 The _Synchronize_ option is provided to manually synchronize the Status, Owner and Priority fields of an Issue linked to this Level Request.
 This may be useful when Issues are manually added to the Level Request, e.g., when they were omitted by the developers in the commit comments.
@@ -2914,7 +2914,7 @@ If the synchronization fails, an error message indicating the problem will be di
 
 This option is provided to manually link Issues to a Level Request.
 
-This may be necessary when the automatic process did not detect some Issues, or when Issues need to be linked with Level Requests that were executed at a time when an external Issue Tracking System was not yet properly configured in IKAN ALM.
+This may be necessary when the automatic process did not detect some Issues, or when Issues need to be linked with Level Requests that were executed at a time when an external Issue Tracking System was not yet properly configured in Kobee.
 
 . Click the __Add Issue__ link.
 +
@@ -3001,7 +3001,7 @@ The _Sources_ page displays the list of all the sources (and their revision numb
 
 image::Desktop-LevelRequests-Detailed-Sources.png[,602,474] 
 
-For Builds based on latest code, these files were tagged by IKAN ALM in the Tag Code Phase of this Level Request.
+For Builds based on latest code, these files were tagged by Kobee in the Tag Code Phase of this Level Request.
 
 For Builds based on tagged code, these files were already tagged by either a previous Level Request on the Build Level of this Lifecycle or, in the case of a Tag-Based build, by an external system.
 

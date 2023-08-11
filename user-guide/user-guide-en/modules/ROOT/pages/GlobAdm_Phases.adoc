@@ -6,13 +6,13 @@
 = Phases 
 (((Global Administration ,Phases)))  (((Phases))) 
 
-When IKAN ALM is running Level Requests, Builds and Deploys, all actions are performed by executing a sequence of Phases.
-Those Phases are defined in the IKAN ALM database and can be consulted and manipulated in the _Phases_ section of the _Global Administration_ interface.
+When Kobee is running Level Requests, Builds and Deploys, all actions are performed by executing a sequence of Phases.
+Those Phases are defined in the Kobee database and can be consulted and manipulated in the _Phases_ section of the _Global Administration_ interface.
 Once they have been defined in __Global Administration__, Phases may be linked to Levels, Build or Deploy Environments in the _Project Administration_ context.
 
-The IKAN ALM core functionality is performed by so-called "Core" Phases.
+The Kobee core functionality is performed by so-called "Core" Phases.
 Those Core Phases can only be viewed, and cannot be altered nor deleted.
-Consider them an integral part of IKAN ALM.
+Consider them an integral part of Kobee.
 
 You can extend this core functionality by creating your own Phases.
 There are two options:
@@ -47,7 +47,7 @@ For a complete explanation of the concept of Phases, refer to <<App_Phases.adoc#
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 . In the Global Administration context, select _Phases > Create_.
 +
@@ -101,23 +101,23 @@ The following versions are NOT legal:
 * 1.0.0-beta2
 
 |Default Display Name
-|The name of the Phase as it will be displayed in the IKAN ALM user interface, e.g., on the _Level Request Detail_ screen or on the _Build Environment
+|The name of the Phase as it will be displayed in the Kobee user interface, e.g., on the _Level Request Detail_ screen or on the _Build Environment
 Phases Overview_ screen.
 
 This default name will be used when no language-specific display name is provided.This field is mandatory.
 
 |Display Name [English]
-|The English name of the Phase as it will be displayed in the IKAN ALM user interface for a User whose language is set to English in his or her __Personal Settings__. See: <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Personal Settings>>
+|The English name of the Phase as it will be displayed in the Kobee user interface for a User whose language is set to English in his or her __Personal Settings__. See: <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Personal Settings>>
 
 This field is optional.
 
 |Display Name [French]
-|The French name of the Phase as it will be displayed in the IKAN ALM user interface for a User whose language is set to French in his or her __Personal Settings__. See: <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Personal Settings>>
+|The French name of the Phase as it will be displayed in the Kobee user interface for a User whose language is set to French in his or her __Personal Settings__. See: <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Personal Settings>>
 
 This field is optional.
 
 |Display Name [German]
-|The German name of the Phase as it will be displayed in the IKAN ALM interface for a User whose language is set to German in his or her __Personal Settings__. See: <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Personal Settings>>
+|The German name of the Phase as it will be displayed in the Kobee interface for a User whose language is set to German in his or her __Personal Settings__. See: <<Desktop_PersonalSettings.adoc#_desktop_personalsettings,Personal Settings>>
 
 This field is optional.
 
@@ -158,7 +158,7 @@ A file selection window will open.
 __Note: __You can select only one file.
 
 * If there is only one script file to be uploaded, you simply select that script file.
-* If the Phase needs multiple files for its execution, you must first archive those files into a .zip or a .tar.gz file, and then select that file. IKAN ALM will extract the archive file, and show its contents in the _Uploaded Files_ field.
+* If the Phase needs multiple files for its execution, you must first archive those files into a .zip or a .tar.gz file, and then select that file. Kobee will extract the archive file, and show its contents in the _Uploaded Files_ field.
 +
 When the upload has succeeded, the following message is displayed:
 +
@@ -236,7 +236,7 @@ For a detailed description of the fields, refer to <<GlobAdm_Phases.adoc#_globad
 |image:icons/edit.gif[,15,15] __
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Phase.
 
 <<GlobAdm_Phases.adoc#_globadm_phases_editing,Editing a Phase Definition>>
@@ -244,7 +244,7 @@ It allows editing a Phase.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Phase.
 
 <<GlobAdm_Phases.adoc#_globadm_phases_deleting,Deleting a Phase Definition>>
@@ -252,7 +252,7 @@ It allows deleting a Phase.
 |image:icons/Phase_Export.png[,15,15] 
 |Export
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows exporting a Phase.
 
 <<GlobAdm_Phases.adoc#_globadm_phases_exporting,Exporting a Phase Definition>>
@@ -260,7 +260,7 @@ It allows exporting a Phase.
 |image:icons/Phase_Copy.gif[,15,15] 
 |Copy
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows copying a Phase.
 
 <<GlobAdm_Phases.adoc#_globadm_phases_copying,Copying a Phase Definition>>
@@ -268,7 +268,7 @@ It allows copying a Phase.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Phase.
 
 <<GlobAdm_Phases.adoc#_globadm_phases_history,Viewing the Phase History>>
@@ -322,7 +322,7 @@ The following additional fields are displayed on this screen:
 |Core Phase
 |This field indicates whether a Phase is a Core Phase or not.
 
-A Core Phase is an internal IKAN ALM Phase that performs some core functionality (e.g., the _Retrieve Code_ Phase).
+A Core Phase is an internal Kobee Phase that performs some core functionality (e.g., the _Retrieve Code_ Phase).
 
 It cannot be edited nor deleted.
 
@@ -342,7 +342,7 @@ For more information, refer to <<App_Phases.adoc#_phases_generalinformation,Phas
 
 A Phase that has not been released is regarded as being in development, i.e., its script(s) and other containing files may be changed.
 
-To facilitate Phase development, IKAN ALM will automatically re-install a non-released Phase just before it is executed.
+To facilitate Phase development, Kobee will automatically re-install a non-released Phase just before it is executed.
 Once a Phase has been released, its contents (scripts) cannot change anymore, so the _Upload_ button will not be available.
 
 For more information, refer to <<App_Phases.adoc#_phases_generalinformation,Phases - General Information>>.
@@ -435,8 +435,8 @@ For more information on mass replacing and mass deleting Phases, refer also to t
 +
 When clicking the _Save_ button, the Phase`'s data are persisted and you will be redirected to the _Phases Overview_ screen.
 +
-Meanwhile, IKAN ALM re-packages the uploaded files in a .jar file and replaces the existing .jar file in the Phase Catalog location (as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>) with the new .jar file.
-There, it is ready to be picked up by an IKAN ALM Server or Agent Daemon process when the Phase needs to be (re-)installed on an IKAN ALM Server or Agent.
+Meanwhile, Kobee re-packages the uploaded files in a .jar file and replaces the existing .jar file in the Phase Catalog location (as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>) with the new .jar file.
+There, it is ready to be picked up by an Kobee Server or Agent Daemon process when the Phase needs to be (re-)installed on an IKAN ALM Server or Agent.
 +
 You can also click:
 
@@ -583,7 +583,7 @@ This field is mandatory and cannot be changed after the creation of the Paramete
 This field is mandatory.
 
 |Integration Type
-a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an IKAN ALM object type.
+a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an Kobee object type.
 
 The possible values are:
 
@@ -597,7 +597,7 @@ The possible values are:
 * NANT: link to a NAnt Scripting Tool
 * MAVEN2: link to a Maven2 Scripting Tool
 
-When you select a type other than __None__, the _Default Value_ field switches to a drop-down list where you can select a specific IKAN ALM object of that type.
+When you select a type other than __None__, the _Default Value_ field switches to a drop-down list where you can select a specific Kobee object of that type.
 For example, if _ANT_ is selected as Integration Type, the _Default Value_ drop-down list will contain ANT Scripting Tools.
 
 This field is only relevant for non-secured Parameters.
@@ -861,7 +861,7 @@ image::GlobAdm-Phase-MassReplace_Step3.png[,686,559]
 +
 In this step you have to match the parameters of the original Phase with those of the Replacement Phase.
 +
-IKAN ALM will try to match parameters with an identical name and type.
+Kobee will try to match parameters with an identical name and type.
 If needed, you can always correct those automatic matches, or match unlinked parameters by selecting the appropriate parameter from the drop-down list.
 +
 Matched parameters will get the value from the original Environment Parameter.
@@ -984,8 +984,8 @@ Deleting a Phase definition will also delete the corresponding .jar file from th
 
 . On the _Phases Overview_ panel, click the image:icons/Phase_Export.png[,15,15]  _Export_ link in front of the Phase you want to export.
 +
-IKAN ALM packages the Phase metadata and all the script files in a .jar file.
-A file dialog screen will be displayed, asking you where you want to save this .jar file.The exported .jar file can be used to import the Phase again in the future, possibly in another IKAN ALM installation. <<GlobAdm_Phases.adoc#_globadm_phases_importing,Importing a Phase Definition>>
+Kobee packages the Phase metadata and all the script files in a .jar file.
+A file dialog screen will be displayed, asking you where you want to save this .jar file.The exported .jar file can be used to import the Phase again in the future, possibly in another Kobee installation. <<GlobAdm_Phases.adoc#_globadm_phases_importing,Importing a Phase Definition>>
 
 [[_globadm_phases_copying]]
 == Copying a Phase Definition 
@@ -1070,7 +1070,7 @@ The _Import Phase Parameters_ panel shows the defined Parameters of the Phase th
 
 . Click _Import_ to import the Phase.
 +
-When clicking __Import__, the Phase and its Parameters are created in the IKAN ALM database.
+When clicking __Import__, the Phase and its Parameters are created in the Kobee database.
 The scripts and other files contained within the Phase are packaged into a .jar file and copied to the Phase Catalog location (as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>).
 +
 You can also click _Overview_ to return to the _Phases Overview_ screen without importing the Phase.

@@ -5,7 +5,7 @@
 = Bureau 
 (((Bureau))) 
 
-Le Bureau constitue l`'environnement de travail de l`'utilisateur régulier d`'IKAN ALM.
+Le Bureau constitue l`'environnement de travail de l`'utilisateur régulier d`'Kobee.
 
 Il donne accès aux fonctions couramment utilisées telles que:
 

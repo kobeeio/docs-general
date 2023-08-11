@@ -5,7 +5,7 @@
 = Enregistrement de l`'historique et des événements 
 (((Historique)))  (((Événements)))  (((Enregistrement ,Historique et événements))) 
 
-Toutes les opérations de création, de modification ou de suppression relatives aux objets et composants d`'administration globale sont enregistrées dans la base de données d`'IKAN ALM.
+Toutes les opérations de création, de modification ou de suppression relatives aux objets et composants d`'administration globale sont enregistrées dans la base de données d`'Kobee.
 
 Pour afficher l`'historique de ces opérations, vous pouvez cliquer sur l`'icône image:icons/history.gif[,15,15]  (ou le lien image:icons/history.gif[,15,15]  __Historique__) disponible dans tous les écrans d`'aperçu dans les sections d`'administration globale, ainsi que dans les écrans de modification tels que l`'écran des __Paramètres système__ et l`'écran __Modifier le Niveau__. 
 
@@ -148,7 +148,7 @@ L`'état du premier élément non associé dans la liste devrait toujours être 
 ====
 Il est possible que le panneau des _Versions [objets]_ soit vide ou qu`'il ne liste pas toutes les versions précédentes.
 Les objets créés lors du processus d`'installation ne disposeront pas d`'une version de création.
-Les objets créés ou modifiés dans une version de SCM4ALL antérieure à la version 4.3 n`'ont pas d`'Historique dans la base de données d`'IKAN ALM.
+Les objets créés ou modifiés dans une version de SCM4ALL antérieure à la version 4.3 n`'ont pas d`'Historique dans la base de données d`'Kobee.
 ====
 +
 Les champs d`'information suivants sont disponibles:

@@ -6,18 +6,18 @@
 = Machines 
 (((Global Administration ,Machines)))  (((Machines))) 
 
-All Machines hosting Build and/or Deploy Environments that are used by IKAN ALM Projects, must be defined in IKAN ALM.
-This is the task of the IKAN ALM Global Administrator.
-Other IKAN ALM Users can verify, if all Machines used for a new Project are available.
-If not, they can request the IKAN ALM Global Administrator to add the Machine definitions to IKAN ALM and install an IKAN ALM Agent on it.
-Build and Deploy Actions can only be handled on a Machine on which an IKAN ALM Agent is correctly installed and running.
+All Machines hosting Build and/or Deploy Environments that are used by Kobee Projects, must be defined in IKAN ALM.
+This is the task of the Kobee Global Administrator.
+Other Kobee Users can verify, if all Machines used for a new Project are available.
+If not, they can request the Kobee Global Administrator to add the Machine definitions to IKAN ALM and install an IKAN ALM Agent on it.
+Build and Deploy Actions can only be handled on a Machine on which an Kobee Agent is correctly installed and running.
 
 Refer to the following sections for detailed information:
 
 * <<GlobAdm_Machines.adoc#_globadm_machinecreate,Creating a Machine Definition>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview,The Machines Overview Screen>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview_edit,Editing a Machine Definition>>
-* <<GlobAdm_Machines.adoc#_globadm_machinesoverview_remoteinstall,Remote installing an IKAN ALM Agent>>
+* <<GlobAdm_Machines.adoc#_globadm_machinesoverview_remoteinstall,Remote installing an Kobee Agent>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview_delete,Deleting a Machine Definition>>
 * <<GlobAdm_Machines.adoc#_globadm_machinesoverview_status,Viewing the Machine Status>>
 * <<GlobAdm_Machines.adoc#_globadm_machines_installedphases,The Installed Phases Overview Screen>>
@@ -30,7 +30,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 
 . In the Global Administration context, select__ Machines > Create__.
@@ -65,30 +65,30 @@ The Selection of an Operating System is mandatory.
 |DHCP Name
 |Enter the Machine's DHCP Name.
 Required field when the DHCP Enabled status is set to __Yes__.
-The IKAN ALM Server will try to set up a connection with this DHCP Name (using web services).
+The Kobee Server will try to set up a connection with this DHCP Name (using web services).
 
 |IP Address
 |Enter the Machine's IP Address.
 Required field when the DHCP Enabled status is set to __No__.
-The IKAN ALM Server will try to set up a connection with this IP Address (using web services).
+The Kobee Server will try to set up a connection with this IP Address (using web services).
 
 |Agent Port
-|In this field, you can enter the Port number (between 0 and 65536) on which the IKAN ALM Agent on this Machine will listen for communication with the IKAN ALM Server (using web services).
+|In this field, you can enter the Port number (between 0 and 65536) on which the Kobee Agent on this Machine will listen for communication with the IKAN ALM Server (using web services).
 
 If you leave this field empty, the default value of 20020 will be used.
 
 If you define a value different from the default value, be sure to define the same value when running the Agent install wizard on this Machine.
 
 |Server Port
-|In this field, enter the Port number (between 0 and 65536) on which the IKAN ALM Server will listen for communication with the IKAN ALM Agents (using web services). This port number was defined during the initial installation of the IKAN ALM Server.
+|In this field, enter the Port number (between 0 and 65536) on which the Kobee Server will listen for communication with the IKAN ALM Agents (using web services). This port number was defined during the initial installation of the IKAN ALM Server.
 
-If the IKAN ALM Server uses the default value of 20021, you can also leave this field empty.
+If the Kobee Server uses the default value of 20021, you can also leave this field empty.
 
 |Transporter Protocol
 |Select the required Transporter Protocol from the drop-down list.
-The list contains the names of all Transporters defined in IKAN ALM (FTP, FileCopy and SSH).
+The list contains the names of all Transporters defined in Kobee (FTP, FileCopy and SSH).
 
-This Protocol defines how sources, scripts, build results and phases will be transported between the IKAN ALM Server locations (Build Archive, Work Copy, Script and Phase Catalog Location) and this Machine.
+This Protocol defines how sources, scripts, build results and phases will be transported between the Kobee Server locations (Build Archive, Work Copy, Script and Phase Catalog Location) and this Machine.
 
 The Selection of a Transporter Protocol is mandatory.
 
@@ -111,12 +111,12 @@ a|Enter the maximum number of Deploys that may be run at the same time.
 The newly created Machine definition is added to the__ Machines
 Overview__.
 +
-Your IKAN ALM User License may contain a limit on the number of Machines you can add.
+Your Kobee User License may contain a limit on the number of Machines you can add.
 If this limit is exceeded, the new Machine definition is not added, and the following error message is displayed:
 +
 image::GlobAdmin-Machines-Create-Error.png[,569,489] 
 +
-Contact your IKAN ALM Vendor if you need to purchase a license that allows for more Machine Definitions.
+Contact your Kobee Vendor if you need to purchase a license that allows for more Machine Definitions.
 
 
 [cols="1", frame="topbot"]
@@ -162,7 +162,7 @@ For a detailed description of the fields, refer to <<GlobAdm_Machines.adoc#_glob
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Machine definition.
 
 <<GlobAdm_Machines.adoc#_globadm_machinesoverview_edit,Editing a Machine Definition>>
@@ -170,15 +170,15 @@ It allows editing a Machine definition.
 |image:icons/remoteInstall.png[,16,16] 
 |Install
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
-It allows to configure and run a remote install of an IKAN ALM Agent on a machine.
+This option is available to Kobee Users with Global Administrator Access Rights.
+It allows to configure and run a remote install of an Kobee Agent on a machine.
 
-<<GlobAdm_Machines.adoc#_globadm_machinesoverview_remoteinstall,Remote installing an IKAN ALM Agent>>
+<<GlobAdm_Machines.adoc#_globadm_machinesoverview_remoteinstall,Remote installing an Kobee Agent>>
 
 |image:icons/icon_viewparameters.png[,15,15] 
 |View Parameters
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows viewing and editing the Parameters of a Machine.
 
 <<GlobAdm_Machines.adoc#_globadm_machineparameters_overview,The Machine Parameters Overview Screen>>
@@ -186,7 +186,7 @@ It allows viewing and editing the Parameters of a Machine.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Machine definition.
 
 <<GlobAdm_Machines.adoc#_globadm_machinesoverview_delete,Deleting a Machine Definition>>
@@ -194,7 +194,7 @@ It allows deleting a Machine definition.
 |image:icons/status.gif[,15,15] 
 |Status
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows checking the status of a Machine.
 
 <<GlobAdm_Machines.adoc#_globadm_machinesoverview_status,Viewing the Machine Status>>
@@ -202,7 +202,7 @@ It allows checking the status of a Machine.
 |image:icons/installed_phases.gif[,15,15] 
 |Installed Phases
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows viewing and uninstalling the phases that are currently installed on the Machine.
 
 <<GlobAdm_Machines.adoc#_globadm_machines_installedphases,The Installed Phases Overview Screen>>
@@ -210,7 +210,7 @@ It allows viewing and uninstalling the phases that are currently installed on th
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Machine.
 
 <<GlobAdm_Machines.adoc#_globadm_machinesoverview_history,Viewing the Machine History>>
@@ -251,7 +251,7 @@ You can also click:
 * _Back_ to return to the previous screen without saving the changes
 
 [[_globadm_machinesoverview_remoteinstall]]
-== Remote installing an IKAN ALM Agent 
+== Remote installing an Kobee Agent 
 
 . In the Global Administration context, select __Machines > Overview__.
 . Click the image:icons/remoteInstall.png[,16,16] __Install__ link on the _Machines Overview_ panel.
@@ -286,7 +286,7 @@ The possible statuses are:
 +
 ** No installation running: The process is not running. This status is also set when the installation process has just finished running, either with success or failure.
 ** Installation in progress: The installation process is currently running.
-** Could not connect to server: The IKAN ALM Server (which runs the installation process) is not available.
+** Could not connect to server: The Kobee Server (which runs the installation process) is not available.
 +
 image::GlobAdmin-Machines-RemoteInstall-StatusNoLogs.png[,900,154] 
 +
@@ -351,26 +351,26 @@ After a successful installation the used installation files will be stored in a 
 
 If you change this value, you will also have to change the _Agent Port_ property of the Machine definition.
 |Server Hostname
-|Enter the hostname (or IP address) of the IKAN ALM Server machine. This field is optional, when leaving empty it is defaulted to the value of the Machine definition.
+|Enter the hostname (or IP address) of the Kobee Server machine. This field is optional, when leaving empty it is defaulted to the value of the Machine definition.
 
 The Agent will try to connect to the Server by using this name or IP address.
 
 |Server Port	
 |In this field, enter the Port number (between 0 and 65536) the Agent will try to connect to the Server. This field is optional, when leaving empty it is defaulted to the value of the Machine defintion.
-The setting can be verified in the IKAN ALM Global administration: see System Settings, Panel <<GlobAdm_System.adoc#_globadm_systemsettings_localenvironment,Local Environment>> :
-the value of __IKAN ALM Server__ represents the IKAN ALM Server Machine.
+The setting can be verified in the Kobee Global administration: see System Settings, Panel <<GlobAdm_System.adoc#_globadm_systemsettings_localenvironment,Local Environment>> :
+the value of __Kobee Server__ represents the IKAN ALM Server Machine.
 Go to __Global Administration > Machines > Overview__
-Check the __Server Port__ property of the IKAN ALM Server Machine. If no Server Port is defined on the ALM Server Machine, port __20021__ will be used.
+Check the __Server Port__ property of the Kobee Server Machine. If no Server Port is defined on the ALM Server Machine, port __20021__ will be used.
 |Agent Hostname	
 |This field is Optional. Leave this field empty unless you want to override the automatically detected _hostname_ of the Agent.
-For example, to use a fully qualified domain name like _almAgent.your.domain_ for communicating with the IKAN ALM server. It is important that the hostname entered here matches the _DHCP Name_ of the Agent Machine definition.
+For example, to use a fully qualified domain name like _almAgent.your.domain_ for communicating with the Kobee server. It is important that the hostname entered here matches the _DHCP Name_ of the Agent Machine definition.
 |Agent IP Address
 |This field is Optional. Leave this field empty unless you want to override the automatically detected _IP address_ of the Agent.
-For example, to use an IP Address which differs from the internal IP address for communicating with the IKAN ALM server. It is important that the IP address entered here matches the _IP address_ of the Agent Machine definition.
+For example, to use an IP Address which differs from the internal IP address for communicating with the Kobee server. It is important that the IP address entered here matches the _IP address_ of the Agent Machine definition.
 
 |===
 
-The following first three fields are the port numbers specific to the Karaf container hosting the IKAN ALM Agent daemon. Normally, there is no need to change those port numbers unless you have port conflicts. For more information, refer to the Karaf Container 4.0 documentation: https://karaf.apache.org/manual/latest/#_instances .
+The following first three fields are the port numbers specific to the Karaf container hosting the Kobee Agent daemon. Normally, there is no need to change those port numbers unless you have port conflicts. For more information, refer to the Karaf Container 4.0 documentation: https://karaf.apache.org/manual/latest/#_instances .
 
 [cols="1,1", frame="topbot", options="header"]
 |===
@@ -386,23 +386,23 @@ The default value is _44444_.
 |Enter the Port number (between 0 and 65536) for the Karaf SSH port.
 The default value is _8101_.
 |Agent Karaf Logfile Path
-|Enter the Relative path to the Karaf log of the IKAN ALM Agent log.
-This setting is used by the IKAN ALM Server when displaying the Machine Log of an Agent on the Machine Detailed Status screen.
+|Enter the Relative path to the Karaf log of the Kobee Agent log.
+This setting is used by the Kobee Server when displaying the Machine Log of an Agent on the Machine Detailed Status screen.
 The default value is _log/alm_agent.log_
 |Run Agent Uninstaller
-|Select whether or not the uninstallation process should run first to uninstall the previously installed IKAN ALM agent.
+|Select whether or not the uninstallation process should run first to uninstall the previously installed Kobee agent.
 The default value is _Yes_.
 |Agent Uninstaller location
 |This field is Optional.
 Enter the location of the Uninstaller for manually installed Agents.
 There is no need to set this field for Agents that have been installed using this page.
-You need to set this if you want the installation procedure to automatically uninstall an Agent that was previously installed manually. For example, if an ALM 5.8 Agent was installed using the console installer, you need to set this field to the location of that console installer, like _C:/ikan/install/IKAN_ALM_5.8_console_.
+You need to set this if you want the installation procedure to automatically uninstall an Agent that was previously installed manually. For example, if an Kobee 6.0 Agent was installed using the console installer, you need to set this field to the location of that console installer, like _C:/ikan/install/kobee_6.0_console_.
 The installation procedure will detect the version of the Agent and stop and remove the old Agent service. Note that this will only work if the Agent service was installed using its default service name.
 |Agent Stop/Start Timeout
 |Enter the timeout in seconds to wait for the Agent service to stop or start.
 The default value is _30_ seconds.
 |Connection type
-|Select the Connection Type between the IKAN ALM Server and the target Agent Machine. Possible options are _SSH_ (SecureShell) or _PowerShell_. After you have selected the Connection type, the appropriate <<GlobAdm_Machines.adoc#_globadm_machines_secureshell,SecureShell>> or <<GlobAdm_Machines.adoc#_globadm_machines_powershell,PowerShell>> panel will be displayed underneath.
+|Select the Connection Type between the Kobee Server and the target Agent Machine. Possible options are _SSH_ (SecureShell) or _PowerShell_. After you have selected the Connection type, the appropriate <<GlobAdm_Machines.adoc#_globadm_machines_secureshell,SecureShell>> or <<GlobAdm_Machines.adoc#_globadm_machines_powershell,PowerShell>> panel will be displayed underneath.
 
 
 |===
@@ -540,7 +540,7 @@ __Note:__ If you try to delete a Machine connected to a Build or Deploy Environm
 +
 image::GlobAdmin-Machines-Delete-Error.png[,422,420] 
 +
-You must link the Environments to a different Machine, or delete them from IKAN ALM, before you can delete the Machine definition.
+You must link the Environments to a different Machine, or delete them from Kobee, before you can delete the Machine definition.
 
 [[_globadm_machinesoverview_status]]
 == Viewing the Machine Status 
@@ -599,12 +599,12 @@ The Agent/Server is shutting down.
 |image:icons/status_red.gif[,15,15] _Could
 not connect to Agent_
 |The connection to the Agent Daemon failed, either because the Agent Daemon is currently not running on the Machine, or due to networking issues that prevent connecting to the Agent Daemon.
-Contact your IKAN ALM Administrator.
+Contact your Kobee Administrator.
 
 |image:icons/status_red.gif[,15,15] _Could
 not connect to Server_
 |The connection to the Server Daemon failed, either because the Server Daemon is currently not running on the Machine, or due to networking issues that prevent connecting to the Server Daemon.
-Contact your IKAN ALM Administrator.
+Contact your Kobee Administrator.
 |===
 
 . Verify the __Machine Log__.
@@ -632,7 +632,7 @@ For a detailed description of the fields, refer to <<GlobAdm_Machines.adoc#_glob
 
 [NOTE]
 ====
-The Activity and the installed phases on the Server daemon are only displayed if the Machine has been set as the "IKAN ALM Server" machine in the System Settings. <<GlobAdm_System.adoc#_globadm_system_settings,System System Settings>>
+The Activity and the installed phases on the Server daemon are only displayed if the Machine has been set as the "Kobee Server" machine in the System Settings. <<GlobAdm_System.adoc#_globadm_system_settings,System System Settings>>
 ====
 . Verify the _Current Server and/or Agent Activity_ on the Machine.
 +
@@ -645,7 +645,7 @@ The possible options are:
 * __No__: show only non-Core Phases
 * __All__: show Core and non-Core Phases
 . Verify the information on the _Installed Server Phases_ and _Install Agent Phases_ panels.
-* The _Installed Server Phases_ panel shows all phases that are installed on the Server daemon of the Machine. This panel is only shown if the Machine has been set as the "IKAN ALM Server" machine in the System Settings. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>
+* The _Installed Server Phases_ panel shows all phases that are installed on the Server daemon of the Machine. This panel is only shown if the Machine has been set as the "Kobee Server" machine in the System Settings. See: <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>
 * The _Installed Agent Phases_ panel shows all phases that are installed on the Agent daemon of the Machine.
 +
 For each of the installed phases, the following information is available:
@@ -672,7 +672,7 @@ To uninstall a Phase, click the image:icons/delete.gif[,15,15] _Delete_ icon at 
 +
 __Note:__ When a Phase is uninstalled, it is removed from the Server or Agent daemon.
 This does not mean that the Phase is removed from the Phase Catalog or from any connected Environments in Projects.
-When a Phase of a Level Request is executed on a certain Agent or Server and that Phase is not installed on that Agent or Server Daemon, IKAN ALM will automatically try to install the Phase on the Agent or Server daemon before executing it.
+When a Phase of a Level Request is executed on a certain Agent or Server and that Phase is not installed on that Agent or Server Daemon, Kobee will automatically try to install the Phase on the Agent or Server daemon before executing it.
 . Click _Back_ to return to the __Machines Overview __screen.
 
 [[_globadm_machinesoverview_history]]

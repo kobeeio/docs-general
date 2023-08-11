@@ -5,14 +5,14 @@
 = RSS URL Details 
 (((RSS URL Details))) 
 
-The IKAN ALM URL has the following structure: 
+The Kobee URL has the following structure: 
 
 _protocol://almhost:almhostport/alm/displayRss.actionrequestparams_
 
-This is equal to the value of the IKAN ALM URL as set in <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>> :
+This is equal to the value of the Kobee URL as set in <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>> :
 
 * "`protocol`" = http or https
-* "`almhost:almhostport`" = the IKAN ALM server domain,e.g., localhost:8080
+* "`almhost:almhostport`" = the Kobee server domain,e.g., localhost:8080
 * "`requestparams`" = 
 
 
@@ -28,7 +28,7 @@ The following table gives you an overview of the optional criteria.
 a|This is the title that will be shown in the RSS Feed.
 
 If it is not provided, it will be set automatically when the RSS feed is constructed.
-This way it is possible to place more than one IKAN ALM RSS Feed in the RSS reader (e.g., for different projects).
+This way it is possible to place more than one Kobee RSS Feed in the RSS reader (e.g., for different projects).
 
 [NOTE]
 ====
@@ -89,7 +89,7 @@ Valid values are :
 |lang=value
 |Valid locale indicating the user`'s language (default = none = en).
 
-For example: lang=en, lang=de, lang=fr (the three currently supported languages in IKAN ALM)
+For example: lang=en, lang=de, lang=fr (the three currently supported languages in Kobee)
 |===
 
 
@@ -101,5 +101,5 @@ Valid sample URLs:
 
 \https://pe4600:8080/alm/displayRss.action?projectName=DEMOCVS&projectStreamBuildPrefix=1&projectStreamBuildSuffix=1&levelType=0&lang=fr
 
-\https://pe4600:8080/alm/displayRss.action?projectName=DEMOCVS&projectStreamBuildPrefix=1&projectStreamBuildSuffix=1&levelType=0&title=IKAN ALM+builds+in+project+DEMOCVS
+\https://pe4600:8080/alm/displayRss.action?projectName=DEMOCVS&projectStreamBuildPrefix=1&projectStreamBuildSuffix=1&levelType=0&title=Kobee+builds+in+project+DEMOCVS
 

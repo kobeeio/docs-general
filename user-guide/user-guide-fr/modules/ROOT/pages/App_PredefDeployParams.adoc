@@ -24,7 +24,7 @@ Le tableau suivant offre un aperçu des Paramètres de déploiement prédéfinis
 |alm.build.number
 |Ce Paramètre donne le numéro de la construction à déployer.
 
-Il s`'agit d`'un numéro séquentiel incrémenté par IKAN ALM lors de la création d`'une Requête de niveau de construction.
+Il s`'agit d`'un numéro séquentiel incrémenté par Kobee lors de la création d`'une Requête de niveau de construction.
 
 |alm.build.oid
 |Ce Paramètre donne l`'Identifiant Unique de la Construction à déployer.
@@ -34,7 +34,7 @@ a|Ce Paramètre donne la date et l`'heure d`'exécution de la Construction à d�
 Il s`'agit du moment où le script de construction a commencé.
 
 Le format utilisé est date.heure.
-Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
+Le format de la date est celui utilisé par le serveur hébergeant Kobee:
 
 * _AAAA/MM/JJ_ pour l`'Europe
 * _MM/JJ/AAAA_ pour les Etats-Unis
@@ -52,7 +52,7 @@ Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
 a|Ce Paramètre donne la date et l`'heure d`'exécution du Déploiement (c`'est-à-dire le moment auquel le script de déploiement a commencé).
 
 Le format utilisé est date.heure.
-Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
+Le format de la date est celui utilisé par le serveur hébergeant Kobee:
 
 * _AAAA/MM/JJ_ pour l`'Europe
 * _MM/JJ/AAAA_ pour les Etats-Unis
@@ -83,7 +83,7 @@ Ce paramètre donne le nom du Demandeur.
 a|Ce Paramètre donne la date et l`'heure d`'exécution de la Requête de niveau actuelle.
 
 Le format utilisé est date.heure.
-Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
+Le format de la date est celui utilisé par le serveur hébergeant Kobee:
 
 * _AAAA/MM/JJ_ pour l`'Europe
 * _MM/JJ/AAAA_ pour les Etats-Unis
@@ -125,10 +125,10 @@ a|Ce Paramètre donne le Type d`'Outil de Déploiement utilisé:
 * MAVEN2
 
 |alm.project.description
-|Ce Paramètre donne la description du Projet dans IKAN ALM.
+|Ce Paramètre donne la description du Projet dans Kobee.
 
 |alm.project.name
-|Ce Paramètre donne la dénomination du Projet dans IKAN ALM.
+|Ce Paramètre donne la dénomination du Projet dans Kobee.
 Cette dénomination peut être différente de la dénomination du Projet dans le Référentiel de Contrôle de Version (RCV) utilisé (voir alm.project.vcrProjectName)
 
 |alm.package.name
@@ -139,7 +139,7 @@ Cette dénomination peut être différente de la dénomination du Projet dans le
 
 |alm.project.vcrProjectName
 |Ce Paramètre donne la dénomination du Projet dans le RCV.
-Cette dénomination peut être différente de la dénomination du Projet dans IKAN ALM (voir alm.project.name).
+Cette dénomination peut être différente de la dénomination du Projet dans Kobee (voir alm.project.name).
 
 |alm.projectStream.buildPrefix
 |Ce Paramètre donne le préfixe de Construction défini pour la Branche.
@@ -157,7 +157,7 @@ a|Ce Paramètre donne le Type de Branche:
 * B = Branche Secondaire
 
 |alm.projectStream.vcrBranchId
-|Ce Paramètre donne l`'Identifiant Unique de la Branche dans le RCV défini dans la Branche dans IKAN ALM (uniquement pour les Branches Secondaires).
+|Ce Paramètre donne l`'Identifiant Unique de la Branche dans le RCV défini dans la Branche dans Kobee (uniquement pour les Branches Secondaires).
 
 |Source
 |Ce Paramètre donne l`'emplacement Source tel que défini pour l`'Environnement de Déploiement actuel.

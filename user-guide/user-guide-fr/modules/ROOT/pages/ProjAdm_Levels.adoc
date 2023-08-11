@@ -5,7 +5,7 @@
 = Niveaux
 (((Options relatives à l'administration des projets ,Niveaux)))  (((Niveaux)))  (((Administration des projets ,Niveaux))) 
 
-Cette option permet de définir des Niveaux et leurs Environnements, qui peuvent ensuite être associés à un Cycle de vie d`'un Projet IKAN ALM.
+Cette option permet de définir des Niveaux et leurs Environnements, qui peuvent ensuite être associés à un Cycle de vie d`'un Projet Kobee.
 
 Un Niveau est un environnement logique, une étape dans le Cycle de vie.
 Il consiste en un (ou plusieurs) Environnement de Construction et/ou un (ou plusieurs) Environnement de Déploiement qui sont des environnements physiques.
@@ -21,7 +21,7 @@ Il y a trois types de Niveaux:
 ====
 
 Avant de pouvoir définir des Environnements de Construction ou de Déploiement, les <<GlobAdm_Machines.adoc#_globadm_machines,Machines>> et les <<GlobAdm_ScriptingTools.adoc#_globadm_scriptingtools,Outils de script>> doivent être définis.
-Cette définition relève de la responsabilité de l`'Administrateur Global pour IKAN ALM.
+Cette définition relève de la responsabilité de l`'Administrateur Global pour Kobee.
 Une fois les niveaux créés, vous devez les rattacher à un Cycle de vie pour pouvoir les utiliser.
 ====
 
@@ -392,7 +392,7 @@ Pour plus d`'informations, se référer aux sections:
 ==== Phases de niveau 
 (((Phases de Niveaux)))  (((Niveaux ,Phases))) 
 
-Lors de la création d`'un Niveau (Construction, Test ou Production), IKAN ALM lui reliera automatiquement le flux de Phases de niveau de type: noyau. 
+Lors de la création d`'un Niveau (Construction, Test ou Production), Kobee lui reliera automatiquement le flux de Phases de niveau de type: noyau. 
 
 Les Phases de noyau sont:
 
@@ -412,7 +412,7 @@ Les Phases de Construction et de Déploiement communiquerons avec l'Agent exécu
 ====
 Le comportement d`'une phase dépend du Type de niveau auquel elle est reliée.
 Par exemple: une phase de Balisage est automatiquement reliée aux Niveaux de Test et de Production, mais rien ne se passera car le balisage se fait uniquement sur un Type de Niveau de Construction.
-Ce comportement changera dans une version future d`'IKAN ALM.
+Ce comportement changera dans une version future d`'Kobee.
 Pour le moment, nous vous conseillons de manuellement enlever la Phase de balisage pour les Niveaux de Test et de Production. 
 ====
 
@@ -447,7 +447,7 @@ Les liens/icônes suivants sont possibles:
 [NOTE]
 ====
 La modification des Phases pourrait avoir des effets indésirables sur le Cycle de vie.
-Pour plus d'informations se référer au document _HOW TO Using and Developing a Phase in IKAN ALM_ (version anglaise).
+Pour plus d'informations se référer au document _HOW TO Using and Developing a Phase in Kobee_ (version anglaise).
 ====
 
 . Insérez une Phase, si nécessaire.
@@ -535,7 +535,7 @@ Ce champ peut être modifié en modifiant le Paramètre de phase.
 
 |Type d'intégration
 |Non
-a|Ce champ indique si la valeur du Paramètre est une simple valeur texte, ou si elle représente un lien (une intégration) vers un objet IKAN ALM de l`'Administration globale.
+a|Ce champ indique si la valeur du Paramètre est une simple valeur texte, ou si elle représente un lien (une intégration) vers un objet Kobee de l`'Administration globale.
 
 Les valeurs possibles sont:
 

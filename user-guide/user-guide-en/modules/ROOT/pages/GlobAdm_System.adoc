@@ -5,7 +5,7 @@
 [[_globadm_system]]
 = System
 
-The _System_ menu provides an entry to view or edit the IKAN ALM Server configuration settings and to perform Housekeeping Actions in the IKAN ALM Build Archive. 
+The _System_ menu provides an entry to view or edit the Kobee Server configuration settings and to perform Housekeeping Actions in the IKAN ALM Build Archive. 
 
 Users that have Global Admin Access rights will have access to the following Submenus:
 
@@ -25,12 +25,12 @@ Users who do not have Global Admin Access rights will only have access to the fo
 == System Settings 
 (((System Settings)))  (((Global Administration ,System Settings))) 
 
-On the _System Settings_ screen, the global IKAN ALM Server settings are defined, such as the different locations (build archive, script, work copy and phase catalog) and the mail and security settings.
+On the _System Settings_ screen, the global Kobee Server settings are defined, such as the different locations (build archive, script, work copy and phase catalog) and the mail and security settings.
 Some of these fields are filled in automatically during the installation process.
 
 [NOTE]
 ====
-Changing some of these settings requires preparatory actions on the IKAN ALM server.
+Changing some of these settings requires preparatory actions on the Kobee server.
 ====
 
 
@@ -43,7 +43,7 @@ image::GlobAdmin-SystemSettings.png[,879,1087]
 
 [NOTE]
 ====
-If you do not have Global Administrator access rights in IKAN ALM, you will not be able to edit the fields.
+If you do not have Global Administrator access rights in Kobee, you will not be able to edit the fields.
 ====
 +
 The following subpanels are available:
@@ -73,16 +73,16 @@ The following fields are available on the __Local Environment__ subpanel:
 | Field
 | Description
 
-|IKAN ALM Server
-|This field contains the name of the Machine currently hosting the IKAN ALM Server.
+|Kobee Server
+|This field contains the name of the Machine currently hosting the Kobee Server.
 
 Select another Machine Name from the drop-down list, if required.
 
-Changing this field requires preliminary actions, like installing the IKAN ALM Server on the new target Machine, migrating Local File Copy Locations and setting up the necessary VCR clients.
+Changing this field requires preliminary actions, like installing the Kobee Server on the new target Machine, migrating Local File Copy Locations and setting up the necessary VCR clients.
 
-|IKAN ALM URL
-|In this field, enter the base IKAN ALM URL.
-This URL is used for creating hyperlinks in mails sent by IKAN ALM (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications), for constructing the RSS feed link and for constructing the URIs for the IKAN ALM REST API.
+|Kobee URL
+|In this field, enter the base Kobee URL.
+This URL is used for creating hyperlinks in mails sent by Kobee (Approvals, Pre-Notifications, Post-Notifications, Level Request Success/Fail Notifications), for constructing the RSS feed link and for constructing the URIs for the IKAN ALM REST API.
 
 |_Local File Copy Locations_
 |These fields are used for Build and Deploy actions.
@@ -92,13 +92,13 @@ These locations are automatically synchronized with the built-in Local FileCopy 
 |Work Copy Location
 |This field contains the path to the Work Copy Location.
 
-In preparation of the Build process, the IKAN ALM Monitor places the sources (checked out sources from a VCR and sometimes also dependent build results) in a subdirectory of this location.
+In preparation of the Build process, the Kobee Monitor places the sources (checked out sources from a VCR and sometimes also dependent build results) in a subdirectory of this location.
 The tagging of the VCR after a successful Build is done from this location as well.
 
 You can edit the location if required.
 
 |Build Archive Location
-|This field contains the path to the location of the Build Archive on the IKAN ALM Server.
+|This field contains the path to the location of the Build Archive on the Kobee Server.
 
 Build Results will be stored in or retrieved from this location.
 They will be placed in a subdirectory per Project Stream and per Project.
@@ -115,7 +115,7 @@ You can edit the location if required.
 This field allows that the Scripts are stored outside the Version Control Repository and managed on a (secured) central location.
 
 |Phase Catalog Location
-|This field contains the path to the location of the Phase Catalog on the IKAN ALM Server.
+|This field contains the path to the location of the Phase Catalog on the Kobee Server.
 
 Newly created Phases and Phases that have been imported will be stored in this location.
 
@@ -134,14 +134,14 @@ For more information, refer to the sections <<GlobAdm_Transporters.adoc#_globadm
 |Work Copy Location
 |This field contains the location of the Work Copy displayed as a remote location.
 
-This is the location where the VCR interface places the checked out sources or dependent build results on the IKAN ALM Server, so that they are accessible for a remote IKAN ALM Agent handling a build process.
+This is the location where the VCR interface places the checked out sources or dependent build results on the Kobee Server, so that they are accessible for a remote IKAN ALM Agent handling a build process.
 
 You can edit the location if required.
 
 |Build Archive Location
 |This field contains the location of the Build Archive displayed as remote location.
 
-This is the location where the Builds are stored in or retrieved from by a remote IKAN ALM Agent handling a build or deploy process.
+This is the location where the Builds are stored in or retrieved from by a remote Kobee Agent handling a build or deploy process.
 
 You can edit the location if required.
 
@@ -158,7 +158,7 @@ This field allows that the Scripts are stored outside the Version Control Reposi
 |This field contains the location of the Phase Catalog displayed as remote location.
 
 Newly created Phases and Phases that have been imported will be stored in this location.
-A remote IKAN ALM Agent that needs to install a Phase will use this location to retrieve it.
+A remote Kobee Agent that needs to install a Phase will use this location to retrieve it.
 
 |*Transporter Protocol Settings*
 |
@@ -167,15 +167,15 @@ The Transporter Protocol defines how Sources and Build Results will be transport
 
 |SSH Port
 |Specify the SSH Port Number.
-This is only necessary if the SSH Server on the IKAN ALM Server uses an SSH Port other than the default port number __22__.
-An SSH Server daemon must be installed on the IKAN ALM server in order to use SSH as a Transporter Protocol.
+This is only necessary if the SSH Server on the Kobee Server uses an SSH Port other than the default port number __22__.
+An SSH Server daemon must be installed on the Kobee server in order to use SSH as a Transporter Protocol.
 
 __Note: __This port number may be overwritten by the port number defined in the _Transporter_ definition. <<GlobAdm_Transporters.adoc#_globadm_secureshellcreate,Creating a Secure Shell Transporter>>
 
 |FTP Port
 |Specify the FTP Port Number.
-This is only necessary if the FTP Server on the IKAN ALM Server uses a TCP Port other than the default port number __21__.
-An FTP server must be installed on the IKAN ALM Server in order to use FTP as a Transporter protocol.
+This is only necessary if the FTP Server on the Kobee Server uses a TCP Port other than the default port number __21__.
+An FTP server must be installed on the Kobee Server in order to use FTP as a Transporter protocol.
 
 __Note: __This port number may be overwritten by the port number defined in the _Transporter_ definition. <<GlobAdm_Transporters.adoc#_globadm_ftpcreate,Creating an FTP Transporter>>
 |===
@@ -194,36 +194,36 @@ The following fields are available on the _Security_ subpanel.
 | Description
 
 |User Group with User Access Rights
-|This field contains the name of the User Group to which all Users requiring access to IKAN ALM must belong. Note that Users can also get access to IKAN ALM when they belong to a Nested User Group of the selected User Group.
+|This field contains the name of the User Group to which all Users requiring access to Kobee must belong. Note that Users can also get access to IKAN ALM when they belong to a Nested User Group of the selected User Group.
 
 You may select another User Group from the drop-down list, if required.
 
 You may also leave this field empty.
-In this case, all authenticated users will have User access rights to IKAN ALM.
+In this case, all authenticated users will have User access rights to Kobee.
 
 |User Group with Admin Access Rights
 |This field contains the name of the User Group to which all Users requiring Administrator Rights must belong.
 Note that this must be an _external_ User Group.
 
-Only users belonging to this or a Nested User Group may create, edit and delete Global Administration definitions in IKAN ALM.
+Only users belonging to this or a Nested User Group may create, edit and delete Global Administration definitions in Kobee.
 
 You may select another _external_ User Group from the drop-down list, if required.
 
 You may also leave this field empty.
-In this case, all authenticated users will have Administrator access rights to IKAN ALM.
+In this case, all authenticated users will have Administrator access rights to Kobee.
 |===
 
 [[_globadm_systemsettings_mail]]
 === Mail
 
-IKAN ALM can send mails automatically or on demand to notify on failed or successful Builds and Deploys, to request an approval before delivering to a Test or Production Level, or just to notify connected users on changed settings. 
+Kobee can send mails automatically or on demand to notify on failed or successful Builds and Deploys, to request an approval before delivering to a Test or Production Level, or just to notify connected users on changed settings. 
 
 Settings for connecting to an external mail system can also be defined on the Mail tab.
 
 [NOTE]
 ====
 The Mail settings can be tested via the _Notify
-IKAN ALM Users_ submenu option. <<GlobAdm_Misc.adoc#_globadm_notifyusers,Notifying IKAN ALM Users>>
+Kobee Users_ submenu option. <<GlobAdm_Misc.adoc#_globadm_notifyusers,Notifying IKAN ALM Users>>
 ====
 
 
@@ -240,7 +240,7 @@ The following fields are available on the _Mail_ subpanel.
 |Select the Machine name of the SMTP Mail Server.
 
 |Port
-|This field contains the SMTP Port number used by IKAN ALM to connect to the Mail Server.
+|This field contains the SMTP Port number used by Kobee to connect to the Mail Server.
 
 This field is optional, by default port 25 is used.
 
@@ -266,7 +266,7 @@ The characters you enter are displayed as asterisks.
 |In this field, re-enter the password used to authenticate on the SMTP Server.
 
 |From User
-|This field contains the _From:_ E-Mail Address used in IKAN ALM notification e-mails.
+|This field contains the _From:_ E-Mail Address used in Kobee notification e-mails.
 
 |Content Type
 |Indicates which templates will be used to compose notification and approval mail messages.
@@ -280,7 +280,7 @@ a|By default, the mail templates are located in the following directory:
 
 _TOMCAT_HOME/webapps/alm/WEB-INF/classes/templates_
 
-If you want to customize these templates, we advise you to change this location to a local directory on the IKAN ALM Server.
+If you want to customize these templates, we advise you to change this location to a local directory on the Kobee Server.
 
 The locale directories match the language settings of the user:
 
@@ -323,10 +323,10 @@ As a result an RSS button will become available on the user`'s _Level Requests O
 
 By default the RSS Feeds are enabled.
 
-For more information, refer to the section <<Desktop_LevelRequests.adoc#_desktop_lr_rssfeeds,The IKAN ALM RSS Functionality>>.
+For more information, refer to the section <<Desktop_LevelRequests.adoc#_desktop_lr_rssfeeds,The Kobee RSS Functionality>>.
 
 |RESTful Web Services Enabled
-a|The IKAN ALM REST API enables you to interact with IKAN ALM programmatically and integrate its functionality in scripts, other applications or stand-alone apps. Interaction is possible with:
+a|The Kobee REST API enables you to interact with IKAN ALM programmatically and integrate its functionality in scripts, other applications or stand-alone apps. Interaction is possible with:
 
 * Authentication
 * Approvals
@@ -345,15 +345,15 @@ a|The IKAN ALM REST API enables you to interact with IKAN ALM programmatically a
 
 By default, this feature is disabled for security reasons.
 
-The IKAN ALM REST API is fully documented and, when Restful Web services are enabled, accessible through the web interface: _Help > REST API Documentation_.
+The Kobee REST API is fully documented and, when Restful Web services are enabled, accessible through the web interface: _Help > REST API Documentation_.
 
 |Secure Server-Agent Communication
-|This field indicates whether or not the web services communication between the IKAN ALM Web Application, IKAN ALM Server and IKAN ALM Agent is done through a secure channel. 
+|This field indicates whether or not the web services communication between the Kobee Web Application, IKAN ALM Server and IKAN ALM Agent is done through a secure channel. 
 
 |Build/Deploy Parameter Prefix
-|This option determines the value of the IKAN ALM Build/Deploy parameters prefix (by default _alm_) and the name of the property file that is generated for _Execute Script_ Build or Deploy phases (by default _alm_ant.properties_ when you use an ANT Scripting Tool).
+|This option determines the value of the Kobee Build/Deploy parameters prefix (by default _alm_) and the name of the property file that is generated for _Execute Script_ Build or Deploy phases (by default _alm_ant.properties_ when you use an ANT Scripting Tool).
 
-In case you are upgrading from a version prior to IKAN ALM 5.0, this feature allows you to keep on working with the old _scm4all_ parameter prefix and the old _scm4all_ant.properties_ file, and not having to modify your Build and/or Deploy scripts.
+In case you are upgrading from a version prior to IKAN ALM 5.0 (predecessor of Kobee), this feature allows you to keep on working with the old _scm4all_ parameter prefix and the old _scm4all_ant.properties_ file, and not having to modify your Build and/or Deploy scripts.
 
 _Note:_ This is a compatibility solution.
 At a certain point in time, you will have to modify your scripts and use the new _alm_ prefix. 
@@ -387,7 +387,7 @@ On top of the screen, the _Build Archive Info_ panel displays the following info
 
 [NOTE]
 ====
-The _Build Archive Info_ is based on hardware data obtained from the Build Archive location on the IKAN ALM Server.
+The _Build Archive Info_ is based on hardware data obtained from the Build Archive location on the Kobee Server.
 This Build Archive location is defined in the _Local Environment_ tab of the System Settings. <<GlobAdm_System.adoc#_globadm_systemsettings_localenvironment,Local Environment>>
 ====
 +
@@ -696,9 +696,9 @@ image::GlobAdm-HousekeepingHistory-Details_error.png[,1015,324]
 == Synchronize Build Archive 
 (((Synchronize Build Archive)))  (((Global Administration ,Synchronize Build Archive))) 
 
-The _Synchronize Build Archive_ screen allows an IKAN ALM Administrator to synchronize the physical representation of the Build Archive on the file system with the logical representation of the Build Archive in the IKAN ALM database.
+The _Synchronize Build Archive_ screen allows an Kobee Administrator to synchronize the physical representation of the Build Archive on the file system with the logical representation of the Build Archive in the IKAN ALM database.
 
-For example, a Build File that was manually deleted on the file system (using the OS delete command) will still have its Archive Status set to "`Present`" in the IKAN ALM database.
+For example, a Build File that was manually deleted on the file system (using the OS delete command) will still have its Archive Status set to "`Present`" in the Kobee database.
 During synchronization the status will be set to "`Non existing`".
 
 . In the Global Administration context, select__ System > Synchronize Build Archive__.
@@ -800,7 +800,7 @@ Select the check box in the column header to select all Projects for synchroniza
 
 [NOTE]
 ====
-In order to not overburden the IKAN ALM Server, it is best to limit the number of selected Projects and split up the Build Archive Synchronization in several steps.
+In order to not overburden the Kobee Server, it is best to limit the number of selected Projects and split up the Build Archive Synchronization in several steps.
 ====
 
 . The _Synchronize Build Archive Log_ screen is displayed.

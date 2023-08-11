@@ -5,25 +5,25 @@
 = Auditer un projet 
 (((Administration des projets ,Auditer un projet)))  (((Options relatives à l'administration des projets ,Auditer un projet)))  (((Auditer))) 
 
-Lorsqu`'un Utilisateur demande un Audit d`'un Projet, IKAN ALM vérifie que:
+Lorsqu`'un Utilisateur demande un Audit d`'un Projet, Kobee vérifie que:
 
 * L`'Emplacement des Archives de construction existe pour toutes les Branches du projet. 
 ** Pour la Branche Principale, cet emplacement correspond au chemin suivant: __EmplacementArchiveConstructionParamètresSystème/NomProjet/PréfixeBrancheConstruction__. 
 ** Pour la Branche Secondaire, cet emplacement correspond au chemin suivant: __EmplacementArchiveConstructionParamètresSystème/NomProjet/PréfixeBrancheConstruction.SuffixeBrancheConstruction__.
 
 +
-IKAN ALM bloque les Branches pour lesquelles ce test échoue.
-* Il y a uniquement un Niveau de Construction défini pour chaque Cycle de vie. IKAN ALM bloque les Branches pour lesquelles ce test échoue.
-* Il y a uniquement un Environnement de construction défini pour le Niveau de construction. IKAN ALM bloque les Niveaux pour lesquels ce test échoue.
-* Si aucun Script de construction n`'est défini pour le Projet, un Script de construction doit être défini pour chaque Environnement de construction. IKAN ALM bloque les Niveaux pour lesquels ce test échoue.
-* Si aucun Script de déploiement n`'est défini pour le Projet, un Script de déploiement doit être défini pour chaque Environnement de déploiement. IKAN ALM bloque les Niveaux pour lesquels ce test échoue.
-* Si une Phase personnalisée est insérée dans un Niveau, IKAN ALM vérifie si une valeur a été spécifiée pour le Paramètre obligatoire 'alm.phase.builder' de la Phase personnalisée. IKAN ALM bloque les Niveaux pour lesquels ce test échoue.
+Kobee bloque les Branches pour lesquelles ce test échoue.
+* Il y a uniquement un Niveau de Construction défini pour chaque Cycle de vie. Kobee bloque les Branches pour lesquelles ce test échoue.
+* Il y a uniquement un Environnement de construction défini pour le Niveau de construction. Kobee bloque les Niveaux pour lesquels ce test échoue.
+* Si aucun Script de construction n`'est défini pour le Projet, un Script de construction doit être défini pour chaque Environnement de construction. Kobee bloque les Niveaux pour lesquels ce test échoue.
+* Si aucun Script de déploiement n`'est défini pour le Projet, un Script de déploiement doit être défini pour chaque Environnement de déploiement. Kobee bloque les Niveaux pour lesquels ce test échoue.
+* Si une Phase personnalisée est insérée dans un Niveau, Kobee vérifie si une valeur a été spécifiée pour le Paramètre obligatoire 'alm.phase.builder' de la Phase personnalisée. IKAN ALM bloque les Niveaux pour lesquels ce test échoue.
 
 
 Les conditions suivantes peuvent engendrer un message d`'avertissement:
 
-* Au moins un Environnement de construction ou de déploiement doit être défini pour chaque Niveau de Test. Depuis la version 5.0, IKAN ALM permet la création de Niveaux de Test non liés à un Environnement de construction ou de déploiement, ce qui peut être considéré comme un Niveau de Test de type "`Jalon`".
-* Au moins un Environnement de déploiement doit être défini pour chaque Niveau de Production. Depuis la version 5.0, IKAN ALM permet la création de Niveaux de Production non liés à un Environnement de construction ou de déploiement, ce qui peut être considéré comme un Niveau de Production de type "`Jalon`". 
+* Au moins un Environnement de construction ou de déploiement doit être défini pour chaque Niveau de Test. Depuis la version 5.0, IKAN ALM (prédécesseur de Kobee) permet la création de Niveaux de Test non liés à un Environnement de construction ou de déploiement, ce qui peut être considéré comme un Niveau de Test de type "`Jalon`".
+* Au moins un Environnement de déploiement doit être défini pour chaque Niveau de Production. Depuis la version 5.0, IKAN ALM (prédécesseur de Kobee) permet la création de Niveaux de Production non liés à un Environnement de construction ou de déploiement, ce qui peut être considéré comme un Niveau de Production de type "`Jalon`". 
 
 
 == Auditer un Projet
@@ -44,7 +44,7 @@ Dans l`'exemple ci-dessus, c`'est le cas pour le Niveau __PRODUCTION__.
 Les messages d`'erreur ou d`'avertissement sont affichés en rouge dans le champ __Message__.
 +
 Pour la liste des messages d`'erreur ou d`'avertissement, référez-vous à la section <<ProjAdm_AuditProjects.adoc#_projadm_auditingprojects_errorswarnings,Messages d`'erreur et d`'avertissement>>
-. Vérifiez si toutes les Branches et tous les Niveaux sont correctement définis et accessibles pour IKAN ALM, et corrigez les erreurs éventuelles.
+. Vérifiez si toutes les Branches et tous les Niveaux sont correctement définis et accessibles pour Kobee, et corrigez les erreurs éventuelles.
 . Si la configuration du Projet est cohérente, cliquez sur le lien image:icons/unlock.gif[,15,15] _Déverrouiller_ dans le panneau _Actions_ pour déverrouiller toutes les Branches et tous les Niveaux verrouillés du Projet.
 
 
@@ -73,12 +73,12 @@ L`'aperçu suivant liste les messages d`'erreur et d`'avertissement possibles lo
 |Message d`'erreur par rapport à une Branche: un Niveau de construction doit être défini dans son Cycle de vie.
 
 |`Impossible de trouver l'Emplacement des Archives des constructions`
-|Message d`'erreur par rapport à une Branche: aucun Emplacement des Archives de constructions n`'existe sous le chemin saisi et IKAN ALM ne peut pas le créer.
+|Message d`'erreur par rapport à une Branche: aucun Emplacement des Archives de constructions n`'existe sous le chemin saisi et Kobee ne peut pas le créer.
 
-Lors de l`'audit, IKAN ALM vérifie l`'existence de l`'Emplacement des Archives des constructions tel qu`'il a été spécifié dans les Paramètres système pour la Branche.
-S`'il n`'existe pas, IKAN ALM a essayé de le créer, mais ce processus a échoué, par exemple à cause d`'un problème de sécurité.
+Lors de l`'audit, Kobee vérifie l`'existence de l`'Emplacement des Archives des constructions tel qu`'il a été spécifié dans les Paramètres système pour la Branche.
+S`'il n`'existe pas, Kobee a essayé de le créer, mais ce processus a échoué, par exemple à cause d`'un problème de sécurité.
 
-Contactez votre Administrateur IKAN ALM, qui pourra vérifier les messages dans les Logs afin de trouver la cause de ce problème.
+Contactez votre Administrateur Kobee, qui pourra vérifier les messages dans les Logs afin de trouver la cause de ce problème.
 
 |`Aucun Environnement de construction trouvé`
 |Message d`'erreur par rapport à un Niveau de construction: un Niveau de construction doit être rattaché à un Environnement de construction.
@@ -127,11 +127,11 @@ Ici vous pouvez spécifier une valeur pour le Paramètre alm.phase.builder en cl
 
 |`Aucun Environnement de construction ou de déploiement trouvé`
 |Erreur d`'avertissement par rapport à un Niveau de Test.
-IKAN ALM permet de créer des Niveaux de Test qui ne sont liés ni à un Environnement de construction ni à un Environnement de déploiement.
+Kobee permet de créer des Niveaux de Test qui ne sont liés ni à un Environnement de construction ni à un Environnement de déploiement.
 Un tel Niveau de Test "`non opérationnel`" peut être considéré comme une étape (Jalon) atteinte dans le Cycle de vie.
 
 |`Aucun Environnement de déploiement trouvé`
 |Message d`'avertissement par rapport à un Niveau de Production.
-IKAN ALM permet de créer des Niveaux de Production qui ne sont pas liés à un Environnement de déploiement.
+Kobee permet de créer des Niveaux de Production qui ne sont pas liés à un Environnement de déploiement.
 Un tel Niveau "`non opérationnel`" peut être considéré comme une étape (Jalon) atteinte dans le Cycle de vie.
 |===

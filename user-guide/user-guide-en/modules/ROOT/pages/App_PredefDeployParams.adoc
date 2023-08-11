@@ -24,7 +24,7 @@ The following table provides an overview of the predefined Deploy Parameters:
 |alm.build.number
 |This parameter provides the number of the Build that will be deployed.
 
-The Build Number is a sequential number that is incremented by IKAN ALM when a Build Level Request is created.
+The Build Number is a sequential number that is incremented by Kobee when a Build Level Request is created.
 
 |alm.build.oid
 |This parameter provides the unique ID of the Build that will be deployed.
@@ -33,7 +33,7 @@ The Build Number is a sequential number that is incremented by IKAN ALM when a B
 a|This parameter provides the start date and time for the Build, that will be deployed.
 This is the timestamp indicating the start of the Build Script.
 The format is __date.time__.
-The date is in the format of the server where the IKAN ALM runs:
+The date is in the format of the server where the Kobee runs:
 
 * _YYYY/MM/DD_ for Europe
 * _MM/DD/YYYY_ for the USA
@@ -51,7 +51,7 @@ The date is in the format of the server where the IKAN ALM runs:
 a|This parameter provides start date and time for the Deploy (i.e., when the Deploy Script started).
 
 Format is __date.time__.
-The date is in the format of the server where IKAN ALM runs:
+The date is in the format of the server where Kobee runs:
 
 * _YYYY/MM/DD_ for Europe
 * _MM/DD/YYYY_ for the USA
@@ -82,7 +82,7 @@ a|This parameter provides the start date and time of the current Level Request.
 
 Format is _date.time_.
 
-The date is in the format used on the server where IKAN ALM runs:
+The date is in the format used on the server where Kobee runs:
 
 * _YYYY/MM/DD_ for Europe
 * _MM/DD/YYYY_ for the USA
@@ -126,10 +126,10 @@ a|This parameter provides the Deploy Tool type used:
 * MAVEN2
 
 |alm.project.description
-|This parameter provides the description of the IKAN ALM Project.
+|This parameter provides the description of the Kobee Project.
 
 |alm.project.name
-|This Parameter provides the IKAN ALM Project name.
+|This Parameter provides the Kobee Project name.
 This name can be different from the Project name as known within the used VCR (see alm.project.vcrProjectName)
 
 |alm.package.name
@@ -141,7 +141,7 @@ It provides the name of the Package associated with the Level Request.
 
 |alm.project.vcrProjectName
 |This parameter provides the name of the Project as known within the VCR.
-This name can be different from the IKAN ALM Project name (see alm.project.name).
+This name can be different from the Kobee Project name (see alm.project.name).
 
 |alm.projectStream.buildPrefix
 |This parameter provides the Build Prefix defined for the Project Stream.
@@ -159,7 +159,7 @@ a|This parameter provides the Project Stream Type:
 * B = Branch
 
 |alm.projectStream.vcrBranchId
-|This Parameter provides the Branch ID in the VCR defined in the IKAN ALM Project Stream (only for Branches).
+|This Parameter provides the Branch ID in the VCR defined in the Kobee Project Stream (only for Branches).
 
 |source
 |This parameter provides the Source Location as defined in the current Deploy Environment definition.

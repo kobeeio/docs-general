@@ -8,7 +8,7 @@
 
 A Schedule definition enables to automate the creation of Level Request for a particular Build Level.
 
-When a Schedule is linked to a Build Level, the IKAN ALM Scheduler Daemon will verify if there are changes in the Version Control Repository of the Project Stream the Level is linked to each time the Schedule interval expires.
+When a Schedule is linked to a Build Level, the Kobee Scheduler Daemon will verify if there are changes in the Version Control Repository of the Project Stream the Level is linked to each time the Schedule interval expires.
 
 If changes are found, a Level Request will automatically be created for the Build Level.
 
@@ -29,7 +29,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 
 . In the Global Administration context, select _Schedules > Create_.
@@ -90,7 +90,7 @@ Only if there was no source code activity, it will be assumed safe to update fro
 
 Avoid using a too "aggressive" Schedule that, for instance, will check for changes every 1 minute.
 This might stress the VCR, particularly when the schedule is attached to multiple Build Levels.
-Instead, use a "hook script" in the VCR that launches an IKAN ALM Level Request from the IKAN ALM Commandline Interface when a source has been committed.
+Instead, use a "hook script" in the VCR that launches an Kobee Level Request from the IKAN ALM Commandline Interface when a source has been committed.
 Please consult the documentation of your VCR for more information concerning hook scripts.
 ====
 +
@@ -98,7 +98,7 @@ Please consult the documentation of your VCR for more information concerning hoo
 [NOTE]
 ====
 A schedule that is attached to a Level of a tag-based Project Stream will not check for changes in the VCR and, hence, will have no effect, since it has no way of checking what has changed in the VCR since the last Level Request.
-Continuous Integration on a tag-based Project Stream is only possible by setting up VCR hook scripts that launch an IKAN ALM Level Request from the IKAN ALM Commandline Interface when a new tag has been created.
+Continuous Integration on a tag-based Project Stream is only possible by setting up VCR hook scripts that launch an Kobee Level Request from the IKAN ALM Commandline Interface when a new tag has been created.
 Please consult the documentation of your VCR for more information concerning hook scripts.
 ====
 . Once you filled out the fields as required, click _Create_.
@@ -168,7 +168,7 @@ For a detailed description of the fields, refer to <<GlobAdm_Schedules.adoc#_glo
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Schedule definition.
 
 <<GlobAdm_Schedules.adoc#_globadm_schedules_edit,Editing a Schedule Definition>>
@@ -176,7 +176,7 @@ It allows editing a Schedule definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Schedule definition.
 
 <<GlobAdm_Schedules.adoc#_globadm_schedules_delete,Deleting a Schedule Definition>>
@@ -184,7 +184,7 @@ It allows deleting a Schedule definition.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Schedule
 
 <<GlobAdm_Schedules.adoc#_globadm_schedules_history,Viewing the Schedule History>>

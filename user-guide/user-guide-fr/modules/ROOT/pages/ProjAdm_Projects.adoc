@@ -5,8 +5,8 @@
 = Projets 
 (((Administration des projets ,Projets)))  (((Projets)))  (((Options relatives à l’administration des projets ,Projets)))
 
-L`'écran _Aperçu des Projets_ fournit les informations concernant les Projets gérés par IKAN ALM.
-Tous les Utilisateurs IKAN ALM peuvent afficher l'Aperçu des Projets.
+L`'écran _Aperçu des Projets_ fournit les informations concernant les Projets gérés par Kobee.
+Tous les Utilisateurs Kobee peuvent afficher l'Aperçu des Projets.
 Cependant, seuls les utilisateurs ayant des droits d'affichage (appartenant au Groupe Utilisateurs du Projet) peuvent afficher les paramètres du Projet et seuls les Utilisateurs ayant des droits d'accès d'Administrateur sur le Projet (appartenant au Groupe Administrateurs du Projet) peuvent modifier le Projet.
 
 Se référer aux procédures suivantes pour plus d`'information:
@@ -53,19 +53,19 @@ Pour une description, se référer à la section <<GlobAdm_Project.adoc#_globadm
 | Description
 
 |image:icons/view.gif[,15,15]  Afficher
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Utilisateur de Projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d`'Utilisateur de Projet.
 Elle permet d`'afficher les paramètres du Projet sélectionné.
 
 <<ProjAdm_ProjMgt_ProjectName.adoc#_projadmin_projectsoverview_viewing,Afficher les paramètres d’un Projet>>
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur de projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur de projet.
 Elle permet de modifier les paramètres du Projet sélectionné et d`'accéder aux autres options relatives à l`'Administration des Projets.
 
 <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les paramètres d`'un Projet>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur de projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur de projet.
 Elle permet de supprimer le Projet sélectionné.
 
 <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_deleting,Supprimer un Projet>>
@@ -73,7 +73,7 @@ Elle permet de supprimer le Projet sélectionné.
 |image:icons/lock.gif[,15,15]  Verrouiller 
 
 image:icons/unlock.gif[,15,15]  Déverrouiller
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur de projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur de projet.
 Elle permet de verrouiller ou déverrouiller le Projet sélectionné.
 
 <<ProjAdm_Projects.adoc#_porjadm_projectsoverview_locking,Verrouiller/Déverrouiller un Projet>>
@@ -81,13 +81,13 @@ Elle permet de verrouiller ou déverrouiller le Projet sélectionné.
 |image:icons/hide.gif[,15,15]  Cacher 
 
 image:icons/show.gif[,15,15]  Montrer
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur de projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur de projet.
 Elle permet de cacher le Projet sélectionné.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_hidingshowing,Cacher/Montrer un Projet>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Utilisateur de projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Utilisateur de projet.
 Elle permet d`'afficher l`'Historique de toutes les opérations de création, de modification ou de suppression relatives à un Projet.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_historyview,Afficher l`'historique d`'un Projet>>
@@ -99,7 +99,7 @@ Elle permet d`'afficher l`'Historique de toutes les opérations de création, de
 
 [NOTE]
 ====
-Cette option n'est disponible que pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Utilisateur.
+Cette option n'est disponible que pour tous les Utilisateurs Kobee ayant des droits d`'accès d`'Utilisateur.
 ====
 
 . Cliquez sur l'icône image:icons/icon_ProjectAdmin_13x13.png[,13,13]  _Menu d'Administration des Projets_ dans le Menu Principal.
@@ -210,9 +210,9 @@ Pour plus d`'informations, se référer à la section <<ProjAdm_Projects.adoc#_p
 |Système de Suivi des Incidents
 |Ce champ contient la dénomination du Système de Suivi des Incidents externe.
 
-Si un Système de Suivi des Incidents est sélectionné, IKAN ALM créera automatiquement une Phase de Niveau de Suivi des Incidents, si un nouveau Niveau est créé pour le Projet. <<App_Phases.adoc#_phases_levelphases_issuetracking,Suivi des Incidents>>
+Si un Système de Suivi des Incidents est sélectionné, Kobee créera automatiquement une Phase de Niveau de Suivi des Incidents, si un nouveau Niveau est créé pour le Projet. <<App_Phases.adoc#_phases_levelphases_issuetracking,Suivi des Incidents>>
 
-Ce champ n`'est visible que si un Système de Suivi des Incidents externe est défini dans IKAN ALM. <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
+Ce champ n`'est visible que si un Système de Suivi des Incidents externe est défini dans Kobee. <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>>
 
 |Script de construction
 |Ce champ contient le nom du script de construction utilisé pour ce Projet.
@@ -238,7 +238,7 @@ Ces Utilisateurs seront notifiés du résultat de Requêtes de Niveau suivant le
 
 Ce Groupe d`'utilisateurs sera le Demandeur par défaut lors de la création d`'une nouvelle Requête de Niveau.
 Ce champ peut rester vide.
-Dans ce cas, tous les Utilisateurs IKAN ALM auront des droits d`'accès d`'Utilisateurs de Projet.
+Dans ce cas, tous les Utilisateurs Kobee auront des droits d`'accès d`'Utilisateurs de Projet.
 
 __Note:__ Les Utilisateurs ayant des droits d`'accès d`'Administrateur global ou d`'Administrateur de projet auront toujours des droits d`'accès d`'Utilisateur de projet.
 
@@ -290,7 +290,7 @@ image::ProjAdmin-Projects-Delete.png[,948,463]
 +
 . Vérifiez si vous voulez irrévocablement supprimer le Projet.
 +
-Si vous supprimer un Projet, les Branches, les Cycles de vie, les Niveaux, les Environnements et l`'information historique (Requêtes de niveau, Constructions, Déploiements, etc.) associés à ce Projet seront également supprimés dans IKAN ALM. Les Archives de construction ne seront pas supprimées.
+Si vous supprimer un Projet, les Branches, les Cycles de vie, les Niveaux, les Environnements et l`'information historique (Requêtes de niveau, Constructions, Déploiements, etc.) associés à ce Projet seront également supprimés dans Kobee. Les Archives de construction ne seront pas supprimées.
 
 . Cliquez sur le bouton _Supprimer_ pour confirmer la suppression.
 +

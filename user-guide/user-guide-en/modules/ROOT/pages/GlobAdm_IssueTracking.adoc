@@ -6,7 +6,7 @@
 = Issue Tracking 
 (((Global Administration ,Issue Tracking)))  (((Issue Tracking))) 
 
-The IKAN ALM Issue Tracking functionality provides the possibility to link issues from an external issue tracking system to an IKAN ALM Level Request.
+The Kobee Issue Tracking functionality provides the possibility to link issues from an external issue tracking system to an IKAN ALM Level Request.
 
 Issues can get linked to a Level Request in the following ways:
 
@@ -18,15 +18,15 @@ Issues can get linked to a Level Request in the following ways:
 [NOTE]
 ====
 
-You can only click through from a linked issue in IKAN ALM to the issue in the third-party Issue Tracking tool if the tool offers a web interface.
+You can only click through from a linked issue in Kobee to the issue in the third-party Issue Tracking tool if the tool offers a web interface.
 ====
 
-On top of this basic Issue Tracking functionality, IKAN ALM offers an extra tight integration for Atlassian JIRA, Microfocus ALM, Microsoft Team Foundation and GitHub with following additional functionality: 
+On top of this basic Issue Tracking functionality, Kobee offers an extra tight integration for Atlassian JIRA, Microfocus ALM, Microsoft Team Foundation and GitHub with following additional functionality: 
 
 * possibility to test the connection with the Issue Tracking system at the moment you create or edit an Issue Tracking System definition
-* automatic synchronization of handled issues with the Issue Tracking system: IKAN ALM retrieves additional information, such as a short description, the owner, the priority, ...from the corresponding JIRA Issue, Microfocus ALM Defect, Team Foundation Work Item or GitHub Issue. This information is synchronized each time the build result evolves in the IKAN ALM Lifecycle.
+* automatic synchronization of handled issues with the Issue Tracking system: Kobee retrieves additional information, such as a short description, the owner, the priority, ...from the corresponding JIRA Issue, Microfocus ALM Defect, Team Foundation Work Item or GitHub Issue. This information is synchronized each time the build result evolves in the IKAN ALM Lifecycle.
 * manual synchronization of issues linked to a Level Request on the _Level Request Detail_ screen
-* option to automatically add a comment to the issue/defect/work item in JIRA/MF ALM/Github/Team Foundation after a successful Level Request. This comment will contain a link to the IKAN ALM Level Request.
+* option to automatically add a comment to the issue/defect/work item in JIRA/MF ALM/Github/Team Foundation after a successful Level Request. This comment will contain a link to the Kobee Level Request.
 
 
 Refer to the following sections for detailed information.
@@ -64,7 +64,7 @@ For more information, refer to the sections <<App_Phases.adoc#_phases_levelphase
 [[_pcreateissuetrackingsystem]]
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 . In the Global Administration context, select _Issue Tracking > Create_.
 +
@@ -84,20 +84,20 @@ image::GlobAdmin-IssueTracking-Create.png[,570,447]
 |Enter the Name of the external Issue Tracking System.
 
 This field is the only mandatory field.
-However, if only the Name is provided, the integration capability is confined to being very basic, meaning that issues will have to be created and linked manually to the IKAN ALM Level Requests.
+However, if only the Name is provided, the integration capability is confined to being very basic, meaning that issues will have to be created and linked manually to the Kobee Level Requests.
 
 |Description
 |Enter a description for the Issue Tracking System.
 
 |Plugin Factory Class
 a|Select the name of the class to be used for the Issue Tracking System.
-The classes are available in IKAN ALM as system functions: 
+The classes are available in Kobee as system functions: 
 
 ** "generic" system (Bugzilla, Track, Mantis, ...):
 +
 be.ikan.scm4all.plugin.issuetracking.generic.GenericITSPluginFactory
 +
-IKAN ALM has a basic integration with these Issue Tracking System.
+Kobee has a basic integration with these Issue Tracking System.
 ** JIRA:be.ikan.scm4all.plugin.issuetracking.jira.JiraITSPluginFactory
 ** MicroFocus ALM: be.ikan.scm4all.plugin.issuetracking.mfalm.MFAlmITSPluginFactory
 ** GitHub: be.ikan.scm4all.plugin.issuetracking.github.GitHubITSPluginFactory
@@ -107,7 +107,7 @@ _Note:_ The integration with JIRA, MF ALM, Team Foundation and GitHub also retri
 Issues are synchronized with the external Issue Tracking System at each Level Request deliver in the Lifecycle.
 
 |URL
-|Enter the template URL used to click through from an issue in IKAN ALM to the issue in the external Issue Tracking System.
+|Enter the template URL used to click through from an issue in Kobee to the issue in the external Issue Tracking System.
 
 Obviously, the Issue Tracking System must have a web interface that will guide you (perhaps after having provided the necessary login parameters) to the detailed description of an Issue.
 In the URL, the issue number variable must be provided as "$\{issueId}". 
@@ -137,13 +137,13 @@ The characters you enter are displayed as asterisks.
 |Enter the Issue Pattern.
 
 This Issue Pattern must be a valid regular expression.
-For more information on how to provide valid regular expressions that may be interpreted by IKAN ALM, refer to https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html,window=_blank].
+For more information on how to provide valid regular expressions that may be interpreted by Kobee, refer to https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html,window=_blank].
 
 If provided, this pattern will be used to detect issue numbers in the commit comments in the VCR. This pattern matching is done in a separate Phase at the end of a successful Build Level Request.
 
 The pattern matching is case insensitive, this is reflected in the examples below.
 
-Note that the field may be neglected (together with the Issue ID Pattern) for a Team Foundation ITS when it is connected to a Project with a Team Foundation versioning system: in that case the Work Items are directly connected to a Commit, so it`'s not necessary that IKAN ALM parses the issue comments to detect the connected Work Items.
+Note that the field may be neglected (together with the Issue ID Pattern) for a Team Foundation ITS when it is connected to a Project with a Team Foundation versioning system: in that case the Work Items are directly connected to a Commit, so it`'s not necessary that Kobee parses the issue comments to detect the connected Work Items.
 
 *Examples* (the bold text is the text that will be matched):
 
@@ -155,7 +155,7 @@ Example 1: webpad(\s)*[0-9]+((\s)*,(\s)*[0-9]+)*
 
 Example 2: \[#([A-Z0-9]+)-([0-9]+)\]
 
-- Small fix in the about menu *[#WEBPAD-7]*. - Also fixed a general IKAN ALM problem *[#ALM-3788]*. - Finally also tackled issue *[#gen-344]*.
+- Small fix in the about menu *[#WEBPAD-7]*. - Also fixed a general Kobee problem *[#ALM-3788]*. - Finally also tackled issue *[#gen-344]*.
 
 |Issue ID Pattern
 |Enter the Issue ID Pattern.
@@ -183,7 +183,7 @@ Example 2: ``[A-Z0-9]+``-[0-9]+
 |This option has no effect if you use the GenericITSPlugin.
 
 Select the _Yes_ option to automatically add a comment to the Issue in the Issue Tracking System.
-This comment will contain a link to the IKAN ALM Level Request.
+This comment will contain a link to the Kobee Level Request.
 
 The addition of this comment will also be listed in the Level Request Issue Tracking Phase Log.
 |===
@@ -202,7 +202,7 @@ Refer to the section <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperti
 image::GlobAdmin-IssueTracking-Create-Warning.png[,414,23] 
 +
 Once the Issue Tracking System has been defined, you must activate it on the Project. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
-. In case you defined a JIRA, MF ALM, GitHub or Team Foundation Issue Tracking System, you can test if IKAN ALM can establish the connection.
+. In case you defined a JIRA, MF ALM, GitHub or Team Foundation Issue Tracking System, you can test if Kobee can establish the connection.
 +
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Editing an Issue Tracking System Definition>>
 
@@ -249,7 +249,7 @@ For a detailed description of the fields, refer to <<GlobAdm_IssueTracking.adoc#
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing an Issue Tracking System definition.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Editing an Issue Tracking System Definition>>
@@ -257,7 +257,7 @@ It allows editing an Issue Tracking System definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting an Issue Tracking System definition.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_delete,Deleting an Issue Tracking System Definition>>
@@ -265,7 +265,7 @@ It allows deleting an Issue Tracking System definition.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on an Issue Tracking System and its properties.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Viewing the Issue Tracking System History>>
@@ -306,7 +306,7 @@ You can also click:
 * _Refresh_ to retrieve the settings from the database.
 * _Cancel_ to return to the previous screen without saving the changes
 
-. In case you defined a JIRA, MF ALM, GitHub or Team Foundation Issue Tracking System with its required properties, you can test if IKAN ALM can establish the connection.
+. In case you defined a JIRA, MF ALM, GitHub or Team Foundation Issue Tracking System with its required properties, you can test if Kobee can establish the connection.
 +
 Click the _Test Connection_ button.
 +
@@ -407,7 +407,7 @@ You can only define Properties which have been implemented by the __Plugin Facto
 This link is only available if a Property has been defined by the Plugin Factory Class, but its value has not been specified yet.
 Otherwise, only the links __Edit__, _Delete_ and _History_ are available.
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows creating an Issue Tracking System Property definition.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_create,Creating an Issue Tracking System Property>>
@@ -415,7 +415,7 @@ It allows creating an Issue Tracking System Property definition.
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing an Issue Tracking System Property definition.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_edit,Editing an Issue Tracking System Property>>
@@ -423,7 +423,7 @@ It allows editing an Issue Tracking System Property definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting an Issue Tracking System Property definition.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_delete,Deleting an Issue Tracking System Property>>
@@ -448,7 +448,7 @@ The following fields are displayed:
 | Meaning
 
 |Name
-|The name is predefined by IKAN ALM in function of the type of Issue Tracking System.
+|The name is predefined by Kobee in function of the type of Issue Tracking System.
 
 |Value
 |Depending on the Issue Tracking system and the property, this field is mandatory or optional.
@@ -465,21 +465,21 @@ Example for the Team Foundation collectionURL property: `http(s)://ServerName[:8
 |This field contains the default value.
 
 |Required
-|Option managed by IKAN ALM.
+|Option managed by Kobee.
 
 Required properties must be provided in order to have a full functional Issue Tracking integration.
 
 Possible values: _Yes_ or __No__.
 
 |Secure
-|Option managed by IKAN ALM.
+|Option managed by Kobee.
 
 The value of secured properties will be hidden (replaced by *) from the user.
 
 Possible values: _Yes_ or __No__.
 
 |Description
-|Option managed by IKAN ALM.
+|Option managed by Kobee.
 
 The description for the Issue tracking System Property.
 |===

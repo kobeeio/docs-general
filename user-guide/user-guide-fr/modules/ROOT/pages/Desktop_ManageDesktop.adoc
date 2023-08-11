@@ -5,7 +5,7 @@
 = Administrer son Bureau 
 (((Bureau ,Administrer votre Bureau)))  (((Administrer votre Bureau))) 
 
-Chaque Utilisateur IKAN ALM dispose de son Bureau personnel composé d`'onglets de Bureau administrables, chacun contenant l`'information actuelle des Branches de projet, des Niveaux et des Paquets qui l`'intéressent.
+Chaque Utilisateur Kobee dispose de son Bureau personnel composé d`'onglets de Bureau administrables, chacun contenant l`'information actuelle des Branches de projet, des Niveaux et des Paquets qui l`'intéressent.
 Vous pouvez personnaliser jusqu`'à 10 onglets de Bureau et chaque onglet peut contenir jusqu`'à 20 types d'éléments.
 
 En plus, le Bureau personnel offre un raccourci vers les options de création et de consultation des Requêtes de niveau.

@@ -5,11 +5,11 @@
 = Cycles de vie 
 (((Options relatives à l'administration des projets ,Cycles de vie)))  (((Administration des projets ,Cycles de vie)))  (((Cycles de vie))) 
 
-A chaque Branche d`'un Projet est associé un Cycle de vie, définissant les étapes logiques dans le processus IKAN ALM.
-Une telle étape est appelée un "`Niveau`" dans IKAN ALM.
+A chaque Branche d`'un Projet est associé un Cycle de vie, définissant les étapes logiques dans le processus Kobee.
+Une telle étape est appelée un "`Niveau`" dans Kobee.
 Le menu _Cycles de vie_ vous permet de définir les Cycles de vie et de spécifier la séquence des Niveaux pour chaque Cycle de vie.
 
-Lors de la création d`'un Projet IKAN ALM, la Branche Principale ainsi que le Cycle de vie appelé BASE qui lui est associé, sont créés automatiquement.
+Lors de la création d`'un Projet Kobee, la Branche Principale ainsi que le Cycle de vie appelé BASE qui lui est associé, sont créés automatiquement.
 
 Trois types de Niveaux différents peuvent être associés au Cycle de vie: un niveau de Construction, de Test ou de Production.
 Il faut assigner au moins un niveau de Construction à un Cycle de vie avant de pouvoir définir des Requêtes de niveau dans la Branche reliée à ce Cycle de vie.
@@ -150,19 +150,19 @@ Pour une description des champs, se référer à la section <<ProjAdm_LifeCycles
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur de Projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur de Projet.
 Elle permet de modifier la définition du Cycle de vie.
 
 <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_editlifecycle,Modifier les paramètres d`'un Cycle de vie>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur de Projet.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur de Projet.
 Elle permet de supprimer la définition du Cycle de vie, sauf celle du Cycle de vie BASE qui est associé à la Branche Principale. 
 
 <<ProjAdm_LifeCycles.adoc#_plifecyclemgt_deletelifecycle,Supprimer un Cycle de vie>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'Historique de toutes les opérations de création, de modification ou de suppression relatives à un Cycle de vie.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_historyview,Afficher l`'historique d`'un projet>>

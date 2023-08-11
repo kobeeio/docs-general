@@ -5,7 +5,7 @@
 = Scripting Tools 
 (((Global Administration ,Scripting Tools)))  (((Scripting Tools))) 
 
-IKAN ALM supports the following Scripting Tools:
+Kobee supports the following Scripting Tools:
 
 * <<GlobAdm_ScriptingTools.adoc#_sglobadm_scriptingtool_ant,ANT>>
 * <<GlobAdm_ScriptingTools.adoc#_sglobadm_scriptingtool_gradle,Gradle>>
@@ -13,11 +13,11 @@ IKAN ALM supports the following Scripting Tools:
 * <<GlobAdm_ScriptingTools.adoc#_sglobad_scriptingtool_maven2,Maven2>>
 
 
-The following sections explain how to define a Scripting Tool so that the IKAN ALM Agent may use it for Build and Deploy actions.
+The following sections explain how to define a Scripting Tool so that the Kobee Agent may use it for Build and Deploy actions.
 
 [NOTE]
 ====
-You must always install the defined Scripting Tool on the IKAN ALM Agent in order to execute Build and Deploy scripts.
+You must always install the defined Scripting Tool on the Kobee Agent in order to execute Build and Deploy scripts.
 ====
 
 [[_sglobadm_scriptingtools_create]]
@@ -26,7 +26,7 @@ You must always install the defined Scripting Tool on the IKAN ALM Agent in orde
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 
 
@@ -78,19 +78,19 @@ You can also:
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Scripting Tool definition.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Scripting Tool definition.
 
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Scripting Tool.
 |===
 +
@@ -108,8 +108,8 @@ Refer to the following sections for detailed information:
 
 Apache Ant is a Java-based build tool.
 In theory, it resembles to __make__, without __make__'s wrinkles.
-If ANT is installed on a machine connected to your Build/Deploy Environments, IKAN ALM will be able to interact with it.
-Therefore, you must define the ANT Scripting Tool in the IKAN ALM application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
+If ANT is installed on a machine connected to your Build/Deploy Environments, Kobee will be able to interact with it.
+Therefore, you must define the ANT Scripting Tool in the Kobee application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
 
 Refer to the following sections for detailed information:
 
@@ -125,7 +125,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 . In the Global Administration context, select _Scripting Tools > Create_.
 
@@ -192,7 +192,7 @@ https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html[https://
 a|Enter the JAVA ANT Classpath in this field.
 This field is mandatory.
 
-Since IKAN ALM launches ANT via Java, you must ensure that all required jar files are available.
+Since Kobee launches ANT via Java, you must ensure that all required jar files are available.
 Some values can be set in this field, but also the Lib Patch can be used (see below).
 
 Depending on the ANT version you use, the CLASSPATH should at least include:
@@ -231,7 +231,7 @@ Select __No__, if you do not use the Ant Launcher, but launch Ant via Java.
 |Enter commandline options in this fields.
 This field is optional.
 
-The commandline options provided by default by IKAN ALM, like -buildfile, -logfiles, -verbose, -debug ,... will not be accepted.
+The commandline options provided by default by Kobee, like -buildfile, -logfiles, -verbose, -debug ,... will not be accepted.
 
 Sample options are -keep-going, or -noinput.
 
@@ -328,19 +328,19 @@ For a detailed description of the fields, refer to <<GlobAdm_ScriptingTools.adoc
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Scripting Tool definition.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Scripting Tool definition.
 
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Scripting Tool
 |===
 
@@ -438,8 +438,8 @@ a|_RELATED TOPICS_
 (((Scripting Tools ,Gradle))) 
 
 Gradle is an open source build automation system that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language (DSL) instead of the XML form used by Apache Maven for declaring the project configuration.
-If Gradle is installed on a machine connected to your Build/Deploy Environments, IKAN ALM will be able to interact with it.
-Therefore, you must define the Gradle Scripting Tool in the IKAN ALM application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
+If Gradle is installed on a machine connected to your Build/Deploy Environments, Kobee will be able to interact with it.
+Therefore, you must define the Gradle Scripting Tool in the Kobee application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
 
 Refer to the following sections for detailed information:
 
@@ -455,7 +455,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 . In the Global Administration context, select _Scripting Tools > Create_.
 
@@ -546,7 +546,7 @@ _Note:_ This value will be set as a commandline option (--gradle-user-home).
 |Enter commandline options in this fields.
 This field is optional.
 
-The commandline options which might be provided by default by IKAN ALM will not be accepted: .-g, --gradle-user-home, -q, --quiet, -i, --info,-d, --debug, -s, --stacktrace, -S, --full-stacktrace, -b, --build-file
+The commandline options which might be provided by default by Kobee will not be accepted: .-g, --gradle-user-home, -q, --quiet, -i, --info,-d, --debug, -s, --stacktrace, -S, --full-stacktrace, -b, --build-file
 
 Sample (accepted) options are -keep-going, or -noinput.
 
@@ -652,19 +652,19 @@ For a detailed description of the fields, refer to <<GlobAdm_ScriptingTools.adoc
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Scripting Tool definition.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Scripting Tool definition.
 
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Scripting Tool
 |===
 
@@ -778,9 +778,9 @@ NANT is a free .NET build tool.
 In theory it resembles to _make_ without __make__'s wrinkles.
 In practice it is a lot like Ant.
 
-If NANT is installed on a machine connected to your Build/Deploy Environments, IKAN ALM will be able to interact with it. 
+If NANT is installed on a machine connected to your Build/Deploy Environments, Kobee will be able to interact with it. 
 
-Therefore, you must define the NANT Scripting Tool in the IKAN ALM application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
+Therefore, you must define the NANT Scripting Tool in the Kobee application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
 
 Refer to the following sections for detailed information:
 
@@ -796,7 +796,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 . In the Global Administration context, select _Scripting Tools > Create_.
 
@@ -850,7 +850,7 @@ This field is mandatory.
 |Enter commandline options in this fields.
 This field is optional.
 
-The commandline options provided by default by IKAN ALM, like -buildfile, -logfiles, -verbose, -debug ,... will not be accepted.
+The commandline options provided by default by Kobee, like -buildfile, -logfiles, -verbose, -debug ,... will not be accepted.
 
 Sample options are -keep-going, or -noinput.
 
@@ -947,19 +947,19 @@ For a detailed description of the fields, refer to <<GlobAdm_ScriptingTools.adoc
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Scripting Tool definition.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Scripting Tool definition.
 
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Scripting Tool
 |===
 
@@ -1059,9 +1059,9 @@ a|_RELATED TOPICS_
 
 Maven2 is a scripting tool that can be used for building and managing any Java-based project.
 Its primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time.
-If Maven2 is installed on a machine connected to your Build/Deploy Environments, IKAN ALM will be able to interact with Maven2. 
+If Maven2 is installed on a machine connected to your Build/Deploy Environments, Kobee will be able to interact with Maven2. 
 
-Therefore, you must define the Maven2 Scripting Tool in the IKAN ALM application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
+Therefore, you must define the Maven2 Scripting Tool in the Kobee application and, when creating the Build or Deploy Environment, specify it as being the Build or Deploy Tool to be used.
 
 Refer to the following sections for detailed information:
 
@@ -1078,7 +1078,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Admin Access Rights in IKAN ALM.
+This option is only available if you have Global Admin Access Rights in Kobee.
 ====
 
 . In the Global Administration context, select _Scripting Tools > Create_.
@@ -1173,7 +1173,7 @@ Please refer to <<ProjAdm_EnvParams.adoc#_environmentparams_create,Creating Envi
 For example: the option "`-e`" will give you more information about error messages.
 This field is optional.
 
-Please note that you can NOT use the following options as they are already used by IKAN ALM: "`-X`" or "`--debug`" (Debug), "`-s`" or "`--settings`" (Settings File), "`-P`" or "`--activate-profiles`" (Activate Profiles) and "`-B`" or "`--batch-mode`".
+Please note that you can NOT use the following options as they are already used by Kobee: "`-X`" or "`--debug`" (Debug), "`-s`" or "`--settings`" (Settings File), "`-P`" or "`--activate-profiles`" (Activate Profiles) and "`-B`" or "`--batch-mode`".
 
 The Commandline Options defined here will be used by default.
 If necessary, they can be overridden for the different build or deploy environments.
@@ -1277,19 +1277,19 @@ For a detailed description of the fields, refer to <<GlobAdm_ScriptingTools.adoc
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Scripting Tool definition.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Scripting Tool definition.
 
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Scripting Tool
 |===
 

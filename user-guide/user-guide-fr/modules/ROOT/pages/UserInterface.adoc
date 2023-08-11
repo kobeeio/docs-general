@@ -6,17 +6,17 @@
 
 Se référer aux sections suivantes pour des informations plus détaillées concernant:
 
-* <<UserInterface.adoc#_navigationikanalm,Naviguer dans IKAN ALM>>
-* <<UserInterface.adoc#_regularikanalmscreens,L'écran IKAN ALM>>
+* <<UserInterface.adoc#_navigationikanalm,Naviguer dans Kobee>>
+* <<UserInterface.adoc#_regularikanalmscreens,L'écran Kobee>>
 * <<UserInterface.adoc#_desktop_autorefresh,Actualisation automatique>>
 
 
 [[_navigationikanalm]]
-== Naviguer dans IKAN ALM  
+== Naviguer dans Kobee  
 (((Interface Utilisateur ,Navigation))) 
 
 === Menu Principal
-L'Interface Utilisateur d'IKAN ALM est composée de 3 sections principales: le Bureau, la section Administration des projets et la section Administration globale.
+L'Interface Utilisateur d'Kobee est composée de 3 sections principales: le Bureau, la section Administration des projets et la section Administration globale.
 Ces sections sont accessibles à partir du __Menu Principal__, la barre d'outils bleue en haut de l'écran.
 À droite, elle contient les Paramètres de l'Utilisateur actuel ainsi que l'aide contextuelle.
 
@@ -113,7 +113,7 @@ a|Ce menu déroulant contient les options suivantes:
 Choisir cette option pour afficher l'écran les Paramètres Personnels. <<Desktop_PersonalSettings.adoc#_desktop_personalsettings_edit,Modifier vos Paramètres Personnels>>
 * _Déconnexion_
 +
-Choisir cette option pour quitter IKAN ALM. <<Logon.adoc#_ploggingout,Déconnexion>>
+Choisir cette option pour quitter Kobee. <<Logon.adoc#_ploggingout,Déconnexion>>
 
 |_Aide_
 a|Ce menu déroulant contient les options suivantes:
@@ -123,10 +123,10 @@ a|Ce menu déroulant contient les options suivantes:
 Choisir cette option pour aller vers la documentation du site.
 * _Documentation REST API_
 +
-Choisir cette option pour ouvrir l'écran de la Documentation intégrée REST API d'IKAN ALM.
+Choisir cette option pour ouvrir l'écran de la Documentation intégrée REST API d'Kobee.
 * _À propos de_
 +
-Choisir cette option pour ouvrir l'écran À propos d'IKAN ALM. Cette page montre les informations au sujet de votre licence installée.
+Choisir cette option pour ouvrir l'écran À propos d'Kobee. Cette page montre les informations au sujet de votre licence installée.
 |===
 
 
@@ -141,24 +141,24 @@ Si vous sélectionnez l'option "Menu d'Administration des projets" ou "Menu d'Ad
 
 Les options de sous-menu suivies d'un petit triangle disposent d'un menu déroulant contenant des options de sélection supplémentaires.
 
-Dans les écrans IKAN ALM, les _Liens_ sont disponibles dans ou en-dessous des panneaux d'Aperçu.
-Si vous cliquez un de ces liens, un autre écran IKAN ALM s'affichera.
+Dans les écrans Kobee, les _Liens_ sont disponibles dans ou en-dessous des panneaux d'Aperçu.
+Si vous cliquez un de ces liens, un autre écran Kobee s'affichera.
 
 
 image::UserInterface_MainMenu_Navigating.png[,1012,404]
 
 
 [[_regularikanalmscreens]]
-== L'écran IKAN ALM 
+== L'écran Kobee 
 (((Interface Utilisateur ,Écrans))) 
 
-Un écran IKAN ALM contient les éléments principaux suivants:
+Un écran Kobee contient les éléments principaux suivants:
 
 
 image::UserInterface-Screens.png[,1222,704] 
 
 === Le fil d'Ariane
-Le _fil d'Ariane_ en-dessous du sous-menu montre comment l'utilisateur a accédé l'écran IKAN ALM affiché.
+Le _fil d'Ariane_ en-dessous du sous-menu montre comment l'utilisateur a accédé l'écran Kobee affiché.
 Le format suivant est utilisé: _Option du Menu Principal > option du sous-menu_
 
 [[_babcjedaj8]]
@@ -183,7 +183,7 @@ Pour plus d`'informations concernant l'utilisation des Filtres, se référer à 
 === Les panneaux de création
 image::GettingStarted-UserInterface-create-panels.png[,453,285] 
 
-Les panneaux de _Création_ permettent de définir de nouveaux objets IKAN ALM.
+Les panneaux de _Création_ permettent de définir de nouveaux objets Kobee.
 Les champs obligatoires sont marqués d'un astérisque rouge.
 
 Cliquez sur le bouton _Créer_ pour créer l'objet.
@@ -191,16 +191,16 @@ En fonction de l'objet que vous créez, le bouton _Réinitialiser_ nettoiera les
 
 === Les panneaux d'Aperçu
 Les panneaux d'_Aperçu_ sont affichés en-dessous du panneau de _Recherche_ ou de _Création_.
-Si aucun critère de recherche n'est spécifié, l'aperçu liste tous les objets IKAN ALM du type sélectionné.
-Si des critères de recherche sont spécifiés, seuls les objets IKAN ALM correspondant aux critères de recherche sont affichés.
+Si aucun critère de recherche n'est spécifié, l'aperçu liste tous les objets Kobee du type sélectionné.
+Si des critères de recherche sont spécifiés, seuls les objets Kobee correspondant aux critères de recherche sont affichés.
 
 [NOTE]
 ====
 Tous les critères de recherche appliqués sont indiqués en bas de la liste des résultats.
 ====
 
-Le panneau d'__Aperçu__ peut afficher un ou plusieurs liens à gauche des objets IKAN ALM listés.
-Les options diffèrent en fonction des objets IKAN ALM affichés et des droits d'accès de l'Utilisateur.
+Le panneau d'__Aperçu__ peut afficher un ou plusieurs liens à gauche des objets Kobee listés.
+Les options diffèrent en fonction des objets Kobee affichés et des droits d'accès de l'Utilisateur.
 
 Si vous disposez des droits d'accès d'Utilisateur, les liens/icônes suivants sont disponibles:
 
@@ -218,7 +218,7 @@ Vous ne pourrez pas modifier les valeurs.
 |Cette option est disponible pour les écrans d'aperçu dans le contexte de l'Administration globale et de l'Administration des projets.
 Elle est également disponible dans certains écrans détaillés de l'Administration globale et de l'Administration des projets, par exemple dans l'écran des Paramètres système ou l'écran "Modifier un Projet".
 
-Toutes les opérations exécutées sur des objets et des composants associés à ces sections sont enregistrés dans la Base de données IKAN ALM.
+Toutes les opérations exécutées sur des objets et des composants associés à ces sections sont enregistrés dans la Base de données Kobee.
 Le lien _Historique_ permet d'afficher l'Historique des événements.
 
 |image:icons/status.gif[,15,15]  Statut
@@ -284,7 +284,7 @@ Les colonnes marquées de l'icône image:icons/sort.gif[,18,19]  peuvent être r
 [[_desktop_autorefresh]]
 == Actualisation automatique
 
-Si votre Administrateur global IKAN ALM a spécifié un __Intervalle d'actualisation automatique__ dans le panneau _Autres activités_ dans l'écran <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>, l'option __Actualisation automatique__ sera disponible dans le Bureau et dans les Aperçus des Requêtes de niveau et des Constructions et Déploiements.
+Si votre Administrateur global Kobee a spécifié un __Intervalle d'actualisation automatique__ dans le panneau _Autres activités_ dans l'écran <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>, l'option __Actualisation automatique__ sera disponible dans le Bureau et dans les Aperçus des Requêtes de niveau et des Constructions et Déploiements.
 
 Si l'option _Actualisation automatique_ est activée, l'écran sera réinitialisé suivant l'intervalle spécifié dans le champ "Intervalle d'actualisation automatique" dans les Paramètres du système.
 

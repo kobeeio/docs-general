@@ -5,14 +5,14 @@
 = Détails de l`'URL du flux RSS 
 (((URL du flux RSS (Détails)))) 
 
-L`'URL pour IKAN ALM a la structure suivante:
+L`'URL pour Kobee a la structure suivante:
 
 _protocole://almhost:almhostport/alm/displayRss.action?[requestparams]_
 
-Cette structure est identique aux Paramètres du Système de l`'URL d`'IKAN ALM (voir Administration Globale > Paramètres Système).
+Cette structure est identique aux Paramètres du Système de l`'URL d`'Kobee (voir Administration Globale > Paramètres Système).
 
 * "`protocole`" =http ouhttps
-* "`almhost:almhostport`" = le domaine du Serveur IKAN ALM
+* "`almhost:almhostport`" = le domaine du Serveur Kobee
 +
 Par exemple: localhost:8080
 * "`requestparams`" = 
@@ -30,7 +30,7 @@ Le tableau ci-dessous affiche les critères optionnels possibles:
 |Il s`'agit du titre affiché dans les flux RSS.
 
 Si cette valeur reste vide, elle sera définie automatiquement lors de la Construction des flux RSS.
-Ainsi, il est possible d`'avoir plus d`'un flux RSS pour IKAN ALM dans votre lecteur RSS (par exemple, pour des projets différents).
+Ainsi, il est possible d`'avoir plus d`'un flux RSS pour Kobee dans votre lecteur RSS (par exemple, pour des projets différents).
 
 _Note:_ les espaces seront remplacés par le signe "`+`".
 
@@ -72,7 +72,7 @@ Les valeurs valides sont de 0-2, soit 0=Construction, 1=Test, 2=Production.
 |lang=
 |"`Code langage`" valide indiquant la langue de l`'Utilisateur (la valeur par défaut = none = en).
 
-Par exemple: lang=en, lang=de, lang=fr (les trois langues actuellement supportées par IKAN ALM)
+Par exemple: lang=en, lang=de, lang=fr (les trois langues actuellement supportées par Kobee)
 |===
 
 
@@ -84,5 +84,5 @@ Quelques exemples d`'URLs valides:
 
 \https://pe4600:8080/alm/displayRss.action?projectName=DEMOCVS&projectStreamBuildPrefix=1&projectStreamBuildSuffix=1&levelTypes=0&lang=fr
 
-\https://pe4600:8080/alm/displayRss.action?projectName=DEMOCVS&projectStreamBuildPrefix=1&projectStreamBuildSuffix=1&levelTypes=0&title=IKAN ALM+builds+in+project+DEMOCVS
+\https://pe4600:8080/alm/displayRss.action?projectName=DEMOCVS&projectStreamBuildPrefix=1&projectStreamBuildSuffix=1&levelTypes=0&title=Kobee+builds+in+project+DEMOCVS
 

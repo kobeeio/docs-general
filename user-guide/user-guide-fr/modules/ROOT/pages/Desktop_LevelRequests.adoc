@@ -89,7 +89,7 @@ image::Desktop-LevelRequests-Flow-Build.png[,906,1108]
 Une Requête de niveau de Construction passe directement à l`'étape 5; une Requête de niveau de reconstruction peut sauter les étapes 2, 3 et/ou 4.
 
 |2.
-|Le processus Moniteur sur le serveur IKAN ALM détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
+|Le processus Moniteur sur le serveur Kobee détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
 
 Cette étape est optionnelle dans le cas d`'une Reconstruction vu qu`'il n`'y a pas de Pré- ni de Post-notifications sur un Niveau de construction.
 
@@ -108,7 +108,7 @@ Si nécessaire, les Groupes de Pré- et de Post-approbations sont définis dans 
 Cette étape est optionnelle dans le cas d`'une Reconstruction.
 
 |5.
-|Si toutes les Approbations d`'une Reconstruction pour laquelle des Pré- et des Post-Approbations ont été définies sont <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,accordées ou refusées>>, et si la date et l`'heure d`'exécution sont atteintes, le Moniteur établit le statut de la Requête de niveau à __exécution__ et récupère le code Source du RCV et le met dans un sous-répertoire de l`'Emplacement des Copies de travail sur le serveur IKAN ALM.
+|Si toutes les Approbations d`'une Reconstruction pour laquelle des Pré- et des Post-Approbations ont été définies sont <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,accordées ou refusées>>, et si la date et l`'heure d`'exécution sont atteintes, le Moniteur établit le statut de la Requête de niveau à __exécution__ et récupère le code Source du RCV et le met dans un sous-répertoire de l`'Emplacement des Copies de travail sur le serveur Kobee.
 
 Cet emplacement est défini dans l`'écran des <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>.
 
@@ -123,7 +123,7 @@ Puis la séquence d`'actions se termine.
 Vu qu`'une Requête de niveau de (Re)construction peut avoir plus d`'une Construction, les étapes 8 jusqu'à 18 seront réalisées pour chaque Construction liée à la Requête de niveau.
 
 |8.
-|Dès que le statut de construction est mis à __Prêt__, l`'Agent de Construction sur la Machine ou les Machines où la Construction doit être créée, détecte ce statut et copie le code Source à partir de l`'Emplacement des Copies de travail sur le Serveur IKAN ALM vers l`'emplacement Source de l`'Environnement de construction défini sur cette Machine et pour ce Niveau de construction.
+|Dès que le statut de construction est mis à __Prêt__, l`'Agent de Construction sur la Machine ou les Machines où la Construction doit être créée, détecte ce statut et copie le code Source à partir de l`'Emplacement des Copies de travail sur le Serveur Kobee vers l`'emplacement Source de l`'Environnement de construction défini sur cette Machine et pour ce Niveau de construction.
 
 L`'action de transfert utilisée (local FileCopy, remote FileCopy, SecureCopy ou FTP) dépend du type de Transporteur lié à la Machine sur laquelle l`'Environnement de construction est défini.
 Consultez la section <<ProjAdm_BuildEnv.adoc#_projadm_buildenvironments,Environnements de construction>> pour plus d`'informations.
@@ -151,18 +151,18 @@ Si là non plus aucun script n`'a été spécifié, le processus de vérificatio
 __Dans la seconde phase__, l`'Agent de construction essaie de localiser le script de construction qu`'il a déterminé devoir utiliser durant la première phase.
 D`'abord, l`'Agent de construction cherche les codes Source contrôlés disponibles dans l`'emplacement Source de l`'Environnement de construction.
 Si le script de construction est trouvé, le processus de vérification du script de construction réussit et l`'étape 12 sera exécutée.
-Si le script de construction n`'est pas trouvé dans les codes Source contrôlés disponibles, l`'Agent de construction recherche l`'emplacement IKAN ALM par défaut du script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
+Si le script de construction n`'est pas trouvé dans les codes Source contrôlés disponibles, l`'Agent de construction recherche l`'emplacement Kobee par défaut du script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
 Si le script de construction est trouvé, il sera transféré vers l`'emplacement Source de l`'Environnement de construction défini sur cette Machine et pour ce Niveau de construction.
 Le mécanisme de transfert utilisé sera le même que celui utilisé pour le code Source.
 Le processus de vérification du script de construction réussit et l`'étape 12 est réalisée.
 
-Si le script de construction n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement IKAN ALM de script ne réussit pas, l`'action de vérification du script de construction échoue et les étapes 9 et 10 sont réalisées.
+Si le script de construction n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement Kobee de script ne réussit pas, l`'action de vérification du script de construction échoue et les étapes 9 et 10 sont réalisées.
 
 |12.
 |Si le processus de vérification du script de construction réussit, l`'Agent de Construction l`'exécute.
 
-D`'abord, le script de construction est alimenté avec les Paramètres suivants: l`'emplacement du script de construction, l`'emplacement de la Source, l`'emplacement de la Cible, les Paramètres IKAN ALM standard et les Paramètres de construction définis par l`'utilisateur.
+D`'abord, le script de construction est alimenté avec les Paramètres suivants: l`'emplacement du script de construction, l`'emplacement de la Source, l`'emplacement de la Cible, les Paramètres Kobee standard et les Paramètres de construction définis par l`'utilisateur.
 
 Puis, l`'Outil de construction défini pour l`'Environnement de construction (Ant, Gradle, NAnt ou Maven2) génère les objets de la Construction (par exemple, les fichiers exécutables, les librairies, ...). Le script de construction devrait également comprendre un mécanisme de copie qui transférera au minimum un objet de construction vers l`'emplacement Cible de l`'Environnement de construction.
 Seuls les objets de la Construction dans l`'emplacement Cible seront disponibles si le résultat de construction doit être déployé plus tard.
@@ -182,16 +182,16 @@ Comme l`'échec de cette étape n`'est pas bloquant, l`'étape 14 est ensuite r�
 
 |14.
 |L`'Agent de Construction compresse les objets de la Construction de l`'emplacement Cible de construction.
-Suivant le système d`'exploitation du Serveur IKAN ALM sur lequel se trouvent les Archives de Construction, un fichier _\*.zip_ ou _\*.tar.tgz_ sera créé.
+Suivant le système d`'exploitation du Serveur Kobee sur lequel se trouvent les Archives de Construction, un fichier _\*.zip_ ou _\*.tar.tgz_ sera créé.
 
 Si cette opération échoue, les étapes 9 et 10 sont réalisées.
 
 Si cette opération réussit, l`'étape 15 est réalisée.
 
 |15.
-|L`'Agent de Construction enregistre la Construction compressée dans les Archives de construction sur le serveur IKAN ALM.
+|L`'Agent de Construction enregistre la Construction compressée dans les Archives de construction sur le serveur Kobee.
 
-L`'Emplacement des Archives de construction sur le serveur IKAN ALM est défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
+L`'Emplacement des Archives de construction sur le serveur Kobee est défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
 L`'action de transfert utilisée (local FileCopy, remote FileCopy, SecureCopy ou FTP) dépend du type de Transporteur lié à la Machine sur laquelle l`'Environnement de Construction est défini.
 
@@ -243,7 +243,7 @@ L`'étape 20 sera sautée et l`'étape 22 sera réalisée.
 |Si processus de balisage du code échoue, le Moniteur établit le statut de la Requête de niveau à _Échoué_ et la séquence des actions se termine.
 
 |22.
-|Si le processus de balisage réussit ou s`'il a été ignoré parce que le code était déjà balisé, le Moniteur libère les sous-répertoires utilisés dans la copie de travail sur le serveur IKAN ALM.
+|Si le processus de balisage réussit ou s`'il a été ignoré parce que le code était déjà balisé, le Moniteur libère les sous-répertoires utilisés dans la copie de travail sur le serveur Kobee.
 
 Cela signifie que tous les fichiers récupérés depuis le RCV ou depuis les Archives de Construction sont supprimés.
 
@@ -300,7 +300,7 @@ image::Desktop-LevelRequests-Flow-BuildAndDeploy.png[,907,1270]
 Une Requête de niveau de Construction passe directement à l`'étape 5; une Requête de niveau de Reconstruction peut sauter les étapes 2, 3 et/ou 4.
 
 |2.
-|Le processus Moniteur sur le serveur IKAN ALM détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
+|Le processus Moniteur sur le serveur Kobee détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
 
 Cette étape est optionnelle dans le cas d`'une Reconstruction vu qu`'il n`'y a pas de Pré- ni de Post-notifications sur un Niveau de Construction.
 
@@ -319,7 +319,7 @@ Si nécessaire, les Groupes de Pré- et de Post-approbations sont définis dans 
 Cette étape est optionnelle dans le cas d`'une Reconstruction.
 
 |5.
-|Si toutes les Approbations d`'une Reconstruction pour laquelle des Pré- et des Post-Approbations ont été définies sont <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,accordées ou refusées>>, et si la date et l`'heure d`'exécution sont atteintes, le Moniteur établit le statut de la Requête de niveau à __Exécution__ et récupère le code Source du RCV et le met dans un sous-répertoire de l`'Emplacement des Copies de travail sur le serveur IKAN ALM.
+|Si toutes les Approbations d`'une Reconstruction pour laquelle des Pré- et des Post-Approbations ont été définies sont <<Desktop_Approvals.adoc#_desktop_outstandingapprovalsapprove,accordées ou refusées>>, et si la date et l`'heure d`'exécution sont atteintes, le Moniteur établit le statut de la Requête de niveau à __Exécution__ et récupère le code Source du RCV et le met dans un sous-répertoire de l`'Emplacement des Copies de travail sur le serveur Kobee.
 
 Cet emplacement est défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
@@ -334,7 +334,7 @@ Puis la séquence d`'actions se termine.
 Vu qu`'une Requête de niveau de (Re)Construction et déploiement peut avoir plus d`'une Construction, les étapes 8 jusque 18 seront réalisées pour chaque Construction liée à la Requête de niveau.
 
 |8.
-|Dès que le statut de Construction est mis à __Prêt__, l`'Agent de Construction sur la Machine ou les Machines où la Construction doit être créée, détecte ce statut et copie le code Source à partir de l`'Emplacement des Copies de travail sur le Serveur IKAN ALM vers l`'emplacement Source de l`'Environnement de Construction défini sur cette Machine et pour ce niveau de Construction.
+|Dès que le statut de Construction est mis à __Prêt__, l`'Agent de Construction sur la Machine ou les Machines où la Construction doit être créée, détecte ce statut et copie le code Source à partir de l`'Emplacement des Copies de travail sur le Serveur Kobee vers l`'emplacement Source de l`'Environnement de Construction défini sur cette Machine et pour ce niveau de Construction.
 
 L`'action de transfert utilisée (local FileCopy, remote FileCopy, SecureCopy ou FTP) dépend du type de Transporteur lié à la Machine sur laquelle l`'Environnement de Construction est défini.
 Consultez la section <<ProjAdm_BuildEnv.adoc#_projadm_buildenvironments,Environnements de construction>> pour plus d`'informations.
@@ -362,18 +362,18 @@ Si là non plus aucun script n`'a été spécifié, le processus de vérificatio
 __Dans la seconde phase__, l`'Agent de Construction essaie de localiser le script de construction qu`'il a déterminé devoir utiliser durant la première phase.
 D`'abord, l`'Agent de Construction cherche les codes Source contrôlés disponibles dans l`'emplacement Source de l`'Environnement de Construction.
 Si le script de construction est trouvé, le processus de vérification du script de construction réussit et l`'étape 12 sera exécutée.
-Si le script de construction n`'est pas trouvé dans les codes Source contrôlés disponibles, l`'Agent de Construction recherche l`'emplacement IKAN ALM par défaut du script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
+Si le script de construction n`'est pas trouvé dans les codes Source contrôlés disponibles, l`'Agent de Construction recherche l`'emplacement Kobee par défaut du script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
 Si le script de construction est trouvé, il sera transféré vers l`'emplacement Source de l`'Environnement de Construction défini sur cette Machine et pour ce Niveau de Construction.
 Le mécanisme de transfert utilisé sera le même que celui utilisé pour le code Source.
 Le processus de vérification du script de construction réussit et l`'étape 12 est réalisée.
 
-Si le script de construction n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement IKAN ALM de script ne réussit pas, l`'action de vérification du script de construction échoue et les étapes 9 et 10 sont réalisées.
+Si le script de construction n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement Kobee de script ne réussit pas, l`'action de vérification du script de construction échoue et les étapes 9 et 10 sont réalisées.
 
 |12.
 |Si le processus de vérification du script de construction réussit, l`'Agent de Construction exécute le script de construction.
 
-D`'abord, le script de construction est alimenté avec les Paramètres suivants: l`'emplacement du script de construction, l`'emplacement de la Source, l`'emplacement de la Cible, les Paramètres IKAN ALM standard et les Paramètres de construction définis par l`'utilisateur.
+D`'abord, le script de construction est alimenté avec les Paramètres suivants: l`'emplacement du script de construction, l`'emplacement de la Source, l`'emplacement de la Cible, les Paramètres Kobee standard et les Paramètres de construction définis par l`'utilisateur.
 
 Puis, l`'Outil de Construction défini pour l`'Environnement de Construction (Ant, Gradle, NAnt ou Maven2) génère les objets de la Construction (par exemple, les fichiers exécutables, les librairies, 
  .). Le script de construction devrait également comprendre un mécanisme de copie qui transférera au minimum un objet de construction vers l`'emplacement Cible de l`'Environnement de Construction.
@@ -394,16 +394,16 @@ Comme l`'échec de cette étape n`'est pas bloquant, l`'étape 14 est ensuite r�
 
 |14.
 |L`'Agent de Construction compresse les objets de la Construction à l`'emplacement Cible de construction.
-Suivant le système d`'exploitation du Serveur IKAN ALM sur lequel se trouvent les Archives de Construction, un fichier _\*.zip_ ou _\*.tar.tgz_ sera créé.
+Suivant le système d`'exploitation du Serveur Kobee sur lequel se trouvent les Archives de Construction, un fichier _\*.zip_ ou _\*.tar.tgz_ sera créé.
 
 Si cette opération échoue, les étapes 9 et 10 sont réalisées.
 
 Si cette opération réussit, l`'étape 15 est réalisée.
 
 |15.
-|L`'Agent de Construction enregistre la Construction compressée dans les Archives de construction sur le serveur IKAN ALM.
+|L`'Agent de Construction enregistre la Construction compressée dans les Archives de construction sur le serveur Kobee.
 
-L`'Emplacement des Archives de construction sur le serveur IKAN ALM est défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres système>>.
+L`'Emplacement des Archives de construction sur le serveur Kobee est défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres système>>.
 
 L`'action de transfert utilisée (local FileCopy, remote FileCopy, SecureCopy ou FTP) dépend du type de Transporteur lié à la Machine sur laquelle l`'Environnement de Construction est définie.
 
@@ -458,7 +458,7 @@ L`'étape 20 sera sautée et l`'étape 22 sera réalisée.
 |Si le processus de balisage du code échoue, le Moniteur établit le statut de la Requête de niveau à _Erreur_ et la séquence des actions se termine.
 
 |22.
-|Si le processus de balisage du code réussit ou s`'il a été ignoré parce que le code était déjà balisé, le Moniteur libère les sous-répertoires utilisés de la copie de travail sur le serveur IKAN ALM.
+|Si le processus de balisage du code réussit ou s`'il a été ignoré parce que le code était déjà balisé, le Moniteur libère les sous-répertoires utilisés de la copie de travail sur le serveur Kobee.
 
 Cela signifie que tous les fichiers récupérés depuis le RCV sont supprimés.
 
@@ -506,18 +506,18 @@ Si là non plus aucun script de déploiement n`'a été spécifié, le processus
 __Dans la seconde phase__, l`'Agent de Déploiement essaie de localiser le script de déploiement qu`'il a déterminé devoir utiliser durant la première phase.
 D`'abord, il cherche dans le résultat de construction décompressé disponible dans l`'emplacement Source de l`'Environnement de Déploiement (<<ProjAdm_DeployEnv.adoc#_projadm_deployenvironments,Environnements de déploiement>>). Si le script de déploiement est trouvé, le processus de vérification du script de déploiement réussit et l`'étape 29 sera réalisée.
 
-Si le script de déploiement n`'est pas trouvé dans le résultat de construction décompressé, l`'Agent de Déploiement recherche dans l`'emplacement des scripts IKAN ALM par défaut comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
+Si le script de déploiement n`'est pas trouvé dans le résultat de construction décompressé, l`'Agent de Déploiement recherche dans l`'emplacement des scripts Kobee par défaut comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
 Si le script de déploiement est trouvé, il sera transféré vers l`'emplacement Source de l`'Environnement de Déploiement défini sur cette Machine et pour ce Niveau.
 Le mécanisme de transfert utilisé sera le même qui celui utilisé pour le résultat de construction.
 Le processus de vérification du script de déploiement réussit et l`'étape 29 est réalisée.
 
-Si le script de déploiement n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement IKAN ALM de script ne réussit pas, l`'action de vérification du script de déploiement échoue et les étapes 25 et 26 sont réalisées.
+Si le script de déploiement n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement Kobee de script ne réussit pas, l`'action de vérification du script de déploiement échoue et les étapes 25 et 26 sont réalisées.
 
 |29.
 |Si le processus de vérification du script de déploiement réussit, l`'Agent de Déploiement exécute le script.
 
-Le script de déploiement contient les Paramètres suivants: l`'emplacement Source, l`'emplacement Cible, les Paramètres IKAN ALM standard et les Paramètres de déploiement définis par l`'utilisateur.
+Le script de déploiement contient les Paramètres suivants: l`'emplacement Source, l`'emplacement Cible, les Paramètres Kobee standard et les Paramètres de déploiement définis par l`'utilisateur.
 
 L`'Outil de déploiement défini pour l`'Environnement de Déploiement (Ant, Gradle, NAnt ou Maven2) déploie la Construction sur l`'emplacement Cible.
 
@@ -587,7 +587,7 @@ image::Desktop-LevelRequests-Flow-Deploy.png[,906,1252]
 |Une Requête de niveau est créée soit manuellement par l`'Utilisateur (via l`'<<Desktop_LevelRequests.adoc#_desktop_lr_createlevelrequest_selectlevel,Interface Web>> ou via la <<CommandLine.adoc#_pcommandline_clr_optionsparameters,Ligne de commande>>) ou un outil client utilisant le REST API ou automatiquement par le Programmateur.
 
 |2.
-|Le processus Moniteur sur le serveur IKAN ALM détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
+|Le processus Moniteur sur le serveur Kobee détecte la Requête de niveau créée et envoie les Pré- et les Post-notifications nécessaires.
 
 Cette étape est optionnelle.
 Si nécessaire, les Groupes de Pré- et de Post-notifications sont définis dans l`'écran __Modifier un Niveau__. <<ProjAdm_Levels.adoc#_plevelenvmgt_editlevel,Modifier les Paramètres d`'un niveau>>
@@ -644,18 +644,18 @@ __Dans la seconde phase__, l`'Agent de Déploiement essaie de localiser le Scrip
 D`'abord, il cherche dans le résultat de construction décompressé disponible dans l`'emplacement Source de l`'Environnement de Déploiement.
 Si le script de déploiement est trouvé, le processus de vérification du Script de déploiement réussit et l`'étape 11 sera réalisée.
 
-Si le Script de déploiement n`'est pas trouvé dans le résultat de construction décompressé, l`'Agent de Déploiement recherche l`'emplacement IKAN ALM par défaut de Script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
+Si le Script de déploiement n`'est pas trouvé dans le résultat de construction décompressé, l`'Agent de Déploiement recherche l`'emplacement Kobee par défaut de Script comme défini dans les <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres Système>>.
 
 Si le Script de déploiement est trouvé, il sera transféré vers l`'emplacement Source de l`'Environnement de Déploiement défini sur cette Machine et pour ce Niveau.
 Le mécanisme de transfert utilisé sera le même que celui utilisé pour le résultat de construction.
 Le processus de vérification du Script de déploiement est exécuté et l`'étape 11 est réalisée.
 
-Si le Script de déploiement n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement IKAN ALM de Script ne réussit pas, l`'action de vérification du Script de déploiement échoue et les étapes 7 et 8 sont réalisées.
+Si le Script de déploiement n`'est pas non plus trouvé dans cet emplacement, ou si le processus de transfert de l`'emplacement Kobee de Script ne réussit pas, l`'action de vérification du Script de déploiement échoue et les étapes 7 et 8 sont réalisées.
 
 |11.
 |Si la vérification du Script de déploiement réussit, l`'Agent de Déploiement exécute le Script de déploiement.
 
-D`'abord, le Script de déploiement est alimenté avec les Paramètres suivants: l`'emplacement Source, l`'emplacement Cible, les Paramètres IKAN ALM standard et les Paramètres de déploiement définis par l`'utilisateur.
+D`'abord, le Script de déploiement est alimenté avec les Paramètres suivants: l`'emplacement Source, l`'emplacement Cible, les Paramètres Kobee standard et les Paramètres de déploiement définis par l`'utilisateur.
 
 Puis, l`'Outil de Déploiement défini pour l`'Environnement de Déploiement (Ant, Gradle, NAnt ou Maven2) déploie la Construction sur l`'emplacement Cible.
 
@@ -680,7 +680,7 @@ Si l`'action 12 échoue (Nettoyage construction), le statut de déploiement est 
 (Si une autre action a échoué, le statut de déploiement est mis à __Échoué__, comme il est indiqué dans les étapes 7 et 8).
 
 |14.
-|Dès que le Moniteur sur le serveur IKAN ALM détecte un Déploiement ayant le statut _Réussi_ ou __Avertissement__, il établit le statut final de la Requête de niveau:
+|Dès que le Moniteur sur le serveur Kobee détecte un Déploiement ayant le statut _Réussi_ ou __Avertissement__, il établit le statut final de la Requête de niveau:
 
 * Le statut final de la Requête de niveau est mis à _Réussi_ si toutes les actions du Moniteur ont réussi et si le statut de déploiement est mis à __Réussi__.
 * Le statut final de la Requête de niveau est mis à _Avertissement_ si le statut du Déploiement est mis à __Avertissement__.
@@ -1024,7 +1024,7 @@ Un paramètre de construction/déploiement peut avoir les caractéristiques suiv
 * Les _paramètres modifiables_ ont une valeur par défaut, mais vous pouvez modifier cette valeur lors de la création d`'une Requête de niveau.
 * Les _paramètres non-modifiables_ ont une valeur fixe qui ne peut pas être modifiée lors de la création d`'une Requête de niveau. Utilisez le lien _Montrer les Paramètres non modifiables_ pour les afficher.
 * Les _paramètres dynamiques_ disposent d`'une liste de valeurs permises. Vous pouvez sélectionner une des valeurs permises à partir du menu déroulant lors de la création de la Requête de niveau.
-* Les _Paramètres sécurisés_ sont des paramètres non-modifiables dont la valeur est illisible pour tous les utilisateurs IKAN ALM.
+* Les _Paramètres sécurisés_ sont des paramètres non-modifiables dont la valeur est illisible pour tous les utilisateurs Kobee.
 +
 Par défaut, les paramètres non-modifiables sont cachés.
 Utilisez l'option (__Montrer les Paramètres non modifiables__ pour les afficher.
@@ -1399,7 +1399,7 @@ Pour plus d`'informations, se référer à la section <<Desktop_LevelRequests.ad
 === La fonctionnalité RSS 
 (((Fonctionnalité RSS))) 
 
-Si l`'Administrateur global d`'IKAN ALM a activé les flux RSS dans les Paramètres Système, le bouton RSS de couleur orange est disponible sur l`'écran __Rechercher des Requêtes de niveau__. 
+Si l`'Administrateur global d`'Kobee a activé les flux RSS dans les Paramètres Système, le bouton RSS de couleur orange est disponible sur l`'écran __Rechercher des Requêtes de niveau__. 
 
 image::Desktop-LevelRequests-Overview-RSS.png[,1226,329] 
 
@@ -1408,7 +1408,7 @@ A la demande de l`'utilisateur, ces "`agrégateurs`" sont capables de contrôler
 
 Les flux RSS peuvent être affichés en utilisant une extension dans l`'IDE de l`'utilisateur ou dans d`'autres lecteurs RSS y compris le navigateur Mozilla Firefox.
 
-IKAN ALM offre des flux RSS assurant la visualisation de données concernant les 10 dernières Requêtes de niveau répondant aux critères spécifiés
+Kobee offre des flux RSS assurant la visualisation de données concernant les 10 dernières Requêtes de niveau répondant aux critères spécifiés
 
 . Dans le Menu Principal, sélectionnez __Requêtes de niveau > Aperçu des Requêtes de niveau__.
 
@@ -1432,7 +1432,7 @@ A cet effet, sélectionnez et copiez l`'URL de la barre d`'adresse dans votre na
 +
 Vous trouverez l'extension RSSOwl sur le site des mises à jour d'Eclipse: http://www.rssowl.org/[http://www.rssowl.org,window=_blank].
 +
-Pour une description plus détaillée de la structure de l`'URL IKAN ALM, se référer à l`'appendice <<App_RSS.adoc#_rssfeedurldetails,Détails de l`'URL du flux RSS>>.
+Pour une description plus détaillée de la structure de l`'URL Kobee, se référer à l`'appendice <<App_RSS.adoc#_rssfeedurldetails,Détails de l`'URL du flux RSS>>.
 
 [[_desktop_lr_generatereport]]
 === Génération d`'un Rapport 
@@ -1938,7 +1938,7 @@ Ce panneau n'est affiché que si des Incidents sont liés à la Requête de nive
 
 image::Desktop-LevelRequests-Detailed-Summary-Issues.png[,640,188] 
 
-Des Incidents peuvent être liés à une Requête de niveau selon l`'une des manières suivantes: automatiquement par IKAN ALM lors de l'exécution de la Requête de niveau ou manuellement par l'Utilisateur quand la Requête de niveau s'est terminée.
+Des Incidents peuvent être liés à une Requête de niveau selon l`'une des manières suivantes: automatiquement par Kobee lors de l'exécution de la Requête de niveau ou manuellement par l'Utilisateur quand la Requête de niveau s'est terminée.
 Référez-vous à la section <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Suivi des Incidents>> pour plus d`'informations concernant la définition d`'un Système de Suivi des Incidents externe et à la section <<App_Phases.adoc#_phases_generalinformation,Phases - Informations générales>> pour plus de détails concernant la Phase Suivi des Incidents.
 
 Pour chacun des Incidents, l`'information suivante est affichée:
@@ -2206,7 +2206,7 @@ Chaque Phase peut contenir les sous-panneaux suivants:
 Le Journal peut être téléchargé si le format du Journal de l'Outil de script est établi à __TXT__.
 
 
-Les Phases de niveau sont gérées par le Serveur IKAN ALM.
+Les Phases de niveau sont gérées par le Serveur Kobee.
 Par défaut, les Phases de niveau listées dans le tableau suivant peuvent être disponibles.
 Cependant, puisque le flux de travail défini pour le Niveau peut être altéré (<<ProjAdm_Levels.adoc#_plevelenvmgt_levelphasesoverview,Écran de l`'Aperçu des Phases de niveau>>), il est possible que toutes les Phases ne soient pas reprises dans le Journal de Phases.
 
@@ -2222,24 +2222,24 @@ Pour une description plus détaillée, se référer à la section <<App_Phases.a
 | Description
 
 |Récupération des Sources
-|Le Serveur IKAN ALM récupère les codes Source du RCV (et, dans le cas de certaines dépendances, parfois également les résultats de construction des Archives de construction) et les sauvegarde dans un sous-répertoire de l'Emplacement des Copies de travail pour que l'Agent puisse les utiliser pour exécuter une Construction.
+|Le Serveur Kobee récupère les codes Source du RCV (et, dans le cas de certaines dépendances, parfois également les résultats de construction des Archives de construction) et les sauvegarde dans un sous-répertoire de l'Emplacement des Copies de travail pour que l'Agent puisse les utiliser pour exécuter une Construction.
 
 |Construction
 |Cette Phase surveille le statut des Constructions associées à la Requête de niveau.
-Le Serveur IKAN ALM notifie et assure le suivi des Agent IKAN ALM qui exécutent les Constructions associées à la Requête de niveau.
+Le Serveur Kobee notifie et assure le suivi des Agent IKAN ALM qui exécutent les Constructions associées à la Requête de niveau.
 
 |Balisage
-|Le Serveur IKAN ALM associe une balise au code Source après chaque Construction réussie sur un Niveau de Construction.
+|Le Serveur Kobee associe une balise au code Source après chaque Construction réussie sur un Niveau de Construction.
 Cette association de balise ne sera exécutée ni pour un Niveau de construction d'une Branche basée sur version balisée, ni pour des Requêtes de niveau pour Délivrer ou Restaurer.
 
 |Déploiement
 |Cette Phase surveille le statut des Déploiements associés à la Requête de niveau.
-Le Serveur IKAN ALM notifie et assure le suivi des Agent IKAN ALM qui exécutent les Déploiements associés à la Requête de niveau.
+Le Serveur Kobee notifie et assure le suivi des Agent IKAN ALM qui exécutent les Déploiements associés à la Requête de niveau.
 
 |Jonction Révisions des Fichiers
 |Il s'agit d'une Phase spécifique pour les Niveaux dans un Projet de type "`Paquets`" qui n'existe pas dans les Projets de type "Édition versions".
 
-En fonction du contenu du Paquet au moment de l`'exécution de la Requête de niveau, le Serveur IKAN ALM enregistre les versions extraites du RCV pour ce Niveau.
+En fonction du contenu du Paquet au moment de l`'exécution de la Requête de niveau, le Serveur Kobee enregistre les versions extraites du RCV pour ce Niveau.
 
 Cette information permet de vérifier le contenu (par exemple, les Révisions des Fichiers associées) du Paquet au moment de l'exécution de la Requête de niveau étant donné que son contenu peut varier dans le temps.
 
@@ -2253,7 +2253,7 @@ Pour des Requêtes de niveau de Construction, le journal contiendra les informat
 Pour des Requêtes de niveau de Déploiement, le journal contiendra l`'énumération des Incidents depuis le Déploiement précédent sur le Niveau.
 
 |Nettoyage Copies de travail
-|Le Serveur IKAN ALM libère le Emplacement des Copies de travail à partir duquel le code Source a été récupéré du RCV dans la Phase __Récupération des Sources__.
+|Le Serveur Kobee libère le Emplacement des Copies de travail à partir duquel le code Source a été récupéré du RCV dans la Phase __Récupération des Sources__.
 |===
 
 [[_desktop_lr_phaselogs_buildactions]]
@@ -2339,7 +2339,7 @@ image::Desktop-LevelRequests-Detailed-PhaseLogs-Example_UsedBuildParameters.png[
 [[_chddiacf]]
 ===== Phases de construction
 
-Les Phases de construction sont exécutées par l'Agent IKAN ALM lors de l'exécution d'une Construction.
+Les Phases de construction sont exécutées par l'Agent Kobee lors de l'exécution d'une Construction.
 
 Pour chacune de ces Phases, le statut est indiqué.
 Le statut _Erreur_ ne signifie pas toujours que le Déploiement dans son ensemble a échoué.
@@ -2357,12 +2357,12 @@ Pour une description complète des Phases de construction, se référer à la se
 | Description
 
 |Transfert des Sources
-|La Phase _Transfert des Sources_ transfère le code Source requis à partir de l`'Emplacement des Copies de travail sur le serveur IKAN ALM vers l`'emplacement Cible de l`'environnement de construction.
+|La Phase _Transfert des Sources_ transfère le code Source requis à partir de l`'Emplacement des Copies de travail sur le serveur Kobee vers l`'emplacement Cible de l`'environnement de construction.
 
 Dans la Log, le champ _Dernier Message_ indique ce qui a été transféré et quel Agent transporteur a été utilisé.
 
 |Vérification du script de construction
-|La Phase _Vérification du script de construction_ essaie de localiser le script de construction dans le code Source récupéré ou dans l`'emplacement de script IKAN ALM.
+|La Phase _Vérification du script de construction_ essaie de localiser le script de construction dans le code Source récupéré ou dans l`'emplacement de script Kobee.
 
 La Phase échoue si elle ne parvient pas à trouver le script de construction.
 
@@ -2386,7 +2386,7 @@ Dans la Log, le champ _Dernier Message_ indique où le script de déploiement a 
 Dans la Log, le champ _Dernier Message_ indique le chemin complet du fichier compressé.
 
 |Archivage Résultat
-|La Phase _Archivage Résultat_ copie le fichier de construction compressé vers l`'Emplacement des Archives de construction sur le serveur IKAN ALM.
+|La Phase _Archivage Résultat_ copie le fichier de construction compressé vers l`'Emplacement des Archives de construction sur le serveur Kobee.
 
 Dans la Log, le champ _Dernier Message_ indique ce qui a été transféré et quel Agent transporteur a été utilisé.
 
@@ -2500,7 +2500,7 @@ Pour une description complète des Phases de déploiement, se référer à la se
 | Description
 
 |Transfert du fichier de construction archivée
-|La Phase _Transfert du fichier de construction archivée_ transfère la Construction à partir de l`'Emplacement des Archives sur le serveur IKAN ALM vers l`'emplacement Source de l`'Environnement de déploiement.
+|La Phase _Transfert du fichier de construction archivée_ transfère la Construction à partir de l`'Emplacement des Archives sur le serveur Kobee vers l`'emplacement Source de l`'Environnement de déploiement.
 
 Dans la Log, le champ _Dernier Message_ indique ce qui a été transféré et quel Agent transporteur a été utilisé.
 
@@ -2510,7 +2510,7 @@ Dans la Log, le champ _Dernier Message_ indique ce qui a été transféré et qu
 Dans la Log, le champ _Dernier Message_ indique l`'emplacement où les résultats de construction ont été décompressés.
 
 |Vérification du script de déploiement
-|La Phase _Vérification du script de déploiement_ essaie de localiser le script de déploiement défini dans le résultat de construction décompressé ou dans l`'emplacement IKAN ALM des scripts.
+|La Phase _Vérification du script de déploiement_ essaie de localiser le script de déploiement défini dans le résultat de construction décompressé ou dans l`'emplacement Kobee des scripts.
 
 Cette Phase échoue si le script n`'est pas trouvé.
 
@@ -2571,7 +2571,7 @@ image::Desktop-LevelRequests-Detailed-Results-NoRelatedBuilds.png[,331,143]
 
 |Fichier de construction
 a|Le nom du fichier de construction contenant le Résultat de construction compressé.
-Ce fichier est sauvegardé dans l`'emplacement IKAN ALM des Archives de Constructions.
+Ce fichier est sauvegardé dans l`'emplacement Kobee des Archives de Constructions.
 
 Si l`'option <<ProjAdm_BuildEnv.adoc#_buildenvironmentsoverview,Construction téléchargeable>> est activée sur cet Environnement de Construction, ce nom est affiché comme un lien.
 
@@ -2599,7 +2599,7 @@ Si la Construction échoue, ce champ reste vide.
 |Statut Archive
 a|Le statut des Archives.
 
-Pour pouvoir télécharger le fichier de Construction, les archives doivent être _présentes_ dans la Base de données IKAN ALM.
+Pour pouvoir télécharger le fichier de Construction, les archives doivent être _présentes_ dans la Base de données Kobee.
 
 Les valeurs possibles sont:
 
@@ -2720,7 +2720,7 @@ Dans le cas d`'une Approbation en attente, ce champ reste vide.
 
 |Commentaire
 |Ce champ affiche le commentaire saisi par l'Utilisateur dans le champ _Commentaire_ au moment où il a approuvé ou rejeté l`'Approbation.
-Dans le cas d`'événements spéciaux, tels que les annulations, les interruptions ou les échecs d`'une Requête de niveau, ce commentaire est généré automatiquement par IKAN ALM.
+Dans le cas d`'événements spéciaux, tels que les annulations, les interruptions ou les échecs d`'une Requête de niveau, ce commentaire est généré automatiquement par Kobee.
 |===
 
 [cols="1", frame="topbot"]
@@ -2744,7 +2744,7 @@ a|_Sujets apparentés:_
 (((Requêtes de niveau ,Incidents)))  (((Informations détaillées ,Incidents)))  (((Incidents))) 
 
 La page _Incidents_ affiche la liste des Incidents liés à une Requête de niveau.
-Des Incidents peuvent être liés automatiquement à une Requête de niveau par IKAN ALM lors de l`'exécution de la Requête de niveau.
+Des Incidents peuvent être liés automatiquement à une Requête de niveau par Kobee lors de l`'exécution de la Requête de niveau.
 Une autre possibilité est que l`'Utilisateur les lie manuellement à la Requête de niveau après son exécution.
 
 image::Desktop-LevelRequests-Detailed-Issues.png[,711,260] 
@@ -2797,7 +2797,7 @@ image::Desktop-LevelRequests-Detailed-Results-NoIssues.png[,511,143]
 
 [NOTE]
 ====
-Outre l'Identifiant (ID) de l'Incident, l'information dans les champs n'est pas toujours saisie automatiquement quand IKAN ALM synchronise les Incidents avec le Système de Suivi d'incidents.
+Outre l'Identifiant (ID) de l'Incident, l'information dans les champs n'est pas toujours saisie automatiquement quand Kobee synchronise les Incidents avec le Système de Suivi d'incidents.
 Dans ce cas, les valeurs doivent être fournies manuellement en modifiant l'Incident. 
 ====
 
@@ -2864,9 +2864,9 @@ Vous pouvez également cliquer sur le bouton _Annuler_ pour retourner à la page
 Cette option n'est disponible que pour Atlassian JIRA, MicroFocus ALM, GitHub et Microsoft Team Foundation.
 ====
 
-Les Defects MicroFocus ALM, les Incidents JIRA, les Incidents GitHub et les Artefacts TeamForge et Team Foundation peuvent être reliés aux Requêtes de niveau de IKAN ALM sur la base des commentaires fournis par les développeurs lors des processus d`'enregistrement (commit) des codes Source dans le RCV.
-IKAN ALM récupère des informations de l`'Incident correspondant, telles qu`'une courte description, le propriétaire et la priorité.
-Ces informations seront synchronisées pendant la Phase de Suivi des Incidents chaque fois que la Requête de niveau sera délivrée au Niveau suivant dans le Cycle de vie IKAN ALM.
+Les Defects MicroFocus ALM, les Incidents JIRA, les Incidents GitHub et les Artefacts TeamForge et Team Foundation peuvent être reliés aux Requêtes de niveau de Kobee sur la base des commentaires fournis par les développeurs lors des processus d`'enregistrement (commit) des codes Source dans le RCV.
+Kobee récupère des informations de l`'Incident correspondant, telles qu`'une courte description, le propriétaire et la priorité.
+Ces informations seront synchronisées pendant la Phase de Suivi des Incidents chaque fois que la Requête de niveau sera délivrée au Niveau suivant dans le Cycle de vie Kobee.
 
 L`'option _Synchroniser_ permet une synchronisation manuelle des champs Statut, Propriétaire et Priorité pour l`'Incident relié à cette Requête de niveau.
 Cela peut s`'avérer utile si les Incidents ont été reliés manuellement à la Requête de niveau, par exemple dans le cas où les développeurs n`'ont pas ajouté ces informations comme commentaire lors du processus d`'enregistrement dans le RCV.
@@ -2884,7 +2884,7 @@ Si la synchronisation échoue, un message d`'erreur indiquant le problème s`'af
 
 Cette option permet de lier des Incidents manuellement à une Requête de niveau.
 
-Cela peut s`'avérer nécessaire quand le processus automatique n`'a pas détecté certaines Incidents, ou dans le cas où des Incidents doivent être liés à des Requêtes de niveau exécutées à un moment où le Système de Suivi des Incidents externe n`'était pas encore correctement configuré dans IKAN ALM.
+Cela peut s`'avérer nécessaire quand le processus automatique n`'a pas détecté certaines Incidents, ou dans le cas où des Incidents doivent être liés à des Requêtes de niveau exécutées à un moment où le Système de Suivi des Incidents externe n`'était pas encore correctement configuré dans Kobee.
 
 
 . Cliquez sur le lien _Ajouter un Incident_.
@@ -2971,7 +2971,7 @@ La page _Sources_ affiche la liste de toutes les Sources (et leurs numéros de r
 
 image::Desktop-LevelRequests-Detailed-Sources.png[,548,472] 
 
-Pour les Constructions basées sur le dernier code, IKAN ALM a balisé ces composants dans la Phase Balisage de cette Requête de niveau.
+Pour les Constructions basées sur le dernier code, Kobee a balisé ces composants dans la Phase Balisage de cette Requête de niveau.
 
 Pour les Constructions basées sur du code balisé, ces composants ont été balisés soit par une Requête de niveau précédente par le Niveau de Construction de ce Cycle de vie, soit par un système externe dans le cas d`'une Construction basée sur une version balisée.
 

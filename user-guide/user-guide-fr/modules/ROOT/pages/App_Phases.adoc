@@ -5,27 +5,27 @@
 = Phases - Informations générales 
 (((Phases)))  (((Phases ,Informations générales))) 
 
-Cet appendice donne des informations plus détaillées concernant le concept des "`Phases`" dans IKAN ALM.
+Cet appendice donne des informations plus détaillées concernant le concept des "`Phases`" dans Kobee.
 
-Quand IKAN ALM exécute des Requêtes de niveau, des Constructions et des Déploiements, toutes les actions sont effectuées en exécutant une séquence de Phases.
+Quand Kobee exécute des Requêtes de niveau, des Constructions et des Déploiements, toutes les actions sont effectuées en exécutant une séquence de Phases.
 
 Les Phases représentent des tâches ou des actions spécifiques qui doivent être exécutées par le système.
 
-Elles sont définies dans la base de données d'IKAN ALM et peuvent être consultées et modifiées dans la section Phases dans le contexte de l'Administration globale.
+Elles sont définies dans la base de données d'Kobee et peuvent être consultées et modifiées dans la section Phases dans le contexte de l'Administration globale.
 Une fois définies dans l'Administration globale, les Phases peuvent être associées à des Niveaux ou à des Environnements de construction ou de déploiement dans le contexte de l'Administration des projets.
 
 Les Phases sont subdivisées en différents types en fonction de leur créateur (des Phases "de noyau" et des Phases "personnalisées") et de leur utilisation (des Phases de niveau, de construction et de déploiement).
 
-La fonctionnalité de base d'IKAN ALM est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
-Vous devez les considérer comme faisant partie intégrante d'IKAN ALM.
+La fonctionnalité de base d'Kobee est exécutée par les Phases dites "de noyau". Ces Phases de noyau peuvent uniquement être affichées, et ne peuvent pas être modifiées ni supprimées.
+Vous devez les considérer comme faisant partie intégrante d'Kobee.
 Quand un nouveau Niveau, un nouvel Environnement de construction ou de déploiement est créé, son flux de travail par défaut sera créé et sera entièrement constitué d'une séquence de Phases de noyau.
 Ensuite, vous pouvez modifier ce flux de travail par défaut en supprimant des Phases de noyau, en modifiant la séquence ou en ajoutant vos propres Phases, les Phases dites "personnalisées". Vous pouvez les créer à partir de zéro dans l'Administration globale, sur la base d'un ou plusieurs scripts et ressources existants, ou vous pouvez importer une Phase personnalisée existante en utilisant la fonctionnalité "Importer une Phase".
 
-Dans IKAN ALM, nous distinguons 3 types de Phases en fonction de leur utilisation:
+Dans Kobee, nous distinguons 3 types de Phases en fonction de leur utilisation:
 
-* <<App_Phases.adoc#_phases_levelphases,Phases de niveau>>: les Phases qui sont insérées dans le flux de travail du Niveau. Elles seront exécutées sur le Serveur IKAN ALM.
-* <<App_Phases.adoc#_phases_buildphases,Phases de construction>>: les Phases qui sont insérées dans le flux de travail de l'Environnement de construction. Elles seront exécutées sur un Agent IKAN ALM.
-* <<App_Phases.adoc#_phases_deployphases,Phases de déploiement>>: les Phases qui sont insérées dans le flux de travail de l'Environnement de déploiement. Elles seront exécutées sur un Agent IKAN ALM.
+* <<App_Phases.adoc#_phases_levelphases,Phases de niveau>>: les Phases qui sont insérées dans le flux de travail du Niveau. Elles seront exécutées sur le Serveur Kobee.
+* <<App_Phases.adoc#_phases_buildphases,Phases de construction>>: les Phases qui sont insérées dans le flux de travail de l'Environnement de construction. Elles seront exécutées sur un Agent Kobee.
+* <<App_Phases.adoc#_phases_deployphases,Phases de déploiement>>: les Phases qui sont insérées dans le flux de travail de l'Environnement de déploiement. Elles seront exécutées sur un Agent Kobee.
 
 
 Une Requête de niveau représente l'exécution d'un Niveau.
@@ -39,7 +39,7 @@ Les Déploiements d`'une Requête de niveau sont traités de la même manière.
 
 [NOTE]
 ====
-À partir d'IKAN ALM 5.5, il n'y a plus de limite stricte entre ces trois types de Phases.
+À partir d'IKAN ALM 5.5 (prédécesseur de Kobee), il n'y a plus de limite stricte entre ces trois types de Phases.
 La Phase de noyau "Exécution script" est une Phase de niveau ainsi qu'une Phase de construction ou de déploiement, vu qu'elle peut être utilisée sur un Niveau et sur un Environnement de construction ou de déploiement.
 En plus, quand vous créez une Phase personnalisée, vous devez spécifier où la Phase peut être utilisée: sur un Niveau, sur un Environnement de construction ou sur un Environnement de déploiement (ou sur les trois Environnements). Dans ce contexte, nous considérons le Niveau également comme un "Environnement".
 ====
@@ -56,7 +56,7 @@ Tous les types de Phases insérées dans le flux de travail d'un Niveau, d'un En
 
 |Version de la Phase
 |Combiné avec le nom de la Phase, ce champ forme l'identifiant unique de la Phase.
-La version des Phases de noyau correspond à la version d'IKAN ALM (par exemple, 5.5.0).
+La version des Phases de noyau correspond à la version d'Kobee (par exemple, 6.0).
 
 La version des Phases personnalisées se conforme au format expliqué dans la section <<GlobAdm_Phases.adoc#_globadm_phases_creating,Créer une définition de Phase>>.
 
@@ -123,12 +123,12 @@ L'exécution d'une Phase peut être suivie sur l'onglet <<Desktop_LevelRequests.
 
 Les Phases de niveau sont des actions qui doivent être exécutées pour achever une Requête de niveau.
 
-Une installation IKAN ALM originale (dite "vanilla") ne contient que les Phases de niveau du type "de noyau". Vous pouvez les rechercher via l'__Aperçu des Phases__ en limitant la recherche au Phases de noyau qui peuvent être utilisées sur un Niveau.
-Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'IKAN ALM en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Niveau.
+Une installation Kobee originale (dite "vanilla") ne contient que les Phases de niveau du type "de noyau". Vous pouvez les rechercher via l'__Aperçu des Phases__ en limitant la recherche au Phases de noyau qui peuvent être utilisées sur un Niveau.
+Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Niveau.
 
 Les Phases de niveau peuvent être insérées dans le flux de travail d'un Niveau (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Administration des Projets - Phases de niveau>>) et sont enregistrées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Informations détaillées - Journaux de Phase - Nom de Phase>>).
 
-Elles sont initiées par le processus Moniteur du Serveur IKAN ALM, ce qui signifie qu`'elles s`'exécutent sur la Machine Serveur IKAN ALM!
+Elles sont initiées par le processus Moniteur du Serveur Kobee, ce qui signifie qu`'elles s`'exécutent sur la Machine Serveur IKAN ALM!
 
 Leur comportement exact dépend du Type de Niveau et du statut des Phases de Niveau exécutées précédemment.
 
@@ -239,7 +239,7 @@ S`'il s`'agit d`'une Requête de niveau de construction, la Phase _Suivi des Inc
 Elle cherchera des correspondances avec le modèle de recherche de Suivi d`'incident (<<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Créer un Système de Suivi des Incidents>>). Tous les Incidents trouvés seront reliés à la Requête de niveau.
 
 Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, MF ALM, GitHub ou TFS, la Phase _Suivi des Incidents_ établira également la connexion avec JIRA, MF ALM, GitHub ou TFS et essaiera d`'identifier les Incidents.
-Pour chaque Incident identifié, elle essaiera de récupérer des informations supplémentaires de JIRA, MF ALM, GitHub ou TFS telles que la description, le statut, le propriétaire et la priorité, et de sauvegarder ces informations dans IKAN ALM.
+Pour chaque Incident identifié, elle essaiera de récupérer des informations supplémentaires de JIRA, MF ALM, GitHub ou TFS telles que la description, le statut, le propriétaire et la priorité, et de sauvegarder ces informations dans Kobee.
 
 S`'il s`'agit d`'une Requête de niveau pour délivrer une Construction, la Phase _Suivi des Incidents_ énumère tous les Incidents associés aux Requêtes de niveau de Construction réussies depuis la dernière Requête de niveau pour délivrer une Construction sur ce Niveau réussie, et les ajoute tous à cette Requête de niveau.
 
@@ -249,7 +249,7 @@ Supposons les Constructions suivantes: la Construction 3 reliée à l`'Incident 
 Préalablement, la Construction 2 a été délivrée.
 Si nous délivrons la Construction 5, les Incidents 3, 4, 5 et 6 seront associés à la Requête de niveau pour délivrer la Construction.
 
-Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, MF ALM, GitHub ou TFS, la Phase _Suivi des Incidents_ synchronisera tous les Incidents connectés à la Requête de niveau pour délivrer une Construction: elle comparera les informations de l`'Incident dans IKAN ALM avec les informations actuelles dans JIRA, MF ALM, GitHub ou TFS et, si nécessaire, elle mettra à jour la description, le statut, le propriétaire et la priorité.
+Dans le cas d`'un système de Suivi des Incidents Atlassian JIRA, MF ALM, GitHub ou TFS, la Phase _Suivi des Incidents_ synchronisera tous les Incidents connectés à la Requête de niveau pour délivrer une Construction: elle comparera les informations de l`'Incident dans Kobee avec les informations actuelles dans JIRA, MF ALM, GitHub ou TFS et, si nécessaire, elle mettra à jour la description, le statut, le propriétaire et la priorité.
 
 Si la Requête de niveau n`'a pas réussi, la Phase _Suivi
 des Incidents_ ne fait rien et se termine avec le statut _Réussi_ rapportant qu`'elle n`'a traité aucun des Incidents.
@@ -291,11 +291,11 @@ Si l`'option _Débogage_ est activée pour le Niveau, la Phase _Nettoyage Copies
 === Exécution script 
 (((Phases ,Phases de Niveau ,Exécution script))) 
 
-La Phase _Exécution script_ exécute un script sur la Machine du Serveur IKAN ALM en utilisant l'Outil de script spécifié et les Paramètres de niveau prédéfinis.
+La Phase _Exécution script_ exécute un script sur la Machine du Serveur Kobee en utilisant l'Outil de script spécifié et les Paramètres de niveau prédéfinis.
 Le script (alm.phase.mainScript) ainsi que l'Outil de script (alm.phase.builder) doivent être définis par un Paramètre de phase obligatoire après l'insertion de cette Phase dans un Niveau.
 
-La Phase _Exécution script_ a été introduite au niveau du Niveau à partir de la version 5.5 d'IKAN ALM, en même temps que les Phases personnalisées.
-Le journal généré par le script est sauvegardé dans la base de données d'IKAN ALM.
+La Phase _Exécution script_ a été introduite au niveau du Niveau à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee), en même temps que les Phases personnalisées.
+Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Niveau (par exemple, lors de la création d'un nouveau Niveau à partir de zéro).
 
 Si le script réussit, la Phase _Exécution script_ se termine avec le statut __Réussi__.
@@ -315,13 +315,13 @@ la log d`'une Requête de niveau__.
 Le nom affiché pourrait ressembler à "Récupération à partir des Archives" ou "Filtrer les Sources".
 ====
 
-La Phase de niveau personnalisée exécute un script sur la Machine du Serveur IKAN ALM en utilisant l'Outil de script spécifié et les Paramètres de niveau prédéfinis.
+La Phase de niveau personnalisée exécute un script sur la Machine du Serveur Kobee en utilisant l'Outil de script spécifié et les Paramètres de niveau prédéfinis.
 Le nom d'affichage de cette Phase et le script exécuté (alm.phase.mainScript) sont spécifiés dans la définition de cette Phase personnalisée dans l'Administration globale.
 L'Outil de script (alm.phase.builder) qui exécute le script dépend du Type d'exécution spécifié dans la définition de la Phase et sa valeur doit être établie après l'insertion de cette Phase dans un Niveau.
 
-La Phase de niveau personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM, en même temps que la Phase __Exécution
+La Phase de niveau personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee), en même temps que la Phase __Exécution
 script__.
-Le journal généré par le script est sauvegardé dans la base de données d'IKAN ALM.
+Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Niveau (par exemple, lors de la création d'un nouveau Niveau à partir de zéro).
 
 Si le script réussit, la _Phase de niveau personnalisée_ se termine avec le statut __Réussi__.
@@ -338,13 +338,13 @@ La définition dans l'Administration globale peut également spécifier qu'elle 
 (((Phases ,Phases de construction))) 
 
 Les Phases de construction sont des actions qui doivent être exécutées pour achever une Construction.
-Une installation IKAN ALM originale (dite "vanilla") ne contient que les Phases de construction du type "de noyau". Vous pouvez les rechercher via l'__Aperçu
+Une installation Kobee originale (dite "vanilla") ne contient que les Phases de construction du type "de noyau". Vous pouvez les rechercher via l'__Aperçu
 des Phases__ en limitant la recherche aux Phases de noyau qui peuvent être utilisées sur un Environnement de construction.
-Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'IKAN ALM en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de construction.
+Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de construction.
 
 Les Phases de construction peuvent être insérées dans un Environnement de construction (<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phases,Phases d`'Environnement de construction>>). Leurs actions pendant l'exécution d'une Construction sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_buildactions,Actions de Construction>>). 
 
-Elles sont initiées par le processus de construction de l`'Agent IKAN ALM, ce qui signifie qu`'elles s`'exécutent sur la Machine de l`'Agent IKAN ALM!
+Elles sont initiées par le processus de construction de l`'Agent Kobee, ce qui signifie qu`'elles s`'exécutent sur la Machine de l`'Agent IKAN ALM!
 
 La section suivante décrit de manière plus détaillée chacune des Phases de construction de noyau:
 
@@ -368,9 +368,9 @@ Outre les Phases de construction de noyau, vous pouvez créer vos propres Phases
 === Transfert des Sources  
 (((Phases ,Phases de construction ,Transfert des Sources))) 
 
-La Phase _Transfert des Sources_ transfère les codes Source et, éventuellement, les résultats de construction des Projets dépendants à partir de l`'Emplacement des Copies de travail sur la Machine Serveur IKAN ALM vers la Machine Agent IKAN ALM, utilisant le Transporteur associé à la Machine Agent IKAN ALM.
+La Phase _Transfert des Sources_ transfère les codes Source et, éventuellement, les résultats de construction des Projets dépendants à partir de l`'Emplacement des Copies de travail sur la Machine Serveur Kobee vers la Machine Agent IKAN ALM, utilisant le Transporteur associé à la Machine Agent IKAN ALM.
 
-Dans le cas d`'une Construction partielle, la Phase Transfert des Sources peut également transférer les résultats de construction de la Construction précédente à partir de l`'Emplacement des Archives sur la Machine Serveur IKAN ALM vers l`'Emplacement Source de l`'Environnement sur la Machine Agent IKAN ALM.
+Dans le cas d`'une Construction partielle, la Phase Transfert des Sources peut également transférer les résultats de construction de la Construction précédente à partir de l`'Emplacement des Archives sur la Machine Serveur Kobee vers l`'Emplacement Source de l`'Environnement sur la Machine Agent IKAN ALM.
 Pour obtenir ce résultat, établissez le Paramètre de phase (d'environnement) _alm.phase.transport.source.partialBuild.copyPreviousBuildResult _ à __true/Oui__.
 Notez que la valeur par défaut de ce Paramètre est établie à __false/Non__.
 
@@ -389,7 +389,7 @@ Si ce n`'est pas le cas, elle vérifiera si un script de construction a été d�
 
 Ensuite, elle essaiera de localiser le script de construction dans l`'Emplacement Source de l`'Environnement de Construction.
 
-Si elle ne parvient pas à le localiser, elle essaiera de copier le script de construction de l`'Emplacement des Scripts IKAN ALM tel que défini dans les Paramètres système (<<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>).
+Si elle ne parvient pas à le localiser, elle essaiera de copier le script de construction de l`'Emplacement des Scripts Kobee tel que défini dans les Paramètres système (<<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>).
 
 Si le script n`'est pas non plus trouvé à cet endroit, la Phase _Vérification du script de construction_ se termine avec le statut __Erreur__.
 
@@ -402,7 +402,7 @@ du script de construction_ se termine avec le statut _Réussi_ rapportant où el
 
 La Phase _Exécution script_ exécute le script de construction sur la Machine définie en utilisant l`'Outil de script spécifié ainsi que les Paramètres de construction définis. 
 
-Un Journal de construction sera généré par le script de construction dans la base de données d`'IKAN ALM.
+Un Journal de construction sera généré par le script de construction dans la base de données d`'Kobee.
 
 Si le script de construction réussit, la Phase _Exécution
 script_ se termine avec le statut __Réussi__.
@@ -423,7 +423,7 @@ de la construction__.
 
 Cette Phase n'est utile que pour les Constructions de Paquet,
 
-si le Paquet fait partie d'un Groupe de Paquets de Construction, les derniers résultats de construction de certains Paquets dans le Groupe de Paquets de Construction (ou de tous les Paquets, en fonction de la configuration du Groupe de Paquets de Construction). Elle utilisera le Transporteur associé à l`'Agent pour transférer les Résultats à partir des Archives de construction IKAN ALM sur le Serveur IKAN ALM vers le répertoire $/packages suivi du numéro de Paquet (OID) dans l'Environnement de Construction.
+si le Paquet fait partie d'un Groupe de Paquets de Construction, les derniers résultats de construction de certains Paquets dans le Groupe de Paquets de Construction (ou de tous les Paquets, en fonction de la configuration du Groupe de Paquets de Construction). Elle utilisera le Transporteur associé à l`'Agent pour transférer les Résultats à partir des Archives de construction Kobee sur le Serveur IKAN ALM vers le répertoire $/packages suivi du numéro de Paquet (OID) dans l'Environnement de Construction.
 Cette Phase crée également un fichier _PackageBuildGroup.xml_ dans le répertoire $\{sourceRoot}/packages dans l'Environnement de Construction que l'on peut utiliser comme données dans les Phases ultérieures, par exemple, pour le flux de travail "compilation pour le Mainframe", pour transférer ces résultats de construction et construire la structure PDS requise sur le Mainframe. 
 
 L'attribut _Récupération de tous les Résultats
@@ -443,7 +443,7 @@ Le format d`'archive est déterminé par le paramètre de Phase d`'Environnement
 === Archivage du Résultat 
 (((Phases ,Phases de construction ,Archivage du Résultat))) 
 
-La Phase _Archivage du résultat_ transfère le fichier de construction compressé à partir de l`'Emplacement Cible de l`'Environnement de Construction sur la Machine Agent IKAN ALM vers l`'Emplacement des Archives de construction sur la Machine Serveur IKAN ALM, utilisant le Transporteur associé à la Machine Agent IKAN ALM.
+La Phase _Archivage du résultat_ transfère le fichier de construction compressé à partir de l`'Emplacement Cible de l`'Environnement de Construction sur la Machine Agent Kobee vers l`'Emplacement des Archives de construction sur la Machine Serveur IKAN ALM, utilisant le Transporteur associé à la Machine Agent IKAN ALM.
 
 [[_phases_buildphases_cleanupsource]]
 === Nettoyage Emplacement Source 
@@ -477,13 +477,13 @@ de requête de niveau__.
 Le nom affiché pourrait ressembler à "Génération de la documentation" ou "Exécution des tests d'unité".
 ====
 
-La Phase de construction personnalisée exécute un script sur la Machine de l'Agent IKAN ALM en utilisant l'Outil de script spécifié et les Paramètres de construction prédéfinis.
+La Phase de construction personnalisée exécute un script sur la Machine de l'Agent Kobee en utilisant l'Outil de script spécifié et les Paramètres de construction prédéfinis.
 Le nom d'affichage de cette Phase et le script exécuté (alm.phase.mainScript) sont spécifiés dans la définition de cette Phase personnalisée dans l'Administration globale.
 L'Outil de script (alm.phase.builder) qui exécute le script dépend du Type d'exécution spécifié dans la définition de la Phase.
 Si ce type d'exécution est différent de l'Outil de script associé à l'Environnement de construction, sa valeur doit être établie après l'insertion de cette Phase dans un Environnement de construction.
 
-La Phase de construction personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM.
-Le journal généré par le script est sauvegardé dans la base de données d'IKAN ALM.
+La Phase de construction personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee).
+Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Environnement de construction (par exemple, lors de la création d'un nouvel Environnement de construction à partir de zéro).
 
 Si le script réussit, la Phase de _Construction_ personnalisée se termine avec le statut __Réussi__.
@@ -500,18 +500,18 @@ La définition dans l'Administration globale peut également spécifier qu'elle 
 (((Phases ,Phases de déploiement))) 
 
 Les Phases de déploiement sont des actions qui doivent être exécutées pour achever un Déploiement.
-Une installation IKAN ALM originale (dite "vanilla") ne contient que les Phases de déploiement du type "de noyau". Vous pouvez les rechercher via l'__Aperçu
+Une installation Kobee originale (dite "vanilla") ne contient que les Phases de déploiement du type "de noyau". Vous pouvez les rechercher via l'__Aperçu
 des Phases__ en limitant la recherche aux Phases de noyau qui peuvent être utilisées sur un Environnement de déploiement.
-Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'IKAN ALM en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de déploiement.
+Outre ces Phases de noyau, vous pouvez enrichir la fonctionnalité d'Kobee en créant vos propres Phases personnalisées qui peuvent être utilisées sur un Environnement de déploiement.
 
 Les Phases de déploiement peuvent être insérées dans un Environnement de déploiement (<<ProjAdm_DeployEnv.adoc#_projadm_deplanv_phases,Phases d`'Environnement de déploiement>>) et leurs actions pendant l'exécution ou le déploiement sont affichées sur l'onglet __Journaux de Phase__ de l'écran __Informations détaillées__ (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_deployactions,Actions de Déploiement>>). 
 
-Elles sont initiées par un processus de déploiement de l`'Agent IKAN ALM, ce qui signifie qu`'elles s`'exécutent sur la Machine Agent IKAN ALM!
+Elles sont initiées par un processus de déploiement de l`'Agent Kobee, ce qui signifie qu`'elles s`'exécutent sur la Machine Agent IKAN ALM!
 
 [NOTE]
 ====
-Le nombre de Déploiements en cours sur un Agent IKAN ALM est géré par l'attribut _Limite Déploiements
-concurrents_ pour la Machine représentant l'Agent IKAN ALM.
+Le nombre de Déploiements en cours sur un Agent Kobee est géré par l'attribut _Limite Déploiements
+concurrents_ pour la Machine représentant l'Agent Kobee.
 Par défaut, la limite est établie à __0__.
 Cela signifie que tous les Déploiements seront exécutés simultanément sur l'Agent (par exemple, en parallèle). 
 
@@ -540,7 +540,7 @@ Outre les Phases de déploiement de noyau, vous pouvez créer vos propres Phases
 (((Phases ,Phases de déploiement ,Transfert du fichier de construction archivée))) 
 
 La Phase _Transfert du fichier de construction
-archivée_ transfère le résultat de construction à partir de l`'Emplacement des Archives de construction sur la Machine Serveur IKAN ALM vers l`'Emplacement Source de l`'Environnement de Déploiement sur la Machine Agent IKAN ALM, utilisant le Transporteur associé.
+archivée_ transfère le résultat de construction à partir de l`'Emplacement des Archives de construction sur la Machine Serveur Kobee vers l`'Emplacement Source de l`'Environnement de Déploiement sur la Machine Agent IKAN ALM, utilisant le Transporteur associé.
 
 Dans le cas d`'un Déploiement partiel, uniquement les fichiers modifiés et ajoutés dans le résultat de construction seront transférés.
 Pour la description du champ __Déploiement partiel__, se référer à la section <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Créer un environnement de déploiement>>.
@@ -566,7 +566,7 @@ Si ce n`'est pas le cas, elle vérifiera si un script de déploiement a été d�
 
 Ensuite, elle essaiera de localiser le script de déploiement dans le résultat de construction décompressé disponible dans l`'Emplacement Source de l`'Environnement de Déploiement.
 
-Si elle ne parvient pas à le localiser pas, elle essaiera de copier le script de déploiement de l`'Emplacement des Scripts IKAN ALM tel que défini dans les Paramètres système (<<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>).
+Si elle ne parvient pas à le localiser pas, elle essaiera de copier le script de déploiement de l`'Emplacement des Scripts Kobee tel que défini dans les Paramètres système (<<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>).
 
 Si le script n`'est pas non plus trouvé à cet endroit, la Phase _Vérification du script de déploiement_ se termine avec le statut __Erreur__.
 
@@ -579,7 +579,7 @@ du script de déploiement_ se termine avec le statut _Réussi_ rapportant où el
 
 La Phase _Exécution script_ exécute le script de déploiement sur la Machine définie en utilisant l`'Outil de script spécifié ainsi que les Paramètres de déploiement définis. 
 
-Un Journal de déploiement sera généré par le script de déploiement dans la base de données d`'IKAN ALM.
+Un Journal de déploiement sera généré par le script de déploiement dans la base de données d`'Kobee.
 
 Si le script de déploiement réussit, la Phase _Exécution
 script_ se termine avec le statut __Réussi__.
@@ -609,13 +609,13 @@ requête de niveau__.
 Le nom affiché pourrait ressembler à "Mise à jour de la base de données" ou "Déploiement sur le Serveur Web".
 ====
 
-La Phase de déploiement personnalisée exécute un script sur la Machine de l'Agent IKAN ALM en utilisant l'Outil de script spécifié et les Paramètres de déploiement prédéfinis.
+La Phase de déploiement personnalisée exécute un script sur la Machine de l'Agent Kobee en utilisant l'Outil de script spécifié et les Paramètres de déploiement prédéfinis.
 Le nom d'affichage de cette Phase et le script exécuté (alm.phase.mainScript) sont spécifiés dans la définition de cette Phase personnalisée dans l'Administration globale.
 L'Outil de script (alm.phase.builder) qui exécute le script dépend du Type d'exécution spécifié dans la définition de la Phase.
 Si ce type d'exécution est différent de l'Outil de script associé à l'Environnement de déploiement, sa valeur doit être établie après l'insertion de cette Phase dans un Environnement de déploiement.
 
-La Phase de déploiement personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM.
-Le journal généré par le script est sauvegardé dans la base de données d'IKAN ALM.
+La Phase de déploiement personnalisée a été introduite à partir de la version 5.5 d'IKAN ALM (prédécesseur de Kobee).
+Le journal généré par le script est sauvegardé dans la base de données d'Kobee.
 Notez que cette Phase n'est jamais insérée dans le flux de travail par défaut d'un Environnement de déploiement (par exemple, lors de la création d'un nouvel Environnement de déploiement à partir de zéro).
 
 Si le script réussit, la Phase de _déploiement_ personnalisée se termine avec le statut __Réussi__.

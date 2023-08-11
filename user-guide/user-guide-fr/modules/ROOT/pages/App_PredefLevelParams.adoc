@@ -49,7 +49,7 @@ Les types suivants sont possibles:
 Ce paramètre donne le nom du Demandeur.
 
 |alm.levelRequest.rootLocation
-|Un répertoire dans l'Emplacement des Copies de travail sur le Serveur IKAN ALM où la Phase "Récupération Code" place les codes Source récupérés.
+|Un répertoire dans l'Emplacement des Copies de travail sur le Serveur Kobee où la Phase "Récupération Code" place les codes Source récupérés.
 
 L'Emplacement des Copies de travail est étendu avec le OID Requête de niveau ((Par exemple, ``E:\Ikan\alm\system\system\workCopy\1170``)
 
@@ -58,7 +58,7 @@ a|Ce Paramètre donne la date et l`'heure d`'exécution de la Requête de niveau
 
 Le format utilisé est ``date.heure``. 
 
-Le format de la date est celui utilisé par le serveur hébergeant IKAN ALM:
+Le format de la date est celui utilisé par le serveur hébergeant Kobee:
 
 * `AAAA/MM/JJ` pour l`'Europe
 * `MM/JJ/AAAA` pour les Etats-Unis
@@ -91,10 +91,10 @@ a|Ce Paramètre donne le Type d`'Outil de Déploiement utilisé:
 * MAVEN2
 
 |alm.project.description
-|Ce Paramètre donne la description du Projet dans IKAN ALM.
+|Ce Paramètre donne la description du Projet dans Kobee.
 
 |alm.project.name
-|Ce Paramètre donne la dénomination du Projet dans IKAN ALM.
+|Ce Paramètre donne la dénomination du Projet dans Kobee.
 Cette dénomination peut être différente de la dénomination du Projet dans le Référentiel de Contrôle de Version (RCV) utilisé (voir alm.project.vcrProjectName).
 
 |alm.package.name
@@ -105,7 +105,7 @@ Cette dénomination peut être différente de la dénomination du Projet dans le
 
 |alm.project.vcrProjectName
 |Ce Paramètre donne la dénomination du Projet dans le RCV.
-Cette dénomination peut être différente de la dénomination du Projet dans IKAN ALM (voir alm.project.name).
+Cette dénomination peut être différente de la dénomination du Projet dans Kobee (voir alm.project.name).
 
 |alm.projectStream.buildPrefix
 |Ce Paramètre donne le préfixe de Construction défini pour la Branche.
@@ -123,7 +123,7 @@ a|Ce Paramètre donne le Type de Branche:
 * B = Branche Secondaire
 
 |alm.projectStream.vcrBranchId
-|Ce Paramètre donne l`'Identifiant Unique de la Branche dans le RCV défini dans la Branche dans IKAN ALM (uniquement pour les Branches Secondaires).
+|Ce Paramètre donne l`'Identifiant Unique de la Branche dans le RCV défini dans la Branche dans Kobee (uniquement pour les Branches Secondaires).
 
 |Source
 |Ce Paramètre donne l'Emplacement Source qui est dérivé de l'Emplacement des Copies de travail dans les Paramètres du Système.

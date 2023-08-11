@@ -1,43 +1,43 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
-:description: IKAN ALM User Guide (English)   
-:revnumber: v5.9
-:revdate: 13.09.2021
+:description: Kobee User Guide (English)   
+:revnumber: v6.0
+:revdate: 11.08.2023
 
 ifdef::backend-pdf[]
 = Introduction
 endif::[]
 ifdef::backend-html5[]
-= IKAN ALM User Guide: Introduction 
+= Kobee User Guide: Introduction 
 endif::[] 
-(((IKAN ALM ,Introduction))) 
+(((Kobee ,Introduction))) 
 
-IKAN ALM offers a uniquely integrated web-based _Application
+Kobee offers a uniquely integrated web-based _Application
 Lifecycle Management (ALM)_ platform for both Agile and traditional software development teams.
 It combines Continuous Integration and Lifecycle Management, offering a single point of control and delivering support for build and deploy processes (manually generated or automated), approval processes, release management and software lifecycles.
 
 There are many excellent versioning systems on the market today offering complete versioning control, but lacking an integrated solution for automated builds or deploys, library management and other important ALM tasks.
 Many of their users would like to evolve to a higher level of ALM practices without having to abandon their favorite versioning tool.
-IKAN ALM tightly integrates with leading existing third-party versioning solutions (e.g., Subversion, Git, Microsoft Team Foundation Version Control, CVS), build and deploy tools (Ant, Gradle, NAnt, Maven) and issue tracking software (Atlassian(R) JIRA(R), MicroFocus ALM, GitHub, Microsoft Team Foundation Server, CollabNet TeamForge, Trac, Bugzilla,...) and as a consequence offers a unique cross-platform ALM solution. 
+Kobee tightly integrates with leading existing third-party versioning solutions (e.g., Subversion, Git, Microsoft Team Foundation Version Control, CVS), build and deploy tools (Ant, Gradle, NAnt, Maven) and issue tracking software (Atlassian(R) JIRA(R), MicroFocus ALM, GitHub, Microsoft Team Foundation Server, CollabNet TeamForge, Trac, Bugzilla,...) and as a consequence offers a unique cross-platform ALM solution. 
 
 Today's short release cycles of both Agile and Traditional software development require the application of techniques like nightly builds, Continuous Integration and unit, regression, performance, ... testing in order to assure the quality and stability of the delivered code.
-By automating these back-end activities, IKAN ALM provides an incrementing refresh frequency which can be incorporated into daily development tasks, eliminating bottlenecks in feedback cycles.
+By automating these back-end activities, Kobee provides an incrementing refresh frequency which can be incorporated into daily development tasks, eliminating bottlenecks in feedback cycles.
 A tailored lifecycle process including development, testing, quality assurance and production can be easily defined, implemented and enforced, offering a comprehensive framework across all major platforms including Windows, UNIX, Linux and IBM mainframe systems.
-IKAN ALM also supports a stream-based project model allowing project managers to easily add lifecycles to each version of a project, which makes it easy to differentiate between maintenance, "urgency fix" or release build and deploy processes.
+Kobee also supports a stream-based project model allowing project managers to easily add lifecycles to each version of a project, which makes it easy to differentiate between maintenance, "urgency fix" or release build and deploy processes.
 
-IKAN ALM facilitates compliance with legislation like the Sarbanes-Oxley Act, DO-178B and numerous similar state-specific acts, and enhances an organization's ability to conform to popular process standards such as the CMM, ITIL, Six SigmaT.
+Kobee facilitates compliance with legislation like the Sarbanes-Oxley Act, DO-178B and numerous similar state-specific acts, and enhances an organization's ability to conform to popular process standards such as the CMM, ITIL, Six SigmaT.
 It can play an integral part in achieving compliance through automation of the business process, including all software development processes, and by providing full audit trails and reporting capability.
 
-IKAN ALM offers your organization one versatile process and one secure pipeline through which applications are delivered safely and efficiently into production, saving time by eliminating errors while meeting corporate standards, and ensuring Quality Management.
-IKAN ALM continues where versioning systems stop, improving the entire software engineering process, and saving time and money on radical migration efforts.
+Kobee offers your organization one versatile process and one secure pipeline through which applications are delivered safely and efficiently into production, saving time by eliminating errors while meeting corporate standards, and ensuring Quality Management.
+Kobee continues where versioning systems stop, improving the entire software engineering process, and saving time and money on radical migration efforts.
 
 [[_usethisguide]]
 == How to Use This Guide
 
-The way you use IKAN ALM is determined by the User Category you belong to.
-The table below lists the three IKAN ALM User Categories. 
+The way you use Kobee is determined by the User Category you belong to.
+The table below lists the three Kobee User Categories. 
 
-It is advised to concentrate on the actions matching your IKAN ALM User Category.
+It is advised to concentrate on the actions matching your Kobee User Category.
 Click a link to switch to the detailed description.
 
 [cols="1,1", frame="topbot", options="header"]

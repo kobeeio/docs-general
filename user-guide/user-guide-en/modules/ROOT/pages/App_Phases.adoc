@@ -5,31 +5,31 @@
 = Phases - General Information 
 (((Phases)))  (((Phases ,General Information))) 
 
-This appendix provides more detailed information on the IKAN ALM concept of "`Phases`".
+This appendix provides more detailed information on the Kobee concept of "`Phases`".
 
-When IKAN ALM is running Level Requests, Builds and Deploys, all actions are performed by executing a sequence of Phases.
+When Kobee is running Level Requests, Builds and Deploys, all actions are performed by executing a sequence of Phases.
 
 Phases represent specific tasks or actions that must be performed by the system.
 
-Phases are defined in the IKAN ALM database and can be consulted and manipulated in the Phases section of the Global Administration interface.
+Phases are defined in the Kobee database and can be consulted and manipulated in the Phases section of the Global Administration interface.
 Once they have been defined in Global Administration, Phases may be linked to Levels, Build or Deploy Environments in the Project Administration context.
 
 Phases are categorized into different types depending on who created them ("`Core`" and "`Custom`" Phases) and where they are used (Level, Build and Deploy Phases).
 
-The IKAN ALM core functionality is performed by so-called "Core" Phases.
+The Kobee core functionality is performed by so-called "Core" Phases.
 Those Core Phases can only be viewed, and cannot be altered nor deleted.
-Consider them an integral part of IKAN ALM.
+Consider them an integral part of Kobee.
 When you create a new Level, Build or Deploy Environment, its default workflow will be created and will completely consist of a sequence of Core Phases.
 Next, you may change this default workflow by removing Core Phases, by changing the sequence order or by adding your own Phases.
 
 Those own Phases are also called "`Custom`" Phases.
 You may create them from scratch in Global Administration, based on one or more working scripts and resources, or you can import an existing Custom Phase, using the "`Import Phase`" functionality.
 
-We also distinguish 3 types of Phases in IKAN ALM, depending on where they are being used:
+We also distinguish 3 types of Phases in Kobee, depending on where they are being used:
 
-* <<App_Phases.adoc#_phases_levelphases,Level Phases>>: phases inserted into the Level workflow. They will be executed on the IKAN ALM Server.
-* <<App_Phases.adoc#_phases_buildphases,Build Phases>>: phases inserted into the Build Environment workflow. They will be executed on an IKAN ALM Agent.
-* <<App_Phases.adoc#_phases_deployphases,Deploy Phases>>: phases inserted into the Deploy Environment workflow. They will be executed on an IKAN ALM Agent.
+* <<App_Phases.adoc#_phases_levelphases,Level Phases>>: phases inserted into the Level workflow. They will be executed on the Kobee Server.
+* <<App_Phases.adoc#_phases_buildphases,Build Phases>>: phases inserted into the Build Environment workflow. They will be executed on an Kobee Agent.
+* <<App_Phases.adoc#_phases_deployphases,Deploy Phases>>: phases inserted into the Deploy Environment workflow. They will be executed on an Kobee Agent.
 
 
 A Level Request represents the execution of a Level.
@@ -43,7 +43,7 @@ The Deploys of a Level Request are handled similarly.
 
 [NOTE]
 ====
-From IKAN ALM 5.5 onwards, there is no strict boundary anymore between those three types of Phases.
+From IKAN ALM 5.5 (predecessor of Kobee) onwards, there is no strict boundary anymore between those three types of Phases.
 The Core "`Execute Script"` Phase, is as well a Level as a Build or Deploy Phase, since you may use it on a Level, Build or Deploy Environment.
 Also, when you create a Custom Phase, you define where the Phase may be used: on a Level, on a Build Environment or on a Deploy Environment (or on all three Environments). In this context, we consider the Level to be also an "Environment".
 ====
@@ -60,7 +60,7 @@ All types of Phases inserted into the workflow of a Level/Build/Deploy Environme
 
 |Phase Version
 |This field, together with the Phase name, forms the unique identifier of the Phase.
-The version of the Core Phases matches the IKAN ALM version (e.g., 5.5.0).
+The version of the Core Phases matches the Kobee version (e.g., 5.5.0).
 
 The version of Custom Phases conforms to the format as explained in the section <<GlobAdm_Phases.adoc#_globadm_phases_creating,Creating a Phase Definition>>.
 
@@ -127,14 +127,14 @@ The execution of a Phase can be viewed on the <<Desktop_LevelRequests.adoc#_desk
 
 Level Phases are the actions that must be performed to complete a Level Request.
 
-A vanilla IKAN ALM installation only contains Level Phases of the "`Core`" type.
+A vanilla Kobee installation only contains Level Phases of the "`Core`" type.
 You can search for them in the _Phases
 Overview_ by restricting the search to Core Phases that can be used on a Level.
-Next to those Core Phases, you may enrich the functionality of IKAN ALM by creating your own Custom Phases which can be used on a Level.
+Next to those Core Phases, you may enrich the functionality of Kobee by creating your own Custom Phases which can be used on a Level.
 
 Level Phases may be inserted into the workflow of a Level (<<ProjAdm_Levels.adoc#_levelenvmgt_levelphases,Project Administration - Level Phases>>) and are logged on the __Phase Logs__ panel of the __Level Request Detail__ screen (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_levelphases,Level Request Detail - Phase Logs - Level Phases>>).
 
-They are executed by the Monitor Thread of the IKAN ALM Server, so they run on the IKAN ALM Server Machine!
+They are executed by the Monitor Thread of the Kobee Server, so they run on the IKAN ALM Server Machine!
 
 Their exact behavior may depend on the Level Type, and on the status of previously executed Level Phases.
 
@@ -241,7 +241,7 @@ The _Issue Tracking_ Phase links Issues, managed in an external Issue Tracking S
 In the case of a Build Level Request, the Issue Tracking Phase parses the commit comments that have been entered since the last successful Level Request for that Level and tries to match the Issue Pattern of the attached Issue Tracking System (<<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingcreate,Creating an Issue Tracking System>>). All found Issues will be attached to the Level Request.
 
 For an Atlassian JIRA, MF ALM, GitHub or TFS Issue Tracking System, the Issue Tracking Phase will also connect to and try to identify the issues in JIRA, MF ALM, GitHub or TFS.
-For each identified Issue, it will try to get additional information from JIRA, MF ALM, GitHub or TFS (like description, status, owner and priority) and store it in IKAN ALM.
+For each identified Issue, it will try to get additional information from JIRA, MF ALM, GitHub or TFS (like description, status, owner and priority) and store it in Kobee.
 
 When the Level Request is a Deliver Level Request, the Issue Tracking Phase enumerates all the Issues that have been attached to the previous successful Build Level Requests that have occurred since the last successful Deliver Level Request on this Level, and adds all of them to this Level Request.
 
@@ -251,7 +251,7 @@ Suppose we have built the following Builds: Build 3 with Issue 3, Build 4 with I
 Previously, Build 2 was delivered.
 If we now deliver Build 5, Issues 3,4,5 and 6 will be attached to the Deliver Level Request.
 
-For an Atlassian JIRA, MF ALM, GitHub or TFS Issue Tracking System, the Issue Tracking Phase will also synchronize all the issues attached to the Deliver Level Request: it will compare the info about the issue in IKAN ALM with the current information in JIRA, MF ALM, GitHub or TFS and update description, status, owner or priority if necessary.
+For an Atlassian JIRA, MF ALM, GitHub or TFS Issue Tracking System, the Issue Tracking Phase will also synchronize all the issues attached to the Deliver Level Request: it will compare the info about the issue in Kobee with the current information in JIRA, MF ALM, GitHub or TFS and update description, status, owner or priority if necessary.
 
 If the Level Request was not successful, the Issue Tracking Phase does nothing, and exits with status __Success__, reporting that it did not process any Issues.
 
@@ -291,11 +291,11 @@ If the Level has its _Debug_ flag set to "`Yes`", the _Cleanup Work Copy_ Phase 
 === Execute Script Phase 
 (((Phases ,Level Phases ,Execute Script Phase))) 
 
-The _Execute Script_ Phase executes a script on the IKAN ALM Server Machine using the specified Scripting Tool and the pre-defined Level Parameters.
+The _Execute Script_ Phase executes a script on the Kobee Server Machine using the specified Scripting Tool and the pre-defined Level Parameters.
 Both the script (alm.phase.mainScript) and the Scripting Tool (alm.phase.builder) must be defined by a mandatory Phase Parameter after inserting this Phase into a Level.
 
-The _Execute Script_ Phase has been introduced on the Level from IKAN ALM 5.5 onwards, together with the Custom Phase.
-The log generated by the script is saved in the IKAN ALM database.
+The _Execute Script_ Phase has been introduced on the Level from IKAN ALM 5.5 (predecessor of Kobee) onwards, together with the Custom Phase.
+The log generated by the script is saved in the Kobee database.
 Note that this Phase is never inserted into the default workflow of a Level (i.e., when creating a new Level from scratch).
 
 When the script is executed successfully, the _Execute
@@ -316,12 +316,12 @@ The Display Name of a Custom Level Phase, as defined in Global Administration an
 So, the name displayed could be something like "`Retrieve from Archive`" or "`Filter Sources`".
 ====
 
-A _Custom Level_ Phase executes a script on the IKAN ALM Server Machine using the specified Scripting Tool and the pre-defined Level Parameters.
+A _Custom Level_ Phase executes a script on the Kobee Server Machine using the specified Scripting Tool and the pre-defined Level Parameters.
 The Display Name of this Phase and the executed script (alm.phase.mainScript) are specified in the definition of this Custom Phase in Global Administration.
 The Scripting Tool (alm.phase.builder) that executes the script depends on the Execution Type of the Phase definition and its value must be set after inserting this Phase into a Level.
 
-The Custom Level Phase has been introduced from IKAN ALM 5.5 onwards, together with the _Execute Script_ Phase.
-The log generated by the script is saved in the IKAN ALM database.
+The Custom Level Phase has been introduced from IKAN ALM 5.5 (predecessor of Kobee) onwards, together with the _Execute Script_ Phase.
+The log generated by the script is saved in the Kobee database.
 Note that this Phase is never inserted into the default workflow of a Level (i.e., when creating a new Level from scratch).
 
 When the script is executed successfully, the _Custom
@@ -339,13 +339,13 @@ A Custom Level Phase may also be a Custom Build or Deploy Phase: the definition 
 (((Phases ,Build Phases))) 
 
 Build Phases are the actions that must be performed to complete a Build.
-A vanilla IKAN ALM installation only contains Build Phases of the "`Core`" type.
+A vanilla Kobee installation only contains Build Phases of the "`Core`" type.
 You can search for them in the __Phases Overview__, by restricting the search to Core Phases that can be used on a Build Environment.
-Next to those Core Phases, you may enrich the functionality of IKAN ALM by creating your own Custom Phases that can be used on a Build Environment.
+Next to those Core Phases, you may enrich the functionality of Kobee by creating your own Custom Phases that can be used on a Build Environment.
 
 Build Phases may be inserted into a Build Environment (<<ProjAdm_BuildEnv.adoc#_projadm_buildenv_phases,Build Environment Phases>>). Their actions during the handling of a Build are logged on the __Phase Logs__ tab page of the __Level Request Detail__ screen (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_buildactions,Build Actions>>). 
 
-They are executed by the Builder Thread of the IKAN ALM Agent, so they run on an IKAN ALM Agent Machine!
+They are executed by the Builder Thread of the Kobee Agent, so they run on an IKAN ALM Agent Machine!
 
 The following section describes each of the Core Build Phases in detail:
 
@@ -369,9 +369,9 @@ Next to the Core Build Phases, you can create your own Custom Build Phases:
 === Transport Source Phase 
 (((Phases ,Build Phases ,Transport Source))) 
 
-The _Transport Source_ Phase transports the Source code and, possibly, the build results of Child Projects from the Work Copy Location on the IKAN ALM Server Machine to the Build Environment Source Location on the IKAN ALM Agent Machine, using the Transporter associated with the IKAN ALM Agent Machine.
+The _Transport Source_ Phase transports the Source code and, possibly, the build results of Child Projects from the Work Copy Location on the Kobee Server Machine to the Build Environment Source Location on the IKAN ALM Agent Machine, using the Transporter associated with the IKAN ALM Agent Machine.
 
-When doing a Partial Build, the Transport Source Phase may also transport the build results of the previous Build from the Build Archive Location on the IKAN ALM Server Machine to the Environment`'s Source Location on the IKAN ALM Agent Machine.
+When doing a Partial Build, the Transport Source Phase may also transport the build results of the previous Build from the Build Archive Location on the Kobee Server Machine to the Environment`'s Source Location on the IKAN ALM Agent Machine.
 Set the __alm.phase.transport.source.partialBuild.copyPreviousBuildResult __(Environment) Phase Parameter to _true_ to obtain this behavior.
 Note that the default value of this Parameter is __false__.
 
@@ -389,7 +389,7 @@ If not, it will look for the Build Script defined on the Project (<<ProjAdm_Proj
 
 Then, it tries to find the Build Script in the Build Environment`'s Source Location.
 
-If not found, it tries to copy the Build Script from the IKAN ALM Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
+If not found, it tries to copy the Build Script from the Kobee Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
 If not found there either, the Verify Build Script Phase exits with status __Error__.
 
@@ -401,7 +401,7 @@ If found, the Verify Build Script Phase exits with status __Success__, and repor
 
 The _Execute Script_ Phase executes the Build Script on the defined Machine using the specified Scripting Tool and the defined Build Parameters. 
 
-It saves the Build log generated by the Build Script in the IKAN ALM database.
+It saves the Build log generated by the Build Script in the Kobee database.
 
 When the Build Script is executed successfully, the _Execute
 Script_ Phase exits with status __Success__.
@@ -423,7 +423,7 @@ This action is performed, so that the Deploy Scripts are included in the compres
 This Phase is only relevant for Package Builds.
 
 If the Package is part of a Package Build Group, it will retrieve the latest Build Results of some (or all, dependent on the configuration of the Package Build Group) of the Packages in the Package Build Group.
-It will use the Transporter defined for the Agent to transport the Results from the IKAN ALM Build Archive on the IKAN ALM Server to the $\{sourceRoot}/packages directory on the Build Environment.
+It will use the Transporter defined for the Agent to transport the Results from the Kobee Build Archive on the IKAN ALM Server to the $\{sourceRoot}/packages directory on the Build Environment.
 The Phase also creates a _PackageBuildGroup.xml_ file in the $\{sourceRoot}/packages directory on the Build Environment that can be used as input in later Phases, e.g., for the Mainframe Compilation workflow, to transfer these Build Results and build up the correct PDS structure on the Mainframe. 
 
 The _Retrieve All Build Results_ attribute of the Package Build Group, and the setting of the Dependency Level of the Packages in the Package Build Group determine which Build Results will be retrieved: the latest build results of all Packages in the Package Build Group in case _Retrieve All Build Results_ has been set to __true__, or only the latest Build Results of Packages with a lower Dependency Level in case _Retrieve
@@ -441,7 +441,7 @@ The Archive format is determined by the alm.phases.compress.result.archiveFormat
 === Archive Result Phase 
 (((Phases ,Build Phases ,Archive Result))) 
 
-The _Archive Result_ Phase transports the compressed Build file from the Build Environment`'s Target Location on the IKAN ALM Agent Machine to the Build Archive Location on the IKAN ALM Server Machine, using the Transporter associated with the IKAN ALM Agent Machine.
+The _Archive Result_ Phase transports the compressed Build file from the Build Environment`'s Target Location on the Kobee Agent Machine to the Build Archive Location on the IKAN ALM Server Machine, using the Transporter associated with the IKAN ALM Agent Machine.
 
 [[_phases_buildphases_cleanupsource]]
 === Cleanup Source Phase 
@@ -472,13 +472,13 @@ The Display Name of a Custom Build Phase, as defined in Global Administration an
 So, the name displayed could be something like "`Generate Documentation`" or "`Run Unit Tests`".
 ====
 
-The _Custom Build_ Phase executes a script on the IKAN ALM Agent Machine using the specified Scripting Tool and the defined Build Parameters.
+The _Custom Build_ Phase executes a script on the Kobee Agent Machine using the specified Scripting Tool and the defined Build Parameters.
 The Display Name of this Phase and the executed script (alm.phase.mainScript) are specified in the definition of this Custom Phase in Global Administration.
 The Scripting Tool (alm.phase.builder) that executes the script depends on the Execution Type of the Phase definition.
 When this Execution Type differs from the Scripting Tool linked to the Build Environment, its value must be set after inserting this Phase into a Build Environment.
 
-The _Custom Build_ Phase has been introduced from IKAN ALM 5.5 onwards.
-The log generated by the script is saved in the IKAN ALM database.
+The _Custom Build_ Phase has been introduced from IKAN ALM 5.5 (predecessor of Kobee) onwards.
+The log generated by the script is saved in the Kobee database.
 Note that this Phase is never inserted into the default workflow of a Build Environment (i.e., when creating a new Build Environment from scratch).
 
 When the script is executed successfully, the _Custom
@@ -496,19 +496,19 @@ A Custom Build Phase may also be a Custom Level or Deploy Phase: the definition 
 (((Phases ,Deploy Phases))) 
 
 Deploy Phases are the actions that must be performed to complete a Deploy.
-A vanilla IKAN ALM installation only contains Deploy Phases of the "`Core`" type.
+A vanilla Kobee installation only contains Deploy Phases of the "`Core`" type.
 You can search for them in the __Phases
 Overview__, by restricting the search to Core Phases that can be used on a Deploy Environment.
-Next to those Core Phases, you may enrich the functionality of IKAN ALM by creating your own Custom Phases that can be used on a Deploy Environment.
+Next to those Core Phases, you may enrich the functionality of Kobee by creating your own Custom Phases that can be used on a Deploy Environment.
 
 Deploy Phases may be inserted into a Deploy Environment (<<ProjAdm_DeployEnv.adoc#_projadm_deplanv_phases,Deploy Environment Phases>>) and their actions during the handling or a Deploy are logged on the __Phase Logs__ tab page of the __Level Request Detail__ screen (<<Desktop_LevelRequests.adoc#_desktop_lr_phaselogs_deployactions,Deploy Actions>>). 
 
-They are executed by the Deployer Thread of the IKAN ALM Agent, so they run on an IKAN ALM Agent Machine!
+They are executed by the Deployer Thread of the Kobee Agent, so they run on an IKAN ALM Agent Machine!
 
 [NOTE]
 ====
-The number of running Deploys on an IKAN ALM Agent is managed by specifying the _Concurrent Deploy
-Limit_ attribute for the Machine representing the IKAN ALM Agent.
+The number of running Deploys on an Kobee Agent is managed by specifying the _Concurrent Deploy
+Limit_ attribute for the Machine representing the Kobee Agent.
 By default, this limit is set to __0__, meaning that all Deploys on the Agent will run concurrently (i.e., in parallel). 
 
 If another number is specified, a Deploy can only be started if there are not more running Deploys as indicated.
@@ -534,7 +534,7 @@ Next to the Core Deploy Phases, you can create your own Custom Deploy Phases:
 === Transport Build Result Phase 
 (((Phases ,Deploy Phases ,Transport Build Result))) 
 
-The _Transport Build Result_ Phase transports the Build result from the Build Archive Location on the IKAN ALM Server Machine to the Deploy Environment Source Location on the IKAN ALM Agent Machine, using the Transporter associated with the IKAN ALM Agent Machine.
+The _Transport Build Result_ Phase transports the Build result from the Build Archive Location on the Kobee Server Machine to the Deploy Environment Source Location on the IKAN ALM Agent Machine, using the Transporter associated with the IKAN ALM Agent Machine.
 
 When doing a Partial Deploy, only the modified and added files in the Build result are transferred.
 See the description of the _Partial Deploy_ field in the section <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Creating a Deploy Environment>>.
@@ -557,7 +557,7 @@ If not, it will look for the Deploy Script defined on the Project (<<ProjAdm_Pro
 
 Then, it tries to find the Deploy Script in the decompressed Build result available in the Deploy Environment`'s Source Location.
 
-If not found, it tries to copy the Deploy Script from the IKAN ALM Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
+If not found, it tries to copy the Deploy Script from the Kobee Script Location as defined in the <<GlobAdm_System.adoc#_globadm_system_settings,System Settings>>.
 
 If not found there either, the Verify Deploy Script Phase exits with status __Error__.
 
@@ -569,7 +569,7 @@ If found, the Verify Deploy Script Phase exits with status __Success__, and repo
 
 The _Execute Script_ Phase executes the Deploy Script on the defined Machine using the specified Scripting Tool and the defined Deploy Parameters. 
 
-It saves the Deploy log generated by the Deploy Script in the IKAN ALM database.
+It saves the Deploy log generated by the Deploy Script in the Kobee database.
 
 When the Deploy Script is executed successfully, the _Execute
 Script_ Phase exits with status __Success__.
@@ -597,13 +597,13 @@ The Display Name of a Custom Deploy Phase, as defined in Global Administration a
 So, the name displayed could be something like "`Update Database`" or "`Deploy to web server`".
 ====
 
-The _Custom Deploy_ Phase executes a script on the IKAN ALM Agent Machine using the specified Scripting Tool and the defined Deploy Parameters.
+The _Custom Deploy_ Phase executes a script on the Kobee Agent Machine using the specified Scripting Tool and the defined Deploy Parameters.
 The Display Name of this Phase and the executed script (alm.phase.mainScript) are specified in the definition of this Custom Phase in Global Administration.
 The Scripting Tool (alm.phase.builder) that executes the script depends on the Execution Type of the Phase definition.
 When this Execution Type differs from the Scripting Tool linked to the Deploy Environment, its value must be set after inserting this Phase into a Deploy Environment.
 
-The _Custom Deploy_ Phase has been introduced from IKAN ALM 5.5 onwards.
-The log generated by the script is saved in the IKAN ALM database.
+The _Custom Deploy_ Phase has been introduced from IKAN ALM 5.5 (predecessor of Kobee) onwards.
+The log generated by the script is saved in the Kobee database.
 Note that this Phase is never inserted into the default workflow of a Deploy Environment (i.e., when creating a new Deploy Environment from scratch).
 
 When the script is executed successfully, the _Custom

@@ -5,7 +5,7 @@
 = History and Event Logging 
 (((History)))  (((Event Logging))) 
 
-All create, update and delete operations of Project and Global Administration objects and components are logged in the IKAN ALM Database.
+All create, update and delete operations of Project and Global Administration objects and components are logged in the Kobee Database.
 
 To display the History Log of those operations, you can use the image:icons/history.gif[,15,15]  icon (or image:icons/history.gif[,15,15] _History_ link) which is available on all _Overview_ screens as well as on some of the edit screens, like the _System
 Settings_ screen or the _Edit Level_ screen.
@@ -140,7 +140,7 @@ The first non-association version in the list should always have the same state 
 ====
 It is possible that the _Versions_ panel is empty or does not list all previous versions.
 Objects created during the installation process will not have a Create Version.
-Objects created or modified before the SCM4ALL 4.3 Release will not have an event log in the IKAN ALM database.
+Objects created or modified before the SCM4ALL 4.3 Release will not have an event log in the Kobee database.
 ====
 +
 The following information fields are available:

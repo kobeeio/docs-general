@@ -81,15 +81,15 @@ Si vous laissez ce champ vide, le script de construction par défaut, comme déf
 |Emplacement Source
 |Ce champ contient le chemin vers l`'emplacement physique où seront placés le code Source, le code Source dépendant ou le résultat de la construction dépendante.
 
-IKAN ALM ajoute l`'identifiant (OID) de la construction et la dénomination du Projet:
+Kobee ajoute l`'identifiant (OID) de la construction et la dénomination du Projet:
 
 _EmplacementSource/OIDdeConstruction/Nom_Projet_RCV_
 
 Cet emplacement est transmis au script de construction sous la forme d`'un paramètre appelé __source__.
 
 |Emplacement Cible
-a|Ce champ contient le chemin vers l`'emplacement physique où IKAN ALM attend le résultat du script de construction exécuté.
-IKAN ALM ajoute l`'identifiant (OID) de la construction:
+a|Ce champ contient le chemin vers l`'emplacement physique où Kobee attend le résultat du script de construction exécuté.
+Kobee ajoute l`'identifiant (OID) de la construction:
 
 __EmplacementCible/OIDdeConstruction__.
 
@@ -291,7 +291,7 @@ Vous pouvez également cliquer sur le bouton _Précédent_ pour retourner à l`'
 === Phases d`'Environnement de construction 
 (((Environnements de construction ,Phases)))  (((Phases ,Environnement de construction))) 
 
-Lors de la création d`'un Environnement de construction, IKAN ALM créera automatiquement le flux de Phases d`'Environnement de construction par défaut. 
+Lors de la création d`'un Environnement de construction, Kobee créera automatiquement le flux de Phases d`'Environnement de construction par défaut. 
 
 Les Phases par défaut sont:
 
@@ -350,7 +350,7 @@ Les liens suivants sont disponibles:
 ====
 
 La modification des Phases pourrait avoir des effets indésirables sur le Cycle de vie.
-Pour plus d'informations se référer au document _HOW TO Using and Developing a Phase in IKAN ALM_ (version anglaise).
+Pour plus d'informations se référer au document _HOW TO Using and Developing a Phase in Kobee_ (version anglaise).
 ====
 
 . Insérez une Phase, si nécessaire.
@@ -501,7 +501,7 @@ Ce champ peut être modifié en modifiant le Paramètre de phase.
 
 |Type d'intégration
 |Non
-a|Ce champ indique si la valeur du Paramètre est une simple valeur texte, ou si elle représente un lien (une intégration) vers un objet IKAN ALM de l`'Administration globale.
+a|Ce champ indique si la valeur du Paramètre est une simple valeur texte, ou si elle représente un lien (une intégration) vers un objet Kobee de l`'Administration globale.
 
 Les valeurs possibles sont:
 

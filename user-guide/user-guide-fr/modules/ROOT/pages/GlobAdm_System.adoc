@@ -4,7 +4,7 @@
 [[_globadm_system]]
 = Système
 
-Le menu _Système_ propose des options pour afficher ou modifier les paramètres de configuration du Serveur IKAN ALM et pour exécuter des actions d`'épuration d`'archives dans IKAN ALM.
+Le menu _Système_ propose des options pour afficher ou modifier les paramètres de configuration du Serveur Kobee et pour exécuter des actions d`'épuration d`'archives dans IKAN ALM.
 
 Les utilisateurs qui ont des droits d`'accès d`'Administrateur global auront accès aux options suivantes:
 
@@ -25,12 +25,12 @@ Les utilisateurs qui n'ont pas de droits d`'accès d`'Administrateur global auro
 == Paramètres du système 
 (((Paramètres du système)))  (((Administration globale ,Paramètres du système))) 
 
-Les paramètres globaux du Serveur IKAN ALM, tels que les différents emplacements (les Archives, les Scripts, les Copies de travail et le Catalogue des Phases), les paramètres de courrier et les paramètres de sécurité, sont définis dans l'écran __Paramètres Système__.
+Les paramètres globaux du Serveur Kobee, tels que les différents emplacements (les Archives, les Scripts, les Copies de travail et le Catalogue des Phases), les paramètres de courrier et les paramètres de sécurité, sont définis dans l'écran __Paramètres Système__.
 Certains de ces champs sont remplis automatiquement lors du processus d'installation.
 
 [NOTE]
 ====
-La modification de certains de ces Paramètres nécessite des actions préparatoires sur le Serveur IKAN ALM.
+La modification de certains de ces Paramètres nécessite des actions préparatoires sur le Serveur Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Système > Paramètres Système__.
@@ -42,7 +42,7 @@ image::GlobAdmin-SystemSettings.png[,694,892]
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 +
 Les sous-panneaux suivants sont disponibles:
@@ -70,16 +70,16 @@ Les champs suivants sont disponibles dans le sous-panneau __Environnement local_
 | Champ
 | Description
 
-|Serveur IKAN ALM
-|Ce champ contient le nom de la Machine qui héberge actuellement le Serveur IKAN ALM.
+|Serveur Kobee
+|Ce champ contient le nom de la Machine qui héberge actuellement le Serveur Kobee.
 
 Si nécessaire, sélectionnez la dénomination d`'une autre Machine à partir du menu déroulant.
 
-La modification de ce champ nécessite des actions préparatoires telles que l`'installation du Serveur IKAN ALM sur la nouvelle Machine cible, la migration des Emplacements utilisés par le transporteur FileCopy Local et l`'installation des Clients RCV nécessaires.
+La modification de ce champ nécessite des actions préparatoires telles que l`'installation du Serveur Kobee sur la nouvelle Machine cible, la migration des Emplacements utilisés par le transporteur FileCopy Local et l`'installation des Clients RCV nécessaires.
 
-|URL IKAN ALM
-|Dans ce champ, entrer l'URL de base IKAN ALM.
-Cet URL est utilisé pour la création de liens hypertextes dans les messages électroniques envoyés par IKAN ALM (Approbations, Pré-Notifications, Post-Notifications, Notifications des Requêtes de niveau Réussies/En erreur), pour construire le lien RSS feed et pour construire les URIs pour le REST API d'IKAN ALM.
+|URL Kobee
+|Dans ce champ, entrer l'URL de base Kobee.
+Cet URL est utilisé pour la création de liens hypertextes dans les messages électroniques envoyés par Kobee (Approbations, Pré-Notifications, Post-Notifications, Notifications des Requêtes de niveau Réussies/En erreur), pour construire le lien RSS feed et pour construire les URIs pour le REST API d'IKAN ALM.
 
 |_Emplacements locaux_
 |Ces champs sont utilisés par les Agents de Construction ou de Déploiement.
@@ -89,13 +89,13 @@ Ces emplacements sont automatiquement synchronisés avec le transporteur FileCop
 |Ce champ contient le chemin vers l`'Emplacement des Copies de travail.
 
 Il s`'agit de l`'emplacement où l`'interface RCV place la copie de travail.
-Il est utilisé si l`'Agent de Construction tourne sur la même Machine que le Serveur IKAN ALM.
+Il est utilisé si l`'Agent de Construction tourne sur la même Machine que le Serveur Kobee.
 Le balisage du RCV après une construction réussie se fait à partir de cet emplacement.
 
 Si nécessaire, vous pouvez modifier le chemin vers l`'emplacement.
 
 |Emplacement Archives de construction
-|Ce champ contient le chemin vers l`'Emplacement des Archives de construction sur le Serveur IKAN ALM.
+|Ce champ contient le chemin vers l`'Emplacement des Archives de construction sur le Serveur Kobee.
 
 Il s`'agit de l`'emplacement où les résultats de construction seront copiés ou d`'où ils seront récupérés.
 Ils sont placés par projets et branches.
@@ -112,7 +112,7 @@ Si nécessaire, vous pouvez modifier le chemin vers l`'emplacement.
 Ce champ permet de sauvegarder les Scripts en dehors du Référentiel de Contrôle de Version et de les gérer à un emplacement central (sécurisé).
 
 |Emplacement du Catalogue des Phases
-|Ce champ contient le chemin vers l'Emplacement du Catalogue des Phases sur le Serveur IKAN ALM.
+|Ce champ contient le chemin vers l'Emplacement du Catalogue des Phases sur le Serveur Kobee.
 
 Les nouvelles Phases et les Phases importées seront sauvegardées à cet emplacement.
 
@@ -130,7 +130,7 @@ Pour plus d`'information, se référer aux sections <<GlobAdm_Transporters.adoc#
 |Emplacement des Copies de travail
 |Ce champ contient l`'Emplacement des Copies de travail, affiché comme un emplacement distant.
 
-Il s`'agit de l`'emplacement où l`'interface RCV place la copie de travail sur le Serveur IKAN ALM pour qu`'elle soit accessible aux Agents de Construction distants.
+Il s`'agit de l`'emplacement où l`'interface RCV place la copie de travail sur le Serveur Kobee pour qu`'elle soit accessible aux Agents de Construction distants.
 
 Si nécessaire, vous pouvez modifier le chemin vers l`'emplacement.
 
@@ -154,22 +154,22 @@ Ce champ permet que les Scripts soient sauvegardés en dehors du Référentiel d
 |Ce champ contient l'emplacement du Catalogue des Phases affiché comme un emplacement distant.
 
 Les nouvelles Phases et les Phases importées seront sauvegardées à cet emplacement.
-Un Agent distant IKAN ALM qui doit installer une Phase utilisera cet emplacement pour la récupérer.
+Un Agent distant Kobee qui doit installer une Phase utilisera cet emplacement pour la récupérer.
 
 |_Paramètres du Protocole du Transporteur_
 |Le Protocole du Transporteur défini comment les codes Sources et les résultats de construction seront transférés.
 
 |Port SSH
 |Saisissez le numéro de port SSH.
-Cette spécification n`'est nécessaire que si le Serveur SSH sur le Serveur IKAN ALM utilise un port SSH différent du numéro de port par défaut ``22``.
-Un serveur SSH doit être installé sur le Serveur IKAN ALM avant de pouvoir utiliser SSH comme Protocole du Transporteur.
+Cette spécification n`'est nécessaire que si le Serveur SSH sur le Serveur Kobee utilise un port SSH différent du numéro de port par défaut ``22``.
+Un serveur SSH doit être installé sur le Serveur Kobee avant de pouvoir utiliser SSH comme Protocole du Transporteur.
 
 _Note:_ Ce numéro de port peut être remplacé par le numéro de port spécifié dans la définition du Transporteur. <<GlobAdm_Transporters.adoc#_globadm_secureshellcreate,Créer un Transporteur sécurisé SSH>>
 
 |Port FTP
 |Saisissez le numéro de port FTP.
-Cette spécification n`'est nécessaire que si le Serveur FTP sur le Serveur IKAN ALM utilise un port TCP différent du numéro de port par défaut ``21``.
-Un serveur FTP doit être installé sur le Serveur IKAN ALM avant de pouvoir utiliser FTP comme Protocole du Transporteur.
+Cette spécification n`'est nécessaire que si le Serveur FTP sur le Serveur Kobee utilise un port TCP différent du numéro de port par défaut ``21``.
+Un serveur FTP doit être installé sur le Serveur Kobee avant de pouvoir utiliser FTP comme Protocole du Transporteur.
 
 _Note:_ Ce numéro de port peut être remplacé par le numéro de port spécifié dans la définition du Transporteur. <<GlobAdm_Transporters.adoc#_globadm_ftpcreate,Créer un Transporteur FTP>>
 |===
@@ -187,27 +187,27 @@ Les champs suivants sont disponibles dans le sous-panneau __Sécurité__.
 | Description
 
 |Groupe des Droits Utilisateurs
-|Ce champ contient la dénomination du Groupe d`'Utilisateurs auquel doivent appartenir tous les Utilisateurs nécessitant un accès à IKAN ALM. Noter que les Utilisateurs peuvent aussi avoir accès à IKAN ALM quand ils appartiennent à un Groupe d'Utilisateurs imbriqué du Groupe d'Utilisateurs sélectionné.
+|Ce champ contient la dénomination du Groupe d`'Utilisateurs auquel doivent appartenir tous les Utilisateurs nécessitant un accès à Kobee. Noter que les Utilisateurs peuvent aussi avoir accès à IKAN ALM quand ils appartiennent à un Groupe d'Utilisateurs imbriqué du Groupe d'Utilisateurs sélectionné.
 
 Si nécessaire, sélectionnez un autre Groupe d`'Utilisateurs à partir du menu déroulant.
 
-Si vous laissez ce champ vide, tous les Utilisateurs authentifiés auront des droits d`'accès d`'utilisateur au sein de l`'application IKAN ALM.
+Si vous laissez ce champ vide, tous les Utilisateurs authentifiés auront des droits d`'accès d`'utilisateur au sein de l`'application Kobee.
 
 |Groupe des Droits Administration globale
 |Ce champ contient la dénomination du Groupe d`'Utilisateurs auquel doivent appartenir tous les Utilisateurs nécessitant des droits d`'accès d`'Administrateur.
 Notez qu`'il doit s`'agir d`'un Groupe d`'Utilisateurs __externe__.
 
-Seuls les Utilisateurs membres de ce groupe ou d'un groupe imbriqué peuvent créer, modifier et supprimer les définitions d`'Administration globale dans IKAN ALM.
+Seuls les Utilisateurs membres de ce groupe ou d'un groupe imbriqué peuvent créer, modifier et supprimer les définitions d`'Administration globale dans Kobee.
 
 Si nécessaire, sélectionnez un autre Groupe d`'Utilisateurs _externe_ à partir du menu déroulant.
 
-Si vous laissez ce champ vide, tous les Utilisateurs authentifiés auront des droits d`'accès d`'Administrateur global au sein d`'IKAN ALM.
+Si vous laissez ce champ vide, tous les Utilisateurs authentifiés auront des droits d`'accès d`'Administrateur global au sein d`'Kobee.
 |===
 
 [[_ssystemsettings_tabmail]]
 === Courrier
 
-IKAN ALM peut envoyer des courriers de notification, automatiquement ou sur demande, en cas de Constructions échouées ou réussies, pour demander une approbation avant de délivrer vers un Niveau de Test ou de Production, ou simplement pour notifier des Utilisateurs de modifications de Paramètres.
+Kobee peut envoyer des courriers de notification, automatiquement ou sur demande, en cas de Constructions échouées ou réussies, pour demander une approbation avant de délivrer vers un Niveau de Test ou de Production, ou simplement pour notifier des Utilisateurs de modifications de Paramètres.
 
 Les Paramètres pour établir une connexion à un serveur de courrier externe peuvent également être définis dans cet onglet.
 
@@ -230,7 +230,7 @@ Les champs suivants sont disponibles dans le sous-panneau __Courrier__.
 |Sélectionnez la Machine du Serveur SMTP du courrier.
 
 |Port
-|Ce champ contient le numéro de port SMTP utilisé par IKAN ALM pour établir la connexion avec le Serveur de courrier.
+|Ce champ contient le numéro de port SMTP utilisé par Kobee pour établir la connexion avec le Serveur de courrier.
 
 Ce champ est optionnel.
 Par défaut, le numéro de port `25` sera utilisé.
@@ -255,7 +255,7 @@ Ce champ est obligatoire si _Authentification_ a été sélectionné comme type 
 |Dans ce champ, répétez le Mot de passe utilisé pour l`'authentification sur le Serveur SMTP.
 
 |Expéditeur
-|Ce champ contient le champ _Expéditeur_ utilisé dans les Notifications par courrier électronique envoyées par IKAN ALM.
+|Ce champ contient le champ _Expéditeur_ utilisé dans les Notifications par courrier électronique envoyées par Kobee.
 
 |Type de contenu
 a|Ce champ indique quels modèles seront utilisés pour composer les messages électroniques de notification ou d`'approbation. 
@@ -269,14 +269,14 @@ a|Par défaut, les modèles de messages électroniques se trouvent dans le répe
 
 _TOMCAT_HOME/webapps/alm/WEB-INF/classes/templates_
 
-Nous vous conseillons de modifier cet emplacement vers un répertoire de la Machine du Serveur IKAN ALM, si vous voulez adaptez les modèles à vos besoins.
+Nous vous conseillons de modifier cet emplacement vers un répertoire de la Machine du Serveur Kobee, si vous voulez adaptez les modèles à vos besoins.
 
 Les sous-répertoires correspondent aux Types de contenu:
 
 * "simple" pour le type _Texte brut_
 * "xhtml" pour le type _HTML_
 
-Un second Emplacement des modèles est utilisé par le service/démon du Serveur IKAN ALM:
+Un second Emplacement des modèles est utilisé par le service/démon du Serveur Kobee:
 
 _IKANALM_HOME/system/templates_
 
@@ -315,7 +315,7 @@ Par défaut, les flux RSS sont permis.
 Pour plus d`'informations, se référer à l`'appendice <<App_RSS.adoc#_rssfeedurldetails,Détails de l`'URL du flux RSS>>.
 
 |Services Web REST activés
-a|Le REST API IKAN ALM vous permet d'interagir avec IKAN ALM par la programmation et intègrer cette fonctionalité dans des scripts, autres applications ou des apps stand-alone. l'Interaction est possible avec:
+a|Le REST API Kobee vous permet d'interagir avec IKAN ALM par la programmation et intègrer cette fonctionalité dans des scripts, autres applications ou des apps stand-alone. l'Interaction est possible avec:
 
 * Authentification
 * Approbations
@@ -334,15 +334,15 @@ a|Le REST API IKAN ALM vous permet d'interagir avec IKAN ALM par la programmatio
 
 Par défaut, cette option est désactivée pour des raisons de sécurité.
 
-Le REST API IKAN ALM est entièrement documenté, et, quand les Services Web REST sont activés, accessible via l'interface web : _Help > Documentation REST API_.
+Le REST API Kobee est entièrement documenté, et, quand les Services Web REST sont activés, accessible via l'interface web : _Help > Documentation REST API_.
 
 |Communication sécurisée entre le Serveur et l'Agent
-|Ce champ indique si les services de communication web entre l'Application Web, le Serveur et l'Agent IKAN ALM sont actifs ou non via un canal sécurisé. 
+|Ce champ indique si les services de communication web entre l'Application Web, le Serveur et l'Agent Kobee sont actifs ou non via un canal sécurisé. 
 
 |Préfixe des Paramètres de Construction/Déploiement
-|Cette option définit la valeur du préfixe des Paramètres de Construction/Déploiement d`'IKAN ALM (__alm__ par défaut) et le nom du fichier des propriétés ANT qui est généré lors des phases d'Exécution de script de construction et d'Exécution de script de déploiement (par défaut alm_ant.properties quand c'est un Outil de script ANT)
+|Cette option définit la valeur du préfixe des Paramètres de Construction/Déploiement d`'Kobee (__alm__ par défaut) et le nom du fichier des propriétés ANT qui est généré lors des phases d'Exécution de script de construction et d'Exécution de script de déploiement (par défaut alm_ant.properties quand c'est un Outil de script ANT)
 
-Dans le cas ou vous provenez d'une version antèrieure à IKAN ALM 5.0, cette définition vous permet de garder le travail avec l'ancien préfixe de paramètres _scm4all_ et l'ancien fichier _scm4all_ant.properties_, et ne pas avoir à modified vos scripts de Construction et/ou Déploiement.
+Dans le cas ou vous provenez d'une version antèrieure à IKAN ALM 5.0 (prédécesseur de Kobee), cette définition vous permet de garder le travail avec l'ancien préfixe de paramètres _scm4all_ et l'ancien fichier _scm4all_ant.properties_, et ne pas avoir à modified vos scripts de Construction et/ou Déploiement.
 
 _Note:_ Il s`'agit ici d`'une solution de compatibilité.
 A un certain moment, vous allez devoir modifier vos scripts et utiliser le nouveau préfixe __alm__.
@@ -377,7 +377,7 @@ En haut de l`'écran, le panneau _Informations de l`'Archivage_ affiche les info
 
 [NOTE]
 ====
-Les Informations de l`'Archivage sont basées sur les données physiques obtenues de l`'emplacement des Archives de Construction sur le Serveur IKAN ALM.
+Les Informations de l`'Archivage sont basées sur les données physiques obtenues de l`'emplacement des Archives de Construction sur le Serveur Kobee.
 Cet emplacement est défini dans l`'onglet _Environnement local_ des Paramètres système. <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 ====
 +
@@ -684,9 +684,9 @@ image::GlobAdm-HousekeepingHistory-Details_error.png[,1258,322]
 == Synchronisation des Archives de construction 
 (((Synchronisation des archives de construction)))  (((Administration globale ,Synchronisation des archives de construction))) 
 
-L`'écran _Synchronisation des Archives de construction_ permet à l`'Administrateur IKAN ALM de synchroniser la représentation physique des Archives de Construction dans le système de fichiers et la représentation logique des Archives de Construction dans la base de données d`'IKAN ALM.
+L`'écran _Synchronisation des Archives de construction_ permet à l`'Administrateur Kobee de synchroniser la représentation physique des Archives de Construction dans le système de fichiers et la représentation logique des Archives de Construction dans la base de données d`'IKAN ALM.
 
-Par exemple: le statut d`'archivage d`'un fichier de Construction supprimé manuellement dans le système (via la commande de suppression du système d`'exploitation) sera toujours établi à "`présent`" dans la base de données d`'IKAN ALM.
+Par exemple: le statut d`'archivage d`'un fichier de Construction supprimé manuellement dans le système (via la commande de suppression du système d`'exploitation) sera toujours établi à "`présent`" dans la base de données d`'Kobee.
 Le processus de synchronisation établira ce statut à "`non existant`".
 
 . Dans le __Menu d'Administration globale, sélectionnez __Système > Synchronisation des Archives__.
@@ -787,7 +787,7 @@ Sélectionnez la case de sélection dans l'en-tête de la colonne pour sélectio
 
 [NOTE]
 ====
-Pour ne pas surcharger le Serveur IKAN ALM, il vaut mieux de limiter le nombre de Projets sélectionnés et de subdiviser le processus de synchronisation des Archives de Construction en plusieurs étapes.
+Pour ne pas surcharger le Serveur Kobee, il vaut mieux de limiter le nombre de Projets sélectionnés et de subdiviser le processus de synchronisation des Archives de Construction en plusieurs étapes.
 ====
 
 . L`'écran _Trace de la Synchronisation des Archives de construction_ s`'affiche.

@@ -5,7 +5,7 @@
 = Project Administration  
 (((Project Administration))) 
 
-The following IKAN ALM elements are typically used by a Project Administrator:
+The following Kobee elements are typically used by a Project Administrator:
 
 * <<ProjAdm_Projects.adoc#_projadm_projects,Projects>>
 * <<ProjAdm_ProjMgtOptions.adoc#_projadm_projmgtoptions,Project Administration Options>>

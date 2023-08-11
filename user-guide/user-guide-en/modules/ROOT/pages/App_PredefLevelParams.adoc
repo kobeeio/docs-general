@@ -49,7 +49,7 @@ The possible types are:
 This parameter provides the name of the Requester.
 
 |alm.levelRequest.rootLocation
-|A directory under the Work Copy Location on the IKAN ALM Server where the "`Retrieve Code`" Phase places the checked out sources.
+|A directory under the Work Copy Location on the Kobee Server where the "`Retrieve Code`" Phase places the checked out sources.
 
 The Work Copy Location is expanded with the Level Request OID (e.g., ``E:\Ikan\alm\system\system\workCopy\1170``)
 
@@ -58,7 +58,7 @@ a|This parameter provides the start date and time of the current Level Request.
 
 The format is ``date.time``.
 
-The date is in the format used on the server where IKAN ALM runs:
+The date is in the format used on the server where Kobee runs:
 
 * `YYYY/MM/DD` for Europe
 * `MM/DD/YYYY` for the USA
@@ -91,10 +91,10 @@ a|This parameter provides the Deploy Tool type used:
 * MAVEN2
 
 |alm.project.description
-|This parameter provides the description of the IKAN ALM Project.
+|This parameter provides the description of the Kobee Project.
 
 |alm.project.name
-|This parameter provides the IKAN ALM Project name.
+|This parameter provides the Kobee Project name.
 This name can be different from the Project name as known within the used VCR (see alm.project.vcrProjectName).
 
 |alm.package.name
@@ -106,7 +106,7 @@ It provides the name of the Package associated with the Level Request.
 
 |alm.project.vcrProjectName
 |This parameter provides the name of the Project as known within the VCR.
-This name can be different from the IKAN ALM Project name (see alm.project.name).
+This name can be different from the Kobee Project name (see alm.project.name).
 
 |alm.projectStream.buildPrefix
 |This parameter provides the Build Prefix defined for the Project Stream.
@@ -124,7 +124,7 @@ a|This parameter provides the Project Stream Type:
 * B = Branch
 
 |alm.projectStream.vcrBranchId
-|This parameter provides the Branch ID in the VCR defined in the IKAN ALM Project Stream (only for Branches).
+|This parameter provides the Branch ID in the VCR defined in the Kobee Project Stream (only for Branches).
 
 |source
 |This parameter provides the Source Location which is derived from the System Settings Local Work Copy Location.

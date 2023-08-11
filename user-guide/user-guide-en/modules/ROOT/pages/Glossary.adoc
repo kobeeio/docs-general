@@ -11,12 +11,12 @@
 
 |_Approval_
 |A _Pre-Approval_ enables a verification moment before delivering a Level Request to a Test or Production Level.
-It adds an extra condition to the execution of the Level Request: not only the Requested Date/Time must be expired, but the Pre-Approval must also be granted by an IKAN ALM User.
+It adds an extra condition to the execution of the Level Request: not only the Requested Date/Time must be expired, but the Pre-Approval must also be granted by an Kobee User.
 As long as both conditions are not fulfilled, the Level Request will not be handled.
 When a Pre-Approval is rejected, the Level Request will never be handled. 
 
 A _Post-Approval_ enables a verification moment after the execution of the Level Request on a Test or Production Level.
-It adds an extra condition to the determination of the end status of a Level Request: not only must all Build(s) or Deploy(s) have been ended successfully, but the Post-Approval must also be granted by an IKAN ALM User.
+It adds an extra condition to the determination of the end status of a Level Request: not only must all Build(s) or Deploy(s) have been ended successfully, but the Post-Approval must also be granted by an Kobee User.
 As long as the Post-Approval is not handled, the Level Request status will not be set to warning or success.
 When a Post-Approval is rejected, the Level Request can never be delivered to the next Level in the Lifecycle.
 
@@ -33,11 +33,11 @@ Just as a Head Project Stream, the Branch Project Stream must be linked to a Lif
 |_Build_
 |A Build is an action on a Build Environment which involves several sub processes, called Build Phases.
 It is always part of a Level Request, which may also contain other Builds or Deploys.
-[A Build is handled by the IKAN ALM Builder]. It starts from sources that were retrieved from the VCR to the Build Environment.
+[A Build is handled by the Kobee Builder]. It starts from sources that were retrieved from the VCR to the Build Environment.
 A Build script is executed on those sources by a Scripting Tool and gives a Build Result that is transferred to the Build Archive.
 
 |_Build Archive_
-|The physical location (path) on the IKAN ALM Server where the Build Results are stored in a compressed and archived format (*.zip or *.tar.gz). The Build Results are organized by Project and by Project Stream.
+|The physical location (path) on the Kobee Server where the Build Results are stored in a compressed and archived format (*.zip or *.tar.gz). The Build Results are organized by Project and by Project Stream.
 
 |_Build Environment_
 |A physical environment on a Machine where sources retrieved from the VCR may be transformed by a Build script executed by a Scripting Tool.
@@ -50,7 +50,7 @@ It allows you to verify the flow of a certain Build in the Lifecycle: was it eve
 
 |_Build Number_
 |Each Build on the Build Level in a Project Stream has a unique Build Number.
-This is a sequential number that is incremented by IKAN ALM when a Build Level Request is created.
+This is a sequential number that is incremented by Kobee when a Build Level Request is created.
 The highest Build Number is stored on the Project Stream.
 
 |_Build OID_
@@ -63,7 +63,7 @@ They are defined on a Build Environment, and can have a predefined value or be m
 |_Build Phase_
 |A Build Phase is a sub process that must be performed to complete a Build action.
 Different Build Phases form the workflow of a Build and are inserted into a Build Environment.
-They are executed by the IKAN ALM Builder Thread of the IKAN ALM Agent.
+They are executed by the Kobee Builder Thread of the IKAN ALM Agent.
 A Build Phase may be a Core Phase (e.g., Verify Build Script), or a Custom Build Phase created or imported by the User in the Phase Catalog.
 
 |__Build Prefix__/Suffix
@@ -78,9 +78,9 @@ A Branch Project Stream will combine the Build Prefix and Suffix to obtain its r
 |A Build Level for which a Schedule has been defined verifying the latest sources in the VCR after a specified number of minutes (e.g., every 5 or 10 minutes). If the code has changed in the VCR, the Scheduler will notify the changes after the defined interval and a Level Request will be generated automatically.
 
 |_Core Phase_
-|Core Phases form the IKAN ALM "`Core`" functionality.
+|Core Phases form the Kobee "`Core`" functionality.
 They can only be viewed, and can be neither altered nor deleted.
-Consider them an integral part of IKAN ALM.
+Consider them an integral part of Kobee.
 When a new Level, Build or Deploy Environment is created, its default workflow will be created and will completely consist of a sequence of Core Phases.
 This default workflow may be changed by removing Core Phases, by changing the sequence order, or by adding Custom Phases.
 
@@ -88,7 +88,7 @@ This default workflow may be changed by removing Core Phases, by changing the se
 |A Phase added by the User is also called a "`Custom`" Phase.
 It may be created from scratch in Global Administration based on one or more working scripts and resources, or it may be imported, using the "`Import Phase`" functionality.
 Once defined in Global Administration, a Custom Phase may be inserted into (and consequently change) the default work flow of a Level, Build or Deploy Environment.
-All Custom Phases are stored in the Phase Catalog on the IKAN ALM Server, and are transported automatically to the IKAN ALM Server (Level Phase) or IKAN ALM Agent (Build or Deploy Phase) when they are to be executed.
+All Custom Phases are stored in the Phase Catalog on the Kobee Server, and are transported automatically to the IKAN ALM Server (Level Phase) or IKAN ALM Agent (Build or Deploy Phase) when they are to be executed.
 
 |_Deliver [Level Request]_
 |A manually (via the Command Line or web interface) created Level Request to deliver sources or a Build Result to the next higher Test or Production Level in the Lifecycle of a Project Stream.
@@ -102,7 +102,7 @@ Projects can be reused in two ways: as sources retrieved from the Versioning Sys
 |_Deploy_
 |
 A Deploy is an action on a Deploy Environment which involves several sub processes, called Deploy Phases.
-It is always part of a Level Request, which may also contain (an)other Build(s) or Deploy(s). [A Deploy is handled by the IKAN ALM Deployer]. It starts from a Build Result which is retrieved from the Build Archive.
+It is always part of a Level Request, which may also contain (an)other Build(s) or Deploy(s). [A Deploy is handled by the Kobee Deployer]. It starts from a Build Result which is retrieved from the Build Archive.
 A Deploy script is executed on this Build Result by a Scripting Tool.
 
 |_Deploy Parameter_
@@ -111,14 +111,14 @@ A Deploy script is executed on this Build Result by a Scripting Tool.
 |_Deploy Phase_
 |A Deploy Phase is a sub process that must be performed to complete a Deploy action.
 Different Deploy Phases form the workflow of a Deploy and are inserted into a Deploy Environment.
-They are executed by the IKAN ALM Deployer Thread of the IKAN ALM Agent.
+They are executed by the Kobee Deployer Thread of the IKAN ALM Agent.
 A Deploy Phase may be a Core Phase (e.g., Transport Build Result) or a Custom Deploy Phase created or imported by the User in the Phase Catalog.
 
 |_Deploy Tool_
 |A scripting Tool installed on a Deploy Environment
 
 |_Deploy Environment_
-|A physical environment on a Machine where a Build result retrieved from the Build Archive on the IKAN ALM Server may be deployed by a Deploy script executed by a Scripting Tool.
+|A physical environment on a Machine where a Build result retrieved from the Build Archive on the Kobee Server may be deployed by a Deploy script executed by a Scripting Tool.
 A Deploy Environment is always part of a Level.
 
 |_Desktop_
@@ -143,34 +143,34 @@ Once a Phase is linked to an Environment, specific values can be specified for t
 A Head Project Stream is typically used for the ongoing development of the next Release.
 Just as a Branch Stream, the Head Stream must be linked to a Lifecycle in order to be active (Builds and Deploys).
 
-|_IKAN ALM Agent_
+|_Kobee Agent_
 |A process (daemon) running on a Machine with sub processes to handle Build or Deploys.
-An Agent running on the same Machine as the IKAN ALM Server is also referred to as "`local`", whereas running on a different Machine it is indicated as "`remote`". During a Build or Deploy the IKAN ALM Agent interacts remotely with the IKAN ALM Monitor, and locally with a Transporter and with a Scripting Tool that must be correctly configured on the Machine.
+An Agent running on the same Machine as the Kobee Server is also referred to as "`local`", whereas running on a different Machine it is indicated as "`remote`". During a Build or Deploy the IKAN ALM Agent interacts remotely with the IKAN ALM Monitor, and locally with a Transporter and with a Scripting Tool that must be correctly configured on the Machine.
 
-|_IKAN ALM Server_
-|The Machine hosting the IKAN ALM web application and the IKAN ALM Monitor and Scheduler processes.
+|_Kobee Server_
+|The Machine hosting the Kobee web application and the IKAN ALM Monitor and Scheduler processes.
 
-|_IKAN ALM Monitor_
-|A process (daemon) running on the IKAN ALM Server to handle Level Requests.
-During the proceeding of a Level Requests it interacts with a VCR client installed on the IKAN ALM Server and with a local or remote IKAN ALM Agent.
+|_Kobee Monitor_
+|A process (daemon) running on the Kobee Server to handle Level Requests.
+During the proceeding of a Level Requests it interacts with a VCR client installed on the Kobee Server and with a local or remote IKAN ALM Agent.
 
-|_IKAN ALM Scheduler_
-|A process (daemon) running on the IKAN ALM Server.
+|_Kobee Scheduler_
+|A process (daemon) running on the Kobee Server.
 In case a Schedule (= a predefined interval, e.g., each 5 or 10 minutes, each night or each week,
- .) is linked to a Build Level, the IKAN ALM Scheduler will verify, in the Version Control Repository, whether changes have been made to the sources in the VCR each time the Schedule interval expires.
+ .) is linked to a Build Level, the Kobee Scheduler will verify, in the Version Control Repository, whether changes have been made to the sources in the VCR each time the Schedule interval expires.
 This enables Continuous Integration or Nightly Builds.
 
-|_IKAN ALM Builder_
-|A sub process (daemon) of the IKAN ALM Agent that will handle the Builds of a Level Request in the Build Environment on an Agent Machine.
+|_Kobee Builder_
+|A sub process (daemon) of the Kobee Agent that will handle the Builds of a Level Request in the Build Environment on an Agent Machine.
 
-|_IKAN ALM Deployer_
-|A sub process (daemon) of the IKAN ALM Agent that will handle the Deploys of a Level Request in the Deploy Environment on an Agent Machine.
+|_Kobee Deployer_
+|A sub process (daemon) of the Kobee Agent that will handle the Deploys of a Level Request in the Deploy Environment on an Agent Machine.
 
 |_Issue Tracking_
-|A system external to IKAN ALM, where Issues (defects, enhancements, tasks, 
+|A system external to Kobee, where Issues (defects, enhancements, tasks, 
  .) may be defined for a Project.
 Samples are Atlassian JIRA, MicroFocus ALM, GitHub, Microsoft Team Foundation Server, Collabnet TeamForge, Bugzilla or Trac.
-IKAN ALM can plug in to such a System and keep up with the Issues that were handled for a Level Request. 
+Kobee can plug in to such a System and keep up with the Issues that were handled for a Level Request. 
 
 The integration with JIRA, Microfocus ALM, GitHub and Microsoft TFS is more advanced: Issues are automatically synchronized through the Lifecycle, and it is possible to keep a link with the Level Requests in the JIRA Issue, MF ALM Defect, GitHub Issue or TFS Issue.
 
@@ -184,14 +184,14 @@ It may have more than one Build and/or Deploy Environments to support parallel B
 |A Level Phase is a sub process that must be performed to complete a Level Request.
 The execution of a Level Request is split up in Level Phases which will be executed sequentially.
 Different Level Phases form the workflow of a Level Request and are inserted into a Level.
-They are executed by the IKAN ALM Monitor Thread of the IKAN ALM Server.
+They are executed by the Kobee Monitor Thread of the IKAN ALM Server.
 A Level Phase may be a Core Phase (e.g., Retrieve Code) or a Custom Level Phase created or imported by the User in the Phase Catalog.
 
 |_Level Request_
 |A Level Request is an action on a Level which involves several sub processes, called Level Phases.
 In most cases, a Level Request will contain at least one Build or Deploy action, which will be executed on local or remote Machines.
-A Level Request may be created manually by the user via the Web interface or the Command Line interface, or automatically by the Scheduler Thread of the IKAN ALM Server.
-A Level Request is handled by the Monitor Thread of the IKAN ALM Server.
+A Level Request may be created manually by the user via the Web interface or the Command Line interface, or automatically by the Scheduler Thread of the Kobee Server.
+A Level Request is handled by the Monitor Thread of the Kobee Server.
 
 |_Lifecycle_
 a|A Lifecycle is a sequence of Levels that is linked to a Project Stream.
@@ -201,8 +201,8 @@ One Project may have different Lifecycles, e.g., for development on the next rel
 |_Machine_
 |A representation of a concrete Server.
 Builds and Deploys may be done on a Machine, when it is linked to a Build respectively Deploy Environment.
-Other conditions are that the IKAN ALM Agent is installed and running on the Machine, and that a Scripting Tool is installed on the Machine.
-The IKAN ALM Server is a special Machine, containing the web application and the running IKAN ALM Monitor and Scheduler Threads.
+Other conditions are that the Kobee Agent is installed and running on the Machine, and that a Scripting Tool is installed on the Machine.
+The Kobee Server is a special Machine, containing the web application and the running IKAN ALM Monitor and Scheduler Threads.
 
 |_Machine Parameter_
 |Machine Parameters are defined for a Machine instead of for a specific Environment.
@@ -212,35 +212,35 @@ This avoids having to (re)define Build and/or Deploy Parameters for each Environ
 If an Environment Parameter and a Machine Parameter have the same name, the Environment Parameter takes precedence.
 
 |_Notification_
-|A message to a User defined in IKAN ALM via mail.
-Notifications may be sent when a Level Request fails or succeeds, when an Approval must be granted for a Level Request, when an Approval for a Level is rejected, when a Level Request is delivered to or from a certain Level, when the IKAN ALM Administrator wants to notify certain Users.
+|A message to a User defined in Kobee via mail.
+Notifications may be sent when a Level Request fails or succeeds, when an Approval must be granted for a Level Request, when an Approval for a Level is rejected, when a Level Request is delivered to or from a certain Level, when the Kobee Administrator wants to notify certain Users.
 
 |_OID (Level Request OID / Build OID / Deploy OID /Level Approval OID)_
 |Object Identifier.
 Unique number to identify a Level Request/ Build / Deploy / Level Approval from other Level Requests/ Builds / Deploys / Level Approvals 
 
 |_Package_
-|A Package allows moving one or more individual files selected manually from a VCR Stream (Head or Branch) through the IKAN ALM Lifecycle.
+|A Package allows moving one or more individual files selected manually from a VCR Stream (Head or Branch) through the Kobee Lifecycle.
 One or multiple Packages may be created in each Project Stream of a Package-based Project.
 This is different from the original way of working in the Project Streams of Release-based projects, where a configurable automated process defines which file revisions are retrieved from the head (trunk) or branch of the versioning system and moved in the Lifecycle.
 
 |_Phase Catalog_
-|The physical location (path) on the IKAN ALM Server where the Custom Phases (created from scratch or imported) are stored in an archived format (Phase.name-Phase.version.jar, e.g., com.ikanalm.echoproperties-1.0.0.jar). When an IKAN ALM Server or Agent needs to install a missing Custom Phase, it will be retrieved from that location.
+|The physical location (path) on the Kobee Server where the Custom Phases (created from scratch or imported) are stored in an archived format (Phase.name-Phase.version.jar, e.g., com.ikanalm.echoproperties-1.0.0.jar). When an IKAN ALM Server or Agent needs to install a missing Custom Phase, it will be retrieved from that location.
 That will be done using the Transporter linked to the Server or Agent Machine.
 
 a|_Project_
-|An IKAN ALM Project maps to a project or subproject in a versioning system (VCR) which bundles related sources.
-An IKAN ALM Project is a shell for one or more Project Streams in which the real actions (Level Requests, Builds, Deploys) are done.
+|An Kobee Project maps to a project or subproject in a versioning system (VCR) which bundles related sources.
+An Kobee Project is a shell for one or more Project Streams in which the real actions (Level Requests, Builds, Deploys) are done.
 It is possible to set up dependencies between different Projects, also through the Project Streams.
 
 There are 2 types of Projects:
 
-* Release-based Projects: IKAN ALM will work with the existing structure in the VCR system, so that the objects to be extracted will be retrieved automatically when starting the build process.
-* Package-based Projects: this concept enables to work with isolated files from the VCR system. Objects must be selected manually in a Package structure created in IKAN ALM before starting the Build process.
+* Release-based Projects: Kobee will work with the existing structure in the VCR system, so that the objects to be extracted will be retrieved automatically when starting the build process.
+* Package-based Projects: this concept enables to work with isolated files from the VCR system. Objects must be selected manually in a Package structure created in Kobee before starting the Build process.
 
 
 |_Project Stream_
-|The Project Stream concept enables to control different active Lifecycles within an IKAN ALM Project.
+|The Project Stream concept enables to control different active Lifecycles within an Kobee Project.
 In general, all Projects have a main Project Stream called "`Head`", in which development for the next upcoming release happens.
 In addition to this there will probably be one or more Branch Project Streams.
 A Branch Project Stream can be used for maintaining Project releases which are currently in Production, so that fixes can be rolled out automatically or urgent fixes can be promoted along a shorter (and faster) Lifecycle to production.
@@ -266,50 +266,50 @@ The Level Request must contain at least one Build and may contain (a) Deploy(s).
 The Level Request may contain Build(s) and/or Deploy(s)
 
 |_Scripting Tool_
-|A system external to IKAN ALM which can execute user-created scripts and which is installed on a Machine.
-IKAN ALM integrates with Ant, Gradle, NAnt and Maven2.
+|A system external to Kobee which can execute user-created scripts and which is installed on a Machine.
+Kobee integrates with Ant, Gradle, NAnt and Maven2.
 When the Scripting Tool is linked to a Build respectively Deploy Environment it is also referred to as a Build respectively Deploy Tool.
-The script for executing a Build or Deploy must be stored in the VCR (together with the sources) or in the Script Location on the IKAN ALM Server.
+The script for executing a Build or Deploy must be stored in the VCR (together with the sources) or in the Script Location on the Kobee Server.
 
 |_Tag-based Build_
 |A tag-based Build will be executed on sources with a pre-applied tag (manually by a user) in the VCR, whereas a non-Tag-Based Build will be executed on the latest sources, also called the "`tip`", of a branch or head (trunk/main) stream from the VCR.
 
 |_Transporter_
-|A Transporter is used for transporting files and directories between the IKAN ALM server and a local or remote Agent handling the Build or Deploy processes.
+|A Transporter is used for transporting files and directories between the Kobee server and a local or remote Agent handling the Build or Deploy processes.
 Therefore, a Transporter must be defined for a specific Machine that is linked to the Build or Deploy Environment.
-IKAN ALM supports the local FileCopy, remote FileCopy, SecureCopy and FTP Transporters.
+Kobee supports the local FileCopy, remote FileCopy, SecureCopy and FTP Transporters.
 A Transporter may transport checked-out sources from the Versioning System, a Build result from the Build Archive, but also Custom Phases from the Phase Catalog.
 
 |_User_
-|A person that may log on to IKAN ALM.
-The membership to User Groups determines his or her "`Access Rights, i.e., what actions (Global or Project administration, creation of Level Request, verification of Projects, ...) a User can do in IKAN ALM.
-Users are not created manually in IKAN ALM, but in an external security system (like LDAP or Active Directory). If the User belongs to the correct User Group in this security system, he or she may log on to IKAN ALM and will be created automatically.
+|A person that may log on to Kobee.
+The membership to User Groups determines his or her "`Access Rights, i.e., what actions (Global or Project administration, creation of Level Request, verification of Projects, ...) a User can do in Kobee.
+Users are not created manually in Kobee, but in an external security system (like LDAP or Active Directory). If the User belongs to the correct User Group in this security system, he or she may log on to IKAN ALM and will be created automatically.
 
 |_User Group_
-|An entity grouping Users with the same "`Access Rights`". Actions in IKAN ALM (Global or Project administration, creation of Level Request, verification of Projects, ...) are protected by a User Group.
-User Groups must be created in IKAN ALM.
+|An entity grouping Users with the same "`Access Rights`". Actions in Kobee (Global or Project administration, creation of Level Request, verification of Projects, ...) are protected by a User Group.
+User Groups must be created in Kobee.
 There are two types of User Groups: external and internal.
 The membership of Users to an external User Group is set in the external Security System.
-Each time a User logs on to IKAN ALM, his or her memberships to the different User Groups will be synchronized with the external security system.
-Internal User Groups, however, are not synchronized with an external security system: they are intended for notification and approval purposes and are managed manually through the IKAN ALM interface.
+Each time a User logs on to Kobee, his or her memberships to the different User Groups will be synchronized with the external security system.
+Internal User Groups, however, are not synchronized with an external security system: they are intended for notification and approval purposes and are managed manually through the Kobee interface.
 
 |_VCR Branch ID_
 |A unique identifier for a Branch in the external VCR system.
 
 |_VCR Tag_
-|After a successful Level Request on a Build Level the IKAN ALM Monitor applies a tag in the Version Control Repository (VCR) system.
+|After a successful Level Request on a Build Level the Kobee Monitor applies a tag in the Version Control Repository (VCR) system.
 This VCR Tag matches a Build [Level Request] with its source code in the VCR The format of the VCR Tag normally matches the Tag Template defined for the Project Stream.
 
 |_Version Control Repository (VCR)_
 |An external versioning system holding different versions of sources.
 Related sources are bundled in a Project or subproject (sometimes also called a Module). A VCR Project may contain different development streams, called head (=main or trunk) or branch streams.
-IKAN ALM integrates with the following VCRs: Subversion, Git, CVS, and TFVC.
-In order to connect to the VCR, a VCR Client must be installed on the IKAN ALM Server and correctly configured.
-The IKAN ALM Monitor interacts with the VCR by retrieving or tagging sources.
+Kobee integrates with the following VCRs: Subversion, Git, CVS, and TFVC.
+In order to connect to the VCR, a VCR Client must be installed on the Kobee Server and correctly configured.
+The Kobee Monitor interacts with the VCR by retrieving or tagging sources.
 The web interface interacts with the VCR to show revision numbers, modified sources, ... related to a Level Request.
 
 |_Work Copy_
-|A physical location (path) on the IKAN ALM Server to which the Monitor retrieves the source code from the VCR or Build Results from the Build Archive.
+|A physical location (path) on the Kobee Server to which the Monitor retrieves the source code from the VCR or Build Results from the Build Archive.
 |===
 
 :sectnums:

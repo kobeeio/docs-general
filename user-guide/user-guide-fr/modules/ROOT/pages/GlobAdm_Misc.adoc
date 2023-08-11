@@ -7,7 +7,7 @@
 
 [NOTE]
 ====
-L`'option _Autres activités_ n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+L`'option _Autres activités_ n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 Pour des informations plus détaillées concernant les options du menu __Autres activités__, se référer aux procédures suivantes:
@@ -18,7 +18,7 @@ Pour des informations plus détaillées concernant les options du menu __Autres 
 == Notifier les utilisateurs
 (((Notifier des utilisateurs)))  (((Autres Activités ,Notifier les utilisateurs))) 
 
-Cette option permet d`'envoyer, à partir de l`'application IKAN ALM, des messages électroniques à d`'autres Utilisateurs d`'IKAN ALM.
+Cette option permet d`'envoyer, à partir de l`'application Kobee, des messages électroniques à d`'autres Utilisateurs d`'IKAN ALM.
 
 Ceci permet, par exemple, d`'envoyer un avertissement aux Utilisateurs connectés, ou de notifier des Utilisateurs appartenant à un groupe d`'utilisateurs spécifique que certains Paramètres ont été modifiés.
 C`'est aussi un moyen pour tester les Paramètres de courrier spécifiés dans l`'onglet _Courrier_ des Paramètres système.
@@ -38,7 +38,7 @@ Les champs suivants sont disponibles:
 | Description
 
 |A/au
-|Sélectionnez si vous voulez envoyer votre message à tous les Utilisateurs connectés à IKAN ALM, à un Groupe d`'utilisateurs sélectionné ou à tous les Utilisateurs d`'IKAN ALM.
+|Sélectionnez si vous voulez envoyer votre message à tous les Utilisateurs connectés à Kobee, à un Groupe d`'utilisateurs sélectionné ou à tous les Utilisateurs d`'IKAN ALM.
 
 |Groupe d`'utilisateurs
 |Si vous envoyez votre message à un Groupe d`'utilisateurs sélectionné, sélectionnez le Groupe d`'utilisateurs requis à partir du menu déroulant.
@@ -54,7 +54,7 @@ Dans les autres cas, laissez ce champ vide.
 
 . Faites les sélections nécessaires et saisissez votre message. Ensuite cliquez sur le bouton __Envoyer un message__.
 +
-Les Utilisateurs d`'IKAN ALM correspondant à votre sélection recevront le message.
+Les Utilisateurs d`'Kobee correspondant à votre sélection recevront le message.
 L`'expéditeur SMTP défini dans les Paramètres Système sera mentionné comme Expéditeur du message.
 +
 Vous pouvez également cliquer sur le bouton _Réinitialiser_ pour nettoyer les champs.

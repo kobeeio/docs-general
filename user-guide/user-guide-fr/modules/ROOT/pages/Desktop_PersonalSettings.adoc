@@ -36,8 +36,8 @@ Le tableau suivant décrit les champs disponibles.
 | Description
 
 |Utilisateur
-|Ce champ accessible en lecture seulement contient votre Identifiant Utilisateur IKAN ALM.
-Comme ces Identifiants sont gérés hors de l`'application IKAN ALM, vous ne pouvez pas les modifier.
+|Ce champ accessible en lecture seulement contient votre Identifiant Utilisateur Kobee.
+Comme ces Identifiants sont gérés hors de l`'application Kobee, vous ne pouvez pas les modifier.
 
 |Nom utilisateur
 |Dans ce champ vous pouvez modifier votre nom d`'utilisateur.
@@ -50,7 +50,7 @@ Ce champ doit être obligatoirement rempli.
 |Adresse de Courrier
 |Dans ce champ vous pouvez saisir votre adresse de courrier électronique.
 
-Les Notifications générées par IKAN ALM (par exemple, en cas d`'une Requête de Niveau échouée ou réussie, ou d`'une Approbation en attente) seront envoyées à l`'adresse ci-spécifiée.
+Les Notifications générées par Kobee (par exemple, en cas d`'une Requête de Niveau échouée ou réussie, ou d`'une Approbation en attente) seront envoyées à l`'adresse ci-spécifiée.
 
 Ce champ doit être obligatoirement rempli.
 
@@ -64,7 +64,7 @@ Ce champ doit être obligatoirement rempli.
 |Dans ce champ vous pouvez saisir votre numéro de téléphone mobile.
 
 |Langue
-|A partir de la liste déroulante vous pouvez choisir la langue dans laquelle vous voulez afficher l`'interface Utilisateur d`'IKAN ALM.
+|A partir de la liste déroulante vous pouvez choisir la langue dans laquelle vous voulez afficher l`'interface Utilisateur d`'Kobee.
 
 Les langues disponibles sont: Anglais, Français et Allemand.
 |===

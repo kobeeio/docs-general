@@ -5,7 +5,7 @@
 = Project Streams 
 (((Project Administration ,Project Streams)))  (((Project Management Options ,Project Streams)))  (((Project Streams))) 
 
-A Project Stream is a working entity within IKAN ALM.
+A Project Stream is a working entity within Kobee.
 A Level Request is created for a Level linked to a Project Stream.
 Main development will mostly be done in the Head Project Stream.
 Maintenance, patches and parallel development can be realized in one or more Branch Project Streams.
@@ -112,18 +112,18 @@ For more information on hiding Project Streams, refer to <<ProjAdm_ProjMgt_Proje
 
 If the Project Stream is tag-based, it is possible to retrieve sources labeled with a user-defined tag in the head or branch stream for a build action on the Build Level.
 
-__Warning:__ This functionality requires strict adherence to the internal tagging conventions, as by manual tagging artifacts are no longer under the exclusive control of IKAN ALM.
+__Warning:__ This functionality requires strict adherence to the internal tagging conventions, as by manual tagging artifacts are no longer under the exclusive control of Kobee.
 Tags may be defined before a build, but should remain consistent for the affected artifacts for their full Lifecycle.
 
 If tag-based builds are activated for the Project Stream, the Tag Template has no effect any more as the VCR Tag will be defined by the User during the Level Request creation process. 
 
-Furthermore, when the IKAN ALM Scheduler notices that a Build Level is connected to a tag-based Project Stream, it will take no action since it has no reference to check for changes in the versioning system.
-Triggered builds (for example, after the creation of a tag in the VCR) can be activated via a hook script in the versioning system which will call the IKAN ALM command line to create a Level Request on the Build Level.
+Furthermore, when the Kobee Scheduler notices that a Build Level is connected to a tag-based Project Stream, it will take no action since it has no reference to check for changes in the versioning system.
+Triggered builds (for example, after the creation of a tag in the VCR) can be activated via a hook script in the versioning system which will call the Kobee command line to create a Level Request on the Build Level.
 Therefore, it is recommended to disconnect any Schedule from the Build Level of a tag-based Project Stream.
 If that is not possible (for example, because the Level is also used in another Project Stream), make sure that _Accept
 Forced Build_ is set to __Yes__.
 
-If the Project Stream is Package-based, this field is unchangeably set to __No__, since Tag-Based Builds make no sense in a Package-based project: a Package created in IKAN ALM may be compared with a Tag created in the VCR: it contains one or more selected file revisions out of the Head (trunk) or Branch stream from the VCR.
+If the Project Stream is Package-based, this field is unchangeably set to __No__, since Tag-Based Builds make no sense in a Package-based project: a Package created in Kobee may be compared with a Tag created in the VCR: it contains one or more selected file revisions out of the Head (trunk) or Branch stream from the VCR.
 
 |Build Type
 a|Select the Build type from the drop-down list.
@@ -199,7 +199,7 @@ They all have the format $\{name}:
 * $\{suffix}: This variable returns the Build Suffix defined for the Branch Stream. (If this variable is included in a Template for a Head Stream, it is ignored.)
 * $\{streamType}: This variable returns the Type indication for a Stream: _H_ for Head Stream or _B_ for Branch Stream.
 * $\{buildNumber}: This variable returns the number of the Build, so that the Build can be matched with its Tag.
-* $\{projectName}: This variable returns the name of the IKAN ALM Project.
+* $\{projectName}: This variable returns the name of the Kobee Project.
 * $\{vcrProjectName}: This variable returns the VCR name of the Project.
 * $\{dateTime(dateformat)}: This variable returns the timestamp of the Building action in the indicated format. __yyyy-MM-dd__ is a valid format. For other valid formats, refer to http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html[http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html,window=_blank]
 * $\{packageName}: This variable returns the name of the package in a Package-based Project Stream.
@@ -274,25 +274,25 @@ For a detailed description of the fields and the links, refer to <<ProjAdm_ProjM
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with User or Project Administrator Access Rights.
+This option is available to Kobee Users with User or Project Administrator Access Rights.
 It allows <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,viewing>> or <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadmin_projectstream_editing,editing the selected Project Stream definition>>.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to Kobee Users with Project Administrator Access Rights.
 It allows deleting the selected Project Stream. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadm_projectstream_deleting,Deleting a Project Stream>>
 
 |image:icons/lock.gif[,15,15] / image:icons/unlock.gif[,15,15] 
 |Lock / Unlock
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to Kobee Users with Project Administrator Access Rights.
 It allows locking or unlocking the selected Project Stream. <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadm_projectstream_locking,Locking/Unlocking a Project Stream>>
 
 |image:icons/hide.gif[,15,15] / image:icons/show.gif[,15,15] 
 |Hide / Show
 
-This option is available to IKAN ALM Users with Project Administrator Access Rights.
+This option is available to Kobee Users with Project Administrator Access Rights.
 It allows hiding or showing the selected Project Stream.
 
 <<ProjAdm_ProjMgt_ProjectStream.adoc#_hideshowprojectstream,Hiding/Showing a Project Stream>>
@@ -300,7 +300,7 @@ It allows hiding or showing the selected Project Stream.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users with Project User Access Rights.
+This option is available to all Kobee Users with Project User Access Rights.
 It allows to display the History of all create, update and delete operations performed on a Project Stream.
 
 <<ProjAdm_ProjMgt_ProjectStream.adoc#_projadm_projectstream_historyview,Viewing the Project Stream History.>>

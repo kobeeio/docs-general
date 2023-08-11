@@ -79,7 +79,7 @@ If the field is empty, the default Deploy Script whose relative path is defined 
 |Source Location
 |This field contains the path to the physical location where the unpacked build result is placed.
 
-IKAN ALM adds the Deploy OID:
+Kobee adds the Deploy OID:
 
 _SourceLocation/DeployOID/ProjectName_VCR_
 
@@ -93,7 +93,7 @@ This location is passed to the Deploy Script as a parameter named __target__.
 |Partial Deploy
 a|Indicate whether the Partial Deploy option must be activated for this Deploy Environment.
 
-If the option is activated, IKAN ALM will analyze the differences between the two build results on the IKAN ALM Server and only new and modified files will be transported to the Agent.
+If the option is activated, Kobee will analyze the differences between the two build results on the IKAN ALM Server and only new and modified files will be transported to the Agent.
 
 This is achieved as follows:
 
@@ -283,7 +283,7 @@ You can also click __Back__ to return to the previous screen without cloning the
 === Deploy Environment Phases 
 (((Deploy Environments ,Phases)))  (((Phases ,Deploy Environment))) 
 
-When creating a Deploy Environment, IKAN ALM will automatically link the default flow of Deploy Environment Phases to it.
+When creating a Deploy Environment, Kobee will automatically link the default flow of Deploy Environment Phases to it.
 
 The default Phases are:
 
@@ -466,7 +466,7 @@ Initially, when the Phase is inserted, the value will be copied from the Default
 This field may be changed by Editing the Phase Parameter.
 
 |Integration Type
-a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an IKAN ALM Global Administration object type.
+a|This field indicates whether the value of the Parameter is a simple text value, or whether it represents a link (an integration) to an Kobee Global Administration object type.
 
 The possible values are:
 

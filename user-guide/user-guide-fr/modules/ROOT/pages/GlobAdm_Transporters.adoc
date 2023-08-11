@@ -5,56 +5,56 @@
 = Transporteurs 
 (((Administration globale ,Transporteurs))) 
 
-Chaque action de Construction ou de Déploiement exécutée par un Agent IKAN ALM comprend le transfert des codes Sources, d`'un Script ou d`'un résultat de construction entre l`'Agent IKAN ALM et le Serveur IKAN ALM.
+Chaque action de Construction ou de Déploiement exécutée par un Agent Kobee comprend le transfert des codes Sources, d`'un Script ou d`'un résultat de construction entre l`'Agent IKAN ALM et le Serveur IKAN ALM.
 
-L`'Agent IKAN ALM peut résider localement sur le Serveur IKAN ALM ou sur une Machine distante (c`'est-à-dire, un serveur autre que le Serveur IKAN ALM).
+L`'Agent Kobee peut résider localement sur le Serveur IKAN ALM ou sur une Machine distante (c`'est-à-dire, un serveur autre que le Serveur IKAN ALM).
 
-Les Phases personnalisées qui ont été créées ou importées dans le Catalogue des Phases du Serveur IKAN ALM doivent être transportées et installées dans l'environnement d'exécution du Server IKAN ALM (Phases de Niveau personnalisées) ou de l'Agent (Phases de construction et de déploiement personnalisées).
+Les Phases personnalisées qui ont été créées ou importées dans le Catalogue des Phases du Serveur Kobee doivent être transportées et installées dans l'environnement d'exécution du Server IKAN ALM (Phases de Niveau personnalisées) ou de l'Agent (Phases de construction et de déploiement personnalisées).
 
 Le Transporteur est impliqué dans les processus de Construction et de Déploiement suivants:
 
 PROCESSUS DE CONSTRUCTION:
 
-* le transfert des codes Sources récupérés du Serveur IKAN ALM vers l`'Emplacement Source sur l`'Environnement de Construction,
-* le transfert du Script de construction à partir de l`'Emplacement des Scripts sur le Serveur IKAN ALM vers l`'Emplacement Source sur l`'Environnement de Construction (ce processus est exécuté uniquement si le Script de construction n`'est pas inclus dans les codes Sources),
-* le transfert du résultat de Construction compressé à partir de l`'Emplacement Cible sur l`'Environnement de Construction vers les Archives de Construction sur le Serveur IKAN ALM.
+* le transfert des codes Sources récupérés du Serveur Kobee vers l`'Emplacement Source sur l`'Environnement de Construction,
+* le transfert du Script de construction à partir de l`'Emplacement des Scripts sur le Serveur Kobee vers l`'Emplacement Source sur l`'Environnement de Construction (ce processus est exécuté uniquement si le Script de construction n`'est pas inclus dans les codes Sources),
+* le transfert du résultat de Construction compressé à partir de l`'Emplacement Cible sur l`'Environnement de Construction vers les Archives de Construction sur le Serveur Kobee.
 
 
 PROCESSUS DE DEPLOIEMENT:
 
-* le transfert du résultat de construction à partir des Archives de Construction sur le Serveur IKAN ALM vers l`'Emplacement Source sur l`'Environnement de Déploiement,
-* le transfert du Script de Déploiement à partir de l`'Emplacement des Scripts sur le Serveur IKAN ALM vers l`'Emplacement Source sur l`'Environnement de Déploiement (ce processus est exécuté uniquement si le script de Déploiement n`'est pas inclus dans les codes Sources).
+* le transfert du résultat de construction à partir des Archives de Construction sur le Serveur Kobee vers l`'Emplacement Source sur l`'Environnement de Déploiement,
+* le transfert du Script de Déploiement à partir de l`'Emplacement des Scripts sur le Serveur Kobee vers l`'Emplacement Source sur l`'Environnement de Déploiement (ce processus est exécuté uniquement si le script de Déploiement n`'est pas inclus dans les codes Sources).
 
 
-Les actions de transfert sont toujours initiées par l`'Agent IKAN ALM.
-La définition d`'un Transporteur sera donc toujours une vue de l`'Agent IKAN ALM sur les Emplacements du Serveur IKAN ALM.
-Ces Emplacements peuvent être définis localement (l`'Agent étant sur la même Machine que le Serveur IKAN ALM) ou à distance (l`'Agent est sur une autre Machine que le Serveur IKAN ALM).
+Les actions de transfert sont toujours initiées par l`'Agent Kobee.
+La définition d`'un Transporteur sera donc toujours une vue de l`'Agent Kobee sur les Emplacements du Serveur IKAN ALM.
+Ces Emplacements peuvent être définis localement (l`'Agent étant sur la même Machine que le Serveur Kobee) ou à distance (l`'Agent est sur une autre Machine que le Serveur IKAN ALM).
 
 Par conséquent, un Transporteur doit être défini pour une Machine spécifique reliée à un Environnement de Construction ou de Déploiement.
-L`'Agent IKAN ALM qui tourne sur cette Machine exécutera les actions de transfert.
+L`'Agent Kobee qui tourne sur cette Machine exécutera les actions de transfert.
 
-Le Transporteur est également impliqué dans le processus de distribution des Phases personnalisées du Catalogue des Phases vers l'environnement d'exécution du Serveur IKAN ALM (Phases de niveau) ou de l'Agent IKAN ALM (Phases de construction et de déploiement):
+Le Transporteur est également impliqué dans le processus de distribution des Phases personnalisées du Catalogue des Phases vers l'environnement d'exécution du Serveur Kobee (Phases de niveau) ou de l'Agent IKAN ALM (Phases de construction et de déploiement):
 
 * Les Phases de niveau:
 +
-Avant l'exécution des Phases de niveau pour une Requête de niveau, toutes les Phases personnalisées non-publiées seront transportées à partir du Catalogue des Phases vers l'environnement d'exécution sur le Serveur IKAN ALM.
-Cela sera réalisé en utilisant le Transporteur associé au Serveur IKAN ALM.
-Les Phases de Niveau publiées ne seront transportées que si elles ne sont pas encore installées sur le Serveur IKAN ALM.
-Vous pouvez vérifier les Phases installées en utilisant le lien _Phases installées_ à côté de la Machine Serveur IKAN ALM dans l'__Aperçu des
+Avant l'exécution des Phases de niveau pour une Requête de niveau, toutes les Phases personnalisées non-publiées seront transportées à partir du Catalogue des Phases vers l'environnement d'exécution sur le Serveur Kobee.
+Cela sera réalisé en utilisant le Transporteur associé au Serveur Kobee.
+Les Phases de Niveau publiées ne seront transportées que si elles ne sont pas encore installées sur le Serveur Kobee.
+Vous pouvez vérifier les Phases installées en utilisant le lien _Phases installées_ à côté de la Machine Serveur Kobee dans l'__Aperçu des
 Machines__. Voir <<GlobAdm_Machines.adoc#_globadm_machinesoverview,Aperçu des Machines>>
 * Les Phases de construction et de déploiement
 +
-Avant l'exécution des Phases de construction/de déploiement pour une Construction/un Déploiement, toutes les Phases personnalisées non-publiées seront transportées à partir du Catalogue des Phases sur le Serveur IKAN ALM vers l'environnement d'exécution sur l'Agent IKAN ALM.
-Cela sera réalisé en utilisant le Transporter associé à l'Agent IKAN ALM.
-Les Phases de construction/de déploiement publiées ne seront transportées que si elles ne sont pas encore installées sur l'Agent IKAN ALM.
-Vous pouvez vérifier les Phases installées en utilisant le lien _Phases installées_ à côté de la Machine Agent IKAN ALM dans l'__Aperçu des Machines__. Voir <<GlobAdm_Machines.adoc#_globadm_machinesoverview,Aperçu des Machines>>
+Avant l'exécution des Phases de construction/de déploiement pour une Construction/un Déploiement, toutes les Phases personnalisées non-publiées seront transportées à partir du Catalogue des Phases sur le Serveur Kobee vers l'environnement d'exécution sur l'Agent IKAN ALM.
+Cela sera réalisé en utilisant le Transporter associé à l'Agent Kobee.
+Les Phases de construction/de déploiement publiées ne seront transportées que si elles ne sont pas encore installées sur l'Agent Kobee.
+Vous pouvez vérifier les Phases installées en utilisant le lien _Phases installées_ à côté de la Machine Agent Kobee dans l'__Aperçu des Machines__. Voir <<GlobAdm_Machines.adoc#_globadm_machinesoverview,Aperçu des Machines>>
 
 
 Les Emplacements relatifs à tous les Transporteurs distants doivent être définis dans la section __Paramètres système__. Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
 [NOTE]
 ====
-Un Transporteur est activé en reliant le Transporteur à une Machine représentant l`'Agent IKAN ALM (<<GlobAdm_Machines.adoc#_globadm_machinesoverview,L'Aperçu des Machines>>), et en reliant cette Machine à un Environnement de Construction ou de Déploiement (<<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>> ou <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Créer un Environnement de déploiement>>).
+Un Transporteur est activé en reliant le Transporteur à une Machine représentant l`'Agent Kobee (<<GlobAdm_Machines.adoc#_globadm_machinesoverview,L'Aperçu des Machines>>), et en reliant cette Machine à un Environnement de Construction ou de Déploiement (<<ProjAdm_BuildEnv.adoc#_pcreatebuildenvironment,Créer un Environnement de construction>> ou <<ProjAdm_DeployEnv.adoc#_pcreatedeployenvironment,Créer un Environnement de déploiement>>).
 ====
 
 Ce chapitre décrit trois Transporteurs différents, chacun favorisant des protocoles différents pour le transfert des codes Sources, des Scripts et des Résultats de construction.
@@ -72,7 +72,7 @@ Pour une description plus détaillée, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n'est disponible que si vous disposez de droits d'accès d'Administrateur global dans IKAN ALM.
+Cette option n'est disponible que si vous disposez de droits d'accès d'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
@@ -123,15 +123,15 @@ Vous pouvez également:
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur global.
 Elle permet de modifier la définition d'un Protocole de transfert.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur global.
 Elle permet de supprimer la définition d'un Protocole de transfert.
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'Historique de toutes les opérations de création, de mise à jour ou de suppression relatives à un Protocole de transfert.
 |===
 +
@@ -146,24 +146,24 @@ Se référer aux sections suivantes pour plus d`'information:
 == Transporteurs FileCopy 
 (((Transporteurs ,FileCopy)))  (((Transporteurs FileCopy))) 
 
-Un Transporteur FileCopy permet d'utiliser "file copy" pour transporter des Phases personnalisées, des fichiers et des répertoires entre le Serveur IKAN ALM et un Agent local ou distant exécutant les processus de construction ou de déploiement (voir l'introduction dans la section <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporteurs>>). 
+Un Transporteur FileCopy permet d'utiliser "file copy" pour transporter des Phases personnalisées, des fichiers et des répertoires entre le Serveur Kobee et un Agent local ou distant exécutant les processus de construction ou de déploiement (voir l'introduction dans la section <<GlobAdm_Transporters.adoc#_globadm_transporters,Transporteurs>>). 
 
-Vu que la plupart des actions de transport sont exécutées par l'Agent (le transport des Phases de niveau personnalisées est exécuté par le Serveur IKAN ALM) et que le Transporteur FileCopy permet de copier les ressources entre l'Agent et le Serveur IKAN ALM, des Transporteurs FileCopy différents doivent être définis pour un Agent (une Machine) local(e) et pour un Agent (une Machine) distant fonctionnant sur un autre Serveur que le Serveur IKAN ALM.
+Vu que la plupart des actions de transport sont exécutées par l'Agent (le transport des Phases de niveau personnalisées est exécuté par le Serveur Kobee) et que le Transporteur FileCopy permet de copier les ressources entre l'Agent et le Serveur IKAN ALM, des Transporteurs FileCopy différents doivent être définis pour un Agent (une Machine) local(e) et pour un Agent (une Machine) distant fonctionnant sur un autre Serveur que le Serveur IKAN ALM.
 
-Le Transporteur "`Local FileCopy`" est créé automatiquement lors de l`'installation d`'IKAN ALM et sera automatiquement relié à la Machine Serveur IKAN ALM.
+Le Transporteur "`Local FileCopy`" est créé automatiquement lors de l`'installation d`'Kobee et sera automatiquement relié à la Machine Serveur IKAN ALM.
 Ce Transporteur "`Local FileCopy`" est différent dans ce sens que il ne peut être ni modifié, ni mis à jour ni supprimé de l`'__Aperçu des Transporteurs FileCopy__.
 Sa définition est récupérée des paramètres spécifiés pour les Emplacements locaux dans l`'onglet _Environnement local_ des Paramètres système, et elle ne peut être modifiée qu`'à cet endroit. <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
-Si vous voulez utiliser FileCopy pour transférer des ressources vers une Machine (un Agent) autre que le Serveur IKAN ALM, un Transporteur FileCopy (distant) doit être défini.
-Gardez à l'esprit que les emplacements de préfixe spécifiés sont une représentation de la Machine Agent IKAN ALM sur la Machine Serveur IKAN ALM.
-Pour les Machines Windows, cela signifie que les emplacements des "Copies de travail", des "Archives de construction", du "Catalogue des Phases" et des "Scripts" doivent être partagés sur le Serveur IKAN ALM.
-Les préfixes dans la définition FileCopy utilisent la notation UNC contenant le nom du Serveur IKAN ALM et le répertoire partagé sur le Serveur IKAN ALM.
-Pour les Machines Linux/Unix, cela signifie que les emplacements des "Copies de travail", des "Archives de construction" et des "Scripts" doivent être montés sur la Machine Agent IKAN ALM et que le nom du montage doit être utilisé dans les différents préfixes de la définition du Transporteur FileCopy.
+Si vous voulez utiliser FileCopy pour transférer des ressources vers une Machine (un Agent) autre que le Serveur Kobee, un Transporteur FileCopy (distant) doit être défini.
+Gardez à l'esprit que les emplacements de préfixe spécifiés sont une représentation de la Machine Agent Kobee sur la Machine Serveur IKAN ALM.
+Pour les Machines Windows, cela signifie que les emplacements des "Copies de travail", des "Archives de construction", du "Catalogue des Phases" et des "Scripts" doivent être partagés sur le Serveur Kobee.
+Les préfixes dans la définition FileCopy utilisent la notation UNC contenant le nom du Serveur Kobee et le répertoire partagé sur le Serveur IKAN ALM.
+Pour les Machines Linux/Unix, cela signifie que les emplacements des "Copies de travail", des "Archives de construction" et des "Scripts" doivent être montés sur la Machine Agent Kobee et que le nom du montage doit être utilisé dans les différents préfixes de la définition du Transporteur FileCopy.
 
 [NOTE]
 ====
-Faites attention aux problèmes de droits d`'accès pendant les actions de transfert FileCopy depuis les emplacements sur le Serveur IKAN ALM distant si vous faites fonctionner un Agent IKAN ALM distant comme un service Windows ou un processus démon Linux/Unix.
-Les problèmes peuvent être résolus si le service/démon fonctionne comme un Utilisateur ayant des droits d`'accès sur la partie partagée/montée du Serveur IKAN ALM, ou si la machine Agent IKAN ALM reçoit des droits d`'accès sur les emplacements sur le Serveur IKAN ALM.
+Faites attention aux problèmes de droits d`'accès pendant les actions de transfert FileCopy depuis les emplacements sur le Serveur Kobee distant si vous faites fonctionner un Agent IKAN ALM distant comme un service Windows ou un processus démon Linux/Unix.
+Les problèmes peuvent être résolus si le service/démon fonctionne comme un Utilisateur ayant des droits d`'accès sur la partie partagée/montée du Serveur Kobee, ou si la machine Agent IKAN ALM reçoit des droits d`'accès sur les emplacements sur le Serveur IKAN ALM.
 ====
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
@@ -180,7 +180,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
@@ -221,7 +221,7 @@ Les champs obligatoires sont marqués d'astérisque rouge.
 | Description
 
 |Préfixe Emplacement des Copies de travail
-a|Saisissez le préfixe de l`'Emplacement des Copies de travail (l`'emplacement sur le Serveur IKAN ALM où l`'interface du RCV copie les codes Source récupérés pour qu`'ils soient disponibles pour un Agent IKAN ALM distant exécutant un processus de Construction). L`'emplacement sur le Serveur sera formé par l`'enchaînement de ce préfixe et de l`'emplacement relatif défini dans les Paramètres système. 
+a|Saisissez le préfixe de l`'Emplacement des Copies de travail (l`'emplacement sur le Serveur Kobee où l`'interface du RCV copie les codes Source récupérés pour qu`'ils soient disponibles pour un Agent IKAN ALM distant exécutant un processus de Construction). L`'emplacement sur le Serveur sera formé par l`'enchaînement de ce préfixe et de l`'emplacement relatif défini dans les Paramètres système. 
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
@@ -229,24 +229,24 @@ Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
 * Pour un Transporteur Windows: `//IKAN110/alm`
 +
-Dans cet exemple, le nom du Serveur IKAN ALM est "IKAN110" et "alm" est le nom du partage sur ce Serveur. 
+Dans cet exemple, le nom du Serveur Kobee est "IKAN110" et "alm" est le nom du partage sur ce Serveur. 
 +
-Si l`'Emplacement relatif des Copies de travail est établi à "`workCopy`" dans les Paramètres système, l`'Agent IKAN ALM essaiera de récupérer les codes Source à partir d`'un répertoire sous ``\\IKAN110/alm/workCopy``.
+Si l`'Emplacement relatif des Copies de travail est établi à "`workCopy`" dans les Paramètres système, l`'Agent Kobee essaiera de récupérer les codes Source à partir d`'un répertoire sous ``\\IKAN110/alm/workCopy``.
 * Pour un Transporteur Linux/Unix: `/mnt/ikan110/alm`
 +
-Cet Emplacement est un montage d`'un répertoire sur le Serveur IKAN ALM (sur la Machine IKAN110) contenant l`'Emplacement des Copies de travail.
+Cet Emplacement est un montage d`'un répertoire sur le Serveur Kobee (sur la Machine IKAN110) contenant l`'Emplacement des Copies de travail.
 +
-Si l`'Emplacement relatif des Copies de travail est établi à "`workCopy`" dans les Paramètres système, l`'Agent IKAN ALM essaiera de récupérer les codes Source à partir d`'un répertoire sous ``/mnt/ikan110/alm/workCopy``.
+Si l`'Emplacement relatif des Copies de travail est établi à "`workCopy`" dans les Paramètres système, l`'Agent Kobee essaiera de récupérer les codes Source à partir d`'un répertoire sous ``/mnt/ikan110/alm/workCopy``.
 
 |Préfixe Emplacement Archives de construction
-|Saisissez le préfixe de l`'Emplacement des Archives de construction (l`'Emplacement où les Constructions sont sauvegardées et d`'où elles sont récupérées par un Agent IKAN ALM exécutant un processus de Construction ou de Déploiement). L`'Emplacement sur le Serveur sera formé par l`'enchaînement du préfixe et l`'Emplacement relatif défini dans les Paramètres système. 
+|Saisissez le préfixe de l`'Emplacement des Archives de construction (l`'Emplacement où les Constructions sont sauvegardées et d`'où elles sont récupérées par un Agent Kobee exécutant un processus de Construction ou de Déploiement). L`'Emplacement sur le Serveur sera formé par l`'enchaînement du préfixe et l`'Emplacement relatif défini dans les Paramètres système. 
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
 Pour un exemple, se référer à la description du champ __Préfixe Emplacement des Copies de travail__.
 
 |Préfixe Emplacement des Scripts
-|Saisissez le préfixe de l`'Emplacement des Scripts (l`'Emplacement d`'où l`'Agent IKAN ALM récupérera le script de construction ou de déploiement, si ce script n`'est pas retrouvé dans les codes Source).
+|Saisissez le préfixe de l`'Emplacement des Scripts (l`'Emplacement d`'où l`'Agent Kobee récupérera le script de construction ou de déploiement, si ce script n`'est pas retrouvé dans les codes Source).
 
 L`'Emplacement sur le Serveur sera formé par l`'enchaînement du préfixe et l`'Emplacement relatif défini dans les Paramètres système. 
 
@@ -255,11 +255,11 @@ Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 Pour un exemple, se référer à la description du champ __Préfixe Emplacement des Copies de travail__.
 
 |Préfixe Emplacement du Catalogue des Phases
-|Saisissez le préfixe de l'Emplacement du Catalogue des Phases (l'emplacement sur le Serveur IKAN ALM où sont sauvegardées les Phases importées ou créées).
+|Saisissez le préfixe de l'Emplacement du Catalogue des Phases (l'emplacement sur le Serveur Kobee où sont sauvegardées les Phases importées ou créées).
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
-Si un Agent/Serveur IKAN ALM doit installer une Phase manquante, il utilisera ce préfixe et l'Emplacement du Catalogue des Phases relatif défini dans les Paramètres Système pour construire le chemin à utiliser pour copier la Phase manquante.
+Si un Agent/Serveur Kobee doit installer une Phase manquante, il utilisera ce préfixe et l'Emplacement du Catalogue des Phases relatif défini dans les Paramètres Système pour construire le chemin à utiliser pour copier la Phase manquante.
 |===
 
 . Une fois les champs remplis, cliquez sur le bouton __Créer__.
@@ -315,19 +315,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Transporteur FileCopy.
 
 <<GlobAdm_Transporters.adoc#_globadm_transporter_filecopy_edit,Modifier la définition d`'un Transporteur FileCopy>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition de Transporteur FileCopy.
 
 <<GlobAdm_Transporters.adoc#_globadm_transporter_filecopy_delete,Supprimer une définition de Transporteur FileCopy>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique d`'un Transporteur FileCopy.
 
 <<GlobAdm_Transporters.adoc#_globadm_transporter_filecopy_history,Afficher l`'Historique d`'un Transporteur FileCopy>>
@@ -427,14 +427,14 @@ a|_Sujets apparentés:_
 == Transporteurs FTP 
 (((Transporteurs ,FTP)))  (((Transporteurs FTP))) 
 
-Le Client Transporteur FTP intégré permet d'utiliser FTP comme protocole pour transporter une Phase personnalisée, des résultats de construction, des scripts ou des sources entre le Serveur IKAN ALM et un ou plusieurs Agents.
+Le Client Transporteur FTP intégré permet d'utiliser FTP comme protocole pour transporter une Phase personnalisée, des résultats de construction, des scripts ou des sources entre le Serveur Kobee et un ou plusieurs Agents.
 
 [NOTE]
 ====
-Un Serveur FTP doit être installé sur la machine Serveur IKAN ALM et doit être configuré correctement de sorte qu'il puisse contrôler les différents emplacements des Paramètres Système (les emplacements des Copies de travail, des Archives de construction, du Catalogue des Phases et des Scripts)
+Un Serveur FTP doit être installé sur la machine Serveur Kobee et doit être configuré correctement de sorte qu'il puisse contrôler les différents emplacements des Paramètres Système (les emplacements des Copies de travail, des Archives de construction, du Catalogue des Phases et des Scripts)
 ====
 
-Avant de pouvoir utiliser le Client FTP pour les actions de Construction et de Déploiement, vous devez relier le Transporteur à une Machine représentant un Agent IKAN ALM et relier cette Machine aux Environnements de construction et de déploiement que vous voulez "`servir`" via FTP.
+Avant de pouvoir utiliser le Client FTP pour les actions de Construction et de Déploiement, vous devez relier le Transporteur à une Machine représentant un Agent Kobee et relier cette Machine aux Environnements de construction et de déploiement que vous voulez "`servir`" via FTP.
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
@@ -450,7 +450,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
@@ -504,14 +504,14 @@ Les caractères seront remplacés par des astérisques.
 |Nom du Serveur
 |Le Nom du Serveur FTP
 
-Il permet de définir le nom de connexion dans le cas où ce nom serait différent du nom DHCP du Serveur IKAN ALM ou de l`'adresse IP.
+Il permet de définir le nom de connexion dans le cas où ce nom serait différent du nom DHCP du Serveur Kobee ou de l`'adresse IP.
 
 *Exemple:*
 
 Un Serveur FTP apparié au nom d`'une Machine hébergeante: ``ftp.ikan.be``.
 
 |Port du Serveur FTP
-|Saisissez le numéro de port du Serveur FTP installé sur le Serveur IKAN ALM.
+|Saisissez le numéro de port du Serveur FTP installé sur le Serveur Kobee.
 
 _Note:_ La valeur saisie dans ce champ écrasera la valeur spécifiée dans les Paramètres système. 
 
@@ -526,7 +526,7 @@ Si la valeur n`'est pas spécifiée ici ni dans les Paramètres système, le num
 |Sélectionnez le style de répertoire: _Unix_ ou __Windows__.
 
 |Préfixe Emplacement des Copies de travail
-|Saisissez le préfixe de l`'Emplacement des Copies de travail (l`'emplacement sur le serveur IKAN ALM où l`'interface du RCV copie les codes Source récupérés pour qu`'ils soient disponibles pour un Agent IKAN ALM distant exécutant un processus de Construction). L`'emplacement sur le Serveur sera formé par l`'enchaînement de ce préfixe et de l`'emplacement relatif défini dans les Paramètres système. 
+|Saisissez le préfixe de l`'Emplacement des Copies de travail (l`'emplacement sur le serveur Kobee où l`'interface du RCV copie les codes Source récupérés pour qu`'ils soient disponibles pour un Agent IKAN ALM distant exécutant un processus de Construction). L`'emplacement sur le Serveur sera formé par l`'enchaînement de ce préfixe et de l`'emplacement relatif défini dans les Paramètres système. 
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
@@ -548,7 +548,7 @@ Si le Serveur FTP est configuré pour contrôler le répertoire (Windows) `E:/Ik
 Dans ce cas, le résultat de construction sera copié à partir de l`'Agent vers le sous-répertoire `/buildArchive` sur le Serveur FTP via une commande PUT.
 
 |Préfixe Emplacement des Scripts
-|Saisissez le préfixe de l`'Emplacement des Scripts (l`'Emplacement d`'où l`'Agent IKAN ALM récupèrera le script de construction ou de déploiement, si ce script n`'est pas retrouvé dans les codes Source).
+|Saisissez le préfixe de l`'Emplacement des Scripts (l`'Emplacement d`'où l`'Agent Kobee récupèrera le script de construction ou de déploiement, si ce script n`'est pas retrouvé dans les codes Source).
 
 L`'Emplacement sur le Serveur sera formé par l`'enchaînement du préfixe et l`'Emplacement relatif défini dans les Paramètres système. 
 
@@ -561,11 +561,11 @@ Pour un exemple, se référer à la description du champ __Préfixe Emplacement 
 Si le Serveur FTP est configuré pour contrôler le répertoire (Windows) `E:/Ikan/alm/system` ou le répertoire (Linux/Unix) ``/ikan/alm/system``, un `/` suffira comme préfixe.
 
 |Préfixe Chemin du Catalogue des Phases
-|Saisissez le préfixe de l'Emplacement du Catalogue des Phases (l'emplacement sur le Serveur IKAN ALM où sont sauvegardées les Phases importées ou créées).
+|Saisissez le préfixe de l'Emplacement du Catalogue des Phases (l'emplacement sur le Serveur Kobee où sont sauvegardées les Phases importées ou créées).
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
-Si un Agent/Serveur IKAN ALM doit installer une Phase manquante, il utilisera ce préfixe et l'Emplacement du Catalogue des Phases relatif défini dans les Paramètres Système pour construire le chemin à utiliser pour copier la Phase manquante.
+Si un Agent/Serveur Kobee doit installer une Phase manquante, il utilisera ce préfixe et l'Emplacement du Catalogue des Phases relatif défini dans les Paramètres Système pour construire le chemin à utiliser pour copier la Phase manquante.
 |===
 
 . Après avoir complété les champs, cliquez sur le bouton __Créer__.
@@ -621,19 +621,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Transporteur FTP.
 
 Voir <<GlobAdm_Transporters.adoc#_globadm_transporter_ftp_edit,Modifier la définition d`'un Transporteur FTP>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition de Transporteur FTP.
 
 Voir <<GlobAdm_Transporters.adoc#_globadm_transporter_ftp_delete,Supprimer une définition de Transporteur FTP>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique d`'un Transporteur FTP.
 
 Voir <<GlobAdm_Transporters.adoc#_globadm_transporter_ftp_history,Afficher l`'Historique d`'un Transporteur FTP>>
@@ -733,16 +733,16 @@ a|_Sujets apparentés:_
 == Transporteurs sécurisés SSH 
 (((Transporteurs ,SSH)))  (((Transporteurs sécurisés SSH))) 
 
-Les Transporteurs SSH sécurisés permettent de transporter de manière sécurisée les Phases personnalisées, les sources, les scripts et les résultats de construction entre le Serveur IKAN ALM et un Agent IKAN ALM.
-Le Transporteur SSH fait partie de l'installation de l'Agent IKAN ALM.
+Les Transporteurs SSH sécurisés permettent de transporter de manière sécurisée les Phases personnalisées, les sources, les scripts et les résultats de construction entre le Serveur Kobee et un Agent IKAN ALM.
+Le Transporteur SSH fait partie de l'installation de l'Agent Kobee.
 La section suivante décrit plus en détail sa configuration.
 
 [NOTE]
 ====
-Un Serveur SSH doit être installé sur la machine Serveur IKAN ALM et doit être configuré correctement de sorte qu'il puisse contrôler les différents emplacements des Paramètres Système (les emplacements des Copies de travail, des Archives de construction, du Catalogue des Phases et des Scripts)
+Un Serveur SSH doit être installé sur la machine Serveur Kobee et doit être configuré correctement de sorte qu'il puisse contrôler les différents emplacements des Paramètres Système (les emplacements des Copies de travail, des Archives de construction, du Catalogue des Phases et des Scripts)
 ====
 
-Pour pouvoir assurer un transport sécurisé pour les actions de construction et de déploiement, vous devez associer le Transporteur à une Machine représentant l'Agent IKAN ALM et associer cette Machine aux Environnements de construction et de déploiement que vous voulez "servir" via Secure Shell. 
+Pour pouvoir assurer un transport sécurisé pour les actions de construction et de déploiement, vous devez associer le Transporteur à une Machine représentant l'Agent Kobee et associer cette Machine aux Environnements de construction et de déploiement que vous voulez "servir" via Secure Shell. 
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
@@ -758,7 +758,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Transporteurs > Créer__.
@@ -831,10 +831,10 @@ Les caractères seront remplacés par des astérisques.
 |Nom du Serveur
 |Ce champ est optionnel.
 
-Il permet de définir le nom de la Machine hébergeant le Serveur IKAN ALM dans le cas où ce nom serait différent du nom DHCP de cette Machine ou de l`'adresse IP.
+Il permet de définir le nom de la Machine hébergeant le Serveur Kobee dans le cas où ce nom serait différent du nom DHCP de cette Machine ou de l`'adresse IP.
 
 |Port du Serveur SSH
-|Saisissez le numéro de port du Serveur SSH installé sur le Serveur IKAN ALM.
+|Saisissez le numéro de port du Serveur SSH installé sur le Serveur Kobee.
 
 *Note:* La valeur saisie dans ce champ écrasera la valeur spécifiée dans les Paramètres système. 
 
@@ -843,25 +843,25 @@ Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 Si la valeur n`'est pas spécifiée ici ni dans les Paramètres système, le numéro de port par défaut `22` sera utilisé.
 
 |Préfixe Emplacement des Copies de travail
-|Saisissez le préfixe de l`'Emplacement des Copies de travail (l`'emplacement sur le serveur IKAN ALM où l`'interface du RCV copie les codes Source récupérés pour qu`'ils soient disponibles pour un Agent IKAN ALM distant exécutant un processus de Construction). L`'emplacement sur le Serveur sera formé par l`'enchaînement de ce préfixe et de l`'emplacement relatif défini dans les Paramètres système. 
+|Saisissez le préfixe de l`'Emplacement des Copies de travail (l`'emplacement sur le serveur Kobee où l`'interface du RCV copie les codes Source récupérés pour qu`'ils soient disponibles pour un Agent IKAN ALM distant exécutant un processus de Construction). L`'emplacement sur le Serveur sera formé par l`'enchaînement de ce préfixe et de l`'emplacement relatif défini dans les Paramètres système. 
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
 *EXEMPLE 1:*
 
-Un Serveur IKAN ALM sur une Machine Windows sur laquelle est installé un Serveur SSH supportant la notation "`cygdrive`".
+Un Serveur Kobee sur une Machine Windows sur laquelle est installé un Serveur SSH supportant la notation "`cygdrive`".
 
 Paramètres système: l`'Emplacement des Copies de travail Local FileCopy établi à `e:/ikan/alm/workCopy` et l`'Emplacement relatif des Copies de travail établi comme "`workCopy`" résultent en `/cygdrive/e/ikan/alm` comme préfixe du chemin de l`'Emplacement des Copies de travail.
 
-L`'Agent IKAN ALM essaiera de copier de manière sécurisée les codes Source d`'un Emplacement sous le répertoire ``/cygdrive/e/ikan/alm/workCopy``.
+L`'Agent Kobee essaiera de copier de manière sécurisée les codes Source d`'un Emplacement sous le répertoire ``/cygdrive/e/ikan/alm/workCopy``.
 
 *EXEMPLE 2:*
 
-Un Serveur IKAN ALM sur une Machine Linux.
+Un Serveur Kobee sur une Machine Linux.
 
 Paramètres système: l`'Emplacement des Copies de travail Local FileCopy établi à `/opt/ikan/alm/workCopy` et l`'Emplacement relatif des Copies de travail établi comme "`workCopy`" résultent en `/opt/ikan/alm` comme préfixe du chemin de l`'Emplacement des Copies de travail.
 
-L`'Agent IKAN ALM essaiera de copier de manière sécurisée les codes Source d`'un Emplacement sous le répertoire ``/opt/ikan/alm/workCopy``.
+L`'Agent Kobee essaiera de copier de manière sécurisée les codes Source d`'un Emplacement sous le répertoire ``/opt/ikan/alm/workCopy``.
 
 |Préfixe Emplacement Archives de construction
 |Saisissez le préfixe de l`'Emplacement des Archives de construction (l`'Emplacement où les Constructions sont sauvegardées et d`'où elles sont récupérées). L`'Emplacement sur le Serveur sera formé par l`'enchaînement du préfixe et l`'Emplacement relatif défini dans les Paramètres système. <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
@@ -877,11 +877,11 @@ Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 Pour un exemple, se référer à la description du champ __Préfixe Emplacement des Copies de travail__.
 
 |Préfixe Chemin du Catalogue des Phases
-|Saisissez le préfixe de l'Emplacement du Catalogue des Phases (l'emplacement sur le Serveur IKAN ALM où sont sauvegardées les Phases importées ou créées).
+|Saisissez le préfixe de l'Emplacement du Catalogue des Phases (l'emplacement sur le Serveur Kobee où sont sauvegardées les Phases importées ou créées).
 
 Voir <<GlobAdm_System.adoc#_globadm_system_settings,Paramètres du système>>
 
-Si un Agent/Serveur IKAN ALM doit installer une Phase manquante, il utilisera ce préfixe et l'Emplacement du Catalogue des Phases relatif défini dans les Paramètres Système pour construire le chemin à utiliser pour copier la Phase manquante.
+Si un Agent/Serveur Kobee doit installer une Phase manquante, il utilisera ce préfixe et l'Emplacement du Catalogue des Phases relatif défini dans les Paramètres Système pour construire le chemin à utiliser pour copier la Phase manquante.
 |===
 
 . Après avoir complété les champs, cliquez sur le bouton __Créer__.
@@ -937,17 +937,17 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Transporteur FTP. <<GlobAdm_Transporters.adoc#_globadm_transporter_secureshell_edit,Modifier la définition d`'un Transporteur SSH>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition de Transporteur FTP.
 
 <<GlobAdm_Transporters.adoc#_globadm_transporter_secureshell_delete,Supprimer une définition de Transporteur SSH>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique d`'un Transporteur FTP.
 
 <<GlobAdm_Transporters.adoc#_globadm_transporter_secureshell_history,Afficher l`'Historique d`'un Transporteur SSH>>

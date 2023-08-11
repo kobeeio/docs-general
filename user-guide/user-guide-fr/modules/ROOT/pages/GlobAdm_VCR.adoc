@@ -6,7 +6,7 @@
 = Référentiels de contrôle de version 
 (((Administration globale ,Référentiels de contrôle de version)))  (((Référentiels de contrôle de version))) 
 
-Actuellement, IKAN ALM supporte différents types de Référentiels de Contrôle de Version (RCV):
+Actuellement, Kobee supporte différents types de Référentiels de Contrôle de Version (RCV):
 
 * <<GlobAdm_VCR.adoc#_sglobadmin_vcr_svn,Référentiels de contrôle de version Subversion>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_git,Référentiels de contrôle de version Git>>
@@ -18,7 +18,7 @@ L`'administration de ces types de RCV est expliquée dans les sections suivantes
 
 [NOTE]
 ====
-Vous devez d`'abord installer un client RCV sur le Serveur IKAN ALM pour pouvoir interagir avec le Référentiel de contrôle de version.
+Vous devez d`'abord installer un client RCV sur le Serveur Kobee pour pouvoir interagir avec le Référentiel de contrôle de version.
 ====
 
 [[_globaadm_vcr_create]]
@@ -27,7 +27,7 @@ Vous devez d`'abord installer un client RCV sur le Serveur IKAN ALM pour pouvoir
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez _Référentiels de contrôle de version > Créer_.
@@ -78,15 +78,15 @@ Vous pouvez également:
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Référentiel.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer la définition d`'un Référentiel.
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Référentiel.
 |===
 +
@@ -116,9 +116,9 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 
-Vous devez d`'abord installer un client Subversion sur le Serveur IKAN ALM pour pouvoir créer un Référentiel de contrôle de version Subversion sur le Serveur IKAN ALM.
+Vous devez d`'abord installer un client Subversion sur le Serveur Kobee pour pouvoir créer un Référentiel de contrôle de version Subversion sur le Serveur IKAN ALM.
 ====
 . Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 
@@ -167,17 +167,17 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 |Saisissez dans ce champ le chemin vers l`'emplacement où la commande du Client de Subversion est localisée (__svn.exe _ou __svn_). Ce champ est obligatoire.
 
 |Utilisateur
-|Saisissez l`'Identifiant Utilisateur que IKAN ALM utilisera pour accéder au Référentiel Subversion.
+|Saisissez l`'Identifiant Utilisateur que Kobee utilisera pour accéder au Référentiel Subversion.
 Ce champ est optionnel.
 
 |Mot de passe
-|Saisissez le Mot de passe que IKAN ALM utilisera pour accéder au Référentiel Subversion.
+|Saisissez le Mot de passe que Kobee utilisera pour accéder au Référentiel Subversion.
 Ce champ est optionnel.
 
 Les caractères seront remplacés par des astérisques.
 
 |Répétez le Mot de passe
-|Répétez le Mot de passe que IKAN ALM utilisera pour accéder au Référentiel Subversion.
+|Répétez le Mot de passe que Kobee utilisera pour accéder au Référentiel Subversion.
 
 |URL du Référentiel Subversion
 |Saisissez l`'URL de la Machine hébergeant le Référentiel Subversion.
@@ -207,7 +207,7 @@ Pour plus d`'informations concernant les différentes structures de référentie
 |Délai d`'expiration (sec.)
 |Saisissez la valeur de délai d`'expiration, exprimée en secondes.
 
-Si IKAN ALM ne parvient pas à établir la connexion avec le Référentiel Subversion dans la période définie, IKAN ALM considérera le Référentiel comme étant inaccessible.
+Si Kobee ne parvient pas à établir la connexion avec le Référentiel Subversion dans la période définie, IKAN ALM considérera le Référentiel comme étant inaccessible.
 
 La définition de la valeur du délai d`'expiration est obligatoire.
 
@@ -220,7 +220,7 @@ Ces métapropriétés peuvent être utilisées par l`'Outil de Script de constru
 Pour plus d`'informations concernant la collecte des métapropriétés, se référer à l`'appendice <<App_Subversion.adoc#_subversiongeneralinformation,Subversion - informations générales>>.
 |===
 
-. Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM est capable d`'établir une connexion avec le Référentiel Subversion. 
+. Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee est capable d`'établir une connexion avec le Référentiel Subversion. 
 
 * Si les contrôles se terminent correctement, le message suivant s`'affiche:
 +
@@ -243,7 +243,7 @@ a|_Sujets apparentés:_
 
 * <<GlobAdm_VCR.adoc#_globadm_vcr,Référentiels de contrôle de version>>
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans IKAN ALM>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans Kobee>>
 
 |===
 
@@ -282,19 +282,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Référentiel Subversion. 
 
 Voir <<GlobAdm_VCR.adoc#_globadm_vcr_svn_edit,Modifier un Référentiel Subversion>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Référentiel Subversion.
 
 Voir <<GlobAdm_VCR.adoc#_globadm_vcr_svn_delete,Supprimer un Référentiel Subversion>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique d`'un Référentiel Subversion.
 
 Voir <<GlobAdm_VCR.adoc#_globadm_vcr_svn_history,Afficher l`'Historique d`'un Référentiel Subversion>>
@@ -324,7 +324,7 @@ Pour plus d`'informations, se référer à la section <<GlobAdm_VCR.adoc#_pcreat
 
 [NOTE]
 ====
-Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM est capable d`'établir une connexion avec le Référentiel Subversion.
+Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee est capable d`'établir une connexion avec le Référentiel Subversion.
 
 Le panneau _Projets connectés_ affiche les Projets reliés au Référentiel sélectionné.
 ====
@@ -397,8 +397,8 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
-Avant de pouvoir créer le Référentiel de Contrôle de Version Git dans IKAN ALM, vous devez installer un client Git sur le Serveur IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
+Avant de pouvoir créer le Référentiel de Contrôle de Version Git dans Kobee, vous devez installer un client Git sur le Serveur IKAN ALM.
 ====
 . Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
 
@@ -445,7 +445,7 @@ Ce champ est optionnel.
 
 |Emplacement cache
 |Saisissez le chemin vers l'Emplacement cache de ce Référentiel Git.
-Ce répertoire sur le Serveur IKAN ALM est utilisé pour cloner et mettre en cache le Référentiel Git pour le Serveur IKAN ALM et l'application Web pour accélérer les processus du Référentiel.
+Ce répertoire sur le Serveur Kobee est utilisé pour cloner et mettre en cache le Référentiel Git pour le Serveur IKAN ALM et l'application Web pour accélérer les processus du Référentiel.
 Assurez-vous que les droits d'accès pour cet Emplacement soient configurés correctement pour le processus Git.
 
 L'Emplacement pourrait être semblable à ALM_HOME/system/gitcache, par exemple, ``c:/ALM/system/gitcache``.
@@ -477,25 +477,25 @@ Ce champ est optionnel.
 |Le Nom de la Branche par défaut du référentiel Git. Ce champ est pré-rempli avec la valeur _main_.
 
 |Utilisateur
-|Saisissez l'ID Utilisateur qu'IKAN ALM utilisera pour accéder au Référentiel Git.
+|Saisissez l'ID Utilisateur qu'Kobee utilisera pour accéder au Référentiel Git.
 Ce champ est optionnel.
 
-IKAN ALM insérera la valeur de l'ID Utilisateur dans l'URL final (Push) avant d'exécuter une commande de Référentiel.
+Kobee insérera la valeur de l'ID Utilisateur dans l'URL final (Push) avant d'exécuter une commande de Référentiel.
 
 |Mot de Passe
-|Saisissez le mot de passe qu'IKAN ALM utilisera pour accéder au Référentiel Git.
+|Saisissez le mot de passe qu'Kobee utilisera pour accéder au Référentiel Git.
 Ce champ est optionnel.
 
 Les caractères saisis seront remplacés par des astérisques.
-IKAN ALM insérera la valeur du Mot de Passe dans l'URL final (Push) avant d'exécuter une Commande de Référentiel.
+Kobee insérera la valeur du Mot de Passe dans l'URL final (Push) avant d'exécuter une Commande de Référentiel.
 Ceci est uniquement le cas pour les URLshttp(s). Les URLs SSH et scp doivent fonctionner sans mot de passe.
 
 |Répétez le Mot de Passe
-|Re-saisissez le mot de passe qu'IKAN ALM utilisera pour accéder au Référentiel Git.
+|Re-saisissez le mot de passe qu'Kobee utilisera pour accéder au Référentiel Git.
 
 |Délai d'expiration (sec.)
 |Saisissez le Délai d`'expiration en secondes.
-Si IKAN ALM ne parvient pas à établir une connexion au Référentiel Git dans la période définie, le Référentiel sera considéré comme inaccessible.
+Si Kobee ne parvient pas à établir une connexion au Référentiel Git dans la période définie, le Référentiel sera considéré comme inaccessible.
 
 La spécification du Délai d`'expiration est obligatoire.
 
@@ -503,7 +503,7 @@ La spécification du Délai d`'expiration est obligatoire.
 |Sélectionnez l'option Oui pour cloner le référentiel Git avec l'option _--filter=blob:none_ active. En activant cette option you pouvez grandement améliorer la vitesse de la Phase Récupération des Sources. Consultez la documentation Git pour plus d'information sur cette option.
 |===
 
-. Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM parvient à établir la connexion vers le Référentiel Git. Si le test réussit, le message suivant s`'affiche:
+. Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee parvient à établir la connexion vers le Référentiel Git. Si le test réussit, le message suivant s`'affiche:
 +
 __Information: Connexion au Référentiel correctement établie.__
 +
@@ -525,7 +525,7 @@ a|_Sujets apparentés:_
 
 * <<GlobAdm_VCR.adoc#_globadm_vcr,Référentiels de contrôle de version>>
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans IKAN ALM>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans Kobee>>
 
 |===
 
@@ -564,19 +564,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer la définition d`'un Référentiel Git.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_git_edit,Modifier un Référentiel Git>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer la définition d`'un Référentiel Git.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_git_delete,Supprimer un Référentiel Git>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Référentiel Git.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_git_history,Afficher l'Historique d`'un Référentiel Git>>
@@ -606,7 +606,7 @@ Pour la description des champs, se référer à la section <<GlobAdm_VCR.adoc#_g
 
 [NOTE]
 ====
-Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM parvient à établir la connexion vers le Référentiel Git. 
+Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee parvient à établir la connexion vers le Référentiel Git. 
 
 Le panneau _Projets connectés_ affiche les Projets reliés au Référentiel sélectionné. 
 ====
@@ -679,9 +679,9 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 
-Avant de pouvoir créer le Référentiel de Contrôle de Version CVS dans IKAN ALM, vous devez installer un client CVS sur le Serveur IKAN ALM.
+Avant de pouvoir créer le Référentiel de Contrôle de Version CVS dans Kobee, vous devez installer un client CVS sur le Serveur IKAN ALM.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
@@ -728,7 +728,7 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 | Description
 
 |Chemin de commande
-|Saisissez dans ce champ le chemin vers l`'emplacement où se trouve la commande du Client CVS (__cvs.exe _ou __cvs_) sur le Serveur IKAN ALM.
+|Saisissez dans ce champ le chemin vers l`'emplacement où se trouve la commande du Client CVS (__cvs.exe _ou __cvs_) sur le Serveur Kobee.
 
 |Protocole
 a|Sélectionnez, à partir du menu déroulant, le protocole requis.
@@ -749,19 +749,19 @@ Les protocoles suivants sont disponibles:
 Ce champ est obligatoire.
 
 |Utilisateur
-|Saisissez l`'Identifiant Utilisateur que IKAN ALM utilisera pour accéder au Référentiel CVS.
+|Saisissez l`'Identifiant Utilisateur que Kobee utilisera pour accéder au Référentiel CVS.
 
 Si l`'accès au Référentiel CVS est protégé par une authentification, ce champ est obligatoire.
 
 |Mot de passe
-|Saisissez le Mot de passe que IKAN ALM utilisera pour accéder au Référentiel CVS.
+|Saisissez le Mot de passe que Kobee utilisera pour accéder au Référentiel CVS.
 
 Si l`'accès au Référentiel CVS est protégé par une authentification, ce champ est obligatoire.
 
 Les caractères seront remplacés par des astérisques.
 
 |Répétez le Mot de passe
-|Répétez le Mot de passe que IKAN ALM utilisera pour accéder au Référentiel CVS.
+|Répétez le Mot de passe que Kobee utilisera pour accéder au Référentiel CVS.
 
 |Machine hôte
 |Saisissez la dénomination de la Machine hébergeant le Référentiel CVS. 
@@ -784,12 +784,12 @@ Ce champ est obligatoire.
 |Délai d`'expiration (sec.)
 |Saisissez la valeur de délai d`'expiration, exprimée en secondes.
 
-Si IKAN ALM ne parvient pas à établir la connexion avec le Référentiel CVS dans la période définie, IKAN ALM considérera le Référentiel comme étant inaccessible.
+Si Kobee ne parvient pas à établir la connexion avec le Référentiel CVS dans la période définie, IKAN ALM considérera le Référentiel comme étant inaccessible.
 
 La définition de la valeur du délai d`'expiration est obligatoire.
 |===
 
-. Cliquez sur _Vérifier la connexion_ pour vérifier si IKAN ALM est capable d`'établir une connexion avec le Référentiel CVS. 
+. Cliquez sur _Vérifier la connexion_ pour vérifier si Kobee est capable d`'établir une connexion avec le Référentiel CVS. 
 * Si les contrôles se terminent correctement, le message suivant s`'affiche:
 +
 __Info: Connexion au référentiel correctement établie.__
@@ -813,7 +813,7 @@ a|_Sujets apparentés:_
 
 * <<GlobAdm_VCR.adoc#_globadm_vcr,Référentiels de contrôle de version>>
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans IKAN ALM>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans Kobee>>
 
 |===
 
@@ -852,19 +852,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Référentiel CVS.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_cvs_edit,Modifier un Référentiel CVS>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Référentiel CVS.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_cvs_delete,Supprimer un Référentiel CVS>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique d`'un Référentiel CVS.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_cvs_history,Afficher l`'historique d`'un Référentiel CVS>>
@@ -894,7 +894,7 @@ Pour plus d`'informations, se référer à la section <<GlobAdm_VCR.adoc#_pcreat
 
 [NOTE]
 ====
-Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM est capable d`'établir une connexion avec le Référentiel CVS.
+Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee est capable d`'établir une connexion avec le Référentiel CVS.
 
 Le panneau _Projets connectés_ affiche les Projets reliés au Référentiel sélectionné.
 ====
@@ -969,8 +969,8 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
-Avant de pouvoir créer le Référentiel de Contrôle de Version TFVC dans IKAN ALM, vous devez installer un Client TFVC (Team Explorer pour MS Visual Studio ou Team Explorer Everywhere pour Team Foundation Server) sur le Serveur IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
+Avant de pouvoir créer le Référentiel de Contrôle de Version TFVC dans Kobee, vous devez installer un Client TFVC (Team Explorer pour MS Visual Studio ou Team Explorer Everywhere pour Team Foundation Server) sur le Serveur IKAN ALM.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Référentiels de Contrôle de Version > Créer__.
@@ -1030,26 +1030,26 @@ Voici quelques exemples d'URLs pour la connexion avec une installation 'on premi
 Ce champ est obligatoire.
 
 |Utilisateur
-|Saisissez l'ID Utilisateur qu'IKAN ALM utilisera pour accéder au Référentiel TFVC.
+|Saisissez l'ID Utilisateur qu'Kobee utilisera pour accéder au Référentiel TFVC.
 Ce champ est optionnel.
 
 |Mot de Passe
-|Saisissez le mot de passe qu'IKAN ALM utilisera pour accéder au Référentiel TFVC.
+|Saisissez le mot de passe qu'Kobee utilisera pour accéder au Référentiel TFVC.
 Ce champ est optionnel.
 
 Les caractères sont remplacés par des astérisques.
 
 |Répétez le Mot de Passe
-|Re-saisissez le mot de passe qu'IKAN ALM utilisera pour accéder au Référentiel TFVC.
+|Re-saisissez le mot de passe qu'Kobee utilisera pour accéder au Référentiel TFVC.
 
 |Délai d'expiration (sec.)
 |Saisissez le Délai d`'expiration en secondes.
-Si IKAN ALM ne parvient pas à établir une connexion au Référentiel TFVC dans la période définie, le Référentiel sera considéré comme inaccessible.
+Si Kobee ne parvient pas à établir une connexion au Référentiel TFVC dans la période définie, le Référentiel sera considéré comme inaccessible.
 
 La spécification du Délai d`'expiration est obligatoire.
 |===
 
-. Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM parvient à établir la connexion vers le Référentiel TFVC. Si le test réussit, le message suivant s`'affiche:
+. Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee parvient à établir la connexion vers le Référentiel TFVC. Si le test réussit, le message suivant s`'affiche:
 +
 __Information: Connexion au Référentiel correctement établie.__
 +
@@ -1071,7 +1071,7 @@ a|_Sujets apparentés:_
 
 * <<GlobAdm_VCR.adoc#_globadm_vcr,Référentiels de contrôle de version>>
 * <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
-* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans IKAN ALM>>
+* <<GlobAdm_Project.adoc#_globadm_projectcreate,Projet Créer un Projet dans Kobee>>
 
 |===
 
@@ -1110,19 +1110,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer la définition d`'un Référentiel TFVC.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_edit,Modifier un Référentiel TFVC>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer la définition d`'un Référentiel TFVC.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_delete,Supprimer un Référentiel TFVC>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Référentiel TFVC.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_history,Afficher l'Historique d`'un Référentiel TFVC>>
@@ -1152,7 +1152,7 @@ Pour la description des champs, se référer à la section <<GlobAdm_VCR.adoc#_g
 
 [NOTE]
 ====
-Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si IKAN ALM parvient à établir la connexion vers le Référentiel TFVC. 
+Cliquez sur le bouton _Vérifier la connexion_ pour vérifier si Kobee parvient à établir la connexion vers le Référentiel TFVC. 
 
 Le panneau _Projets connectés_ affiche les Projets reliés au Référentiel sélectionné. 
 ====

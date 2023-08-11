@@ -5,7 +5,7 @@
 = Administration des projets 
 (((Administration des projets))) 
 
-Les éléments IKAN ALM suivants sont couramment utilisés par les Administrateurs de Projet.
+Les éléments Kobee suivants sont couramment utilisés par les Administrateurs de Projet.
 
 * <<ProjAdm_Projects.adoc#_projadm_projects,Projets>>
 * <<ProjAdm_ProjMgtOptions.adoc#_projadm_projmgtoptions,Options relatives à l`'Administration des projets>>

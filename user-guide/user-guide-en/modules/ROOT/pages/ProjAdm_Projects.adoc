@@ -6,8 +6,8 @@
 = Projects  
 (((Project Administration ,Projects)))  (((Projects))) 
 
-The _Projects Overview_ screen provides information about the IKAN ALM Projects.
-All IKAN ALM Users can display the Projects Overview page.
+The _Projects Overview_ screen provides information about the Kobee Projects.
+All Kobee Users can display the Projects Overview page.
 However, only users with view rights (belonging to the Project`'s Users group) can view the Projects`' settings, and only users with Project Administration rights (belonging to the Project`'s Administrators group) can edit the projects.
 
 Refer to the following procedures for more information:
@@ -54,7 +54,7 @@ For a description of the fields, refer to <<GlobAdm_Project.adoc#_globadm_projec
 |image:icons/view.gif[,15,15] 
 |View
 
-This option is available to IKAN ALM Users with Project User Access Rights.
+This option is available to Kobee Users with Project User Access Rights.
 It allows viewing the selected Project definition.
 
 <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_viewing,Viewing Project Settings>>
@@ -62,7 +62,7 @@ It allows viewing the selected Project definition.
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to all IKAN ALM Users with Project Admin Access Rights.
+This option is available to all Kobee Users with Project Admin Access Rights.
 It allows editing the selected Project definition and switching to the other Project Administration options.
 
 <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Editing Project Settings>>
@@ -70,7 +70,7 @@ It allows editing the selected Project definition and switching to the other Pro
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Project Admin Access Rights.
+This option is available to Kobee Users with Project Admin Access Rights.
 It allows deleting a Project.
 
 <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_deleting,Deleting a Project>>
@@ -78,7 +78,7 @@ It allows deleting a Project.
 |image:icons/lock.gif[,15,15] / image:icons/unlock.gif[,15,15] 
 |Lock / Unlock
 
-This option is available to IKAN ALM Users with Project Admin Access Rights.
+This option is available to Kobee Users with Project Admin Access Rights.
 It allows locking or unlocking the selected Project.
 
 <<ProjAdm_Projects.adoc#_porjadm_projectsoverview_locking,Locking/Unlocking a Project>>
@@ -86,7 +86,7 @@ It allows locking or unlocking the selected Project.
 |image:icons/hide.gif[,15,15]  / image:icons/show.gif[,15,15] 
 |Hide / Show
 
-This option is available to IKAN ALM Users with Project Admin Access Rights.
+This option is available to Kobee Users with Project Admin Access Rights.
 It allows hiding the selected Project.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_hidingshowing,Hiding/Showing a Project>>
@@ -94,7 +94,7 @@ It allows hiding the selected Project.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users with Project User Access Rights.
+This option is available to all Kobee Users with Project User Access Rights.
 It allows to display the History of all create, update and delete operations performed on a Project.
 
 <<ProjAdm_Projects.adoc#_projadm_projectsoverview_historyview,Viewing the Project History>>
@@ -106,7 +106,7 @@ It allows to display the History of all create, update and delete operations per
 
 [NOTE]
 ====
-This option is only available to IKAN ALM Users with User Access Rights.
+This option is only available to Kobee Users with User Access Rights.
 ====
 
 . Click the _Project Administration image:icons/icon_ProjectAdmin_13x13.png[,13,13]  icon on the Main Menu.
@@ -215,9 +215,9 @@ For more information on hiding Projects, refer to <<ProjAdm_Projects.adoc#_proja
 |Issue Tracking System
 |This field contains the name of the external Issue Tracking System.
 
-If an Issue Tracking System is selected, IKAN ALM will from then on automatically create an Issue Tracking Level Phase when a new Level is created for the Project. <<App_Phases.adoc#_phases_levelphases_issuetracking,Issue Tracking Phase>>
+If an Issue Tracking System is selected, Kobee will from then on automatically create an Issue Tracking Level Phase when a new Level is created for the Project. <<App_Phases.adoc#_phases_levelphases_issuetracking,Issue Tracking Phase>>
 
-This field is only visible when there are external Issue Tracking Systems defined in IKAN ALM.
+This field is only visible when there are external Issue Tracking Systems defined in Kobee.
 See also <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking,Issue Tracking>>.
 
 |Build Script

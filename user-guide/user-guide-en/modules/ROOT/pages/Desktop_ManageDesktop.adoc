@@ -5,7 +5,7 @@
 = Managing the Desktop 
 (((Desktop ,Managing Your Desktop)))  (((Managing Your Desktop))) 
 
-Each IKAN ALM User has access to a personal Desktop made up of adjustable Tab Pages, each of them containing current information about the Project Streams, Levels and Packages he or she is interested in.
+Each Kobee User has access to a personal Desktop made up of adjustable Tab Pages, each of them containing current information about the Project Streams, Levels and Packages he or she is interested in.
 You can personalize up to 10 Tab Pages on your Desktop and each Tab Page can contain up to 20 Element Types.
 
 Furthermore the personal Desktop provides a shortcut to the Level Request creation and view options.

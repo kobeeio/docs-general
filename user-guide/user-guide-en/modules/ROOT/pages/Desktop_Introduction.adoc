@@ -5,7 +5,7 @@
 = Desktop 
 (((Desktop)))  (((Desktop ,Introduction))) 
 
-The Desktop makes up the work environment for the regular IKAN ALM end user.
+The Desktop makes up the work environment for the regular Kobee end user.
 
 It gives access to common actions as:
 

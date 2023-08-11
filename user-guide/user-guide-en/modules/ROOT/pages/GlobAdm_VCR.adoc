@@ -6,7 +6,7 @@
 = Version Control Repositories 
 (((Global Administration ,Version Control Repositories)))  (((Version Control Repositories))) 
 
-IKAN ALM currently supports different types of Version Control Repositories (VCR):
+Kobee currently supports different types of Version Control Repositories (VCR):
 
 * <<GlobAdm_VCR.adoc#_globadm_vcr_svn,Subversion Repositories>>
 * <<GlobAdm_VCR.adoc#_globadm_vcr_git,Git Repositories>>
@@ -14,11 +14,11 @@ IKAN ALM currently supports different types of Version Control Repositories (VCR
 * <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc,TFVC Version Control Repositories>>
 
 
-The following sections explain how to define a VCR Repository so that the IKAN ALM Server can connect to it.
+The following sections explain how to define a VCR Repository so that the Kobee Server can connect to it.
 
 [NOTE]
 ====
-You must always install a VCR client on the IKAN ALM Server in order to interact with the VCR Repository.
+You must always install a VCR client on the Kobee Server in order to interact with the VCR Repository.
 ====
 
 [[_globaadm_vcr_create]]
@@ -27,7 +27,7 @@ You must always install a VCR client on the IKAN ALM Server in order to interact
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 
 
@@ -80,19 +80,19 @@ You can also:
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Repository definition.
 
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Repository definition.
 
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Repository.
 |===
 +
@@ -122,7 +122,7 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 ====
 . In the Global Administration context, select__ Version Control Repositories > Create__.
 . Select _Subversion_ from the drop-down list in the _Type_ field.
@@ -171,17 +171,17 @@ Fields marked with a red asterisk are mandatory:
 This field is mandatory.
 
 |User ID
-|Enter the User ID that IKAN ALM will use to access the Subversion Repository.
+|Enter the User ID that Kobee will use to access the Subversion Repository.
 This field is optional.
 
 |Password
-|Enter the Password that IKAN ALM will use to access the Subversion Repository.
+|Enter the Password that Kobee will use to access the Subversion Repository.
 This field is optional.
 
 The characters you enter are displayed as asterisks.
 
 |Repeat Password
-|Re-enter the Password that IKAN ALM will use to access the Subversion Repository.
+|Re-enter the Password that Kobee will use to access the Subversion Repository.
 
 |Repository URL
 |Enter the URL of the machine hosting the Subversion Repository.
@@ -210,7 +210,7 @@ For more information regarding the different Repository Layouts, refer to the se
 
 |Time-Out (Sec.)
 |Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the Subversion Repository within the defined period, it will consider the Repository to be inaccessible.
+If Kobee is not able to establish a connection with the Subversion Repository within the defined period, it will consider the Repository to be inaccessible.
 
 The definition of a Time-Out value is mandatory.
 
@@ -220,7 +220,7 @@ These Meta Properties can be used by the Build and Deploy Scripting Tool.
 
 For more information regarding fetching Meta Properties, refer to the section <<App_Subversion.adoc#_csubversiongeneralinformation,Subversion - General Information>>.
 |===
-. Click __Test Connection__ to verify if IKAN ALM can establish a connection to the Subversion Repository. If the test is successful, the following message is displayed:
+. Click __Test Connection__ to verify if Kobee can establish a connection to the Subversion Repository. If the test is successful, the following message is displayed:
 +
 __Info: Could successfully establish a connection
 with the Repository.__
@@ -279,7 +279,7 @@ For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatesv
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Subversion Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_svn_edit,Editing a Subversion Repository>>
@@ -287,7 +287,7 @@ It allows editing a Subversion Repository definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Subversion Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_svn_delete,Deleting a Subversion Repository>>
@@ -295,7 +295,7 @@ It allows deleting a Subversion Repository definition.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Subversion Repository.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_svn_history,Viewing the Subversion Repository History>>
@@ -324,7 +324,7 @@ For a description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatesvnreposito
 
 [NOTE]
 ====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the Subversion Repository. 
+Click _Test Connection_ to verify if Kobee can establish a connection to the Subversion Repository. 
 
 The _Connected Projects_ panel displays the Projects the Repository is linked to. 
 ====
@@ -396,8 +396,8 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
-Before you can create the Git Version Control Repository in IKAN ALM, you must install a Git Client on the IKAN ALM Server.
+This option is only available if you have Global Administrator Access Rights in Kobee.
+Before you can create the Git Version Control Repository in Kobee, you must install a Git Client on the IKAN ALM Server.
 ====
 
 . In the Global Administration context, select__ Version Control Repositories > Create__.
@@ -446,7 +446,7 @@ This field is mandatory.
 
 |Cache Location
 |Enter the path to the Cache location for this Git Repository.
-This directory on the IKAN ALM Server is used to clone and cache the Git repository for the IKAN ALM Server and Web Application in order to speed up the Repository processes.
+This directory on the Kobee Server is used to clone and cache the Git repository for the IKAN ALM Server and Web Application in order to speed up the Repository processes.
 Make sure that the access rights on this location are correctly configured for the Git process.
 
 A sample location might be ALM_HOME/system/gitcache, e.g., ``c:/ALM/system/gitcache``.
@@ -465,7 +465,7 @@ Valid URLs are of the following format:
 * git://host.xz[:port]/path/to/repo.git
 * http[s]://host.xz[:port]/path/to/repo.git
 
-_Warning:_ If you provide a user and, optionally, also a password in the dedicated input fields below, do not add them to the Repository (Push) URL, since IKAN ALM will insert those values in the final (Push) URL before executing any Repository command.
+_Warning:_ If you provide a user and, optionally, also a password in the dedicated input fields below, do not add them to the Repository (Push) URL, since Kobee will insert those values in the final (Push) URL before executing any Repository command.
 
 |Repository Push URL
 |In case you want to use different protocols for Git read and push actions, you can specify a different URL (usually a protocol that demands authentication, ssh://, https:// or scp style URL) in this field for the push actions.
@@ -478,32 +478,32 @@ This field is optional.
 |The default branch name of the Git repository. The field is prefilled with value _main_.
 
 |User ID
-|Enter the User ID that IKAN ALM will use to access the Git Repository.
+|Enter the User ID that Kobee will use to access the Git Repository.
 This field is optional.
 
-IKAN ALM will insert the value of the User ID in the final (Push) URL before executing any Repository command.
+Kobee will insert the value of the User ID in the final (Push) URL before executing any Repository command.
 
 |Password
-|Enter the Password that IKAN ALM will use to access the Git Repository.
+|Enter the Password that Kobee will use to access the Git Repository.
 This field is optional.
 
 The characters you enter are displayed as asterisks.
-IKAN ALM will insert the value of the Password in the final (Push) URL before executing any Repository commands.
+Kobee will insert the value of the Password in the final (Push) URL before executing any Repository commands.
 This is only the case for http(s) URLs.
 SSH and scp URLs need to function without providing a password.
 
 |Repeat Password
-|Re-enter the Password that IKAN ALM will use to access the Git Repository.
+|Re-enter the Password that Kobee will use to access the Git Repository.
 
 |Time-Out (Sec.)
 |Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the Git Repository within the defined period, it will consider the Repository to be inaccessible.
+If Kobee is not able to establish a connection with the Git Repository within the defined period, it will consider the Repository to be inaccessible.
 
 The definition of a Time-Out value is mandatory.
 |Omit Blobs When Cloning
 |Select the Yes option to clone this Git repository with the _--filter=blob:none_ option active. Enabling this option can greatly speed up the Retrieve Code Phase. Consult the Git documentation for more information on this option.
 |===
-. Click __Test Connection__ to verify if IKAN ALM can establish a connection to the Git Repository. If the test is successful, the following message is displayed:
+. Click __Test Connection__ to verify if Kobee can establish a connection to the Git Repository. If the test is successful, the following message is displayed:
 +
 __Info: Could successfully establish a connection
 with the Repository.__
@@ -562,7 +562,7 @@ For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatesv
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a Git Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_git_edit,Editing a Git Repository>>
@@ -570,7 +570,7 @@ It allows editing a Git Repository definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a Git Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_git_delete,Deleting a Git Repository>>
@@ -578,7 +578,7 @@ It allows deleting a Git Repository definition.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a Git Repository.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_git_history,Viewing the Git Repository History>>
@@ -607,7 +607,7 @@ For a description of the fields, refer to <<GlobAdm_VCR.adoc#_globadm_vcr_git_cr
 
 [NOTE]
 ====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the Git Repository. 
+Click _Test Connection_ to verify if Kobee can establish a connection to the Git Repository. 
 
 The _Connected Projects_ panel displays the Projects the Repository is linked to. 
 ====
@@ -679,9 +679,9 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
+This option is only available if you have Global Administrator Access Rights in Kobee.
 
-Before you can create the CVS Version Control Repository in IKAN ALM, you must install a CVS Client on the IKAN ALM Server.
+Before you can create the CVS Version Control Repository in Kobee, you must install a CVS Client on the IKAN ALM Server.
 ====
 
 . In the Global Administration context, select__ Version Control Repositories > Create__.
@@ -728,7 +728,7 @@ Fields marked with a red asterisk are mandatory:
 | Meaning
 
 |Command Path
-|Enter the path to the Location where the CVS Client command (``cvs.exe`` or ``cvs``) resides on the IKAN ALM Server.
+|Enter the path to the Location where the CVS Client command (``cvs.exe`` or ``cvs``) resides on the Kobee Server.
 
 |Protocol
 a|Select the Protocol from the drop-down list.
@@ -748,15 +748,15 @@ The following Protocols are available:
 
 
 |User ID
-|Enter the User ID that IKAN ALM will use to access the CVS Repository.
+|Enter the User ID that Kobee will use to access the CVS Repository.
 
 |Password
-|Enter the Password that IKAN ALM will use to access the CVS Repository.
+|Enter the Password that Kobee will use to access the CVS Repository.
 
 The characters you enter are displayed as asterisks.
 
 |Repeat Password
-|Re-enter the Password that IKAN ALM will use to access the CVS Repository.
+|Re-enter the Password that Kobee will use to access the CVS Repository.
 
 |Host
 |Enter the Machine name hosting the CVS Repository.
@@ -775,12 +775,12 @@ This field is mandatory.
 
 |Time-Out (Sec.)
 |Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the CVS Repository within the defined period, it will consider the Repository to be inaccessible.
+If Kobee is not able to establish a connection with the CVS Repository within the defined period, it will consider the Repository to be inaccessible.
 
 The definition of a Time-Out value is mandatory.
 |===
 
-. Click __Test Connection__ to verify if IKAN ALM can establish a connection to the CVS Repository. If the test is successful, the following message is displayed:
+. Click __Test Connection__ to verify if Kobee can establish a connection to the CVS Repository. If the test is successful, the following message is displayed:
 +
 __Info: Could successfully establish a connection
 with the Repository.__
@@ -839,7 +839,7 @@ For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatecv
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a CVS Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_cvs_edit,Editing a CVS Repository>>
@@ -847,7 +847,7 @@ It allows editing a CVS Repository definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a CVS Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_cvs_delete,Deleting a CVS Repository>>
@@ -855,7 +855,7 @@ It allows deleting a CVS Repository definition.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a CVS Repository.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_cvs_history,Viewing the CVS Repository History>>
@@ -884,7 +884,7 @@ For a description of the fields, refer to <<GlobAdm_VCR.adoc#_pcreatecvsreposito
 
 [NOTE]
 ====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the CVS Repository. 
+Click _Test Connection_ to verify if Kobee can establish a connection to the CVS Repository. 
 
 The _Connected Projects_ panel displays the Projects the Repository is linked to. 
 ====
@@ -957,8 +957,8 @@ Refer to the following sections for detailed information:
 
 [NOTE]
 ====
-This option is only available if you have Global Administrator Access Rights in IKAN ALM.
-Before you can create the TFVC Version Control Repository in IKAN ALM, you must install a TFVC Client   (Team Explorer for MS Visual Studio or Team Explorer Everywhere for Team Foundation Server) on the IKAN ALM Server.
+This option is only available if you have Global Administrator Access Rights in Kobee.
+Before you can create the TFVC Version Control Repository in Kobee, you must install a TFVC Client   (Team Explorer for MS Visual Studio or Team Explorer Everywhere for Team Foundation Server) on the IKAN ALM Server.
 ====
 . In the Global Administration context, select__ Version Control Repositories > Create__.
 . Select _TFVC_ from the drop-down list in the _Type_ field.
@@ -1016,27 +1016,27 @@ Some sample URLs for connecting to an on premises installation and a Visual Stud
 This field is mandatory.
 
 |User ID
-|Enter the User ID that IKAN ALM will use to access the TFVC Repository.
+|Enter the User ID that Kobee will use to access the TFVC Repository.
 
 This field is optional.
 
 |Password
-|Enter the Password that IKAN ALM will use to access the TFVC Repository.
+|Enter the Password that Kobee will use to access the TFVC Repository.
 This field is optional.
 
 The characters you enter are displayed as asterisks.
 
 |Repeat Password
-|Re-enter the Password that IKAN ALM will use to access the TFVC Repository.
+|Re-enter the Password that Kobee will use to access the TFVC Repository.
 
 |Time-Out (Sec.)
 |Enter the Time-Out value in seconds.
-If IKAN ALM is not able to establish a connection with the TFVC Repository within the defined period, it will consider the Repository to be inaccessible.
+If Kobee is not able to establish a connection with the TFVC Repository within the defined period, it will consider the Repository to be inaccessible.
 
 The definition of a Time-Out value is mandatory.
 |===
 
-. Click __Test Connection__ to verify if IKAN ALM can establish a connection to the TFVC Repository. If the test is successful, the following message is displayed:
+. Click __Test Connection__ to verify if Kobee can establish a connection to the TFVC Repository. If the test is successful, the following message is displayed:
 +
 __Info: Could successfully establish a connection
 with the Repository.__
@@ -1095,7 +1095,7 @@ For a detailed description of the fields, refer to <<GlobAdm_VCR.adoc#_globadm_v
 |image:icons/edit.gif[,15,15] 
 |Edit
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows editing a TFVC Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_edit,Editing a TFVC Repository>>
@@ -1103,7 +1103,7 @@ It allows editing a TFVC Repository definition.
 |image:icons/delete.gif[,15,15] 
 |Delete
 
-This option is available to IKAN ALM Users with Global Administrator Access Rights.
+This option is available to Kobee Users with Global Administrator Access Rights.
 It allows deleting a TFVC Repository definition.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_delete,Deleting a TFVC Repository>>
@@ -1111,7 +1111,7 @@ It allows deleting a TFVC Repository definition.
 |image:icons/history.gif[,15,15] 
 |History
 
-This option is available to all IKAN ALM Users.
+This option is available to all Kobee Users.
 It allows displaying the History of all create, update and delete operations performed on a TFVC Repository.
 
 <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_history,Viewing the TFVC Repository History>>
@@ -1140,7 +1140,7 @@ For a description of the fields, refer to <<GlobAdm_VCR.adoc#_globadm_vcr_tfvc_c
 
 [NOTE]
 ====
-Click _Test Connection_ to verify if IKAN ALM can establish a connection to the TFVC Repository. 
+Click _Test Connection_ to verify if Kobee can establish a connection to the TFVC Repository. 
 
 The _Connected Projects_ panel displays the Projects the Repository is linked to. 
 ====

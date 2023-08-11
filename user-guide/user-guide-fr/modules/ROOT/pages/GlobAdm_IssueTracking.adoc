@@ -6,7 +6,7 @@
 = Suivi des Incidents 
 (((Administration globale ,Suivi des Incidents)))  (((Suivi des Incidents))) 
 
-La fonctionnalité de Suivi des Incidents d`'IKAN ALM permet de relier des Incidents d`'un Système de Suivi des Incidents externe à une Requête de niveau IKAN ALM.
+La fonctionnalité de Suivi des Incidents d`'Kobee permet de relier des Incidents d`'un Système de Suivi des Incidents externe à une Requête de niveau IKAN ALM.
 
 Les Incidents peuvent être reliés à une Requête de niveau selon l`'une des manières suivantes:
 
@@ -18,16 +18,16 @@ Les Incidents peuvent être reliés à une Requête de niveau selon l`'une des m
 [NOTE]
 ====
 
-Un lien permettant de passer directement de l`'Incident dans IKAN ALM vers l`'Incident dans l`'outil de Suivi des Incidents externe est disponible si l`'outil externe dispose d`'une interface Web.
+Un lien permettant de passer directement de l`'Incident dans Kobee vers l`'Incident dans l`'outil de Suivi des Incidents externe est disponible si l`'outil externe dispose d`'une interface Web.
 ====
 
-En plus de cette fonctionnalité fondamentale de Suivi des Incidents, IKAN ALM garantit une intégration encore plus étroite avec Atlassian JIRA, Microfocus ALM, Microsoft Team Foundation et GitHub grâce aux fonctionnalités additionnelles suivantes: 
+En plus de cette fonctionnalité fondamentale de Suivi des Incidents, Kobee garantit une intégration encore plus étroite avec Atlassian JIRA, Microfocus ALM, Microsoft Team Foundation et GitHub grâce aux fonctionnalités additionnelles suivantes: 
 
 * la possibilité de tester la connexion avec le Système de Suivi des Incidents au moment de la création ou de la modification d`'une définition de Système de Suivi des Incidents.
-* la synchronisation automatique des Incidents traités dans le Système de Suivi des Incidents: IKAN ALM récupère des informations additionnelles, telles que la description, le propriétaire, la priorité, 
- . de l`'Incident JIRA, du Defect Microfocus ALM, de l'élément de travail Team Foundation ou de l`'Incident GitHub correspondant. Ces informations seront synchronisées chaque fois que le résultat de construction évoluera dans le Cycle de vie IKAN ALM.
+* la synchronisation automatique des Incidents traités dans le Système de Suivi des Incidents: Kobee récupère des informations additionnelles, telles que la description, le propriétaire, la priorité, 
+ . de l`'Incident JIRA, du Defect Microfocus ALM, de l'élément de travail Team Foundation ou de l`'Incident GitHub correspondant. Ces informations seront synchronisées chaque fois que le résultat de construction évoluera dans le Cycle de vie Kobee.
 * une synchronisation manuelle des Incidents reliés à une Requête de niveau via l`'écran __Informations détaillées__.
-* la possibilité d`'ajouter, suite à une Requête de niveau réussie, un commentaire à l`'Incident dans JIRA, au Defect dans Microfocus ALM, à l`'Incident dans GitHub ou à l'élément de travail Team Foundation. Ce commentaire contiendra un lien vers la Requête de niveau en IKAN ALM.
+* la possibilité d`'ajouter, suite à une Requête de niveau réussie, un commentaire à l`'Incident dans JIRA, au Defect dans Microfocus ALM, à l`'Incident dans GitHub ou à l'élément de travail Team Foundation. Ce commentaire contiendra un lien vers la Requête de niveau en Kobee.
 
 
 Pour des informations plus détaillées, se référer aux sections suivantes.
@@ -63,7 +63,7 @@ Pour plus d`'informations, se référer aux sections <<App_Phases.adoc#_phases_l
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Suivi des Incidents > Créer__.
@@ -83,20 +83,20 @@ image::GlobAdmin-IssueTracking-Create.png[,667,432]
 |Saisissiez la dénomination du Système de Suivi des Incidents externe.
 
 Ce champ est le seul champ obligatoire.
-Mais, si vous ne saisissez que le Nom, la capacité d`'intégration sera très élémentaire, signifiant que les Incidents devront être créés et reliés manuellement aux Requêtes de niveaux d`'IKAN ALM.
+Mais, si vous ne saisissez que le Nom, la capacité d`'intégration sera très élémentaire, signifiant que les Incidents devront être créés et reliés manuellement aux Requêtes de niveaux d`'Kobee.
 
 |Description
 |Saisissez la description du Système de Suivi des Incidents externe.
 
 |Classe "Plugin Factory"
 a|Sélectionnez le nom de la classe à utiliser pour ce Système de Suivi des Incidents.
-Les classes sont disponibles dans IKAN ALM en fonction du type de système: 
+Les classes sont disponibles dans Kobee en fonction du type de système: 
 
 * système "générique" (Bugzilla, Track, Mantis, ...):
 +
 **be.ikan.scm4all.plugin.issuetracking.generic.GenericITSPluginFactory**
 +
-* IKAN ALM offre une intégration de base avec ces Systèmes de Suivi des Incidents.
+* Kobee offre une intégration de base avec ces Systèmes de Suivi des Incidents.
 JIRA: **be.ikan.scm4all.plugin.issuetracking.jira.JiraITSPluginFactory**
 MicroFocus ALM: **be.ikan.scm4all.plugin.issuetracking.mfalm.MFAlmITSPluginFactory**
 GitHub: **be.ikan.scm4all.plugin.issuetracking.github.GitHubITSPluginFactory**
@@ -106,7 +106,7 @@ Microsoft Team Foundation: **be.ikan.scm4all.plugin.issuetracking.tfs.TFSITSPlug
 Les Incidents sont synchronisés avec le Système de Suivi des Incidents externe chaque fois qu`'une Requête de niveau est délivrée dans le Cycle de vie.
 
 |URL complet
-|Saisissez le modèle URL utilisé pour passer d`'un Incident dans IKAN ALM vers le Système de Suivi des Incidents externe.
+|Saisissez le modèle URL utilisé pour passer d`'un Incident dans Kobee vers le Système de Suivi des Incidents externe.
 
 Il est manifeste que le Système de Suivi des Incidents doit offrir une interface Web qui vous guidera (peut-être après avoir fourni les paramètres de connexion nécessaires) vers la description détaillée d`'un Incident.
 Dans cet URL, la variable du numéro de l`'Incident doit être fourni sous forme de ``"$\{issueId}"``.
@@ -137,14 +137,14 @@ Les caractères sont remplacés par des astérisques.
 |Saisissez le modèle de recherche de suivi d`'Incident.
 
 Ce modèle doit être une expression régulière valide.
-Pour plus d`'informations concernant les expressions régulières valides qui peuvent être interprétées par IKAN ALM, se référer à https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html[https://docs.oracle.com/en/java/javase/1/docs/api/java.base/java/util/regex/Pattern.html,window=_blank].
+Pour plus d`'informations concernant les expressions régulières valides qui peuvent être interprétées par Kobee, se référer à https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html[https://docs.oracle.com/en/java/javase/1/docs/api/java.base/java/util/regex/Pattern.html,window=_blank].
 
 Si fourni, ce modèle sera utilisé pour détecter les numéros d`'Incident dans les commentaires enregistrés dans le RCV. Cet appariement d`'expressions est réalisé dans une phase séparée à la fin d`'une Requête de niveau de Construction réussie.
 
 L`'appariement d`'expressions ne tient pas compte de la casse, comme illustré dans les exemples ci-dessous: 
 
 Notez que pour un système de Suivi des Incidents Team Foundation ce champ peut être ignoré (ainsi que le Modèle d`'Identifiant de Suivi d`'Incident) s'il est connecté à un Projet avec un système de contrôle de versions Team Foundation: dans ce cas, les éléments de travail seront directement liés à une opération Commit.
-Par conséquent, IKAN ALM ne doit plus analyser les commentaires des Incidents pour détecter les éléments de travail associés.
+Par conséquent, Kobee ne doit plus analyser les commentaires des Incidents pour détecter les éléments de travail associés.
 
 *Exemples* (le texte en caractères gras est le texte qui sera apparié):
 
@@ -156,7 +156,7 @@ Exemple 1: webpad(\s)\*[0-9]\+((\s)*,(\s)\*[0-9]+)*
 
 Exemple 2: \[#([A-Z0-9]\+)-([0-9]+)\]
 
-- Petite correction dans le menu *[#WEBPAD-7]*.- Corrigé également le problème général IKAN ALM *[#ALM-3788]*.- Finalement, traité aussi l`'Incident *[#gen-344]*.
+- Petite correction dans le menu *[#WEBPAD-7]*.- Corrigé également le problème général Kobee *[#ALM-3788]*.- Finalement, traité aussi l`'Incident *[#gen-344]*.
 
 |Modèle d`'Identifiant de Suivi d`'Incident
 |Saisissez le Modèle d`'Identifiant de Suivi d`'Incident.
@@ -184,7 +184,7 @@ Exemple 2: ``[A-Z0-9]+-``[0-9]+
 |Cette fonctionnalité n`'a pas d`'effet si vous utilisez le plugin GenericITSPlugin.
 
 Sélectionnez l`'option _Oui_ si vous voulez qu`'un commentaire soit automatiquement ajouté à l`'Incident dans le Système de Suivi des Incidents.
-Ce commentaire contiendra un lien vers la Requête de niveau en IKAN ALM.
+Ce commentaire contiendra un lien vers la Requête de niveau en Kobee.
 
 L`'ajout de ce commentaire sera également listé dans la Log de la Phase __Suivi des Incidents__.
 |===
@@ -206,7 +206,7 @@ Pour plus d`'informations concernant la modification des propriétés d`'un Syst
 image::GlobAdmin-IssueTracking-Create-Warning.png[,505,37] 
 +
 Une fois le Système de Suivi des Incidents défini, vous devez l`'activer dans le Projet. <<ProjAdm_Projects.adoc#_projadmin_projectsoverview_editing,Modifier les Paramètres d`'un Projet>>
-. Si vous avez défini un Système de Suivi des Incidents JIRA, MF ALM, GitHub ou Team Foundation, vous pouvez tester si IKAN ALM parvient à établir la connexion.
+. Si vous avez défini un Système de Suivi des Incidents JIRA, MF ALM, GitHub ou Team Foundation, vous pouvez tester si Kobee parvient à établir la connexion.
 +
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un Système de Suivi des Incidents>>
 
@@ -253,19 +253,19 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Système de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_edit,Modifier la définition d`'un Système de Suivi des Incidents>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition de Système de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_delete,Supprimer une définition de Système de Suivi des Incidents>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d'afficher l'Historique de toutes les opérations de création, de mise à jour et de suppression exécutées sur le Système de Suivi des Incidents et ses Propriétés.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetracking_history,Afficher l`'Historique d`'un Système de Suivi des Incidents>>
@@ -306,7 +306,7 @@ Les boutons suivants sont également disponibles:
 * _Actualiser_ pour récupérer les Paramètres tels qu`'ils sont enregistrés dans la base de données.
 * _Annuler_ pour retourner à l`'écran précédent sans enregistrer vos modifications.
 
-. Si vous avez défini un Système de Suivi des Incidents JIRA, MF ALM, GitHub ou Team Foundation, y compris ces propriétés requises, vous pouvez tester si IKAN ALM parvient à établir la connexion.
+. Si vous avez défini un Système de Suivi des Incidents JIRA, MF ALM, GitHub ou Team Foundation, y compris ces propriétés requises, vous pouvez tester si Kobee parvient à établir la connexion.
 +
 Cliquez sur le bouton __Vérifier la connexion__.
 +
@@ -404,19 +404,19 @@ Vous ne pouvez pas définir de Propriétés qui ont été implémentées par la 
 |Ce lien n'est disponible que si une Propriété a été définie par la Plugin Factory Class, mais que sa valeur n'a pas encore été spécifiée.
 Sinon, seuls les liens __Modifier__ et __Supprimer__ seront disponibles.
 
-Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'accès d'Administrateur global.
+Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'accès d'Administrateur global.
 Elle permet de créer une définition de Propriété de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_create,Créer une Propriété d'un Système de Suivi des Incidents>>
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur global.
 Elle permet de modifier une définition de Propriété de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_edit,Modifier une Propriété de Système de Suivi des Incidents>>
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur global.
 Elle permet de supprimer une définition de Propriété de Suivi des Incidents.
 
 <<GlobAdm_IssueTracking.adoc#_globadm_issuetrackingproperties_delete,Supprimer une Propriété de Système de Suivi des Incidents>>
@@ -441,7 +441,7 @@ Les champs suivants sont affichés:
 | Description
 
 |Nom
-|Ce nom est prédéfini par IKAN ALM en fonction du type de Système de Suivi des Incidents.
+|Ce nom est prédéfini par Kobee en fonction du type de Système de Suivi des Incidents.
 
 |Valeur
 |En fonction du Système de Suivi des Incidents et de la Propriété, ce champ est obligatoire ou optionnel.
@@ -458,21 +458,21 @@ Exemple pour la propriété Team Foundation collectionURL: `http(s)://ServerName
 |Ce champ contient la valeur par défaut.
 
 |Requis
-|Option gérée par IKAN ALM.
+|Option gérée par Kobee.
 
 Les Propriétés requises doivent être fournies pour assurer une intégration fonctionnelle complète du Suivi des Incidents.
 
 Valeurs possibles: _Oui_ ou __Non__.
 
 |Sécurisé
-|Option gérée par IKAN ALM.
+|Option gérée par Kobee.
 
 La valeur des propriétés sécurisées sera cachée de l'Utilisateur (remplacée par des *).
 
 Valeurs possibles: _Oui_ ou __Non__.
 
 |Description
-|Option gérée par IKAN ALM.
+|Option gérée par Kobee.
 
 La description de la Propriété de Système de Suivi des Incidents.
 |===

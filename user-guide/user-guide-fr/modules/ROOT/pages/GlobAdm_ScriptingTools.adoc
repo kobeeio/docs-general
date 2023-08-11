@@ -5,7 +5,7 @@
 = Outils de script 
 (((Administration globale ,Outils de script)))  (((Outils de script))) 
 
-IKAN ALM supporte les Outils de script suivants:
+Kobee supporte les Outils de script suivants:
 
 * <<GlobAdm_ScriptingTools.adoc#_sglobadmin_scriptingtool_ant,Outils de script ANT>>
 * <<GlobAdm_ScriptingTools.adoc#_sglobadm_scriptingtool_gradle,Outils de script Gradle>>
@@ -13,11 +13,11 @@ IKAN ALM supporte les Outils de script suivants:
 * <<GlobAdm_ScriptingTools.adoc#_sglobadmin_scriptingtool_maven2,Outils de script Maven2>>
 
 
-Les sections suivantes expliquent comment définir et gérer un Outil de script de manière à ce que l`'Agent IKAN ALM puisse l`'utiliser pour des actions de Construction et de Déploiement.
+Les sections suivantes expliquent comment définir et gérer un Outil de script de manière à ce que l`'Agent Kobee puisse l`'utiliser pour des actions de Construction et de Déploiement.
 
 [NOTE]
 ====
-Vous devez toujours installer l`'Outil de Script défini dans l'Administration globale avant de pouvoir exécuter les Scripts de Construction et de Déploiement sur l`'Agent IKAN ALM.
+Vous devez toujours installer l`'Outil de Script défini dans l'Administration globale avant de pouvoir exécuter les Scripts de Construction et de Déploiement sur l`'Agent Kobee.
 ====
 
 [[_sglobadm_scriptingtools_create]]
@@ -26,7 +26,7 @@ Vous devez toujours installer l`'Outil de Script défini dans l'Administration g
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 
 . Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
@@ -75,15 +75,15 @@ Vous pouvez également:
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Outil de script.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Outil de script.
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Outil de script.
 |===
 +
@@ -101,8 +101,8 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 
 Apache ANT est un Outil basé sur Java.
 En théorie, l`'outil ressemble à __make__, sans les défauts de __make__.
-Si ANT est installé sur une Machine associée à vos Environnements de Construction/Déploiement, IKAN ALM pourra interagir avec lui.
-Pour cela, vous devez définir l`'Outil de script ANT dans l`'application IKAN ALM et, au moment de créer l`'Environnement de Construction ou de Déploiement, vous devez spécifier quel outil devra être utilisé comme Outil de script de Construction ou de Déploiement.
+Si ANT est installé sur une Machine associée à vos Environnements de Construction/Déploiement, Kobee pourra interagir avec lui.
+Pour cela, vous devez définir l`'Outil de script ANT dans l`'application Kobee et, au moment de créer l`'Environnement de Construction ou de Déploiement, vous devez spécifier quel outil devra être utilisé comme Outil de script de Construction ou de Déploiement.
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
@@ -118,7 +118,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 . Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
@@ -184,7 +184,7 @@ https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html[https://
 a|Saisissez dans ce champ le chemin de classe Java ANT.
 Ce champ est obligatoire.
 
-Comme IKAN ALM lance ANT via Java, vérifiez que tous les fichiers jar requis sont disponibles.
+Comme Kobee lance ANT via Java, vérifiez que tous les fichiers jar requis sont disponibles.
 Dans ce champ, certaines valeurs peuvent être spécifiées, mais vous pouvez également utiliser les "Chemins de classe" (voir ci-dessous).
 
 En fonction de la version de ANT utilisée, le chemin de classe (CLASSPATH) doit inclure au moins:
@@ -224,7 +224,7 @@ Sélectionnez __Non__, si vous n`'utilisez pas le Lanceur ANT, mais Java pour la
 |Dans ce champ, saisissiez les options de ligne de commande.
 Ce champ est optionnel.
 
-Les options de ligne de commande prévues par défaut par IKAN ALM, telles que -buildfile, -logfiles, -verbose, -debug, ... ne seront pas acceptées.
+Les options de ligne de commande prévues par défaut par Kobee, telles que -buildfile, -logfiles, -verbose, -debug, ... ne seront pas acceptées.
 
 Exemples d`'options: -keep-going, -noinput
 
@@ -326,15 +326,15 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Outil de script.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Outil de script.
 
 |image:icons/history.gif[,15,15] Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Outil de script.
 |===
 
@@ -419,8 +419,8 @@ Pour une description détaillée de l`'__Aperçu de l`'Historique__, se référe
 (((Outils de script ,Gradle))) 
 
 Gradle est un système d'automatisation source ouvert qui, en prenant comme point de départ les concepts Apache Ant et Apache Maven, introduit un langage dédié (DSL - Domain Specific Language) au lieu du format XML utilisé par Apache Maven pour déclarer la configuration du Projet.
-Si Gradle est installé sur une Machine associée à vos Environnements de Construction/Déploiement, IKAN ALM pourra interagir avec lui.
-À cet effet, vous devez définir l`'Outil de Script Gradle dans l`'application IKAN ALM et spécifier, lors de la création de l`'Environnement de Construction/Déploiement, quel outil Gradle doit être utilisé comme Outil de Script de Construction ou de Déploiement.
+Si Gradle est installé sur une Machine associée à vos Environnements de Construction/Déploiement, Kobee pourra interagir avec lui.
+À cet effet, vous devez définir l`'Outil de Script Gradle dans l`'application Kobee et spécifier, lors de la création de l`'Environnement de Construction/Déploiement, quel outil Gradle doit être utilisé comme Outil de Script de Construction ou de Déploiement.
 
 Se référer aux sections suivantes pour des informations plus détaillées:
 
@@ -436,7 +436,7 @@ Se référer aux sections suivantes pour des informations plus détaillées:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 . Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
@@ -528,7 +528,7 @@ _Note:_ Cette valeur sera spécifiée comme une option de ligne de commande (--g
 |Dans ce champ, saisissiez les options de ligne de commande.
 Ce champ est optionnel.
 
-Les options de ligne de commande qui pourraient être fournies par défaut par IKAN ALM ne seront pas acceptées: .-g, --gradle-user-home, -q, --quiet, -i, --info,-d, --debug, -s, --stacktrace, -S, --full-stacktrace, -b, --build-file
+Les options de ligne de commande qui pourraient être fournies par défaut par Kobee ne seront pas acceptées: .-g, --gradle-user-home, -q, --quiet, -i, --info,-d, --debug, -s, --stacktrace, -S, --full-stacktrace, -b, --build-file
 
 Exemples d'option (acceptées): -keep-going, or -noinput.
 
@@ -647,15 +647,15 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Outil de script.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Outil de script.
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Outil de script.
 |===
 
@@ -756,8 +756,8 @@ NANT est un Outil de construction .NET gratuit.
 En théorie, l`'outil ressemble à __make__, sans les défauts de __make__.
 Dans la pratique, il ressemble beaucoup à ANT.
 
-Si NANT est installé sur une Machine associée à vos Environnements de Construction/Déploiement, IKAN ALM pourra interagir avec lui.
-Pour cela, vous devez définir l`'Outil de script NANT dans l`'application IKAN ALM et, au moment de créer l`'Environnement de Construction ou de Déploiement, vous devez spécifier quel outil devra être utilisé comme Outil de script de Construction ou de Déploiement.
+Si NANT est installé sur une Machine associée à vos Environnements de Construction/Déploiement, Kobee pourra interagir avec lui.
+Pour cela, vous devez définir l`'Outil de script NANT dans l`'application Kobee et, au moment de créer l`'Environnement de Construction ou de Déploiement, vous devez spécifier quel outil devra être utilisé comme Outil de script de Construction ou de Déploiement.
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
@@ -773,7 +773,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 . Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
@@ -825,7 +825,7 @@ Les champs marqués d`'un astérisque rouge doivent être obligatoirement rempli
 |Dans ce champ, saisissiez les options de ligne de commande.
 Ce champ est optionnel.
 
-Les options de ligne de commande prévues par défaut par IKAN ALM, telles que -buildfile, -logfiles, -verbose, -debug, ... ne seront pas acceptées.
+Les options de ligne de commande prévues par défaut par Kobee, telles que -buildfile, -logfiles, -verbose, -debug, ... ne seront pas acceptées.
 
 Exemples d`'options: -keep-going ou -noinput.
 
@@ -928,15 +928,15 @@ Pour une description détaillée des champs, se référer à la section <<GlobAd
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de modifier la définition d`'un Outil de script.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Administrateur global.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Administrateur global.
 Elle permet de supprimer une définition d`'un Outil de script.
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives à un Outil de script.
 |===
 
@@ -1022,9 +1022,9 @@ Pour une description détaillée de l`'__Aperçu de l`'Historique__, se référe
 
 Maven2 est un Outil de Script utilisé pour construire et gérer des Projets basés sur Java.
 Son but principal est de permettre au développeur d`'englober complètement l`'effort de développement dans les délais les plus brefs.
-Si Maven2 est installé sur une Machine associée aux Environnements de Construction/Déploiement, IKAN ALM pourra interagir avec lui.
+Si Maven2 est installé sur une Machine associée aux Environnements de Construction/Déploiement, Kobee pourra interagir avec lui.
 
-A cet effet, vous devez définir l`'Outil de Script Maven2 dans l`'application IKAN ALM et spécifier, lors de la création de l`'Environnement de Construction/Déploiement, quel outil Maven2 doit être utilisé comme Outil de Script de Construction ou de Déploiement.
+A cet effet, vous devez définir l`'Outil de Script Maven2 dans l`'application Kobee et spécifier, lors de la création de l`'Environnement de Construction/Déploiement, quel outil Maven2 doit être utilisé comme Outil de Script de Construction ou de Déploiement.
 
 Pour des informations plus détaillées, se référer aux sections suivantes:
 
@@ -1040,7 +1040,7 @@ Pour des informations plus détaillées, se référer aux sections suivantes:
 
 [NOTE]
 ====
-Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans IKAN ALM.
+Cette option n`'est disponible que si vous disposez de droits d`'accès d`'Administrateur global dans Kobee.
 ====
 . Dans le __Menu d'Administration globale__, sélectionnez __Outils de script > Créer__.
 
@@ -1132,7 +1132,7 @@ Se référer à <<ProjAdm_EnvParams.adoc#_environmentparams__create,Créer un Pa
 Par exemple: l`'option "`-e`" affichera des informations plus détaillées sur les messages d`'erreur.
 Ce champ est optionnel.
 
-Notez que vous ne pouvez pas utiliser les options suivantes car elles sont déjà utilisées par IKAN ALM: "`-X`" ou "`--debug`" (Debug), "`-s`" ou "`--settings`" (Fichier Paramètres), "`-P`" ou "`--activate-profiles`" (Profils activés) et "`-B`" ou "`--batch-mode`".
+Notez que vous ne pouvez pas utiliser les options suivantes car elles sont déjà utilisées par Kobee: "`-X`" ou "`--debug`" (Debug), "`-s`" ou "`--settings`" (Fichier Paramètres), "`-P`" ou "`--activate-profiles`" (Profils activés) et "`-B`" ou "`--batch-mode`".
 
 Les options de ligne de commande définies ici seront utilisées par défaut.
 Si nécessaire, elles pourront être écrasées pour les Environnements de Construction ou de Déploiement différents.
@@ -1242,15 +1242,15 @@ Pour une description détaillée, se référer à la section <<GlobAdm_Scripting
 | Description
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur global.
 Elle permet de modifier la définition d'un Outil de script.
 
 |image:icons/delete.gif[,15,15]  Supprimer
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM ayant des droits d`'accès d'Administrateur global.
+|Cette option est disponible pour tous les Utilisateurs Kobee ayant des droits d`'accès d'Administrateur global.
 Elle permet de supprimer la définition d'un Outil de script.
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'Historique de toutes les opérations de création, de mise à jour ou de suppression relatives à un Outil de script.
 |===
 

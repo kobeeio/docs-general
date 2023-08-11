@@ -5,7 +5,7 @@
 = Paquets 
 (((Bureau ,Paquets)))  (((Paquets))) 
 
-Les Paquets vous permettent de déplacer manuellement un ou plusieurs fichiers individuels d`'une Branche dans le RCV (Branche principale ou Branche secondaire) à travers le Cycle de vie d`'IKAN ALM.
+Les Paquets vous permettent de déplacer manuellement un ou plusieurs fichiers individuels d`'une Branche dans le RCV (Branche principale ou Branche secondaire) à travers le Cycle de vie d`'Kobee.
 Pour chaque Branche dans un Projet de type "Gestion Paquets", un ou plusieurs Paquets peuvent être créés.
 Cela constitue la différence avec la procédure de travail originale dans une Branche d`'un Projet de type "Éditions Versions", pour laquelle un processus automatisé et configurable définit quelles Révisions des fichiers doivent être extraites de la Branche principale (head) ou de la Branche secondaire (branch) du RCV et traitées durant le Cycle de vie.
 
@@ -18,7 +18,7 @@ Cependant, il n`'y a pas de contrôle automatisé de développements concurrents
 Tout le long du Cycle de vie de la Branche, chaque Paquet dispose d`'un numéro de Construction dédié et progresse de manière indépendante des autres Paquets.
 
 __D`'un point de vue physique__, il s`'agit de constituer un ensemble de fichiers à extraire du RCV pendant l`'exécution d`'une Requête de construction afin de les soumettre aux phases de Construction et de Balisage pour finalement réaliser le Déploiement de cet ensemble.
-Dans un projet de type «Édition de Versions», les règles d`'extraction dans le RCV sont définies dans la Branche via le Type de Construction choisi et IKAN ALM assure automatiquement la sélection des objets.
+Dans un projet de type «Édition de Versions», les règles d`'extraction dans le RCV sont définies dans la Branche via le Type de Construction choisi et Kobee assure automatiquement la sélection des objets.
 Tandis que dans un projet de type «Gestion de Paquets», la sélection pour l`'extraction dans le RCV, est réalisée manuellement par les utilisateurs du projet sous la forme d`'un Paquet.
 (Voir la section Création d`'un Projet de type Paquets <<Desktop_Packages.adoc#_desktop_createpackage,Créer un Paquet>> pour plus d`'informations).
 
@@ -152,13 +152,13 @@ Pour plus d'informations concernant l'utilisation des panneaux de recherche et d
 | Description
 
 |image:icons/view.gif[,15,15]  Afficher
-|Cette option est disponible pour les Utilisateurs IKAN ALM avec des droits d'accès d`'Administrateur de Projet.
+|Cette option est disponible pour les Utilisateurs Kobee avec des droits d'accès d`'Administrateur de Projet.
 Elle permet d`'afficher les informations du Paquet sélectionné et les Révisions qu`'il contient.
 
 <<Desktop_Packages.adoc#_desktop_viewpackage,Afficher les paramètres d`'un Paquet>>
 
 |image:icons/edit.gif[,15,15]  Modifier
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Utilisateur de Projet.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Utilisateur de Projet.
 Elle permet de modifier les informations du Paquet sélectionné et d`'accéder aux Révisions de fichiers relatives au Paquet.
 
 <<Desktop_Packages.adoc#_desktop_editpackage,Modifier la définition d`'un Paquet>>
@@ -166,13 +166,13 @@ Elle permet de modifier les informations du Paquet sélectionné et d`'accéder 
 |image:icons/show.gif[,15,15]  Montrer 
 
 image:icons/hide.gif[,15,15]  Cacher
-|Cette option est disponible pour les Utilisateurs IKAN ALM ayant des droits d`'accès d`'Utilisateur de Projet.
+|Cette option est disponible pour les Utilisateurs Kobee ayant des droits d`'accès d`'Utilisateur de Projet.
 Elle permet de montrer ou cacher le Paquet sélectionné.
 
 <<Desktop_Packages.adoc#_desktop_hideshowpackage,Montrer/cacher un Paquet>>
 
 |image:icons/history.gif[,15,15]  Historique
-|Cette option est disponible pour tous les Utilisateurs IKAN ALM.
+|Cette option est disponible pour tous les Utilisateurs Kobee.
 Elle permet d`'afficher l`'historique de toutes les opérations de création, de modification ou de suppression relatives aux Fichiers d`'un Paquet.
 
 <<Desktop_Packages.adoc#_desktop_viewpackagehistory,Afficher l`'historique d`'un Paquet>>

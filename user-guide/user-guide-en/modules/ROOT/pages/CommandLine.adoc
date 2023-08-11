@@ -5,7 +5,7 @@
 = Command Line Interface (Optional) 
 (((Command Line Interface))) 
 
-IKAN ALM can be extended with an optional Command Line interface, allowing the creation of Level Requests and Packages and the generation of Reports by means of a shell interface instead of the IKAN ALM Web Application.
+Kobee can be extended with an optional Command Line interface, allowing the creation of Level Requests and Packages and the generation of Reports by means of a shell interface instead of the IKAN ALM Web Application.
 
 Possible uses:
 
@@ -16,11 +16,11 @@ Possible uses:
 * Automated creation of Level Requests using a Scripting Tool. A scripting tool is used to define the triggers (e.g., server backup) for Level Request creation. This guide describes the use of an <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,ANT script>>.
 
 
-The IKAN ALM Command Line interface can be installed on each client machine requiring its functionality.
-It requires a connection (TCP/IP) to the central IKAN ALM Server.
-The connection with the IKAN ALM Server is established using XML-RPC.
+The Kobee Command Line interface can be installed on each client machine requiring its functionality.
+It requires a connection (TCP/IP) to the central Kobee Server.
+The connection with the Kobee Server is established using XML-RPC.
 
-The CLR and Package commands can also be executed through the IKAN ALM REST API. Consult the IKAN ALM REST API documentation for more information.
+The CLR and Package commands can also be executed through the Kobee REST API. Consult the IKAN ALM REST API documentation for more information.
 
 [[_smanualusagecommandlineinterface]]
 == Manual Usage of the Command Line interface
@@ -44,7 +44,7 @@ Refer to the following procedures for detailed information:
 On a Windows platform:
 
 * Open a Command prompt.
-* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
+* Browse to the Kobee Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
 +
 You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
 
@@ -52,7 +52,7 @@ You may add this location to the PATH Environment variable, so that it becomes a
 On a Unix platform:
 
 * Open a terminal console.
-* Browse to the IKAN ALM Command Line working directory.
+* Browse to the Kobee Command Line working directory.
 +
 After a standard installation, this is: _/opt/ikan/alm/commandline_
 +
@@ -78,31 +78,31 @@ The following elements are available:
 |Yes
 
 |serverhost
-|This element allows defining the DHCP name or IP address of the host running the IKAN ALM Server.
+|This element allows defining the DHCP name or IP address of the host running the Kobee Server.
 |Yes
 
 |serverport
-|This element allows defining the port number used to establish the connection to the IKAN ALM Server via XML-RPC.
+|This element allows defining the port number used to establish the connection to the Kobee Server via XML-RPC.
 
 If this element is not provided, the default port number (20021) will be used.
 |No
 
 |user
-|This element allows defining a User ID with IKAN ALM access rights.
+|This element allows defining a User ID with Kobee access rights.
 |Yes
 
 |password
-|This element allows defining the password associated with the User ID used to access IKAN ALM.
+|This element allows defining the password associated with the User ID used to access Kobee.
 |Yes
 
 |secured
 |This element allows determining whether an encrypted connection must be used or not.
 
-If the IKAN ALM Server is using an encrypted connection, set the _secured_ element to __true__:
+If the Kobee Server is using an encrypted connection, set the _secured_ element to __true__:
 
 _-secured=true_
 
-If the IKAN ALM Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter out.
+If the Kobee Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter out.
 |No
 
 |clr
@@ -133,13 +133,13 @@ file]]__
 |project
 |This parameter allows defining the Project for which you create a Level Request.
 
-Use the Project name as defined in IKAN ALM.
+Use the Project name as defined in Kobee.
 |Yes
 
 |projectstream
 |This parameter allows defining the Project Stream for which you create a Level Request.
 
-Use the Build Prefix (and Build Suffix) as defined in IKAN ALM to identify the Project Stream to create a Level Request for.
+Use the Build Prefix (and Build Suffix) as defined in Kobee to identify the Project Stream to create a Level Request for.
 
 If this parameter is not provided, the Level Request will be created for the Head Project Stream.
 |No
@@ -151,7 +151,7 @@ If this parameter is not provided, the Level Request will be created for the Hea
 |level
 |This parameter allows defining the Level name for which you create a Level Request.
 
-Use the Level Name as defined in IKAN ALM.
+Use the Level Name as defined in Kobee.
 |Yes
 
 |description
@@ -209,7 +209,7 @@ These messages only indicate that the Level Request was __created__ successfully
 Refer to the <<Desktop_LevelRequests.adoc#_desktop_lr_overview,Level Requests Overview>> in the web application to verify if the Level Request was __executed__ successfully as well.
 --
 
-* If the Level Request cannot be created, because there is no connection with the IKAN ALM Server, the following screen is displayed:
+* If the Level Request cannot be created, because there is no connection with the Kobee Server, the following screen is displayed:
 +
 image::CommandLine-ServerConnectionProblem.png[,1148,535] 
 +
@@ -248,7 +248,7 @@ You can also create any number of specific properties files by copying the stand
 On a Windows platform:
 
 * Open a Command prompt.
-* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
+* Browse to the Kobee Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
 +
 You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
 
@@ -256,7 +256,7 @@ You may add this location to the PATH Environment variable, so that it becomes a
 On a Unix platform:
 
 * Open a terminal console.
-* Browse to the IKAN ALM Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
+* Browse to the Kobee Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
 +
 You may create a symbolic link to the `alm.sh` script so that it becomes accessible through other working directories.
 
@@ -306,7 +306,7 @@ The results and console outputs are similar to those of the section above: <<Com
 On a Windows platform:
 
 * Open a Command prompt.
-* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
+* Browse to the Kobee Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
 +
 You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
 
@@ -314,7 +314,7 @@ You may add this location to the PATH Environment variable, so that it becomes a
 On a Unix platform:
 
 * Open a terminal console.
-* Browse to the IKAN ALM Command Line working directory.
+* Browse to the Kobee Command Line working directory.
 +
 After a standard installation, this is: _/opt/ikan/alm/commandline_
 +
@@ -340,31 +340,31 @@ The following elements are available:
 |Yes
 
 |serverhost
-|This element allows defining the DHCP name or IP address of the host running the IKAN ALM Server.
+|This element allows defining the DHCP name or IP address of the host running the Kobee Server.
 |Yes
 
 |serverport
-|This element allows defining the port number used to establish the connection to the IKAN ALM Server via XML-RPC.
+|This element allows defining the port number used to establish the connection to the Kobee Server via XML-RPC.
 
 If this element is not provided, the default port number (20021) will be used.
 |No
 
 |user
-|This element allows defining a User ID with IKAN ALM access rights.
+|This element allows defining a User ID with Kobee access rights.
 |Yes
 
 |password
-|This element allows defining the password associated with the User ID used to access IKAN ALM.
+|This element allows defining the password associated with the User ID used to access Kobee.
 |Yes
 
 |secured
 |This element allows determining whether an encrypted connection must be used or not.
 
-If the IKAN ALM Server is using an encrypted connection, set the _secured_ element to __true__:
+If the Kobee Server is using an encrypted connection, set the _secured_ element to __true__:
 
 _-secured=true_
 
-If the IKAN ALM Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter out.
+If the Kobee Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter out.
 |No
 
 |package
@@ -395,13 +395,13 @@ userId]] [-status=[Status Integer]] [-targetreleasedate:[target release date]]
 |project
 |This parameter allows defining the Project for which you create or update a Package.
 
-Use the Project name as defined in IKAN ALM.
+Use the Project name as defined in Kobee.
 |Yes
 
 |projectstream
 |This parameter allows defining the Project Stream for which you create or update a Package.
 
-Use the Build Prefix (and Build Suffix) as defined in IKAN ALM to identify the Project Stream to create a Package for.
+Use the Build Prefix (and Build Suffix) as defined in Kobee to identify the Project Stream to create a Package for.
 
 If this parameter is not provided, the Package will be created for the Head Project Stream.
 |No
@@ -444,7 +444,7 @@ Result:
 +
 image::CommandLine-PackCreatedSuccessfully.png[,1152,119] 
 +
-* If the Package cannot be created or updated, because there is no connection with the IKAN ALM Server, the following screen is displayed:
+* If the Package cannot be created or updated, because there is no connection with the Kobee Server, the following screen is displayed:
 +
 image::CommandLine-PackServerConnectionProblem.png[,1152,551] 
 +
@@ -516,7 +516,7 @@ You can also create any number of specific properties files by copying the stand
 On a Windows platform:
 
 * Open a Command prompt.
-* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
+* Browse to the Kobee Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
 +
 You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
 
@@ -524,7 +524,7 @@ You may add this location to the PATH Environment variable, so that it becomes a
 On a Unix platform:
 
 * Open a terminal console.
-* Browse to the IKAN ALM Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
+* Browse to the Kobee Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
 +
 You may create a symbolic link to the `alm.sh` script so that it becomes accessible through other working directories.
 
@@ -574,7 +574,7 @@ The results and console outputs are similar to those of the section above: <<Com
 On a Windows platform:
 
 * Open a Command prompt.
-* Browse to the IKAN ALM Command Line working folder.
+* Browse to the Kobee Command Line working folder.
 +
 After a standard installation, this is: _C:\alm\commandline_
 +
@@ -584,7 +584,7 @@ You may add this location to the PATH Environment variable, so that it becomes a
 On a Unix platform:
 
 * Open a terminal console.
-* Browse to the IKAN ALM Command Line working directory.
+* Browse to the Kobee Command Line working directory.
 +
 After a standard installation, this is: _/opt/ikan/alm/commandline_
 +
@@ -611,31 +611,31 @@ The following elements are available:
 |Yes
 
 |serverhost
-|This element allows defining the DHCP name or IP address of the host running the IKAN ALM Server.
+|This element allows defining the DHCP name or IP address of the host running the Kobee Server.
 |Yes
 
 |serverport
-|This element allows defining the port number used to establish the connection to the IKAN ALM Server via XML-RPC.
+|This element allows defining the port number used to establish the connection to the Kobee Server via XML-RPC.
 
 If this element is not provided, the default port number (20021) will be used.
 |No
 
 |user
-|This element allows defining a User ID with IKAN ALM access rights.
+|This element allows defining a User ID with Kobee access rights.
 |Yes
 
 |password
-|This element allows defining the password associated with the User ID used to access IKAN ALM.
+|This element allows defining the password associated with the User ID used to access Kobee.
 |Yes
 
 |secured
 |This element allows determining whether an encrypted connection must be used or not.
 
-If the IKAN ALM Server is using an encrypted connection, set the _secured __element to__ true_:
+If the Kobee Server is using an encrypted connection, set the _secured __element to__ true_:
 
 _-secured=true_
 
-If the IKAN ALM Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter.
+If the Kobee Server is not using an encrypted connection, set the _secured_ element to _false_ or omit the _secured_ parameter.
 |No
 
 |report
@@ -663,15 +663,15 @@ __report -design:$REPORTDESIGNFILE [-dest:$DESTINATIONFILE]
 | Mandatory
 
 |design
-|This parameter allows selecting the required Jasper Reports design file (file extension is __$$.$$jrxml__). After a standard installation, the files are located in the directory __IKAN ALM_HOME/commandline/classes/reports/design__.
+|This parameter allows selecting the required Jasper Reports design file (file extension is __$$.$$jrxml__). After a standard installation, the files are located in the directory __Kobee_HOME/commandline/classes/reports/design__.
 |Yes
 
 |dest
 |This parameter allows defining the destination file name for the Report.
 
-Do not provide the extension, as IKAN ALM will append the format indication as extension.
+Do not provide the extension, as Kobee will append the format indication as extension.
 
-If this destination name is not provided, the Report will get a default name (__levelrequestoverview_[format].[format]__) and it will be saved at the default location (__IKAN ALM_HOME/commandline/classes/reports/generated_reports__).
+If this destination name is not provided, the Report will get a default name (__levelrequestoverview_[format].[format]__) and it will be saved at the default location (__Kobee_HOME/commandline/classes/reports/generated_reports__).
 |No
 
 |format
@@ -935,7 +935,7 @@ You can also create any number of specific properties files by copying the stand
 On a Windows platform:
 
 * Open a Command prompt.
-* Browse to the IKAN ALM Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
+* Browse to the Kobee Command Line working folder. After a standard installation, this is: _C:\alm\commandline_
 +
 You may add this location to the PATH Environment variable, so that it becomes accessible through other working directories.
 
@@ -943,7 +943,7 @@ You may add this location to the PATH Environment variable, so that it becomes a
 On a Unix platform:
 
 * Open a terminal console.
-* Browse to the IKAN ALM Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
+* Browse to the Kobee Command Line working directory. After a standard installation, this is: _/opt/ikan/alm/commandline_
 +
 You may create a symbolic link to the `alm.sh` script so that it becomes accessible through other working directories.
 
@@ -988,17 +988,17 @@ The Report will be generated.
 
 
 [[_sintegratingikanalminide]]
-== Integrating IKAN ALM in an External IDE
+== Integrating Kobee in an External IDE
 
 Refer to the following procedures for detailed information:
 
-* <<CommandLine.adoc#_pintegrateikanalminvscode,Integrating IKAN ALM in Visual Studio Code>>
-* <<CommandLine.adoc#_pintegrateikanalmineclipse,Integrating IKAN ALM in Eclipse>>
+* <<CommandLine.adoc#_pintegrateikanalminvscode,Integrating Kobee in Visual Studio Code>>
+* <<CommandLine.adoc#_pintegrateikanalmineclipse,Integrating Kobee in Eclipse>>
 
 [[_pintegrateikanalminvscode]]
-=== Integrating IKAN ALM in Visual Studio Code
+=== Integrating Kobee in Visual Studio Code
 
-This procedure describes how to set up IKAN ALM as an external tool in Visual Studio Code, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE
+This procedure describes how to set up Kobee as an external tool in Visual Studio Code, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE
 
 . In Visual Sudio Code, click on the _Extensions_ button in the left button menu and search for the _VsCode Action Buttons_ extension. Next, install the extension.
 +
@@ -1037,9 +1037,9 @@ image::CommandLine-VSCode-ExternalTools-Step4.png[,1478,651]
 image::CommandLine-VSCode-ExternalTools-Step5.png[,1478,651] 
 
 [[_pintegrateikanalmineclipse]]
-=== Integrating IKAN ALM in Eclipse
+=== Integrating Kobee in Eclipse
 
-This procedure describes how to set up IKAN ALM as an external tool in Eclipse, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE
+This procedure describes how to set up Kobee as an external tool in Eclipse, so that you can create Level Requests (Forced Build, Requested Build or Deliver Build) from within this IDE
 
 . On the Eclipse main menu, select _Run | External Tools Configuration..._
 +
@@ -1077,8 +1077,8 @@ This section provides a sample ANT script that
 
 If you want to use this ANT Script yourself, customize it by:
 
-* Adapting the values for the IKAN ALM Command Line options (values for serverhost, user, password, etc.)
-* Saving it as _build.xml_ in the IKAN ALM_COMMANDLINE root directory
+* Adapting the values for the Kobee Command Line options (values for serverhost, user, password, etc.)
+* Saving it as _build.xml_ in the Kobee_COMMANDLINE root directory
 * Launching it via the standard ANT command.
 
 *Sample script:*

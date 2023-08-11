@@ -5,7 +5,7 @@
 = Interface de Ligne de Commande (optionnelle) 
 (((Interface de Ligne de Commande))) 
 
-IKAN ALM peut être enrichi d`'une Interface optionnelle de ligne de commande, permettant la création de Requêtes de niveau, de Paquets et la génération de Rapports en utilisant un Client shell au lieu de l`'application Web d`'IKAN ALM.
+Kobee peut être enrichi d`'une Interface optionnelle de ligne de commande, permettant la création de Requêtes de niveau, de Paquets et la génération de Rapports en utilisant un Client shell au lieu de l`'application Web d`'IKAN ALM.
 
 Les utilisations possibles sont:
 
@@ -16,11 +16,11 @@ Les utilisations possibles sont:
 * Création automatique de Requêtes de niveau via un outil de script. Un outil de script est utilisé pour la définition de déclencheurs de création de Requêtes de niveau (par exemple, la sauvegarde du serveur). Ce document décrit l`'usage d`'un <<CommandLine.adoc#_sautomatecreatinglevelrequestswithant,script ANT>>.
 
 
-L`'interface de Ligne de Commande d`'IKAN ALM peut être installée sur chaque Machine cliente nécessitant cette fonctionnalité.
-L`'interface a besoin d`'une connexion (TCP/IP) au Serveur central d`'IKAN ALM.
-Elle se connecte via XML-RPC avec le Serveur IKAN ALM.
+L`'interface de Ligne de Commande d`'Kobee peut être installée sur chaque Machine cliente nécessitant cette fonctionnalité.
+L`'interface a besoin d`'une connexion (TCP/IP) au Serveur central d`'Kobee.
+Elle se connecte via XML-RPC avec le Serveur Kobee.
 
-Les commandes CLR et Package peuvent aussi être exécutées avec le REST API IKAN ALM. Consulter la documentation REST API IKAN ALM pour plus d`'information.
+Les commandes CLR et Package peuvent aussi être exécutées avec le REST API Kobee. Consulter la documentation REST API IKAN ALM pour plus d`'information.
 
 [[_smanualusagecommandlineinterface]]
 == Utilisation manuelle de l`'Interface de Ligne de Commande
@@ -42,13 +42,13 @@ Référez-vous aux procédures suivantes, pour plus d`'informations:
 +
 * Sous Windows:
 ** Accédez à la fenêtre de commande.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
 +
 Vous pouvez ajouter cet emplacement à la variable définissant le Chemin d`'Environnement (PATH), pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
 * Sous Unix:
 ** Ouvrez une session terminal.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
 +
 Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'accès à partir d`'autres répertoires de travail.
 . Saisissez l`'instruction requise pour la création de la Requête de niveau.
@@ -71,31 +71,31 @@ Les éléments suivants sont disponibles:
 |Oui
 
 |serverhost
-|Cet élément permet la définition de la dénomination DHCP ou de l`'adresse IP de la Machine hôte hébergeant le Serveur IKAN ALM.
+|Cet élément permet la définition de la dénomination DHCP ou de l`'adresse IP de la Machine hôte hébergeant le Serveur Kobee.
 |Oui
 
 |serverport
-|Cet élément permet la définition du numéro de port utilisé pour établir la connexion au Serveur IKAN ALM via XML-RPC.
+|Cet élément permet la définition du numéro de port utilisé pour établir la connexion au Serveur Kobee via XML-RPC.
 
 Si cet élément n`'est pas saisi, le numéro de port par défaut 20021 sera utilisé.
 |Non
 
 |user
-|Cet élément permet la définition d`'un Identifiant Utilisateur ayant des droits d`'accès pour IKAN ALM.
+|Cet élément permet la définition d`'un Identifiant Utilisateur ayant des droits d`'accès pour Kobee.
 |Oui
 
 |password
-|Cet élément permet la définition du Mot de passe associé à l`'Identifiant Utilisateur utilisé pour se connecter à IKAN ALM.
+|Cet élément permet la définition du Mot de passe associé à l`'Identifiant Utilisateur utilisé pour se connecter à Kobee.
 |Oui
 
 |secured
 |Cet élément permet de déterminer si une connexion encryptée doit être utilisée ou non.
 
-Si le Serveur IKAN ALM utilise une connexion encryptée, établissez cet élément _sécurisé_ à __true__:
+Si le Serveur Kobee utilise une connexion encryptée, établissez cet élément _sécurisé_ à __true__:
 
 _-secured=true_
 
-Si le Serveur IKAN ALM n`'utilise pas de connexion encryptée, établissez cet élément _sécurisé_ à _false_ ou omettez le Paramètre sécurisé.
+Si le Serveur Kobee n`'utilise pas de connexion encryptée, établissez cet élément _sécurisé_ à _false_ ou omettez le Paramètre sécurisé.
 |Non
 
 |clr
@@ -123,13 +123,13 @@ __ *clr* -project:[project name] [-projectstream:[build prefix[-build suffix]]] 
 |project
 |Ce Paramètre donne la définition du Projet pour lequel vous créez une Requête de niveau.
 
-Utilisez la dénomination du Projet définie dans IKAN ALM.
+Utilisez la dénomination du Projet définie dans Kobee.
 |Oui
 
 |projectstream
 |Ce Paramètre donne la définition de la Branche Secondaire pour laquelle vous créez une Requête de niveau.
 
-Utilisez le préfixe (et le suffixe) de construction défini(s) dans IKAN ALM.
+Utilisez le préfixe (et le suffixe) de construction défini(s) dans Kobee.
 
 Si Ce Paramètre est vide, la Requête de niveau sera créée pour la Branche Principale du Projet.
 |Non
@@ -141,7 +141,7 @@ Si Ce Paramètre est vide, la Requête de niveau sera créée pour la Branche Pr
 |level
 |Ce Paramètre donne la définition de la dénomination du Niveau pour lequel vous créez la Requête de niveau.
 
-Utilisez la dénomination du Niveau définie dans IKAN ALM.
+Utilisez la dénomination du Niveau définie dans Kobee.
 |Oui
 
 |description
@@ -200,7 +200,7 @@ Ces messages indiquent uniquement que la Requête de niveau a été __créée__ 
 Référez-vous à l`'<<Desktop_LevelRequests.adoc#_desktop_lr_overview,Aperçu des Requêtes de niveau>> dans l`'application Web pour vérifier si le Niveau a été également __exécuté__ correctement.
 --
 
-* Si la Requête de niveau ne peut pas être créée faute de connexion avec le Serveur IKAN ALM, l`'écran suivant s`'affiche:
+* Si la Requête de niveau ne peut pas être créée faute de connexion avec le Serveur Kobee, l`'écran suivant s`'affiche:
 +
 image::CommandLine-ServerConnectionProblem.png[,1148,535] 
 * Si l`'Utilisateur a introduit une commande inconnue, l`'écran suivant s`'affiche:
@@ -236,14 +236,14 @@ Vous pouvez également créer un nombre quelconque de fichiers de propriétés s
 +
 * Sous Windows:
 ** Accédez à la fenêtre de commande.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __C:\Program Files\IKAN Software\alm\commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __C:\Program Files\IKAN Software\alm\commandline__.
 +
 Vous pouvez ajouter cet emplacement à la variable définissant le Chemin d`'Environnement (PATH), pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
 +
 * Sous Unix:
 ** Ouvrez une session terminal.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
 +
 Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
@@ -293,7 +293,7 @@ Les Résultats et les sorties de console sont similaires à ceux de la section p
 Sous Windows :
 
 * Ouvrir une Invite de commande.
-* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _C:\alm\commandline_
+* Rechercher le répertoire de travail de Lignes de Commande d`'Kobee. Après une installation standard, c`'est : _C:\alm\commandline_
 +
 Vous pouvez ajouter cet emplacement à la variable d`'environnement PATH. Ainsi, il devient accessible pour les autres répertoires de travail.
 
@@ -301,7 +301,7 @@ Vous pouvez ajouter cet emplacement à la variable d`'environnement PATH. Ainsi,
 Sous Unix :
 
 * Ouvrir une Invite de commande.
-* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _/opt/ikan/alm/commandline_
+* Rechercher le répertoire de travail de Lignes de Commande d`'Kobee. Après une installation standard, c`'est : _/opt/ikan/alm/commandline_
 +
 Vous pouvez créer un lien symbolique vers le script `alm.sh`. Ainsi, il devient accessible pour les autres répertoires de travail.
 . Entrer les instructions de création d`'une Requête de niveau requise.
@@ -324,31 +324,31 @@ Les éléments suivants sont disponibles :
 |Oui
 
 |serverhost
-| Cet élément permet de définir le nom DHCP ou l`'adresse IP de la machine du Serveur IKAN ALM.
+| Cet élément permet de définir le nom DHCP ou l`'adresse IP de la machine du Serveur Kobee.
 |Oui
 
 |serverport
-| Cet élément permet de définir le numéro de port utilisé pour établir la connexion vers le Serveur IKAN ALM via XML-RPC.
+| Cet élément permet de définir le numéro de port utilisé pour établir la connexion vers le Serveur Kobee via XML-RPC.
 
 Si cet élément n`'est pas fourni, le numéro de port par défaut (20021) sera utilisé.
 |Non
 
 |user
-| Cet élément permet de définir l`'Identifiant Utilisateur avec les droits d`'accès IKAN ALM.
+| Cet élément permet de définir l`'Identifiant Utilisateur avec les droits d`'accès Kobee.
 |Oui
 
 |password
-| Cet élément permet de définir le mot de passe associé à l`'Identifiant Utilisateur utilisé pour accéder à IKAN ALM.
+| Cet élément permet de définir le mot de passe associé à l`'Identifiant Utilisateur utilisé pour accéder à Kobee.
 |Oui
 
 |secured
 | Cet élément permet de déterminer si une connexion cryptée doit être utilisée ou non.
 
-Si le Serveur IKAN ALM utilise une connexion cryptée, il faut mettre l`'élément _secured_ à __true__:
+Si le Serveur Kobee utilise une connexion cryptée, il faut mettre l`'élément _secured_ à __true__:
 
 _-secured=true_
 
-Si le Serveur IKAN ALM n`'utilise pas une connexion cryptée, il faut mettre l`'élément _secured_ à _false_ ou omettre le paramètre _secured_.
+Si le Serveur Kobee n`'utilise pas une connexion cryptée, il faut mettre l`'élément _secured_ à _false_ ou omettre le paramètre _secured_.
 |Non
 
 |package
@@ -377,13 +377,13 @@ __ *package* -project:[nom projet] [-projectstream:[préfixe[-suffixe]]] -packag
 |project
 |Ce paramètre permet de définir le Projet pour lequel vous créez ou modifiez le Paquet.
 
-Utiliser le nom du Projet comme défini dans IKAN ALM.
+Utiliser le nom du Projet comme défini dans Kobee.
 |Oui
 
 |projectstream
 | Ce paramètre permet de définir la Branche de Projet pour laquelle vous créez ou modifiez le Paquet.
 
-Utiliser le Préfixe (et Suffixe) de Construction comme défini dans IKAN ALM pour identifier la Branche qui supporte le Paquet.
+Utiliser le Préfixe (et Suffixe) de Construction comme défini dans Kobee pour identifier la Branche qui supporte le Paquet.
 
 Si ce paramètre n`'est pas fourni, le Paquet sera crée sur la Branche principale.
 |Oui
@@ -428,7 +428,7 @@ Résultat :
 +
 image::CommandLine-PackCreatedSuccessfully.png[,1152,119] 
 +
-* Si le Paquet ne peut être créé ou modifié, parce qu`'il n`'y a pas de connexion avec le Serveur IKAN ALM, l`'écran suivant est affiché :
+* Si le Paquet ne peut être créé ou modifié, parce qu`'il n`'y a pas de connexion avec le Serveur Kobee, l`'écran suivant est affiché :
 +
 image::CommandLine-PackServerConnectionProblem.png[,1152,551]
 
@@ -485,7 +485,7 @@ a|L`'action à exécuter sur ce fichier dans le contenu du Paquet. Les valeurs v
 === Créer et modifier les Paquets en utilisant un Fichier de propriétés
 
 Il es possible de sauvegarder les paramètres couramment utilisés dans un Fichier de propriétés. Ainsi, vous n`'avez pas à entrer tous les paramètres de création/modification du Paquet. 
-Après une installation standard, un Fichier de propriétés appelé _package.properties_ est disponible dans le répertoire d`'installation de Lignes de commande IKAN ALM.
+Après une installation standard, un Fichier de propriétés appelé _package.properties_ est disponible dans le répertoire d`'installation de Lignes de commande Kobee.
 
 Ouvrir le fichier avec un éditeur de texte pour afficher son contenu :
 
@@ -501,7 +501,7 @@ Vous pouvez également créer d`'autres fichiers de propriétés en copiant le f
 Sous Windows:
 * Ouvrir une Invite de commande.
 
-* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _C:\alm\commandline_
+* Rechercher le répertoire de travail de Lignes de Commande d`'Kobee. Après une installation standard, c`'est : _C:\alm\commandline_
 +
 Vous pouvez ajouter cet emplacement à la variable d`'environnement PATH. Ainsi, il devient accessible pour les autres répertoires de travail.
 
@@ -509,7 +509,7 @@ Vous pouvez ajouter cet emplacement à la variable d`'environnement PATH. Ainsi,
 Sous Unix :
 
 * Ouvrir une Invite de commande.
-* Rechercher le répertoire de travail de Lignes de Commande d`'IKAN ALM. Après une installation standard, c`'est : _/opt/ikan/alm/commandline_
+* Rechercher le répertoire de travail de Lignes de Commande d`'Kobee. Après une installation standard, c`'est : _/opt/ikan/alm/commandline_
 +
 Vous pouvez créer un lien symbolique vers le script `alm.sh`. Ainsi, il devient accessible pour les autres répertoires de travail.
 
@@ -563,14 +563,14 @@ Les Résultats et les sorties de console sont similaires à ceux de la section p
 +
 * Sous Windows :
 ** Accédez à la fenêtre de commande.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
 +
 Vous pouvez ajouter cet emplacement à la variable définissant le Chemin d`'Environnement (PATH), pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
 +
 * Sous Unix :
 ** Ouvrez une session terminal.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
 +
 Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
@@ -594,31 +594,31 @@ Les éléments suivants sont disponibles:
 |Oui
 
 |serverhost
-|Cet élément permet la définition de la dénomination DHCP ou de l`'adresse IP de la Machine hôte hébergeant le Serveur IKAN ALM.
+|Cet élément permet la définition de la dénomination DHCP ou de l`'adresse IP de la Machine hôte hébergeant le Serveur Kobee.
 |Oui
 
 |serverport
-|Cet élément permet la définition du numéro de port utilisé pour établir la connexion au Serveur IKAN ALM via XML-RPC.
+|Cet élément permet la définition du numéro de port utilisé pour établir la connexion au Serveur Kobee via XML-RPC.
 
 Si cet élément n`'est pas saisi, le numéro de port par défaut 20021 sera utilisé.
 |Non
 
 |user
-|Cet élément permet la définition d`'un Identifiant Utilisateur ayant des droits d`'accès pour IKAN ALM.
+|Cet élément permet la définition d`'un Identifiant Utilisateur ayant des droits d`'accès pour Kobee.
 |Oui
 
 |password
-|Cet élément permet la définition du Mot de passe associé à l`'Identifiant Utilisateur utilisé pour se connecter à IKAN ALM.
+|Cet élément permet la définition du Mot de passe associé à l`'Identifiant Utilisateur utilisé pour se connecter à Kobee.
 |Oui
 
 |secured
 |Cet élément permet de déterminer si une connexion encryptée doit être utilisée ou non.
 
-Si le Serveur IKAN ALM utilise une connexion encryptée, établissez cet élément _sécurisé_ à __true__:
+Si le Serveur Kobee utilise une connexion encryptée, établissez cet élément _sécurisé_ à __true__:
 
 _-secured=true_
 
-Si le Serveur IKAN ALM n`'utilise pas de connexion encryptée, établissez cet élément _sécurisé_ à _false_ ou omettez le Paramètre sécurisé.
+Si le Serveur Kobee n`'utilise pas de connexion encryptée, établissez cet élément _sécurisé_ à _false_ ou omettez le Paramètre sécurisé.
 |Non
 
 |report
@@ -652,7 +652,7 @@ Utilisez le design qui correspond au format demandé.
 |dest
 |Ce Paramètre permet de définir le nom de fichier du Rapport.
 
-Ne saisissez pas d`'extension, car IKAN ALM ajoutera l`'indication de format en tant qu`'extension.
+Ne saisissez pas d`'extension, car Kobee ajoutera l`'indication de format en tant qu`'extension.
 
 Si aucun nom n`'est saisi, le Rapport aura la dénomination par défaut _levelrequestoverview_[format].[format]_ et sera sauvegardé à l`'emplacement par défaut __ALM_HOME/commandline/classes/reports/generated_reports__.
 |Non
@@ -912,14 +912,14 @@ Vous pouvez également créer un nombre quelconque de fichiers des propriétés 
 +
 * Sous Windows:
 ** Accédez à la fenêtre de commande.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __C:\alm\commandline__.
 +
 Vous pouvez ajouter cet emplacement à la variable définissant le Chemin d`'Environnement (PATH), pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
 +
 * Sous Unix:
 ** Ouvrez une session terminal.
-** Naviguez vers le répertoire de travail de la ligne de commande d`'IKAN ALM. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
+** Naviguez vers le répertoire de travail de la ligne de commande d`'Kobee. Après une installation standard, l`'emplacement de ce répertoire est: __/opt/ikan/alm/commandline__.
 +
 Vous pouvez créez un lien symbolique vers le script _alm.sh_ pour faciliter l`'accès à partir d`'autres répertoires de travail.
 
@@ -963,17 +963,17 @@ Le Rapport est généré.
 
 
 [[_sintegratingikanalminide]]
-== Intégration d`'IKAN ALM dans un IDE externe
+== Intégration d`'Kobee dans un IDE externe
 
 Pour plus d`'informations, se référer aux procédures suivantes:
 
-* <<CommandLine.adoc#_pintegrateikanalminvscode,Intégration d`'IKAN ALM dans Visual Studio Code>>
-* <<CommandLine.adoc#_pintegrateikanalmineclipse,Intégration d`'IKAN ALM dans Eclipse>>
+* <<CommandLine.adoc#_pintegrateikanalminvscode,Intégration d`'Kobee dans Visual Studio Code>>
+* <<CommandLine.adoc#_pintegrateikanalmineclipse,Intégration d`'Kobee dans Eclipse>>
 
 [[_pintegrateikanalminvscode]]
-=== Intégration d`'IKAN ALM dans Visual Studio Code
+=== Intégration d`'Kobee dans Visual Studio Code
 
-Cette procédure décrit comment installer IKAN ALM comme outil externe dans Visual Studio Code pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution ou de déploiement) à partir de cet IDE.
+Cette procédure décrit comment installer Kobee comme outil externe dans Visual Studio Code pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution ou de déploiement) à partir de cet IDE.
 
 . Dans Visual Studio Code, cliquez sur le bouton _Extensions_ dans le menu de gauche et cherchez l`'extension _VsCode Action Buttons_. Ensuite, installer l`'extension.
 +
@@ -1013,9 +1013,9 @@ image::CommandLine-VSCode-ExternalTools-Step4.png[,1478,651]
 image::CommandLine-VSCode-ExternalTools-Step5.png[,1478,651] 
 
 [[_pintegrateikanalmineclipse]]
-=== Intégration d`'IKAN ALM dans Eclipse
+=== Intégration d`'Kobee dans Eclipse
 
-Cette procédure décrit comment installer IKAN ALM comme outil externe dans Eclipse pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution) à partir de cet IDE.
+Cette procédure décrit comment installer Kobee comme outil externe dans Eclipse pour pouvoir créer des Requêtes de niveau (forcées, demandées ou de distribution) à partir de cet IDE.
 
 . Dans le Menu Principal d`'Eclipse, sélectionnez _Run | External Tools Configuration..._
 +
@@ -1052,8 +1052,8 @@ Dans cette section vous trouverez un exemple d`'un script ANT qui:
 
 Si vous désirez utiliser ce script ANT, vous devez l`'adapter à vos besoins:
 
-* modifiez les valeurs des options de ligne de commande d`'IKAN ALM (les valeurs de serverhost, user, password, etc.),
-* sauvegardez le script sous _build.xml_ dans le répertoire racine IKAN ALM_COMMANDLINE,
+* modifiez les valeurs des options de ligne de commande d`'Kobee (les valeurs de serverhost, user, password, etc.),
+* sauvegardez le script sous _build.xml_ dans le répertoire racine Kobee_COMMANDLINE,
 * exécutez le script via la commande ANT standard.
 
 *Exemple de script:*

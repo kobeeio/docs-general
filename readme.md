@@ -9,10 +9,10 @@ Always consult the "antora.yml" file in the document to verify, it should contai
 * alm-reports 5.8
 * data-model 5.8
 * getting-started 5.8(EN) & 5.8(FR) 	      
-* installation-guide 5.9(EN) & 5.9(FR)
-* rest-api 5.9
+* installation-guide 6.0(EN) & 6.0(FR)
+* rest-api 6.0
 * technical-sheet 5.9(EN) & 5.9(FR)
-* user-guide 5.9(EN) & 5.9(FR)
+* user-guide 6.0(EN) & 6.0(FR)
 * whats-new 5.9(EN) & 5.9(FR)
 
 

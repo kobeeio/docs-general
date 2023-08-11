@@ -1,12 +1,12 @@
 :doctype: book
 :TOC:
 :sectnums:
-:title: Guide d'installation IKAN ALM
+:title: Guide d'installation Kobee
 :title-page-background-image: image:../images/_pdf_title_page_background.png[]
 :chapter-label:
 
 :author: IKAN Development N.V., Kardinaal Mercierplein 2, 2800 Malines, BELGIQUE + \
-(C) 2006 - 2022 IKAN Development N.V. + \
+(C) 2006 - 2023 IKAN Development N.V. + \
 Aucune partie de ce document ne peut être reproduite ou transmise à quelque fin ou \
 par quelque moyen que ce soit, électronique ou mécanique, sans l'autorisation explicite \
 et écrite de IKAN Development N.V. \

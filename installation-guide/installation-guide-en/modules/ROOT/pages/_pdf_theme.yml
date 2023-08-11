@@ -25,12 +25,12 @@ footer:
     right:
       content: '{section-or-chapter-title} | *{page-number}*'
     left:
-      content: 'IKAN ALM Installation Guide - {revnumber}'      
+      content: 'Kobee Installation Guide - {revnumber}'      
   verso:
     left:
       content: '*{page-number}* | {section-or-chapter-title}'
     right:
-      content: 'IKAN ALM Installation Guide - {revnumber}'      
+      content: 'Kobee Installation Guide - {revnumber}'      
 title-page:
   font-family: Source Sans Pro  
   logo:

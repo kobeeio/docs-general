@@ -1,42 +1,42 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
-:description: IKAN ALM Installation Guide (English)
-:revnumber: v5.9
-:revdate: 10.11.2021
+:description: Kobee Installation Guide (English)
+:revnumber: v6.0
+:revdate: 11.08.2023
 
-= IKAN ALM Installation Guide
+= Kobee Installation Guide
  
 == Purpose
 
-This document explains how to install all IKAN ALM components.
+This document explains how to install all Kobee components.
 
-IKAN ALM consists of 4 major components:
-
-* IKAN ALM Web Application
-* IKAN ALM Server
-* IKAN ALM Agent
-* IKAN ALM Commandline
+Kobee consists of 4 major components:
+h
+* Kobee Web Application
+* Kobee Server
+* Kobee Agent
+* Kobee Commandline
 
 image::ikanalm-architecture.png[,895,635] 
 
 
-The IKAN ALM Server and Web Application need to be installed on the same host. The IKAN ALM Agent and Commandline can be installed on remote hosts. For a complete installation, you need to install exactly 1 IKAN ALM _Server_ and _Web Application_, and at least 1 ALM _Agent_.
+The Kobee Server and Web Application need to be installed on the same host. The Kobee Agent and Commandline can be installed on remote hosts. For a complete installation, you need to install exactly 1 Kobee _Server_ and _Web Application_, and at least 1 Kobee _Agent_.
 
-The IKAN ALM Web Application is an interface to the IKAN ALM administration, and must be deployed in Apache Tomcat.
+The Kobee Web Application is an interface to the Kobee administration, and must be deployed in Apache Tomcat.
 
-The IKAN ALM _Server_ consists of 2 different components:
+The Kobee _Server_ consists of 2 different components:
 
-* IKAN ALM Server daemon
-* IKAN ALM Server environment
+* Kobee Server daemon
+* Kobee Server environment
 
-The IKAN ALM Server daemon itself consists of 2 sub-components, a Scheduler and a Monitor.
-The IKAN ALM Scheduler is responsible for observing the VCR (Version Control Repository) and creating a Build request when changes (modified sources) in the VCR are detected.
-The IKAN ALM Monitor will manage the different build and deploy actions that are executed by the IKAN ALM Agent(s).
+The Kobee Server daemon itself consists of 2 sub-components, a Scheduler and a Monitor.
+The Kobee Scheduler is responsible for observing the VCR (Version Control Repository) and creating a Build request when changes (modified sources) in the VCR are detected.
+The Kobee Monitor will manage the different build and deploy actions that are executed by the Kobee Agent(s).
 
-Both the IKAN ALM Server and the IKAN ALM Agent run as OSGi bundles in Apache Karaf containers, benefiting from the advantages of a modular architecture.
-The IKAN ALM Server daemon will be installed in the IKAN ALM Server Environment, and may be launched by scripts, or started as a Windows service or Unix/Linux daemon.
+Both the Kobee Server and the Kobee Agent run as OSGi bundles in Apache Karaf containers, benefiting from the advantages of a modular architecture.
+The Kobee Server daemon will be installed in the Kobee Server Environment, and may be launched by scripts, or started as a Windows service or Unix/Linux daemon.
 
-The IKAN ALM Server Environment contains the following important files and folders:
+The Kobee Server Environment contains the following important files and folders:
 
 * Build Archive Location: the location where the Build results will be stored,
 * Work Copy Location: the location where the sources that are checked out from the repository are stored before they are transported to the Agents,
@@ -45,9 +45,9 @@ The IKAN ALM Server Environment contains the following important files and folde
 * Configuration of an external authentication and authorization system. For more information, refer to the Appendix <<_jaasconfiguration>>,
 * Documentation in PDF format.
 
-A machine that needs to execute IKAN ALM Builds and Deploys must have the IKAN ALM _Agent_ installed.
+A machine that needs to execute Kobee Builds and Deploys must have the Kobee _Agent_ installed.
 
-The IKAN ALM _Commandline_ can be installed separately and can be used as an alternative for the web interface to create Level Requests and Reports, and create or update Packages from a Windows command prompt or Linux shell.
+The Kobee _Commandline_ can be installed separately and can be used as an alternative for the web interface to create Level Requests and Reports, and create or update Packages from a Windows command prompt or Linux shell.
 
 Example configuration 1: Single machine, everything locally installed:
 
@@ -62,7 +62,7 @@ Example configuration 2: Multiple machines, remote Agent and Commandline:
 
 == Prerequisites
 
-The following section provides an overview of the prerequisites for installing IKAN ALM.
+The following section provides an overview of the prerequisites for installing Kobee.
 
 For the detailed Technical Requirements, consult xref:5.9@technical-sheet-en:ROOT:TechSheet.adoc[Technical Sheet].
 
@@ -74,45 +74,45 @@ For the detailed Technical Requirements, consult xref:5.9@technical-sheet-en:ROO
 | Memory
 | Disk
 
-|IKAN ALM Web Application
+|Kobee Web Application
 |Min 512MB, recommended 1GB or more
 |Min 1GB, recommended 5GB
 
-|IKAN ALM Server
+|Kobee Server
 |Min 512MB, recommended 1GB or more
 |Min 10GB, recommended 40GB
 
-|IKAN ALM Agent
+|Kobee Agent
 |Min 512MB, recommended 1GB or more
 |Min 1GB
 
-|IKAN ALM Commandline
+|Kobee Commandline
 |Min 256MB, recommended 256MB
 |Min 100MB
 |===
 
 There is no hard and fast rule for disk storage space.
-The actual amount you will require depends on the number and size of projects managed with IKAN ALM, and the size of the build results stored in the build archive.
+The actual amount you will require depends on the number and size of projects managed with Kobee, and the size of the build results stored in the build archive.
 The more projects and build results, and the larger they are, the more disk storage you will require.
 
-The amount of RAM and disk space needed by a machine that runs an ALM Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
+The amount of RAM and disk space needed by a machine that runs an Kobee Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
 
 
 [[_bhbicaaj]]
 === Java 11
 
-All IKAN ALM components need a full version of Java 11. IKAN ALM has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
+All Kobee components need a full version of Java 11. Kobee has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
 
 === Tomcat 9
 
-IKAN ALM requires at least a Java 11 compliant web container supporting the Servlet 4.0 and JSP 2.3 specifications. Earlier versions of Tomcat are not supported.
+Kobee requires at least a Java 11 compliant web container supporting the Servlet 4.0 and JSP 2.3 specifications. Earlier versions of Tomcat are not supported.
 
-IKAN ALM has been tested with Apache Tomcat 9.0.33 and later versions.
-IKAN ALM has been proven to run on Tomcat on different Operating Systems, including recent versions of Windows and Linux, Sun Solaris, HP Unix, zLinux, …  If a suitable Java Runtime is available (see <<_bhbicaaj>>), IKAN ALM may run on other Operating Systems.
+Kobee has been tested with Apache Tomcat 9.0.33 and later versions.
+Kobee has been proven to run on Tomcat on different Operating Systems, including recent versions of Windows and Linux, Sun Solaris, HP Unix, zLinux, …  If a suitable Java Runtime is available (see <<_bhbicaaj>>), Kobee may run on other Operating Systems.
 
 ==== Enable Unicode support in Tomcat
 
-When using Unicode symbols in IKAN ALM (for instance, projects containing files with special characters in the name), an extra setting should be applied to Tomcat's server.xml configuration file. 
+When using Unicode symbols in Kobee (for instance, projects containing files with special characters in the name), an extra setting should be applied to Tomcat's server.xml configuration file. 
 
 Modify the _TOMCAT_HOME/conf/server.xml_ file by adding the attribute `URIEncoding="UTF-8"` in the http connector:
 
@@ -128,13 +128,13 @@ Please consult the Apache Tomcat wiki for more information regarding character e
 [[_java_options_for_tomcat]]
 ==== Java options for Tomcat
 
-It is recommended to set the following memory settings for running IKAN ALM in Tomcat with Java 11:
+It is recommended to set the following memory settings for running Kobee in Tomcat with Java 11:
 
 * initial Java heap size (-Xms) : 512m
 * max Java heap size (-Xmx) : 1024m
 * max Metaspace size (-XX:MaxMetaspaceSize) : 256m
 
-You must also configure Tomcat to use the JAAS configuration file _ALM_HOME_/system/security/jaas.config (for example `C:/alm/system/security/jaas.config` ). You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
+You must also configure Tomcat to use the JAAS configuration file _KOBEE_HOME_/system/security/jaas.config (for example `C:/kobee/system/security/jaas.config` ). You can do this by setting the property _java.security.auth.login.config_. See <<_jaasconfiguration>> for more information about the JAAS configuration.
 
 If you launch Tomcat from the startup scripts, you need to create the file _TOMCAT_HOME/bin/setenv.bat_ (Windows) or _TOMCAT_HOME/bin/setenv.sh_ (Linux/Unix) with the following content :
 
@@ -143,7 +143,7 @@ For Windows:
 [source]
 ----
 SET JAVA_HOME=<JAVA_HOME>
-SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
 ----
 
 For Linux/Unix:
@@ -151,7 +151,7 @@ For Linux/Unix:
 [source]
 ----
 JAVA_HOME=<JAVA_HOME>
-JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
 ----
 
 If you run Tomcat as a Windows service, you need to set the Java and memory settings in the file __TOMCAT_HOME/bin/service.bat__ :
@@ -161,7 +161,7 @@ If you run Tomcat as a Windows service, you need to set the Java and memory sett
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
 SET JvmMx=1024
-SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
+SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
 ----
 
 After these modifications, you need to re-install the service by running "service.bat remove", followed by "service.bat install". You need Administrative privileges to run these commands.
@@ -169,31 +169,31 @@ After these modifications, you need to re-install the service by running "servic
 
 === Database
 
-IKAN ALM supports MySQL, MsSQL, Oracle, PostgreSQL and DB2 for its internal database. For performance reasons, it is highly recommended that the network latency between the ALM Server and its database is as low as possible. To avoid problems with timestamps, it is recommended to have the ALM Server and its database in the same timezone. 
+Kobee supports MySQL, MsSQL, Oracle, PostgreSQL and DB2 for its internal database. For performance reasons, it is highly recommended that the network latency between the Kobee Server and its database is as low as possible. To avoid problems with timestamps, it is recommended to have the Kobee Server and its database in the same timezone. 
 
 During the installation, it is possible to initialize the existing database with the default data. Beware that when the database initializing option is selected, the existing data will be overwritten. Before initializing the database, make sure the database/scheme exists.
 
 For MySQL, it is recommended that the database has a character set of UTF8.
 Here is an example of the MySQL statement to create a database :
 
-`CREATE DATABASE alm CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
+`CREATE DATABASE kobee CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
 
 Consult your database documentation for more information on the appropriate UTF8-collation for your system.
 
-When using DB2 as the IKAN ALM database, some additional configuration is required.
+When using DB2 as the Kobee database, some additional configuration is required.
 For more information, refer to <<_db2configuration>>.
 
 [[_installing]]
-== Installing IKAN ALM
+== Installing Kobee
 
-This section describes the different steps for installing IKAN ALM.
+This section describes the different steps for installing Kobee.
 
 === Configuring the Installer
 
-The IKAN ALM installation scripts are delivered as an _IKAN_ALM_5.9_console_win.zip_ or _IKAN_ALM_5.9_console_linux.tar.gz_ file.
-Expand this file somewhere on the target machine. The expanded folder containing the IKAN ALM installer files (ANT scripts) will be denoted as _INSTALL_DIR_.
+The Kobee installation scripts are delivered as an _Kobee_6.0_console_win.zip_ or _Kobee_6.0_console_linux.tar.gz_ file.
+Expand this file somewhere on the target machine. The expanded folder containing the Kobee installer files (ANT scripts) will be denoted as _INSTALL_DIR_.
 
-The included installer will install the IKAN ALM components in the specified destination folders.
+The included installer will install the Kobee components in the specified destination folders.
 
 Configure the different properties that will be used by the installation scripts by editing the _INSTALL_DIR/install.properties_ file.
 
@@ -206,50 +206,50 @@ _Do NOT use backward slashes_ ('\') in path properties, otherwise the installati
 
 [source]
 ----
-# General Settings : Specify which components of IKAN ALM to install
+# General Settings : Specify which components of Kobee to install
 # ---------------------------------------------------------------------------
-# Flag to specify whether to install IKAN ALM Server or not: install : true
+# Flag to specify whether to install Kobee Server or not: install : true
 # no install : false
 alm.server.install=true
-# Flag to specify whether to install the IKAN ALM Agent or not : install : true
+# Flag to specify whether to install the Kobee Agent or not : install : true
 # no install : false
 alm.agent.install=true
-# Flag to specify whether to install the IKAN ALM Commandline or not : install : true
+# Flag to specify whether to install the Kobee Commandline or not : install : true
 # no install : false
 alm.commandline.install=true
-# Flag to specify whether the communication between the IKAN ALM components must
-# be secured.  Note that if one IKAN ALM component is installed secured, all components
+# Flag to specify whether the communication between the Kobee components must
+# be secured.  Note that if one Kobee component is installed secured, all components
 # must be installed secured.
 alm.xmlrpc.secure=true
 ----
 
-In the General Settings, you specify which components of IKAN ALM you want to install. 
+In the General Settings, you specify which components of Kobee you want to install. 
 
-Setting __alm.server.install__ to "true" will install the ALM Server and deploy the IKAN ALM Web Application to Tomcat. +
-Setting __alm.agent.install__ to "true" will install the ALM Agent. +
-Setting __alm.commandline.install__ to "true" will install the ALM Commandline.
+Setting __alm.server.install__ to "true" will install the Kobee Server and deploy the Kobee Web Application to Tomcat. +
+Setting __alm.agent.install__ to "true" will install the Kobee Agent. +
+Setting __alm.commandline.install__ to "true" will install the Kobee Commandline.
 
-If __alm.xmlrpc.secure__ is set to "true", then all communication between the ALM components is encrypted. As a consequence, if additional ALM components, like the ALM Agent or the ALM Commandline, are installed on remote hosts, they must also set __alm.xmlrpc.secure__ to "true" during installation, or communication with those components will fail. We strongly recommend setting __alm.xmlrpc.secure__ to "true" for security reasons.
+If __alm.xmlrpc.secure__ is set to "true", then all communication between the Kobee components is encrypted. As a consequence, if additional Kobee components, like the Kobee Agent or the Kobee Commandline, are installed on remote hosts, they must also set __alm.xmlrpc.secure__ to "true" during installation, or communication with those components will fail. We strongly recommend setting __alm.xmlrpc.secure__ to "true" for security reasons.
 
 For more information, refer to <<_secureconfiguration, Manually changing the Secure Communication>>.
 
-==== ALM Server and ALM Web Application settings
+==== Kobee Server and Kobee Web Application settings
 
-When installing the ALM Server and Web Application, set the properties described in the following sections :
+When installing the Kobee Server and Web Application, set the properties described in the following sections :
 
-[[_general_alm_server_settings]]
-===== General and ALM Server Runtime settings
+[[_general_kobee_server_settings]]
+===== General and Kobee Server Runtime settings
 
 [source]
 ----
-# Destination folder of the IKAN ALM Server files :
-alm.server.installLocation=C:/alm
+# Destination folder of the Kobee Server files :
+alm.server.installLocation=C:/Kobee
 
-# Java Runtime to run the IKAN ALM Server with :
+# Java Runtime to run the Kobee Server with :
 alm.server.javaHome=d:/java/jdk1.6.0_45
 
-# IKAN ALM Server Runtime parameters :
-# serverPort : port IKAN ALM Server is listening on (default=20021)
+# Kobee Server Runtime parameters :
+# serverPort : port Kobee Server is listening on (default=20021)
 alm.server.serverPort=20021
 # agentPort : port Agent should be listening on (default=20020)
 alm.server.agentPort=20020
@@ -269,27 +269,27 @@ alm.server.karaf.sshPort=8102
 alm.server.installLocation
 |
 
-The location where IKAN ALM should be installed. Further on in this document, this location will be referred to as _ALM_HOME_.
+The location where Kobee should be installed. Further on in this document, this location will be referred to as _KOBEE_HOME_.
 |
 
 alm.server.javaHome
 |
 
-Set this to the Java Home of the Java Runtime that will be used to launch the ALM Server. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+Set this to the Java Home of the Java Runtime that will be used to launch the Kobee Server. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.server.serverPort
 |
 
-The port number the ALM Server listens on for incoming ALM Agent communication. Note that you must use this same port number in later ALM Agent installations, otherwise the Agent-Server communication may fail. The default is "20021".
+The port number the Kobee Server listens on for incoming Kobee Agent communication. Note that you must use this same port number in later Kobee Agent installations, otherwise the Agent-Server communication may fail. The default is "20021".
 
-If you change this value, you will also have to change the "Server Port" property of the Machine representing the ALM Server in the IKAN ALM GUI.
+If you change this value, you will also have to change the "Server Port" property of the Machine representing the Kobee Server in the Kobee GUI.
 |
 
 alm.server.agentPort
 |
 
-The port number the local ALM Agent listens on for incoming ALM Server communication. You must use this port number when you install the ALM Agent on the ALM Server machine (= local Agent). The default is "20020".
+The port number the local Kobee Agent listens on for incoming Kobee Server communication. You must use this port number when you install the Kobee Agent on the Kobee Server machine (= local Agent). The default is "20020".
 |
 
 alm.server.karaf.rmiRegistryPort +
@@ -297,10 +297,10 @@ alm.server.karaf.rmiServerPort +
 alm.server.karaf.sshPort
 |
 
-The port numbers specific to the Apache Karaf container hosting the ALM Server daemon. Normally, there is no need to change these port numbers unless you have port conflicts.
+The port numbers specific to the Apache Karaf container hosting the Kobee Server daemon. Normally, there is no need to change these port numbers unless you have port conflicts.
 |===
 
-===== ALM Database configuration
+===== Kobee Database configuration
 
 [source]
 ----
@@ -310,13 +310,13 @@ alm.server.rdbms.type=MYSQL
 alm.server.rdbms.server=localhost
 alm.server.rdbms.port=3306
 alm.server.rdbms.user=root
-alm.server.rdbms.pwd=alm
+alm.server.rdbms.pwd=kobee
 # dbname : database name or Oracle SID or Service name
-alm.server.rdbms.dbname=alm
+alm.server.rdbms.dbname=kobee
 # dbschema : database schema (for DB2 and POSTGRESQL)
-alm.server.rdbms.dbschema=ALM
-# Flag to indicate whether to initialize the IKAN ALM database
-# WARNING : when set to "true", all IKAN ALM related tables in the target
+alm.server.rdbms.dbschema=kobee
+# Flag to indicate whether to initialize the Kobee database
+# WARNING : when set to "true", all Kobee related tables in the target
 # database will be dropped and populated with initial data !!
 alm.server.rdbms.initALMDatabase=false
 ----
@@ -329,7 +329,7 @@ alm.server.rdbms.initALMDatabase=false
 |
 
 alm.server.rdbms.type
-a|The type of database that will host the ALM database.
+a|The type of database that will host the Kobee database.
 
 The possible values are:
 
@@ -367,7 +367,7 @@ Password of the database user.
 alm.server.rdbms.dbname
 |
 
-The name of the ALM database. For Oracle, this is the database's SID or Service name.
+The name of the Kobee database. For Oracle, this is the database's SID or Service name.
 |
 
 alm.server.rdbms.dbschema
@@ -379,9 +379,9 @@ The database schema name. Required when the database type is DB2 or POSTGRESQL, 
 alm.server.rdbms.initALMDatabase
 |
 
-Set to "true" to initialize the ALM database during the installation process. Default is "false".
+Set to "true" to initialize the Kobee database during the installation process. Default is "false".
 
-*WARNING*: when set to "true", all ALM related tables in the target database will be dropped and populated with initial data!
+*WARNING*: when set to "true", all Kobee related tables in the target database will be dropped and populated with initial data!
 |===
 
 
@@ -391,12 +391,12 @@ Set to "true" to initialize the ALM database during the installation process. De
 [source]
 ----
 # Apache Tomcat Configuration : 
-# set alm.server.tomcat to true if you want to deploy IKAN ALM under tomcat 
+# set alm.server.tomcat to true if you want to deploy Kobee under tomcat 
 alm.server.tomcat=true
 # catalina.base folder of the tomcat instance
 alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
 alm.server.tomcat.port=8080
-# catalina.home folder of tomcat. If left empty, ALM will assume catalina.home=catalina.base
+# catalina.home folder of tomcat. If left empty, Kobee will assume catalina.home=catalina.base
 alm.server.tomcat.catalina.home=
 ----
 
@@ -410,13 +410,13 @@ alm.server.tomcat.catalina.home=
 alm.server.tomcat
 |
 
-Set to "true" if you want to deploy the ALM Web Application to Tomcat. Default is "true".
+Set to "true" if you want to deploy the Kobee Web Application to Tomcat. Default is "true".
 |
 
 alm.server.tomcat.home
 |
 
-Set this to the home directory of the Tomcat installation that will host the ALM Web Application.
+Set this to the home directory of the Tomcat installation that will host the Kobee Web Application.
 |
 
 alm.server.tomcat.port
@@ -428,37 +428,37 @@ The Tomcat HTTP Connector port. Default is "8080".
 alm.server.tomcat.catalina.home
 |
 
-The CATALINA_HOME of the Tomcat instance. If this value is left empty, which is the default, ALM will assume CATALINA_HOME=CATALINA_BASE. You will need to set this property if you installed Tomcat on Linux using a package manager (like apt), or if you configured your Tomcat to run multiple instances.
+The CATALINA_HOME of the Tomcat instance. If this value is left empty, which is the default, Kobee will assume CATALINA_HOME=CATALINA_BASE. You will need to set this property if you installed Tomcat on Linux using a package manager (like apt), or if you configured your Tomcat to run multiple instances.
 Refer to https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt[https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt,window=_blank] for more information. 
 |===
 
 
 
-==== ALM Agent settings
-When installing the ALM Agent, set the following properties :
+==== Kobee Agent settings
+When installing the Kobee Agent, set the following properties :
 
 [source]
 ----
 # ---------------------------------------------------------------------------
-# IKAN ALM Agent Settings, when alm.agent.install=true :
+# Kobee Agent Settings, when alm.agent.install=true :
 # ---------------------------------------------------------------------------
-# Destination folder of the IKAN ALM Agent files :
-# Recommended : use the IKAN ALM Server installLocation
-alm.agent.installLocation=C:/alm
+# Destination folder of the Kobee Agent files :
+# Recommended : use the Kobee Server installLocation
+alm.agent.installLocation=C:/Kobee
 
-# Java Runtime to run the IKAN ALM Agent with (may be JRE or JDK):
+# Java Runtime to run the Kobee Agent with (may be JRE or JDK):
 alm.agent.javaHome=d:/java/jdk1.6.0_45
 
-# IKAN ALM Agent Runtime parameters :
+# Kobee Agent Runtime parameters :
 # agentPort : port Agent should be listening on (default=20020)
 # serverPort : port Server is listening on (default=20021)
 # serverHost : host Server is running on (default=localhost)
 # hostname: optional, leave empty unless you want to override the system hostname
 #  retrieved as InetAddress.getHostName(), e.g. to use a fully qualified domain name like 
-#  almAgent.your.domain for communication with the IKAN ALM server
+#  almAgent.your.domain for communication with the Kobee server
 # hostaddress: optional, leave empty unless you want to override the system hostaddress
 #  retrieved as InetAddress.getHostAddress(), e.g. to use a IP Address which differs from 
-#  the internal IP Address for communication with the IKAN ALM server
+#  the internal IP Address for communication with the Kobee server
 alm.agent.agentPort=20020
 alm.agent.serverHost=localhost
 alm.agent.serverPort=20021
@@ -468,8 +468,8 @@ alm.agent.hostaddress=
 alm.agent.karaf.rmiRegistryPort=1099
 alm.agent.karaf.rmiServerPort=44444
 alm.agent.karaf.sshPort=8101
-# relative path to the Karaf log of the IKAN ALM Agent
-alm.agent.logfilepath=log/alm_agent.log
+# relative path to the Karaf log of the Kobee Agent
+alm.agent.logfilepath=log/Kobee_agent.log
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -482,47 +482,47 @@ alm.agent.logfilepath=log/alm_agent.log
 alm.agent.installLocation
 |
 
-The location where IKAN ALM should be installed. When installing the ALM Agent together with the ALM Server, set this value to the value of the _alm.server.installLocation_ property (see <<_general_alm_server_settings>>).
+The location where Kobee should be installed. When installing the Kobee Agent together with the Kobee Server, set this value to the value of the _alm.server.installLocation_ property (see <<_general_kobee_server_settings>>).
 
-Further on in this document, this location will be referred to as _ALM_HOME_.
+Further on in this document, this location will be referred to as _KOBEE_HOME_.
 |
 
 alm.agent.javaHome
 |
 
-Set this to the Java Home of the Java Runtime that will be used to launch the ALM Agent. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+Set this to the Java Home of the Java Runtime that will be used to launch the Kobee Agent. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.agent.agentPort
 |
 
-The port number the ALM Agent listens on for incoming ALM Server communication. The default is "20020".
+The port number the Kobee Agent listens on for incoming Kobee Server communication. The default is "20020".
 
-If you change this value, you will also have to change the value of the _Agent Port_ field of the Machine representing this ALM Agent in the IKAN ALM GUI.
+If you change this value, you will also have to change the value of the _Agent Port_ field of the Machine representing this Kobee Agent in the Kobee GUI.
 |
 
 alm.agent.serverHost
 |
 
-The hostname (or IP address) of the ALM Server machine. The ALM Agent will try to connect to the ALM Server by using this hostname (or IP address) and using the HTTP or HTTPS protocol. The default is "localhost".
+The hostname (or IP address) of the Kobee Server machine. The Kobee Agent will try to connect to the Kobee Server by using this hostname (or IP address) and using the HTTP or HTTPS protocol. The default is "localhost".
 |
 
 alm.agent.serverPort
 |
 
-The port number the ALM Server listens on for incoming ALM Agent communication. The ALM Agent will try to connect to the ALM Server on this port. The default is "20021".
+The port number the Kobee Server listens on for incoming Kobee Agent communication. The Kobee Agent will try to connect to the Kobee Server on this port. The default is "20021".
 |
 
 alm.agent.hostname
 |
 
-This property is optional. Set this if you want to override the automatically detected hostname of the ALM Agent. It is important that the hostname entered here matches the value of the _DHCP Name_ field of the ALM Agent Machine set in the IKAN ALM GUI. If the values don't match, the ALM Agent may not receive any work (Builds or Deploys) from the ALM Server.
+This property is optional. Set this if you want to override the automatically detected hostname of the Kobee Agent. It is important that the hostname entered here matches the value of the _DHCP Name_ field of the Kobee Agent Machine set in the Kobee GUI. If the values don't match, the Kobee Agent may not receive any work (Builds or Deploys) from the Kobee Server.
 |
 
 alm.agent.hostaddress
 |
 
-This property is optional. Set this if you want to override the automatically detected IP address of the ALM Agent. It is important that the IP address entered here matches the value of the _IP Address_ field of the ALM Agent Machine set in the IKAN ALM GUI. If the values don't match, the ALM Agent may not receive any work (Builds or Deploys) from the ALM Server.
+This property is optional. Set this if you want to override the automatically detected IP address of the Kobee Agent. It is important that the IP address entered here matches the value of the _IP Address_ field of the Kobee Agent Machine set in the Kobee GUI. If the values don't match, the Kobee Agent may not receive any work (Builds or Deploys) from the Kobee Server.
 |
 
 alm.agent.karaf.rmiRegistryPort +
@@ -530,27 +530,27 @@ alm.agent.karaf.rmiServerPort +
 alm.agent.karaf.sshPort
 |
 
-The port numbers specific to the Apache Karaf container hosting the ALM Agent daemon. Normally, there is no need to change these port numbers unless you have port conflicts.
+The port numbers specific to the Apache Karaf container hosting the Kobee Agent daemon. Normally, there is no need to change these port numbers unless you have port conflicts.
 |
 
 alm.agent.logfilepath
 |
 
-Relative path to the Karaf log of the ALM Agent. This setting is used by the ALM Server when displaying the Machine Log of an ALM Agent on the _Machine Detailed Status_ screen in the IKAN ALM GUI. The default is "log/alm_agent.log".
+Relative path to the Karaf log of the Kobee Agent. This setting is used by the Kobee Server when displaying the Machine Log of an Kobee Agent on the _Machine Detailed Status_ screen in the Kobee GUI. The default is "log/Kobee_agent.log".
 |===
 
-==== ALM Commandline settings
-When installing the ALM Commandline, set the following properties :
+==== Kobee Commandline settings
+When installing the Kobee Commandline, set the following properties :
 
 [source]
 ----
 # ---------------------------------------------------------------------------
-# IKAN ALM Commandline Settings, when alm.commandline.install=true :
+# Kobee Commandline Settings, when alm.commandline.install=true :
 # ---------------------------------------------------------------------------
-# Destination folder of the IKAN ALM Commandline files :
-alm.commandline.installLocation=C:/alm/commandline
+# Destination folder of the Kobee Commandline files :
+alm.commandline.installLocation=C:/Kobee/commandline
 
-# Java Runtime to run the IKAN ALM Commandline with (may be JRE or JDK):
+# Java Runtime to run the Kobee Commandline with (may be JRE or JDK):
 alm.commandline.javaHome=d:/java/jdk1.6.0_45
 ----
 
@@ -564,13 +564,13 @@ alm.commandline.javaHome=d:/java/jdk1.6.0_45
 alm.commandline.installLocation
 |
 
-The location where the ALM Commandline should be installed. When installing the ALM Commandline together with the ALM Server or Agent, do *NOT* set this value to the value of the _alm.server.installLocation_ or _alm.agent.installLocation_ property, but choose a subfolder of _ALM_HOME_ (like _ALM_HOME_/commandline), or a path outside of the _ALM_HOME_ folder structure.
+The location where the Kobee Commandline should be installed. When installing the Kobee Commandline together with the Kobee Server or Agent, do *NOT* set this value to the value of the _alm.server.installLocation_ or _alm.agent.installLocation_ property, but choose a subfolder of _KOBEE_HOME_ (like _KOBEE_HOME_/commandline), or a path outside of the _KOBEE_HOME_ folder structure.
 |
 
 alm.commandline.javaHome
 |
 
-Set this to the Java Home of the Java Runtime that will be used to launch the ALM Commandline. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+Set this to the Java Home of the Java Runtime that will be used to launch the Kobee Commandline. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |===
 
 
@@ -610,9 +610,9 @@ Launch the installer by executing the _install.cmd_ or _install.sh_ script.
 
 [NOTE]
 ====
-It is recommended to launch the installer from a command prompt, Powershell or Linux shell, to see the progress and the result of the installation. On Windows, if the installer is run as an Administrator, the Windows services for stopping and starting the ALM Server and Agent are automatically created. If not, you must register the Windows services manually after installation. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the ALM Server and Agent must always be manually registered after installation. See <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>>.
+It is recommended to launch the installer from a command prompt, Powershell or Linux shell, to see the progress and the result of the installation. On Windows, if the installer is run as an Administrator, the Windows services for stopping and starting the Kobee Server and Agent are automatically created. If not, you must register the Windows services manually after installation. See <<_install_service_windows,Manually Installing and Removing the Kobee Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the Kobee Server and Agent must always be manually registered after installation. See <<_install_service_linux,Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems>>.
 
-The user running the installer should have write access to the install locations of the ALM Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
+The user running the installer should have write access to the install locations of the Kobee Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
 ====
 
 image::installer_finished.png[,681,359]
@@ -621,14 +621,14 @@ When the installation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
 [WARNING]
 ====
-Do *NOT* remove the _INSTALL_DIR_ folder after installation, because you will need it to uninstall or upgrade IKAN ALM in the future.
+Do *NOT* remove the _INSTALL_DIR_ folder after installation, because you will need it to uninstall or upgrade Kobee in the future.
 ====
 
-If this was a new ALM Server installation (no re-installation or upgrade of an older version), and the property _alm.server.rdbms.initALMDatabase_ was not set to "true", then you must first initialize the ALM database manually before starting the ALM Server or Web Application.
+If this was a new Kobee Server installation (no re-installation or upgrade of an older version), and the property _alm.server.rdbms.initALMDatabase_ was not set to "true", then you must first initialize the ALM database manually before starting the Kobee Server or Web Application.
 
 === Initializing the ALM Database
 
-The ALM database needs to be initialized before the ALM Server or Web Application can be used. The initialization can be performed during installation by setting the property _alm.server.rdbms.initALMDatabase_ to "true", or it can be performed manually after the installation has finished by running the script _INSTALL_DIR/initializeALMDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeALMDatabase.sh_ (Linux/Unix).
+The ALM database needs to be initialized before the Kobee Server or Web Application can be used. The initialization can be performed during installation by setting the property _alm.server.rdbms.initALMDatabase_ to "true", or it can be performed manually after the installation has finished by running the script _INSTALL_DIR/initializeKobeeDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeKobeeDatabase.sh_ (Linux/Unix).
 
 [NOTE]
 ====
@@ -636,24 +636,24 @@ The initialization scripts will drop and recreate the database tables needed by 
 ====
 
 By default, the initialization scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
- _INSTALL_DIR/initializeALMDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeALMDatabase.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
+ _INSTALL_DIR/initializeKobeeDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeKobeeDatabase.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
 [NOTE]
 ====
 It is recommended to launch the initialization scripts from a command prompt, Powershell or Linux shell, to see the progress and the result of the initialization. There is no need to run the scripts as Administrator.
 ====
 
-Launch the ALM database initialization by executing the _INSTALL_DIR/initializeALMDatabase.cmd_ or _INSTALL_DIR/initializeALMDatabase.sh_ script.
+Launch the ALM database initialization by executing the _INSTALL_DIR/initializeKobeeDatabase.cmd_ or _INSTALL_DIR/initializeKobeeDatabase.sh_ script.
 
 image::dbinit_finished.png[,681,359] 
 
-== Starting IKAN ALM
+== Starting Kobee
 
-This section describes the steps to perform the startup of the different IKAN ALM components.
+This section describes the steps to perform the startup of the different Kobee components.
 
-* If you want to configure IKAN ALM through its GUI, you must first start the ALM Web application (<<_bhbhhfha>>).
-* If you want to run Builds and Deploys, you must start the ALM Server and Agent (<<_bhbdbdje>> and <<_bhbhbcbb>>).
-* If you want to use the ALM Commandline interface, see <<_bhbdaahi>>
+* If you want to configure Kobee through its GUI, you must first start the ALM Web application (<<_bhbhhfha>>).
+* If you want to run Builds and Deploys, you must start the Kobee Server and Agent (<<_bhbdbdje>> and <<_bhbhbcbb>>).
+* If you want to use the Kobee Commandline interface, see <<_bhbdaahi>>
 
 
 [[_bhbhhfha]]
@@ -661,10 +661,10 @@ This section describes the steps to perform the startup of the different IKAN AL
 
 To start the ALM Web Application, you need to start the Apache Tomcat web server that is hosting it.
 
-The ALM GUI can be reached by browsing to the url `\http://<host>:<port>/alm`.
-For example: `\http://alm_server:8080/alm`.
+The ALM GUI can be reached by browsing to the url `\http://<host>:<port>/kobee`.
+For example: `\http://kobee_server:8080/kobee`.
 
-If this is the first installation of IKAN ALM, the License window will be displayed:
+If this is the first installation of Kobee, the License window will be displayed:
 
 
 image::no_license.png[,617,187]
@@ -678,88 +678,88 @@ image::license_installed.png[,520,255]
 
 Log in with user id "`global`", password "`global`". For information about the other default users, see <<_jaasconfiguration>>.
 
-For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:ROOT:Introduction.adoc[IKAN ALM User Guide].
+For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:ROOT:Introduction.adoc[Kobee User Guide].
 
 [[_bhbdbdje]]
-=== Starting the ALM Server
+=== Starting the Kobee Server
 
-It is recommended to run the ALM Server as a Windows or Linux service, and configure it so that the ALM Server automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
+It is recommended to run the Kobee Server as a Windows or Linux service, and configure it so that the Kobee Server automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the Kobee Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
 
-To start the ALM Server service on Windows, open a Command Prompt or PowerShell, and execute :
-
-[source]
-----
-net start almsvr59
-----
-
-To start the ALM Server service on a System V compatible Linux system, open a shell and execute :
+To start the Kobee Server service on Windows, open a Command Prompt or PowerShell, and execute :
 
 [source]
 ----
-sudo service almserver59 start
+net start Kobeesvr59
 ----
 
-To start the ALM Server service on a Systemd compatible Linux system, open a shell and execute :
+To start the Kobee Server service on a System V compatible Linux system, open a shell and execute :
 
 [source]
 ----
-sudo systemctl start almserver59
+sudo service kobeeserver60 start
 ----
 
-For troubleshooting, it can be useful to start the ALM Server by launching its startup script. On Windows, launch the command file _ALM_HOME/daemons/server/startServer.cmd_. On Linux, launch the shell script _ALM_HOME/daemons/server/startServer.sh_. 
+To start the Kobee Server service on a Systemd compatible Linux system, open a shell and execute :
 
-To stop the ALM Server, launch _ALM_HOME/daemons/server/stopServer.cmd_ or _ALM_HOME/daemons/server/stopServer.sh_.
+[source]
+----
+sudo systemctl start kobeeserver60
+----
+
+For troubleshooting, it can be useful to start the Kobee Server by launching its startup script. On Windows, launch the command file _KOBEE_HOME/daemons/server/startServer.cmd_. On Linux, launch the shell script _KOBEE_HOME/daemons/server/startServer.sh_. 
+
+To stop the Kobee Server, launch _KOBEE_HOME/daemons/server/stopServer.cmd_ or _KOBEE_HOME/daemons/server/stopServer.sh_.
 
 
 [[_bhbhbcbb]]
-=== Starting the ALM Agent
+=== Starting the Kobee Agent
 
-It is recommended to run the ALM Agent as a Windows or Linux service, and configure it so that the ALM Agent automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
+It is recommended to run the Kobee Agent as a Windows or Linux service, and configure it so that the Kobee Agent automatically starts up when the Operating System starts. See <<_install_service_windows,Manually Installing and Removing the Kobee Server and Agent as a Windows Service>> and <<_install_service_linux,Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems>> for instructions on how to do this.
 
-To start the ALM Agent service on Windows, open a Command Prompt or PowerShell, and execute :
-
-[source]
-----
-net start almagent59
-----
-
-To start the ALM Agent service on a System V compatible Linux system, open a shell and execute :
+To start the Kobee Agent service on Windows, open a Command Prompt or PowerShell, and execute :
 
 [source]
 ----
-sudo service almagent59 start
+net start kobeeagent60
 ----
 
-To start the ALM Agent service on a Systemd compatible Linux system, open a shell and execute :
+To start the Kobee Agent service on a System V compatible Linux system, open a shell and execute :
 
 [source]
 ----
-sudo systemctl start almagent59
+sudo service kobeeagent60 start
 ----
 
-For troubleshooting, it can be useful to start the ALM Agent by launching its startup script. On Windows, launch the command file _ALM_HOME/daemons/agent/startAgent.cmd_. On Linux, launch the shell script _ALM_HOME/daemons/agent/startAgent.sh_. 
+To start the Kobee Agent service on a Systemd compatible Linux system, open a shell and execute :
 
-To stop the ALM Agent, launch _ALM_HOME/daemons/agent/stopAgent.cmd_ or _ALM_HOME/daemons/agent/stopAgent.sh_.
+[source]
+----
+sudo systemctl start kobeeagent60
+----
+
+For troubleshooting, it can be useful to start the Kobee Agent by launching its startup script. On Windows, launch the command file _KOBEE_HOME/daemons/agent/startAgent.cmd_. On Linux, launch the shell script _KOBEE_HOME/daemons/agent/startAgent.sh_. 
+
+To stop the Kobee Agent, launch _KOBEE_HOME/daemons/agent/stopAgent.cmd_ or _KOBEE_HOME/daemons/agent/stopAgent.sh_.
 
 
 [[_bhbdaahi]]
-=== Using the ALM Commandline
+=== Using the Kobee Commandline
 
-The ALM Commandline can be used to create Level Requests and Reports, or create and update Packages.
+The Kobee Commandline can be used to create Level Requests and Reports, or create and update Packages.
 
-* To launch the ALM Commandline on Windows:
+* To launch the Kobee Commandline on Windows:
 +
-Open a Command Prompt, cd into the installation folder of the ALM Commandline (for example : ALM_HOME/commandline), and launch _alm.cmd_.
-* To launch the ALM Commandline on Linux/Unix:
+Open a Command Prompt, cd into the installation folder of the Kobee Commandline (for example : KOBEE_HOME/commandline), and launch _alm.cmd_.
+* To launch the Kobee Commandline on Linux/Unix:
 +
-Open a shell, cd into the installation folder of the ALM Commandline (for example : ALM_HOME/commandline), and launch _./alm.sh_.
+Open a shell, cd into the installation folder of the Kobee Commandline (for example : KOBEE_HOME/commandline), and launch _./alm.sh_.
 
-For more detailed information about the ALM Commandline, refer to the section xref:5.9@user-guide-en:ROOT:CommandLine.adoc[Commandline Interface] in the __IKAN ALM User Guide__.
+For more detailed information about the Kobee Commandline, refer to the section xref:5.9@user-guide-en:ROOT:CommandLine.adoc[Commandline Interface] in the __Kobee User Guide__.
 
 
-== Uninstalling IKAN ALM
+== Uninstalling Kobee
 
-To uninstall IKAN ALM, you must first configure the uninstaller located in _INSTALL_DIR_, and then run it.
+To uninstall Kobee, you must first configure the uninstaller located in _INSTALL_DIR_, and then run it.
 
 === Configuring the Uninstaller
 
@@ -774,42 +774,42 @@ _Do NOT use backward slashes_ ('\') in path properties, otherwise the installati
 
 [source]
 ----
-# General Settings : Specify which components of IKAN ALM to uninstall
+# General Settings : Specify which components of Kobee to uninstall
 # ---------------------------------------------------------------------------
-# Flag to specify whether to uninstall the IKAN ALM Server or not:  uninstall : true
+# Flag to specify whether to uninstall the Kobee Server or not:  uninstall : true
 # no uninstall : false
 alm.server.uninstall=true
-# Flag to specify whether to uninstall the IKAN ALM Agent or not uninstall : true
+# Flag to specify whether to uninstall the Kobee Agent or not uninstall : true
 # no uninstall : false
 alm.agent.uninstall=true
-# Flag to specify whether to uninstall the IKAN ALM Commandline: or not uninstall : true
+# Flag to specify whether to uninstall the Kobee Commandline: or not uninstall : true
 # no uninstall : false
 alm.commandline.uninstall=true
 ----
 
-In the General Settings, you specify which components of IKAN ALM you want to uninstall. 
+In the General Settings, you specify which components of Kobee you want to uninstall. 
 
-Setting __alm.server.uninstall__ to "true" will uninstall the ALM Server and remove the ALM Web Application from Tomcat. +
-Setting __alm.agent.uninstall__ to "true" will uninstall the ALM Agent. +
-Setting __alm.commandline.uninstall__ to "true" will uninstall the ALM Commandline.
+Setting __alm.server.uninstall__ to "true" will uninstall the Kobee Server and remove the ALM Web Application from Tomcat. +
+Setting __alm.agent.uninstall__ to "true" will uninstall the Kobee Agent. +
+Setting __alm.commandline.uninstall__ to "true" will uninstall the Kobee Commandline.
 
-==== ALM Server and ALM Web Application settings
+==== Kobee Server and ALM Web Application settings
 
 [source]
 ----
-# IKAN ALM Server Settings :
+# Kobee Server Settings :
 # ---------------------------------------------------------------------------
-# Folder the IKAN ALM Server is installed in :
-alm.server.installLocation=C:/alm
+# Folder the Kobee Server is installed in :
+alm.server.installLocation=C:/Kobee
 
-# Java Runtime the IKAN ALM Server is using
+# Java Runtime the Kobee Server is using
 alm.server.javaHome=d:/java/jdk1.6.0_45
 
 # Flag to specify whether to uninstall the files that may be deployed to a tomcat server :
 # uninstall : true
 # no uninstall : false
 alm.server.tomcat.uninstall=true
-# Location of Apache Tomcat where the webapp was deployed during IKAN ALM Server Install :
+# Location of Apache Tomcat where the webapp was deployed during Kobee Server Install :
 alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
 ----
 
@@ -823,13 +823,13 @@ alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
 alm.server.installLocation
 |
 
-The location where IKAN ALM is installed. Further on in this document, this location will be referred to as _ALM_HOME_.
+The location where Kobee is installed. Further on in this document, this location will be referred to as _KOBEE_HOME_.
 |
 
 alm.server.javaHome
 |
 
-The Java Home of the Java Runtime that is used to launch the ALM Server. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
+The Java Home of the Java Runtime that is used to launch the Kobee Server. Valid examples are "D:/java/openjdk-11.0.8_10_hotspot" or "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.server.tomcat.uninstall
@@ -844,14 +844,14 @@ alm.server.tomcat.home
 The home directory of the Tomcat installation that is hosting the ALM Web Application.
 |===
 
-==== ALM Agent settings
+==== Kobee Agent settings
 
 [source]
 ----
-# IKAN ALM Agent Settings :
+# Kobee Agent Settings :
 # ---------------------------------------------------------------------------
-# Folder the IKAN ALM Agent is installed in :
-alm.agent.installLocation=C:/alm
+# Folder the Kobee Agent is installed in :
+alm.agent.installLocation=C:/Kobee
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -864,17 +864,17 @@ alm.agent.installLocation=C:/alm
 alm.agent.installLocation
 |
 
-The location where IKAN ALM is installed.
+The location where Kobee is installed.
 |===
 
-==== ALM Commandline settings
+==== Kobee Commandline settings
 
 [source]
 ----
-# IKAN ALM Commandline Settings :
+# Kobee Commandline Settings :
 # ---------------------------------------------------------------------------
-# Folder the IKAN ALM Commandline is installed in :
-alm.commandline.installLocation=C:/alm/commandline
+# Folder the Kobee Commandline is installed in :
+alm.commandline.installLocation=C:/Kobee/commandline
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -887,7 +887,7 @@ alm.commandline.installLocation=C:/alm/commandline
 alm.commandline.installLocation
 |
 
-The location where the ALM Commandline is installed.
+The location where the Kobee Commandline is installed.
 |===
 
 === Running the Uninstaller
@@ -895,22 +895,22 @@ The location where the ALM Commandline is installed.
 By default, the uninstallation scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
  _INSTALL_DIR/uninstall.cmd_ (Windows) or _INSTALL_DIR/uninstall.sh_ (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
-First stop Tomcat, ALM Server and ALM Agent, and then launch the uninstaller by executing the _uninstall.cmd_ or _uninstall.sh_ script.
+First stop Tomcat, Kobee Server and Kobee Agent, and then launch the uninstaller by executing the _uninstall.cmd_ or _uninstall.sh_ script.
 
 [NOTE]
 ====
-It is recommended to launch the uninstaller from a command prompt, Powershell or Linux shell, to see the progress and the result of the uninstallation. On Windows, if the uninstaller is run as an Administrator, the Windows services for stopping and starting the ALM Server and Agent are automatically removed. If not, you must remove the Windows services manually *BEFORE* uninstallation. See <<_install_service_windows,Manually Installing and Removing the ALM Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the ALM Server and Agent must always be manually removed *BEFORE* uninstallation. See <<_install_service_linux,Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems>>.
+It is recommended to launch the uninstaller from a command prompt, Powershell or Linux shell, to see the progress and the result of the uninstallation. On Windows, if the uninstaller is run as an Administrator, the Windows services for stopping and starting the Kobee Server and Agent are automatically removed. If not, you must remove the Windows services manually *BEFORE* uninstallation. See <<_install_service_windows,Manually Installing and Removing the Kobee Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the Kobee Server and Agent must always be manually removed *BEFORE* uninstallation. See <<_install_service_linux,Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems>>.
 
-The user running the uninstaller should have write access to the install locations of the ALM Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
+The user running the uninstaller should have write access to the install locations of the Kobee Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
 ====
 
 The uninstaller will keep the following folders :
 
-* ALM_HOME/system/buildArchive
+* KOBEE_HOME/system/buildArchive
 
-* ALM_HOME/system/deployScripts
+* KOBEE_HOME/system/deployScripts
 
-* ALM_HOME/system/phaseCatalog
+* KOBEE_HOME/system/phaseCatalog
 
 If they need to be removed, they need to be deleted manually after the uninstallation.
 
@@ -918,50 +918,50 @@ image::uninstaller_finished.png[,983,494]
 
 When the uninstallation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
-== Upgrading IKAN ALM
+== Upgrading Kobee
 
-The general approach to upgrading IKAN ALM is to first backup the current installation and the ALM database, then reinstall ALM and migrate the ALM database to a higher version.
+The general approach to upgrading Kobee is to first backup the current installation and the ALM database, then reinstall ALM and migrate the ALM database to a higher version.
 
-If the upgrade process fails, you can restore the backup and continue running the previous version of IKAN ALM.
+If the upgrade process fails, you can restore the backup and continue running the previous version of Kobee.
 
 You should at least backup the following:
 
-. IKAN ALM database
-. Build Archive Location: configured in System Settings, default is _ALM_HOME_/system/buildArchive.
-. Deploy Scripts Location: configured in System Settings, default is _ALM_HOME_/system/deployScripts.
-. Phase Catalog: configured in System Settings, default is _ALM_HOME_/system/phaseCatalog.
+. Kobee database
+. Build Archive Location: configured in System Settings, default is _KOBEE_HOME_/system/buildArchive.
+. Deploy Scripts Location: configured in System Settings, default is _KOBEE_HOME_/system/deployScripts.
+. Phase Catalog: configured in System Settings, default is _KOBEE_HOME_/system/phaseCatalog.
 
 
 [NOTE]
 ====
-For safety reasons, it is highly recommended to back up the entire _ALM_HOME_ and _TOMCAT_HOME_ directory. Experience has shown that, sometimes, one needs to restore a configuration like a security setting or the configuration of the log files.
+For safety reasons, it is highly recommended to back up the entire _KOBEE_HOME_ and _TOMCAT_HOME_ directory. Experience has shown that, sometimes, one needs to restore a configuration like a security setting or the configuration of the log files.
 ====
 
-=== IKAN ALM Upgrade Procedure
+=== Kobee Upgrade Procedure
 
-. Stop Tomcat, ALM Server and ALM Agent.
+. Stop Tomcat, Kobee Server and Kobee Agent.
 
 . Make the backup.
 
-. Uninstall the current ALM Server, Agent and Commandline. See <<Uninstalling IKAN ALM>> for more information. Don't remove the _INSTALL_DIR_ of the uninstalled version yet.
+. Uninstall the current Kobee Server, Agent and Commandline. See <<Uninstalling Kobee>> for more information. Don't remove the _INSTALL_DIR_ of the uninstalled version yet.
 
 . Configure the installer of the new ALM. You can use the values set in the _INSTALL_DIR_/install.properties of the uninstalled version to set the values in the install.properties file of the new version. It's not recommended to copy the old install.properties over the new, since the structure of the file may have changed in the new version.
 
 . Run the installer of the new ALM.
 
-. Migrate the IKAN ALM database to the new version.
+. Migrate the Kobee database to the new version.
 +
 To do this, run the Database Migration Tool. See <<Database Migration Tool>>.
 
-. Start Tomcat, ALM Server and ALM Agent.
+. Start Tomcat, Kobee Server and Kobee Agent.
 
-. Upgrade the ALM Agents that are installed on remote machines. 
+. Upgrade the Kobee Agents that are installed on remote machines. 
 +
-Remote Agents of version 5.8 and higher can be upgraded using the ALM GUI. 
+Remote Agents of version 5.8 (IKAN ALM) and higher can be upgraded using the Kobee GUI. 
 +
-Remote Agents of version 5.7 and lower must first be manually uninstalled. After that, they can be re-installed using the ALM GUI.
+Remote Agents of version 5.7 (IKAN ALM) and lower must first be manually uninstalled. After that, they can be re-installed using the Kobee GUI.
 +
-For more information about installing or upgrading ALM Agents using the ALM GUI, refer to xref:5.9@how-to-ui-agentinstall-en:ROOT:HowTo_UIAgentInstall.adoc[IKAN ALM Agent UI Installation].
+For more information about installing or upgrading Kobee Agents using the Kobee GUI, refer to xref:5.9@how-to-ui-agentinstall-en:ROOT:HowTo_UIAgentInstall.adoc[Kobee Agent UI Installation].
 
 === Database Migration Tool
 
@@ -972,10 +972,10 @@ The Database Migration Tool is a commandline tool that automatically detects the
 You should always backup the ALM database before starting the migration!
 --
 
-To start the migration, run the script _INSTALL_DIR_/migrateALMDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix). 
+To start the migration, run the script _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix). 
 
 By default, the Database Migration Tool uses the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the script. In this case, edit the 
- _INSTALL_DIR_/migrateALMDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
+ _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
 By default, the Database Migration Tool uses the database connection parameters defined in the _INSTALL_DIR/install.properties_ file. You can also define a custom path to the install.properties file by using the "-installProperties" switch.
 
@@ -985,82 +985,82 @@ A migration log is created in the _INSTALL_DIR/almDbMigration.log_ file and will
 
 === Clearing the browser cache
 
-After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
+After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
 
 === Updating the JAAS configuration
 
-IKAN ALM 5.9 uses a new library for JAAS LoginModules when using LDAP or Microsoft Active Directory for authentication and authorization of users. As a consequence, the JAAS configuration files _ALM_HOME_/system/security/jaas.config and _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml have changed. If you are using LDAP or Microsoft AD, then you must use the new JAAS configuration files and set the properties ldapUrl, bindDn, bindCredential, baseDn and roleBase to the correct values. For more details, see <<_jaasconfiguration_msad,JAAS configuration: Microsoft Active Directory>>.
+Kobee 6.0 uses a new library for JAAS LoginModules when using LDAP or Microsoft Active Directory for authentication and authorization of users. As a consequence, the JAAS configuration files _KOBEE_HOME_/system/security/jaas.config and _KOBEE_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml have changed. If you are using LDAP or Microsoft AD, then you must use the new JAAS configuration files and set the properties ldapUrl, bindDn, bindCredential, baseDn and roleBase to the correct values. For more details, see <<_jaasconfiguration_msad,JAAS configuration: Microsoft Active Directory>>.
 
 
 [appendix]
 [[_install_service_windows]]
-== Manually Installing and Removing the ALM Server and Agent as a Windows Service
+== Manually Installing and Removing the Kobee Server and Agent as a Windows Service
 
-When the ALM installer is run as an Administrator, the Windows services for stopping and starting the ALM Server and Agent are automatically created. If not, you must register the Windows services manually after installation. 
+When the ALM installer is run as an Administrator, the Windows services for stopping and starting the Kobee Server and Agent are automatically created. If not, you must register the Windows services manually after installation. 
 
-* To register the ALM Server as a Windows service:
+* To register the Kobee Server as a Windows service:
 +
-Execute "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat __install__".
-* To unregister the ALM Server as a Windows service:
+Execute "KOBEE_HOME/daemons/server/karaf/bin/karaf-service.bat __install__".
+* To unregister the Kobee Server as a Windows service:
 +
-Execute "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat __remove__".
+Execute "KOBEE_HOME/daemons/server/karaf/bin/karaf-service.bat __remove__".
 
-* To register the ALM Agent as a Windows service:
+* To register the Kobee Agent as a Windows service:
 +
-Execute "ALM_HOME/daemons/agent/karaf/bin/karaf-service.bat __install__".
-* To unregister the ALM Agent as a Windows service:
+Execute "KOBEE_HOME/daemons/agent/karaf/bin/karaf-service.bat __install__".
+* To unregister the Kobee Agent as a Windows service:
 +
-Execute "ALM_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
+Execute "KOBEE_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
 
 The _karaf-service.bat_ script must be run as Administrator.
 
-If you want to reconfigure a service, edit the file ALM_HOME/daemons/server/karaf/etc/karaf-wrapper.conf (for the ALM Server). You can, for example, change the amount of memory the ALM Server can use (in MB) by changing : "wrapper.java.maxmemory = 512".
+If you want to reconfigure a service, edit the file KOBEE_HOME/daemons/server/karaf/etc/karaf-wrapper.conf (for the Kobee Server). You can, for example, change the amount of memory the Kobee Server can use (in MB) by changing : "wrapper.java.maxmemory = 512".
 
 [NOTE]
 ====
-It is generally not recommended to change any of the other properties in the karaf-wrapper.conf file, as it may cause the ALM Server or Agent to stop working.
+It is generally not recommended to change any of the other properties in the karaf-wrapper.conf file, as it may cause the Kobee Server or Agent to stop working.
 
 For more information on the configuration file, refer to: http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html[http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html,window=_blank] and https://karaf.apache.org/manual/latest/#_service_wrapper[https://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]
 ====
 
 [appendix]
 [[_install_service_linux]]
-== Manually Installing and Removing the ALM Server and Agent as a Daemon Process on Linux/Unix Systems
+== Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems
 
-The ALM installer does not automatically install the ALM Server or Agent as a Linux/Unix daemon or service. These steps must be performed after installation.
+The ALM installer does not automatically install the Kobee Server or Agent as a Linux/Unix daemon or service. These steps must be performed after installation.
 
-Since the ALM Server and Agent use Apache Karaf as their OSGi runtime environment, this basically comes down to using the Apache Karaf Wrapper feature (see the Karaf manual: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
+Since the Kobee Server and Agent use Apache Karaf as their OSGi runtime environment, this basically comes down to using the Apache Karaf Wrapper feature (see the Karaf manual: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
 
-We will describe this procedure for installing and removing the ALM Server as a service. For the ALM Agent, repeat the procedure, but substitute "server" with "agent" in all commands.
+We will describe this procedure for installing and removing the Kobee Server as a service. For the Kobee Agent, repeat the procedure, but substitute "server" with "agent" in all commands.
 
-First, stop the ALM Server and Agent.
+First, stop the Kobee Server and Agent.
 
 Open a Linux terminal, and make the Karaf "shell" command executable :
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/shell
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/shell
 ----
 
-Set the JAVA_HOME environment variable to the Java Home of the Java Runtime that will be used to launch the ALM Server. For example "/usr/lib/jvm/java-11-openjdk".
+Set the JAVA_HOME environment variable to the Java Home of the Java Runtime that will be used to launch the Kobee Server. For example "/usr/lib/jvm/java-11-openjdk".
 [source]
 ----
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 ----
 
-Change into the directory _ALM_HOME_/daemons/server/karaf/bin, and execute the Karaf service wrapper.
+Change into the directory _KOBEE_HOME_/daemons/server/karaf/bin, and execute the Karaf service wrapper.
 [source]
 ----
-cd ALM_HOME/daemons/server/karaf/bin
-ALM_HOME/daemons/server/karaf/bin/shell wrapper:install -n almserver59 -d "IKAN\ ALM\ 5.9\ Server" -D "IKAN\ ALM\ 5.9\ Server\ Service"
+cd KOBEE_HOME/daemons/server/karaf/bin
+KOBEE_HOME/daemons/server/karaf/bin/shell wrapper:install -n kobeeserver60 -d "Kobee\ 6.0\ Server" -D "Kobee\ 6.0\ Server\ Service"
 ----
 
 Depending on the type of your Linux or Unix Operating System, further instructions vary. See the following subsections for details.
 
 === Systemd compatible Linux
 
-Specify the user that should run the ALM Server service in the systemd unit file. It is not recommended to run the ALM Server or Agent as the root user.
+Specify the user that should run the Kobee Server service in the systemd unit file. It is not recommended to run the Kobee Server or Agent as the root user.
 
-Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59.service, and find the line
+Edit the file _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60.service, and find the line
 [source]
 ----
 Type=forking
@@ -1071,40 +1071,40 @@ Replace it with
 Type=forking
 User=<Linux user>
 ----
-Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59.service file executable.
+Make the _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60.service file executable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59.service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60.service
 ----
-Install the ALM Server service.
+Install the Kobee Server service.
 [source]
 ----
-sudo systemctl -f enable ALM_HOME/daemons/server/karaf/bin/almserver59.service
+sudo systemctl -f enable KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60.service
 ----
 
-To start the ALM Server service, execute
+To start the Kobee Server service, execute
 [source]
 ----
-sudo systemctl start almserver59
+sudo systemctl start kobeeserver60
 ----
 
-To stop the ALM Server service, execute
+To stop the Kobee Server service, execute
 [source]
 ----
-sudo systemctl stop almserver59
+sudo systemctl stop kobeeserver60
 ----
 
-When you want to remove the ALM Server service, execute
+When you want to remove the Kobee Server service, execute
 [source]
 ----
-sudo systemctl disable almserver59
+sudo systemctl disable kobeeserver60
 ----
 
 === RedHat Linux SystemV system
 
-Specify the user that should run the ALM Server service in the SystemV init script file. It is not recommended to run the ALM Server or Agent as the root user.
+Specify the user that should run the Kobee Server service in the SystemV init script file. It is not recommended to run the Kobee Server or Agent as the root user.
 
-Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59-service, and find the line
+Edit the file _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60-service, and find the line
 [source]
 ----
 #RUN_AS_USER=
@@ -1114,43 +1114,43 @@ Replace it with
 ----
 RUN_AS_USER=<Linux user>
 ----
-Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59-service file executable.
+Make the _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60-service file executable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
-Install the ALM Server service.
+Install the Kobee Server service.
 [source]
 ----
-sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/init.d/
-sudo chkconfig almserver59-service --add
-sudo chkconfig almserver59-service on
+sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/init.d/
+sudo chkconfig kobeeserver60-service --add
+sudo chkconfig kobeeserver60-service on
 ----
 
-To start the ALM Server service, execute
+To start the Kobee Server service, execute
 [source]
 ----
-sudo service almserver59-service start
+sudo service kobeeserver60-service start
 ----
 
-To stop the ALM Server service, execute
+To stop the Kobee Server service, execute
 [source]
 ----
-sudo service almserver59-service stop
+sudo service kobeeserver60-service stop
 ----
 
-When you want to remove the ALM Server service, execute
+When you want to remove the Kobee Server service, execute
 [source]
 ----
-sudo chkconfig almserver59-service --del
-sudo rm /etc/init.d/almserver59-service
+sudo chkconfig kobeeserver60-service --del
+sudo rm /etc/init.d/kobeeserver60-service
 ----
 
 
 === Debian Linux SystemV system
-Specify the user that should run the ALM Server service in the SystemV init script file. It is not recommended to run the ALM Server or Agent as the root user.
+Specify the user that should run the Kobee Server service in the SystemV init script file. It is not recommended to run the Kobee Server or Agent as the root user.
 
-Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59-service, and find the line
+Edit the file _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60-service, and find the line
 [source]
 ----
 #RUN_AS_USER=
@@ -1160,35 +1160,35 @@ Replace it with
 ----
 RUN_AS_USER=<Linux user>
 ----
-Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59-service file executable.
+Make the _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60-service file executable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
-Install the ALM Server service.
+Install the Kobee Server service.
 [source]
 ----
-sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/init.d/
-sudo update-rc.d almserver59-service defaults
+sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/init.d/
+sudo update-rc.d kobeeserver60-service defaults
 ----
 
-To start the ALM Server service, execute
+To start the Kobee Server service, execute
 [source]
 ----
-sudo /etc/init.d/almserver59-service start
+sudo /etc/init.d/kobeeserver60-service start
 ----
 
-To stop the ALM Server service, execute
+To stop the Kobee Server service, execute
 [source]
 ----
-sudo /etc/init.d/almserver59-service stop
+sudo /etc/init.d/kobeeserver60-service stop
 ----
 
-When you want to remove the ALM Server service, execute
+When you want to remove the Kobee Server service, execute
 [source]
 ----
-sudo update-rc.d -f almserver59-service remove
-sudo rm /etc/init.d/almserver59-service
+sudo update-rc.d -f kobeeserver60-service remove
+sudo rm /etc/init.d/kobeeserver60-service
 ----
 
 
@@ -1196,7 +1196,7 @@ sudo rm /etc/init.d/almserver59-service
 
 === AIX
 
-Edit the file _ALM_HOME_/daemons/server/karaf/etc/almserver59-wrapper.conf. Remove the line that starts with
+Edit the file _KOBEE_HOME_/daemons/server/karaf/etc/kobeeserver60-wrapper.conf. Remove the line that starts with
 [source]
 ----
 set.JDK_JAVA_OPTIONS=...
@@ -1238,9 +1238,9 @@ wrapper.java.additional.29=-Dkaraf.startLocalConsole=false
 wrapper.java.additional.30=-Dkaraf.startRemoteShell=true
 ----
 
-Specify the user that should run the ALM Server service in the SystemV init script file. It is not recommended to run the ALM Server or Agent as the root user.
+Specify the user that should run the Kobee Server service in the SystemV init script file. It is not recommended to run the Kobee Server or Agent as the root user.
 
-Edit the file _ALM_HOME_/daemons/server/karaf/bin/almserver59-service, and find the line
+Edit the file _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60-service, and find the line
 [source]
 ----
 #RUN_AS_USER=
@@ -1260,50 +1260,50 @@ Replace it with
 ----
 su $RUN_AS_USER -c "$REALPATH $1"
 ----
-Make the _ALM_HOME_/daemons/server/karaf/bin/almserver59-service file executable.
+Make the _KOBEE_HOME_/daemons/server/karaf/bin/kobeeserver60-service file executable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
-Install the ALM Server service.
+Install the Kobee Server service.
 [source]
 ----
-sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/rc.d/init.d/
-sudo ln -s -f /etc/rc.d/init.d/almserver59-service /etc/rc.d/rc2.d/K20almserver59-service
-sudo ln -s -f /etc/rc.d/init.d/almserver59-service /etc/rc.d/rc2.d/S20almserver59-service
+sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/rc.d/init.d/
+sudo ln -s -f /etc/rc.d/init.d/kobeeserver60-service /etc/rc.d/rc2.d/K20kobeeserver60-service
+sudo ln -s -f /etc/rc.d/init.d/kobeeserver60-service /etc/rc.d/rc2.d/S20kobeeserver60-service
 ----
 
-To start the ALM Server service, execute
+To start the Kobee Server service, execute
 [source]
 ----
-sudo /etc/rc.d/init.d/almserver59-service start
+sudo /etc/rc.d/init.d/kobeeserver60-service start
 ----
 
-To stop the ALM Server service, execute
+To stop the Kobee Server service, execute
 [source]
 ----
-sudo /etc/rc.d/init.d/almserver59-service stop
+sudo /etc/rc.d/init.d/kobeeserver60-service stop
 ----
 
-When you want to remove the ALM Server service, execute
+When you want to remove the Kobee Server service, execute
 [source]
 ----
-sudo rm /etc/rc.d/init.d/almserver59-service
-sudo rm /etc/rc.d/rc2.d/K20almserver59-service
-sudo rm /etc/rc.d/rc2.d/S20almserver59-service
+sudo rm /etc/rc.d/init.d/kobeeserver60-service
+sudo rm /etc/rc.d/rc2.d/K20kobeeserver60-service
+sudo rm /etc/rc.d/rc2.d/S20kobeeserver60-service
 ----
 
 [appendix]
 [[_jaasconfiguration]]
 == JAAS configuration
 
-For the authentication and authorization of users, IKAN ALM uses the Java Authentication and Authorization Service (JAAS) (see https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). JAAS authentication is performed in a pluggable fashion. This permits applications to remain independent from underlying authentication technologies. New or updated authentication technologies can be plugged into IKAN ALM without requiring modifications to the application itself.
+For the authentication and authorization of users, Kobee uses the Java Authentication and Authorization Service (JAAS) (see https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). JAAS authentication is performed in a pluggable fashion. This permits applications to remain independent from underlying authentication technologies. New or updated authentication technologies can be plugged into Kobee without requiring modifications to the application itself.
 
-The JAAS configuration used by Tomcat is set in the file _ALM_HOME_/system/security/jaas.config. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controls the users that can log in via the ALM GUI and that can authenticate via the REST API.
+The JAAS configuration used by Tomcat is set in the file _KOBEE_HOME_/system/security/jaas.config. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controls the users that can log in via the ALM GUI and that can authenticate via the REST API.
 
-The JAAS configuration by the ALM Server can be found in the file _ALM_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. This configuration controls the users that can connect via the ALM Commandline.
+The JAAS configuration by the Kobee Server can be found in the file _KOBEE_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. This configuration controls the users that can connect via the Kobee Commandline.
 
-By default, IKAN ALM is configured to use a password file that contains the authentication and authorization information of the 3 default users :
+By default, Kobee is configured to use a password file that contains the authentication and authorization information of the 3 default users :
 
 * "global", password "_global_", member of the user groups _ALM User_ and _ALM Administrator_ : a global administrator user that has full access rights.
 
@@ -1320,30 +1320,30 @@ The default JAAS configuration files contain examples for configuring ALM authen
 
 === JAAS configuration: password file
 
-The default IKAN ALM JAAS configuration uses a simple password file. For Tomcat (jaas.config), this looks like :
+The default Kobee JAAS configuration uses a simple password file. For Tomcat (jaas.config), this looks like :
 
 [source]
 ----
-/** ALM Login **/
+/** Kobee Login **/
 ALM
 {
-    com.tagish.auth.FileLogin required pwdFile="ALM_HOME/system/security/passwd.config";
+    com.tagish.auth.FileLogin required pwdFile="KOBEE_HOME/system/security/passwd.config";
 };
 ----
 
-For the ALM Server (JaasPropertiesLoginModule.xml) :
+For the Kobee Server (JaasPropertiesLoginModule.xml) :
 
 [source]
 ----
 	<!-- ALM login using File Login -->
 	<jaas:config name="ALM">
 		<jaas:module className="com.tagish.auth.FileLogin" flags="required">
-            pwdFile=_ALM_HOME_/system/security/passwd.config
+            pwdFile=_KOBEE_HOME_/system/security/passwd.config
 		</jaas:module>
 	</jaas:config>
 ----
 
-The default password file (_ALM_HOME_/system/security/passwd.config) looks like this :
+The default password file (_KOBEE_HOME_/system/security/passwd.config) looks like this :
 
 [source]
 ----
@@ -1365,7 +1365,7 @@ testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
 [[_jaasconfiguration_msad]]
 === JAAS configuration: Microsoft Active Directory
 
-The default IKAN ALM JAAS configuration files contain examples of how to connect to Microsoft AD using LDAP. We will explain the example that uses the secure ldaps protocol. The instructions to use the less secure ldap protocol are similar : only the _ldapUrl_ properties are different.
+The default Kobee JAAS configuration files contain examples of how to connect to Microsoft AD using LDAP. We will explain the example that uses the secure ldaps protocol. The instructions to use the less secure ldap protocol are similar : only the _ldapUrl_ properties are different.
 
 *For non secure ldap, the _ldapUrl_ will be of the following form:*
 [source]
@@ -1419,7 +1419,7 @@ LDAPLogin_SECURED
 **/
 ----
 
-Example of Microsoft AD connection for the ALM Server (JaasPropertiesLoginModule.xml) :
+Example of Microsoft AD connection for the Kobee Server (JaasPropertiesLoginModule.xml) :
 
 [source]
 ----
@@ -1455,7 +1455,7 @@ Example of Microsoft AD connection for the ALM Server (JaasPropertiesLoginModule
 
 ----
 
-To configure IKAN ALM to authenticate using Microsoft AD, rename the JAAS config realm named "ALM" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.config_ and _JaasPropertiesLoginModule.xml_ :
+To configure Kobee to authenticate using Microsoft AD, rename the JAAS config realm named "Kobee" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.config_ and _JaasPropertiesLoginModule.xml_ :
 
 [cols="1,3", frame="topbot", options="header"]
 |===
@@ -1500,9 +1500,9 @@ Values set in the file _jaas.config_ *MUST* be surrounded by ", while values set
 ====
 Refer to https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldaptive.org/docs/guide/jaas.html] for more information on the ldaptive JAAS properties.
 
-When changing the JAAS configuration, both the Tomcat and ALM Server services must be restarted. If the users can log in via the ALM GUI, the configuration in Tomcat is correct.
+When changing the JAAS configuration, both the Tomcat and Kobee Server services must be restarted. If the users can log in via the ALM GUI, the configuration in Tomcat is correct.
 
-You can troubleshoot login problems by activating additional logging.  This can be done by adding an extra _<logger>_ element in _TOMCAT_HOME_/webapps/alm/WEB-INF/classes/log4j2.xml
+You can troubleshoot login problems by activating additional logging.  This can be done by adding an extra _<logger>_ element in _TOMCAT_HOME_/webapps/Kobee/WEB-INF/classes/log4j2.xml
 
 [source]
 ----
@@ -1510,7 +1510,7 @@ You can troubleshoot login problems by activating additional logging.  This can 
 
 ----
 
-After restarting Tomcat and trying to log in, the log file _TOMCAT_HOME/logs/alm_webapp.log_ will contain extra info due to the logon attempt. This log can then be analyzed and/or sent to ALM Support.
+After restarting Tomcat and trying to log in, the log file _TOMCAT_HOME/logs/Kobee_webapp.log_ will contain extra info due to the logon attempt. This log can then be analyzed and/or sent to ALM Support.
 
 === JAAS configuration: secure ldap (LDAP over SSL/TLS)
 
@@ -1530,12 +1530,12 @@ The creation of the certificate is highly dependent on the Public Key Infrastruc
 
 The certificate must be exported to a file. This is possible in the format “DER encoded binary X.509”.
 
-The certificate file must then be imported into the Java keystore that is used by the ALM Server (_ALM_HOME/system/ssl/alm_keystore_). This is possible with the following command:
+The certificate file must then be imported into the Java keystore that is used by the Kobee Server (_KOBEE_HOME/system/ssl/alm_keystore_). This is possible with the following command:
 
 [source]
 ----
 
-<JAVA_HOME>\bin\keytool.exe -import -file <path_to_certificate> -keystore <ALM_HOME>/system/ssl/alm_keystore -alias <server_name>
+<JAVA_HOME>\bin\keytool.exe -import -file <path_to_certificate> -keystore <KOBEE_HOME>/system/ssl/alm_keystore -alias <server_name>
 
 ----
 
@@ -1544,7 +1544,7 @@ The certificate file must then be imported into the Java keystore that is used b
 [source]
 ----
 
-D:\java\jdk11.0.10\bin\keytool.exe -import -file C:\temp\dc1_ldap.cer -keystore E:\alm\59\system\ssl\alm_keystore -alias dc1_ldap
+D:\java\jdk11.0.10\bin\keytool.exe -import -file C:\temp\dc1_ldap.cer -keystore E:\Kobee\60\system\ssl\alm_keystore -alias dc1_ldap
 
 ----
 
@@ -1554,18 +1554,18 @@ Answer _yes_ to the question whether this certificate can be trusted.
 
 [NOTE]
 ====
-When switching to secure ldap the JAAS configuration of the ALM Web Application and the ALM Server need to be adjusted. Refer to the previous paragraph on how to do this.
+When switching to secure ldap the JAAS configuration of the ALM Web Application and the Kobee Server need to be adjusted. Refer to the previous paragraph on how to do this.
 ====
 
 [appendix]
 [[_secureconfiguration]]
 == Manually configuring the Secure Communication
 
-When running the IKAN ALM installer, the _alm.xmlrpc.secure_ installation parameter enables secure communication: when set to "true" communication between the installed ALM components is encrypted. As a consequence, if additional ALM components (like the ALM Agent or the ALM Commandline) are installed on remote hosts, they must also set _alm.xmlrpc.secure_ to "true" during installation, or communication with those components will fail. We strongly recommend setting _alm.xmlrpc.secure_ to "true" for security reasons. However, the secure communication can be changed manually (switched on or off) after the installation. Of course this switch should be done simultaneously for all installed ALM components.
+When running the Kobee installer, the _alm.xmlrpc.secure_ installation parameter enables secure communication: when set to "true" communication between the installed ALM components is encrypted. As a consequence, if additional ALM components (like the Kobee Agent or the Kobee Commandline) are installed on remote hosts, they must also set _alm.xmlrpc.secure_ to "true" during installation, or communication with those components will fail. We strongly recommend setting _alm.xmlrpc.secure_ to "true" for security reasons. However, the secure communication can be changed manually (switched on or off) after the installation. Of course this switch should be done simultaneously for all installed ALM components.
 
 === Secure Communication configuration: ALM Web Application
 
-The Secure Communication between the ALM Web Application and the ALM Server/Agent is controlled by a Context Parameter in the _TOMCAT_HOME/webapps/alm/WEB-INF/web.xml_ file:
+The Secure Communication between the ALM Web Application and the Kobee Server/Agent is controlled by a Context Parameter in the _TOMCAT_HOME/webapps/Kobee/WEB-INF/web.xml_ file:
 
 [source]
 ----
@@ -1584,11 +1584,11 @@ Set the _<param-value>_ to "false" if you want to disable the secure communicati
 
 The Tomcat service must be restarted after changing the context parameter.
 
-=== Secure Communication configuration: ALM Server
+=== Secure Communication configuration: Kobee Server
 
-The Secure Communication between the ALM Server and the ALM Agent/Web Application is controlled by parameters in the _server.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+The Secure Communication between the Kobee Server and the Kobee Agent/Web Application is controlled by parameters in the _server.cfg_ and the _org.ops4j.pax.web.cfg_ files.
 
-The _server.cfg_ file can be found under _ALM_HOME/daemons/server/karaf/etc_.
+The _server.cfg_ file can be found under _KOBEE_HOME/daemons/server/karaf/etc_.
 
 [source]
 ----
@@ -1605,7 +1605,7 @@ alm.server.installer.shutdownTimeout=60
 
 Set the _alm.xmlrpc.secure_ value to "false" if you want to disable the secure communication.
 
-The _org.ops4j.pax.web.cfg_ file can also be found under _ALM_HOME/daemons/server/karaf/etc_.
+The _org.ops4j.pax.web.cfg_ file can also be found under _KOBEE_HOME/daemons/server/karaf/etc_.
 
 [source]
 ----
@@ -1622,23 +1622,23 @@ org.osgi.service.http.port.secure=20021
 
 Set the value of the _org.osgi.service.http.enabled_ parameter to "true" and that of the _org.osgi.service.http.secure.enabled_ parameter to "false" if you want to disable the secure communication.
 
-The ALM Server service must be restarted after changing the parameters in the _server.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+The Kobee Server service must be restarted after changing the parameters in the _server.cfg_ and the _org.ops4j.pax.web.cfg_ files.
 
-=== Secure Communication configuration: ALM Agent
+=== Secure Communication configuration: Kobee Agent
 
-The Secure Communication between the ALM Agent and the ALM Server/Web Application is controlled by parameters in the _agent.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+The Secure Communication between the Kobee Agent and the Kobee Server/Web Application is controlled by parameters in the _agent.cfg_ and the _org.ops4j.pax.web.cfg_ files.
 
-The _agent.cfg_ file can be found under _ALM_HOME/daemons/agent/karaf/etc_.
+The _agent.cfg_ file can be found under _KOBEE_HOME/daemons/agent/karaf/etc_.
 
 [source]
 ----
 
 alm.agent.agentPort=20020
 alm.agent.serverPort=20021
-alm.agent.serverHost=ALM_SERVER_NAME
+alm.agent.serverHost=KOBEE_SERVER_NAME
 alm.agent.hostname=
 alm.agent.hostaddress=
-alm.agent.logfilepath=log/alm_agent.log
+alm.agent.logfilepath=log/Kobee_agent.log
 alm.xmlrpc.secure=true
 alm.agent.xml_rpc.cfg=etc/xml_rpc.properties
 
@@ -1646,7 +1646,7 @@ alm.agent.xml_rpc.cfg=etc/xml_rpc.properties
 
 Set the _alm.xmlrpc.secure_ value to "false" if you want to disable the secure communication.
 
-The _org.ops4j.pax.web.cfg_ file can also be found under _ALM_HOME/daemons/agent/karaf/etc_.
+The _org.ops4j.pax.web.cfg_ file can also be found under _KOBEE_HOME/daemons/agent/karaf/etc_.
 
 [source]
 ----
@@ -1663,20 +1663,20 @@ org.osgi.service.http.port.secure=20020
 
 Set the value of the _org.osgi.service.http.enabled_ parameter to "true" and that of the _org.osgi.service.http.secure.enabled_ parameter to "false" if you want to disable the secure communication.
 
-The ALM Agent service must be restarted after changing the parameters in the _agent.cfg_ and the _org.ops4j.pax.web.cfg_ files.
+The Kobee Agent service must be restarted after changing the parameters in the _agent.cfg_ and the _org.ops4j.pax.web.cfg_ files.
 
-=== Secure Communication configuration: ALM Commandline
+=== Secure Communication configuration: Kobee Commandline
 
-You do not need to configure any installation files of the ALM Commandline installation if you want to disable or enable the secure communication. Just set the value of the _-secured_ commandline option to "true" or "false" if you want encrypted or non-encrypted communication with the ALM Server. This can also be done in the property files that can be set with the _-propertyfile_ option, eg. in `ALM_HOME/commandline/clr.properties` , or in `ALM_HOME/commandline/package.properties`.
+You do not need to configure any installation files of the Kobee Commandline installation if you want to disable or enable the secure communication. Just set the value of the _-secured_ commandline option to "true" or "false" if you want encrypted or non-encrypted communication with the Kobee Server. This can also be done in the property files that can be set with the _-propertyfile_ option, eg. in `KOBEE_HOME/commandline/clr.properties` , or in `KOBEE_HOME/commandline/package.properties`.
 
-This is also outlined in the usage of the ALM Commandline:
+This is also outlined in the usage of the Kobee Commandline:
 
 [source]
 ----
 
 ...
 
-  -password         password to connect to the IKAN ALM Server
+  -password         password to connect to the Kobee Server
   -secured          use encrypted connection or not (true|false)
 
 ...
@@ -1688,7 +1688,7 @@ This is also outlined in the usage of the ALM Commandline:
 [[_db2configuration]]
 == DB2 configuration
 
-When using DB2 as the IKAN ALM database, please make sure that the page size of the table space and its associated buffer pool is not less than 8K.
+When using DB2 as the Kobee database, please make sure that the page size of the table space and its associated buffer pool is not less than 8K.
 Otherwise, when creating a new database in DB2, the default page size is 4K and this can cause SQL errors while running the database initialization script.
 
 

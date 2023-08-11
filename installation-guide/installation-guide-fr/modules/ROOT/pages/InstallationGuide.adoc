@@ -1,16 +1,16 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
-:description: Guide Installation IKAN ALM (French)
-:revnumber: v5.9
-:revdate: 22.01.2022
+:description: Guide Installation Kobee (French)
+:revnumber: v6.0
+:revdate: 11.08.2023
 
-= Guide d'installation IKAN ALM
+= Guide d'installation Kobee
 
 == Objectif
 
-Ce document décrit comment installer tous les composants d'IKAN ALM.
+Ce document décrit comment installer tous les composants d'Kobee.
 
-IKAN ALM comprend 4 composants principaux:
+Kobee comprend 4 composants principaux:
 
 * l'Application Web
 * le Serveur
@@ -21,25 +21,25 @@ IKAN ALM comprend 4 composants principaux:
 image::ikanalm-architecture-fr.png[,972,635] 
 
 
-Le _Serveur_ et l'_Application Web_ IKAN ALM ont besoin d'être installés sur la même machine. L'Agent et l'Interface de Ligne de Commande peuvent être installés sur des machines distantes. Pour avoir une installation correcte, vous devez installer le _Serveur_ avec l'_Application Web_ et au moins 1 _Agent_ IKAN ALM.
+Le _Serveur_ et l'_Application Web_ Kobee ont besoin d'être installés sur la même machine. L'Agent et l'Interface de Ligne de Commande peuvent être installés sur des machines distantes. Pour avoir une installation correcte, vous devez installer le _Serveur_ avec l'_Application Web_ et au moins 1 _Agent_ Kobee.
 
-L'_Application Web_ IKAN ALM est une interface pour la gestion d'IKAN ALM qui doit être déployé dans un serveur Apache Tomcat.
+L'_Application Web_ Kobee est une interface pour la gestion d'Kobee qui doit être déployé dans un serveur Apache Tomcat.
 
-Le _Serveur_ IKAN ALM contient 2 composants différents:
+Le _Serveur_ Kobee contient 2 composants différents:
 
 * Serveur démon
 * Serveur environnement
 
-Le Serveur démon IKAN ALM lui-même comprend 2 sous-composants: un Planificateur et un Moniteur.
+Le Serveur démon Kobee lui-même comprend 2 sous-composants: un Planificateur et un Moniteur.
 
-Le Planificateur IKAN ALM est responsable de l'observation du RCV (Référentiel de Contrôle de Version) et de la création d'une Requête de construction si des changements (des Sources modifiées) sont détectés dans le RCV.
+Le Planificateur Kobee est responsable de l'observation du RCV (Référentiel de Contrôle de Version) et de la création d'une Requête de construction si des changements (des Sources modifiées) sont détectés dans le RCV.
 
-Le Moniteur IKAN ALM gère les différentes actions de construction et de déploiement qui sont exécutées par le(s) Agent(s) IKAN ALM.
+Le Moniteur Kobee gère les différentes actions de construction et de déploiement qui sont exécutées par le(s) Agent(s) Kobee.
 
-Le Serveur et l'Agent IKAN ALM fonctionnent comme des bundles OSGi dans des conteneurs Apache Karaf, profitant ainsi des avantages d'une architecture modulaire.
-Le Serveur démon IKAN ALM sera installé dans l'environnement du Serveur IKAN ALM, et pourra être lancé par des scripts, ou être démarré comme service Windows ou comme une démon Unix/Linux.
+Le Serveur et l'Agent Kobee fonctionnent comme des bundles OSGi dans des conteneurs Apache Karaf, profitant ainsi des avantages d'une architecture modulaire.
+Le Serveur démon Kobee sera installé dans l'environnement du Serveur Kobee, et pourra être lancé par des scripts, ou être démarré comme service Windows ou comme une démon Unix/Linux.
 
-L'environnement du _Serveur_ IKAN ALM contient les fichiers et les répertoires importants suivants:
+L'environnement du _Serveur_ Kobee contient les fichiers et les répertoires importants suivants:
 
 * Emplacement Archives de construction: l'emplacement où les résultats de construction seront sauvegardés,
 * Emplacement des Copies de travail: l'emplacement où les sources récupérées du Référentiel seront sauvegardées avant d'être transportées vers les Agents,
@@ -48,9 +48,9 @@ L'environnement du _Serveur_ IKAN ALM contient les fichiers et les répertoires 
 * Configuration avec un Système de sécurité externe d'authentification and d'autorisation. Pour plus d`'informations se référer à l'Appendice <<_jaasconfiguration>>, 
 * Documentation en format PDF.
 
-L'_Agent_ IKAN ALM doit être installé sur une Machine qui doit exécuter des Constructions et des Déploiements IKAN ALM.
+L'_Agent_ Kobee doit être installé sur une Machine qui doit exécuter des Constructions et des Déploiements Kobee.
 
-L'_Interface de Ligne de Commande_ IKAN ALM peut être installée séparément et peut être utilisée comme alternative à l'Interface Web pour la création de Requêtes de niveau, de Rapports et la gestion de Paquets en utilisant une Ligne de Commande Windows ou un Shell Linux/Unix.
+L'_Interface de Ligne de Commande_ Kobee peut être installée séparément et peut être utilisée comme alternative à l'Interface Web pour la création de Requêtes de niveau, de Rapports et la gestion de Paquets en utilisant une Ligne de Commande Windows ou un Shell Linux/Unix.
 
 Exemple de configuration 1: Une seule machine, tout est installé localement:
 
@@ -65,9 +65,9 @@ Exemple de configuration 2: Plusieurs machines, un Agent distant et la Ligne de 
 
 == Prérequis
 
-La section suivante offre un aperçu des prérequis pour l'installation d'IKAN ALM.
+La section suivante offre un aperçu des prérequis pour l'installation d'Kobee.
 
-Les exigences techniques détaillées sont disponibles sur xref:5.9@technical-sheet-fr:root:TechSheet.adoc[Fiche Technique IKAN ALM].
+Les exigences techniques détaillées sont disponibles sur xref:5.9@technical-sheet-fr:root:TechSheet.adoc[Fiche Technique Kobee].
 
 === Les exigences techniques
 
@@ -95,26 +95,26 @@ Les exigences techniques détaillées sont disponibles sur xref:5.9@technical-sh
 |===
 
 Il n'existe pas de règle absolue sur l'espace de stockage disque requis.
-L'espace de stockage nécessaire dépendra du nombre et de la taille des projets gérés dans IKAN ALM et de la taille des résultats de construction sauvegardés dans les Archives de construction.
+L'espace de stockage nécessaire dépendra du nombre et de la taille des projets gérés dans Kobee et de la taille des résultats de construction sauvegardés dans les Archives de construction.
 Plus il y a de projets et plus les constructions sont larges, plus de l'espace de stockage sera nécessaire sur le disque.
 
-La quantité de RAM et d’espace disque nécessaire à une machine qui exécute un Agent IKAN ALM, dépend en grande partie de la quantité de ressources nécessaires aux scripts de construction et de déploiement et aux phases personnalisées utilisées par les projets qui y sont construits et déployés. 
+La quantité de RAM et d’espace disque nécessaire à une machine qui exécute un Agent Kobee, dépend en grande partie de la quantité de ressources nécessaires aux scripts de construction et de déploiement et aux phases personnalisées utilisées par les projets qui y sont construits et déployés. 
 
 [[_bhbicaaj]]
 === Java 11
 
-Tous les composants IKAN ALM nécessitent une version complète de Java 11. IKAN ALM a été testé pour fonctionner avec Oracle Java, Adoptium Eclipse Temurin (dit AdoptOpenJDK), Constructions Azul Zulu de OpenJDK et OpenJDK sur plusieurs distributions Linux.
+Tous les composants Kobee nécessitent une version complète de Java 11. Kobee a été testé pour fonctionner avec Oracle Java, Adoptium Eclipse Temurin (dit AdoptOpenJDK), Constructions Azul Zulu de OpenJDK et OpenJDK sur plusieurs distributions Linux.
 
 === Tomcat 9
 
-L'Application Web IKAN ALM requiert un conteneur Web conforme à Java 11, supportant les spécifications Servlet 4.0 et les spécifications JSP 2.3. Les versions antérieures de Tomcat ne sont pas supportées.
+L'Application Web Kobee requiert un conteneur Web conforme à Java 11, supportant les spécifications Servlet 4.0 et les spécifications JSP 2.3. Les versions antérieures de Tomcat ne sont pas supportées.
 
-IKAN ALM a été testé avec Apache Tomcat 9.0.33 et les versions ultérieures.
-IKAN ALM a été validé pour fonctionner avec Tomcat sous différents systèmes d'exploitation, y compris les versions récentes de Windows et Linux, Sun Solaris, HP Unix, zLinux, ... Si un Java Runtime approprié est disponible (<<_bhbicaaj>>), IKAN ALM peut également fonctionner sous d'autres systèmes d'exploitation.
+Kobee a été testé avec Apache Tomcat 9.0.33 et les versions ultérieures.
+Kobee a été validé pour fonctionner avec Tomcat sous différents systèmes d'exploitation, y compris les versions récentes de Windows et Linux, Sun Solaris, HP Unix, zLinux, ... Si un Java Runtime approprié est disponible (<<_bhbicaaj>>), Kobee peut également fonctionner sous d'autres systèmes d'exploitation.
 
 ==== Spécifier le support Unicode dans Tomcat
 
-Si vous utilisez des symboles Unicode dans IKAN ALM (par example, pour des projets dont le nom contient des caractères spéciaux), un paramètre supplémentaire doit être spécifié dans le fichier de configuration server.xml de Tomcat.
+Si vous utilisez des symboles Unicode dans Kobee (par example, pour des projets dont le nom contient des caractères spéciaux), un paramètre supplémentaire doit être spécifié dans le fichier de configuration server.xml de Tomcat.
 
 Modifiez le fichier __TOMCAT_HOME/conf/server.xml__ en ajoutant l'attribut ``URIEncoding="UTF-8"`` dans le connecteur http, comme suit: 
 
@@ -130,7 +130,7 @@ Pour plus d'information sur les anomalies d'encodage des caractères dans Tomcat
 [[_java_options_for_tomcat]]
 ==== Options Java pour Tomcat
 
-Il est recommandé de spécifier les paramètres suivants pour l'exécution d'IKAN ALM utilisant Java 11 dans Tomcat:
+Il est recommandé de spécifier les paramètres suivants pour l'exécution d'Kobee utilisant Java 11 dans Tomcat:
 
 * initial Java heap size (-Xms) : 512m
 * max Java heap size (-Xmx) : 1024m
@@ -143,7 +143,7 @@ Pour Windows:
 [source]
 ----
 SET JAVA_HOME=<JAVA_HOME>
-SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
 ----
 
 Pour Linux/Unix:
@@ -151,7 +151,7 @@ Pour Linux/Unix:
 [source]
 ----
 JAVA_HOME=<JAVA_HOME>
-JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config"
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config"
 ----
 
 Si vous utilisez Tomcat comme service Windows, vous devez spécifier les paramètres de mémoire dans le fichier __TOMCAT_HOME/bin/service.bat__:
@@ -161,7 +161,7 @@ Si vous utilisez Tomcat comme service Windows, vous devez spécifier les paramè
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
 SET JvmMx=1024
-SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Djava.security.auth.login.config=ALM_HOME/system/security/jaas.config
+SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
 ----
 
 Après avoir fait ces modifications, vous devez ré-installer le service en exécutant "service.bat remove", suivi de "service.bat install". Vous devez disposer de droits d'accès d'Administrateur pour exécuter ces commandes.
@@ -169,7 +169,7 @@ Après avoir fait ces modifications, vous devez ré-installer le service en exé
 
 === Base de données
 
-IKAN ALM supporte les types de bases de données MySQL, MsSQL, Oracle, PostgreSQL et DB2 comme base de données interne. Pour des raisons de permformance, il est fortement recommandé que la latence du réseau entre le Serveur IKAN ALM et sa Base de données soit la plus petite possible. Pour éviter les problèmes de dates et d'heures, il est recommandé que le Serveur IKAN ALM et sa Base de données aient le même fuseau horaire.
+Kobee supporte les types de bases de données MySQL, MsSQL, Oracle, PostgreSQL et DB2 comme base de données interne. Pour des raisons de permformance, il est fortement recommandé que la latence du réseau entre le Serveur Kobee et sa Base de données soit la plus petite possible. Pour éviter les problèmes de dates et d'heures, il est recommandé que le Serveur Kobee et sa Base de données aient le même fuseau horaire.
 
 Lors de l'installation, il est possible d'initialiser la Base de données existante avec des données par défaut. Prenez garde si vous sélectionnez l'option d'initialiser la Base de données, car les données existantes seront écrasées. Avant d'initialiser la base de données, assurez-vous que la Base de données/le schéma existe.
 
@@ -181,20 +181,20 @@ Voici un exemple de commande pour créer une Base de données MySQL:
 
 Pour plus d`'informations concernant la configuration UTF8 appropriée pour votre système, se référer à la documentation de la Base de données utilisée.
 
-Lors de l'utilisation d'une Base de données DB2 pour IKAN ALM, une configuration supplémentaire est nécessaire.
+Lors de l'utilisation d'une Base de données DB2 pour Kobee, une configuration supplémentaire est nécessaire.
 Pour plus d'information, consultez la partie <<_db2configuration>>.
 
 [[_installing]]
-== Installer IKAN ALM
+== Installer Kobee
 
-Cette section décrit les différentes étapes de l'installation d'IKAN ALM.
+Cette section décrit les différentes étapes de l'installation d'Kobee.
 
 === Configurer l'Installeur
 
-Les scripts d'installation d'IKAN ALM sont délivrés par le fichier _IKAN_ALM_5.9_console_win.zip_ ou _IKAN_ALM_5.9_console_linux.tar.gz_.
+Les scripts d'installation d'Kobee sont délivrés par le fichier _Kobee_6.0_console_win.zip_ ou _Kobee_6.0_console_linux.tar.gz_.
 Expensez ce fichier quelque part sur la machine cible. Le répertoire expansé contenant les fichiers d'installation (scripts ANT) sera noté _INSTALL_DIR_.
 
-L'Installeur inclus installera les composants IKAN ALM dans des répertoires de destination spécifiques.
+L'Installeur inclus installera les composants Kobee dans des répertoires de destination spécifiques.
 
 Ouvrez le fichier __INSTALL_DIR__/install.properties qui sera utilisé par les scripts d'installation en configurant les différentes propriétés.
 
@@ -207,34 +207,34 @@ _Ne pas utiliser les barres obliques arrière_ ('\') dans les propriétés de ch
 
 [source]
 ----
-# General Settings : Specify which components of IKAN ALM to install
+# General Settings : Specify which components of Kobee to install
 # ---------------------------------------------------------------------------
-# Flag to specify whether to install IKAN ALM Server or not: install : true
+# Flag to specify whether to install Kobee Server or not: install : true
 # no install : false
 alm.server.install=true
-# Flag to specify whether to install the IKAN ALM Agent or not : install : true
+# Flag to specify whether to install the Kobee Agent or not : install : true
 # no install : false
 alm.agent.install=true
-# Flag to specify whether to install the IKAN ALM Commandline or not : install : true
+# Flag to specify whether to install the Kobee Commandline or not : install : true
 # no install : false
 alm.commandline.install=true
-# Flag to specify whether the communication between the IKAN ALM components must
-# be secured.  Note that if one IKAN ALM component is installed secured, all components
+# Flag to specify whether the communication between the Kobee components must
+# be secured.  Note that if one Kobee component is installed secured, all components
 # must be installed secured.
 alm.xmlrpc.secure=true
 ----
 
-Dans les Paramètres généraux, vous spécifiez quels composants d'IKAN ALM vous voulez installer. 
+Dans les Paramètres généraux, vous spécifiez quels composants d'Kobee vous voulez installer. 
 
-Mettre _alm.server.install_ à "true" pour installer le Serveur IKAN ALM et déployer l'Application Web IKAN ALM sur Tomcat. +
-Mettre _alm.agent.install_ à "true" pour installer l'Agent IKAN ALM. +
-Mettre _alm.commandline.install_ à "true" pour installer l'Interface de Ligne de Commande IKAN ALM.
+Mettre _alm.server.install_ à "true" pour installer le Serveur Kobee et déployer l'Application Web Kobee sur Tomcat. +
+Mettre _alm.agent.install_ à "true" pour installer l'Agent Kobee. +
+Mettre _alm.commandline.install_ à "true" pour installer l'Interface de Ligne de Commande Kobee.
 
-Si _alm.xmlrpc.secure_ est mis à "true", alors toute communication entre les composants IKAN ALM est cryptée. La conséquence est que, si des composants IKAN ALM supplémentaires comme un Agent ou l'Interface de Ligne de Commande sont installés sur des machines distantes, ils devrons aussi avoir __alm.xmlrpc.secure__ à "true" durant leur installation ou bien la communication entre eux échouera. Nous recommandons fortement de mettre __alm.xmlrpc.secure__ à "true" pour des raisons de sécurité.
+Si _alm.xmlrpc.secure_ est mis à "true", alors toute communication entre les composants Kobee est cryptée. La conséquence est que, si des composants Kobee supplémentaires comme un Agent ou l'Interface de Ligne de Commande sont installés sur des machines distantes, ils devrons aussi avoir __alm.xmlrpc.secure__ à "true" durant leur installation ou bien la communication entre eux échouera. Nous recommandons fortement de mettre __alm.xmlrpc.secure__ à "true" pour des raisons de sécurité.
 
 Pour plus d'information, consulter <<_secureconfiguration, Configuration manuelle de la Communication sécurisée>>.
 
-==== Paramètres du Serveur et de l'Application Web IKAN ALM
+==== Paramètres du Serveur et de l'Application Web Kobee
 
 Quand vous installez le Serveur et l'Application Web, vous renseignez les propriétés décrites dans les sections qui suivent:
 
@@ -243,14 +243,14 @@ Quand vous installez le Serveur et l'Application Web, vous renseignez les propri
 
 [source]
 ----
-# Destination folder of the IKAN ALM Server files :
+# Destination folder of the Kobee Server files :
 alm.server.installLocation=C:/alm
 
-# Java Runtime to run the IKAN ALM Server with :
+# Java Runtime to run the Kobee Server with :
 alm.server.javaHome=d:/java/jdk1.6.0_45
 
-# IKAN ALM Server Runtime parameters :
-# serverPort : port IKAN ALM Server is listening on (default=20021)
+# Kobee Server Runtime parameters :
+# serverPort : port Kobee Server is listening on (default=20021)
 alm.server.serverPort=20021
 # agentPort : port Agent should be listening on (default=20020)
 alm.server.agentPort=20020
@@ -270,34 +270,34 @@ alm.server.karaf.sshPort=8102
 alm.server.installLocation
 |
 
-L'emplacement où IKAN ALM devra être installé. Plus loin dans ce document, cet emplacement sera référencé _ALM_HOME_.
+L'emplacement où Kobee devra être installé. Plus loin dans ce document, cet emplacement sera référencé _KOBEE_HOME_.
 |
 
 alm.server.javaHome
 |
 
-Le chemin réel d'installation du Java qui sera utilisé pour lancer le Serveur IKAN ALM. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
+Le chemin réel d'installation du Java qui sera utilisé pour lancer le Serveur Kobee. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.server.serverPort
 |
 
-Le numéro de port que le Serveur IKAN ALM écoute pour communiquer avec l'Agent IKAN ALM. Noter que vous devrez utiliser le même numéro de port pour les installations d'Agent IKAN ALM ultérieures, sinon la communication Agent-Serveur échouera. Le défaut est "20021".
+Le numéro de port que le Serveur Kobee écoute pour communiquer avec l'Agent Kobee. Noter que vous devrez utiliser le même numéro de port pour les installations d'Agent Kobee ultérieures, sinon la communication Agent-Serveur échouera. Le défaut est "20021".
 
-Si vous changez cette valeur, vous changerez aussi celle de la propriété du _Server Port_ de la Machine représentant le Serveur dans l'Interface Utilisateur Web d'IKAN ALM.
+Si vous changez cette valeur, vous changerez aussi celle de la propriété du _Server Port_ de la Machine représentant le Serveur dans l'Interface Utilisateur Web d'Kobee.
 |
 
 alm.server.agentPort
 |
 
-Le numéro de port que l'Agent IKAN ALM écoute pour communiquer avec le Serveur IKAN ALM. Vous devrez utiliser ce numéro de port quand vous installez l'Agent IKAN ALM sur la machine du Serveur IKAN ALM (Agent local). Le défaut est "20020".|
+Le numéro de port que l'Agent Kobee écoute pour communiquer avec le Serveur Kobee. Vous devrez utiliser ce numéro de port quand vous installez l'Agent Kobee sur la machine du Serveur Kobee (Agent local). Le défaut est "20020".|
 
 alm.server.karaf.rmiRegistryPort +
 alm.server.karaf.rmiServerPort +
 alm.server.karaf.sshPort
 |
 
-Les numéros de port spécifiques au container Apache Karaf hébergeant le démon du Serveur IKAN ALM. Normalement, il n'y a pas besoin de changes ces numéros de port, sauf, si vous avez des conflits avec ces ports.
+Les numéros de port spécifiques au container Apache Karaf hébergeant le démon du Serveur Kobee. Normalement, il n'y a pas besoin de changes ces numéros de port, sauf, si vous avez des conflits avec ces ports.
 |===
 
 ===== Configuration de la Base de données 
@@ -314,9 +314,9 @@ alm.server.rdbms.pwd=alm
 # dbname : database name or Oracle SID or Service name
 alm.server.rdbms.dbname=alm
 # dbschema : database schema (for DB2 and POSTGRESQL)
-alm.server.rdbms.dbschema=ALM
-# Flag to indicate whether to initialize the IKAN ALM database
-# WARNING : when set to "true", all IKAN ALM related tables in the target
+alm.server.rdbms.dbschema=kobee
+# Flag to indicate whether to initialize the Kobee database
+# WARNING : when set to "true", all Kobee related tables in the target
 # database will be dropped and populated with initial data !!
 alm.server.rdbms.initALMDatabase=false
 ----
@@ -329,7 +329,7 @@ alm.server.rdbms.initALMDatabase=false
 |
 
 alm.server.rdbms.type
-a|Le type de Base de données qui hébergera la Base de données IKAN ALM .
+a|Le type de Base de données qui hébergera la Base de données Kobee .
 
 Les valeurs possibles sont:
 
@@ -367,7 +367,7 @@ Mot de passe de l'utilisateur de la Base de données
 alm.server.rdbms.dbname
 |
 
-Le nom de la Base de données IKAN ALM. Pour Oracle, c'est le SID de la Base de données ou le nom du Service.
+Le nom de la Base de données Kobee. Pour Oracle, c'est le SID de la Base de données ou le nom du Service.
 |
 
 alm.server.rdbms.dbschema
@@ -379,9 +379,9 @@ Le nom du schéma de la Base de données. Requis avec les Bases de données de t
 alm.server.rdbms.initALMDatabase
 |
 
-Mettre à "true" pour initialiser la Base de données IKAN ALM pendant le processus d'installation. Le défaut est "false".
+Mettre à "true" pour initialiser la Base de données Kobee pendant le processus d'installation. Le défaut est "false".
 
-*ATTENTION*: Quand il est mis à "true", toutes les tables IKAN ALM dans la Base de données cible seront supprimées (drop) et re-remplies avec les données initiales!
+*ATTENTION*: Quand il est mis à "true", toutes les tables Kobee dans la Base de données cible seront supprimées (drop) et re-remplies avec les données initiales!
 |===
 
 
@@ -391,12 +391,12 @@ Mettre à "true" pour initialiser la Base de données IKAN ALM pendant le proces
 [source]
 ----
 # Apache Tomcat Configuration : 
-# set alm.server.tomcat to true if you want to deploy IKAN ALM under tomcat 
+# set alm.server.tomcat to true if you want to deploy Kobee under tomcat 
 alm.server.tomcat=true
 # catalina.base folder of the tomcat instance
 alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
 alm.server.tomcat.port=8080
-# catalina.home folder of tomcat. If left empty, ALM will assume catalina.home=catalina.base
+# catalina.home folder of tomcat. If left empty, Kobee will assume catalina.home=catalina.base
 alm.server.tomcat.catalina.home=
 ----
 
@@ -410,13 +410,13 @@ alm.server.tomcat.catalina.home=
 alm.server.tomcat
 |
 
-Mettre à "true" si vous voulez déployer l'Application Web IKAN ALM sur Tomcat. Le défaut est "true".
+Mettre à "true" si vous voulez déployer l'Application Web Kobee sur Tomcat. Le défaut est "true".
 |
 
 alm.server.tomcat.home
 |
 
-Mettre l'emplacement de base de l'installation Tomcat qui hébergera l'Application Web IKAN ALM.
+Mettre l'emplacement de base de l'installation Tomcat qui hébergera l'Application Web Kobee.
 |
 
 alm.server.tomcat.port
@@ -428,37 +428,37 @@ Le port du Connecteur HTTP de Tomcat. Le défaut est "8080".
 alm.server.tomcat.catalina.home
 |
 
-L'emplacement du CATALINA_HOME de l'instance Tomcat. Si cette valeur est laissée vide, laquelle l'est par défaut, IKAN ALM assume que CATALINA_HOME=CATALINA_BASE. Vous devrez renseigner cette propriété si vous installez Tomcat sur Linux en utilisant un gestionnaire de paquets (comme apt), ou si vous avez configuré votre Tomcat pour fonctionner avec plusieurs instances.
+L'emplacement du CATALINA_HOME de l'instance Tomcat. Si cette valeur est laissée vide, laquelle l'est par défaut, Kobee assume que CATALINA_HOME=CATALINA_BASE. Vous devrez renseigner cette propriété si vous installez Tomcat sur Linux en utilisant un gestionnaire de paquets (comme apt), ou si vous avez configuré votre Tomcat pour fonctionner avec plusieurs instances.
 Consulter https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt[https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt,window=_blank] pour plus d'information. 
 |===
 
 
 
-==== Paramètres de l'Agent IKAN ALM
-Pour installer un Agent IKAN ALM, remplissez les propriétés suivantes:
+==== Paramètres de l'Agent Kobee
+Pour installer un Agent Kobee, remplissez les propriétés suivantes:
 
 [source]
 ----
 # ---------------------------------------------------------------------------
-# IKAN ALM Agent Settings, when alm.agent.install=true :
+# Kobee Agent Settings, when alm.agent.install=true :
 # ---------------------------------------------------------------------------
-# Destination folder of the IKAN ALM Agent files :
-# Recommended : use the IKAN ALM Server installLocation
+# Destination folder of the Kobee Agent files :
+# Recommended : use the Kobee Server installLocation
 alm.agent.installLocation=C:/alm
 
-# Java Runtime to run the IKAN ALM Agent with (may be JRE or JDK):
+# Java Runtime to run the Kobee Agent with (may be JRE or JDK):
 alm.agent.javaHome=d:/java/jdk1.6.0_45
 
-# IKAN ALM Agent Runtime parameters :
+# Kobee Agent Runtime parameters :
 # agentPort : port Agent should be listening on (default=20020)
 # serverPort : port Server is listening on (default=20021)
 # serverHost : host Server is running on (default=localhost)
 # hostname: optional, leave empty unless you want to override the system hostname
 #  retrieved as InetAddress.getHostName(), e.g. to use a fully qualified domain name like 
-#  almAgent.your.domain for communication with the IKAN ALM server
+#  almAgent.your.domain for communication with the Kobee server
 # hostaddress: optional, leave empty unless you want to override the system hostaddress
 #  retrieved as InetAddress.getHostAddress(), e.g. to use a IP Address which differs from 
-#  the internal IP Address for communication with the IKAN ALM server
+#  the internal IP Address for communication with the Kobee server
 alm.agent.agentPort=20020
 alm.agent.serverHost=localhost
 alm.agent.serverPort=20021
@@ -468,7 +468,7 @@ alm.agent.hostaddress=
 alm.agent.karaf.rmiRegistryPort=1099
 alm.agent.karaf.rmiServerPort=44444
 alm.agent.karaf.sshPort=8101
-# relative path to the Karaf log of the IKAN ALM Agent
+# relative path to the Karaf log of the Kobee Agent
 alm.agent.logfilepath=log/alm_agent.log
 ----
 
@@ -482,47 +482,47 @@ alm.agent.logfilepath=log/alm_agent.log
 alm.agent.installLocation
 |
 
-L'emplacement où l'Agent IKAN ALM devra être installé. Quand vous installez un Agent et un Serveur IKAN ALM ensembles, remplissez cette valeur avec celle de la propriété _alm.server.installLocation_. (Voir <<_general_alm_server_settings, Paramètres globaux et l'implémentation du Serveur>>).
+L'emplacement où l'Agent Kobee devra être installé. Quand vous installez un Agent et un Serveur Kobee ensembles, remplissez cette valeur avec celle de la propriété _alm.server.installLocation_. (Voir <<_general_alm_server_settings, Paramètres globaux et l'implémentation du Serveur>>).
 
-Plus loin dans ce document, cet emplacement sera référencé __ALM_HOME__.
+Plus loin dans ce document, cet emplacement sera référencé __KOBEE_HOME__.
 |
 
 alm.agent.javaHome
 |
 
-Le chemin réel d'installation du Java qui sera utilisé pour lancer l'Agent IKAN ALM. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
+Le chemin réel d'installation du Java qui sera utilisé pour lancer l'Agent Kobee. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.agent.agentPort
 |
 
-Le numéro de port que l'Agent IKAN ALM écoute pour communiquer avec le Serveur IKAN ALM. . Le défaut est "20020".
+Le numéro de port que l'Agent Kobee écoute pour communiquer avec le Serveur Kobee. . Le défaut est "20020".
 
-Si vous changez cette valeur, vous changerez aussi celle de la propriété du _Agent Port_ de la Machine représentant l'Agent dans l'Interface Utilisateur Web d'IKAN ALM.
+Si vous changez cette valeur, vous changerez aussi celle de la propriété du _Agent Port_ de la Machine représentant l'Agent dans l'Interface Utilisateur Web d'Kobee.
 |
 
 alm.agent.serverHost
 |
 
-Le nom (ou l'adresse IP) de la machine du Serveur IKAN ALM. L'Agent IKAN ALM essaiera de se connecter au Serveur IKAN ALM avec ce nom (ou l'adresse IP) et en utilisant le protocole HTTP ou HTTPS. Le défaut est "localhost".
+Le nom (ou l'adresse IP) de la machine du Serveur Kobee. L'Agent Kobee essaiera de se connecter au Serveur Kobee avec ce nom (ou l'adresse IP) et en utilisant le protocole HTTP ou HTTPS. Le défaut est "localhost".
 |
 
 alm.agent.serverPort
 |
 
-Le numéro de port que le Serveur IKAN ALM écoute pour communiquer avec l'Agent IKAN ALM. L'Agent IKAN ALM essaiera de se connecter au Serveur IKAN ALM avec ce numéro de port. Le défaut est "20021".
+Le numéro de port que le Serveur Kobee écoute pour communiquer avec l'Agent Kobee. L'Agent Kobee essaiera de se connecter au Serveur Kobee avec ce numéro de port. Le défaut est "20021".
 |
 
 alm.agent.hostname
 |
 
-Cette propriété est optionnelle. Indiquer ce nom si vous voulez remplacer la détection automatique du nom de la machine de l'Agent IKAN ALM. Il est important que le nom entré ici corresponde à la valeur du champ _DHCP Name_ de la machine mise dans l'Interface Utilisateur Web d'IKAN ALM. Si les valeurs ne correspondent pas, l'Agent IKAN ALM ne pourra pas recevoir les travaux (Constructions ou Déploiements) du Serveur IKAN ALM. 
+Cette propriété est optionnelle. Indiquer ce nom si vous voulez remplacer la détection automatique du nom de la machine de l'Agent Kobee. Il est important que le nom entré ici corresponde à la valeur du champ _DHCP Name_ de la machine mise dans l'Interface Utilisateur Web d'Kobee. Si les valeurs ne correspondent pas, l'Agent Kobee ne pourra pas recevoir les travaux (Constructions ou Déploiements) du Serveur Kobee. 
 |
 
 alm.agent.hostaddress
 |
 
-Cette propriété est optionnelle. Indiquer cette adresse si vous voulez remplacer la détection automatique de l'adresse IP de la machine de l'Agent IKAN ALM. Il est important que l'adresse IP entrée ici corresponde à la valeur du champ _IP Address_ de la machine mise dans l'Interface Utilisateur Web d'IKAN ALM. Si les valeurs ne correspondent pas, l'Agent IKAN ALM ne pourra pas recevoir les travaux (Constructions ou Déploiements) du Serveur IKAN ALM. 
+Cette propriété est optionnelle. Indiquer cette adresse si vous voulez remplacer la détection automatique de l'adresse IP de la machine de l'Agent Kobee. Il est important que l'adresse IP entrée ici corresponde à la valeur du champ _IP Address_ de la machine mise dans l'Interface Utilisateur Web d'Kobee. Si les valeurs ne correspondent pas, l'Agent Kobee ne pourra pas recevoir les travaux (Constructions ou Déploiements) du Serveur Kobee. 
 |
 
 alm.agent.karaf.rmiRegistryPort +
@@ -530,27 +530,27 @@ alm.agent.karaf.rmiServerPort +
 alm.agent.karaf.sshPort
 |
 
-Les numéros de port spécifiques au container Apache Karaf hébergeant le démon de l'Agent IKAN ALM. Normalement, il n'y a pas besoin de changes ces numéros de port, sauf, si vous avez des conflits avec ces ports.
+Les numéros de port spécifiques au container Apache Karaf hébergeant le démon de l'Agent Kobee. Normalement, il n'y a pas besoin de changes ces numéros de port, sauf, si vous avez des conflits avec ces ports.
 |
 
 alm.agent.logfilepath
 |
 
-Chemin relatif du fichier de trace Karaf de l'Agent IKAN ALM. Ce paramètre est utilisé par le Serveur IKAN ALM pour afficher la _Trace de la Machine_ de l'Agent dans l'écran _Statut détaillé de la Machine_ dans l'Interface Utilisateur Web d'IKAN ALM. Le défaut est "log/alm_agent.log".
+Chemin relatif du fichier de trace Karaf de l'Agent Kobee. Ce paramètre est utilisé par le Serveur Kobee pour afficher la _Trace de la Machine_ de l'Agent dans l'écran _Statut détaillé de la Machine_ dans l'Interface Utilisateur Web d'Kobee. Le défaut est "log/alm_agent.log".
 |===
 
-==== Paramètres de l'Interface de Ligne de Commande IKAN ALM
-Pour installer l'Interface de Ligne de Commande IKAN ALM, remplissez les propriétés suivantes:
+==== Paramètres de l'Interface de Ligne de Commande Kobee
+Pour installer l'Interface de Ligne de Commande Kobee, remplissez les propriétés suivantes:
 
 [source]
 ----
 # ---------------------------------------------------------------------------
-# IKAN ALM Commandline Settings, when alm.commandline.install=true :
+# Kobee Commandline Settings, when alm.commandline.install=true :
 # ---------------------------------------------------------------------------
-# Destination folder of the IKAN ALM Commandline files :
+# Destination folder of the Kobee Commandline files :
 alm.commandline.installLocation=C:/alm/commandline
 
-# Java Runtime to run the IKAN ALM Commandline with (may be JRE or JDK):
+# Java Runtime to run the Kobee Commandline with (may be JRE or JDK):
 alm.commandline.javaHome=d:/java/jdk1.6.0_45
 ----
 
@@ -564,13 +564,13 @@ alm.commandline.javaHome=d:/java/jdk1.6.0_45
 alm.commandline.installLocation
 |
 
-L'emplacement où l'Interface de Ligne de Commande IKAN ALM devra être installée. Quand vous installez l'Interface de Ligne de Commande avec un Serveur IKAN ALM ou un Agent IKAN ALM ensembles, *NE* remplissez *PAS* cette valeur avec celle de la propriété _alm.server.installLocation_ ou _alm.agent.installLocation_, mais choississez un sous-répertoire de __ALM_HOME__ (comme __ALM_HOME__/commandline) ou un chemin en dehors de la structure des répertoires __ALM_HOME__.
+L'emplacement où l'Interface de Ligne de Commande Kobee devra être installée. Quand vous installez l'Interface de Ligne de Commande avec un Serveur Kobee ou un Agent Kobee ensembles, *NE* remplissez *PAS* cette valeur avec celle de la propriété _alm.server.installLocation_ ou _alm.agent.installLocation_, mais choississez un sous-répertoire de __KOBEE_HOME__ (comme __KOBEE_HOME__/commandline) ou un chemin en dehors de la structure des répertoires __KOBEE_HOME__.
 |
 
 alm.commandline.javaHome
 |
 
-Le chemin réel d'installation du Java qui sera utilisé pour lancer l'Interface de Ligne de Commande IKAN ALM. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
+Le chemin réel d'installation du Java qui sera utilisé pour lancer l'Interface de Ligne de Commande Kobee. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
 |===
 
 
@@ -610,7 +610,7 @@ Lancez l'Installeur en exécutant le script _install.cmd_ ou _install.sh_.
 
 [NOTE]
 ====
-Il est recommandé de lancer l'Installeur depuis une Invite de commandes, Powershell ou Linux shell pour voir la progression et le résultat de l'installation. Sur Windows, si l'Installeur est lancé par un Administrateur, les services Windows pour démarrer et arrêter le Serveur et l'Agent sont automatiquement créés. Sinon, vous devrez enregistrer les services Windows manuellement après cette installation. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent IKAN ALM comme un service Windows>> pour les détails. Sur Linux/Unix, les services/démons à démarrer et à arrêter doivent être enregistrés après l'installation. Voir <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>>
+Il est recommandé de lancer l'Installeur depuis une Invite de commandes, Powershell ou Linux shell pour voir la progression et le résultat de l'installation. Sur Windows, si l'Installeur est lancé par un Administrateur, les services Windows pour démarrer et arrêter le Serveur et l'Agent sont automatiquement créés. Sinon, vous devrez enregistrer les services Windows manuellement après cette installation. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent Kobee comme un service Windows>> pour les détails. Sur Linux/Unix, les services/démons à démarrer et à arrêter doivent être enregistrés après l'installation. Voir <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>>
 
 L'utilisateur exécutant l'Installeur doit avoir les droits d'accès aux emplacements d'installation du Serveur, de l'Agent et de l'Interface de Ligne de Commande et ,aussi, aux répertoires et sous-répertoires de l'installation de Tomcat.
 ====
@@ -621,50 +621,50 @@ Quand l'installation réussit, le message _BUILD SUCCESSFUL_ apparaît.
 
 [WARNING]
 ====
-*NE PAS* supprimer le répertoire _INSTALL_DIR_ après l'installation, car, vous en aurez besoin pour désinstaller ou mettre à niveau IKAN ALM dans le futur. 
+*NE PAS* supprimer le répertoire _INSTALL_DIR_ après l'installation, car, vous en aurez besoin pour désinstaller ou mettre à niveau Kobee dans le futur. 
 ====
 
-S'il s'agissait d'une nouvelle installation du Serveur IKAN ALM (non pas une ré-installation ou une mise à niveau d'une ancienne version) et que la propriété _alm.server.rdbms.initALMDatabase_ avait été mise à "false", alors, vous devez initialiser la Base de données IKAN ALM avant de démarrer le Serveur ou l'Application Web IKAN ALM.
+S'il s'agissait d'une nouvelle installation du Serveur Kobee (non pas une ré-installation ou une mise à niveau d'une ancienne version) et que la propriété _alm.server.rdbms.initALMDatabase_ avait été mise à "false", alors, vous devez initialiser la Base de données Kobee avant de démarrer le Serveur ou l'Application Web Kobee.
 
-=== Initialiser la Base de données IKAN ALM
+=== Initialiser la Base de données Kobee
 
-La Base de données IKAN ALM doit être initialisée avant d'utiliser le Serveur ou l'Application Web IKAN ALM. L'initialisation peut être réalisée pendant l'installation quand la propriété _alm.server.rdbms.initALMDatabase_ a été mise à "true" ou elle peut être réalisée, manuellement, après la fin de l'exécution de l'installation avec le script __INSTALL_DIR__/initializeALMDatabase.cmd (Windows) ou __INSTALL_DIR__/initializeALMDatabase.sh (Linux/Unix).
+La Base de données Kobee doit être initialisée avant d'utiliser le Serveur ou l'Application Web Kobee. L'initialisation peut être réalisée pendant l'installation quand la propriété _alm.server.rdbms.initALMDatabase_ a été mise à "true" ou elle peut être réalisée, manuellement, après la fin de l'exécution de l'installation avec le script __INSTALL_DIR__/initializeKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/initializeKobeeDatabase.sh (Linux/Unix).
 
 [NOTE]
 ====
-Les scripts d'initialisation supprimeront et recréeront les tables nécessaires de la Base de données IKAN ALM et les remplieront des données initiales. Ils ne suppriment pas et ne créent pas la Base de données ou le schéma, mais, ces éléments doivent être présents pour réaliser l'initialisation. Les scripts utiliseront les paramètres de connexion de la Base de données définis dans le fichier __INSTALL_DIR__/install.properties.
+Les scripts d'initialisation supprimeront et recréeront les tables nécessaires de la Base de données Kobee et les remplieront des données initiales. Ils ne suppriment pas et ne créent pas la Base de données ou le schéma, mais, ces éléments doivent être présents pour réaliser l'initialisation. Les scripts utiliseront les paramètres de connexion de la Base de données définis dans le fichier __INSTALL_DIR__/install.properties.
 ====
 
 Par défaut, les scripts d'initialisation utilisent l'exécutable Java qui est disponible dans le PATH du Système de la machine. Si aucun exécutable Java est présent, ou la version de celui-ci est insuffisante (inférieure à 11), alors vous devez fournir la variable d'environnement __JAVA_HOME__ dans le script d'installation. Dans ce cas, ouvrez le fichier 
-__INSTALL_DIR__/initializeALMDatabase.cmd (Windows) ou __INSTALL_DIR__/initializeALMDatabase.sh (Linux/Unix) et suivez les instructions de <<Exécuter l`Installeur>> pour compléter la variable __JAVA_HOME__.
+__INSTALL_DIR__/initializeKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/initializeKobeeDatabase.sh (Linux/Unix) et suivez les instructions de <<Exécuter l`Installeur>> pour compléter la variable __JAVA_HOME__.
 
 [NOTE]
 ====
 Il est recommandé de lancer les scripts d'initialisation depuis une Invite de commandes, Powershell ou Linux shell pour voir la progression et le résultat de l'initialisation. Il n'est pas nécessaire d'être un Administrateur pour exécuter ces scripts.
 ====
 
-Lancer l'initialisation de la Base de données IKAN ALM en exécutant le fichier __INSTALL_DIR__/initializeALMDatabase.cmd ou __INSTALL_DIR__/initializeALMDatabase.sh. 
+Lancer l'initialisation de la Base de données Kobee en exécutant le fichier __INSTALL_DIR__/initializeKobeeDatabase.cmd ou __INSTALL_DIR__/initializeKobeeDatabase.sh. 
 
 image::dbinit_finished.png[,681,359] 
 
-== Démarrer IKAN ALM
+== Démarrer Kobee
 
-Cette section décrit les étapes nécessaires pour démarrer les différents composants IKAN ALM.
+Cette section décrit les étapes nécessaires pour démarrer les différents composants Kobee.
 
-* Si vous voulez configurer IKAN ALM via l'Interface Utilisateur Web, vous devez d'abord démarrer l'Application Web IKAN ALM (<<_bhbhhfha>>).
-* Si vous voulez exécuter des Constructions et des Déploiements, vous devez démarrer le Serveur et l'Agent IKAN ALM (<<_bhbdbdje>> et <<_bhbhbcbb>>).
-* Si vous voulez utiliser l'Interface de Ligne de Commande IKAN ALM, référez-vous à <<_bhbdaahi>>
+* Si vous voulez configurer Kobee via l'Interface Utilisateur Web, vous devez d'abord démarrer l'Application Web Kobee (<<_bhbhhfha>>).
+* Si vous voulez exécuter des Constructions et des Déploiements, vous devez démarrer le Serveur et l'Agent Kobee (<<_bhbdbdje>> et <<_bhbhbcbb>>).
+* Si vous voulez utiliser l'Interface de Ligne de Commande Kobee, référez-vous à <<_bhbdaahi>>
 
 
 [[_bhbhhfha]]
-=== Démarrer l'Application Web IKAN ALM
+=== Démarrer l'Application Web Kobee
 
-Pour démarrer l'Application Web IKAN ALM, vous devez démarrer le Serveur d'applications Apache Tomcat qui l'héberge.
+Pour démarrer l'Application Web Kobee, vous devez démarrer le Serveur d'applications Apache Tomcat qui l'héberge.
 
-Vous pouvez accéder à l'Interface de l'Application Web IKAN ALM via l'URL `\http://<host>:<port>/alm`. +
+Vous pouvez accéder à l'Interface de l'Application Web Kobee via l'URL `\http://<host>:<port>/alm`. +
 Par exemple: \http://alm_server:8080/alm.
 
-S'il s'agit d'une première installation d'IKAN ALM, la fenêtre de la Licence s'affiche.
+S'il s'agit d'une première installation d'Kobee, la fenêtre de la Licence s'affiche.
 
 
 image::no_license.png[,617,187]
@@ -678,89 +678,89 @@ image::license_installed.png[,520,255]
 
 Connectez-vous avec l'Utilisateur "global" et le Mot de passe "global". Pour plus d'informations concernant les autres utilisateurs par défaut, voir <<_jaasconfiguration, Configuration JAAS>>
 
-Pour plus d'informations concernant l'Interface Utilisateur d'IKAN ALM, se référer au xref:5.9@user-guide-fr:root:Introduction.adoc[Guide Utilisateur IKAN ALM].
+Pour plus d'informations concernant l'Interface Utilisateur d'Kobee, se référer au xref:5.9@user-guide-fr:root:Introduction.adoc[Guide Utilisateur Kobee].
 
 [[_bhbdbdje]]
-=== Démarrer le Serveur IKAN ALM
+=== Démarrer le Serveur Kobee
 
-Il est recommandé de lancer le Serveur IKAN ALM comme un service Windows ou Linux et le configurer pour qu'il démarre automatiquement quand le système démarre. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent IKAN ALM comme un service Windows>> et <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>> pour connaître les instructions détaillées pour le faire.
+Il est recommandé de lancer le Serveur Kobee comme un service Windows ou Linux et le configurer pour qu'il démarre automatiquement quand le système démarre. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent Kobee comme un service Windows>> et <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>> pour connaître les instructions détaillées pour le faire.
 
-Pour démarrer le service du Serveur IKAN ALM sur Windows, ouvrez une Invite de commandes ou PowerShell et exécutez:
-
-[source]
-----
-net start almsvr59
-----
-
-Pour démarrer le service du Serveur IKAN ALM sur un système "V" compatible Linux , ouvrez un Shell et exécutez:
+Pour démarrer le service du Serveur Kobee sur Windows, ouvrez une Invite de commandes ou PowerShell et exécutez:
 
 [source]
 ----
-sudo service almserver59 start
+net start kobeesvr60
 ----
 
-Pour démarrer le service du Serveur IKAN ALM sur un système "D" compatible Linux , ouvrez un Shell et exécutez:
+Pour démarrer le service du Serveur Kobee sur un système "V" compatible Linux , ouvrez un Shell et exécutez:
+
+[source]
+----
+sudo service kobeeserver60 start
+----
+
+Pour démarrer le service du Serveur Kobee sur un système "D" compatible Linux , ouvrez un Shell et exécutez:
 
 
 [source]
 ----
-sudo systemctl start almserver59
+sudo systemctl start kobeeserver60
 ----
 
-En cas d'incident de démarrage, il peut être utile de démarrer le Serveur IKAN ALM en lançant le script de démarrage. Sur Windows, lancer le fichier de commandes __ALM_HOME__/daemons/server/startServer.cmd. Sur Linux, lancer le script shell __ALM_HOME__/daemons/server/startServer.sh.
+En cas d'incident de démarrage, il peut être utile de démarrer le Serveur Kobee en lançant le script de démarrage. Sur Windows, lancer le fichier de commandes __KOBEE_HOME__/daemons/server/startServer.cmd. Sur Linux, lancer le script shell __KOBEE_HOME__/daemons/server/startServer.sh.
 
-Pour arrêter le Serveur IKAN ALM, lancez __ALM_HOME__/daemons/server/stopServer.cmd ou __ALM_HOME__/daemons/server/startServer.sh.
+Pour arrêter le Serveur Kobee, lancez __KOBEE_HOME__/daemons/server/stopServer.cmd ou __KOBEE_HOME__/daemons/server/startServer.sh.
 
 
 [[_bhbhbcbb]]
-=== Démarrer l'Agent IKAN ALM
+=== Démarrer l'Agent Kobee
 
-Il est recommandé de lancer l'Agent IKAN ALM comme un service Windows ou Linux et le configurer pour qu'il démarre automatiquement quand le système démarre. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent IKAN ALM comme un Service Windows>> et <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>> pour connaître les instructions détaillées pour le faire.
+Il est recommandé de lancer l'Agent Kobee comme un service Windows ou Linux et le configurer pour qu'il démarre automatiquement quand le système démarre. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent Kobee comme un Service Windows>> et <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>> pour connaître les instructions détaillées pour le faire.
 
-Pour démarrer le service de l'Agent IKAN ALM sur Windows, ouvrez une Invite de commandes ou PowerShell et exécutez:
+Pour démarrer le service de l'Agent Kobee sur Windows, ouvrez une Invite de commandes ou PowerShell et exécutez:
 
-
-[source]
-----
-net start almagent59
-----
-
-Pour démarrer le service de l'Agent IKAN ALM sur un système "V" compatible Linux , ouvrez un Shell et exécutez:
 
 [source]
 ----
-sudo service almagent59 start
+net start kobeeserver60
 ----
 
-Pour démarrer le service de l'Agent IKAN ALM sur un système "D" compatible Linux , ouvrez un Shell et exécutez:
+Pour démarrer le service de l'Agent Kobee sur un système "V" compatible Linux , ouvrez un Shell et exécutez:
 
 [source]
 ----
-sudo systemctl start almagent59
+sudo service kobeeserver60 start
 ----
 
-En cas d'incident de démarrage, il peut être utile de démarrer l'Agent IKAN ALM en lançant le script de démarrage. Sur Windows, lancer le fichier de commandes __ALM_HOME__/daemons/agent/startAgent.cmd. Sur Linux, lancer le script shell __ALM_HOME__/daemons/agent/startAgent.sh.
+Pour démarrer le service de l'Agent Kobee sur un système "D" compatible Linux , ouvrez un Shell et exécutez:
 
-Pour arrêter l'Agent IKAN ALM, lancez __ALM_HOME__/daemons/agent/stopAgent.cmd ou __ALM_HOME__/daemons/agent/stopAgent.sh.
+[source]
+----
+sudo systemctl start kobeeserver60
+----
+
+En cas d'incident de démarrage, il peut être utile de démarrer l'Agent Kobee en lançant le script de démarrage. Sur Windows, lancer le fichier de commandes __KOBEE_HOME__/daemons/agent/startAgent.cmd. Sur Linux, lancer le script shell __KOBEE_HOME__/daemons/agent/startAgent.sh.
+
+Pour arrêter l'Agent Kobee, lancez __KOBEE_HOME__/daemons/agent/stopAgent.cmd ou __KOBEE_HOME__/daemons/agent/stopAgent.sh.
 
 
 [[_bhbdaahi]]
-=== Utiliser l'Interface de Ligne de Commande IKAN ALM.
+=== Utiliser l'Interface de Ligne de Commande Kobee.
 
-L'Interface de Ligne de Commande IKAN ALM peut être utiliser pour créer des Requêtes de niveau, des Rapports ou créer et mettre à jour des Paquets.
+L'Interface de Ligne de Commande Kobee peut être utiliser pour créer des Requêtes de niveau, des Rapports ou créer et mettre à jour des Paquets.
 
-* Pour lancer l'Interface de Ligne de Commande IKAN ALM sous Windows:
+* Pour lancer l'Interface de Ligne de Commande Kobee sous Windows:
 +
-Ouvrez une Invite de commandes, tapez un "cd" vers le répertoire d'installation de l'Interface de Ligne de Commande (exemple : ALM_HOME/commandline) et exécutez _alm.cmd_.
-* Pour lancer la Ligne de Commande IKAN ALM sous Linux/Unix:
+Ouvrez une Invite de commandes, tapez un "cd" vers le répertoire d'installation de l'Interface de Ligne de Commande (exemple : KOBEE_HOME/commandline) et exécutez _alm.cmd_.
+* Pour lancer la Ligne de Commande Kobee sous Linux/Unix:
 +
-Ouvrez un terminal, tapez un "cd" vers le répertoire d'installation de l'Interface de Ligne de Commande (exemple : ALM_HOME/commandline) et exécutez _alm.sh_.
-Pour des informations plus détaillées concernant l'Interface de Ligne de Commande IKAN ALM, se référer à la section xref:5.9@user-guide-fr:root:CommandLine.adoc[Interface de Ligne de Commande] dans le __Guide Utilisateur IKAN ALM__.
+Ouvrez un terminal, tapez un "cd" vers le répertoire d'installation de l'Interface de Ligne de Commande (exemple : KOBEE_HOME/commandline) et exécutez _alm.sh_.
+Pour des informations plus détaillées concernant l'Interface de Ligne de Commande Kobee, se référer à la section xref:5.9@user-guide-fr:root:CommandLine.adoc[Interface de Ligne de Commande] dans le __Guide Utilisateur Kobee__.
 
 
-== Désinstaller IKAN ALM
+== Désinstaller Kobee
 
-Pour désinstaller IKAN ALM, vous devez d'abord configurer le Désinstalleur situé dans _INSTALL_DIR_, puis, l'exécuter.
+Pour désinstaller Kobee, vous devez d'abord configurer le Désinstalleur situé dans _INSTALL_DIR_, puis, l'exécuter.
 
 === Configurer le Désinstalleur
 
@@ -775,42 +775,42 @@ _Ne pas utiliser les barres obliques arrière_ ('\') dans les propriétés de ch
 
 [source]
 ----
-# General Settings : Specify which components of IKAN ALM to uninstall
+# General Settings : Specify which components of Kobee to uninstall
 # ---------------------------------------------------------------------------
-# Flag to specify whether to uninstall the IKAN ALM Server or not:  uninstall : true
+# Flag to specify whether to uninstall the Kobee Server or not:  uninstall : true
 # no uninstall : false
 alm.server.uninstall=true
-# Flag to specify whether to uninstall the IKAN ALM Agent or not uninstall : true
+# Flag to specify whether to uninstall the Kobee Agent or not uninstall : true
 # no uninstall : false
 alm.agent.uninstall=true
-# Flag to specify whether to uninstall the IKAN ALM Commandline: or not uninstall : true
+# Flag to specify whether to uninstall the Kobee Commandline: or not uninstall : true
 # no uninstall : false
 alm.commandline.uninstall=true
 ----
 
-Dans les Paramètres généraux, vous spécifiez quels composants d'IKAN ALM vous voulez désinstaller. 
+Dans les Paramètres généraux, vous spécifiez quels composants d'Kobee vous voulez désinstaller. 
 
-Mettre __alm.server.install__ à "true" pour désinstaller le Serveur IKAN ALM et retirer l'Application Web IKAN ALM sur Tomcat. +
-Mettre __alm.agent.install__ à "true" pour désinstaller l'Agent IKAN ALM. +
-Mettre __alm.commandline.install__ à "true" pour désinstaller l'Interface de Ligne de Commande IKAN ALM.
+Mettre __alm.server.install__ à "true" pour désinstaller le Serveur Kobee et retirer l'Application Web Kobee sur Tomcat. +
+Mettre __alm.agent.install__ à "true" pour désinstaller l'Agent Kobee. +
+Mettre __alm.commandline.install__ à "true" pour désinstaller l'Interface de Ligne de Commande Kobee.
 
-==== Paramètres du Serveur et de l'Application Web IKAN ALM
+==== Paramètres du Serveur et de l'Application Web Kobee
 
 [source]
 ----
-# IKAN ALM Server Settings :
+# Kobee Server Settings :
 # ---------------------------------------------------------------------------
-# Folder the IKAN ALM Server is installed in :
+# Folder the Kobee Server is installed in :
 alm.server.installLocation=C:/alm
 
-# Java Runtime the IKAN ALM Server is using
+# Java Runtime the Kobee Server is using
 alm.server.javaHome=d:/java/jdk1.6.0_45
 
 # Flag to specify whether to uninstall the files that may be deployed to a tomcat server :
 # uninstall : true
 # no uninstall : false
 alm.server.tomcat.uninstall=true
-# Location of Apache Tomcat where the webapp was deployed during IKAN ALM Server Install :
+# Location of Apache Tomcat where the webapp was deployed during Kobee Server Install :
 alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
 ----
 
@@ -824,34 +824,34 @@ alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
 alm.server.installLocation
 |
 
-L'emplacement où le Serveur IKAN ALM est installé. Plus loin dans ce document, cet emplacement sera référencé _ALM_HOME_.
+L'emplacement où le Serveur Kobee est installé. Plus loin dans ce document, cet emplacement sera référencé _KOBEE_HOME_.
 |
 
 alm.server.javaHome
 |
 
-Le chemin réel d'installation du Java qui est utilisé pour lancer le Serveur IKAN ALM. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
+Le chemin réel d'installation du Java qui est utilisé pour lancer le Serveur Kobee. Exemples valides: "D:/java/openjdk-11.0.8_10_hotspot" ou "/usr/lib/jvm/java-11-openjdk".
 |
 
 alm.server.tomcat.uninstall
 |
 
-Mettre à "true" si vous voulez retirer l'Application Web IKAN ALM de Tomcat. Le défaut est "true".
+Mettre à "true" si vous voulez retirer l'Application Web Kobee de Tomcat. Le défaut est "true".
 |
 
 alm.server.tomcat.home
 |
 
-Mettre l'emplacement de base de l'installation Tomcat qui héberge l'Application Web IKAN ALM.
+Mettre l'emplacement de base de l'installation Tomcat qui héberge l'Application Web Kobee.
 |===
 
-==== Paramètres de l'Agent IKAN ALM
+==== Paramètres de l'Agent Kobee
 
 [source]
 ----
-# IKAN ALM Agent Settings :
+# Kobee Agent Settings :
 # ---------------------------------------------------------------------------
-# Folder the IKAN ALM Agent is installed in :
+# Folder the Kobee Agent is installed in :
 alm.agent.installLocation=C:/alm
 ----
 
@@ -865,16 +865,16 @@ alm.agent.installLocation=C:/alm
 alm.agent.installLocation
 |
 
-L'emplacement où l'Agent IKAN ALM est installé.
+L'emplacement où l'Agent Kobee est installé.
 |===
 
-==== Paramètres de l'Interface de Ligne de Commande IKAN ALM
+==== Paramètres de l'Interface de Ligne de Commande Kobee
 
 [source]
 ----
-# IKAN ALM Commandline Settings :
+# Kobee Commandline Settings :
 # ---------------------------------------------------------------------------
-# Folder the IKAN ALM Commandline is installed in :
+# Folder the Kobee Commandline is installed in :
 alm.commandline.installLocation=C:/alm/commandline
 ----
 
@@ -888,7 +888,7 @@ alm.commandline.installLocation=C:/alm/commandline
 alm.commandline.installLocation
 |
 
-L'emplacement où l'Interface de Ligne de Commande IKAN ALM est installé.
+L'emplacement où l'Interface de Ligne de Commande Kobee est installé.
 |===
 
 === Exécuter le Désinstalleur
@@ -896,22 +896,22 @@ L'emplacement où l'Interface de Ligne de Commande IKAN ALM est installé.
 Par défaut, le Désinstalleur utilise l'exécutable Java qui est disponible dans le PATH du Système de la machine. Si aucun exécutable Java est présent, ou la version de celui-ci est insuffisante (inférieure à 11), alors vous devez fournir la variable d'environnement __JAVA_HOME__ dans le script d'installation. Dans ce cas, ouvrez le fichier 
  ___INSTALL_DIR__/uninstall.cmd (Windows) ou __INSTALL_DIR__/uninstall.sh (Linux/Unix) et suivez les instructions de <<Exécuter l`Installeur>> pour renseigner la variable __JAVA_HOME__.
 
-En premier, arrêtez Tomcat, le Serveur et l'Agent IKAN ALM, puis, lancez le Désinstalleur en exécutant le script _uninstall.cmd_ ou _uninstall.sh_.
+En premier, arrêtez Tomcat, le Serveur et l'Agent Kobee, puis, lancez le Désinstalleur en exécutant le script _uninstall.cmd_ ou _uninstall.sh_.
 
 [NOTE]
 ====
-Il est recommandé de lancer le Désinstalleur depuis une Invite de commandes, Powershell ou Linux shell pour voir la progression et le résultat de la désinstallation. Sur Windows, si le Désinstalleur est lancé par un Administrateur, les services Windows pour démarrer et arrêter le Serveur et l'Agent sont automatiquement retirés. Sinon, vous devrez retirer les services Windows manuellement *AVANT* la désinstallation. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent IKAN ALM comme un service Windows>> pour les détails. Sur Linux/Unix, les services/démons à démarrer et à arrêter doivent être retirés *AVANT* la désinstallation. Voir <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>>
+Il est recommandé de lancer le Désinstalleur depuis une Invite de commandes, Powershell ou Linux shell pour voir la progression et le résultat de la désinstallation. Sur Windows, si le Désinstalleur est lancé par un Administrateur, les services Windows pour démarrer et arrêter le Serveur et l'Agent sont automatiquement retirés. Sinon, vous devrez retirer les services Windows manuellement *AVANT* la désinstallation. Voir <<_install_service_windows,Installer et Retirer manuellement le Serveur et l'Agent Kobee comme un service Windows>> pour les détails. Sur Linux/Unix, les services/démons à démarrer et à arrêter doivent être retirés *AVANT* la désinstallation. Voir <<_install_service_linux,Installer et Retirer manuellement le Serveur et l'Agent comme processus démons sur les systèmes Linux/Unix>>
 
 L'utilisateur exécutant le Désinstalleur doit avoir les droits d'accès aux emplacements d'installation du Serveur, de l'Agent et de l'Interface de Ligne de Commande et ,aussi, aux répertoires et sous-répertoires de l'installation de Tomcat.
 ====
 
 Le Désinstalleur gardera les répertoires suivants:
 
-* __ALM_HOME__/system/buildArchive
+* __KOBEE_HOME__/system/buildArchive
 
-* __ALM_HOME__/system/deployScripts
+* __KOBEE_HOME__/system/deployScripts
 
-* __ALM_HOME__/system/phaseCatalog
+* __KOBEE_HOME__/system/phaseCatalog
 
 S'ils ont besoin d'être retirés, ils le seront manuellement après la désinstallation.
 
@@ -919,42 +919,42 @@ image::uninstaller_finished.png[,983,494]
 
 Quand la désinstallation réussit, le message _BUILD SUCCESSFUL_ apparaît.
 
-== Mettre à niveau IKAN ALM
+== Mettre à niveau Kobee
 
-La procédure générale d'actualisation d'IKAN ALM est d'abord de sauvegarder l'installation et la Base de données IKAN ALM actuelles. Ensuite, réinstallez IKAN ALM et mettez à niveau la Base de données à une version supérieure.
+La procédure générale d'actualisation d'Kobee est d'abord de sauvegarder l'installation et la Base de données Kobee actuelles. Ensuite, réinstallez Kobee et mettez à niveau la Base de données à une version supérieure.
 
-Si le processus de mise à niveau échoue, vous pouvez restaurer la sauvegarde et continuer à utiliser la version précédente d'IKAN ALM (et contacter le service de support).
+Si le processus de mise à niveau échoue, vous pouvez restaurer la sauvegarde et continuer à utiliser la version précédente d'Kobee (et contacter le service de support).
 
 Vous devez au moins sauvegarder les données suivantes:
 
-. Base de données IKAN ALM 
-. Emplacement Archives de construction: défini dans les Paramètres Système, le défaut est __ALM_HOME__/system/buildArchive.
-. Emplacement des scripts de Déploiement: défini dans les Paramètres Système, le défaut est __ALM_HOME__/system/deployScripts
-. Catalogue des Phases: défini dans les Paramètres Système, le défaut est __ALM_HOME__/system/phaseCatalog
+. Base de données Kobee 
+. Emplacement Archives de construction: défini dans les Paramètres Système, le défaut est __KOBEE_HOME__/system/buildArchive.
+. Emplacement des scripts de Déploiement: défini dans les Paramètres Système, le défaut est __KOBEE_HOME__/system/deployScripts
+. Catalogue des Phases: défini dans les Paramètres Système, le défaut est __KOBEE_HOME__/system/phaseCatalog
 
 
 [NOTE]
 ====
-Pour des raisons de sécurité, il est hautement recommandé de sauvegarder les répertoires __ALM_HOME__ et __TOMCAT_HOME__ dans leur intégralité. L'expérience nous a montré que, parfois, il faut restaurer une configuration comme, par exemple, un paramètre de sécurité ou la configuration des journaux.
+Pour des raisons de sécurité, il est hautement recommandé de sauvegarder les répertoires __KOBEE_HOME__ et __TOMCAT_HOME__ dans leur intégralité. L'expérience nous a montré que, parfois, il faut restaurer une configuration comme, par exemple, un paramètre de sécurité ou la configuration des journaux.
 ====
 
-=== Procédure de mise à niveau d'IKAN ALM
+=== Procédure de mise à niveau d'Kobee
 
-. Arrêtez le serveur d'applications Web Tomcat, le Serveur et l'Agent IKAN ALM.
+. Arrêtez le serveur d'applications Web Tomcat, le Serveur et l'Agent Kobee.
 
 . Procédez à la sauvegarde.
 
-. Désinstallez le Serveur IKAN ALM et (si installé) l'Agent IKAN ALM local et l'Interface de Ligne de Commande. Voir <<Désinstaller IKAN ALM>> pour plus d'information. Ne supprimez pas encore le répertoire __INSTALL_DIR__ de la version désinstallée.
+. Désinstallez le Serveur Kobee et (si installé) l'Agent Kobee local et l'Interface de Ligne de Commande. Voir <<Désinstaller Kobee>> pour plus d'information. Ne supprimez pas encore le répertoire __INSTALL_DIR__ de la version désinstallée.
 
-. Configurez l'Installeur du nouvel IKAN ALM. Vous pouvez utiliser les valeurs du fichier __INSTALL_DIR__/install.properties de la version désinstallée pour compléter les valeurs du fichier __INSTALL_DIR__/install.properties de la nouvelle version. Il n'est pas recommandé de copier la version précédente du fichier install.properties vers la nouvelle version, car, la structure peut avoir changé avec la nouvelle.
+. Configurez l'Installeur du nouvel Kobee. Vous pouvez utiliser les valeurs du fichier __INSTALL_DIR__/install.properties de la version désinstallée pour compléter les valeurs du fichier __INSTALL_DIR__/install.properties de la nouvelle version. Il n'est pas recommandé de copier la version précédente du fichier install.properties vers la nouvelle version, car, la structure peut avoir changé avec la nouvelle.
 
-. Exécutez l'Installeur du nouvel IKAN ALM.
+. Exécutez l'Installeur du nouvel Kobee.
 
-. Migrez la Base de données IKAN ALM vers la nouvelle version.
+. Migrez la Base de données Kobee vers la nouvelle version.
 +
 Pour réaliser cela, exécutez l'Outil de migration de la Base de données. Voir <<Outil de migration de la Base de données>>
 
-. Démarrez le Serveur d'applications Web Tomcat, le Serveur et l'Agent IKAN ALM.
+. Démarrez le Serveur d'applications Web Tomcat, le Serveur et l'Agent Kobee.
 
 . Mettez à niveau les Agents qui sont installés sur les machines distantes.
 +
@@ -962,21 +962,21 @@ Les Agents distants de la version 5.8 et supérieure peuvent être mis à niveau
 +
 Les Agents distants de la version 5.7 et inférieure doivent être d"sinstallés manuellement. Après cela, ils peuvent être ré-installés avec l'Interface Utilisateur Web. 
 +
-Pour plus d'information sur l'installation ou la mise à niveau des Agents avec l'Interface Utilisateur Web, se référer à xref:5.9@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[Interface Utilisateur d'Installation d'un Agent IKAN ALM].
+Pour plus d'information sur l'installation ou la mise à niveau des Agents avec l'Interface Utilisateur Web, se référer à xref:5.9@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[Interface Utilisateur d'Installation d'un Agent Kobee].
 
 === Outil de migration de la Base de données
 
-L'Outil de migration de la Base de données est un outil de script qui détecte automatiquement la version actuelle de la Base de données IKAN ALM et, si besoin, assure la migration vers la dernière version.
+L'Outil de migration de la Base de données est un outil de script qui détecte automatiquement la version actuelle de la Base de données Kobee et, si besoin, assure la migration vers la dernière version.
 
 [WARNING]
 --
-Vous devriez sauvegarder la Base de données IKAN ALM avant de démarrer la migration!
+Vous devriez sauvegarder la Base de données Kobee avant de démarrer la migration!
 --
 
-Pour démarrer la migration, vous devez exécuter le script __INSTALL_DIR__/migrateALMDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateALMDatabase.sh (Linux/Unix)
+Pour démarrer la migration, vous devez exécuter le script __INSTALL_DIR__/migrateKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateALMDatabase.sh (Linux/Unix)
 
 Par défaut, l'Outil de migration de la Base de données utilise l'exécutable Java qui est disponible dans le PATH du Système de la machine. Si aucun exécutable Java est présent, ou la version de celui-ci est insuffisante (inférieure à 11), alors vous devez fournir la variable d'environnement __JAVA_HOME__ dans le script. Dans ce cas, ouvrez le fichier 
- __INSTALL_DIR__/migrateALMDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateALMDatabase.sh (Linux/Unix) et suivre les instructions de <<Exécuter l`Installeur>> pour renseigner la variable __JAVA_HOME__.
+ __INSTALL_DIR__/migrateKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateALMDatabase.sh (Linux/Unix) et suivre les instructions de <<Exécuter l`Installeur>> pour renseigner la variable __JAVA_HOME__.
 
 Par défaut, l'Outil de migration de la Base de données utilise les paramètres de connexion de la Base de données définis dans le fichier __INSTALL_DIR__/install.properties 
 
@@ -986,38 +986,38 @@ Une trace de la migration est créée dans le fichier __INSTALL_DIR__/almDbMigra
 
 === Nettoyer le cache du Navigateur
 
-Après la mise à niveau d'IKAN ALM, il est recommandé à tous les Utilisateurs de supprimer le cache de leur Navigateur avant de démarrer avec la nouvelle version de l'Application Web. Pour les instructions, référez-vous au document xref:5.9@how-to-tomcatinstall-en:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading IKAN ALM].
+Après la mise à niveau d'Kobee, il est recommandé à tous les Utilisateurs de supprimer le cache de leur Navigateur avant de démarrer avec la nouvelle version de l'Application Web. Pour les instructions, référez-vous au document xref:5.9@how-to-tomcatinstall-en:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
 
 === Modifier la configuration JAAS
 
-IKAN ALM 5.9 utilise une nouvelle librairie pour les Modules de connexion JAAS quand il utilise LDAP ou Microsoft Active Directory pour l'authenfication et les autorisations des Utilisateurs. En conséquence, les fichiers de configuration __ALM_HOME__/system/security/jaas.config et __ALM_HOME__/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml ont changé. Si vous utilisez LDAP ou Microsoft AD, vous devez utiliser les fichiers de la nouvelle configuration JAAS et fournir les valeurs correctes dans les propriétés ldapUrl, bindDn, bindCredential, baseDn et roleBase. Pour plus de détails, voir <<_jaasconfiguration_msad,Configuration JAAS: Microsoft Active Directory>>.
+Kobee 6.0 utilise une nouvelle librairie pour les Modules de connexion JAAS quand il utilise LDAP ou Microsoft Active Directory pour l'authenfication et les autorisations des Utilisateurs. En conséquence, les fichiers de configuration __KOBEE_HOME__/system/security/jaas.config et __KOBEE_HOME__/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml ont changé. Si vous utilisez LDAP ou Microsoft AD, vous devez utiliser les fichiers de la nouvelle configuration JAAS et fournir les valeurs correctes dans les propriétés ldapUrl, bindDn, bindCredential, baseDn et roleBase. Pour plus de détails, voir <<_jaasconfiguration_msad,Configuration JAAS: Microsoft Active Directory>>.
 [appendix]
 [[_install_service_windows]]
-== Installer et Retirer manuellement le Serveur et l'Agent IKANALM comme service Windows
+== Installer et Retirer manuellement le Serveur et l'Agent Kobee comme service Windows
 
-Quand l'Installeur IKAN ALM est exécuté par un Administrateur, les services Windows pour arrêter et démarrer du Serveur et de l'Agent IKAN ALM sont créés automatiquement. Sinon, vous devez enregister les services Windows manuellement après l'installation.
+Quand l'Installeur Kobee est exécuté par un Administrateur, les services Windows pour arrêter et démarrer du Serveur et de l'Agent Kobee sont créés automatiquement. Sinon, vous devez enregister les services Windows manuellement après l'installation.
 
-* Enregistrer le Serveur IKAN ALM comme un service Windows:
+* Enregistrer le Serveur Kobee comme un service Windows:
 +
-Exécutez "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat __install__".
-* Retirer le Serveur IKAN ALM qui est un service Windows:
+Exécutez "KOBEE_HOME/daemons/server/karaf/bin/karaf-service.bat __install__".
+* Retirer le Serveur Kobee qui est un service Windows:
 +
-Exécutez "ALM_HOME/daemons/server/karaf/bin/karaf-service.bat __remove__".
+Exécutez "KOBEE_HOME/daemons/server/karaf/bin/karaf-service.bat __remove__".
 
-* Enregistrer l'Agent IKAN ALM comme un service Windows:
+* Enregistrer l'Agent Kobee comme un service Windows:
 +
-Exécutez "ALM_HOME/daemons/agent/karaf/bin/karaf-service.bat __install__".
-* Retirer l'Agent IKAN ALM qui est un service Windows:
+Exécutez "KOBEE_HOME/daemons/agent/karaf/bin/karaf-service.bat __install__".
+* Retirer l'Agent Kobee qui est un service Windows:
 +
-Exécutez "ALM_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
+Exécutez "KOBEE_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
 
 Le script _karaf-service.bat_ doit être exécuté par un Administrateur.
 
-Si vous voulez reconfigurer un service, modifiez le fichier __ALM_HOME__/daemons/server/karaf/etc/karaf-wrapper.conf (pour le Serveur). Vous pouvez, par exemple, changer la quantité de mémoire du Serveur IKAN ALM (en Mo) en changeant :"wrapper.java.maxmemory = 512".
+Si vous voulez reconfigurer un service, modifiez le fichier __KOBEE_HOME__/daemons/server/karaf/etc/karaf-wrapper.conf (pour le Serveur). Vous pouvez, par exemple, changer la quantité de mémoire du Serveur Kobee (en Mo) en changeant :"wrapper.java.maxmemory = 512".
 
 [NOTE]
 ====
-En général il est déconseillé de modifier une des autres propriétés dans le fichier "karaf-wrapper.conf", car cela peut provoquer l'arrêt du Serveur ou de l'Agent IKAN ALM. 
+En général il est déconseillé de modifier une des autres propriétés dans le fichier "karaf-wrapper.conf", car cela peut provoquer l'arrêt du Serveur ou de l'Agent Kobee. 
 
 Pour plus d'informations concernant le fichier de configuration, se référer à http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html[http://yajsw.sourceforge.net/YAJSW%20Configuration%20Parameters.html,window=_blank] et http://karaf.apache.org/manual/latest/#_service_wrapper[https://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]. 
 
@@ -1025,42 +1025,42 @@ Pour plus d'informations concernant le fichier de configuration, se référer à
 
 [appendix]
 [[_install_service_linux]]
-== Installer et Retirer manuellement le Serveur et l'Agent IKANALM comme un processus démon sur les systèmes Linux/Unix
+== Installer et Retirer manuellement le Serveur et l'Agent Kobee comme un processus démon sur les systèmes Linux/Unix
 
-L'Installeur IKAN ALM n'installe pas automatiquement le Serveur ou l'Agent IKAN ALM comme un processus démon Linux/Unix. Ces étapes doivent être exécutées après l'installation.
+L'Installeur Kobee n'installe pas automatiquement le Serveur ou l'Agent Kobee comme un processus démon Linux/Unix. Ces étapes doivent être exécutées après l'installation.
 
-Puisque le Serveur et l'Agent IKAN ALM utilisent Apache Karaf comme environnement d'exécution OSGi, il convient d'utiliser la fonctionnalité Apache Karaf Wrapper (se référer au manuel Karaf: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
+Puisque le Serveur et l'Agent Kobee utilisent Apache Karaf comme environnement d'exécution OSGi, il convient d'utiliser la fonctionnalité Apache Karaf Wrapper (se référer au manuel Karaf: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
 
-Nous allons décrire cette procédure pour installer et retirer le Serveur ALM comme service. Pour l'Agent ALM, répétez la procédure en substituant "server" par "agent" dans toutes les commandes.
+Nous allons décrire cette procédure pour installer et retirer le Serveur Kobee comme service. Pour l'Agent Kobee, répétez la procédure en substituant "server" par "agent" dans toutes les commandes.
 
-Premièrement, arrêtez l'Agent et le Serveur IKAN ALM.
+Premièrement, arrêtez l'Agent et le Serveur Kobee.
 
 Ouvrez un terminal Linux et mettez la commande Karaf "shell" exécutable: 
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/shell
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/shell
 ----
 
-Activez la variable __JAVA_HOME__ avec le chemin réel d'installation du Java qui est utilisé pour lancer le Serveur IKAN ALM. Par exemple "/usr/lib/jvm/java-11-openjdk".
+Activez la variable __JAVA_HOME__ avec le chemin réel d'installation du Java qui est utilisé pour lancer le Serveur Kobee. Par exemple "/usr/lib/jvm/java-11-openjdk".
 [source]
 ----
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 ----
 
-Allez vers le répertoire __ALM_HOME__/daemons/server/karaf/bin et exécutez le service wrapper de Karaf.
+Allez vers le répertoire __KOBEE_HOME__/daemons/server/karaf/bin et exécutez le service wrapper de Karaf.
 [source]
 ----
-cd ALM_HOME/daemons/server/karaf/bin
-ALM_HOME/daemons/server/karaf/bin/shell wrapper:install -n almserver59 -d "IKAN\ ALM\ 5.9\ Server" -D "IKAN\ ALM\ 5.9\ Server\ Service"
+cd KOBEE_HOME/daemons/server/karaf/bin
+KOBEE_HOME/daemons/server/karaf/bin/shell wrapper:install -n kobeeserver60 -d "Kobee\ 6.0\ Server" -D "Kobee\ 6.0\ Server\ Service"
 ----
 
 Selon le type de système de votre Linux ou Unix, certaines instructions varient. Regardez les sous-sections suivantes pour les détails.
 
 === Système "D" compatible Linux
 
-Spécifier l'utilisateur qui exécutera le service du Serveur IKAN ALM dans le fichier de l'unité du système "D". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent IKAN ALM.
+Spécifier l'utilisateur qui exécutera le service du Serveur Kobee dans le fichier de l'unité du système "D". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent Kobee.
 
-Ouvrez le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service et cherchez la ligne
+Ouvrez le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service et cherchez la ligne
 [source]
 ----
 Type=forking
@@ -1071,40 +1071,40 @@ Complétez-la avec User=<Linux user>
 Type=forking
 User=<Linux user>
 ----
-Rendre le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service exécutable.
+Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59.service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60.service
 ----
-Installez le service du Serveur IKAN ALM.
+Installez le service du Serveur Kobee.
 [source]
 ----
-sudo systemctl -f enable ALM_HOME/daemons/server/karaf/bin/almserver59.service
+sudo systemctl -f enable KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60.service
 ----
 
-Pour démarrer le service du Serveur IKAN ALM, exécutez
+Pour démarrer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo systemctl start almserver59
+sudo systemctl start kobeeserver60
 ----
 
-Pour arrêter le service du Serveur IKAN ALM, exécutez
+Pour arrêter le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo systemctl stop almserver59
+sudo systemctl stop kobeeserver60
 ----
 
-Quand vous voulez retirer le service du Serveur IKAN ALM, exécutez
+Quand vous voulez retirer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo systemctl disable almserver59
+sudo systemctl disable kobeeserver60
 ----
 
 === Système "V" Linux RedHat
 
-Spécifier l'utilisateur qui exécutera le service du Serveur IKAN ALM dans le fichier de l'unité du système "V". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent IKAN ALM.
+Spécifier l'utilisateur qui exécutera le service du Serveur Kobee dans le fichier de l'unité du système "V". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent Kobee.
 
-Ouvrez le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service et cherchez la ligne
+Ouvrez le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service et cherchez la ligne
 [source]
 ----
 #RUN_AS_USER=
@@ -1114,43 +1114,43 @@ Remplacez-la avec
 ----
 RUN_AS_USER=<Linux user>
 ----
-Rendre le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service exécutable.
+Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
-Installez le service du Serveur IKAN ALM.
+Installez le service du Serveur Kobee.
 [source]
 ----
-sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/init.d/
-sudo chkconfig almserver59-service --add
-sudo chkconfig almserver59-service on
+sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/init.d/
+sudo chkconfig kobeeserver60-service --add
+sudo chkconfig kobeeserver60-service on
 ----
 
-Pour démarrer le service du Serveur IKAN ALM, exécutez
+Pour démarrer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo service almserver59-service start
+sudo service kobeeserver60-service start
 ----
 
-Pour arrêter le service du Serveur IKAN ALM, exécutez
+Pour arrêter le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo service almserver59-service stop
+sudo service kobeeserver60-service stop
 ----
 
-Quand vous voulez retirer le service du Serveur IKAN ALM, exécutez
+Quand vous voulez retirer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo chkconfig almserver59-service --del
-sudo rm /etc/init.d/almserver59-service
+sudo chkconfig kobeeserver60-service --del
+sudo rm /etc/init.d/kobeeserver60-service
 ----
 
 
 === Système "V" Linux Debian
-Spécifier l'utilisateur qui exécutera le service du Serveur IKAN ALM dans le fichier de l'unité du système "V". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent IKAN ALM.
+Spécifier l'utilisateur qui exécutera le service du Serveur Kobee dans le fichier de l'unité du système "V". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent Kobee.
 
-Ouvrez le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service et cherchez la ligne
+Ouvrez le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service et cherchez la ligne
 [source]
 ----
 #RUN_AS_USER=
@@ -1160,35 +1160,35 @@ Remplacez-la avec
 ----
 RUN_AS_USER=<Linux user>
 ----
-Rendre le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service exécutable.
+Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
-Installez le service du Serveur IKAN ALM.
+Installez le service du Serveur Kobee.
 [source]
 ----
-sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/init.d/
-sudo update-rc.d almserver59-service defaults
+sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/init.d/
+sudo update-rc.d kobeeserver60-service defaults
 ----
 
-Pour démarrer le service du Serveur IKAN ALM, exécutez
+Pour démarrer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo /etc/init.d/almserver59-service start
+sudo /etc/init.d/kobeeserver60-service start
 ----
 
-Pour arrêter le service du Serveur IKAN ALM, exécutez
+Pour arrêter le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo /etc/init.d/almserver59-service stop
+sudo /etc/init.d/kobeeserver60-service stop
 ----
 
-Quand vous voulez retirer le service du Serveur IKAN ALM, exécutez
+Quand vous voulez retirer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo update-rc.d -f almserver59-service remove
-sudo rm /etc/init.d/almserver59-service
+sudo update-rc.d -f kobeeserver60-service remove
+sudo rm /etc/init.d/kobeeserver60-service
 ----
 
 
@@ -1196,7 +1196,7 @@ sudo rm /etc/init.d/almserver59-service
 
 === Système AIX
 
-Ouvrez le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59-wrapper.conf. 
+Ouvrez le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60-wrapper.conf. 
 Supprimez la ligne qui commence par
 [source]
 ----
@@ -1239,9 +1239,9 @@ wrapper.java.additional.29=-Dkaraf.startLocalConsole=false
 wrapper.java.additional.30=-Dkaraf.startRemoteShell=true
 ----
 
-Spécifier l'utilisateur qui exécutera le service du Serveur IKAN ALM dans le fichier d'initialisation du système "V". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent IKAN ALM.
+Spécifier l'utilisateur qui exécutera le service du Serveur Kobee dans le fichier d'initialisation du système "V". Il n'est pas recommandé de prendre l'utilisateur "root" pour exécuter le Serveur ou l'Agent Kobee.
 
-Ouvrez le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service et cherchez la ligne
+Ouvrez le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service et cherchez la ligne
 [source]
 ----
 #RUN_AS_USER=
@@ -1261,90 +1261,90 @@ Remplacez-la avec
 ----
 su $RUN_AS_USER -c "$REALPATH $1"
 ----
-Rendre le fichier __ALM_HOME__/daemons/server/karaf/bin/almserver59.service exécutable.
+Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
 [source]
 ----
-chmod +x ALM_HOME/daemons/server/karaf/bin/almserver59-service
+chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
-Installez le service du Serveur IKAN ALM.
+Installez le service du Serveur Kobee.
 [source]
 ----
-sudo ln -s -f ALM_HOME/daemons/server/karaf/bin/almserver59-service /etc/rc.d/init.d/
-sudo ln -s -f /etc/rc.d/init.d/almserver59-service /etc/rc.d/rc2.d/K20almserver59-service
-sudo ln -s -f /etc/rc.d/init.d/almserver59-service /etc/rc.d/rc2.d/S20almserver59-service
+sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/rc.d/init.d/
+sudo ln -s -f /etc/rc.d/init.d/kobeeserver60-service /etc/rc.d/rc2.d/K20kobeeserver60-service
+sudo ln -s -f /etc/rc.d/init.d/kobeeserver60-service /etc/rc.d/rc2.d/S20kobeeserver60-service
 ----
 
-Pour démarrer le service du Serveur IKAN ALM, exécutez
+Pour démarrer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo /etc/rc.d/init.d/almserver59-service start
+sudo /etc/rc.d/init.d/kobeeserver60-service start
 ----
 
-Pour arrêter le service du Serveur IKAN ALM, exécutez
+Pour arrêter le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo /etc/rc.d/init.d/almserver59-service stop
+sudo /etc/rc.d/init.d/kobeeserver60-service stop
 ----
 
-Quand vous voulez retirer le service du Serveur IKAN ALM, exécutez
+Quand vous voulez retirer le service du Serveur Kobee, exécutez
 [source]
 ----
-sudo rm /etc/rc.d/init.d/almserver59-service
-sudo rm /etc/rc.d/rc2.d/K20almserver59-service
-sudo rm /etc/rc.d/rc2.d/S20almserver59-service
+sudo rm /etc/rc.d/init.d/kobeeserver60-service
+sudo rm /etc/rc.d/rc2.d/K20kobeeserver60-service
+sudo rm /etc/rc.d/rc2.d/S20kobeeserver60-service
 ----
 
 [appendix]
 [[_jaasconfiguration]]
 == Configuration JAAS 
 
-Pour l'authentification et l'autorisation des Utilisateurs, IKAN ALM utilise le Service d'Authentification et d'Autorisation Java (JAAS) (se référer à https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). L'authentification JAAS est réalisée avec un mode intégrable. Cela permet aux applications de rester indépendantes des technologies d'authentification sous-jacentes. Les nouvelles ou la mise à niveau des technologies d'authentification peuvent être intégrées dans IKAN ALM sans requérir de modifications de l'application elle-même.
+Pour l'authentification et l'autorisation des Utilisateurs, Kobee utilise le Service d'Authentification et d'Autorisation Java (JAAS) (se référer à https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). L'authentification JAAS est réalisée avec un mode intégrable. Cela permet aux applications de rester indépendantes des technologies d'authentification sous-jacentes. Les nouvelles ou la mise à niveau des technologies d'authentification peuvent être intégrées dans Kobee sans requérir de modifications de l'application elle-même.
 
-La configuration JAAS utilisée par Tomcat est gérée dans le fichier __ALM_HOME__/system/security/jaas.config. Tomcat doit être configuré pour utiliser ce fichier comme sa configuration JAAS. Voir <<_java_options_for_tomcat,Options Java pour Tomcat>> pour les détails. Cette configuration contrôle les utilisateurs qui peuvent se connecter à l'Interface Utilisateur IKAN ALM et qui peuvent s'authentifier via le REST API.
+La configuration JAAS utilisée par Tomcat est gérée dans le fichier __KOBEE_HOME__/system/security/jaas.config. Tomcat doit être configuré pour utiliser ce fichier comme sa configuration JAAS. Voir <<_java_options_for_tomcat,Options Java pour Tomcat>> pour les détails. Cette configuration contrôle les utilisateurs qui peuvent se connecter à l'Interface Utilisateur Kobee et qui peuvent s'authentifier via le REST API.
 
-La configuration JAAS pour le Serveur IKAN ALM peut être trouvée dans le fichier __ALM_HOME__/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. Cette configuration contrôle les utilisateurs qui peuvent se connecter via l'Interface de Ligne de Commande IKAN ALM.
+La configuration JAAS pour le Serveur Kobee peut être trouvée dans le fichier __KOBEE_HOME__/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. Cette configuration contrôle les utilisateurs qui peuvent se connecter via l'Interface de Ligne de Commande Kobee.
 
-Par défaut, IKAN ALM est configuré pour utiliser un fichier de mots de passe qui contient les informations d'authentification et d'autorisation des 3 utilisateurs:
+Par défaut, Kobee est configuré pour utiliser un fichier de mots de passe qui contient les informations d'authentification et d'autorisation des 3 utilisateurs:
 
-* "global", mot de passe "_global_", membre des groupes d'utilisateurs _ALM User_ et _ALM Administrator_ : un utilisateur administrateur global qui dispose de tous les droits d'accès.
+* "global", mot de passe "_global_", membre des groupes d'utilisateurs _Kobee User_ et _Kobee Administrator_ : un utilisateur administrateur global qui dispose de tous les droits d'accès.
 
-* "project", mot de passe "_project_", membre des groupes d'utilisateurs _ALM User_ et _ALM Project_ : un utilisateur qui représente un administrateur d'un ou plusieurs Projets.
+* "project", mot de passe "_project_", membre des groupes d'utilisateurs _Kobee User_ et _Kobee Project_ : un utilisateur qui représente un administrateur d'un ou plusieurs Projets.
 
-* "user", mot de passe "_user_", membre du groupe des utilisateurs _ALM User_ : un utilisateur qui représente un utilisateur final avec des accès limités.
+* "user", mot de passe "_user_", membre du groupe des utilisateurs _Kobee User_ : un utilisateur qui représente un utilisateur final avec des accès limités.
 
 [NOTE]
 ====
 Bien que vous puissiez utiliser le système de sécurité par défaut basé sur un fichier plat de mot de passe pour démarrer et à des fins de test, il n’est pas recommandé de l’utiliser pour la production. Vous devez passer à un système plus sécurisé, comme Microsoft Active Directory ou LDAP.
 ====
 
-Les fichiers de configuration JAAS par défaut contiennent des exemples de configuration de l’authentification et de l’autorisation IKAN ALM à l’aide d’un fichier de mot de passe ou de Microsoft Active Directory via le protocole LDAP ou LDAPS.
+Les fichiers de configuration JAAS par défaut contiennent des exemples de configuration de l’authentification et de l’autorisation Kobee à l’aide d’un fichier de mot de passe ou de Microsoft Active Directory via le protocole LDAP ou LDAPS.
 
 === Configuration JAAS: Fichier de mots de passe
 
-La configuration JAAS d'IKAN ALM par défaut utilise un simple fichier de mots de passe. Pour Tomcat (jaas.config), celui-ci ressemble à :
+La configuration JAAS d'Kobee par défaut utilise un simple fichier de mots de passe. Pour Tomcat (jaas.config), celui-ci ressemble à :
 
 [source]
 ----
-/** ALM Login **/
+/** Kobee Login **/
 ALM
 {
-    com.tagish.auth.FileLogin required pwdFile="ALM_HOME/system/security/passwd.config";
+    com.tagish.auth.FileLogin required pwdFile="KOBEE_HOME/system/security/passwd.config";
 };
 ----
 
-Pour le Serveur IKAN ALM (JaasPropertiesLoginModule.xml) :
+Pour le Serveur Kobee (JaasPropertiesLoginModule.xml) :
 
 [source]
 ----
 	<!-- ALM login using File Login -->
 	<jaas:config name="ALM">
 		<jaas:module className="com.tagish.auth.FileLogin" flags="required">
-            pwdFile=__ALM_HOME__/system/security/passwd.config
+            pwdFile=__KOBEE_HOME__/system/security/passwd.config
 		</jaas:module>
 	</jaas:config>
 ----
 
-Le fichier de mots de passe par défaut (__ALM_HOME__/system/security/passwd.config) ressemble à ceci :
+Le fichier de mots de passe par défaut (__KOBEE_HOME__/system/security/passwd.config) ressemble à ceci :
 
 [source]
 ----
@@ -1366,7 +1366,7 @@ testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
 [[_jaasconfiguration_msad]]
 === Configuration JAAS: Microsoft Active Directory
 
-Les fichiers de configuration JAAS d'IKAN ALM contiennent des exemples sur la manière de se connecter à Microsoft AD en utilisant LDAP. Nous vous expliquons un exemple qui utilise le protocole "ldaps" sécurisé. Les instructions pour utiliser le protocole "ldap" moins sécurisé sont similaires : seules les propriétés _ldapUrl_ sont différentes.
+Les fichiers de configuration JAAS d'Kobee contiennent des exemples sur la manière de se connecter à Microsoft AD en utilisant LDAP. Nous vous expliquons un exemple qui utilise le protocole "ldaps" sécurisé. Les instructions pour utiliser le protocole "ldap" moins sécurisé sont similaires : seules les propriétés _ldapUrl_ sont différentes.
 
 *Pour les "ldap" non sécurisés, le _ldapUrl_ sera de la forme suivante:*
 [source]
@@ -1382,7 +1382,7 @@ ldapUrl="ldaps://<AD_SERVER>:636"
 
 [NOTE]
 ====
-Lors de la configuration d’une connexion "ldap" sécurisée, il ne suffit pas de modifier uniquement le fichier de configuration Jaas de Tomcat et du Serveur IKAN ALM. Un certificat doit être créé et importé dans le magasin de clés (keystore) d'IKAN ALM. Reportez-vous au paragraphe suivant pour savoir comment procéder.
+Lors de la configuration d’une connexion "ldap" sécurisée, il ne suffit pas de modifier uniquement le fichier de configuration Jaas de Tomcat et du Serveur Kobee. Un certificat doit être créé et importé dans le magasin de clés (keystore) d'Kobee. Reportez-vous au paragraphe suivant pour savoir comment procéder.
 ====
 
 Exemple de connexion Microsoft AD pour Tomcat (jaas.config) :
@@ -1420,7 +1420,7 @@ LDAPLogin_SECURED
 **/
 ----
 
-Exemple de connexion Microsoft AD pour le Serveur IKAN ALM (JaasPropertiesLoginModule.xml) :
+Exemple de connexion Microsoft AD pour le Serveur Kobee (JaasPropertiesLoginModule.xml) :
 
 [source]
 ----
@@ -1456,7 +1456,7 @@ Exemple de connexion Microsoft AD pour le Serveur IKAN ALM (JaasPropertiesLoginM
 
 ----
 
-Pour configurer IKAN ALM pour s’authentifier à l’aide de Microsoft AD, renommez le domaine de configuration JAAS nommé « ALM » en quelque chose d’autre (ou commentez cette entrée JAAS), renommez le domaine « LDAPLogin_SECURED » en « ALM », puis définissez les propriétés suivantes dans les fichiers _jaas.config_ et _JaasPropertiesLoginModule.xml_ :
+Pour configurer Kobee pour s’authentifier à l’aide de Microsoft AD, renommez le domaine de configuration JAAS nommé « ALM » en quelque chose d’autre (ou commentez cette entrée JAAS), renommez le domaine « LDAPLogin_SECURED » en « ALM », puis définissez les propriétés suivantes dans les fichiers _jaas.config_ et _JaasPropertiesLoginModule.xml_ :
 
 
 [cols="1,3", frame="topbot", options="header"]
@@ -1502,7 +1502,7 @@ Les valeurs dans le fichier _jaas.config_  *DOIVENT* être entourées par des ",
 ====
 Se référer à https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldaptive.org/docs/guide/jaas.html] pour plus d'information sur les propriétés "ldaptive JAAS".
 
-Lors de la modification de la configuration JAAS, les services Tomcat et du Serveur IKAN ALM doivent être redémarrés. Si les utilisateurs peuvent se connecter via l’Interface Utilisateur IKAN ALM, la configuration dans Tomcat est correcte.
+Lors de la modification de la configuration JAAS, les services Tomcat et du Serveur Kobee doivent être redémarrés. Si les utilisateurs peuvent se connecter via l’Interface Utilisateur Kobee, la configuration dans Tomcat est correcte.
 
 Vous pouvez résoudre les problèmes de connexion en activant une journalisation supplémentaire.  Cela peut être fait en ajoutant un élément _<logger>_ supplémentaire dans _TOMCAT_HOME_/webapps/alm/WEB-INF/classes/log4j2.xml.
 [source]
@@ -1511,11 +1511,11 @@ Vous pouvez résoudre les problèmes de connexion en activant une journalisation
 
 ----
 
-Après avoir redémarré Tomcat et essayé de se connecter, le fichier journal _TOMCAT_HOME/logs/alm_webapp.log_ contiendra des informations supplémentaires sur la tentative d’ouverture de session. Ce journal peut ensuite être analysé et/ou envoyé au Support IKAN ALM.
+Après avoir redémarré Tomcat et essayé de se connecter, le fichier journal _TOMCAT_HOME/logs/alm_webapp.log_ contiendra des informations supplémentaires sur la tentative d’ouverture de session. Ce journal peut ensuite être analysé et/ou envoyé au Support Kobee.
 
 === Configuration JAAS: ldap sécurisé (LDAP via SSL/TLS)
 
-Comme indiqué dans le paragraphe précédent, la configuration "ldap" sécurisée (LDAP via SSL/TLS) nécessite la création d’un certificat qui doit être importé dans le magasin de clés (keystore) d'IKAN ALM.
+Comme indiqué dans le paragraphe précédent, la configuration "ldap" sécurisée (LDAP via SSL/TLS) nécessite la création d’un certificat qui doit être importé dans le magasin de clés (keystore) d'Kobee.
 
 La création du certificat dépend fortement de l’Infrastructure de clé publique (PKI) de votre organisation. La création d’un certificat pour Microsoft AD peut être effectuée à l’aide du composant logiciel insérable « Certificats » de la console MMC (Microsoft Management Console). Il est important que le certificat possède les propriétés suivantes :
 
@@ -1531,12 +1531,12 @@ La création du certificat dépend fortement de l’Infrastructure de clé publi
 
 Le certificat doit être exporté dans un fichier. Ceci est possible dans le format « DER encoded binary X.509 ».
 
-Le fichier de certificat doit ensuite être importé dans le magasin de clés (keystore) Java utilisé par le Serveur IKAN ALM (_ALM_HOME/system/ssl/alm_keystore_). Ceci est possible avec la commande suivante :
+Le fichier de certificat doit ensuite être importé dans le magasin de clés (keystore) Java utilisé par le Serveur Kobee (_KOBEE_HOME/system/ssl/alm_keystore_). Ceci est possible avec la commande suivante :
 
 [source]
 ----
 
-<JAVA_HOME>\bin\keytool.exe -import -file <path_to_certificate> -keystore <ALM_HOME>/system/ssl/alm_keystore -alias <server_name>
+<JAVA_HOME>\bin\keytool.exe -import -file <path_to_certificate> -keystore <KOBEE_HOME>/system/ssl/alm_keystore -alias <server_name>
 
 ----
 
@@ -1545,28 +1545,28 @@ Le fichier de certificat doit ensuite être importé dans le magasin de clés (k
 [source]
 ----
 
-D:\java\jdk11.0.10\bin\keytool.exe -import -file C:\temp\dc1_ldap.cer -keystore E:\alm\59\system\ssl\alm_keystore -alias dc1_ldap
+D:\java\jdk11.0.10\bin\keytool.exe -import -file C:\temp\dc1_ldap.cer -keystore E:\Kobee\60\system\ssl\alm_keystore -alias dc1_ldap
 
 ----
 
-L’outil demande ensuite le mot de passe du magasin de clés (keystore). Le mot de passe par défaut du magasin de clés (keystore) IKAN ALM est 'almalm'.
+L’outil demande ensuite le mot de passe du magasin de clés (keystore). Le mot de passe par défaut du magasin de clés (keystore) Kobee est 'almalm'.
 
 Répondez _oui_ à la question de savoir si ce certificat peut être approuvé.
 
 [NOTE]
 ====
-Lors du passage à "ldap" sécurisé, la configuration JAAS de l’application Web et du Serveur IKAN ALM doit être ajustée. Reportez-vous au paragraphe précédent pour savoir comment procéder.
+Lors du passage à "ldap" sécurisé, la configuration JAAS de l’application Web et du Serveur Kobee doit être ajustée. Reportez-vous au paragraphe précédent pour savoir comment procéder.
 ====
 
 [appendix]
 [[_secureconfiguration]]
 == Configuration manuelle de la Communication sécurisée
 
-Lors de l’exécution de l’installation d'IKAN ALM, le paramètre d’installation _alm.xmlrpc.secure_ active une communication sécurisée. Lorsqu’elle est définie à "true", la communication entre les composants IKAN ALM installés est chiffrée. Par conséquent, si des composants IKAN ALM supplémentaires (tels que l’Agent ou la Ligne de Commande IKAN ALM) sont installés sur des hôtes distants, ils doivent également être définis avec _alm.xmlrpc.secure_ à "true" pendant leur installation, sinon la communication avec ces composants échouera. Nous vous recommandons vivement de définir _alm.xmlrpc.secure_ à "true" pour des raisons de sécurité. Cependant, la communication sécurisée peut être modifiée manuellement (activée ou désactivée) après l’installation. Bien sûr, ce paramètrage doit être effectué simultanément pour tous les composants IKAN ALM installés.
+Lors de l’exécution de l’installation d'Kobee, le paramètre d’installation _alm.xmlrpc.secure_ active une communication sécurisée. Lorsqu’elle est définie à "true", la communication entre les composants Kobee installés est chiffrée. Par conséquent, si des composants Kobee supplémentaires (tels que l’Agent ou la Ligne de Commande Kobee) sont installés sur des hôtes distants, ils doivent également être définis avec _alm.xmlrpc.secure_ à "true" pendant leur installation, sinon la communication avec ces composants échouera. Nous vous recommandons vivement de définir _alm.xmlrpc.secure_ à "true" pour des raisons de sécurité. Cependant, la communication sécurisée peut être modifiée manuellement (activée ou désactivée) après l’installation. Bien sûr, ce paramètrage doit être effectué simultanément pour tous les composants Kobee installés.
 
-=== Configuration de la Communication sécurisée: Application Web IKAN ALM
+=== Configuration de la Communication sécurisée: Application Web Kobee
 
-La Communication sécurisée entre l’Application Web IKAN ALM et le Serveur/Agent IKAN ALM est contrôlée par un paramètre de contexte dans le fichier _TOMCAT_HOME/webapps/alm/WEB-INF/web.xml_:
+La Communication sécurisée entre l’Application Web Kobee et le Serveur/Agent Kobee est contrôlée par un paramètre de contexte dans le fichier _TOMCAT_HOME/webapps/alm/WEB-INF/web.xml_:
 
 [source]
 ----
@@ -1585,11 +1585,11 @@ Mettre le tag _<param-value>_ à "false" si vous voulez annuler la Communication
 
 Le service Tomcat doit être redémarré après avoir modifié le paramètre de contexte.
 
-=== Configuration de la Communication sécurisée: Serveur IKAN ALM
+=== Configuration de la Communication sécurisée: Serveur Kobee
 
-La Communication sécurisée entre le Serveur et l’Agent/Application Web IKAN ALM est contrôlée par les paramètres des fichiers _server.cfg_ et _org.ops4j.pax.web.cfg_.
+La Communication sécurisée entre le Serveur et l’Agent/Application Web Kobee est contrôlée par les paramètres des fichiers _server.cfg_ et _org.ops4j.pax.web.cfg_.
 
-Le fichier _server.cfg_ se trouve sous _ALM_HOME/daemons/server/karaf/etc_.
+Le fichier _server.cfg_ se trouve sous _KOBEE_HOME/daemons/server/karaf/etc_.
 
 [source]
 ----
@@ -1606,7 +1606,7 @@ alm.server.installer.shutdownTimeout=60
 
 Mettre la propriété _alm.xmlrpc.secure_ à "false" si vous voulez annuler la Communication sécurisée.
 
-Le fichier _org.ops4j.pax.web.cfg_ se trouve également dans _ALM_HOME/daemons/server/karaf/etc_.
+Le fichier _org.ops4j.pax.web.cfg_ se trouve également dans _KOBEE_HOME/daemons/server/karaf/etc_.
 
 
 [source]
@@ -1624,22 +1624,22 @@ org.osgi.service.http.port.secure=20021
 
 Mettre la valeur du paramètre _org.osgi.service.http.enabled_ à "true" et celle du paramètre _org.osgi.service.http.secure.enabled_ à "false" si vous souhaitez désactiver la Communication sécurisée.
 
-Le service du Serveur IKAN ALM doit être redémarré après avoir modifié les paramètres dans les fichiers _server.cfg_ et _org.ops4j.pax.web.cfg_.
+Le service du Serveur Kobee doit être redémarré après avoir modifié les paramètres dans les fichiers _server.cfg_ et _org.ops4j.pax.web.cfg_.
 
 
-=== Configuration de la Communication sécurisée: Agent IKAN ALM
+=== Configuration de la Communication sécurisée: Agent Kobee
 
-La Communication sécurisée entre l’Agent, le Serveur et l’Application Web IKAN ALM est contrôlée par les paramètres des fichiers _agent.cfg_ et _org.ops4j.pax.web.cfg_.
+La Communication sécurisée entre l’Agent, le Serveur et l’Application Web Kobee est contrôlée par les paramètres des fichiers _agent.cfg_ et _org.ops4j.pax.web.cfg_.
 
 
-Le fichier _agent.cfg_ se trouve dans _ALM_HOME/daemons/agent/karaf/etc_.
+Le fichier _agent.cfg_ se trouve dans _KOBEE_HOME/daemons/agent/karaf/etc_.
 
 [source]
 ----
 
 alm.agent.agentPort=20020
 alm.agent.serverPort=20021
-alm.agent.serverHost=ALM_SERVER_NAME
+alm.agent.serverHost=KOBEE_SERVER_NAME
 alm.agent.hostname=
 alm.agent.hostaddress=
 alm.agent.logfilepath=log/alm_agent.log
@@ -1650,7 +1650,7 @@ alm.agent.xml_rpc.cfg=etc/xml_rpc.properties
 
 Mettre la propriété _alm.xmlrpc.secure_ à "false" si vous voulez annuler la Communication sécurisée.
 
-Le fichier _org.ops4j.pax.web.cfg_ se trouve également dans _ALM_HOME/daemons/agent/karaf/etc_.
+Le fichier _org.ops4j.pax.web.cfg_ se trouve également dans _KOBEE_HOME/daemons/agent/karaf/etc_.
 
 [source]
 ----
@@ -1667,14 +1667,14 @@ org.osgi.service.http.port.secure=20020
 
 Mettre la valeur du paramètre _org.osgi.service.http.enabled_ à "true" et celle du paramètre _org.osgi.service.http.secure.enabled_ à "false" si vous souhaitez désactiver la Communication sécurisée.
 
-Le service de l'Agent IKAN ALM doit être redémarré après avoir modifié les paramètres dans les fichiers _agent.cfg_ et _org.ops4j.pax.web.cfg_.
+Le service de l'Agent Kobee doit être redémarré après avoir modifié les paramètres dans les fichiers _agent.cfg_ et _org.ops4j.pax.web.cfg_.
 
 === Configuration de la Communication sécurisée: Interface de Ligne de Commande
 
-Vous n’avez pas besoin de configurer les fichiers de l’installation de l'Interface de Ligne de Commande si vous souhaitez désactiver ou activer la Communication sécurisée. Définissez simplement la valeur de l’option de ligne de commande _-secured_ à "true" ou à "false" si vous souhaitez une Communication cryptée ou non cryptée avec le Serveur IKAN ALM. Cela peut également être fait dans les fichiers de propriétés qui peuvent être définis avec l’option _-propertyfile_, par exemple. dans `__ALM_HOME__/commandline/clr.properties` ou dans `__ALM_HOME__/commandline/package.properties`.
+Vous n’avez pas besoin de configurer les fichiers de l’installation de l'Interface de Ligne de Commande si vous souhaitez désactiver ou activer la Communication sécurisée. Définissez simplement la valeur de l’option de ligne de commande _-secured_ à "true" ou à "false" si vous souhaitez une Communication cryptée ou non cryptée avec le Serveur Kobee. Cela peut également être fait dans les fichiers de propriétés qui peuvent être définis avec l’option _-propertyfile_, par exemple. dans `__KOBEE_HOME__/commandline/clr.properties` ou dans `__KOBEE_HOME__/commandline/package.properties`.
 
 
-Ceci est également décrit dans l’utilisation de la Ligne de Commande IKAN ALM :
+Ceci est également décrit dans l’utilisation de la Ligne de Commande Kobee :
 
 
 [source]
@@ -1682,7 +1682,7 @@ Ceci est également décrit dans l’utilisation de la Ligne de Commande IKAN AL
 
 ...
 
-  -password         password to connect to the IKAN ALM Server
+  -password         password to connect to the Kobee Server
   -secured          use encrypted connection or not (true|false)
 
 ...
@@ -1694,7 +1694,7 @@ Ceci est également décrit dans l’utilisation de la Ligne de Commande IKAN AL
 [[_db2configuration]]
 == Configuration DB2
 
-Si vous utilisez DB2 comme Base de données IKAN ALM, assurez-vous que la taille de page de l'espace de table "tablespace" et le "buffer pool" associé ne soit pas inférieure à 8 ko.
+Si vous utilisez DB2 comme Base de données Kobee, assurez-vous que la taille de page de l'espace de table "tablespace" et le "buffer pool" associé ne soit pas inférieure à 8 ko.
 Sinon, au moment de créer la nouvelle Base de données dans DB2, la taille de page par défaut sera de 4 ko, ce qui pourrait entraîner des erreurs SQL lors de l'exécution du script d'initialisation de la base de données.
 
 

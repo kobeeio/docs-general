@@ -667,14 +667,14 @@ For example: `\http://kobee_server:8080/kobee`.
 If this is the first installation of Kobee, the License window will be displayed:
 
 
-image::no_license.png[,617,187]
+image::no_license.png[,624,243]
 
 Provide a valid license, and then click __Submit__.
 
 Next, the Log in page will be displayed:
 
 
-image::license_installed.png[,520,255]
+image::license_installed.png[,431,315]
 
 Log in with user id "`global`", password "`global`". For information about the other default users, see <<_jaasconfiguration>>.
 

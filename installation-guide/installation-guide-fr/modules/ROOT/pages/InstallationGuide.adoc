@@ -667,14 +667,14 @@ Par exemple: \http://alm_server:8080/alm.
 S'il s'agit d'une première installation d'Kobee, la fenêtre de la Licence s'affiche.
 
 
-image::no_license.png[,617,187]
+image::no_license.png[,624,243]
 
 Saisissez une licence valide et cliquez sur le bouton _Submit_.
 
 Ensuite, la fenêtre de connexion s'affichera.
 
 
-image::license_installed.png[,520,255]
+image::license_installed.png[,431,315]
 
 Connectez-vous avec l'Utilisateur "global" et le Mot de passe "global". Pour plus d'informations concernant les autres utilisateurs par défaut, voir <<_jaasconfiguration, Configuration JAAS>>
 

@@ -64,7 +64,7 @@ Example configuration 2: Multiple machines, remote Agent and Commandline:
 
 The following section provides an overview of the prerequisites for installing Kobee.
 
-For the detailed Technical Requirements, consult xref:5.9@technical-sheet-en:ROOT:TechSheet.adoc[Technical Sheet].
+For the detailed Technical Requirements, consult xref:6.0@technical-sheet-en:ROOT:TechSheet.adoc[Technical Sheet].
 
 === Hardware Requirements
 
@@ -678,7 +678,7 @@ image::license_installed.png[,431,315]
 
 Log in with user id "`global`", password "`global`". For information about the other default users, see <<_jaasconfiguration>>.
 
-For more information on the ALM GUI, refer to the xref:5.9@user-guide-en:ROOT:Introduction.adoc[Kobee User Guide].
+For more information on the ALM GUI, refer to the xref:6.0@user-guide-en:ROOT:Introduction.adoc[Kobee User Guide].
 
 [[_bhbdbdje]]
 === Starting the Kobee Server
@@ -754,7 +754,7 @@ Open a Command Prompt, cd into the installation folder of the Kobee Commandline 
 +
 Open a shell, cd into the installation folder of the Kobee Commandline (for example : KOBEE_HOME/commandline), and launch _./alm.sh_.
 
-For more detailed information about the Kobee Commandline, refer to the section xref:5.9@user-guide-en:ROOT:CommandLine.adoc[Commandline Interface] in the __Kobee User Guide__.
+For more detailed information about the Kobee Commandline, refer to the section xref:6.0@user-guide-en:ROOT:CommandLine.adoc[Commandline Interface] in the __Kobee User Guide__.
 
 
 == Uninstalling Kobee
@@ -961,7 +961,7 @@ Remote Agents of version 5.8 (IKAN ALM) and higher can be upgraded using the Kob
 +
 Remote Agents of version 5.7 (IKAN ALM) and lower must first be manually uninstalled. After that, they can be re-installed using the Kobee GUI.
 +
-For more information about installing or upgrading Kobee Agents using the Kobee GUI, refer to xref:5.9@how-to-ui-agentinstall-en:ROOT:HowTo_UIAgentInstall.adoc[Kobee Agent UI Installation].
+For more information about installing or upgrading Kobee Agents using the Kobee GUI, refer to xref:6.0@how-to-ui-agentinstall-en:ROOT:HowTo_UIAgentInstall.adoc[Kobee Agent UI Installation].
 
 === Database Migration Tool
 
@@ -985,7 +985,7 @@ A migration log is created in the _INSTALL_DIR/almDbMigration.log_ file and will
 
 === Clearing the browser cache
 
-After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:5.9@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
+After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:6.0@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
 
 === Updating the JAAS configuration
 

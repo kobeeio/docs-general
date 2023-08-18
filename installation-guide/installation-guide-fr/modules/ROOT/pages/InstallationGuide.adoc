@@ -67,7 +67,7 @@ Exemple de configuration 2: Plusieurs machines, un Agent distant et la Ligne de 
 
 La section suivante offre un aperçu des prérequis pour l'installation d'Kobee.
 
-Les exigences techniques détaillées sont disponibles sur xref:5.9@technical-sheet-fr:root:TechSheet.adoc[Fiche Technique Kobee].
+Les exigences techniques détaillées sont disponibles sur xref:6.0@technical-sheet-fr:root:TechSheet.adoc[Fiche Technique Kobee].
 
 === Les exigences techniques
 
@@ -678,7 +678,7 @@ image::license_installed.png[,431,315]
 
 Connectez-vous avec l'Utilisateur "global" et le Mot de passe "global". Pour plus d'informations concernant les autres utilisateurs par défaut, voir <<_jaasconfiguration, Configuration JAAS>>
 
-Pour plus d'informations concernant l'Interface Utilisateur d'Kobee, se référer au xref:5.9@user-guide-fr:root:Introduction.adoc[Guide Utilisateur Kobee].
+Pour plus d'informations concernant l'Interface Utilisateur d'Kobee, se référer au xref:6.0@user-guide-fr:root:Introduction.adoc[Guide Utilisateur Kobee].
 
 [[_bhbdbdje]]
 === Démarrer le Serveur Kobee
@@ -755,7 +755,7 @@ Ouvrez une Invite de commandes, tapez un "cd" vers le répertoire d'installation
 * Pour lancer la Ligne de Commande Kobee sous Linux/Unix:
 +
 Ouvrez un terminal, tapez un "cd" vers le répertoire d'installation de l'Interface de Ligne de Commande (exemple : KOBEE_HOME/commandline) et exécutez _alm.sh_.
-Pour des informations plus détaillées concernant l'Interface de Ligne de Commande Kobee, se référer à la section xref:5.9@user-guide-fr:root:CommandLine.adoc[Interface de Ligne de Commande] dans le __Guide Utilisateur Kobee__.
+Pour des informations plus détaillées concernant l'Interface de Ligne de Commande Kobee, se référer à la section xref:6.0@user-guide-fr:root:CommandLine.adoc[Interface de Ligne de Commande] dans le __Guide Utilisateur Kobee__.
 
 
 == Désinstaller Kobee
@@ -962,7 +962,7 @@ Les Agents distants de la version 5.8 et supérieure peuvent être mis à niveau
 +
 Les Agents distants de la version 5.7 et inférieure doivent être d"sinstallés manuellement. Après cela, ils peuvent être ré-installés avec l'Interface Utilisateur Web. 
 +
-Pour plus d'information sur l'installation ou la mise à niveau des Agents avec l'Interface Utilisateur Web, se référer à xref:5.9@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[Interface Utilisateur d'Installation d'un Agent Kobee].
+Pour plus d'information sur l'installation ou la mise à niveau des Agents avec l'Interface Utilisateur Web, se référer à xref:6.0@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[Interface Utilisateur d'Installation d'un Agent Kobee].
 
 === Outil de migration de la Base de données
 
@@ -986,7 +986,7 @@ Une trace de la migration est créée dans le fichier __INSTALL_DIR__/almDbMigra
 
 === Nettoyer le cache du Navigateur
 
-Après la mise à niveau d'Kobee, il est recommandé à tous les Utilisateurs de supprimer le cache de leur Navigateur avant de démarrer avec la nouvelle version de l'Application Web. Pour les instructions, référez-vous au document xref:5.9@how-to-tomcatinstall-en:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
+Après la mise à niveau d'Kobee, il est recommandé à tous les Utilisateurs de supprimer le cache de leur Navigateur avant de démarrer avec la nouvelle version de l'Application Web. Pour les instructions, référez-vous au document xref:6.0@how-to-tomcatinstall-en:root:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
 
 === Modifier la configuration JAAS
 

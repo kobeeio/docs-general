@@ -40,7 +40,7 @@ This URL is specified on the _Mail_ subpanel on the _System Settings_ screen. Se
 +
 The _Kobee Log in_ screen is displayed:
 +
-image::GettingStarted-Logging-login.png[,528,270] 
+image::GettingStarted-Logging-login.png[,417,292] 
 +
 [NOTE]
 ====
@@ -76,7 +76,7 @@ image::GettingStarted-Logging-logout-menu.png[,1170,154]
 +
 The following screen is displayed:
 +
-image::GettingStarted-Logging-logout.png[,528,270] 
+image::GettingStarted-Logging-logout.png[,415,292] 
 . You can now reconnect to Kobee or close your browser window.
 +
 
@@ -105,7 +105,7 @@ To access this option, select _About_ from the _Help_ drop-down menu, on the Mai
 +
 The following screen is displayed:
 +
-image::GettingStarted-Logging-license-install.png[,629,205] 
+image::GettingStarted-Logging-license-install.png[,616,226] 
 . Select the license file (alm_license.lic) using the _Browse_ button.
 +
 Your Kobee Administrator will provide the exact file name and location.
@@ -113,11 +113,11 @@ Your Kobee Administrator will provide the exact file name and location.
 +
 When the License file is accepted, the following screen is displayed:
 +
-image::GettingStarted-Logging-license-success.png[,1200,567] 
+image::GettingStarted-Logging-license-success.png[,414,296] 
 +
 If the License file is not accepted, the following error message is displayed:
 +
-image::GettingStarted-Logging-license-invalid.png[,629,205] 
+image::GettingStarted-Logging-license-invalid.png[,621,232] 
 +
 Most likely the problem is either a corrupted License file (or a file that doesn`'t contain an Kobee License), or an expired License in the file.
 Contact your Kobee Administrator or your IKAN ALM vendor to obtain a new License file.

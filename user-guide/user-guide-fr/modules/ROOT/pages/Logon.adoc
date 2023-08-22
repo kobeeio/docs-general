@@ -36,7 +36,7 @@ Cet URL est spécifié dans la section _Courrier_ dans l'écran _Paramètres sys
 +
 La fenêtre de _Connexion_ s`'affiche:
 +
-image::GettingStarted-Logging-login.png[,514,251]
+image::GettingStarted-Logging-login.png[,408,289]
 +
 
 [NOTE]
@@ -70,7 +70,7 @@ image::GettingStarted-Logging-logout-menu.png[,1004,115]
 +
 La fenêtre suivante s`'affiche:
 +
-image::GettingStarted-Logging-logout.png[,510,250]
+image::GettingStarted-Logging-logout.png[,414,296]
 +
 . Vous pouvez maintenant établir une nouvelle connexion à Kobee ou fermer votre fenêtre de navigateur.
 +
@@ -96,7 +96,7 @@ Cette option d`'installation est également disponible sur l`'écran __À propos
 +
 La fenêtre suivante s`'affiche:
 +
-image::GettingStarted-Logging-license-install.png[,612,191]
+image::GettingStarted-Logging-license-install.png[,608,224]
 +
 . Sélectionnez le fichier de licence (alm_license.lic) en utilisant le bouton __Choisir un fichier__.
 +
@@ -105,11 +105,11 @@ Votre Administrateur Kobee pourra vous donner le nom exact du fichier et l`'endr
 +
 Quand la licence est acceptée, la fenêtre suivante s`'affiche:
 +
-image::GettingStarted-Logging-license-success.png[,1175,561]
+image::GettingStarted-Logging-license-success.png[,408,286]
 +
 Si la licence n`'est pas acceptée, le message d`'erreur suivant s`'affiche:
 +
-image::GettingStarted-Logging-license-invalid.png[,469,254]
+image::GettingStarted-Logging-license-invalid.png[,611,226]
 +
 Il s`'agira probablement d`'un fichier de licence corrompu (ou d`'un fichier qui ne contient pas de licence Kobee) ou d`'un fichier de licence contenant une licence expirée.
 Contactez votre Administrateur Kobee ou votre vendeur IKAN ALM pour obtenir un nouveau fichier de licence.

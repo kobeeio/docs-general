@@ -1,20 +1,20 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
-:description: Fiche Technique IKAN ALM (French)
-:revnumber: v5.9
-:revdate: 25.01.2022
+:description: Fiche Technique Kobee (French)
+:revnumber: v6.0
+:revdate: 22.08.2023
 
-= Fiche Technique IKAN ALM
+= Fiche Technique Kobee
 
 == Aperçu
 
-IKAN ALM est une solution Web multi-plateformes pour la gestion du cycle de vie des applications. Il combine des initiatives DevOps (construction et intégration continue) et la gestion du cycle de vie pour prendre en charge la complexité des architectures orientées services et des systèmes hautement distribués.
+Kobee est une solution Web multi-plateformes pour la gestion du cycle de vie des applications. Il combine des initiatives DevOps (construction et intégration continue) et la gestion du cycle de vie pour prendre en charge la complexité des architectures orientées services et des systèmes hautement distribués.
 
-IKAN ALM englobe tous les aspects du processus de gestion du cycle de vie des applications, offrant la gestion des constructions, l’intégration continue, la reconstruction, la construction manuelle, la gestion des versions, les processus d’approbation et la gestion du déploiement. Au sein d’IKAN ALM, vous définissez, mettez en œuvre et appliquez des processus de cycle de vie logiciel adaptés à votre organisation, y compris le développement, les tests, l’assurance qualité et la production finale.
+Kobee englobe tous les aspects du processus de gestion du cycle de vie des applications, offrant la gestion des constructions, l’intégration continue, la reconstruction, la construction manuelle, la gestion des versions, les processus d’approbation et la gestion du déploiement. Au sein de Kobee, vous définissez, mettez en œuvre et appliquez des processus de cycle de vie logiciel adaptés à votre organisation, y compris le développement, les tests, l’assurance qualité et la production finale.
 
-IKAN ALM est un outil *indépendant de la méthodologie* et *neutre pour le référentiel* (permettant le développement multi-plateformes). IKAN ALM est conforme aux normes de l’industrie, telles que CMMI, ITIL et PRINCE. Il aide votre organisation à appliquer, contrôler, auditer, générer des rapports et faciliter les meilleures pratiques et directives pour la gestion du cycle de vie des applications, et fournit des avantages qui garantissent la conformité aux exigences d’audit et améliore les communications entre les différents intervenants du système informatique.
+Kobee est un outil *indépendant de la méthodologie* et *neutre pour le référentiel* (permettant le développement multi-plateformes). Kobee est conforme aux normes de l’industrie, telles que CMMI, ITIL et PRINCE. Il aide votre organisation à appliquer, contrôler, auditer, générer des rapports et faciliter les meilleures pratiques et directives pour la gestion du cycle de vie des applications, et fournit des avantages qui garantissent la conformité aux exigences d’audit et améliore les communications entre les différents intervenants du système informatique.
 
-N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre solution IKAN ALM pour la gestion du cycle de vie d`'une application.
+N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre solution Kobee pour la gestion du cycle de vie d`'une application.
 
 == Fonctionnalités techniques
 
@@ -54,7 +54,7 @@ N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre
 
 * reconstruire des Constructions précédentes sur d'autres plateformes Cibles
 * Déployer des Constructions exécutées précédemment sur d'autres Serveurs Cibles
-* Définir le flux du processus, c'est-à-dire, la migration des Constructions depuis l'environnement BUILD vers l'environnement TEST jusqu'en PRODUCTION (ces environnements sont appelés des Niveaux en langage IKAN ALM)
+* Définir le flux du processus, c'est-à-dire, la migration des Constructions depuis l'environnement BUILD vers l'environnement TEST jusqu'en PRODUCTION (ces environnements sont appelés des Niveaux en langage Kobee)
 * Personnaliser les étapes de Construction et de Déploiement pour le déploiement vers un Niveau
 * Possibilité de définir un processus d'approbation hiérarchique après et/ou avant le déploiement vers un Niveau
 * Possibilité de définir les notifications requises après et/ou avant le déploiement vers un Niveau
@@ -106,7 +106,7 @@ N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre
 * Possibilité d'exécuter tout script Ant, Gradle, NAnt, Maven pour construire et déployer le Projet
 * Aucune intrusion dans le script de Construction/Déploiement
 * Possibilité de fournir des propriétés Ant/Gradle/NAnt/Maven supplémentaires et de les modifier juste avant la Construction ou le Déploiement
-* Ajouter un script Ant/Gradle/NAnt/Maven à une Phase personnalisée avec des propriétés spécifiques. Ainsi vous pouvez facilement le distribuer et le réutiliser dans différents Projets ou installations IKAN ALM
+* Ajouter un script Ant/Gradle/NAnt/Maven à une Phase personnalisée avec des propriétés spécifiques. Ainsi vous pouvez facilement le distribuer et le réutiliser dans différents Projets ou installations Kobee
 * Possibilité de spécifier des options JVM telles que -Xms et -Xmx
 * Support de plusieurs versions de Ant/Gradle/NAnt/Maven
 * Chemin de classe Ant/Maven configurable
@@ -127,7 +127,7 @@ N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre
 * Possibilité de manuellement associer des Incidents à des Constructions
 * Synchroniser des propriétés d'Incidents (statut, description, etc.) avec un Système de Suivi des Incidents externe
 * Ajouter automatiquement des Commentaires aux Incidents chaque fois qu'une Construction avance dans le Cycle de vie
-* Afficher les détails des Incidents dans l'interface graphique d'IKAN ALM
+* Afficher les détails des Incidents dans l'interface graphique de Kobee
 * Intégration spécialisée avec JIRA (on-premise et Cloud), Team Foundation Server, Azure DevOps Services, MicroFocus ALM and GitHub
 * Intégration avec tout Système de Suivi des Incidents tiers via API
 
@@ -182,16 +182,16 @@ N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre
 
 * Intégration avec un Système de sécurité opérationnel
 * Authentification des Utilisateurs
-* mots de passe et phrases de passe pour tous les paramètres IKAN ALM (paramètres du système, définitions RCV, Secure Shell, ...) lecture impossible pour tout Utilisateur IKAN ALM
+* mots de passe et phrases de passe pour tous les paramètres Kobee (paramètres du système, définitions RCV, Secure Shell, ...) lecture impossible pour tout Utilisateur Kobee
 * Toutes les valeurs sécurisées sont cryptées avant d'être sauvegardées dans la Base de données pour garantir une sécurité maximale
-* Possibilité de crypter toute communication entre les composants IKAN ALM
+* Possibilité de crypter toute communication entre les composants Kobee
 * Autorisation des Utilisateurs
 ** pour demander des Constructions
 ** pour demander des déploiements vers les Niveaux
 ** pour approuver ou rejeter des Constructions et/ou des Déploiements
 ** pour gérer les projets
 ** pour l’administration des paramètres de construction et/ou de déploiement
-** pour gérer IKAN ALM
+** pour gérer Kobee
 
 
 === Interface de Ligne de Commande \(C) et REST \(R)
@@ -201,7 +201,7 @@ N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre
 * Générer un rapport à partir d'une fenêtre de commande \(C)
 * Créer ou modifier un Paquet à partir d'une fenêtre de commande ou un point d'accès REST (C+R)
 * Approuver ou rejeter la livraison d’une construction au niveau suivant \(R)
-* Exporter un projet à partir d’une instance IKAN ALM (par exemple, test) et l'importer ensuite dans une autre instance (par exemple, Production) \(R) 
+* Exporter un projet à partir d’une instance Kobee (par exemple, test) et l'importer ensuite dans une autre instance (par exemple, Production) \(R) 
 * Récupérer les détails de la configuration globale, des projets, des constructions, des déploiements,... au format json ou xml \(R)
 
 
@@ -284,37 +284,37 @@ N'hésitez pas à nous contacter si vous souhaitez plus d'informations sur notre
 
 === Exigences de matériel minimum
 
-IKAN ALM est constitué de 4 composants majeurs:
+Kobee est constitué de 4 composants majeurs:
 
 * Application Web
 * Serveur
 * Agent
 * Interface de Ligne de Commande
 
-Le Serveur IKAN ALM et l'Application Web doivent être installés sur la même machine. L'Agent et l'Interface de Ligne de Commande IKAN ALM peuvent être installés sur des machines distantes.
+Le Serveur Kobee et l'Application Web doivent être installés sur la même machine. L'Agent et l'Interface de Ligne de Commande Kobee peuvent être installés sur des machines distantes.
 
-==== Application Web IKAN ALM
+==== Application Web Kobee
 
 * RAM: minimum 512 Mo (Mégaoctets), recommandé 1 Go (Gigaoctets) ou plus
 * Espace de stockage disque: minimum 1 Go, recommandé 5 Go ou plus
 
-==== IKAN ALM Server
+==== Kobee Server
 
 * RAM: minimum 512 Mo, recommandé 1 Go ou plus
 * Espace de stockage disque: minimum 10 Go, recommandé 40 GB ou plus
 
 Il n'existe pas de règle absolue concernant l'espace de stockage disque requis.
-L'espace de stockage nécessaire dépendra du nombre et de la taille des projets gérés dans IKAN ALM et de la taille des résultats de construction sauvegardés dans les Archives de construction.
+L'espace de stockage nécessaire dépendra du nombre et de la taille des projets gérés dans Kobee et de la taille des résultats de construction sauvegardés dans les Archives de construction.
 Plus il y a de projets et de résultats de construction, et plus ceux-ci sont larges, plus vous aurez besoin d'espace de stockage disque.
 
-==== Agent IKAN ALM
+==== Agent Kobee
 
 * RAM: minimum 512 Mo, recommandé 2 Go ou plus
 * Espace de stockage disque: minimum 1 Go
 
-La quantité de RAM et d’espace disque nécessaire à une machine qui exécute un agent IKAN ALM dépend en grande partie de la quantité de ressources nécessaires aux scripts de construction et de déploiement et aux phases personnalisées utilisées par les projets qui y sont construits et déployés.
+La quantité de RAM et d’espace disque nécessaire à une machine qui exécute un agent Kobee dépend en grande partie de la quantité de ressources nécessaires aux scripts de construction et de déploiement et aux phases personnalisées utilisées par les projets qui y sont construits et déployés.
 
-==== Interface de Ligne de Commande IKAN ALM
+==== Interface de Ligne de Commande Kobee
 
 * RAM: minimum 256 Mo, recommandé 256 Mo
 * Espace de stockage disque: minimum 100 Mo

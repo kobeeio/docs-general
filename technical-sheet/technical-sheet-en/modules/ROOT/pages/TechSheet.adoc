@@ -1,18 +1,18 @@
 // The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
 :imagesdir: ../images
-:description: IKAN ALM Technical Sheet (English)
-:revnumber: v5.9
-:revdate: 18.10.2021
+:description: Kobee Technical Sheet (English)
+:revnumber: v6.0
+:revdate: 22.08.2023
 
-= IKAN ALM Technical Sheet
+= Kobee Technical Sheet
 
 == Overview
 
-IKAN ALM is a cross-platform web-based solution for Application Lifecycle Management. It combines DevOps initiatives (continuous build and continuous integration) and lifecycle management to support the complexity of service-oriented architectures and highly distributed systems.
+Kobee is a cross-platform web-based solution for Application Lifecycle Management. It combines DevOps initiatives (continuous build and continuous integration) and lifecycle management to support the complexity of service-oriented architectures and highly distributed systems.
 
-IKAN ALM encompasses all aspects of the Application Lifecycle Management process offering build management, continuous integration, rebuild, manual build, release management, approval processes and deployment management. Within IKAN ALM, you define, implement and enforce software lifecycle processes, appropriate for your organization, including development, test, quality assurance and final production.
+Kobee encompasses all aspects of the Application Lifecycle Management process offering build management, continuous integration, rebuild, manual build, release management, approval processes and deployment management. Within Kobee, you define, implement and enforce software lifecycle processes, appropriate for your organization, including development, test, quality assurance and final production.
 
-IKAN ALM is a *methodology-independent* and *repository-neutral* tool (enabling cross-platform development). IKAN ALM complies with industry standards, such as CMMI, ITIL and PRINCE. It helps your organization to enforce, control, audit, report and facilitate best practices and guidelines for Application Lifecycle Management, and provides benefits which guarantee conformity with audit requirements and improve communications with the different parties across the IT system.
+Kobee is a *methodology-independent* and *repository-neutral* tool (enabling cross-platform development). Kobee complies with industry standards, such as CMMI, ITIL and PRINCE. It helps your organization to enforce, control, audit, report and facilitate best practices and guidelines for Application Lifecycle Management, and provides benefits which guarantee conformity with audit requirements and improve communications with the different parties across the IT system.
 
 Do not hesitate to contact us to learn more about IKAN`'s solution for Application Lifecycle Management.
 
@@ -54,7 +54,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 * Rebuild of previous builds on other target platform
 * Deployment of previously executed builds to other target servers
-* Define process flow: how builds migrate from BUILD to TEST to PRODUCTION environments (called Levels in IKAN ALM language)
+* Define process flow: how builds migrate from BUILD to TEST to PRODUCTION environments (called Levels in Kobee language)
 * Customize the Build and Deploy steps for delivering to a Level
 * Possibility to define hierarchical approval process after and/or before deployment towards a Level
 * Possibility to define required notification after and/or before build/deployment towards a Level
@@ -105,7 +105,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * Ability to execute any Ant, Gradle, NAnt, or Maven script to build and deploy the project
 * No intrusion into the build/deploy script
 * Ability to pass extra Ant/Gradle/NAnt/Maven properties and change them right before build/deploy
-* Wrap an Ant/Gradle/NAnt/Maven script in a Custom Phase with specific properties and easily distribute and reuse it in different Projects or IKAN ALM installations
+* Wrap an Ant/Gradle/NAnt/Maven script in a Custom Phase with specific properties and easily distribute and reuse it in different Projects or Kobee installations
 * Ability to specify JVM options like -Xms and -Xmx
 * Support for Multiple Versions of Ant/Gradle/NAnt/Maven
 * Configurable Ant/Maven Classpath
@@ -126,7 +126,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * Possibility to link issues with builds manually
 * Synchronize issue properties (status, description, etc.) with external Issue Tracking System
 * Automatically add comments to issues each time a build moves through the lifecycle
-* View details of issues from within the IKAN ALM GUI
+* View details of issues from within the Kobee GUI
 * Built-in integration with JIRA (on-premise and Cloud), Team Foundation Server, Azure DevOps Services, MicroFocus ALM and GitHub
 * Integration with any 3rd party Issue Tracking System via API
 
@@ -179,16 +179,16 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 * Integrates with operational security system
 * User Authentication
-* Passwords and passphrases in all IKAN ALM settings (System Settings, VCR definition, Secure Shell...) cannot be read by any IKAN ALM user
+* Passwords and passphrases in all Kobee settings (System Settings, VCR definition, Secure Shell...) cannot be read by any Kobee user
 * All secure values are encrypted before they are stored in the database for maximum security
-* Possibility to encrypt all communication between IKAN ALM components
+* Possibility to encrypt all communication between Kobee components
 * User Authorization:
 ** For requesting builds
 ** For requesting deliveries to levels
 ** For approving/rejecting builds and/or deploys
 ** For administering projects
 ** For administering build and/or deploy parameters
-** For administering IKAN ALM
+** For administering Kobee
 
 
 === Commandline \(C) and REST \(R) Interface
@@ -198,7 +198,7 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 * Generate a report from a command prompt \(C)
 * Create or edit a package from a command prompt or REST endpoint (C+R)
 * Approve or Reject the delivery of a build to the next level \(R)
-* Export a Project from one (e.g. Test) IKAN ALM instance and subsequently import it into another (e.g. Production) instance \(R) 
+* Export a Project from one (e.g. Test) Kobee instance and subsequently import it into another (e.g. Production) instance \(R) 
 * Retrieve the details of global setup, projects, builds, deploys,... in json or xml format \(R)
 
 
@@ -282,37 +282,37 @@ Do not hesitate to contact us to learn more about IKAN`'s solution for Applicati
 
 === Minimum Hardware Requirements
 
-IKAN ALM consists of 4 major components:
+Kobee consists of 4 major components:
 
-* IKAN ALM Web Application
-* IKAN ALM Server
-* IKAN ALM Agent
-* IKAN ALM Commandline
+* Kobee Web Application
+* Kobee Server
+* Kobee Agent
+* Kobee Commandline
 
-The IKAN ALM Server and Web Application need to be installed on the same host. The IKAN ALM Agent and Commandline can be installed on remote hosts.
+The Kobee Server and Web Application need to be installed on the same host. The Kobee Agent and Commandline can be installed on remote hosts.
 
-==== IKAN ALM Web Application
+==== Kobee Web Application
 
 * RAM: minimum 512 MB, recommended 1 GB or more
 * Disk Storage Space: minimum 1 GB, recommended 5 GB or more
 
-==== IKAN ALM Server
+==== Kobee Server
 
 * RAM: minimum 512 MB, recommended 1 GB or more
 * Disk Storage Space: minimum 10 GB, recommended 40 GB or more
 
 There is no hard and fast rule for disk storage space.
-The actual amount you will require depends on the number and size of projects managed with IKAN ALM, and the size of the build results stored in the build archive.
+The actual amount you will require depends on the number and size of projects managed with Kobee, and the size of the build results stored in the build archive.
 The more projects and build results, and the larger they are, the more disk storage you will require.
 
-==== IKAN ALM Agent
+==== Kobee Agent
 
 * RAM: minimum 512 MB, recommended 1 GB or more
 * Disk Storage Space: minimum 1 GB
 
 The amount of RAM and disk space needed by a machine that runs an ALM Agent greatly depends on the amount of resources needed by the build and deploy scripts and custom phases used by the projects that are being built and deployed on it.
 
-==== IKAN ALM Commandline
+==== Kobee Commandline
 
 * RAM: minimum 256 MB, recommended 256 MB
 * Disk Storage Space: minimum 100 MB

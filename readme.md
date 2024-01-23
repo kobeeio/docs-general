@@ -6,7 +6,7 @@ Always consult the "antora.yml" file in the document to verify, it should contai
 
 **Documents in this repository**
 
-* alm-reports 5.8
+* alm-reports 5.9(Windows) & 5.8(Linux)
 * data-model 5.8
 * getting-started 5.8(EN) & 5.8(FR) 	      
 * installation-guide 6.0(EN) & 6.0(FR)

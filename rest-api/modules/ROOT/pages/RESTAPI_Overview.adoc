@@ -1,3 +1,8 @@
+// The imagesdir attribute is only needed to display images during offline editing. Antora neglects the attribute.
+:imagesdir: ../images
+:description: Kobee REST API
+:revnumber: v6.0
+:revdate: 22.08.2023
 = Kobee REST API v1
 
 

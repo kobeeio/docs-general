@@ -315,6 +315,11 @@ alm.server.rdbms.pwd=kobee
 alm.server.rdbms.dbname=kobee
 # dbschema : database schema (for DB2 and POSTGRESQL)
 alm.server.rdbms.dbschema=kobee
+# TCP protocol to be used to connect to the database. Valid values are "tcp" and "tcps". Only relevant for ORACLE.
+alm.server.rdbms.oracle.protocol=tcps
+# Full JDBC connection URL that will be used by the Kobee webapp and server to connect to the database. 
+# When left empty, a default connection url will be used, based on the rdbms.* values specified above. This is fine in most cases. 
+alm.server.rdbms.jdbcUrl=
 # Flag to indicate whether to initialize the Kobee database
 # WARNING : when set to "true", all Kobee related tables in the target
 # database will be dropped and populated with initial data !!
@@ -374,6 +379,18 @@ alm.server.rdbms.dbschema
 |
 
 The database schema name. Required when the database type is DB2 or POSTGRESQL, optional for the other database types.
+|
+
+alm.server.rdbms.oracle.protocol
+|
+
+The type of TCP protocol to be used to connect to the database. Valid values are "tcp" and "tcps". Only relevant when the database type is ORACLE.
+|
+
+alm.server.rdbms.jdbcUrl
+|
+
+The complete JDBC connection URL that will be used by the Kobee Web Application and Kobee Server to connect to the database. When left empty, a default connection URL will be constructed, based on the alm.server.rdbms.* values specified above. This is fine in most cases, but you can override this behaviour by specifying the JDBC connection URL in this property.
 |
 
 alm.server.rdbms.initALMDatabase

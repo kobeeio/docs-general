@@ -42,7 +42,7 @@ The Kobee Server Environment contains the following important files and folders:
 * Work Copy Location: the location where the sources that are checked out from the repository are stored before they are transported to the Agents,
 * Phase Catalog Location: the location where the Phases that have been imported will be stored, ready to be retrieved by remote Agents when needed,
 * Scripts Location: the location to be used for storing centralized build and deploy scripts,
-* Configuration of an external authentication and authorization system. For more information, refer to the Appendix <<_jaasconfiguration>>,
+* Configuration of an external authentication and authorization system. For more information, refer to the Appendices <<_jaasconfiguration>> and <<_reverseproxyconfiguration>>,
 * Documentation in PDF format.
 
 A machine that needs to execute Kobee Builds and Deploys must have the Kobee _Agent_ installed.
@@ -706,7 +706,7 @@ To start the Kobee Server service on Windows, open a Command Prompt or PowerShel
 
 [source]
 ----
-net start Kobeesvr59
+net start Kobeesvr60
 ----
 
 To start the Kobee Server service on a System V compatible Linux system, open a shell and execute :
@@ -989,10 +989,10 @@ The Database Migration Tool is a commandline tool that automatically detects the
 You should always backup the ALM database before starting the migration!
 --
 
-To start the migration, run the script _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix). 
+To start the migration, run the script _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateKobeeDatabase.sh (Linux/Unix). 
 
 By default, the Database Migration Tool uses the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the script. In this case, edit the 
- _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateALMDatabase.sh (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
+ _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateKobeeDatabase.sh (Linux/Unix) file, and follow the instructions of <<Running the Installer>> to set the JAVA_HOME variable.
 
 By default, the Database Migration Tool uses the database connection parameters defined in the _INSTALL_DIR/install.properties_ file. You can also define a custom path to the install.properties file by using the "-installProperties" switch.
 
@@ -1715,3 +1715,99 @@ The page size of a table space in DB2 is determined by the associated buffer poo
 So, if you want to use an existing DB2 database with the page size already set to 4K, a possible workaround would be to create a new buffer pool with a page size of 8K, and next to create a new table space (e.g., USERSPACE2) with a page size of 8K and associate it with the new buffer pool.
 
 Furthermore, you will also need to create a new system temporary tablespace (e.g., TEMPSPACE2) and associate it with a buffer pool that has a page size set to at least 8K.
+
+[appendix]
+[[_reverseproxyconfiguration]]
+== Reverse Proxy SSO configuration for the Kobee web application
+
+The Kobee web application supports authentication and authorisation by accepting requests with specific headers forwarded from a reverse proxy server, such as Apache HTTP Server (httpd), IBM WebSEAL for Tivoli Access Manager (TAM), or NGINX. This configuration enables Single Sign-On (SSO) and replaces JAAS-based authentication, eliminating the need for users to manually enter a username and password through the _Kobee Log in_ screen.
+
+[NOTE]
+====
+This reverse proxy configuration does not support authentication and authorisation for the Kobee commandline interface or the Kobee REST application; it only enables SSO for the Kobee web application. The JAAS configuration (see <<_jaasconfiguration>>) is still required for both Kobee REST and commandline requests.
+====
+
+Logging in to the Kobee web application via a reverse proxy typically follows this process:
+
+* the user authenticates through the company's security system, which integrates with or is configured by a reverse proxy server.
+
+* the reverse proxy server provides a web browser landing page that may contain links to various back-end applications and resources. One of these links points to the Kobee web application's entry point, such as `\http://proxy_server/kobee`.
+
+* when the user clicks the Kobee web application link, the reverse proxy server routes the request to the _kobee_ resource running under the Apache Tomcat web server at the URL `\http://<host>:<port>/kobee`, for example, `\http://kobee_server:8080/kobee`. The reverse proxy also includes specific request headers identifying the user and their access groups, such as `iv-user : global` and `iv-groups : Kobee Administrator, Kobee User`.
+
+* since the Kobee web application is configured for _Reverse Proxy SSO_ the incoming request will *NOT* trigger the _User ID_ and _Password_ _Log in_ screen. Instead it is routed to a specific _reverse proxy_ login method where the user will be authenticated and authorised based on the provided request headers.
+
+This appendix explains how to configure the *Kobee server installation* for Reverse Proxy SSO. It does not cover configuring the reverse proxy server itself (e.g., routing incoming requests to the Kobee web application, integrating with a security system, or adding specific request headers for users and groups). For those configurations, please refer to the documentation of your reverse proxy server.
+
+[WARNING]
+====
+Ensure that clients cannot bypass the Reverse Proxy. If clients can send requests directly to the Kobee web application, a malicious user could inject arbitrary headers with malicious values, compromising the security of the Kobee application.
+====
+
+Configuring the *Kobee server installation* for Reverse Proxy SSO involves two key steps: 
+
+* modify the Apache Tomcat startup scripts to set the Java option _io.kobee.auth.config_, which points to the _kobee.properties_ file.
+
+* update the _kobee.properties_file to enable Reverse Proxy SSO and configure the properties for user and groups request headers.
+
+=== Java option io.kobee.auth.config for Tomcat
+
+Configure Apache Tomcat to use the Kobee security configuration file located at _KOBEE_HOME/system/security/kobee.properties_ (for example _C:/kobee/system/security/kobee.properties_). This is done by setting the _kobee.auth.config_ property.
+
+First *Stop* the Apache Tomcat web server before making any configuration changes.
+
+The process is similar to configuring <<_java_options_for_tomcat,Java options for Tomcat>>.
+If you launch Tomcat from the startup scripts, create a file _TOMCAT_HOME/bin/setenv.bat_ (Windows) or _TOMCAT_HOME/bin/setenv.sh_ (Linux/Unix) with the following content :
+
+For Windows:
+
+[source]
+----
+SET JAVA_HOME=<JAVA_HOME>
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
+----
+
+For Linux/Unix:
+
+[source]
+----
+JAVA_HOME=<JAVA_HOME>
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
+----
+
+If Tomcat is run as a Windows service, modify the JvmArgs settings in the _TOMCAT_HOME/bin/service.bat_ file :
+
+[source]
+----
+SET JAVA_HOME=<JAVA_HOME>
+SET JvmMs=512
+SET JvmMx=1024
+SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties;-Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
+----
+
+Note that the JAAS configuration is retained as it may be required for supporting authentication and authorisation for the Kobee commandline and REST requests.
+
+After making these changes, you must reinstall the service by running "service.bat remove", followed by "service.bat install".  Administrative privileges are required to execute these commands.
+
+=== Modify the kobee.properties file
+
+Open the _kobee.properties_ file located at _KOBEE_HOME/system/security/kobee.properties_.
+First modify the _kobee.auth_type_ property by changing its value from _jaas_ (the default) to _reverse_proxy_.
+Next, uncomment the _kobee.reverse_proxy.user_requestheader_ and _kobee.reverse_proxy.usergroups_requestheader_ properties, and set their values to match the request headers for the user and groups as configured in your reverse proxy. For example, in an IBM WebSEAL server for Tivoli Access Manager, these headers might be _iv-user_ and _iv-groups_.
+
+[source]
+----
+#This kobee.properties holds property values for authentication and authorisation with Kobee
+#By default it is located in KOBEE_HOME/system/security (/opt/kobee/system/security, or C:/kobee/system/security)
+#This is specified by the io.kobee.auth.config property
+#Kobee authentication and authorisation type, possible values jaas and reverse_proxy, default jaas
+kobee.auth_type=reverse_proxy
+
+### Specific properties for kobee.auth_type=reverse_proxy
+#Request Header holding the value of the user in case of the reverse_proxy authentication/authorisation type
+kobee.reverse_proxy.user_requestheader=iv-user
+#Request Header holding the value of the usergroups in case of the reverse_proxy authentication/authorisation type
+kobee.reverse_proxy.usergroups_requestheader=iv-groups
+----
+
+Finally, *Start* the Apache Tomcat web server to apply the Reverse Proxy configuration changes.

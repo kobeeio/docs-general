@@ -22,7 +22,7 @@ image::ikanalm-architecture.png[,895,635]
 
 The Kobee Server and Web Application need to be installed on the same host. The Kobee Agent and Commandline can be installed on remote hosts. For a complete installation, you need to install exactly 1 Kobee _Server_ and _Web Application_, and at least 1 Kobee _Agent_.
 
-The Kobee Web Application is an interface to the Kobee administration, and must be deployed in Apache Tomcat.
+The Kobee Web Application provides an interface for managing the Kobee administration, and must be deployed in Apache Tomcat. It also includes the Kobee REST API, which allows programmatic interaction and integration with scripts, external applications, or standalone tools.
 
 The Kobee _Server_ consists of 2 different components:
 
@@ -246,7 +246,7 @@ When installing the Kobee Server and Web Application, set the properties describ
 alm.server.installLocation=C:/Kobee
 
 # Java Runtime to run the Kobee Server with :
-alm.server.javaHome=d:/java/jdk1.6.0_45
+alm.server.javaHome=d:/java/jdk_11
 
 # Kobee Server Runtime parameters :
 # serverPort : port Kobee Server is listening on (default=20021)
@@ -411,7 +411,7 @@ Set to "true" to initialize the Kobee database during the installation process. 
 # set alm.server.tomcat to true if you want to deploy Kobee under tomcat 
 alm.server.tomcat=true
 # catalina.base folder of the tomcat instance
-alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
+alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 9.0
 alm.server.tomcat.port=8080
 # catalina.home folder of tomcat. If left empty, Kobee will assume catalina.home=catalina.base
 alm.server.tomcat.catalina.home=
@@ -464,7 +464,7 @@ When installing the Kobee Agent, set the following properties :
 alm.agent.installLocation=C:/Kobee
 
 # Java Runtime to run the Kobee Agent with (may be JRE or JDK):
-alm.agent.javaHome=d:/java/jdk1.6.0_45
+alm.agent.javaHome=d:/java/jdk_11
 
 # Kobee Agent Runtime parameters :
 # agentPort : port Agent should be listening on (default=20020)
@@ -568,7 +568,7 @@ When installing the Kobee Commandline, set the following properties :
 alm.commandline.installLocation=C:/Kobee/commandline
 
 # Java Runtime to run the Kobee Commandline with (may be JRE or JDK):
-alm.commandline.javaHome=d:/java/jdk1.6.0_45
+alm.commandline.javaHome=d:/java/jdk_11
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -629,7 +629,7 @@ Launch the installer by executing the _install.cmd_ or _install.sh_ script.
 ====
 It is recommended to launch the installer from a command prompt, Powershell or Linux shell, to see the progress and the result of the installation. On Windows, if the installer is run as an Administrator, the Windows services for stopping and starting the Kobee Server and Agent are automatically created. If not, you must register the Windows services manually after installation. See <<_install_service_windows,Manually Installing and Removing the Kobee Server and Agent as a Windows Service>> for details. On Linux/Unix, the services/daemons to start and stop the Kobee Server and Agent must always be manually registered after installation. See <<_install_service_linux,Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems>>.
 
-The user running the installer should have write access to the install locations of the Kobee Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.
+*The user running the installer should have write access to the install locations of the Kobee Server, Agent and Commandline, and also to the Tomcat home folder and subfolders.*
 ====
 
 image::installer_finished.png[,681,359]
@@ -643,13 +643,13 @@ Do *NOT* remove the _INSTALL_DIR_ folder after installation, because you will ne
 
 If this was a new Kobee Server installation (no re-installation or upgrade of an older version), and the property _alm.server.rdbms.initALMDatabase_ was not set to "true", then you must first initialize the ALM database manually before starting the Kobee Server or Web Application.
 
-=== Initializing the ALM Database
+=== Initializing the Kobee Database
 
-The ALM database needs to be initialized before the Kobee Server or Web Application can be used. The initialization can be performed during installation by setting the property _alm.server.rdbms.initALMDatabase_ to "true", or it can be performed manually after the installation has finished by running the script _INSTALL_DIR/initializeKobeeDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeKobeeDatabase.sh_ (Linux/Unix).
+The Kobee database needs to be initialized before the Kobee Server or Web Application can be used. The initialization can be performed during installation by setting the property _alm.server.rdbms.initALMDatabase_ to "true", or it can be performed manually after the installation has finished by running the script _INSTALL_DIR/initializeKobeeDatabase.cmd_ (Windows) or _INSTALL_DIR/initializeKobeeDatabase.sh_ (Linux/Unix).
 
 [NOTE]
 ====
-The initialization scripts will drop and recreate the database tables needed by ALM and populate them with initial data. They will not drop or create the database or schema, so these items must be present before performing the initialization. The scripts will use the database settings as set in the _INSTALL_DIR/install.properties_ file.
+The initialization scripts will drop and recreate the database tables needed by Kobee and populate them with initial data. They will not drop or create the database or schema, so these items must be present before performing the initialization. The scripts will use the database settings as set in the _INSTALL_DIR/install.properties_ file.
 ====
 
 By default, the initialization scripts use the java executable that is available on the Operating System's PATH. If no Java excutable is present on the PATH, or the version of the Java executable is unsuitable (lower than 11), then you need to set the JAVA_HOME environment variable in the scripts. In this case, edit the 
@@ -660,7 +660,7 @@ By default, the initialization scripts use the java executable that is available
 It is recommended to launch the initialization scripts from a command prompt, Powershell or Linux shell, to see the progress and the result of the initialization. There is no need to run the scripts as Administrator.
 ====
 
-Launch the ALM database initialization by executing the _INSTALL_DIR/initializeKobeeDatabase.cmd_ or _INSTALL_DIR/initializeKobeeDatabase.sh_ script.
+Launch the Kobee database initialization by executing the _INSTALL_DIR/initializeKobeeDatabase.cmd_ or _INSTALL_DIR/initializeKobeeDatabase.sh_ script.
 
 image::dbinit_finished.png[,681,359] 
 
@@ -668,18 +668,18 @@ image::dbinit_finished.png[,681,359]
 
 This section describes the steps to perform the startup of the different Kobee components.
 
-* If you want to configure Kobee through its GUI, you must first start the ALM Web application (<<_bhbhhfha>>).
+* If you want to configure Kobee through its GUI, you must first start the Kobee Web application (<<_bhbhhfha>>).
 * If you want to run Builds and Deploys, you must start the Kobee Server and Agent (<<_bhbdbdje>> and <<_bhbhbcbb>>).
 * If you want to use the Kobee Commandline interface, see <<_bhbdaahi>>
 
 
 [[_bhbhhfha]]
-=== Starting the ALM Web Application
+=== Starting the Kobee Web Application
 
-To start the ALM Web Application, you need to start the Apache Tomcat web server that is hosting it.
+To start the Kobee Web Application, you need to start the Apache Tomcat web server that is hosting it.
 
-The ALM GUI can be reached by browsing to the url `\http://<host>:<port>/kobee`.
-For example: `\http://kobee_server:8080/kobee`.
+The Kobee GUI can be reached by browsing to the url `\http://<host>:<port>/alm`.
+For example: `\http://kobee_server:8080/alm`.
 
 If this is the first installation of Kobee, the License window will be displayed:
 
@@ -695,7 +695,7 @@ image::license_installed.png[,431,315]
 
 Log in with user id "`global`", password "`global`". For information about the other default users, see <<_jaasconfiguration>>.
 
-For more information on the ALM GUI, refer to the xref:6.0@user-guide-en:ROOT:Introduction.adoc[Kobee User Guide].
+For more information on the Kobee GUI, refer to the xref:6.0@user-guide-en:ROOT:Introduction.adoc[Kobee User Guide].
 
 [[_bhbdbdje]]
 === Starting the Kobee Server
@@ -806,11 +806,11 @@ alm.commandline.uninstall=true
 
 In the General Settings, you specify which components of Kobee you want to uninstall. 
 
-Setting __alm.server.uninstall__ to "true" will uninstall the Kobee Server and remove the ALM Web Application from Tomcat. +
+Setting __alm.server.uninstall__ to "true" will uninstall the Kobee Server and remove the Kobee Web Application from Tomcat. +
 Setting __alm.agent.uninstall__ to "true" will uninstall the Kobee Agent. +
 Setting __alm.commandline.uninstall__ to "true" will uninstall the Kobee Commandline.
 
-==== Kobee Server and ALM Web Application settings
+==== Kobee Server and Kobee Web Application settings
 
 [source]
 ----
@@ -820,14 +820,14 @@ Setting __alm.commandline.uninstall__ to "true" will uninstall the Kobee Command
 alm.server.installLocation=C:/Kobee
 
 # Java Runtime the Kobee Server is using
-alm.server.javaHome=d:/java/jdk1.6.0_45
+alm.server.javaHome=d:/java/jdk_11
 
 # Flag to specify whether to uninstall the files that may be deployed to a tomcat server :
 # uninstall : true
 # no uninstall : false
 alm.server.tomcat.uninstall=true
 # Location of Apache Tomcat where the webapp was deployed during Kobee Server Install :
-alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
+alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 9.0
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -852,13 +852,13 @@ The Java Home of the Java Runtime that is used to launch the Kobee Server. Valid
 alm.server.tomcat.uninstall
 |
 
-Set to "true" if you want to remove the ALM Web Application from Tomcat. Default is "true".
+Set to "true" if you want to remove the Kobee Web Application from Tomcat. Default is "true".
 |
 
 alm.server.tomcat.home
 |
 
-The home directory of the Tomcat installation that is hosting the ALM Web Application.
+The home directory of the Tomcat installation that is hosting the Kobee Web Application.
 |===
 
 ==== Kobee Agent settings
@@ -937,7 +937,7 @@ When the uninstallation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
 == Upgrading Kobee
 
-The general approach to upgrading Kobee is to first backup the current installation and the ALM database, then reinstall ALM and migrate the ALM database to a higher version.
+The general approach to upgrading Kobee is to first backup the current installation and the Kobee database, then reinstall Kobee and migrate the Kobee database to a higher version.
 
 If the upgrade process fails, you can restore the backup and continue running the previous version of Kobee.
 
@@ -962,9 +962,9 @@ For safety reasons, it is highly recommended to back up the entire _KOBEE_HOME_ 
 
 . Uninstall the current Kobee Server, Agent and Commandline. See <<Uninstalling Kobee>> for more information. Don't remove the _INSTALL_DIR_ of the uninstalled version yet.
 
-. Configure the installer of the new ALM. You can use the values set in the _INSTALL_DIR_/install.properties of the uninstalled version to set the values in the install.properties file of the new version. It's not recommended to copy the old install.properties over the new, since the structure of the file may have changed in the new version.
+. Configure the installer of the new Kobee. You can use the values set in the _INSTALL_DIR_/install.properties of the uninstalled version to set the values in the install.properties file of the new version. It's not recommended to copy the old install.properties over the new, since the structure of the file may have changed in the new version.
 
-. Run the installer of the new ALM.
+. Run the installer of the new Kobee.
 
 . Migrate the Kobee database to the new version.
 +
@@ -982,11 +982,11 @@ For more information about installing or upgrading Kobee Agents using the Kobee 
 
 === Database Migration Tool
 
-The Database Migration Tool is a commandline tool that automatically detects the current version of the ALM database and, if needed, attempts to migrate it to the latest version.
+The Database Migration Tool is a commandline tool that automatically detects the current version of the Kobee database and, if needed, attempts to migrate it to the latest version.
 
 [WARNING]
 --
-You should always backup the ALM database before starting the migration!
+You should always backup the Kobee database before starting the migration!
 --
 
 To start the migration, run the script _INSTALL_DIR_/migrateKobeeDatabase.cmd (Windows) or _INSTALL_DIR_/migrateKobeeDatabase.sh (Linux/Unix). 
@@ -1002,7 +1002,7 @@ A migration log is created in the _INSTALL_DIR/almDbMigration.log_ file and will
 
 === Clearing the browser cache
 
-After upgrading ALM, it is recommended for all users to clear their browser cache before starting to work with the new version of the ALM Web Application. For instructions, refer to the document xref:6.0@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
+After upgrading Kobee, it is recommended for all users to clear their browser cache before starting to work with the new version of the Kobee Web Application. For instructions, refer to the document xref:6.0@how-to-clear-browsercache:ROOT:HowTo_Clear_browser_cache.adoc[How to clear the browser cache after upgrading Kobee].
 
 === Updating the JAAS configuration
 
@@ -1013,7 +1013,7 @@ Kobee 6.0 uses a new library for JAAS LoginModules when using LDAP or Microsoft 
 [[_install_service_windows]]
 == Manually Installing and Removing the Kobee Server and Agent as a Windows Service
 
-When the ALM installer is run as an Administrator, the Windows services for stopping and starting the Kobee Server and Agent are automatically created. If not, you must register the Windows services manually after installation. 
+When the Kobee installer is run as an Administrator, the Windows services for stopping and starting the Kobee Server and Agent are automatically created. If not, you must register the Windows services manually after installation. 
 
 * To register the Kobee Server as a Windows service:
 +
@@ -1044,7 +1044,7 @@ For more information on the configuration file, refer to: http://yajsw.sourcefor
 [[_install_service_linux]]
 == Manually Installing and Removing the Kobee Server and Agent as a Daemon Process on Linux/Unix Systems
 
-The ALM installer does not automatically install the Kobee Server or Agent as a Linux/Unix daemon or service. These steps must be performed after installation.
+The Kobee installer does not automatically install the Kobee Server or Agent as a Linux/Unix daemon or service. These steps must be performed after installation.
 
 Since the Kobee Server and Agent use Apache Karaf as their OSGi runtime environment, this basically comes down to using the Apache Karaf Wrapper feature (see the Karaf manual: http://karaf.apache.org/manual/latest/#_service_wrapper[http://karaf.apache.org/manual/latest/#_service_wrapper,window=_blank]).
 
@@ -1208,9 +1208,6 @@ sudo update-rc.d -f kobeeserver60-service remove
 sudo rm /etc/init.d/kobeeserver60-service
 ----
 
-
-
-
 === AIX
 
 Edit the file _KOBEE_HOME_/daemons/server/karaf/etc/kobeeserver60-wrapper.conf. Remove the line that starts with
@@ -1316,24 +1313,24 @@ sudo rm /etc/rc.d/rc2.d/S20kobeeserver60-service
 
 For the authentication and authorization of users, Kobee uses the Java Authentication and Authorization Service (JAAS) (see https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas1.html). JAAS authentication is performed in a pluggable fashion. This permits applications to remain independent from underlying authentication technologies. New or updated authentication technologies can be plugged into Kobee without requiring modifications to the application itself.
 
-The JAAS configuration used by Tomcat is set in the file _KOBEE_HOME_/system/security/jaas.config. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controls the users that can log in via the ALM GUI and that can authenticate via the REST API.
+The JAAS configuration used by Tomcat is set in the file _KOBEE_HOME_/system/security/jaas.config. Tomcat must be configured to use this file as its JAAS configuration. See <<_java_options_for_tomcat,Java options for Tomcat>> for details. This configuration controls the users that can log in via the Kobee GUI and that can authenticate via the REST API.
 
 The JAAS configuration by the Kobee Server can be found in the file _KOBEE_HOME_/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml. This configuration controls the users that can connect via the Kobee Commandline.
 
 By default, Kobee is configured to use a password file that contains the authentication and authorization information of the 3 default users :
 
-* "global", password "_global_", member of the user groups _ALM User_ and _ALM Administrator_ : a global administrator user that has full access rights.
+* "global", password "_global_", member of the user groups _Kobee User_ and _Kobee Administrator_ : a global administrator user that has full access rights.
 
-* "project", password "_project_", member of the user groups _ALM User_ and _ALM Project_ : a user that represents an administrator of one or more Projects.
+* "project", password "_project_", member of the user groups _Kobee User_ and _Kobee Project_ : a user that represents an administrator of one or more Projects.
 
-* "user", password "_user_", member of the user group _ALM User_ : a user that represents an end-user with limited access.
+* "user", password "_user_", member of the user group _Kobee User_ : a user that represents an end-user with limited access.
 
 [NOTE]
 ====
 While you can use the default security system based on a password file for getting started and for testing purposes, it is not recommended to use this for production. You should switch to a more secure system, like Microsoft Active Directory or LDAP.
 ====
 
-The default JAAS configuration files contain examples for configuring ALM authentication and authorization using a password file, or using Microsoft Active Directory via the LDAP or LDAPS protocol.
+The default JAAS configuration files contain examples for configuring Kobee authentication and authorization using a password file, or using Microsoft Active Directory via the LDAP or LDAPS protocol.
 
 === JAAS configuration: password file
 
@@ -1341,7 +1338,7 @@ The default Kobee JAAS configuration uses a simple password file. For Tomcat (ja
 
 [source]
 ----
-/** Kobee Login **/
+/** ALM Login **/
 ALM
 {
     com.tagish.auth.FileLogin required pwdFile="KOBEE_HOME/system/security/passwd.config";
@@ -1365,18 +1362,18 @@ The default password file (_KOBEE_HOME_/system/security/passwd.config) looks lik
 [source]
 ----
 userid:encrypted password:groupname:groupname:groupname
-user:ee11cbb19052e40b07aac0ca060c23ee:ALM User
-project:46f86faa6bbf9ac94a7e459509a20ed0:ALM User:ALM Project
-global:9c70933aff6b2a6d08c687a6cbb6b765:ALM User:ALM Administrator
+user:ee11cbb19052e40b07aac0ca060c23ee:Kobee User
+project:46f86faa6bbf9ac94a7e459509a20ed0:Kobee User:Kobee Project
+global:9c70933aff6b2a6d08c687a6cbb6b765:Kobee User:Kobee Administrator
 ----
 
 Each line in the file represents a user. The format is <userId>:<password>:<groupname1>:<groupname2>:<groupname3>:... The passwords should be encrypted with the MD5 algorithm.
 
-For example, to add a user with User ID "`testuser`" and password "`testuser`" who belongs to the "`ALM User`" and "`ALM Project`" User Groups, add the following entry to the passwd.config file: 
+For example, to add a user with User ID "`testuser`" and password "`testuser`" who belongs to the "`Kobee User`" and "`Kobee Project`" User Groups, add the following entry to the passwd.config file: 
 
 [source]
 ----
-testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
+testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:Kobee User:Kobee Project
 ----
 
 [[_jaasconfiguration_msad]]
@@ -1398,7 +1395,7 @@ ldapUrl="ldaps://<AD_SERVER>:636"
 
 [NOTE]
 ====
-When setting up a secure ldap connection, it is not sufficient to only change the Jaas configuration file of Tomcat and the ALM server. A certificate should be created and imported in the ALM keystore. Refer to the next paragraph on how to do this.
+When setting up a secure ldap connection, it is not sufficient to only change the Jaas configuration file of Tomcat and the Kobee server. A certificate should be created and imported in the ALM keystore. Refer to the next paragraph on how to do this.
 ====
 
 Example of Microsoft AD connection for Tomcat (jaas.config) :
@@ -1472,7 +1469,7 @@ Example of Microsoft AD connection for the Kobee Server (JaasPropertiesLoginModu
 
 ----
 
-To configure Kobee to authenticate using Microsoft AD, rename the JAAS config realm named "Kobee" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.config_ and _JaasPropertiesLoginModule.xml_ :
+To configure Kobee to authenticate using Microsoft AD, rename the JAAS config realm named "ALM" to something else (or comment that JAAS entry), rename the realm "LDAPLogin_SECURED" to "ALM", and then set the following properties in the files _jaas.config_ and _JaasPropertiesLoginModule.xml_ :
 
 [cols="1,3", frame="topbot", options="header"]
 |===
@@ -1517,7 +1514,7 @@ Values set in the file _jaas.config_ *MUST* be surrounded by ", while values set
 ====
 Refer to https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldaptive.org/docs/guide/jaas.html] for more information on the ldaptive JAAS properties.
 
-When changing the JAAS configuration, both the Tomcat and Kobee Server services must be restarted. If the users can log in via the ALM GUI, the configuration in Tomcat is correct.
+When changing the JAAS configuration, both the Tomcat and Kobee Server services must be restarted. If the users can log in via the Kobee GUI, the configuration in Tomcat is correct.
 
 You can troubleshoot login problems by activating additional logging.  This can be done by adding an extra _<logger>_ element in _TOMCAT_HOME_/webapps/Kobee/WEB-INF/classes/log4j2.xml
 
@@ -1527,7 +1524,7 @@ You can troubleshoot login problems by activating additional logging.  This can 
 
 ----
 
-After restarting Tomcat and trying to log in, the log file _TOMCAT_HOME/logs/Kobee_webapp.log_ will contain extra info due to the logon attempt. This log can then be analyzed and/or sent to ALM Support.
+After restarting Tomcat and trying to log in, the log file _TOMCAT_HOME/logs/Kobee_webapp.log_ will contain extra info due to the logon attempt. This log can then be analyzed and/or sent to Kobee Support.
 
 === JAAS configuration: secure ldap (LDAP over SSL/TLS)
 
@@ -1571,18 +1568,18 @@ Answer _yes_ to the question whether this certificate can be trusted.
 
 [NOTE]
 ====
-When switching to secure ldap the JAAS configuration of the ALM Web Application and the Kobee Server need to be adjusted. Refer to the previous paragraph on how to do this.
+When switching to secure ldap the JAAS configuration of the Kobee Web Application and the Kobee Server need to be adjusted. Refer to the previous paragraph on how to do this.
 ====
 
 [appendix]
 [[_secureconfiguration]]
 == Manually configuring the Secure Communication
 
-When running the Kobee installer, the _alm.xmlrpc.secure_ installation parameter enables secure communication: when set to "true" communication between the installed ALM components is encrypted. As a consequence, if additional ALM components (like the Kobee Agent or the Kobee Commandline) are installed on remote hosts, they must also set _alm.xmlrpc.secure_ to "true" during installation, or communication with those components will fail. We strongly recommend setting _alm.xmlrpc.secure_ to "true" for security reasons. However, the secure communication can be changed manually (switched on or off) after the installation. Of course this switch should be done simultaneously for all installed ALM components.
+When running the Kobee installer, the _alm.xmlrpc.secure_ installation parameter enables secure communication: when set to "true" communication between the installed Kobee components is encrypted. As a consequence, if additional Kobee components (like the Kobee Agent or the Kobee Commandline) are installed on remote hosts, they must also set _alm.xmlrpc.secure_ to "true" during installation, or communication with those components will fail. We strongly recommend setting _alm.xmlrpc.secure_ to "true" for security reasons. However, the secure communication can be changed manually (switched on or off) after the installation. Of course this switch should be done simultaneously for all installed Kobee components.
 
-=== Secure Communication configuration: ALM Web Application
+=== Secure Communication configuration: Kobee Web Application
 
-The Secure Communication between the ALM Web Application and the Kobee Server/Agent is controlled by a Context Parameter in the _TOMCAT_HOME/webapps/Kobee/WEB-INF/web.xml_ file:
+The Secure Communication between the Kobee Web Application and the Kobee Server/Agent is controlled by a Context Parameter in the _TOMCAT_HOME/webapps/Kobee/WEB-INF/web.xml_ file:
 
 [source]
 ----

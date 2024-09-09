@@ -1745,7 +1745,7 @@ Configuring the *Kobee server installation* for Reverse Proxy SSO involves two k
 
 * modify the Apache Tomcat startup scripts to set the Java option _io.kobee.auth.config_, which points to the _kobee.properties_ file.
 
-* update the _kobee.properties_file to enable Reverse Proxy SSO and configure the properties for user and groups request headers.
+* update the _kobee.properties_ file to enable Reverse Proxy SSO and configure the properties for user and groups request headers.
 
 === Java option io.kobee.auth.config for Tomcat
 

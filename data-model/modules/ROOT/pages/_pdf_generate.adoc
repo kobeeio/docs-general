@@ -7,7 +7,7 @@
 :revdate: 01.01.2018
 :chapter-label:
 
-:author: IKAN Development N.V., Kardinaal Mercierplein 2, 2800 Mechelen, BELGIUM + \
+:author: IKAN Development N.V., Motstraat 30, 2800 Mechelen, BELGIUM + \
 (C) 2006 - 2021 IKAN Development N.V. + \
 No part of this document may be reproduced or transmitted in any form or by any \
 means, electronically or mechanically, for any purpose, without the express written \

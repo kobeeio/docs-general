@@ -79,7 +79,7 @@ For the detailed Technical Requirements, consult xref:6.0@technical-sheet-en:ROO
 |Min 1GB, recommended 5GB
 
 |Kobee Server
-|Min 512MB, recommended 1GB or more
+|Min 768MB, recommended 1GB or more
 |Min 10GB, recommended 40GB
 
 |Kobee Agent
@@ -1031,7 +1031,7 @@ Execute "KOBEE_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
 
 The _karaf-service.bat_ script must be run as Administrator.
 
-If you want to reconfigure a service, edit the file KOBEE_HOME/daemons/server/karaf/etc/karaf-wrapper.conf (for the Kobee Server). You can, for example, change the amount of memory the Kobee Server can use (in MB) by changing : "wrapper.java.maxmemory = 512".
+If you want to reconfigure a service, edit the file KOBEE_HOME/daemons/server/karaf/etc/karaf-wrapper.conf (for the Kobee Server). You can, for example, change the amount of memory the Kobee Server can use (in MB) by changing : "wrapper.java.maxmemory = 1024".
 
 [NOTE]
 ====

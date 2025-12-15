@@ -1730,7 +1730,7 @@ Logging in to the Kobee web application via a reverse proxy typically follows th
 
 * the reverse proxy server provides a web browser landing page that may contain links to various back-end applications and resources. One of these links points to the Kobee web application's entry point, such as `\http://proxy_server/kobee`.
 
-* when the user clicks the Kobee web application link, the reverse proxy server routes the request to the _kobee_ resource running under the Apache Tomcat web server at the URL `\http://<host>:<port>/kobee`, for example, `\http://kobee_server:8080/kobee`. The reverse proxy also includes specific request headers identifying the user and their access groups, such as `iv-user : global` and `iv-groups : Kobee Administrator, Kobee User`.
+* when the user clicks the Kobee web application link, the reverse proxy server routes the request to the _kobee_ resource running under the Apache Tomcat web server at the URL `\http://<host>:<port>/alm`, for example, `\http://kobee_server:8080/alm`. The reverse proxy also includes specific request headers identifying the user and their access groups, such as `iv-user : global` and `iv-groups : Kobee Administrator, Kobee User`.
 
 * since the Kobee web application is configured for _Reverse Proxy SSO_ the incoming request will *NOT* trigger the _User ID_ and _Password_ _Log in_ screen. Instead it is routed to a specific _reverse proxy_ login method where the user will be authenticated and authorised based on the provided request headers.
 

@@ -42,7 +42,7 @@ The Kobee Server Environment contains the following important files and folders:
 * Work Copy Location: the location where the sources that are checked out from the repository are stored before they are transported to the Agents,
 * Phase Catalog Location: the location where the Phases that have been imported will be stored, ready to be retrieved by remote Agents when needed,
 * Scripts Location: the location to be used for storing centralized build and deploy scripts,
-* Configuration of an external authentication and authorization system. For more information, refer to the Appendices <<_jaasconfiguration>> and <<_reverseproxyconfiguration>>,
+* Configuration of an external authentication and authorization system. For more information, refer to the Appendices <<_jaasconfiguration>>, <<_reverseproxyconfiguration>> and <<_oauth2configuration>>,
 * Documentation in PDF format.
 
 A machine that needs to execute Kobee Builds and Deploys must have the Kobee _Agent_ installed.
@@ -1808,3 +1808,263 @@ kobee.reverse_proxy.usergroups_requestheader=iv-groups
 ----
 
 Finally, *Start* the Apache Tomcat web server to apply the Reverse Proxy configuration changes.
+
+[appendix]
+[[_oauth2configuration]]
+== OAuth 2.0 SSO configuration for the Kobee web application
+
+The Kobee web application supports authentication and authorization using OAuth 2.0 or OpenID Connect (OIDC). Client requests are authenticated via OAuth 2.0 tokens issued by a trusted Authorization Server or Identity Provider (e.g. Microsoft Entra ID), enabling Single Sign-On (SSO) across integrated systems. This approach replaces the legacy JAAS-based authentication mechanism and eliminates the need for users to manually enter a username and password through the _Kobee Log in_ screen.
+
+[NOTE]
+====
+This OAuth 2.0 configuration does not support authentication and authorisation for the Kobee commandline interface or the Kobee REST application; it only enables SSO for the Kobee web application. The JAAS configuration (see <<_jaasconfiguration>>) is still required for both Kobee REST and commandline requests.
+====
+
+Logging in to the Kobee web application via an OAuth 2.O or OIDC Identity Provider typically follows this process:
+
+* the user initiates access to the Kobee web application by navigating to `\http(s)://<host>:<port>/alm` (for example, `\http://kobee_server:8080/alm`).
+
+* the Kobee web application (OAuth 2.0 Client) initiates an authentication request by redirecting the user’s browser to the Identity Provider’s authorization endpoint. For Microsoft Entra ID, this endpoint is typically: `\https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize`.
+
+* the Identity Provider (Authorization Server) authenticates the user and obtains the user’s consent, according to its configured policies. For example, with Microsoft Entra ID, the user may be prompted to select an account and enter a password. The authentication and consent experience depends on how the Kobee application is registered with the Identity Provider.
+
+* Upon successful authentication and authorization, the Authorization Server redirects the user agent back to the Kobee web application’s redirect URI, including an _authorization code_.
+
+* the Kobee web application exchanges the authorization code for tokens by sending a token request to the Authorization Server’s token endpoint. For Microsoft Entra ID, this endpoint is typically: `\https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/token`.
+
+* the OAuth 2/OIDC Identity Provider validates the request and responds with an ID Token containing claims about the authenticated user. _preferred_username_ and _groups_ are 2 claims in a Microsoft Entra ID Token required for the Kobee web application login process.
+
+* the Kobee web application decrypts and validates the ID Token and uses the contained claims to establish a Kobee user session.
+
+This appendix describes how to configure the *Kobee server installation* for OAuth 2.0 single sign-on (SSO). The configuration has been validated using Microsoft Entra ID as the Identity Provider; however, it should also work with other Identity Providers that implement the OAuth 2.0 and OpenID Connect (OIDC) standards.
+
+The Kobee application must first be correctly registered with the Identity Provider. Registration as a Microsoft Entra ID application is used as an illustrative example.
+
+Configuring the *Kobee server installation* for OAuth 2.0 SSO involves two key steps: 
+
+* modify the Apache Tomcat startup scripts to set the Java option _io.kobee.auth.config_, which points to the _kobee.properties_ file.
+
+* update the _kobee.properties_file_ to enable OAuth 2.0 SSO and configure the required properties for interaction with the registered Kobee application at the Idendity Provider.
+
+=== Register the Kobee application with the Idendity Provider
+
+Before configuring the Kobee server, the Kobee application must be registered with an OAuth 2.0/OIDC Authorization Server. The registered application is assigned a _client-id_ and a _client-secret_.  These values uniquely identify the Kobee application when issuing requests to the Authorization Server. In addition, a valid _redirect URI_ must be configured for the application. This redirect URI is required to receive the authorization code used in the token request. The application must also be configured to include a _groups_ claim in the ID token, as this claim is required for authorization within Kobee.
+
+As an example, refer to the following GitHub documentation, which describes the registration of a Java web application using Microsoft Entra ID as the Identity Provider (including screenshot):
+
+https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/1-Authentication/sign-in#register-the-web-app-java-servlet-webapp-authentication[Microsoft Entra ID sample registration of a web app,window=_blank]
+
+image::entra_id_app_registration.png[,808,250]
+
+When registrating the application, keep the following guidelines in mind (as illustrated in the screenshot above):
+
+* assign a meaningfull *Display Name* (1) related to Kobee, for example 'Kobee authentication'.
+
+* record the generated *client-id* (2) and *client-secret* (3), together with the *tenant-id* as they are required in the _kobee.properties_ file during the subsequent configuration steps.
+
+* configure a *redirect URI* (4) as a _Web_ application type. Its value must point to the _callback_ endpoint of the Kobee web application, at the URL `\http://<host>:<port>/alm/callback`, for example, `\http://kobee_server:8080/alm/callback` or `\https://kobee.io/callback`
+
+* in the _Token configuration_ tab, add the *groups* claim and ensure thti it isincluded in the _ID Token_, for example by emitting group values as _sAMAccountName_.
+
+=== Java option io.kobee.auth.config for Tomcat
+
+Configure Apache Tomcat to use the Kobee security configuration file located at _KOBEE_HOME/system/security/kobee.properties_ (for example _C:/kobee/system/security/kobee.properties_). This is done by setting the _kobee.auth.config_ property.
+
+First *Stop* the Apache Tomcat web server before making any configuration changes.
+
+The process is similar to configuring <<_java_options_for_tomcat,Java options for Tomcat>>.
+If you launch Tomcat from the startup scripts, create a file _TOMCAT_HOME/bin/setenv.bat_ (Windows) or _TOMCAT_HOME/bin/setenv.sh_ (Linux/Unix) with the following content :
+
+For Windows:
+
+[source]
+----
+SET JAVA_HOME=<JAVA_HOME>
+SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
+----
+
+For Linux/Unix:
+
+[source]
+----
+JAVA_HOME=<JAVA_HOME>
+JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
+----
+
+If Tomcat is run as a Windows service, modify the JvmArgs settings in the _TOMCAT_HOME/bin/service.bat_ file :
+
+[source]
+----
+SET JAVA_HOME=<JAVA_HOME>
+SET JvmMs=512
+SET JvmMx=1024
+SET JvmArgs=-XX:MaxMetaspaceSize=256m;-Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties;-Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
+----
+
+Note that the JAAS configuration is retained as it is required for supporting authentication and authorisation for the Kobee commandline and REST requests.
+
+After making these changes, you must reinstall the service by running "service.bat remove", followed by "service.bat install".  Administrative privileges are required to execute these commands.
+
+=== Modify the kobee.properties file
+
+Open the _kobee.properties_ file located at _KOBEE_HOME/system/security/kobee.properties_.
+First modify the _kobee.auth_type_ property by changing its value from _jaas_ (the default) to _oauth2_.
+
+[source]
+----
+#This kobee.properties holds property values for authentication and authorisation with Kobee
+#By default it is located in KOBEE_HOME/system/security (/opt/kobee/system/security, or C:/kobee/system/security)
+#This is specified by the io.kobee.auth.config property that is passed on when starting the webserver
+#Kobee authentication and authorisation type, possible values jaas, oauth2 and reverse_proxy, default jaas
+kobee.auth_type=oauth2
+----
+
+Next, uncomment the _kobee.oauth2.client-id_, _kobee.oauth2.client-secret_ and _kobee.oauth2.issuer-uri_ properties, and replace the values wwith the recorded *client-id*, *client-secret* and *tenant-id* when registrating Kobee as an app in the Idendity provider, see next sample with Microsoft Entra ID values.
+
+[source]
+----
+### Specific properties for kobee.auth_type=oauth2, values to connect to the oauth2/oidc provider, with sample values for MS Entra ID
+#client-id of the Kobee app registration (required)
+kobee.oauth2.client-id = ${entra-application-client-id}
+#client-secret of the Kobee app registration (required)
+kobee.oauth2.client-secret = ${entra-application-client-secret}
+#issuer-uri of the Kobee app registration (required)
+#needed to resolve the OpenID provider metadata, which can be retrieved by HTTP GET from [issuer-uri]/.well-known/openid-configuration.
+kobee.oauth2.issuer-uri=https://login.microsoftonline.com/${entra-tenant-id}/v2.0
+----
+
+When the _kobee.oauth2.issuer-uri_ has been set, Kobee will resolve the OpenID provider metadata, also known as the well-known openid-configuration. However it is still possible to overwrite these properties by uncommenting them in the kobee.properties file. Some other properties are not in the well-known openid-configuration, but have default values. They also can be overwritten by uncommenting them in the kobee.properties file. 
+
+This is the list of all Kobee OAuth2 properties in the kobee.properties file:
+
+[cols="2,1,3", frame="topbot", options="header"]
+|===
+| Property
+| Default
+| Description
+
+|
+
+kobee.oauth2.client-id
+|
+
+no default value
+|
+
+client-id of the Kobee app registration (required).
+
+|
+
+kobee.oauth2.client-secret
+|
+
+no default value
+|
+
+client-secret of the Kobee app registration (required).
+|
+
+kobee.oauth2.issuer-uri
+|
+
+no default value
+|
+
+issuer-uri of the Kobee app registration.
+Needed to resolve the OpenID provider metadata, which can be retrieved by HTTP GET from ${issuer-uri}/.well-known/openid-configuration (required).
+|
+
+kobee.oauth2.jws-algorithm
+|
+
+RS256
+|
+
+supported JWS Algorithm obtained from OpenID provider metadata, default value when not set (optional).
+|
+
+kobee.oauth2.authorization-endpoint
+|
+
+no default value
+|
+
+a URI included in the OpenID Provider metadata used to obtain an authorization grant (optional).
+Sample value Microsoft Entra ID: https://login.microsoftonline.com/${entra-tenant-id}/oauth2/v2.0/authorize.
+|
+
+kobee.oauth2.token-endpoint
+|
+
+no default value
+|
+
+a URI included in the OpenID Provider metadata used to obtain an access or ID token (optional).
+Sample value Microsoft Entra ID: https://login.microsoftonline.com/${entra-tenant-id}/oauth2/v2.0/token.
+|
+
+kobee.oauth2.jwks-uri
+|
+
+no default value
+|
+
+a URI included in the OpenID Provider metadata that contains the authorization server's JWK Set document (optional).
+Sample value Microsoft Entra ID: https://login.microsoftonline.com/${entra-tenant-id}/discovery/v2.0/keys.
+|
+
+kobee.oauth2.end_session-endpoint
+|
+
+no default value
+|
+
+a URI included in the OpenID Provider metadata used to log out of the OpenID provider (optional).
+Sample value Microsoft Entra ID: https://login.microsoftonline.com/${entra-tenant-id}/oauth2/v2.0/logout.
+|
+
+kobee.oauth2.scopes
+|
+
+openid profile offline_access
+|
+
+property included in the Open ID Provider metadata that defines the specific level of access, default value when not set (optional).
+|
+
+kobee.oauth2.user-id-attribute
+|
+
+preferred_username
+|
+
+an ID token claim to identify the user in Kobee (User ID), default value when not set (optional).
+|
+
+kobee.oauth2.hasgroups
+|
+
+true
+|
+
+true if the ID token contains a 'groups' claim to synchronise with Kobee User Groups, default value when not set (optional).
+|
+
+kobee.oauth2.groups-claim-attribute
+|
+
+groups
+|
+
+an ID token claim to identify user groups in Kobee, default value when not set (optional).
+|===
+
+Finally, *Start* the Apache Tomcat web server to apply the OAuth 2.0 configuration changes.
+
+Navigate to the Kobee web application entry point at http(s)://<host>:<port>/alm (for example, http://kobee_server:8080/alm). The application redirects the user to an authentication request at the Identity Provider’s authorization endpoint. For Microsoft Entra ID, this endpoint is typically
+https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize,
+which results in a prompt for the user to select an account. 
+
+image::entra_id_pick_account.png[,442,341]
+
+The authentication process proceeds as indicated in the beginning of this appendix.

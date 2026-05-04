@@ -107,7 +107,7 @@ All Kobee components need a full version of Java 11. Kobee has been tested to ru
 
 Kobee requires at least a Java 11 compliant web container supporting the Servlet 4.0 and JSP 2.3 specifications. Earlier versions of Tomcat are not supported.
 
-Kobee has been tested with Apache Tomcat 9.0.33 and later versions.
+Kobee has been tested with Apache Tomcat 9.0.33 and later 9.0.x versions.
 Kobee has been proven to run on Tomcat on different Operating Systems, including recent versions of Windows and Linux, Sun Solaris, HP Unix, zLinux, …  If a suitable Java Runtime is available (see <<_bhbicaaj>>), Kobee may run on other Operating Systems.
 
 ==== Enable Unicode support in Tomcat
@@ -1854,13 +1854,13 @@ As an example, refer to the following GitHub documentation, which describes the 
 
 https://github.com/Azure-Samples/ms-identity-msal-java-samples/tree/main/3-java-servlet-web-app/1-Authentication/sign-in#register-the-web-app-java-servlet-webapp-authentication[Microsoft Entra ID sample registration of a web app,window=_blank]
 
-image::entra_id_app_registration.png[,808,250]
+image::entra_id_app_registration.png[,810,256]
 
 When registrating the application, keep the following guidelines in mind (as illustrated in the screenshot above):
 
 * assign a meaningfull *Display Name* (1) related to Kobee, for example 'Kobee authentication'.
 
-* record the generated *client-id* (2) and *client-secret* (3), together with the *tenant-id* as they are required in the _kobee.properties_ file during the subsequent configuration steps.
+* record the generated *client-id* (2) and *client-secret* (3), together with the *tenant-id* (5) as they are required in the _kobee.properties_ file during the subsequent configuration steps.
 
 * configure a *redirect URI* (4) as a _Web_ application type. Its value must point to the _callback_ endpoint of the Kobee web application, at the URL `\http://<host>:<port>/alm/callback`, for example, `\http://kobee_server:8080/alm/callback` or `\https://kobee.io/callback`
 

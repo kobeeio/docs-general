@@ -1822,7 +1822,7 @@ This OAuth 2.0 configuration does not support authentication and authorisation f
 
 Logging in to the Kobee web application via an OAuth 2.O or OIDC Identity Provider typically follows this process:
 
-* the user initiates access to the Kobee web application by navigating to `\http(s)://<host>:<port>/alm` (for example, `\http://kobee_server:8080/alm`).
+* the user initiates access to the Kobee web application by navigating to `http(s)://<host>:<port>/alm` (for example, `\https://kobee_server:8080/alm`).
 
 * the Kobee web application (OAuth 2.0 Client) initiates an authentication request by redirecting the user’s browser to the Identity Provider’s authorization endpoint. For Microsoft Entra ID, this endpoint is typically: `\https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize`.
 
@@ -1844,9 +1844,9 @@ Configuring the *Kobee server installation* for OAuth 2.0 SSO involves two key s
 
 * modify the Apache Tomcat startup scripts to set the Java option _io.kobee.auth.config_, which points to the _kobee.properties_ file.
 
-* update the _kobee.properties_file_ to enable OAuth 2.0 SSO and configure the required properties for interaction with the registered Kobee application at the Idendity Provider.
+* update the _kobee.properties_ file to enable OAuth 2.0 SSO and configure the required properties for interaction with the Kobee application that was registered with the Identity Provider.
 
-=== Register the Kobee application with the Idendity Provider
+=== Register the Kobee application with the Identity Provider
 
 Before configuring the Kobee server, the Kobee application must be registered with an OAuth 2.0/OIDC Authorization Server. The registered application is assigned a _client-id_ and a _client-secret_.  These values uniquely identify the Kobee application when issuing requests to the Authorization Server. In addition, a valid _redirect URI_ must be configured for the application. This redirect URI is required to receive the authorization code used in the token request. The application must also be configured to include a _groups_ claim in the ID token, as this claim is required for authorization within Kobee.
 
@@ -1862,13 +1862,13 @@ When registrating the application, keep the following guidelines in mind (as ill
 
 * record the generated *client-id* (2) and *client-secret* (3), together with the *tenant-id* (5) as they are required in the _kobee.properties_ file during the subsequent configuration steps.
 
-* configure a *redirect URI* (4) as a _Web_ application type. Its value must point to the _callback_ endpoint of the Kobee web application, at the URL `\http://<host>:<port>/alm/callback`, for example, `\http://kobee_server:8080/alm/callback` or `\https://kobee.io/callback`
+* configure a *redirect URI* (4) as a _Web_ application type. Its value must point to the _callback_ endpoint of the Kobee web application, at the URL `http(s)://<host>:<port>/alm/callback`, for example, `\http://kobee_server:8080/alm/callback` or `\https://kobee.io/callback`
 
-* in the _Token configuration_ tab, add the *groups* claim and ensure thti it isincluded in the _ID Token_, for example by emitting group values as _sAMAccountName_.
+* in the _Token configuration_ tab, add the *groups* claim and ensure that it is included in the _ID Token_, for example by emitting group values as _sAMAccountName_.
 
 === Java option io.kobee.auth.config for Tomcat
 
-Configure Apache Tomcat to use the Kobee security configuration file located at _KOBEE_HOME/system/security/kobee.properties_ (for example _C:/kobee/system/security/kobee.properties_). This is done by setting the _kobee.auth.config_ property.
+Configure Apache Tomcat to use the Kobee security configuration file located at _KOBEE_HOME/system/security/kobee.properties_ (for example _C:/kobee/system/security/kobee.properties_). This is done by setting the _io.kobee.auth.config_ property.
 
 First *Stop* the Apache Tomcat web server before making any configuration changes.
 
@@ -1910,7 +1910,7 @@ After making these changes, you must reinstall the service by running "service.b
 Open the _kobee.properties_ file located at _KOBEE_HOME/system/security/kobee.properties_.
 First modify the _kobee.auth_type_ property by changing its value from _jaas_ (the default) to _oauth2_.
 
-[source]
+[source,properties,highlight=5]
 ----
 #This kobee.properties holds property values for authentication and authorisation with Kobee
 #By default it is located in KOBEE_HOME/system/security (/opt/kobee/system/security, or C:/kobee/system/security)
@@ -1919,7 +1919,7 @@ First modify the _kobee.auth_type_ property by changing its value from _jaas_ (t
 kobee.auth_type=oauth2
 ----
 
-Next, uncomment the _kobee.oauth2.client-id_, _kobee.oauth2.client-secret_ and _kobee.oauth2.issuer-uri_ properties, and replace the values wwith the recorded *client-id*, *client-secret* and *tenant-id* when registrating Kobee as an app in the Idendity provider, see next sample with Microsoft Entra ID values.
+Next, uncomment the _kobee.oauth2.client-id_, _kobee.oauth2.client-secret_ and _kobee.oauth2.issuer-uri_ properties, and replace the values with the recorded *client-id*, *client-secret* and *tenant-id* when registrating Kobee as an app in the Identity provider, see next sample with Microsoft Entra ID values.
 
 [source]
 ----
@@ -1933,7 +1933,7 @@ kobee.oauth2.client-secret = ${entra-application-client-secret}
 kobee.oauth2.issuer-uri=https://login.microsoftonline.com/${entra-tenant-id}/v2.0
 ----
 
-When the _kobee.oauth2.issuer-uri_ has been set, Kobee will resolve the OpenID provider metadata, also known as the well-known openid-configuration. However it is still possible to overwrite these properties by uncommenting them in the kobee.properties file. Some other properties are not in the well-known openid-configuration, but have default values. They also can be overwritten by uncommenting them in the kobee.properties file. 
+When the _kobee.oauth2.issuer-uri_ has been set, Kobee will resolve the OpenID provider metadata, also known as the well-known openid-configuration. However, it is still possible to override these properties by uncommenting them in the kobee.properties file. Some other properties are not in the well-known openid-configuration, but have default values. They also can be overridden by uncommenting them in the kobee.properties file. 
 
 This is the list of all Kobee OAuth2 properties in the kobee.properties file:
 
@@ -2061,7 +2061,7 @@ an ID token claim to identify user groups in Kobee, default value when not set (
 
 Finally, *Start* the Apache Tomcat web server to apply the OAuth 2.0 configuration changes.
 
-Navigate to the Kobee web application entry point at http(s)://<host>:<port>/alm (for example, http://kobee_server:8080/alm). The application redirects the user to an authentication request at the Identity Provider’s authorization endpoint. For Microsoft Entra ID, this endpoint is typically
+Navigate to the Kobee web application entry point at `http(s)://<host>:<port>/alm` (for example, `\https://kobee_server:8080/alm`). The application redirects the user to an authentication request at the Identity Provider’s authorization endpoint. For Microsoft Entra ID, this endpoint is typically
 https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize,
 which results in a prompt for the user to select an account. 
 

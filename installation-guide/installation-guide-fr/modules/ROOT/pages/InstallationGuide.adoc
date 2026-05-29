@@ -3,6 +3,9 @@
 :description: Guide Installation Kobee (French)
 :revnumber: v6.0
 :revdate: 11.08.2023
+:source-highlighter: highlight.js
+//:highlightjs-theme: github
+
 
 = Guide d'installation Kobee
 
@@ -23,12 +26,12 @@ image::ikanalm-architecture-fr.png[,972,635]
 
 Le _Serveur_ et l'_Application Web_ Kobee ont besoin d'être installés sur la même machine. L'Agent et l'Interface de Ligne de Commande peuvent être installés sur des machines distantes. Pour avoir une installation correcte, vous devez installer le _Serveur_ avec l'_Application Web_ et au moins 1 _Agent_ Kobee.
 
-L'_Application Web_ Kobee est une interface pour la gestion d'Kobee qui doit être déployé dans un serveur Apache Tomcat.
+L'_Application Web_ Kobee est une interface pour la gestion d'Kobee qui doit être déployé dans un serveur Apache Tomcat. Elle comprend également l'API REST Kobee, qui permet l'interaction programmatique et l'intégration avec des scripts, des applications externes ou des outils autonomes.
 
 Le _Serveur_ Kobee contient 2 composants différents:
 
-* Serveur démon
-* Serveur environnement
+* Serveur Kobee démon
+* Serveur Kobee environnement
 
 Le Serveur démon Kobee lui-même comprend 2 sous-composants: un Planificateur et un Moniteur.
 
@@ -82,7 +85,7 @@ Les exigences techniques détaillées sont disponibles sur xref:6.0@technical-sh
 |Minimum 1GB, recommandé 5GB
 
 |Serveur
-|Minimum: 512 Mo, recommandé: 2 Go ou plus
+|Minimum: 768 Mo, recommandé: 1 Go ou plus
 |Minimum: 10 Go, recommandé: 40 Go
 
 |Agent
@@ -118,7 +121,7 @@ Si vous utilisez des symboles Unicode dans Kobee (par example, pour des projets 
 
 Modifiez le fichier __TOMCAT_HOME/conf/server.xml__ en ajoutant l'attribut ``URIEncoding="UTF-8"`` dans le connecteur http, comme suit: 
 
-[source]
+[source,HTML]
 ----
 <Connector port="8080" protocol="HTTP/1.1" 
 URIEncoding="UTF-8" connectionTimeout="200000"
@@ -136,11 +139,13 @@ Il est recommandé de spécifier les paramètres suivants pour l'exécution d'Ko
 * max Java heap size (-Xmx) : 1024m
 * max Metaspace size (-XX:MaxMetaspaceSize) : 256m
 
+Vous devez également configurer Tomcat pour utiliser le fichier de configuration JAAS _KOBEE_HOME_/system/security/jaas.config (par exemple `C:/kobee/system/security/jaas.config` ). Pour ce faire, vous pouvez définir la propriété _java.security.auth.login.config_. Reportez-vous à <<_jaasconfiguration>> pour plus d'informations sur la configuration JAAS.
+
 Si vous lancez Tomcat à partir de scripts de démarrage, vous devez créer le fichier __TOMCAT_HOME/bin/setenv.bat__ (Windows) ou __TOMCAT_HOME/bin/setenv.sh__ (Linux/Unix) avec le contenu suivant:
 
 Pour Windows:
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=<JAVA_HOME>
 SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
@@ -148,7 +153,7 @@ SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.
 
 Pour Linux/Unix:
 
-[source]
+[source,bash]
 ----
 JAVA_HOME=<JAVA_HOME>
 JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config"
@@ -156,7 +161,7 @@ JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Djava.security.auth.log
 
 Si vous utilisez Tomcat comme service Windows, vous devez spécifier les paramètres de mémoire dans le fichier __TOMCAT_HOME/bin/service.bat__:
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
@@ -177,7 +182,10 @@ Lors de l'installation, il est possible d'initialiser la Base de données exista
 Pour MySQL il est recommandé d'utiliser UTF8 comme ensemble de caractères pour la Base de données.
 Voici un exemple de commande pour créer une Base de données MySQL:
 
-`CREATE DATABASE alm CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
+[source,SQL]
+----
+`CREATE DATABASE kobee CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
+----
 
 Pour plus d`'informations concernant la configuration UTF8 appropriée pour votre système, se référer à la documentation de la Base de données utilisée.
 
@@ -205,7 +213,7 @@ _Ne pas utiliser les barres obliques arrière_ ('\') dans les propriétés de ch
 
 ==== Paramètres généraux
 
-[source]
+[source,properties]
 ----
 # General Settings : Specify which components of Kobee to install
 # ---------------------------------------------------------------------------
@@ -224,7 +232,7 @@ alm.commandline.install=true
 alm.xmlrpc.secure=true
 ----
 
-Dans les Paramètres généraux, vous spécifiez quels composants d'Kobee vous voulez installer. 
+Dans les Paramètres généraux, vous spécifiez les composants Kobee que vous souhaitez installer.. 
 
 Mettre _alm.server.install_ à "true" pour installer le Serveur Kobee et déployer l'Application Web Kobee sur Tomcat. +
 Mettre _alm.agent.install_ à "true" pour installer l'Agent Kobee. +
@@ -234,20 +242,20 @@ Si _alm.xmlrpc.secure_ est mis à "true", alors toute communication entre les co
 
 Pour plus d'information, consulter <<_secureconfiguration, Configuration manuelle de la Communication sécurisée>>.
 
-==== Paramètres du Serveur et de l'Application Web Kobee
+==== Paramètres du Serveur Kobee et de l'Application Web Kobee
 
 Quand vous installez le Serveur et l'Application Web, vous renseignez les propriétés décrites dans les sections qui suivent:
 
 [[_general_alm_server_settings]]
 ===== Paramètres globaux et l'implémentation du Serveur
 
-[source]
+[source,properties]
 ----
 # Destination folder of the Kobee Server files :
-alm.server.installLocation=C:/alm
+alm.server.installLocation=C:/Kobee
 
 # Java Runtime to run the Kobee Server with :
-alm.server.javaHome=d:/java/jdk1.6.0_45
+alm.server.javaHome=d:/java/jdk_11
 
 # Kobee Server Runtime parameters :
 # serverPort : port Kobee Server is listening on (default=20021)
@@ -302,7 +310,7 @@ Les numéros de port spécifiques au container Apache Karaf hébergeant le démo
 
 ===== Configuration de la Base de données 
 
-[source]
+[source,properties]
 ----
 # Database configuration :
 # type : accepted values are MYSQL,MSSQL,ORACLE,DB2,POSTGRESQL
@@ -310,11 +318,16 @@ alm.server.rdbms.type=MYSQL
 alm.server.rdbms.server=localhost
 alm.server.rdbms.port=3306
 alm.server.rdbms.user=root
-alm.server.rdbms.pwd=alm
+alm.server.rdbms.pwd=kobee
 # dbname : database name or Oracle SID or Service name
-alm.server.rdbms.dbname=alm
+alm.server.rdbms.dbname=kobee
 # dbschema : database schema (for DB2 and POSTGRESQL)
 alm.server.rdbms.dbschema=kobee
+# TCP protocol to be used to connect to the database. Valid values are "tcp" and "tcps". Only relevant for ORACLE.
+alm.server.rdbms.oracle.protocol=tcps
+# Full JDBC connection URL that will be used by the Kobee webapp and server to connect to the database. 
+# When left empty, a default connection url will be used, based on the rdbms.* values specified above. This is fine in most cases. 
+alm.server.rdbms.jdbcUrl=
 # Flag to indicate whether to initialize the Kobee database
 # WARNING : when set to "true", all Kobee related tables in the target
 # database will be dropped and populated with initial data !!
@@ -376,6 +389,18 @@ alm.server.rdbms.dbschema
 Le nom du schéma de la Base de données. Requis avec les Bases de données de type DB2 ou POSTGRESQL, optionel pour les autres types de Base de données.
 |
 
+alm.server.rdbms.oracle.protocol
+|
+
+Le type de protocole TCP à utiliser pour se connecter à la base de données. Les valeurs valides sont "tcp" et "tcps". Cela s'applique uniquement lorsque le type de base de données est ORACLE.
+|
+
+alm.server.rdbms.jdbcUrl
+|
+
+ L'URL de connexion JDBC complète qui sera utilisée par l'application web Kobee et le serveur Kobee pour se connecter à la base de données. Si ce champ est laissé vide, une URL de connexion par défaut sera construite sur la base des valeurs alm.server.rdbms.* spécifiées ci-dessus. Cela convient dans la plupart des cas, mais vous pouvez modifier ce comportement en spécifiant l'URL de connexion JDBC dans cette propriété. 
+|
+
 alm.server.rdbms.initALMDatabase
 |
 
@@ -388,13 +413,13 @@ Mettre à "true" pour initialiser la Base de données Kobee pendant le processus
 
 ===== Configuration Apache Tomcat 
 
-[source]
+[source,properties]
 ----
 # Apache Tomcat Configuration : 
 # set alm.server.tomcat to true if you want to deploy Kobee under tomcat 
 alm.server.tomcat=true
 # catalina.base folder of the tomcat instance
-alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
+alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 9.0
 alm.server.tomcat.port=8080
 # catalina.home folder of tomcat. If left empty, Kobee will assume catalina.home=catalina.base
 alm.server.tomcat.catalina.home=
@@ -437,17 +462,17 @@ Consulter https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt[https://tomcat.ap
 ==== Paramètres de l'Agent Kobee
 Pour installer un Agent Kobee, remplissez les propriétés suivantes:
 
-[source]
+[source,properties]
 ----
 # ---------------------------------------------------------------------------
 # Kobee Agent Settings, when alm.agent.install=true :
 # ---------------------------------------------------------------------------
 # Destination folder of the Kobee Agent files :
 # Recommended : use the Kobee Server installLocation
-alm.agent.installLocation=C:/alm
+alm.agent.installLocation=C:/Kobee
 
 # Java Runtime to run the Kobee Agent with (may be JRE or JDK):
-alm.agent.javaHome=d:/java/jdk1.6.0_45
+alm.agent.javaHome=:/java/jdk_11
 
 # Kobee Agent Runtime parameters :
 # agentPort : port Agent should be listening on (default=20020)
@@ -469,7 +494,7 @@ alm.agent.karaf.rmiRegistryPort=1099
 alm.agent.karaf.rmiServerPort=44444
 alm.agent.karaf.sshPort=8101
 # relative path to the Karaf log of the Kobee Agent
-alm.agent.logfilepath=log/alm_agent.log
+alm.agent.logfilepath=log/Kobee_agent.log
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -542,16 +567,16 @@ Chemin relatif du fichier de trace Karaf de l'Agent Kobee. Ce paramètre est uti
 ==== Paramètres de l'Interface de Ligne de Commande Kobee
 Pour installer l'Interface de Ligne de Commande Kobee, remplissez les propriétés suivantes:
 
-[source]
+[source,properties]
 ----
 # ---------------------------------------------------------------------------
 # Kobee Commandline Settings, when alm.commandline.install=true :
 # ---------------------------------------------------------------------------
 # Destination folder of the Kobee Commandline files :
-alm.commandline.installLocation=C:/alm/commandline
+alm.commandline.installLocation=C:/Kobee/commandline
 
 # Java Runtime to run the Kobee Commandline with (may be JRE or JDK):
-alm.commandline.javaHome=d:/java/jdk1.6.0_45
+alm.commandline.javaHome=d:/java/jdk_11
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -580,28 +605,28 @@ Par défaut, l'Installeur utilise l'exécutable Java qui est disponible dans le 
 
 Sur Windows, ouvrez __INSTALL_DIR__\install.cmd et complétez la ligne
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=
 ----
 
 avec quelque chose comme :
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=D:\java\openjdk-11.0.8_10_hotspot
 ----
 
 Sur Linux ou Unix, ouvrez __INSTALL_DIR__\install.sh et complétez la ligne
 
-[source]
+[source,bash]
 ----
 JAVA_HOME=
 ----
 
 avec quelque chose comme :
 
-[source]
+[source,bash]
 ----
 JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 ----
@@ -661,8 +686,8 @@ Cette section décrit les étapes nécessaires pour démarrer les différents co
 
 Pour démarrer l'Application Web Kobee, vous devez démarrer le Serveur d'applications Apache Tomcat qui l'héberge.
 
-Vous pouvez accéder à l'Interface de l'Application Web Kobee via l'URL `\http://<host>:<port>/alm`. +
-Par exemple: \http://alm_server:8080/alm.
+Vous pouvez accéder à l'Interface de l'Application Web Kobee via l'URL `\http(s)://<host>:<port>/alm`. +
+Par exemple: \https://kobee_server:8080/alm.
 
 S'il s'agit d'une première installation d'Kobee, la fenêtre de la Licence s'affiche.
 
@@ -687,14 +712,14 @@ Il est recommandé de lancer le Serveur Kobee comme un service Windows ou Linux 
 
 Pour démarrer le service du Serveur Kobee sur Windows, ouvrez une Invite de commandes ou PowerShell et exécutez:
 
-[source]
+[source,DOS]
 ----
 net start kobeesvr60
 ----
 
 Pour démarrer le service du Serveur Kobee sur un système "V" compatible Linux , ouvrez un Shell et exécutez:
 
-[source]
+[source,bash]
 ----
 sudo service kobeeserver60 start
 ----
@@ -702,7 +727,7 @@ sudo service kobeeserver60 start
 Pour démarrer le service du Serveur Kobee sur un système "D" compatible Linux , ouvrez un Shell et exécutez:
 
 
-[source]
+[source,bash]
 ----
 sudo systemctl start kobeeserver60
 ----
@@ -720,23 +745,23 @@ Il est recommandé de lancer l'Agent Kobee comme un service Windows ou Linux et 
 Pour démarrer le service de l'Agent Kobee sur Windows, ouvrez une Invite de commandes ou PowerShell et exécutez:
 
 
-[source]
+[source,DOS]
 ----
-net start kobeeserver60
+net start kobeeagent60
 ----
 
 Pour démarrer le service de l'Agent Kobee sur un système "V" compatible Linux , ouvrez un Shell et exécutez:
 
-[source]
+[source,bash]
 ----
-sudo service kobeeserver60 start
+sudo service kobeeagent60 start
 ----
 
 Pour démarrer le service de l'Agent Kobee sur un système "D" compatible Linux , ouvrez un Shell et exécutez:
 
-[source]
+[source,bash]
 ----
-sudo systemctl start kobeeserver60
+sudo systemctl start kobeeagent60
 ----
 
 En cas d'incident de démarrage, il peut être utile de démarrer l'Agent Kobee en lançant le script de démarrage. Sur Windows, lancer le fichier de commandes __KOBEE_HOME__/daemons/agent/startAgent.cmd. Sur Linux, lancer le script shell __KOBEE_HOME__/daemons/agent/startAgent.sh.
@@ -773,7 +798,7 @@ _Ne pas utiliser les barres obliques arrière_ ('\') dans les propriétés de ch
 
 ==== Paramètres généraux
 
-[source]
+[source,properties]
 ----
 # General Settings : Specify which components of Kobee to uninstall
 # ---------------------------------------------------------------------------
@@ -794,24 +819,24 @@ Mettre __alm.server.install__ à "true" pour désinstaller le Serveur Kobee et r
 Mettre __alm.agent.install__ à "true" pour désinstaller l'Agent Kobee. +
 Mettre __alm.commandline.install__ à "true" pour désinstaller l'Interface de Ligne de Commande Kobee.
 
-==== Paramètres du Serveur et de l'Application Web Kobee
+==== Paramètres du Serveur Kobee et de l'Application Web Kobee
 
-[source]
+[source,properties]
 ----
 # Kobee Server Settings :
 # ---------------------------------------------------------------------------
 # Folder the Kobee Server is installed in :
-alm.server.installLocation=C:/alm
+alm.server.installLocation=C:/Kobee
 
 # Java Runtime the Kobee Server is using
-alm.server.javaHome=d:/java/jdk1.6.0_45
+alm.server.javaHome=d:/java/jdk_11
 
 # Flag to specify whether to uninstall the files that may be deployed to a tomcat server :
 # uninstall : true
 # no uninstall : false
 alm.server.tomcat.uninstall=true
 # Location of Apache Tomcat where the webapp was deployed during Kobee Server Install :
-alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 7.0
+alm.server.tomcat.home=C:/Program Files/Apache Software Foundation/Tomcat 9.0
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -847,12 +872,12 @@ Mettre l'emplacement de base de l'installation Tomcat qui héberge l'Application
 
 ==== Paramètres de l'Agent Kobee
 
-[source]
+[source,properties]
 ----
 # Kobee Agent Settings :
 # ---------------------------------------------------------------------------
 # Folder the Kobee Agent is installed in :
-alm.agent.installLocation=C:/alm
+alm.agent.installLocation=C:/Kobee
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -870,12 +895,12 @@ L'emplacement où l'Agent Kobee est installé.
 
 ==== Paramètres de l'Interface de Ligne de Commande Kobee
 
-[source]
+[source,properties]
 ----
 # Kobee Commandline Settings :
 # ---------------------------------------------------------------------------
 # Folder the Kobee Commandline is installed in :
-alm.commandline.installLocation=C:/alm/commandline
+alm.commandline.installLocation=C:/Kobee/commandline
 ----
 
 [cols="1,3", frame="topbot", options="header"]
@@ -958,9 +983,9 @@ Pour réaliser cela, exécutez l'Outil de migration de la Base de données. Voir
 
 . Mettez à niveau les Agents qui sont installés sur les machines distantes.
 +
-Les Agents distants de la version 5.8 et supérieure peuvent être mis à niveau avec l'Interface Utilisateur Web.
+Les Agents distants de la version 5.8 (IKAN ALM) et supérieure peuvent être mis à niveau avec l'Interface Utilisateur Web.
 +
-Les Agents distants de la version 5.7 et inférieure doivent être d"sinstallés manuellement. Après cela, ils peuvent être ré-installés avec l'Interface Utilisateur Web. 
+Les Agents distants de la version 5.7 (IKAN ALM) et inférieure doivent être d"sinstallés manuellement. Après cela, ils peuvent être ré-installés avec l'Interface Utilisateur Web. 
 +
 Pour plus d'information sur l'installation ou la mise à niveau des Agents avec l'Interface Utilisateur Web, se référer à xref:6.0@how-to-ui-agentinstall-en:root:HowTo_UIAgentInstall.adoc[Interface Utilisateur d'Installation d'un Agent Kobee].
 
@@ -973,10 +998,10 @@ L'Outil de migration de la Base de données est un outil de script qui détecte 
 Vous devriez sauvegarder la Base de données Kobee avant de démarrer la migration!
 --
 
-Pour démarrer la migration, vous devez exécuter le script __INSTALL_DIR__/migrateKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateALMDatabase.sh (Linux/Unix)
+Pour démarrer la migration, vous devez exécuter le script __INSTALL_DIR__/migrateKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateKobeeDatabase.sh (Linux/Unix)
 
 Par défaut, l'Outil de migration de la Base de données utilise l'exécutable Java qui est disponible dans le PATH du Système de la machine. Si aucun exécutable Java est présent, ou la version de celui-ci est insuffisante (inférieure à 11), alors vous devez fournir la variable d'environnement __JAVA_HOME__ dans le script. Dans ce cas, ouvrez le fichier 
- __INSTALL_DIR__/migrateKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateALMDatabase.sh (Linux/Unix) et suivre les instructions de <<Exécuter l`Installeur>> pour renseigner la variable __JAVA_HOME__.
+ __INSTALL_DIR__/migrateKobeeDatabase.cmd (Windows) ou __INSTALL_DIR__/migrateKobeeDatabase.sh (Linux/Unix) et suivre les instructions de <<Exécuter l`Installeur>> pour renseigner la variable __JAVA_HOME__.
 
 Par défaut, l'Outil de migration de la Base de données utilise les paramètres de connexion de la Base de données définis dans le fichier __INSTALL_DIR__/install.properties 
 
@@ -993,7 +1018,7 @@ Après la mise à niveau d'Kobee, il est recommandé à tous les Utilisateurs de
 Kobee 6.0 utilise une nouvelle librairie pour les Modules de connexion JAAS quand il utilise LDAP ou Microsoft Active Directory pour l'authenfication et les autorisations des Utilisateurs. En conséquence, les fichiers de configuration __KOBEE_HOME__/system/security/jaas.config et __KOBEE_HOME__/daemons/server/karaf/deploy/JaasPropertiesLoginModule.xml ont changé. Si vous utilisez LDAP ou Microsoft AD, vous devez utiliser les fichiers de la nouvelle configuration JAAS et fournir les valeurs correctes dans les propriétés ldapUrl, bindDn, bindCredential, baseDn et roleBase. Pour plus de détails, voir <<_jaasconfiguration_msad,Configuration JAAS: Microsoft Active Directory>>.
 [appendix]
 [[_install_service_windows]]
-== Installer et Retirer manuellement le Serveur et l'Agent Kobee comme service Windows
+== Installer et Retirer manuellement le Serveur Kobee et l'Agent Kobee comme service Windows
 
 Quand l'Installeur Kobee est exécuté par un Administrateur, les services Windows pour arrêter et démarrer du Serveur et de l'Agent Kobee sont créés automatiquement. Sinon, vous devez enregister les services Windows manuellement après l'installation.
 
@@ -1013,7 +1038,7 @@ Exécutez "KOBEE_HOME/daemons/agent/karaf/bin/karaf-service.bat __remove__".
 
 Le script _karaf-service.bat_ doit être exécuté par un Administrateur.
 
-Si vous voulez reconfigurer un service, modifiez le fichier __KOBEE_HOME__/daemons/server/karaf/etc/karaf-wrapper.conf (pour le Serveur). Vous pouvez, par exemple, changer la quantité de mémoire du Serveur Kobee (en Mo) en changeant :"wrapper.java.maxmemory = 512".
+Si vous voulez reconfigurer un service, modifiez le fichier __KOBEE_HOME__/daemons/server/karaf/etc/karaf-wrapper.conf (pour le Serveur). Vous pouvez, par exemple, changer la quantité de mémoire du Serveur Kobee (en Mo) en changeant :"wrapper.java.maxmemory = 1024".
 
 [NOTE]
 ====
@@ -1036,19 +1061,19 @@ Nous allons décrire cette procédure pour installer et retirer le Serveur Kobee
 Premièrement, arrêtez l'Agent et le Serveur Kobee.
 
 Ouvrez un terminal Linux et mettez la commande Karaf "shell" exécutable: 
-[source]
+[source,bash]
 ----
 chmod +x KOBEE_HOME/daemons/server/karaf/bin/shell
 ----
 
 Activez la variable __JAVA_HOME__ avec le chemin réel d'installation du Java qui est utilisé pour lancer le Serveur Kobee. Par exemple "/usr/lib/jvm/java-11-openjdk".
-[source]
+[source,bash]
 ----
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 ----
 
 Allez vers le répertoire __KOBEE_HOME__/daemons/server/karaf/bin et exécutez le service wrapper de Karaf.
-[source]
+[source,bash]
 ----
 cd KOBEE_HOME/daemons/server/karaf/bin
 KOBEE_HOME/daemons/server/karaf/bin/shell wrapper:install -n kobeeserver60 -d "Kobee\ 6.0\ Server" -D "Kobee\ 6.0\ Server\ Service"
@@ -1072,30 +1097,30 @@ Type=forking
 User=<Linux user>
 ----
 Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
-[source]
+[source,bash]
 ----
 chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60.service
 ----
 Installez le service du Serveur Kobee.
-[source]
+[source,bash]
 ----
 sudo systemctl -f enable KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60.service
 ----
 
 Pour démarrer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo systemctl start kobeeserver60
 ----
 
 Pour arrêter le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo systemctl stop kobeeserver60
 ----
 
 Quand vous voulez retirer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo systemctl disable kobeeserver60
 ----
@@ -1115,12 +1140,12 @@ Remplacez-la avec
 RUN_AS_USER=<Linux user>
 ----
 Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
-[source]
+[source,bash]
 ----
 chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
 Installez le service du Serveur Kobee.
-[source]
+[source,bash]
 ----
 sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/init.d/
 sudo chkconfig kobeeserver60-service --add
@@ -1128,19 +1153,19 @@ sudo chkconfig kobeeserver60-service on
 ----
 
 Pour démarrer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo service kobeeserver60-service start
 ----
 
 Pour arrêter le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo service kobeeserver60-service stop
 ----
 
 Quand vous voulez retirer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo chkconfig kobeeserver60-service --del
 sudo rm /etc/init.d/kobeeserver60-service
@@ -1161,38 +1186,35 @@ Remplacez-la avec
 RUN_AS_USER=<Linux user>
 ----
 Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
-[source]
+[source,bash]
 ----
 chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
 Installez le service du Serveur Kobee.
-[source]
+[source,bash]
 ----
 sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/init.d/
 sudo update-rc.d kobeeserver60-service defaults
 ----
 
 Pour démarrer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo /etc/init.d/kobeeserver60-service start
 ----
 
 Pour arrêter le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo /etc/init.d/kobeeserver60-service stop
 ----
 
 Quand vous voulez retirer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo update-rc.d -f kobeeserver60-service remove
 sudo rm /etc/init.d/kobeeserver60-service
 ----
-
-
-
 
 === Système AIX
 
@@ -1203,7 +1225,7 @@ Supprimez la ligne qui commence par
 set.JDK_JAVA_OPTIONS=...
 ----
 Remplacez la section "# JVM Parameters" par
-[source]
+[source,properties]
 ----
 # JVM Parameters            
 # note that n is the parameter number starting from 1.
@@ -1252,22 +1274,22 @@ Remplacez-la avec
 RUN_AS_USER=<Linux user>
 ----
 Dans le même fichier, trouvez la ligne
-[source]
+[source,bash]
 ----
 su -m $RUN_AS_USER -s /bin/sh -c "$REALPATH $1"
 ----
 Remplacez-la avec
-[source]
+[source,bash]
 ----
 su $RUN_AS_USER -c "$REALPATH $1"
 ----
 Rendre le fichier __KOBEE_HOME__/daemons/server/karaf/bin/kobeeserver60.service exécutable.
-[source]
+[source,bash]
 ----
 chmod +x KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service
 ----
 Installez le service du Serveur Kobee.
-[source]
+[source,bash]
 ----
 sudo ln -s -f KOBEE_HOME/daemons/server/karaf/bin/kobeeserver60-service /etc/rc.d/init.d/
 sudo ln -s -f /etc/rc.d/init.d/kobeeserver60-service /etc/rc.d/rc2.d/K20kobeeserver60-service
@@ -1275,19 +1297,19 @@ sudo ln -s -f /etc/rc.d/init.d/kobeeserver60-service /etc/rc.d/rc2.d/S20kobeeser
 ----
 
 Pour démarrer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo /etc/rc.d/init.d/kobeeserver60-service start
 ----
 
 Pour arrêter le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo /etc/rc.d/init.d/kobeeserver60-service stop
 ----
 
 Quand vous voulez retirer le service du Serveur Kobee, exécutez
-[source]
+[source,bash]
 ----
 sudo rm /etc/rc.d/init.d/kobeeserver60-service
 sudo rm /etc/rc.d/rc2.d/K20kobeeserver60-service
@@ -1334,7 +1356,7 @@ ALM
 
 Pour le Serveur Kobee (JaasPropertiesLoginModule.xml) :
 
-[source]
+[source,HTML]
 ----
 	<!-- ALM login using File Login -->
 	<jaas:config name="ALM">
@@ -1349,18 +1371,18 @@ Le fichier de mots de passe par défaut (__KOBEE_HOME__/system/security/passwd.c
 [source]
 ----
 userid:encrypted password:groupname:groupname:groupname
-user:ee11cbb19052e40b07aac0ca060c23ee:ALM User
-project:46f86faa6bbf9ac94a7e459509a20ed0:ALM User:ALM Project
-global:9c70933aff6b2a6d08c687a6cbb6b765:ALM User:ALM Administrator
+user:ee11cbb19052e40b07aac0ca060c23ee:Kobee User
+project:46f86faa6bbf9ac94a7e459509a20ed0:Kobee User:Kobee Project
+global:9c70933aff6b2a6d08c687a6cbb6b765:Kobee User:Kobee Administrator
 ----
 
 Chaque ligne du fichier représente un utilisateur. Le format est <userId>:<password>:<groupname1>:<groupname2>:<groupname3>:... Les mots de passe doivent être chiffrés avec l’algorithme MD5.
 
-Par exemple, pour ajouter un utilisateur avec un Identifiant "`testuser`" et mot de passe "`testuser`" qui appartient aux groupes d'utilisateurs "`ALM User`" et "`ALM Project`", ajoutez l'entrée suivante aux fichier "passwd.config" : 
+Par exemple, pour ajouter un utilisateur avec un Identifiant "`testuser`" et mot de passe "`testuser`" qui appartient aux groupes d'utilisateurs "`Kobee User`" et "`Kobee Project`", ajoutez l'entrée suivante aux fichier "passwd.config" : 
 
 [source]
 ----
-testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
+testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:Kobee User:Kobee Project
 ----
 
 [[_jaasconfiguration_msad]]
@@ -1369,13 +1391,13 @@ testuser:5d9c68c6c50ed3d02a2fcf54f63993b6:ALM User:ALM Project
 Les fichiers de configuration JAAS d'Kobee contiennent des exemples sur la manière de se connecter à Microsoft AD en utilisant LDAP. Nous vous expliquons un exemple qui utilise le protocole "ldaps" sécurisé. Les instructions pour utiliser le protocole "ldap" moins sécurisé sont similaires : seules les propriétés _ldapUrl_ sont différentes.
 
 *Pour les "ldap" non sécurisés, le _ldapUrl_ sera de la forme suivante:*
-[source]
+[source,properties]
 ----
 ldapUrl="ldap://<AD_SERVER>:389"
 ----
 
 *Cependant, pour "ldap" sécurisé, le _ldapUrl_ sera le suivant:*
-[source]
+[source,properties]
 ----
 ldapUrl="ldaps://<AD_SERVER>:636"
 ----
@@ -1422,7 +1444,7 @@ LDAPLogin_SECURED
 
 Exemple de connexion Microsoft AD pour le Serveur Kobee (JaasPropertiesLoginModule.xml) :
 
-[source]
+[source,HTML]
 ----
 <!-- Example LDAP Login using the Ldaptive library (https://www.ldaptive.org/) over a TLS/SSL connection -->
 <jaas:config name="LDAPLogin_SECURED">
@@ -1505,13 +1527,13 @@ Se référer à https://www.ldaptive.org/docs/guide/jaas.html[https://www.ldapti
 Lors de la modification de la configuration JAAS, les services Tomcat et du Serveur Kobee doivent être redémarrés. Si les utilisateurs peuvent se connecter via l’Interface Utilisateur Kobee, la configuration dans Tomcat est correcte.
 
 Vous pouvez résoudre les problèmes de connexion en activant une journalisation supplémentaire.  Cela peut être fait en ajoutant un élément _<logger>_ supplémentaire dans _TOMCAT_HOME_/webapps/alm/WEB-INF/classes/log4j2.xml.
-[source]
+[source,HTML]
 ----
 <Logger name="org.ldaptive" level="trace"/>
 
 ----
 
-Après avoir redémarré Tomcat et essayé de se connecter, le fichier journal _TOMCAT_HOME/logs/alm_webapp.log_ contiendra des informations supplémentaires sur la tentative d’ouverture de session. Ce journal peut ensuite être analysé et/ou envoyé au Support Kobee.
+Après avoir redémarré Tomcat et essayé de se connecter, le fichier journal _TOMCAT_HOME/logs/Kobee_webapp.log_ contiendra des informations supplémentaires sur la tentative d’ouverture de session. Ce journal peut ensuite être analysé et/ou envoyé au Support Kobee.
 
 === Configuration JAAS: ldap sécurisé (LDAP via SSL/TLS)
 
@@ -1542,7 +1564,7 @@ Le fichier de certificat doit ensuite être importé dans le magasin de clés (k
 
 *Exemple*
 
-[source]
+[source,DOS]
 ----
 
 D:\java\jdk11.0.10\bin\keytool.exe -import -file C:\temp\dc1_ldap.cer -keystore E:\Kobee\60\system\ssl\alm_keystore -alias dc1_ldap
@@ -1568,7 +1590,7 @@ Lors de l’exécution de l’installation d'Kobee, le paramètre d’installati
 
 La Communication sécurisée entre l’Application Web Kobee et le Serveur/Agent Kobee est contrôlée par un paramètre de contexte dans le fichier _TOMCAT_HOME/webapps/alm/WEB-INF/web.xml_:
 
-[source]
+[source,HTML]
 ----
 
 ...
@@ -1591,7 +1613,7 @@ La Communication sécurisée entre le Serveur et l’Agent/Application Web Kobee
 
 Le fichier _server.cfg_ se trouve sous _KOBEE_HOME/daemons/server/karaf/etc_.
 
-[source]
+[source,properties]
 ----
 
 alm.server.serverPort=20021
@@ -1609,7 +1631,7 @@ Mettre la propriété _alm.xmlrpc.secure_ à "false" si vous voulez annuler la C
 Le fichier _org.ops4j.pax.web.cfg_ se trouve également dans _KOBEE_HOME/daemons/server/karaf/etc_.
 
 
-[source]
+[source,properties]
 ----
 
 ...
@@ -1634,7 +1656,7 @@ La Communication sécurisée entre l’Agent, le Serveur et l’Application Web 
 
 Le fichier _agent.cfg_ se trouve dans _KOBEE_HOME/daemons/agent/karaf/etc_.
 
-[source]
+[source,properties]
 ----
 
 alm.agent.agentPort=20020
@@ -1652,7 +1674,7 @@ Mettre la propriété _alm.xmlrpc.secure_ à "false" si vous voulez annuler la C
 
 Le fichier _org.ops4j.pax.web.cfg_ se trouve également dans _KOBEE_HOME/daemons/agent/karaf/etc_.
 
-[source]
+[source,properties]
 ----
 
 ...
@@ -1750,7 +1772,7 @@ Si vous démarrez Tomcat à l’aide des scripts de lancement, créez un fichier
 
 Pour Windows :
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=<JAVA_HOME>
 SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
@@ -1758,7 +1780,7 @@ SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Dio.kobee.auth.confi
 
 Pour Linux/Unix :
 
-[source]
+[source,bash]
 ----
 JAVA_HOME=<JAVA_HOME>
 JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
@@ -1766,7 +1788,7 @@ JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Dio.kobee.auth.config=
 
 Si Tomcat est exécuté en tant que service Windows, modifiez les paramètres JvmArgs dans le fichier _TOMCAT_HOME/bin/service.bat_ :
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
@@ -1784,12 +1806,12 @@ Ouvrez le fichier _kobee.properties_ situé dans _KOBEE_HOME/system/security/kob
 Commencez par modifier la propriété _kobee.auth_type_ en changeant sa valeur de _jaas_ (valeur par défaut) à _reverse_proxy_.
 Ensuite, décommentez les propriétés _kobee.reverse_proxy.user_requestheader_ et _kobee.reverse_proxy.usergroups_requestheader_, puis définissez leurs valeurs afin qu’elles correspondent aux en-têtes de requête utilisateur et groupes configurés dans votre reverse proxy. Par exemple, dans un serveur IBM WebSEAL pour Tivoli Access Manager, ces en-têtes peuvent être _iv-user_ et _iv-groups_.
 
-[source]
+[source,properties]
 ----
 #This kobee.properties holds property values for authentication and authorisation with Kobee
 #By default it is located in KOBEE_HOME/system/security (/opt/kobee/system/security, or C:/kobee/system/security)
 #This is specified by the io.kobee.auth.config property
-#Kobee authentication and authorisation type, possible values jaas and reverse_proxy, default jaas
+#Kobee authentication and authorisation type, possible values jaas and reverse_proxy, oauth2, default jaas
 kobee.auth_type=reverse_proxy
 
 ### Specific properties for kobee.auth_type=reverse_proxy
@@ -1814,7 +1836,7 @@ Cette configuration OAuth 2.0 ne prend pas en charge l’authentification et l�
 
 La connexion à l’application web Kobee via un fournisseur d’identité OAuth 2.0 ou OIDC suit généralement le processus suivant :
 
-* l’utilisateur initie l’accès à l’application web Kobee en accédant à l’URL `\http(s)://<host>:<port>/alm` (par example, `\http://kobee_server:8080/alm`).
+* l’utilisateur initie l’accès à l’application web Kobee en accédant à l’URL `\http(s)://<host>:<port>/alm` (par example, `\https://kobee_server:8080/alm`).
 
 * l’application web Kobee (client OAuth 2.0) initie une requête d’authentification en redirigeant le navigateur de l’utilisateur vers le point de terminaison d’autorisation du fournisseur d’identité. Pour Microsoft Entra ID, ce point de terminaison est généralement :`\https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize`.
 
@@ -1869,7 +1891,7 @@ Si vous démarrez Tomcat à partir des scripts de lancement, créez un fichier _
 
 Pour Windows :
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=<JAVA_HOME>
 SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
@@ -1877,7 +1899,7 @@ SET JAVA_OPTS=-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m -Dio.kobee.auth.confi
 
 Pour Linux/Unix :
 
-[source]
+[source,bash]
 ----
 JAVA_HOME=<JAVA_HOME>
 JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Dio.kobee.auth.config=KOBEE_HOME/system/security/kobee.properties -Djava.security.auth.login.config=KOBEE_HOME/system/security/jaas.config
@@ -1885,7 +1907,7 @@ JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m" -Dio.kobee.auth.config=
 
 Si Tomcat est exécuté en tant que service Windows, modifiez les paramètres JvmArgs dans le fichier _TOMCAT_HOME/bin/service.bat_ :
 
-[source]
+[source,DOS]
 ----
 SET JAVA_HOME=<JAVA_HOME>
 SET JvmMs=512
@@ -1902,7 +1924,7 @@ Après avoir effectué ces modifications, vous devez réinstaller le service en 
 Ouvrez le fichier _kobee.properties_ situé dans _KOBEE_HOME/system/security/kobee.properties_.
 Commencez par modifier la propriété _kobee.auth_type_ en changeant sa valeur de _jaas_ (valeur par défaut) à _oauth2_.
 
-[source]
+[source,properties]
 ----
 #This kobee.properties holds property values for authentication and authorisation with Kobee
 #By default it is located in KOBEE_HOME/system/security (/opt/kobee/system/security, or C:/kobee/system/security)
@@ -1913,7 +1935,7 @@ kobee.auth_type=oauth2
 
 Ensuite, décommentez les propriétés _kobee.oauth2.client-id_, _kobee.oauth2.client-secret_ et _kobee.oauth2.issuer-uri_, puis remplacez leurs valeurs par les *client-id, client-secret* et *tenant-id* précédemment enregistrés lors de l’enregistrement de Kobee en tant qu’application auprès du Fournisseur d’Identité. L’exemple suivant illustre cette configuration avec des valeurs Microsoft Entra ID.
 
-[source]
+[source,properties]
 ----
 ### Specific properties for kobee.auth_type=oauth2, values to connect to the oauth2/oidc provider, with sample values for MS Entra ID
 #client-id of the Kobee app registration (required)
@@ -2054,7 +2076,7 @@ revendication (claim) de l’ID Token utilisée pour identifier les groupes util
 
 Enfin, *démarrez* le serveur web Apache Tomcat afin d’appliquer les modifications de configuration OAuth 2.0.
 
-Accédez ensuite au point d’entrée de l’application web Kobee à l’adresse http(s)://<host>:<port>/alm (par exemple, http://kobee_server:8080/alm). L’application redirige alors l’utilisateur vers une requête d’authentification au niveau du point de terminaison d’autorisation du fournisseur d’identité. our Microsoft Entra ID, ce point de terminaison est généralement https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize,
+Accédez ensuite au point d’entrée de l’application web Kobee à l’adresse http(s)://<host>:<port>/alm (par exemple, https://kobee_server:8080/alm). L’application redirige alors l’utilisateur vers une requête d’authentification au niveau du point de terminaison d’autorisation du fournisseur d’identité. our Microsoft Entra ID, ce point de terminaison est généralement https://login.microsoftonline.com/{entra-tenant-id}/oauth2/v2.0/authorize,
 ce qui entraîne l’affichage d’un écran invitant l’utilisateur à sélectionner un compte.
 
 image::entra_id_pick_account.png[,442,341]

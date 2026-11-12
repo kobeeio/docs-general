@@ -1,6 +1,0 @@
-name: alm-reports-windows
-title: ALM Reports (Windows)
-version: '5.9'
-start_page: ROOT:ALMreports.adoc
-nav:
-- modules/ROOT/nav.adoc  

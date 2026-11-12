@@ -9,7 +9,7 @@
 [[_purpose]]
 == Purpose
 
-Kobee Reports has been created as a complement to __IKAN ALM__, IKAN's Application Lifecycle Management tool.
+Kobee Reports has been created as a complement to __Kobee__, IKAN's DevOps tool.
 With Kobee Reports, Kobee customers can run high-quality, highly configurable reports, thus extract important information from the Kobee database which is not readily available from the Kobee GUI.
 
 This guide describes the procedure to install Kobee Reports on Linux.
